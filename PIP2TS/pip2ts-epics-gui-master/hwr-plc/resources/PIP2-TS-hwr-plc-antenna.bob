@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>HWR_antenna</name>
+  <width>360</width>
+  <height>282</height>
+  <background_color>
+    <color name="Button_Background" red="210" green="210" blue="210">
+    </color>
+  </background_color>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle</name>
+    <y>20</y>
+    <width>360</width>
+    <height>3</height>
+    <line_color>
+      <color name="Grid" red="128" green="128" blue="128">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="Grid" red="128" green="128" blue="128">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Temperatures</name>
+    <text>Antenna status</text>
+    <x>10</x>
+    <width>138</width>
+    <font>
+      <font family="sans" style="BOLD" size="16.0">
+      </font>
+    </font>
+    <background_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_1</name>
+    <macros>
+      <DESC>HWR RF antenna 1 power:</DESC>
+      <PV>HWR1_ANT1:P</PV>
+    </macros>
+    <file>PIP2-TS-hwr-plc-readback.bob</file>
+    <y>35</y>
+    <width>350</width>
+    <height>22</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_2</name>
+    <macros>
+      <DESC>HWR RF antenna 1 status:</DESC>
+      <PV>HWR1_ANT1:STAT</PV>
+    </macros>
+    <file>PIP2-TS-hwr-plc-status.bob</file>
+    <y>65</y>
+    <width>350</width>
+    <height>22</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_3</name>
+    <macros>
+      <DESC>HWR RF antenna 2 power:</DESC>
+      <PV>HWR1_ANT2:P</PV>
+    </macros>
+    <file>PIP2-TS-hwr-plc-readback.bob</file>
+    <y>170</y>
+    <width>350</width>
+    <height>22</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_4</name>
+    <macros>
+      <DESC>HWR RF antenna 2 status:</DESC>
+      <PV>HWR1_ANT2:STAT</PV>
+    </macros>
+    <file>PIP2-TS-hwr-plc-status.bob</file>
+    <y>200</y>
+    <width>350</width>
+    <height>22</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_1</name>
+    <text>HWR RF antenna 1 reset:</text>
+    <y>95</y>
+    <width>240</width>
+    <font>
+      <font family="sans" style="REGULAR" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(pv_name)</pv_name>
+        <value>1</value>
+        <description>Write PV</description>
+      </action>
+    </actions>
+    <pv_name>$(COMPLEX):HWR1_ANT1:CMD</pv_name>
+    <text>Reset</text>
+    <x>250</x>
+    <y>95</y>
+    <height>22</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_2</name>
+    <text>HWR RF antenna 1 disable:</text>
+    <y>125</y>
+    <width>240</width>
+    <font>
+      <font family="sans" style="REGULAR" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_1</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(pv_name)</pv_name>
+        <value>0</value>
+        <description>Write PV</description>
+      </action>
+    </actions>
+    <pv_name>$(COMPLEX):HWR1_ANT1:CMD</pv_name>
+    <text>Off</text>
+    <x>250</x>
+    <y>125</y>
+    <height>22</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_3</name>
+    <text>HWR RF antenna 2 reset:</text>
+    <y>230</y>
+    <width>240</width>
+    <font>
+      <font family="sans" style="REGULAR" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_2</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(pv_name)</pv_name>
+        <value>1</value>
+        <description>Write PV</description>
+      </action>
+    </actions>
+    <pv_name>$(COMPLEX):HWR1_ANT2:CMD</pv_name>
+    <text>Reset</text>
+    <x>250</x>
+    <y>230</y>
+    <height>22</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_4</name>
+    <text>HWR RF antenna 2 disable:</text>
+    <y>260</y>
+    <width>240</width>
+    <font>
+      <font family="sans" style="REGULAR" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_3</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(pv_name)</pv_name>
+        <value>0</value>
+        <description>Write PV</description>
+      </action>
+    </actions>
+    <pv_name>$(COMPLEX):HWR1_ANT2:CMD</pv_name>
+    <text>Off</text>
+    <x>250</x>
+    <y>260</y>
+    <height>22</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+</display>

@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>CMTS_Actuator</name>
+  <width>390</width>
+  <height>327</height>
+  <background_color>
+    <color name="Button_Background" red="210" green="210" blue="210">
+    </color>
+  </background_color>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle</name>
+    <y>20</y>
+    <width>390</width>
+    <height>3</height>
+    <line_color>
+      <color name="Grid" red="128" green="128" blue="128">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="Grid" red="128" green="128" blue="128">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Temperatures</name>
+    <text>Gate valve actuators</text>
+    <x>10</x>
+    <width>188</width>
+    <height>19</height>
+    <font>
+      <font family="sans" style="BOLD" size="16.0">
+      </font>
+    </font>
+    <background_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_1</name>
+    <macros>
+      <DESC>Actuator 1 limit switch open:</DESC>
+      <PV>FC_Insulat_Actuator1:LimitSwitch_Open</PV>
+    </macros>
+    <file>PIP2-TS-cmts-vac-plc-single-bit-readback.bob</file>
+    <y>35</y>
+    <width>380</width>
+    <height>22</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_3</name>
+    <macros>
+      <DESC>Actuator 1 limit switch closed:</DESC>
+      <PV>FC_Insulat_Actuator1:LimitSwitch_Closed</PV>
+    </macros>
+    <file>PIP2-TS-cmts-vac-plc-single-bit-readback.bob</file>
+    <y>65</y>
+    <width>380</width>
+    <height>22</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_3</name>
+    <text>Actuator 1 valve control:</text>
+    <y>95</y>
+    <width>240</width>
+    <font>
+      <font family="sans" style="REGULAR" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(pv_name)</pv_name>
+        <value>1</value>
+        <description>Write PV</description>
+      </action>
+    </actions>
+    <pv_name>$(COMPLEX):$(SYS)_FC_Insulat_Actuator1_GV:CMD</pv_name>
+    <text>Open</text>
+    <x>250</x>
+    <y>95</y>
+    <width>60</width>
+    <height>22</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_1</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(pv_name)</pv_name>
+        <value>0</value>
+        <description>Write PV</description>
+      </action>
+    </actions>
+    <pv_name>$(COMPLEX):$(SYS)_FC_Insulat_Actuator1_GV:CMD</pv_name>
+    <text>Close</text>
+    <x>320</x>
+    <y>95</y>
+    <width>60</width>
+    <height>22</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_4</name>
+    <macros>
+      <DESC>Actuator 2 limit switch open:</DESC>
+      <PV>EC_Insulat_Actuator2:LimitSwitch_Open</PV>
+    </macros>
+    <file>PIP2-TS-cmts-vac-plc-single-bit-readback.bob</file>
+    <y>140</y>
+    <width>380</width>
+    <height>22</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_10</name>
+    <macros>
+      <DESC>Actuator 2 limit switch closed:</DESC>
+      <PV>EC_Insulat_Actuator2:LimitSwitch_Closed</PV>
+    </macros>
+    <file>PIP2-TS-cmts-vac-plc-single-bit-readback.bob</file>
+    <y>170</y>
+    <width>380</width>
+    <height>22</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_4</name>
+    <text>Actuator 2 valve control:</text>
+    <y>200</y>
+    <width>240</width>
+    <font>
+      <font family="sans" style="REGULAR" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_2</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(pv_name)</pv_name>
+        <value>1</value>
+        <description>Write PV</description>
+      </action>
+    </actions>
+    <pv_name>$(COMPLEX):$(SYS)_EC_Insulat_Actuator2_GV:CMD</pv_name>
+    <text>Open</text>
+    <x>250</x>
+    <y>200</y>
+    <width>60</width>
+    <height>22</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_3</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(pv_name)</pv_name>
+        <value>0</value>
+        <description>Write PV</description>
+      </action>
+    </actions>
+    <pv_name>$(COMPLEX):$(SYS)_EC_Insulat_Actuator2_GV:CMD</pv_name>
+    <text>Close</text>
+    <x>320</x>
+    <y>200</y>
+    <width>60</width>
+    <height>22</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_11</name>
+    <macros>
+      <DESC>Actuator 3 limit switch open:</DESC>
+      <PV>EC_Insulat_Actuator3:LimitSwitch_Open</PV>
+    </macros>
+    <file>PIP2-TS-cmts-vac-plc-single-bit-readback.bob</file>
+    <y>245</y>
+    <width>380</width>
+    <height>22</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_12</name>
+    <macros>
+      <DESC>Actuator 3 limit switch closed:</DESC>
+      <PV>EC_Insulat_Actuator3:LimitSwitch_Closed</PV>
+    </macros>
+    <file>PIP2-TS-cmts-vac-plc-single-bit-readback.bob</file>
+    <y>275</y>
+    <width>380</width>
+    <height>22</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_6</name>
+    <text>Actuator 3 valve control:</text>
+    <y>305</y>
+    <width>240</width>
+    <font>
+      <font family="sans" style="REGULAR" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_6</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(pv_name)</pv_name>
+        <value>1</value>
+        <description>Write PV</description>
+      </action>
+    </actions>
+    <pv_name>$(COMPLEX):$(SYS)_EC_Insulat_Actuator3_GV:CMD</pv_name>
+    <text>Open</text>
+    <x>250</x>
+    <y>305</y>
+    <width>60</width>
+    <height>22</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_7</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(pv_name)</pv_name>
+        <value>0</value>
+        <description>Write PV</description>
+      </action>
+    </actions>
+    <pv_name>$(COMPLEX):$(SYS)_EC_Insulat_Actuator3_GV:CMD</pv_name>
+    <text>Close</text>
+    <x>320</x>
+    <y>305</y>
+    <width>60</width>
+    <height>22</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+</display>

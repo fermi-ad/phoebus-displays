@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>CMTS_Motor_reset</name>
+  <width>450</width>
+  <height>60</height>
+  <background_color>
+    <color name="Button_Background" red="210" green="210" blue="210">
+    </color>
+  </background_color>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle</name>
+    <y>20</y>
+    <width>450</width>
+    <height>3</height>
+    <line_color>
+      <color name="Grid" red="128" green="128" blue="128">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="Grid" red="128" green="128" blue="128">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Temperatures</name>
+    <text>Cavity Tuner Motor Reset</text>
+    <x>10</x>
+    <width>231</width>
+    <font>
+      <font family="sans" style="BOLD" size="16.0">
+      </font>
+    </font>
+    <background_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_1</name>
+    <text>Cavity Tuner Motor Reset:</text>
+    <y>35</y>
+    <width>280</width>
+    <font>
+      <font family="sans" style="REGULAR" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(pv_name)</pv_name>
+        <value>1</value>
+        <description>Write PV</description>
+      </action>
+    </actions>
+    <pv_name>$(COMPLEX):$(SYS)_CAV_TunerMotor:CMD</pv_name>
+    <text>RESET</text>
+    <x>300</x>
+    <y>35</y>
+    <height>22</height>
+  </widget>
+</display>

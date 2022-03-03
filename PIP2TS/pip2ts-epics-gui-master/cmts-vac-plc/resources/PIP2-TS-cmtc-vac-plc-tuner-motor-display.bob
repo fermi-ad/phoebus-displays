@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>CMTS_Motor</name>
+  <width>380</width>
+  <height>52</height>
+  <background_color>
+    <color name="Button_Background" red="210" green="210" blue="210">
+    </color>
+  </background_color>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_18</name>
+    <macros>
+      <DESC>Cavity $(ID) motor temperature:</DESC>
+      <PV>CAV$(ID)_TunerMotor:TI</PV>
+    </macros>
+    <file>PIP2-TS-cmts-vac-plc-text-readback.bob</file>
+    <y>30</y>
+    <width>350</width>
+    <height>22</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_1</name>
+    <text>Cavity $(ID) motor status:</text>
+    <width>240</width>
+    <font>
+      <font family="sans" style="REGULAR" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED</name>
+    <pv_name>$(COMPLEX):$(SYS)_CAV$(ID)_TunerMotor:STAT</pv_name>
+    <x>360</x>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_1</name>
+    <pv_name>$(COMPLEX):$(SYS)_CAV$(ID)_TunerMotor:STAT</pv_name>
+    <x>250</x>
+    <font>
+      <font family="sans" style="REGULAR" size="14.0">
+      </font>
+    </font>
+    <precision>2</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <border_width>1</border_width>
+  </widget>
+</display>

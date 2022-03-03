@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>CMTS_Actuator</name>
+  <width>390</width>
+  <height>87</height>
+  <background_color>
+    <color name="Button_Background" red="210" green="210" blue="210">
+    </color>
+  </background_color>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle</name>
+    <y>20</y>
+    <width>390</width>
+    <height>3</height>
+    <line_color>
+      <color name="Grid" red="128" green="128" blue="128">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="Grid" red="128" green="128" blue="128">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Temperatures</name>
+    <text>Bypass status</text>
+    <x>10</x>
+    <width>127</width>
+    <font>
+      <font family="sans" style="BOLD" size="16.0">
+      </font>
+    </font>
+    <background_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_1</name>
+    <macros>
+      <DESC>Motor temperature bypass:</DESC>
+      <PV>CAV_Temperature_Bypass:STAT</PV>
+    </macros>
+    <file>PIP2-TS-cmts-vac-plc-single-bit-readback_OkOrError.bob</file>
+    <y>35</y>
+    <width>380</width>
+    <height>22</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_3</name>
+    <macros>
+      <DESC>Protection system bypass:</DESC>
+      <PV>ProtectionSystem_Bypass:STAT</PV>
+    </macros>
+    <file>PIP2-TS-cmts-vac-plc-single-bit-readback_OkOrError.bob</file>
+    <y>65</y>
+    <width>380</width>
+    <height>22</height>
+    <resize>2</resize>
+  </widget>
+</display>

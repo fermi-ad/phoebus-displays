@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databrowser>
+  <title>BTE-225 Temperature History</title>
+  <show_toolbar>true</show_toolbar>
+  <grid>true</grid>
+  <update_period>3.0</update_period>
+  <scroll_step>5</scroll_step>
+  <scroll>false</scroll>
+  <start>2019-04-11 17:00:00.000</start>
+  <end>2019-05-16 11:23:20.130</end>
+  <archive_rescale>NONE</archive_rescale>
+  <foreground>
+    <red>0</red>
+    <green>0</green>
+    <blue>0</blue>
+  </foreground>
+  <background>
+    <red>255</red>
+    <green>255</green>
+    <blue>255</blue>
+  </background>
+  <title_font>
+  </title_font>
+  <label_font>
+  </label_font>
+  <scale_font>
+  </scale_font>
+  <legend_font>
+  </legend_font>
+  <axes>
+    <axis>
+      <visible>true</visible>
+      <name>Temperature (C)</name>
+      <use_axis_name>false</use_axis_name>
+      <use_trace_names>true</use_trace_names>
+      <right>false</right>
+      <color>
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+      </color>
+      <min>10.0</min>
+      <max>30.0</max>
+      <grid>true</grid>
+      <autoscale>false</autoscale>
+      <log_scale>false</log_scale>
+    </axis>
+  </axes>
+  <annotations>
+  </annotations>
+  <pvlist>
+    <pv>
+      <display_name>FNAL-AD-HALLTMP-01:RT</display_name>
+      <visible>true</visible>
+      <name>FNAL-AD-HALLTMP-01:RT</name>
+      <axis>0</axis>
+      <color>
+        <red>255</red>
+        <green>0</green>
+        <blue>0</blue>
+      </color>
+      <trace_type>AREA</trace_type>
+      <linewidth>2</linewidth>
+      <line_style>SOLID</line_style>
+      <point_type>NONE</point_type>
+      <point_size>2</point_size>
+      <waveform_index>0</waveform_index>
+      <period>5.0</period>
+      <ring_size>5000</ring_size>
+      <request>OPTIMIZED</request>
+    </pv>
+  </pvlist>
+</databrowser>

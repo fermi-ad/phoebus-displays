@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>rf_plc06_H-CMD</name>
+  <width>450</width>
+  <height>62</height>
+  <background_color>
+    <color name="Button_Background" red="210" green="210" blue="210">
+    </color>
+  </background_color>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle</name>
+    <y>20</y>
+    <width>450</width>
+    <height>3</height>
+    <line_color>
+      <color name="Grid" red="128" green="128" blue="128">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="Grid" red="128" green="128" blue="128">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Temperatures</name>
+    <text>SSR1 $(ID) control</text>
+    <x>10</x>
+    <width>167</width>
+    <height>19</height>
+    <font>
+      <font family="sans" style="BOLD" size="16.0">
+      </font>
+    </font>
+    <background_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_7</name>
+    <text>Amplifier Control:</text>
+    <y>35</y>
+    <width>250</width>
+    <font>
+      <font family="sans" style="REGULAR" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+  </widget>
+  <widget type="combo" version="2.0.0">
+    <name>Combo Box</name>
+    <pv_name>$(COMPLEX):$(SYS)_HPRF_SSA$(ID)_RFA:CMD</pv_name>
+    <x>270</x>
+    <y>35</y>
+    <width>130</width>
+    <height>22</height>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(pv_name)</pv_name>
+        <value>$(ITEMNUM)</value>
+        <description>Write PV</description>
+      </action>
+    </actions>
+    <items>
+      <item>Reset</item>
+    </items>
+  </widget>
+</display>

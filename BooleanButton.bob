@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>combined setting/readback button</name>
+  <widget type="bool_button" version="2.0.0">
+    <name>Boolean Button</name>
+    <pv_name>loc://setpoint(0)</pv_name>
+    <x>170</x>
+    <y>60</y>
+    <rules>
+      <rule name="New Rule" prop_id="background_color" out_exp="false">
+        <exp bool_exp="pvInt0!=pvInt1">
+          <value>
+            <color name="MAJOR" red="255" green="0" blue="0">
+            </color>
+          </value>
+        </exp>
+        <pv_name>loc://setpoint</pv_name>
+        <pv_name>loc://readback</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>Boolean Button_1</name>
+    <pv_name>loc://readback(0)</pv_name>
+    <x>30</x>
+    <y>130</y>
+    <width>110</width>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED</name>
+    <pv_name>loc://setpoint</pv_name>
+    <x>370</x>
+    <y>130</y>
+    <width>30</width>
+    <height>30</height>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <text>Readback</text>
+    <x>30</x>
+    <y>110</y>
+    <width>110</width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_1</name>
+    <text>Setting</text>
+    <x>170</x>
+    <y>40</y>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_2</name>
+    <text>Changes BG color while setting!=readback</text>
+    <x>180</x>
+    <y>100</y>
+    <width>210</width>
+    <height>40</height>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>Boolean Button_2</name>
+    <pv_name>loc://setpoint(0)</pv_name>
+    <x>170</x>
+    <y>180</y>
+    <width>110</width>
+    <on_color>
+      <color name="Off" red="60" green="100" blue="60">
+      </color>
+    </on_color>
+    <rules>
+      <rule name="on color" prop_id="on_color" out_exp="false">
+        <exp bool_exp="pvInt0">
+          <value>
+            <color name="On" red="0" green="255" blue="0">
+            </color>
+          </value>
+        </exp>
+        <pv_name>loc://readback</pv_name>
+      </rule>
+      <rule name="off color" prop_id="off_color" out_exp="false">
+        <exp bool_exp="pvInt0">
+          <value>
+            <color name="On" red="0" green="255" blue="0">
+            </color>
+          </value>
+        </exp>
+        <pv_name>loc://readback</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_4</name>
+    <text>Setting</text>
+    <x>170</x>
+    <y>160</y>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_5</name>
+    <text>LED follows readback, string follows setting</text>
+    <x>170</x>
+    <y>210</y>
+    <width>210</width>
+    <height>40</height>
+  </widget>
+</display>

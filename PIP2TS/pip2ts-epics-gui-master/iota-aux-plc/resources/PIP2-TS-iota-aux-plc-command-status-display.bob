@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>Aux_command_status_overview</name>
+  <width>620</width>
+  <height>427</height>
+  <background_color>
+    <color name="Button_Background" red="210" green="210" blue="210">
+    </color>
+  </background_color>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_1</name>
+    <macros>
+      <DESC>Iota aux plc connection status</DESC>
+      <PV>_Asyn:STAT.CNCT</PV>
+    </macros>
+    <file>PIP2-TS-iota-aux-plc-readback_long.bob</file>
+    <x>20</x>
+    <y>315</y>
+    <width>320</width>
+    <height>20</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_3</name>
+    <text>Iota aux plc disconnect:</text>
+    <x>15</x>
+    <y>375</y>
+    <width>205</width>
+    <horizontal_alignment>2</horizontal_alignment>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_2</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(pv_name)</pv_name>
+        <value>0</value>
+        <description>Write PV</description>
+      </action>
+    </actions>
+    <pv_name>$(COMPLEX):$(SYS)_Asyn:STAT.ENBL</pv_name>
+    <text>Disconnect</text>
+    <x>240</x>
+    <y>375</y>
+    <height>22</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_4</name>
+    <text>Iota aux plc connect:</text>
+    <x>15</x>
+    <y>345</y>
+    <width>205</width>
+    <horizontal_alignment>2</horizontal_alignment>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_3</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(pv_name)</pv_name>
+        <value>1</value>
+        <description>Write PV</description>
+      </action>
+    </actions>
+    <pv_name>$(COMPLEX):$(SYS)_Asyn:STAT.ENBL</pv_name>
+    <text>Connect</text>
+    <x>240</x>
+    <y>345</y>
+    <height>22</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle</name>
+    <y>300</y>
+    <width>350</width>
+    <height>3</height>
+    <line_color>
+      <color name="Grid" red="128" green="128" blue="128">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="Grid" red="128" green="128" blue="128">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_5</name>
+    <text>Connection status</text>
+    <x>15</x>
+    <y>280</y>
+    <width>164</width>
+    <font>
+      <font family="sans" style="BOLD" size="16.0">
+      </font>
+    </font>
+    <background_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_8</name>
+    <file>PIP2-TS-iota-aux-plc-commands.bob</file>
+    <width>350</width>
+    <height>247</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_1</name>
+    <x>370</x>
+    <y>20</y>
+    <width>250</width>
+    <height>3</height>
+    <line_color>
+      <color name="Grid" red="128" green="128" blue="128">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="Grid" red="128" green="128" blue="128">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Temperatures_1</name>
+    <text>Gas jet status</text>
+    <x>380</x>
+    <width>126</width>
+    <font>
+      <font family="sans" style="BOLD" size="16.0">
+      </font>
+    </font>
+    <background_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display</name>
+    <macros>
+      <DESC>Communication fail</DESC>
+      <N>E</N>
+      <PV>$(SYS)_GasJet:STAT</PV>
+    </macros>
+    <file>PIP2-TS-iota-aux-plc-bitOFF_ON.bob</file>
+    <x>370</x>
+    <y>65</y>
+    <width>250</width>
+    <height>22</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_2</name>
+    <macros>
+      <DESC>HB</DESC>
+      <N>D</N>
+      <PV>$(SYS)_GasJet:STAT</PV>
+    </macros>
+    <file>PIP2-TS-iota-aux-plc-bitOFF_ON.bob</file>
+    <x>370</x>
+    <y>95</y>
+    <width>250</width>
+    <height>22</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_3</name>
+    <macros>
+      <DESC>Overflow</DESC>
+      <N>C</N>
+      <PV>$(SYS)_GasJet:STAT</PV>
+    </macros>
+    <file>PIP2-TS-iota-aux-plc-bitOFF_ON.bob</file>
+    <x>370</x>
+    <y>125</y>
+    <width>250</width>
+    <height>22</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_4</name>
+    <macros>
+      <DESC>Paused</DESC>
+      <N>A</N>
+      <PV>$(SYS)_GasJet:STAT</PV>
+    </macros>
+    <file>PIP2-TS-iota-aux-plc-bitOK_BAD.bob</file>
+    <x>370</x>
+    <y>185</y>
+    <width>250</width>
+    <height>22</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_5</name>
+    <macros>
+      <DESC>TCP</DESC>
+      <N>9</N>
+      <PV>$(SYS)_GasJet:STAT</PV>
+    </macros>
+    <file>PIP2-TS-iota-aux-plc-bit-text.bob</file>
+    <x>370</x>
+    <y>215</y>
+    <width>250</width>
+    <height>22</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_15</name>
+    <macros>
+      <DESC>Initialized</DESC>
+      <N>B</N>
+      <PV>$(SYS)_GasJet:STAT</PV>
+    </macros>
+    <file>PIP2-TS-iota-aux-plc-bitOFF_ON.bob</file>
+    <x>370</x>
+    <y>155</y>
+    <width>250</width>
+    <height>22</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_16</name>
+    <macros>
+      <DESC>Communication enabled</DESC>
+      <N>8</N>
+      <PV>$(SYS)_GasJet:STAT</PV>
+    </macros>
+    <file>PIP2-TS-iota-aux-plc-bitOK_BAD.bob</file>
+    <x>370</x>
+    <y>245</y>
+    <width>250</width>
+    <height>22</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_2</name>
+    <x>370</x>
+    <y>300</y>
+    <width>250</width>
+    <height>3</height>
+    <line_color>
+      <color name="Grid" red="128" green="128" blue="128">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="Grid" red="128" green="128" blue="128">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_6</name>
+    <text>SyncLite status</text>
+    <x>380</x>
+    <y>280</y>
+    <width>140</width>
+    <font>
+      <font family="sans" style="BOLD" size="16.0">
+      </font>
+    </font>
+    <background_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_26</name>
+    <macros>
+      <DESC>Comm status</DESC>
+      <N>A</N>
+      <PV>$(SYS)_SyncLite:STAT</PV>
+    </macros>
+    <file>PIP2-TS-iota-aux-plc-bit-text.bob</file>
+    <x>370</x>
+    <y>345</y>
+    <width>250</width>
+    <height>22</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_27</name>
+    <macros>
+      <DESC>Comm heartbeat</DESC>
+      <N>9</N>
+      <PV>$(SYS)_SyncLite:STAT</PV>
+    </macros>
+    <file>PIP2-TS-iota-aux-plc-bit-text.bob</file>
+    <x>370</x>
+    <y>375</y>
+    <width>250</width>
+    <height>22</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_28</name>
+    <macros>
+      <DESC>RS232 communication</DESC>
+      <N>8</N>
+      <PV>$(SYS)_SyncLite:STAT</PV>
+    </macros>
+    <file>PIP2-TS-iota-aux-plc-bitTRIP_OK.bob</file>
+    <x>370</x>
+    <y>405</y>
+    <width>250</width>
+    <height>22</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_9</name>
+    <macros>
+      <DESC>Sync Lite DDG</DESC>
+      <PV>_SyncLite:DDG_CMD</PV>
+    </macros>
+    <file>PIP2-TS-iota-aux-plc-command_short.bob</file>
+    <x>370</x>
+    <y>315</y>
+    <width>250</width>
+    <height>22</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_6</name>
+    <macros>
+      <DESC>Gas jet command</DESC>
+      <PV>_GasJet2:CMD</PV>
+    </macros>
+    <file>PIP2-TS-iota-aux-plc-command_short.bob</file>
+    <x>370</x>
+    <y>35</y>
+    <width>250</width>
+    <height>22</height>
+    <resize>2</resize>
+  </widget>
+</display>

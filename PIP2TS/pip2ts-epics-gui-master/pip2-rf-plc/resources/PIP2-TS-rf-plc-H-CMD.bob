@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>rf_plc_H-CMD</name>
+  <width>280</width>
+  <height>82</height>
+  <background_color>
+    <color name="Button_Background" red="210" green="210" blue="210">
+    </color>
+  </background_color>
+  <widget type="label" version="2.0.0">
+    <name>Label_5</name>
+    <text>Ethernet/Parallel:</text>
+    <width>140</width>
+    <font>
+      <font family="sans" style="REGULAR" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_2</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(pv_name)</pv_name>
+        <value>0</value>
+        <description>Write PV</description>
+      </action>
+    </actions>
+    <pv_name>$(COMPLEX):$(SYS)$(ID)_RFA_Ethernet:CMD</pv_name>
+    <text>Parallel</text>
+    <x>150</x>
+    <width>60</width>
+    <height>22</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_3</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(pv_name)</pv_name>
+        <value>1</value>
+        <description>Write PV</description>
+      </action>
+    </actions>
+    <pv_name>$(COMPLEX):$(SYS)$(ID)_RFA_Ethernet:CMD</pv_name>
+    <text>Ethernet</text>
+    <x>220</x>
+    <y>1</y>
+    <width>60</width>
+    <height>22</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_6</name>
+    <text>Parallel RF enable:</text>
+    <y>30</y>
+    <width>140</width>
+    <font>
+      <font family="sans" style="REGULAR" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_6</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(pv_name)</pv_name>
+        <value>0</value>
+        <description>Write PV</description>
+      </action>
+    </actions>
+    <pv_name>$(COMPLEX):$(SYS)$(ID)_RFA_RF:CMD</pv_name>
+    <text>RF On</text>
+    <x>150</x>
+    <y>30</y>
+    <width>60</width>
+    <height>22</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_7</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(pv_name)</pv_name>
+        <value>1</value>
+        <description>Write PV</description>
+      </action>
+    </actions>
+    <pv_name>$(COMPLEX):$(SYS)$(ID)_RFA_RF:CMD</pv_name>
+    <text>RF Off</text>
+    <x>220</x>
+    <y>29</y>
+    <width>60</width>
+    <height>22</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_7</name>
+    <text>Controls:</text>
+    <y>60</y>
+    <width>140</width>
+    <font>
+      <font family="sans" style="REGULAR" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+  </widget>
+  <widget type="combo" version="2.0.0">
+    <name>Combo Box</name>
+    <pv_name>$(COMPLEX):$(SYS)$(ID)_RFA_Amp:CMD</pv_name>
+    <x>150</x>
+    <y>60</y>
+    <width>130</width>
+    <height>22</height>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(pv_name)</pv_name>
+        <value>$(ITEMNUM)</value>
+        <description>Write PV</description>
+      </action>
+    </actions>
+    <items>
+      <item>Reset</item>
+      <item>Ac On</item>
+      <item>Ac Off</item>
+      <item>DC On</item>
+      <item>DC Off</item>
+    </items>
+  </widget>
+</display>

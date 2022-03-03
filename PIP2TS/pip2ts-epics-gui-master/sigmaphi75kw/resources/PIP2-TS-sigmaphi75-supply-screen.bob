@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>SIGMA_supply_display</name>
+  <width>250</width>
+  <height>507</height>
+  <background_color>
+    <color name="Button_Background" red="210" green="210" blue="210">
+    </color>
+  </background_color>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_1</name>
+    <y>20</y>
+    <width>250</width>
+    <height>3</height>
+    <line_color>
+      <color name="Grid" red="128" green="128" blue="128">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="Grid" red="128" green="128" blue="128">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Temperatures_1</name>
+    <text>Supply $(ID) Status</text>
+    <x>10</x>
+    <width>177</width>
+    <height>19</height>
+    <font>
+      <font family="sans" style="BOLD" size="16.0">
+      </font>
+    </font>
+    <background_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_1</name>
+    <pv_name>$(COMPLEX):$(SYS)_Supply$(ID):STAT3</pv_name>
+    <x>170</x>
+    <y>485</y>
+    <width>70</width>
+    <height>22</height>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_35</name>
+    <macros>
+      <HEADING>Supply $(ID) status</HEADING>
+      <LED1>0</LED1>
+      <LED2>3</LED2>
+      <LED3>6</LED3>
+      <LED4>7</LED4>
+      <LED5>E</LED5>
+      <LED6>F</LED6>
+      <N1>1</N1>
+      <PV>$(SYS)_Supply$(ID):</PV>
+      <STATUS>1</STATUS>
+    </macros>
+    <file>PIP2-TS-sigmaphi75-6_bit.bob</file>
+    <y>60</y>
+    <width>250</width>
+    <height>147</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_36</name>
+    <macros>
+      <HEADING>Supply $(ID) status</HEADING>
+      <LED1>0</LED1>
+      <LED10>A</LED10>
+      <LED11>D</LED11>
+      <LED2>1</LED2>
+      <LED3>2</LED3>
+      <LED4>3</LED4>
+      <LED5>4</LED5>
+      <LED6>6</LED6>
+      <LED7>7</LED7>
+      <LED8>8</LED8>
+      <LED9>9</LED9>
+      <N1>2</N1>
+      <PV>$(SYS)_Supply$(ID):</PV>
+      <STATUS>2</STATUS>
+    </macros>
+    <file>PIP2-TS-sigmaphi75-11_bit.bob</file>
+    <y>210</y>
+    <width>250</width>
+    <height>272</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_1</name>
+    <text>Status 3:</text>
+    <y>485</y>
+    <width>160</width>
+    <font>
+      <font family="sans" style="REGULAR" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED</name>
+    <pv_name>$(COMPLEX):$(SYS)_Supply$(ID):STAT0</pv_name>
+    <x>220</x>
+    <y>35</y>
+    <off_color>
+      <color red="0" green="255" blue="0">
+      </color>
+    </off_color>
+    <on_color>
+      <color red="255" green="0" blue="0">
+      </color>
+    </on_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Text Update</name>
+    <text>I Primary:</text>
+    <y>35</y>
+    <width>210</width>
+    <font>
+      <font family="sans" style="REGULAR" size="14.0">
+      </font>
+    </font>
+    <background_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>2</horizontal_alignment>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+</display>

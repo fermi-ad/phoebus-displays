@@ -1,0 +1,129 @@
+#h 175
+#x 581
+4 0 1
+beginScreenProperties
+major 4
+minor 0
+release 1
+x 1716
+y 292
+w 1020
+h 660
+font "helvetica-medium-r-12.0"
+ctlFont "helvetica-medium-r-12.0"
+btnFont "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 4
+textColor index 14
+ctlFgColor1 index 16
+ctlFgColor2 index 14
+ctlBgColor1 index 4
+ctlBgColor2 index 12
+topShadowColor index 1
+botShadowColor index 11
+showGrid
+snapToGrid
+gridSize 4
+endScreenProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 4
+y 44
+w 992
+h 604
+fgColor index 14
+bgColor index 4
+topShadowColor index 4
+botShadowColor index 12
+displaySource "menu"
+filePv "LOC\\$(!W)sigPV=e:0,Cavity,Forward,Reverse,Detune,DAC,Drive (Loopback)"
+sizeOfs 5
+numDsps 6
+displayFileName {
+  0 "rf_srf_wf_cavity$(FILE)signal"
+  1 "rf_srf_wf_cavity$(FILE)signal"
+  2 "rf_srf_wf_cavity$(FILE)signal"
+  3 "rf_srf_wf_cavity$(FILE)signal_detune"
+  4 "rf_srf_wf_cavity$(FILE)signal"
+  5 "rf_srf_wf_cavity$(FILE)signal"
+}
+symbols {
+  0 "C=$(C),SIG=CAV,SIGNAL=Cavity Probe,EGU=MV,SCALE=signal"
+  1 "C=$(C),SIG=FWD,SIGNAL=Forward,EGU=sqrt(W),SCALE=signal"
+  2 "C=$(C),SIG=REV,SIGNAL=Reverse,EGU=sqrt(W),SCALE=signal"
+  3 "C=$(C),SIG=DF,SIGNAL=Detune,EGU=Hz"
+  4 "C=$(C),SIG=DAC,SIGNAL=DAC,EGU= ,SCALE=signal_autoscale"
+  5 "C=$(C),SIG=DRV,SIGNAL=Drive (Loopback),EGU=sqrt(W),SCALE=signal_autoscale"
+}
+noScroll
+endObjectProperties
+
+# (Choice Button)
+object activeChoiceButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 80
+y 4
+w 732
+h 20
+fgColor index 14
+fgAlarm
+bgColor index 4
+selectColor index 3
+inconsistentColor index 4
+topShadowColor index 1
+botShadowColor index 14
+controlPv "LOC\\$(!W)sigPV=e:0,Cavity,Forward,Reverse,Detune,DAC,Drive (Loopback)"
+font "helvetica-medium-r-12.0"
+orientation "horizontal"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 20
+y 4
+w 44
+h 20
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 4
+useDisplayBg
+value {
+  "Signal"
+}
+endObjectProperties
+
+# (Shell Command)
+object shellCmdClass
+beginObjectProperties
+major 4
+minor 3
+release 0
+x 836
+y 4
+w 100
+h 24
+fgColor index 14
+bgColor index 4
+topShadowColor index 1
+botShadowColor index 11
+font "helvetica-medium-r-12.0"
+buttonLabel "Cav/Fwd/Rev..."
+numCmds 1
+command {
+  0 "edm -x -m \"CM=$(CM),C=$(C),RFS=$(RFS)\" rf_srf_wf_cavity$(FILE)overview.edl &"
+}
+endObjectProperties
+

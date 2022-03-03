@@ -1,0 +1,2697 @@
+4 0 1
+beginScreenProperties
+major 4
+minor 0
+release 1
+x 119
+y 64
+w 640
+h 380
+font "helvetica-medium-r-12.0"
+ctlFont "helvetica-medium-r-12.0"
+btnFont "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 5
+textColor index 14
+ctlFgColor1 index 14
+ctlFgColor2 index 14
+ctlBgColor1 index 3
+ctlBgColor2 index 5
+topShadowColor index 1
+botShadowColor index 11
+title "Quench Interlock - $(CM)$(C)0"
+showGrid
+snapToGrid
+gridSize 4
+endScreenProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 444
+y 324
+w 168
+h 16
+controlPv "SIOC:SYS0:AL00:TOD"
+precision 1
+fgColor index 14
+bgColor index 12
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 24
+y 324
+w 120
+h 16
+controlPv "SIOC:SYS0:AL00:MODE"
+precision 1
+fgColor index 14
+bgColor index 12
+font "helvetica-medium-r-12.0"
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 0
+y 0
+w 1244
+h 40
+lineColor index 63
+fill
+fillColor index 63
+lineWidth 0
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 8
+y 0
+w 280
+h 40
+font "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 53
+useDisplayBg
+value {
+  "SRF Quench Interlock"
+  "Cryomodule $(CM)00 Cavity $(C)"
+}
+endObjectProperties
+
+# (Exit Button)
+object activeExitButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 532
+y 8
+w 48
+h 24
+fgColor index 14
+bgColor index 3
+topShadowColor index 1
+botShadowColor index 11
+label "Exit"
+font "helvetica-medium-r-12.0"
+3d
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 676
+y 328
+w 376
+h 188
+
+beginGroup
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 684
+y 340
+w 356
+h 172
+lineColor index 3
+fill
+fillColor index 3
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 676
+y 416
+w 164
+h 84
+
+beginGroup
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 676
+y 416
+w 72
+h 24
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Maximum "
+  "resets "
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 752
+y 416
+w 68
+h 20
+controlPv "$(CM)$(C)0:QUENCHR_MAX"
+format "decimal"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 16
+bgColor index 12
+precision 0
+nullColor index 14
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 764
+y 480
+w 44
+h 20
+fgColor index 14
+onColor index 4
+offColor index 4
+topShadowColor index 1
+botShadowColor index 11
+controlPv "$(CM)$(C)0:QUENCHR_CNTCLR"
+pressValue "0"
+onLabel "Clear"
+offLabel "Clear"
+3d
+useEnumNumeric
+font "helvetica-medium-r-12.0"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 752
+y 448
+w 68
+h 20
+controlPv "$(CM)$(C)0:QUENCHR_CNT"
+format "decimal"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 16
+fgAlarm
+bgColor index 12
+limitsFromDb
+precision 0
+nullColor index 14
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 676
+y 448
+w 72
+h 24
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Counter "
+}
+endObjectProperties
+
+endGroup
+
+visPv "$(CM)$(C)0:QUENCHR_MAXV"
+visMin "1"
+visMax "2"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 676
+y 384
+w 144
+h 24
+
+beginGroup
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 676
+y 384
+w 72
+h 24
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Unlimited "
+  "resets? "
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 752
+y 384
+w 68
+h 20
+controlPv "$(CM)$(C)0:QUENCHR_UNLIM"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 16
+bgColor index 12
+precision 2
+nullColor index 14
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+endGroup
+
+visPv "$(CM)$(C)0:QUENCHR_AUTOV"
+visMin "1"
+visMax "2"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 684
+y 328
+w 156
+h 20
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 3
+value {
+  "Quench Auto-Reset"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 748
+y 352
+w 116
+h 24
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 4
+useDisplayBg
+value {
+  "Auto-reset faults?"
+}
+endObjectProperties
+
+# (Menu Button)
+object activeMenuButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 860
+y 352
+w 72
+h 20
+fgColor index 14
+bgColor index 3
+inconsistentColor index 5
+topShadowColor index 1
+botShadowColor index 11
+controlPv "$(CM)$(C)0:QUENCHR_AUTO"
+font "helvetica-medium-r-12.0"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 856
+y 476
+w 84
+h 24
+
+beginGroup
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 912
+y 476
+w 28
+h 20
+font "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "MV"
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 856
+y 476
+w 52
+h 20
+controlPv "$(CM)$(C)0:QUENCHR_AABS"
+format "decimal"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 16
+bgColor index 12
+limitsFromDb
+precision 0
+nullColor index 14
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+endGroup
+
+visPv "$(CM)$(C)0:QUENCHR_AABSV"
+visMin "1"
+visMax "2"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 856
+y 476
+w 84
+h 24
+
+beginGroup
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 912
+y 476
+w 28
+h 20
+font "helvetica-medium-i-12.0"
+fgColor index 12
+bgColor index 0
+useDisplayBg
+value {
+  "MV"
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 856
+y 476
+w 52
+h 20
+controlPv "$(CM)$(C)0:QUENCHR_AABS"
+format "decimal"
+font "helvetica-medium-i-12.0"
+fontAlign "center"
+fgColor index 2
+bgColor index 7
+limitsFromDb
+precision 0
+nullColor index 14
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+endGroup
+
+visPv "$(CM)$(C)0:QUENCHR_AABSV"
+visMin "0"
+visMax "1"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 872
+y 448
+w 108
+h 24
+font "helvetica-medium-i-12.0"
+fontAlign "center"
+fgColor index 12
+bgColor index 0
+useDisplayBg
+visPv "$(CM)$(C)0:QUENCHR_ATYPEV"
+visMin "0"
+visMax "1"
+value {
+  "Recovery ADES"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 872
+y 448
+w 108
+h 24
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+visPv "$(CM)$(C)0:QUENCHR_ATYPEV"
+visMin "1"
+visMax "2"
+value {
+  "Recovery ADES"
+}
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 676
+y 416
+w 164
+h 84
+
+beginGroup
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 676
+y 416
+w 72
+h 24
+font "helvetica-medium-i-12.0"
+fontAlign "right"
+fgColor index 12
+bgColor index 0
+useDisplayBg
+value {
+  "Maximum "
+  "resets "
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 752
+y 416
+w 68
+h 20
+controlPv "$(CM)$(C)0:QUENCHR_MAX"
+format "decimal"
+font "helvetica-medium-i-12.0"
+fontAlign "center"
+fgColor index 2
+bgColor index 7
+precision 0
+nullColor index 14
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 764
+y 480
+w 44
+h 20
+fgColor index 2
+onColor index 7
+offColor index 7
+topShadowColor index 1
+botShadowColor index 9
+controlPv "$(CM)$(C)0:QUENCHR_CNTCLR"
+pressValue "0"
+onLabel "Clear"
+offLabel "Clear"
+3d
+useEnumNumeric
+font "helvetica-medium-i-12.0"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 752
+y 448
+w 68
+h 20
+controlPv "$(CM)$(C)0:QUENCHR_CNT"
+format "decimal"
+font "helvetica-medium-i-12.0"
+fontAlign "center"
+fgColor index 2
+bgColor index 7
+limitsFromDb
+precision 0
+nullColor index 14
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 676
+y 448
+w 72
+h 24
+font "helvetica-medium-i-12.0"
+fontAlign "right"
+fgColor index 12
+bgColor index 0
+useDisplayBg
+value {
+  "Counter "
+}
+endObjectProperties
+
+endGroup
+
+visPv "$(CM)$(C)0:QUENCHR_MAXV"
+visMin "0"
+visMax "1"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 944
+y 464
+w 108
+h 52
+
+beginGroup
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 944
+y 476
+w 52
+h 20
+controlPv "$(CM)$(C)0:QUENCHR_AREL"
+format "decimal"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 16
+bgColor index 12
+limitsFromDb
+precision 0
+nullColor index 14
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 1000
+y 464
+w 52
+h 52
+font "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "% of"
+  "current"
+  "setting"
+}
+endObjectProperties
+
+endGroup
+
+visPv "$(CM)$(C)0:QUENCHR_ARELV"
+visMin "1"
+visMax "2"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 944
+y 464
+w 108
+h 52
+
+beginGroup
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 944
+y 476
+w 52
+h 20
+controlPv "$(CM)$(C)0:QUENCHR_AREL"
+format "decimal"
+font "helvetica-medium-i-12.0"
+fontAlign "center"
+fgColor index 2
+bgColor index 7
+limitsFromDb
+precision 0
+nullColor index 14
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 1000
+y 464
+w 52
+h 52
+font "helvetica-medium-i-12.0"
+fgColor index 12
+bgColor index 0
+useDisplayBg
+value {
+  "% of"
+  "current"
+  "setting"
+}
+endObjectProperties
+
+endGroup
+
+visPv "$(CM)$(C)0:QUENCHR_ARELV"
+visMin "0"
+visMax "1"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 852
+y 384
+w 144
+h 24
+
+beginGroup
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 852
+y 384
+w 72
+h 24
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 4
+useDisplayBg
+value {
+  "Same "
+  "amplitude? "
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 928
+y 384
+w 68
+h 20
+controlPv "$(CM)$(C)0:QUENCHR_AMODE"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 16
+bgColor index 12
+precision 2
+nullColor index 14
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+endGroup
+
+visPv "$(CM)$(C)0:QUENCHR_AUTOV"
+visMin "1"
+visMax "2"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 852
+y 416
+w 144
+h 24
+
+beginGroup
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 852
+y 416
+w 72
+h 24
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Specify "
+  "amplitude "
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 928
+y 416
+w 68
+h 20
+controlPv "$(CM)$(C)0:QUENCHR_ATYPE"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 16
+bgColor index 12
+precision 2
+nullColor index 14
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+endGroup
+
+visPv "$(CM)$(C)0:QUENCHR_ATYPEV"
+visMin "1"
+visMax "2"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 852
+y 416
+w 144
+h 24
+
+beginGroup
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 852
+y 416
+w 72
+h 24
+font "helvetica-medium-i-12.0"
+fontAlign "right"
+fgColor index 12
+bgColor index 0
+useDisplayBg
+value {
+  "Specify "
+  "amplitude "
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 928
+y 416
+w 68
+h 20
+controlPv "$(CM)$(C)0:QUENCHR_ATYPE"
+font "helvetica-medium-i-12.0"
+fontAlign "center"
+fgColor index 2
+bgColor index 7
+precision 2
+nullColor index 14
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+endGroup
+
+visPv "$(CM)$(C)0:QUENCHR_ATYPEV"
+visMin "0"
+visMax "1"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 848
+y 384
+w 148
+h 24
+
+beginGroup
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 848
+y 384
+w 72
+h 24
+font "helvetica-medium-i-12.0"
+fontAlign "right"
+fgColor index 12
+bgColor index 4
+useDisplayBg
+value {
+  "Same "
+  "amplitude? "
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 928
+y 384
+w 68
+h 20
+controlPv "$(CM)$(C)0:QUENCHR_AMODE"
+font "helvetica-medium-i-12.0"
+fontAlign "center"
+fgColor index 2
+bgColor index 7
+precision 2
+nullColor index 14
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+endGroup
+
+visPv "$(CM)$(C)0:QUENCHR_AUTOV"
+visMin "0"
+visMax "1"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 676
+y 384
+w 144
+h 24
+
+beginGroup
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 676
+y 384
+w 72
+h 24
+font "helvetica-medium-i-12.0"
+fontAlign "right"
+fgColor index 12
+bgColor index 0
+useDisplayBg
+value {
+  "Unlimited "
+  "resets? "
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 752
+y 384
+w 68
+h 20
+controlPv "$(CM)$(C)0:QUENCHR_UNLIM"
+font "helvetica-medium-i-12.0"
+fontAlign "center"
+fgColor index 2
+bgColor index 7
+precision 2
+nullColor index 14
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+endGroup
+
+visPv "$(CM)$(C)0:QUENCHR_AUTOV"
+visMin "0"
+visMax "1"
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 24
+y 64
+w 592
+h 252
+lineColor index 3
+fill
+fillColor index 3
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 24
+y 52
+w 112
+h 24
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 3
+value {
+  "Formula"
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 204
+y 108
+w 56
+h 24
+controlPv "$(CM)$(C)0:CONST_QUENCH_REV_RBV"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 5
+precision 3
+nullColor index 14
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 80
+y 108
+w 56
+h 24
+controlPv "$(CM)$(C)0:CONST_QUENCH_FWD_RBV"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 5
+precision 3
+nullColor index 14
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 332
+y 108
+w 56
+h 24
+controlPv "$(CM)$(C)0:CONST_QUENCH_CAV_RBV"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 5
+precision 3
+nullColor index 14
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 516
+y 108
+w 56
+h 24
+controlPv "$(CM)$(C)0:CONST_QUENCH_THRESH_RBV"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 5
+precision 3
+nullColor index 14
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 28
+y 76
+w 68
+h 24
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 3
+value {
+  "Trip if:"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 268
+y 108
+w 56
+h 24
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 3
+value {
+  "* rev^2 - "
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 144
+y 108
+w 56
+h 24
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 3
+value {
+  "* fwd^2 - "
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 396
+y 108
+w 112
+h 24
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 3
+value {
+  "* (dcav/dt)^2   ]   > "
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 52
+y 108
+w 28
+h 24
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 3
+value {
+  "[ "
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 412
+y 176
+w 48
+h 24
+controlPv "$(CM)$(C)0:CONST_QUENCH_FSW.EGU"
+format "exponential"
+font "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 12
+useDisplayBg
+precision 3
+nullColor index 14
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 324
+y 176
+w 84
+h 24
+controlPv "$(CM)$(C)0:CONST_QUENCH_FSW"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 3
+editable
+motifWidget
+precision 1
+nullColor index 14
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 232
+y 176
+w 84
+h 24
+controlPv "$(CM)$(C)0:CONST_QUENCH_FSW"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+fgAlarm
+bgColor index 5
+precision 1
+nullColor index 14
+useHexPrefix
+useAlarmBorder
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 136
+y 176
+w 88
+h 24
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Requested"
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 232
+y 208
+w 84
+h 24
+controlPv "$(CM)$(C)0:CONST_QUENCH_CALC.VALC"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+fgAlarm
+bgColor index 5
+precision 1
+nullColor index 14
+colorPv "$(CM)$(C)0:CONST_QUENCH_CALC.VAL"
+useHexPrefix
+useAlarmBorder
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 136
+y 208
+w 88
+h 24
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "In-use"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 228
+y 148
+w 192
+h 24
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Full-scale value used to calculate"
+  "quench detection parameters"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 324
+y 208
+w 188
+h 24
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 35
+bgColor index 5
+visPv "$(CM)$(C)0:CONST_QUENCH_CALC.VALB"
+visMin "1"
+visMax "2"
+value {
+  "Requested value overridden"
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 232
+y 264
+w 84
+h 24
+controlPv "$(CM)$(C)0:QUENCH_THRESH"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+fgAlarm
+bgColor index 5
+precision 1
+nullColor index 14
+useHexPrefix
+showUnits
+useAlarmBorder
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 136
+y 264
+w 88
+h 24
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Quench"
+  "Threshold"
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 412
+y 264
+w 48
+h 24
+controlPv "$(CM)$(C)0:QUENCH_THRESH.EGU"
+format "exponential"
+font "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 12
+useDisplayBg
+precision 3
+nullColor index 14
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 324
+y 264
+w 84
+h 24
+controlPv "$(CM)$(C)0:QUENCH_THRESH"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 3
+editable
+motifWidget
+precision 1
+nullColor index 14
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 24
+y 516
+w 592
+h 292
+
+beginGroup
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 24
+y 528
+w 592
+h 280
+lineColor index 3
+fill
+fillColor index 3
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 24
+y 516
+w 172
+h 24
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 3
+value {
+  "Configure Auto-Reset"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 204
+y 560
+w 116
+h 24
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 4
+useDisplayBg
+value {
+  "Auto-reset faults?"
+}
+endObjectProperties
+
+# (Menu Button)
+object activeMenuButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 316
+y 560
+w 72
+h 24
+fgColor index 14
+bgColor index 3
+inconsistentColor index 5
+topShadowColor index 1
+botShadowColor index 11
+controlPv "$(CM)$(C)0:QUENCHR_AUTO"
+font "helvetica-medium-r-12.0"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 84
+y 620
+w 160
+h 24
+
+beginGroup
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 84
+y 620
+w 72
+h 24
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Unlimited "
+  "resets? "
+}
+endObjectProperties
+
+# (Menu Button)
+object activeMenuButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 160
+y 620
+w 84
+h 24
+fgColor index 14
+bgColor index 3
+inconsistentColor index 5
+topShadowColor index 1
+botShadowColor index 11
+controlPv "$(CM)$(C)0:QUENCHR_UNLIM"
+font "helvetica-medium-r-12.0"
+endObjectProperties
+
+endGroup
+
+visPv "$(CM)$(C)0:QUENCHR_AUTOV"
+visMin "1"
+visMax "2"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 84
+y 620
+w 160
+h 24
+
+beginGroup
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 84
+y 620
+w 72
+h 24
+font "helvetica-medium-i-12.0"
+fontAlign "right"
+fgColor index 12
+bgColor index 0
+useDisplayBg
+value {
+  "Unlimited "
+  "resets? "
+}
+endObjectProperties
+
+# (Menu Button)
+object activeMenuButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 160
+y 620
+w 84
+h 24
+fgColor index 2
+bgColor index 7
+inconsistentColor index 5
+topShadowColor index 1
+botShadowColor index 9
+controlPv "$(CM)$(C)0:QUENCHR_UNLIM"
+font "helvetica-medium-i-12.0"
+endObjectProperties
+
+endGroup
+
+visPv "$(CM)$(C)0:QUENCHR_AUTOV"
+visMin "0"
+visMax "1"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 84
+y 668
+w 212
+h 72
+
+beginGroup
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 84
+y 668
+w 72
+h 24
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Maximum "
+  "resets "
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 160
+y 668
+w 84
+h 24
+controlPv "$(CM)$(C)0:QUENCHR_MAX"
+format "decimal"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 3
+editable
+motifWidget
+precision 0
+nullColor index 14
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 252
+y 716
+w 44
+h 24
+fgColor index 14
+onColor index 4
+offColor index 4
+topShadowColor index 1
+botShadowColor index 11
+controlPv "$(CM)$(C)0:QUENCHR_CNTCLR"
+pressValue "0"
+onLabel "Clear"
+offLabel "Clear"
+3d
+useEnumNumeric
+font "helvetica-medium-r-12.0"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 160
+y 716
+w 84
+h 24
+controlPv "$(CM)$(C)0:QUENCHR_CNT"
+format "decimal"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 16
+fgAlarm
+bgColor index 12
+limitsFromDb
+precision 0
+nullColor index 14
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 84
+y 716
+w 72
+h 24
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Counter "
+}
+endObjectProperties
+
+endGroup
+
+visPv "$(CM)$(C)0:QUENCHR_MAXV"
+visMin "1"
+visMax "2"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 84
+y 668
+w 212
+h 72
+
+beginGroup
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 84
+y 668
+w 72
+h 24
+font "helvetica-medium-i-12.0"
+fontAlign "right"
+fgColor index 12
+bgColor index 0
+useDisplayBg
+value {
+  "Maximum "
+  "resets "
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 160
+y 668
+w 84
+h 24
+controlPv "$(CM)$(C)0:QUENCHR_MAX"
+format "decimal"
+font "helvetica-medium-i-12.0"
+fontAlign "center"
+fgColor index 2
+bgColor index 7
+editable
+motifWidget
+precision 0
+nullColor index 14
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 252
+y 716
+w 44
+h 24
+fgColor index 2
+onColor index 7
+offColor index 7
+topShadowColor index 1
+botShadowColor index 9
+controlPv "$(CM)$(C)0:QUENCHR_CNTCLR"
+pressValue "0"
+onLabel "Clear"
+offLabel "Clear"
+3d
+useEnumNumeric
+font "helvetica-medium-i-12.0"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 160
+y 716
+w 84
+h 24
+controlPv "$(CM)$(C)0:QUENCHR_CNT"
+format "decimal"
+font "helvetica-medium-i-12.0"
+fontAlign "center"
+fgColor index 2
+bgColor index 7
+limitsFromDb
+precision 0
+nullColor index 14
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 84
+y 716
+w 72
+h 24
+font "helvetica-medium-i-12.0"
+fontAlign "right"
+fgColor index 12
+bgColor index 0
+useDisplayBg
+value {
+  "Counter "
+}
+endObjectProperties
+
+endGroup
+
+visPv "$(CM)$(C)0:QUENCHR_MAXV"
+visMin "0"
+visMax "1"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 328
+y 620
+w 160
+h 24
+
+beginGroup
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 328
+y 620
+w 72
+h 24
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 4
+useDisplayBg
+value {
+  "Same "
+  "amplitude? "
+}
+endObjectProperties
+
+# (Menu Button)
+object activeMenuButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 404
+y 620
+w 84
+h 24
+fgColor index 14
+bgColor index 3
+inconsistentColor index 5
+topShadowColor index 1
+botShadowColor index 11
+controlPv "$(CM)$(C)0:QUENCHR_AMODE"
+font "helvetica-medium-r-12.0"
+endObjectProperties
+
+endGroup
+
+visPv "$(CM)$(C)0:QUENCHR_AUTOV"
+visMin "1"
+visMax "2"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 328
+y 620
+w 160
+h 24
+
+beginGroup
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 328
+y 620
+w 72
+h 24
+font "helvetica-medium-i-12.0"
+fontAlign "right"
+fgColor index 12
+bgColor index 4
+useDisplayBg
+value {
+  "Same "
+  "amplitude? "
+}
+endObjectProperties
+
+# (Menu Button)
+object activeMenuButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 404
+y 620
+w 84
+h 24
+fgColor index 2
+bgColor index 7
+inconsistentColor index 5
+topShadowColor index 1
+botShadowColor index 9
+controlPv "$(CM)$(C)0:QUENCHR_AMODE"
+font "helvetica-medium-i-12.0"
+endObjectProperties
+
+endGroup
+
+visPv "$(CM)$(C)0:QUENCHR_AUTOV"
+visMin "0"
+visMax "1"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 328
+y 668
+w 160
+h 68
+
+beginGroup
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 328
+y 668
+w 72
+h 24
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Specify "
+  "amplitude "
+}
+endObjectProperties
+
+# (Menu Button)
+object activeMenuButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 404
+y 668
+w 84
+h 24
+fgColor index 14
+bgColor index 3
+inconsistentColor index 5
+topShadowColor index 1
+botShadowColor index 11
+controlPv "$(CM)$(C)0:QUENCHR_ATYPE"
+font "helvetica-medium-r-12.0"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 364
+y 712
+w 108
+h 24
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Recovery ADES"
+}
+endObjectProperties
+
+endGroup
+
+visPv "$(CM)$(C)0:QUENCHR_ATYPEV"
+visMin "1"
+visMax "2"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 328
+y 668
+w 160
+h 68
+
+beginGroup
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 328
+y 668
+w 72
+h 24
+font "helvetica-medium-i-12.0"
+fontAlign "right"
+fgColor index 12
+bgColor index 0
+useDisplayBg
+value {
+  "Specify "
+  "amplitude "
+}
+endObjectProperties
+
+# (Menu Button)
+object activeMenuButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 404
+y 668
+w 84
+h 24
+fgColor index 2
+bgColor index 7
+inconsistentColor index 5
+topShadowColor index 1
+botShadowColor index 9
+controlPv "$(CM)$(C)0:QUENCHR_ATYPE"
+font "helvetica-medium-i-12.0"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 364
+y 712
+w 108
+h 24
+font "helvetica-medium-i-12.0"
+fontAlign "right"
+fgColor index 12
+bgColor index 0
+useDisplayBg
+value {
+  "Recovery ADES"
+}
+endObjectProperties
+
+endGroup
+
+visPv "$(CM)$(C)0:QUENCHR_ATYPEV"
+visMin "0"
+visMax "1"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 344
+y 744
+w 84
+h 24
+
+beginGroup
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 400
+y 744
+w 28
+h 24
+font "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "MV"
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 344
+y 744
+w 52
+h 24
+controlPv "$(CM)$(C)0:QUENCHR_AABS"
+format "decimal"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 3
+editable
+motifWidget
+limitsFromDb
+precision 0
+nullColor index 14
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+endGroup
+
+visPv "$(CM)$(C)0:QUENCHR_AABSV"
+visMin "1"
+visMax "2"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 344
+y 744
+w 84
+h 24
+
+beginGroup
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 400
+y 744
+w 28
+h 24
+font "helvetica-medium-i-12.0"
+fgColor index 12
+bgColor index 0
+useDisplayBg
+value {
+  "MV"
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 344
+y 744
+w 52
+h 24
+controlPv "$(CM)$(C)0:QUENCHR_AABS"
+format "decimal"
+font "helvetica-medium-i-12.0"
+fontAlign "center"
+fgColor index 2
+bgColor index 7
+editable
+motifWidget
+limitsFromDb
+precision 0
+nullColor index 14
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+endGroup
+
+visPv "$(CM)$(C)0:QUENCHR_AABSV"
+visMin "0"
+visMax "1"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 444
+y 744
+w 108
+h 52
+
+beginGroup
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 444
+y 744
+w 52
+h 24
+controlPv "$(CM)$(C)0:QUENCHR_AREL"
+format "decimal"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 3
+editable
+motifWidget
+limitsFromDb
+precision 0
+nullColor index 14
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 500
+y 744
+w 52
+h 52
+font "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "% of"
+  "current"
+  "setting"
+}
+endObjectProperties
+
+endGroup
+
+visPv "$(CM)$(C)0:QUENCHR_ARELV"
+visMin "1"
+visMax "2"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 444
+y 744
+w 108
+h 52
+
+beginGroup
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 444
+y 744
+w 52
+h 24
+controlPv "$(CM)$(C)0:QUENCHR_AREL"
+format "decimal"
+font "helvetica-medium-i-12.0"
+fontAlign "center"
+fgColor index 2
+bgColor index 7
+editable
+motifWidget
+limitsFromDb
+precision 0
+nullColor index 14
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 500
+y 744
+w 52
+h 52
+font "helvetica-medium-i-12.0"
+fgColor index 12
+bgColor index 0
+useDisplayBg
+value {
+  "% of"
+  "current"
+  "setting"
+}
+endObjectProperties
+
+endGroup
+
+visPv "$(CM)$(C)0:QUENCHR_ARELV"
+visMin "0"
+visMax "1"
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>BPM Display</name>
+  <macros>
+    <dev>PIP2IT:INST_BPM_</dev>
+  </macros>
+  <width>1650</width>
+  <height>800</height>
+  <widget type="navtabs" version="2.0.0">
+    <name>Navigation Tabs</name>
+    <tabs>
+      <tab>
+        <name>M00B</name>
+        <file>BPMplots.bob</file>
+        <macros>
+          <bpm>M00B</bpm>
+          <num>00</num>
+        </macros>
+        <group_name></group_name>
+      </tab>
+      <tab>
+        <name>M10B</name>
+        <file>BPMplots.bob</file>
+        <macros>
+          <bpm>M10B</bpm>
+          <num>01</num>
+        </macros>
+        <group_name></group_name>
+      </tab>
+      <tab>
+        <name>M20B</name>
+        <file>BPMplots.bob</file>
+        <macros>
+          <bpm>M20B</bpm>
+          <num>02</num>
+        </macros>
+        <group_name></group_name>
+      </tab>
+      <tab>
+        <name>M30B</name>
+        <file>BPMplots.bob</file>
+        <macros>
+          <bpm>M30B</bpm>
+          <num>03</num>
+        </macros>
+        <group_name></group_name>
+      </tab>
+      <tab>
+        <name>M40B</name>
+        <file>BPMplots.bob</file>
+        <macros>
+          <bpm>M40B</bpm>
+          <num>04</num>
+        </macros>
+        <group_name></group_name>
+      </tab>
+      <tab>
+        <name>M50B</name>
+        <file>BPMplots.bob</file>
+        <macros>
+          <bpm>M50B</bpm>
+          <num>05</num>
+        </macros>
+        <group_name></group_name>
+      </tab>
+      <tab>
+        <name>M60B</name>
+        <file>BPMplots.bob</file>
+        <macros>
+          <bpm>M60B</bpm>
+          <num>06</num>
+        </macros>
+        <group_name></group_name>
+      </tab>
+      <tab>
+        <name>M70B</name>
+        <file>BPMplots.bob</file>
+        <macros>
+          <bpm>M70B</bpm>
+          <num>07</num>
+        </macros>
+        <group_name></group_name>
+      </tab>
+      <tab>
+        <name>M80B</name>
+        <file>BPMplots.bob</file>
+        <macros>
+          <bpm>M80B</bpm>
+          <num>08</num>
+        </macros>
+        <group_name></group_name>
+      </tab>
+    </tabs>
+    <x>10</x>
+    <y>40</y>
+    <width>1640</width>
+    <height>800</height>
+    <direction>0</direction>
+    <tab_width>85</tab_width>
+    <tab_spacing>0</tab_spacing>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group</name>
+    <width>1650</width>
+    <height>30</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>Label</name>
+      <text>BPM Display</text>
+      <width>1650</width>
+      <height>30</height>
+      <font>
+        <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+        </font>
+      </font>
+      <background_color>
+        <color red="179" green="26" blue="26">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>Group</name>
+      <x>1440</x>
+      <y>5</y>
+      <width>200</width>
+      <height>20</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_2</name>
+        <pv_name>$(dev)00:M00B:EvtNdx</pv_name>
+        <x>150</x>
+        <width>50</width>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color red="255" green="0" blue="0">
+          </color>
+        </foreground_color>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_1</name>
+        <text>Buffer Reading Index</text>
+        <width>145</width>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+    </widget>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_1</name>
+    <pv_name>$(dev)$(num):$(bpm):checkNdx</pv_name>
+    <x>1610</x>
+    <y>40</y>
+    <width>15</width>
+    <height>15</height>
+  </widget>
+</display>

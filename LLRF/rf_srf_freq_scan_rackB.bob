@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>SRF Rack Frequency Scan - $(CM)00 Rack $(R)</name>
+  <x>250</x>
+  <y>188</y>
+  <width>1080</width>
+  <height>1200</height>
+  <background_color>
+    <color name="GLOBAL canvas" red="200" green="200" blue="200">
+    </color>
+  </background_color>
+  <grid_step_x>4</grid_step_x>
+  <grid_step_y>4</grid_step_y>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>-    Search Mode</text>
+    <x>340</x>
+    <y>60</y>
+    <width>396</width>
+    <font>
+      <font family="Liberation Sans" style="ITALIC" size="18.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="VAC title" red="225" green="248" blue="177">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+    <rules>
+      <rule name="EDM visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0&gt;=0.0 &amp;&amp; pv0&lt;1.0">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="true">
+          <value>false</value>
+        </exp>
+        <pv_name>LOC\\$(!W)dispPV=e:0,Search,Shift</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="navtabs" version="2.0.0">
+    <name>EDM activePipClass</name>
+    <tabs>
+      <tab>
+        <name>Tab 1</name>
+        <file>rf_srf_freq_scan_rack_embed_search.bob</file>
+        <macros>
+          <CA>5</CA>
+          <CB>6</CB>
+          <CC>7</CC>
+          <CD>8</CD>
+        </macros>
+        <group_name></group_name>
+      </tab>
+      <tab>
+        <name>Tab 2</name>
+        <file>rf_srf_freq_scan_rack_embed_shift.bob</file>
+        <macros>
+          <CA>5</CA>
+          <CB>6</CB>
+          <CC>7</CC>
+          <CD>8</CD>
+        </macros>
+        <group_name></group_name>
+      </tab>
+    </tabs>
+    <x>16</x>
+    <y>440</y>
+    <width>1056</width>
+    <height>792</height>
+    <tab_width>0</tab_width>
+    <tab_height>0</tab_height>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+widget.setPropertyValue('active_tab', PVUtil.getInt(pvs[0]))
+]]></text>
+        <pv_name>LOC\\$(!W)dispPV=e:0,Search,Shift</pv_name>
+      </script>
+    </scripts>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>EDM activePipClass</name>
+    <file>rf_srf_freq_scan_rack_embed_cavities.bob</file>
+    <macros>
+      <CA>5</CA>
+      <CB>6</CB>
+      <CC>7</CC>
+      <CD>8</CD>
+    </macros>
+    <x>16</x>
+    <y>180</y>
+    <width>1056</width>
+    <height>252</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="choice" version="2.0.0">
+    <name>EDM activeChoiceButtonClass</name>
+    <pv_name>LOC\\$(!W)dispPV=e:0,Search,Shift</pv_name>
+    <x>16</x>
+    <y>144</y>
+    <width>296</width>
+    <height>28</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <selected_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </selected_color>
+    <items>
+      <item>Item 1</item>
+      <item>Item 2</item>
+    </items>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>$(CM)00 Rack $(R) Frequency Scan</text>
+    <x>4</x>
+    <y>60</y>
+    <width>396</width>
+    <font>
+      <font family="Liberation Sans" style="ITALIC" size="18.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="VAC title" red="225" green="248" blue="177">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>EDM activeRectangleClass</name>
+    <width>1457</width>
+    <height>41</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color name="CRYO title" red="176" green="218" blue="249">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="CRYO title" red="176" green="218" blue="249">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>EDM activeExitButtonClass</name>
+    <actions>
+      <action type="execute">
+        <script file="EmbeddedPy">
+          <text><![CDATA[from org.csstudio.display.builder.runtime.script import ScriptUtil
+ScriptUtil.closeDisplay(widget)
+]]></text>
+        </script>
+        <description>close</description>
+      </action>
+    </actions>
+    <text>Exit</text>
+    <x>868</x>
+    <y>8</y>
+    <width>48</width>
+    <height>24</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>SRF Rack Chirp Detune Measurement
+Cryomodule $(CM)00 Rack $(R)</text>
+    <x>8</x>
+    <width>324</width>
+    <height>40</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="VAC title" red="225" green="248" blue="177">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>-    Shift Mode</text>
+    <x>340</x>
+    <y>60</y>
+    <width>396</width>
+    <font>
+      <font family="Liberation Sans" style="ITALIC" size="18.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="VAC title" red="225" green="248" blue="177">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+    <rules>
+      <rule name="EDM visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0&gt;=1.0 &amp;&amp; pv0&lt;2.0">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="true">
+          <value>false</value>
+        </exp>
+        <pv_name>LOC\\$(!W)dispPV=e:0,Search,Shift</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>Note that this shifts the RF frequency for the entire LLRF rack, all 4 cavities.</text>
+    <x>236</x>
+    <y>104</y>
+    <width>523</width>
+    <height>16</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="blue-27" red="0" green="0" blue="192">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <auto_size>true</auto_size>
+  </widget>
+</display>

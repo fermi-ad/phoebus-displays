@@ -1,0 +1,665 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>CMTS_IonPump</name>
+  <macros>
+    <DEVICE>CMTS</DEVICE>
+  </macros>
+  <height>452</height>
+  <background_color>
+    <color name="Button_Background" red="210" green="210" blue="210">
+    </color>
+  </background_color>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle</name>
+    <y>20</y>
+    <width>390</width>
+    <height>3</height>
+    <line_color>
+      <color name="Grid" red="128" green="128" blue="128">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="Grid" red="128" green="128" blue="128">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Temperatures</name>
+    <text>Ion pump status</text>
+    <x>10</x>
+    <width>147</width>
+    <font>
+      <font family="sans" style="BOLD" size="16.0">
+      </font>
+    </font>
+    <background_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_1</name>
+    <macros>
+      <DESC>Coupler E IP pressure:</DESC>
+      <PV>CPLRE_IP</PV>
+      <SUFFIX>STAT</SUFFIX>
+    </macros>
+    <file>PIP2-TS-cmts-vac-plc-text-bit-readback_pump_scientific.bob</file>
+    <y>65</y>
+    <width>380</width>
+    <height>22</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_2</name>
+    <macros>
+      <DESC>Coupler IP pressure:</DESC>
+      <PV>CPLR_IP</PV>
+      <SUFFIX>STAT</SUFFIX>
+    </macros>
+    <file>PIP2-TS-cmts-vac-plc-text-bit-readback_pump_scientific.bob</file>
+    <y>35</y>
+    <width>380</width>
+    <height>22</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_5</name>
+    <macros>
+      <DESC>BMLN EC IP pressure:</DESC>
+      <PV>EC_IP</PV>
+      <SUFFIX>STAT</SUFFIX>
+    </macros>
+    <file>PIP2-TS-cmts-vac-plc-text-bit-readback_pump_scientific.bob</file>
+    <y>95</y>
+    <width>380</width>
+    <height>22</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_6</name>
+    <macros>
+      <DESC>BMLN FC IP pressure:</DESC>
+      <PV>FC_IP</PV>
+      <SUFFIX>STAT</SUFFIX>
+    </macros>
+    <file>PIP2-TS-cmts-vac-plc-text-bit-readback_pump_scientific.bob</file>
+    <y>125</y>
+    <width>380</width>
+    <height>22</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_1</name>
+    <x>410</x>
+    <y>20</y>
+    <width>390</width>
+    <height>3</height>
+    <line_color>
+      <color name="Grid" red="128" green="128" blue="128">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="Grid" red="128" green="128" blue="128">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Temperatures_1</name>
+    <text>Turbo pump status</text>
+    <x>420</x>
+    <width>172</width>
+    <font>
+      <font family="sans" style="BOLD" size="16.0">
+      </font>
+    </font>
+    <background_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_3</name>
+    <macros>
+      <DESC>Coupler E IP voltage:</DESC>
+      <PV>CPLRE_IP:V_RB</PV>
+    </macros>
+    <file>PIP2-TS-cmts-vac-plc-text-readback.bob</file>
+    <y>200</y>
+    <width>350</width>
+    <height>22</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_4</name>
+    <macros>
+      <DESC>Coupler IP voltage:</DESC>
+      <PV>CPLR_IP:V_RB</PV>
+    </macros>
+    <file>PIP2-TS-cmts-vac-plc-text-readback.bob</file>
+    <y>170</y>
+    <width>350</width>
+    <height>22</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_7</name>
+    <macros>
+      <DESC>BMLN EC IP voltage:</DESC>
+      <PV>EC_IP</PV>
+      <SUFFIX>V_STAT</SUFFIX>
+    </macros>
+    <file>PIP2-TS-cmts-vac-plc-text-bit-readback_pump.bob</file>
+    <y>230</y>
+    <width>380</width>
+    <height>22</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_8</name>
+    <macros>
+      <DESC>BMLN FC IP voltage:</DESC>
+      <PV>FC_IP</PV>
+      <SUFFIX>V_STAT</SUFFIX>
+    </macros>
+    <file>PIP2-TS-cmts-vac-plc-text-bit-readback_pump.bob</file>
+    <y>260</y>
+    <width>380</width>
+    <height>22</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_2</name>
+    <x>410</x>
+    <y>180</y>
+    <width>390</width>
+    <height>3</height>
+    <line_color>
+      <color name="Grid" red="128" green="128" blue="128">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="Grid" red="128" green="128" blue="128">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Temperatures_2</name>
+    <text>Pump control</text>
+    <x>420</x>
+    <y>160</y>
+    <width>121</width>
+    <font>
+      <font family="sans" style="BOLD" size="16.0">
+      </font>
+    </font>
+    <background_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_3</name>
+    <text>Coupler ion pump:</text>
+    <x>410</x>
+    <y>200</y>
+    <width>240</width>
+    <font>
+      <font family="sans" style="REGULAR" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_5</name>
+    <text>BMLN EC ion pump:</text>
+    <x>410</x>
+    <y>230</y>
+    <width>240</width>
+    <font>
+      <font family="sans" style="REGULAR" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_6</name>
+    <text>BMLN FC ion pump:</text>
+    <x>410</x>
+    <y>260</y>
+    <width>240</width>
+    <font>
+      <font family="sans" style="REGULAR" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_13</name>
+    <macros>
+      <DESC>Ion pump SPCe HV monitor:</DESC>
+      <PV>SPCe_IP:HV_STAT</PV>
+    </macros>
+    <file>PIP2-TS-cmts-vac-plc-single-bit-readback.bob</file>
+    <y>305</y>
+    <width>380</width>
+    <height>22</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_14</name>
+    <macros>
+      <DESC>Ion pump LPC 1 HV monitor:</DESC>
+      <PV>FC_IP:HV_STAT</PV>
+    </macros>
+    <file>PIP2-TS-cmts-vac-plc-single-bit-readback.bob</file>
+    <y>335</y>
+    <width>380</width>
+    <height>22</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_15</name>
+    <macros>
+      <DESC>Ion pump LPC 2 HV monitor:</DESC>
+      <PV>IP:HV_STAT</PV>
+    </macros>
+    <file>PIP2-TS-cmts-vac-plc-single-bit-readback.bob</file>
+    <y>365</y>
+    <width>380</width>
+    <height>22</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(pv_name)</pv_name>
+        <value>1</value>
+        <description>Write PV</description>
+      </action>
+    </actions>
+    <pv_name>$(COMPLEX):$(SYS)_CPLR_IP:CMD</pv_name>
+    <text>Start</text>
+    <x>660</x>
+    <y>200</y>
+    <width>60</width>
+    <height>22</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_1</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(pv_name)</pv_name>
+        <value>0</value>
+        <description>Write PV</description>
+      </action>
+    </actions>
+    <pv_name>$(COMPLEX):$(SYS)_CPLR_IP:CMD</pv_name>
+    <text>Stop</text>
+    <x>730</x>
+    <y>200</y>
+    <width>60</width>
+    <height>22</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_2</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(pv_name)</pv_name>
+        <value>1</value>
+        <description>Write PV</description>
+      </action>
+    </actions>
+    <pv_name>$(COMPLEX):$(SYS)_EC_IP:CMD</pv_name>
+    <text>Start</text>
+    <x>660</x>
+    <y>230</y>
+    <width>60</width>
+    <height>22</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_3</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(pv_name)</pv_name>
+        <value>0</value>
+        <description>Write PV</description>
+      </action>
+    </actions>
+    <pv_name>$(COMPLEX):$(SYS)_EC_IP:CMD</pv_name>
+    <text>Stop</text>
+    <x>730</x>
+    <y>230</y>
+    <width>60</width>
+    <height>22</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_4</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(pv_name)</pv_name>
+        <value>1</value>
+        <description>Write PV</description>
+      </action>
+    </actions>
+    <pv_name>$(COMPLEX):$(SYS)_FC_IP:CMD</pv_name>
+    <text>Start</text>
+    <x>660</x>
+    <y>260</y>
+    <width>60</width>
+    <height>22</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_5</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(pv_name)</pv_name>
+        <value>0</value>
+        <description>Write PV</description>
+      </action>
+    </actions>
+    <pv_name>$(COMPLEX):$(SYS)_FC_IP:CMD</pv_name>
+    <text>Stop</text>
+    <x>730</x>
+    <y>260</y>
+    <width>60</width>
+    <height>22</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_10</name>
+    <macros>
+      <DESC>Inslat EC TMP current:</DESC>
+      <PV>EC_Insulat_TMP</PV>
+      <SUFFIX>I_STAT</SUFFIX>
+    </macros>
+    <file>PIP2-TS-cmts-vac-plc-text-bit-readback_pump_stat.bob</file>
+    <x>410</x>
+    <y>35</y>
+    <width>380</width>
+    <height>22</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_16</name>
+    <macros>
+      <DESC>Inslat FC TMP current:</DESC>
+      <PV>FC_Insulat_TMP</PV>
+      <SUFFIX>I_STAT</SUFFIX>
+    </macros>
+    <file>PIP2-TS-cmts-vac-plc-text-bit-readback_pump_stat.bob</file>
+    <x>410</x>
+    <y>65</y>
+    <width>380</width>
+    <height>22</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_17</name>
+    <macros>
+      <DESC>Inslat EC TMP speed:</DESC>
+      <PV>EC_Insulat_TMP:Speed_RB</PV>
+    </macros>
+    <file>PIP2-TS-cmts-vac-plc-text-readback.bob</file>
+    <x>410</x>
+    <y>95</y>
+    <width>350</width>
+    <height>22</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_18</name>
+    <macros>
+      <DESC>Inslat FC TMP speed:</DESC>
+      <PV>FC_Insulat_TMP:Speed_RB</PV>
+    </macros>
+    <file>PIP2-TS-cmts-vac-plc-text-readback.bob</file>
+    <x>410</x>
+    <y>125</y>
+    <width>350</width>
+    <height>22</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_4</name>
+    <text>Inslat EC turbo pump:</text>
+    <x>410</x>
+    <y>300</y>
+    <width>240</width>
+    <font>
+      <font family="sans" style="REGULAR" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_7</name>
+    <text>Inslat FC turbo pump:</text>
+    <x>410</x>
+    <y>330</y>
+    <width>240</width>
+    <font>
+      <font family="sans" style="REGULAR" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_6</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(pv_name)</pv_name>
+        <value>1</value>
+        <description>Write PV</description>
+      </action>
+    </actions>
+    <pv_name>$(COMPLEX):$(SYS)_EC_Insulat_TMP:CMD</pv_name>
+    <text>Start</text>
+    <x>660</x>
+    <y>300</y>
+    <width>60</width>
+    <height>22</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_7</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(pv_name)</pv_name>
+        <value>0</value>
+        <description>Write PV</description>
+      </action>
+    </actions>
+    <pv_name>$(COMPLEX):$(SYS)_EC_Insulat_TMP:CMD</pv_name>
+    <text>Stop</text>
+    <x>730</x>
+    <y>300</y>
+    <width>60</width>
+    <height>22</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_8</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(pv_name)</pv_name>
+        <value>1</value>
+        <description>Write PV</description>
+      </action>
+    </actions>
+    <pv_name>$(COMPLEX):$(SYS)_FC_Insulat_TMP:CMD</pv_name>
+    <text>Start</text>
+    <x>660</x>
+    <y>330</y>
+    <width>60</width>
+    <height>22</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_9</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(pv_name)</pv_name>
+        <value>0</value>
+        <description>Write PV</description>
+      </action>
+    </actions>
+    <pv_name>$(COMPLEX):$(SYS)_FC_Insulat_TMP:CMD</pv_name>
+    <text>Stop</text>
+    <x>730</x>
+    <y>330</y>
+    <width>60</width>
+    <height>22</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_10</name>
+    <text>Ruff pump:</text>
+    <x>410</x>
+    <y>370</y>
+    <width>240</width>
+    <font>
+      <font family="sans" style="REGULAR" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_11</name>
+    <text>Roughing pump booster pump:</text>
+    <x>410</x>
+    <y>400</y>
+    <width>240</width>
+    <font>
+      <font family="sans" style="REGULAR" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_12</name>
+    <text>Roughing pump dry pump:</text>
+    <x>410</x>
+    <y>430</y>
+    <width>240</width>
+    <font>
+      <font family="sans" style="REGULAR" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_14</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(pv_name)</pv_name>
+        <value>1</value>
+        <description>Write PV</description>
+      </action>
+    </actions>
+    <pv_name>$(COMPLEX):$(SYS)_RP:Speed_CMD</pv_name>
+    <text>Auto</text>
+    <x>660</x>
+    <y>370</y>
+    <width>60</width>
+    <height>22</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_15</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(pv_name)</pv_name>
+        <value>0</value>
+        <description>Write PV</description>
+      </action>
+    </actions>
+    <pv_name>$(COMPLEX):$(SYS)_RP:Speed_CMD</pv_name>
+    <text>Fast</text>
+    <x>730</x>
+    <y>370</y>
+    <width>60</width>
+    <height>22</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_16</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(pv_name)</pv_name>
+        <value>1</value>
+        <description>Write PV</description>
+      </action>
+    </actions>
+    <pv_name>$(COMPLEX):$(SYS)_RP_Booster:CMD</pv_name>
+    <text>On</text>
+    <x>660</x>
+    <y>400</y>
+    <width>60</width>
+    <height>22</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_17</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(pv_name)</pv_name>
+        <value>0</value>
+        <description>Write PV</description>
+      </action>
+    </actions>
+    <pv_name>$(COMPLEX):$(SYS)_RP_Booster:CMD</pv_name>
+    <text>Off</text>
+    <x>730</x>
+    <y>400</y>
+    <width>60</width>
+    <height>22</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_18</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(pv_name)</pv_name>
+        <value>1</value>
+        <description>Write PV</description>
+      </action>
+    </actions>
+    <pv_name>$(COMPLEX):$(SYS)_RP_Dry:CMD</pv_name>
+    <text>On</text>
+    <x>660</x>
+    <y>430</y>
+    <width>60</width>
+    <height>22</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_19</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(pv_name)</pv_name>
+        <value>0</value>
+        <description>Write PV</description>
+      </action>
+    </actions>
+    <pv_name>$(COMPLEX):$(SYS)_RP_Dry:CMD</pv_name>
+    <text>Off</text>
+    <x>730</x>
+    <y>430</y>
+    <width>60</width>
+    <height>22</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+</display>

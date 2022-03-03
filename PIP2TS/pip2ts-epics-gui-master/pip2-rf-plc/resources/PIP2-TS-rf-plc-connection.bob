@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>rf_plc_connection</name>
+  <width>250</width>
+  <height>122</height>
+  <background_color>
+    <color name="Button_Background" red="210" green="210" blue="210">
+    </color>
+  </background_color>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle</name>
+    <y>21</y>
+    <width>250</width>
+    <height>3</height>
+    <line_color>
+      <color name="Grid" red="128" green="128" blue="128">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="Grid" red="128" green="128" blue="128">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Temperatures</name>
+    <text>Connection status</text>
+    <x>10</x>
+    <width>164</width>
+    <font>
+      <font family="sans" style="BOLD" size="16.0">
+      </font>
+    </font>
+    <background_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_3</name>
+    <text>PLC disconnect:</text>
+    <y>100</y>
+    <width>150</width>
+    <font>
+      <font family="sans" style="REGULAR" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_2</name>
+    <actions>
+      <action type="execute">
+        <script file="EmbeddedPy">
+          <text><![CDATA[# Embedded python script
+from org.csstudio.display.builder.runtime.script import PVUtil
+
+name = widget.getPropertyValue('pv_name')
+
+ENBL = name  + ".ENBL"
+CNCT = name + ".CNCT"
+
+PVUtil.writePV(ENBL, 0, 1000)
+PVUtil.writePV(CNCT, 0, 1000)]]></text>
+        </script>
+        <description>Execute Script</description>
+      </action>
+    </actions>
+    <pv_name>$(COMPLEX):RF_PLC05_Asyn:STAT</pv_name>
+    <text>Disconnect</text>
+    <x>160</x>
+    <y>100</y>
+    <width>80</width>
+    <height>22</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_4</name>
+    <text>PLC connect:</text>
+    <y>70</y>
+    <width>150</width>
+    <font>
+      <font family="sans" style="REGULAR" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_3</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(pv_name)</pv_name>
+        <value>1</value>
+        <description>Write PV</description>
+      </action>
+    </actions>
+    <pv_name>$(COMPLEX):RF_PLC05_Asyn:STAT.ENBL</pv_name>
+    <text>Connect</text>
+    <x>160</x>
+    <y>70</y>
+    <width>80</width>
+    <height>22</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_5</name>
+    <text>Status:</text>
+    <y>40</y>
+    <width>150</width>
+    <font>
+      <font family="sans" style="REGULAR" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_1</name>
+    <pv_name>$(COMPLEX):RF_PLC05_Asyn:STAT.CNCT</pv_name>
+    <x>160</x>
+    <y>40</y>
+    <width>80</width>
+    <height>22</height>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <border_width>1</border_width>
+  </widget>
+</display>

@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>Fast_overview</name>
+  <macros>
+    <COMPLEX>PIP2TS</COMPLEX>
+    <SYS>TEST_PLC</SYS>
+  </macros>
+  <width>1750</width>
+  <height>775</height>
+  <background_color>
+    <color name="Button_Background" red="210" green="210" blue="210">
+    </color>
+  </background_color>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_1</name>
+    <macros>
+      <DESC>Test plc connection status:</DESC>
+      <PV>_Asyn:STAT.CNCT</PV>
+    </macros>
+    <file>resources/PIP2-TS-fast-test-plc-text-readback.bob</file>
+    <x>10</x>
+    <y>555</y>
+    <width>320</width>
+    <height>22</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_3</name>
+    <text>Test plc disconnect:</text>
+    <x>10</x>
+    <y>615</y>
+    <width>210</width>
+    <font>
+      <font family="sans" style="REGULAR" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_2</name>
+    <actions execute_as_one="true">
+      <action type="execute">
+        <script file="EmbeddedPy">
+          <text><![CDATA[# Embedded python script
+from org.csstudio.display.builder.runtime.script import PVUtil
+
+name = widget.getPropertyValue('pv_name')
+
+ENBL = name  + ".ENBL"
+CNCT = name + ".CNCT"
+
+PVUtil.writePV(ENBL, 0, 1000)
+PVUtil.writePV(CNCT, 0, 1000)]]></text>
+        </script>
+        <description>Execute Script</description>
+      </action>
+    </actions>
+    <pv_name>$(COMPLEX):$(SYS)_Asyn:STAT</pv_name>
+    <text>Disconnect</text>
+    <x>230</x>
+    <y>615</y>
+    <height>22</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_4</name>
+    <text>Test plc connect:</text>
+    <x>10</x>
+    <y>585</y>
+    <width>210</width>
+    <font>
+      <font family="sans" style="REGULAR" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_3</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(pv_name)</pv_name>
+        <value>1</value>
+        <description>Write PV</description>
+      </action>
+    </actions>
+    <pv_name>$(COMPLEX):$(SYS)_Asyn:STAT.ENBL</pv_name>
+    <text>Connect</text>
+    <x>230</x>
+    <y>585</y>
+    <height>22</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle</name>
+    <x>10</x>
+    <y>540</y>
+    <width>330</width>
+    <height>3</height>
+    <line_color>
+      <color name="Grid" red="128" green="128" blue="128">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="Grid" red="128" green="128" blue="128">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Temperatures</name>
+    <text>Connection status</text>
+    <x>20</x>
+    <y>520</y>
+    <width>164</width>
+    <font>
+      <font family="sans" style="BOLD" size="16.0">
+      </font>
+    </font>
+    <background_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display</name>
+    <file>resources/PIP2-TS-fast-test-plc-readbacks.bob</file>
+    <x>10</x>
+    <y>50</y>
+    <width>330</width>
+    <height>292</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_3</name>
+    <file>resources/PIP2-TS-fast-test-plc-commands.bob</file>
+    <x>10</x>
+    <y>360</y>
+    <width>330</width>
+    <height>147</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_4</name>
+    <macros>
+      <HEAD>DC Status</HEAD>
+      <PV>$(SYS):DC_STAT</PV>
+    </macros>
+    <file>resources/PIP2-TS-fast-test-plc-display-status.bob</file>
+    <x>370</x>
+    <y>50</y>
+    <width>170</width>
+    <height>355</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_5</name>
+    <macros>
+      <HEAD>LC2 Status</HEAD>
+      <PV>$(SYS):LC2_STAT</PV>
+    </macros>
+    <file>resources/PIP2-TS-fast-test-plc-display-status.bob</file>
+    <x>370</x>
+    <y>420</y>
+    <width>170</width>
+    <height>355</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_6</name>
+    <macros>
+      <HEAD>LC1 Status</HEAD>
+      <PV>$(SYS):LC1_STAT</PV>
+    </macros>
+    <file>resources/PIP2-TS-fast-test-plc-display-status.bob</file>
+    <x>560</x>
+    <y>50</y>
+    <width>170</width>
+    <height>355</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_7</name>
+    <macros>
+      <HEAD>LC3 Status</HEAD>
+      <PV>$(SYS):LC3_STAT</PV>
+    </macros>
+    <file>resources/PIP2-TS-fast-test-plc-display-status.bob</file>
+    <x>560</x>
+    <y>420</y>
+    <width>170</width>
+    <height>355</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_2</name>
+    <macros>
+      <NAME>Fast test PLC</NAME>
+    </macros>
+    <file>../common/PIP2-main_header.bob</file>
+    <width>1750</width>
+    <height>33</height>
+    <resize>2</resize>
+  </widget>
+</display>

@@ -1,0 +1,550 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>RF Waveforms - Cryomodule $(CM)</name>
+  <x>72</x>
+  <y>240</y>
+  <width>2000</width>
+  <height>800</height>
+  <background_color>
+    <color name="grey-4" red="187" green="187" blue="187">
+    </color>
+  </background_color>
+  <grid_step_x>4</grid_step_x>
+  <grid_step_y>4</grid_step_y>
+  <widget type="rectangle" version="2.0.0">
+    <name>EDM activeRectangleClass</name>
+    <width>1709</width>
+    <height>41</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color name="CRYO title" red="176" green="218" blue="249">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="CRYO title" red="176" green="218" blue="249">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>EDM activeExitButtonClass</name>
+    <actions>
+      <action type="execute">
+        <script file="EmbeddedPy">
+          <text><![CDATA[from org.csstudio.display.builder.runtime.script import ScriptUtil
+ScriptUtil.closeDisplay(widget)
+]]></text>
+        </script>
+        <description>close</description>
+      </action>
+    </actions>
+    <text>Exit</text>
+    <x>952</x>
+    <y>8</y>
+    <width>48</width>
+    <height>24</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>RF Waveforms - Cryomodule $(CM)00</text>
+    <x>8</x>
+    <width>348</width>
+    <height>40</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="VAC title" red="225" green="248" blue="177">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="navtabs" version="2.0.0">
+    <name>EDM activePipClass</name>
+    <tabs>
+      <tab>
+        <name>Tab 1</name>
+        <file>rf_srf_wf_cavity.bob</file>
+        <macros>
+          <C>1</C>
+          <FILE>_all_</FILE>
+          <RFS>1A</RFS>
+        </macros>
+        <group_name></group_name>
+      </tab>
+      <tab>
+        <name>Tab 2</name>
+        <file>rf_srf_wf_cavity.bob</file>
+        <macros>
+          <C>1</C>
+          <FILE>_</FILE>
+          <RFS>1A</RFS>
+        </macros>
+        <group_name></group_name>
+      </tab>
+      <tab>
+        <name>Tab 3</name>
+        <file>rf_srf_wf_cavity.bob</file>
+        <macros>
+          <C>2</C>
+          <FILE>_</FILE>
+          <RFS>1A</RFS>
+        </macros>
+        <group_name></group_name>
+      </tab>
+      <tab>
+        <name>Tab 4</name>
+        <file>rf_srf_wf_cavity.bob</file>
+        <macros>
+          <C>3</C>
+          <FILE>_</FILE>
+          <RFS>2A</RFS>
+        </macros>
+        <group_name></group_name>
+      </tab>
+      <tab>
+        <name>Tab 5</name>
+        <file>rf_srf_wf_cavity.bob</file>
+        <macros>
+          <C>4</C>
+          <FILE>_</FILE>
+          <RFS>2A</RFS>
+        </macros>
+        <group_name></group_name>
+      </tab>
+      <tab>
+        <name>Tab 6</name>
+        <file>rf_srf_wf_cavity.bob</file>
+        <macros>
+          <C>5</C>
+          <FILE>_</FILE>
+          <RFS>1B</RFS>
+        </macros>
+        <group_name></group_name>
+      </tab>
+      <tab>
+        <name>Tab 7</name>
+        <file>rf_srf_wf_cavity.bob</file>
+        <macros>
+          <C>6</C>
+          <FILE>_</FILE>
+          <RFS>1B</RFS>
+        </macros>
+        <group_name></group_name>
+      </tab>
+      <tab>
+        <name>Tab 8</name>
+        <file>rf_srf_wf_cavity.bob</file>
+        <macros>
+          <C>7</C>
+          <FILE>_</FILE>
+          <RFS>2B</RFS>
+        </macros>
+        <group_name></group_name>
+      </tab>
+      <tab>
+        <name>Tab 9</name>
+        <file>rf_srf_wf_cavity.bob</file>
+        <macros>
+          <C>8</C>
+          <FILE>_</FILE>
+          <RFS>2B</RFS>
+        </macros>
+        <group_name></group_name>
+      </tab>
+    </tabs>
+    <x>1024</x>
+    <y>112</y>
+    <width>1052</width>
+    <height>632</height>
+    <tab_width>0</tab_width>
+    <tab_height>0</tab_height>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+widget.setPropertyValue('active_tab', PVUtil.getInt(pvs[0]))
+]]></text>
+        <pv_name>LOC\\$(!W)cavPV=e:0,All,1,2,3,4,5,6,7,8</pv_name>
+      </script>
+    </scripts>
+  </widget>
+  <widget type="choice" version="2.0.0">
+    <name>EDM activeChoiceButtonClass</name>
+    <pv_name>LOC\\$(!W)cavPV=e:0,All,1,2,3,4,5,6,7,8</pv_name>
+    <x>1072</x>
+    <y>72</y>
+    <width>916</width>
+    <height>20</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <selected_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </selected_color>
+    <items>
+      <item>Item 1</item>
+      <item>Item 2</item>
+    </items>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>Cavity</text>
+    <x>1020</x>
+    <y>72</y>
+    <width>44</width>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>EDM TextupdateClass</name>
+    <pv_name>SIOC:SYS0:AL00:TOD</pv_name>
+    <x>876</x>
+    <y>764</y>
+    <width>168</width>
+    <height>16</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-12" red="70" green="70" blue="70">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>EDM TextupdateClass</name>
+    <pv_name>SIOC:SYS0:AL00:MODE</pv_name>
+    <x>4</x>
+    <y>760</y>
+    <width>120</width>
+    <height>16</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-12" red="70" green="70" blue="70">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>EDM activeCircleClass</name>
+    <x>1252</x>
+    <y>80</y>
+    <width>8</width>
+    <height>8</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[# EDM Alarm-sensitive color
+from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+cn = ( 'OK', 'MINOR', 'MAJOR', 'INVALID', 'DISCONNECTED' )[sevr]
+widget.setPropertyValue('background_color', WidgetColorService.getColor(cn))]]></text>
+        <pv_name>$(CM)00:RFS1A:STATUS</pv_name>
+      </script>
+    </scripts>
+  </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>EDM activeCircleClass</name>
+    <x>1352</x>
+    <y>80</y>
+    <width>8</width>
+    <height>8</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[# EDM Alarm-sensitive color
+from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+cn = ( 'OK', 'MINOR', 'MAJOR', 'INVALID', 'DISCONNECTED' )[sevr]
+widget.setPropertyValue('background_color', WidgetColorService.getColor(cn))]]></text>
+        <pv_name>$(CM)00:RFS1A:STATUS</pv_name>
+      </script>
+    </scripts>
+  </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>EDM activeCircleClass</name>
+    <x>1452</x>
+    <y>80</y>
+    <width>8</width>
+    <height>8</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[# EDM Alarm-sensitive color
+from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+cn = ( 'OK', 'MINOR', 'MAJOR', 'INVALID', 'DISCONNECTED' )[sevr]
+widget.setPropertyValue('background_color', WidgetColorService.getColor(cn))]]></text>
+        <pv_name>$(CM)00:RFS2A:STATUS</pv_name>
+      </script>
+    </scripts>
+  </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>EDM activeCircleClass</name>
+    <x>1556</x>
+    <y>80</y>
+    <width>8</width>
+    <height>8</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[# EDM Alarm-sensitive color
+from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+cn = ( 'OK', 'MINOR', 'MAJOR', 'INVALID', 'DISCONNECTED' )[sevr]
+widget.setPropertyValue('background_color', WidgetColorService.getColor(cn))]]></text>
+        <pv_name>$(CM)00:RFS2A:STATUS</pv_name>
+      </script>
+    </scripts>
+  </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>EDM activeCircleClass</name>
+    <x>1764</x>
+    <y>80</y>
+    <width>8</width>
+    <height>8</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[# EDM Alarm-sensitive color
+from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+cn = ( 'OK', 'MINOR', 'MAJOR', 'INVALID', 'DISCONNECTED' )[sevr]
+widget.setPropertyValue('background_color', WidgetColorService.getColor(cn))]]></text>
+        <pv_name>$(CM)00:RFS1B:STATUS</pv_name>
+      </script>
+    </scripts>
+  </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>EDM activeCircleClass</name>
+    <x>1660</x>
+    <y>80</y>
+    <width>8</width>
+    <height>8</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[# EDM Alarm-sensitive color
+from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+cn = ( 'OK', 'MINOR', 'MAJOR', 'INVALID', 'DISCONNECTED' )[sevr]
+widget.setPropertyValue('background_color', WidgetColorService.getColor(cn))]]></text>
+        <pv_name>$(CM)00:RFS1B:STATUS</pv_name>
+      </script>
+    </scripts>
+  </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>EDM activeCircleClass</name>
+    <x>1964</x>
+    <y>80</y>
+    <width>8</width>
+    <height>8</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[# EDM Alarm-sensitive color
+from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+cn = ( 'OK', 'MINOR', 'MAJOR', 'INVALID', 'DISCONNECTED' )[sevr]
+widget.setPropertyValue('background_color', WidgetColorService.getColor(cn))]]></text>
+        <pv_name>$(CM)00:RFS2B:STATUS</pv_name>
+      </script>
+    </scripts>
+  </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>EDM activeCircleClass</name>
+    <x>1860</x>
+    <y>80</y>
+    <width>8</width>
+    <height>8</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[# EDM Alarm-sensitive color
+from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+cn = ( 'OK', 'MINOR', 'MAJOR', 'INVALID', 'DISCONNECTED' )[sevr]
+widget.setPropertyValue('background_color', WidgetColorService.getColor(cn))]]></text>
+        <pv_name>$(CM)00:RFS2B:STATUS</pv_name>
+      </script>
+    </scripts>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>EDM relatedDisplayClass</name>
+    <actions>
+      <action type="open_display">
+        <file>rf_srf_hardware_cm.bob</file>
+        <target>tab</target>
+      </action>
+    </actions>
+    <text>Hardware...</text>
+    <x>692</x>
+    <y>8</y>
+    <width>104</width>
+    <height>24</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>EDM activeRectangleClass</name>
+    <x>692</x>
+    <y>8</y>
+    <width>105</width>
+    <height>25</height>
+    <line_width>1</line_width>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[# EDM Alarm-sensitive color
+from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+cn = ( 'OK', 'MINOR', 'MAJOR', 'INVALID', 'DISCONNECTED' )[sevr]
+widget.setPropertyValue('line_color', WidgetColorService.getColor(cn))]]></text>
+        <pv_name>$(CM)00:HWSTATSUM</pv_name>
+      </script>
+    </scripts>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>EDM relatedDisplayClass</name>
+    <actions>
+      <action type="open_display">
+        <file>rf_srf_wf_acq_cm.bob</file>
+        <target>tab</target>
+      </action>
+    </actions>
+    <text>Expert...</text>
+    <x>816</x>
+    <y>8</y>
+    <width>104</width>
+    <height>24</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>EDM activePipClass</name>
+    <file>rf_srf_wf_cavity$(FILE)signal.bob</file>
+    <x>48</x>
+    <y>96</y>
+    <width>856</width>
+    <height>620</height>
+    <transparent>true</transparent>
+  </widget>
+</display>

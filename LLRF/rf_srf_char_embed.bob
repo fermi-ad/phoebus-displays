@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>SRF Cavity Ramp and Characterization - $(CM)$(C)0</name>
+  <y>64</y>
+  <width>1820</width>
+  <height>1000</height>
+  <background_color>
+    <color name="GLOBAL canvas" red="200" green="200" blue="200">
+    </color>
+  </background_color>
+  <grid_step_x>4</grid_step_x>
+  <grid_step_y>4</grid_step_y>
+  <widget type="group" version="2.0.0">
+    <name>EDM Group 0</name>
+    <x>1168</x>
+    <y>8</y>
+    <width>25</width>
+    <height>25</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="ellipse" version="2.0.0">
+      <name>EDM activeCircleClass</name>
+      <x>1</x>
+      <y>1</y>
+      <width>20</width>
+      <height>20</height>
+      <line_color>
+        <color name="Wid-bg/Anno-pri" red="105" green="105" blue="105">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="grey-4" red="187" green="187" blue="187">
+        </color>
+      </background_color>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="ellipse" version="2.0.0">
+      <name>EDM activeCircleClass</name>
+      <x>8</x>
+      <y>8</y>
+      <width>6</width>
+      <height>6</height>
+      <line_color>
+        <color name="Related display" red="128" green="88" blue="48">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="Related display" red="128" green="88" blue="48">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>EDM relatedDisplayClass</name>
+      <actions>
+        <action type="open_display">
+          <file>rf_srf_popup_help.bob</file>
+          <target>tab</target>
+        </action>
+      </actions>
+      <text></text>
+      <width>24</width>
+      <height>24</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="10.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="Controller" red="0" green="0" blue="255">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+        </color>
+      </background_color>
+      <transparent>true</transparent>
+    </widget>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>EDM activeRectangleClass</name>
+    <x>27</x>
+    <y>75</y>
+    <width>1158</width>
+    <height>870</height>
+    <line_width>10</line_width>
+    <line_color>
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="navtabs" version="2.0.0">
+    <name>EDM activePipClass</name>
+    <tabs>
+      <tab>
+        <name>Tab 1</name>
+        <file>rf_srf_char_embed_ssa.bob</file>
+        <macros>
+        </macros>
+        <group_name></group_name>
+      </tab>
+      <tab>
+        <name>Tab 2</name>
+        <file>rf_srf_char_embed_freq.bob</file>
+        <macros>
+        </macros>
+        <group_name></group_name>
+      </tab>
+      <tab>
+        <name>Tab 3</name>
+        <file>rf_srf_char_embed_ramp.bob</file>
+        <macros>
+        </macros>
+        <group_name></group_name>
+      </tab>
+      <tab>
+        <name>Tab 4</name>
+        <file>rf_srf_freq_scan_probeq.bob</file>
+        <macros>
+        </macros>
+        <group_name></group_name>
+      </tab>
+    </tabs>
+    <x>48</x>
+    <y>92</y>
+    <width>1120</width>
+    <height>832</height>
+    <tab_width>0</tab_width>
+    <tab_height>0</tab_height>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+widget.setPropertyValue('active_tab', PVUtil.getInt(pvs[0]))
+]]></text>
+        <pv_name>LOC\\$(!W)charDispPV=e:2,SSA,Frequency Tune,Cavity</pv_name>
+      </script>
+    </scripts>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>$(CM)$(C)0 Characterization</text>
+    <x>8</x>
+    <y>8</y>
+    <width>272</width>
+    <font>
+      <font family="Liberation Sans" style="ITALIC" size="18.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="VAC title" red="225" green="248" blue="177">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>EDM TextupdateClass</name>
+    <pv_name>SIOC:SYS0:AL00:TOD</pv_name>
+    <x>1044</x>
+    <y>956</y>
+    <width>168</width>
+    <height>16</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-12" red="70" green="70" blue="70">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>EDM TextupdateClass</name>
+    <pv_name>SIOC:SYS0:AL00:MODE</pv_name>
+    <x>4</x>
+    <y>956</y>
+    <width>120</width>
+    <height>16</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-12" red="70" green="70" blue="70">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>-     Frequency Tune</text>
+    <x>308</x>
+    <y>8</y>
+    <width>272</width>
+    <font>
+      <font family="Liberation Sans" style="ITALIC" size="18.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="VAC title" red="225" green="248" blue="177">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+    <rules>
+      <rule name="EDM visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0&gt;=1.0 &amp;&amp; pv0&lt;2.0">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="true">
+          <value>false</value>
+        </exp>
+        <pv_name>LOC\\$(!W)charDispPV=e:2,SSA,Frequency Tune,Cavity</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>-     SSA</text>
+    <x>308</x>
+    <y>8</y>
+    <width>272</width>
+    <font>
+      <font family="Liberation Sans" style="ITALIC" size="18.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="VAC title" red="225" green="248" blue="177">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+    <rules>
+      <rule name="EDM visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0&gt;=0.0 &amp;&amp; pv0&lt;1.0">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="true">
+          <value>false</value>
+        </exp>
+        <pv_name>LOC\\$(!W)charDispPV=e:2,SSA,Frequency Tune,Cavity</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>-     Cavity</text>
+    <x>308</x>
+    <y>8</y>
+    <width>272</width>
+    <font>
+      <font family="Liberation Sans" style="ITALIC" size="18.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="VAC title" red="225" green="248" blue="177">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+    <rules>
+      <rule name="EDM visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0&gt;=2.0 &amp;&amp; pv0&lt;3.0">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="true">
+          <value>false</value>
+        </exp>
+        <pv_name>LOC\\$(!W)charDispPV=e:2,SSA,Frequency Tune,Cavity</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="choice" version="2.0.0">
+    <name>EDM activeChoiceButtonClass</name>
+    <pv_name>LOC\\$(!W)charDispPV=e:2,SSA Cal,Frequency Tune,Cavity</pv_name>
+    <x>28</x>
+    <y>44</y>
+    <width>392</width>
+    <height>28</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <selected_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </selected_color>
+    <items>
+      <item>Item 1</item>
+      <item>Item 2</item>
+    </items>
+  </widget>
+</display>

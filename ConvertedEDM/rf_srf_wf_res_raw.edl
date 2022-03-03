@@ -1,0 +1,946 @@
+#h 175
+#x 581
+4 0 1
+beginScreenProperties
+major 4
+minor 0
+release 1
+x 165
+y 143
+w 1220
+h 600
+font "helvetica-medium-r-12.0"
+ctlFont "helvetica-medium-r-12.0"
+btnFont "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 4
+textColor index 14
+ctlFgColor1 index 16
+ctlFgColor2 index 14
+ctlBgColor1 index 4
+ctlBgColor2 index 12
+topShadowColor index 1
+botShadowColor index 11
+title "RF Waveforms - Resonance Chassis - Cryomodule $(CM) Cavity $(C)"
+showGrid
+snapToGrid
+gridSize 4
+endScreenProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 40
+y 508
+w 664
+h 0
+font "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 3
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 0
+y 0
+w 1708
+h 40
+lineColor index 63
+fill
+fillColor index 63
+lineWidth 0
+endObjectProperties
+
+# (Exit Button)
+object activeExitButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 1088
+y 8
+w 48
+h 24
+fgColor index 14
+bgColor index 3
+topShadowColor index 1
+botShadowColor index 11
+label "Exit"
+font "helvetica-medium-r-12.0"
+3d
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 8
+y 0
+w 608
+h 40
+font "helvetica-bold-r-12.0"
+fgColor index 14
+bgColor index 53
+useDisplayBg
+value {
+  "RF Waveforms - Cryomodule $(CM)00 - Cavity $(C) "
+  "Resonance Chassis"
+}
+endObjectProperties
+
+# (X-Y Graph)
+object xyGraphClass
+beginObjectProperties
+major 4
+minor 8
+release 0
+# Geometry
+x 20
+y 64
+w 228
+h 240
+# Appearance
+plotAreaBorder
+autoScaleBothDirections
+xLabel "samples"
+fgColor index 13
+bgColor index 2
+gridColor index 6
+font "helvetica-medium-r-12.0"
+# Operating Modes
+nPts 0
+# X axis properties
+showXAxis
+xAxisSrc "AutoScale"
+xMin 0
+xMax 20000
+# Y axis properties
+showYAxis
+yAxisSrc "AutoScale"
+yMax 1
+yLabelIntervals 8
+yAxisFormat "g"
+yAxisPrecision 1
+# Y2 axis properties
+y2AxisSrc "fromUser"
+y2Min -10
+y2Max 10
+# Trace Properties
+numTraces 1
+yPv {
+  0 "$(CM)00:RESA:CH10:WF"
+}
+nPv {
+  0 "$(CM)00:RESA:CH10:WF.NORD"
+}
+plotUpdateMode {
+  0 "xOrY"
+}
+opMode {
+  0 "plot"
+}
+xSigned {
+  0 1
+}
+ySigned {
+  0 1
+}
+plotColor {
+  0 index 25
+}
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 428
+y 12
+w 8
+h 8
+lineColor index 14
+fill
+fillColor index 16
+fillAlarm
+alarmPv "$(CM)00:RFS$(RFS):STATUS"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 336
+y 8
+w 84
+h 24
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 53
+useDisplayBg
+value {
+  "Cavity $(C)"
+}
+endObjectProperties
+
+# (Menu Mux)
+object menuMuxClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 1264
+y 120
+w 36
+h 12
+fgColor index 14
+bgColor index 14
+topShadowColor index 14
+botShadowColor index 14
+controlPv "$(CM)00:RESA:SCALE_RESET"
+font "times-medium-r-8.0"
+numItems 2
+symbolTag {
+  0 "Used to redraw X/Y graph"
+  1 "Used to redraw X/Y graph"
+}
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 4
+release 0
+x 924
+y 8
+w 140
+h 24
+fgColor index 14
+bgColor index 4
+topShadowColor index 1
+botShadowColor index 11
+font "helvetica-medium-r-12.0"
+buttonLabel "More Resonance..."
+numPvs 4
+numDsps 8
+displayFileName {
+  0 "rf_srf_wf_res"
+  1 "rf_srf_wf_res"
+  2 "rf_srf_wf_res"
+  3 "rf_srf_wf_res"
+  4 "rf_srf_wf_res"
+  5 "rf_srf_wf_res"
+  6 "rf_srf_wf_res"
+  7 "rf_srf_wf_res"
+}
+menuLabel {
+  0 "Cavity 1..."
+  1 "Cavity 2..."
+  2 "Cavity 3..."
+  3 "Cavity 4..."
+  4 "Cavity 5..."
+  5 "Cavity 6..."
+  6 "Cavity 7..."
+  7 "Cavity 8..."
+}
+setPosition {
+  0 "parentWindow"
+  1 "parentWindow"
+  2 "parentWindow"
+  3 "parentWindow"
+  4 "parentWindow"
+  5 "parentWindow"
+}
+symbols {
+  0 "CM=$(CM)C=1"
+  1 "CM=$(CM),C=2"
+  2 "CM=$(CM),C=3"
+  3 "CM=$(CM),C=4"
+  4 "CM=$(CM)C=5"
+  5 "CM=$(CM),C=6"
+  6 "CM=$(CM),C=7"
+  7 "CM=$(CM),C=8"
+}
+replaceSymbols {
+  0 1
+  1 1
+  2 1
+  3 1
+  4 1
+  5 1
+  6 1
+  7 1
+}
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 4
+release 0
+x 760
+y 8
+w 140
+h 24
+fgColor index 14
+bgColor index 4
+topShadowColor index 1
+botShadowColor index 11
+font "helvetica-medium-r-12.0"
+buttonLabel "More Cavity $(C)..."
+numPvs 4
+numDsps 7
+displayFileName {
+  0 "rf_srf_wf_signal"
+  1 "rf_srf_wf_signal"
+  2 "rf_srf_wf_signal"
+  3 "rf_srf_wf_signal_autoscale"
+  4 "rf_srf_wf_signal_autoscale"
+  5 "rf_srf_wf_signal_autoscale"
+  6 "rf_srf_wf_cavity_overview"
+}
+menuLabel {
+  0 "Cavity Probe..."
+  1 "Forward..."
+  2 "Reverse..."
+  3 "Drive (Loop)..."
+  4 "DAC..."
+  5 "(Future) Detune..."
+  6 "Cavity $(C) Overview..."
+}
+setPosition {
+  0 "parentWindow"
+  1 "parentWindow"
+  2 "parentWindow"
+  3 "parentWindow"
+  4 "parentWindow"
+  5 "parentWindow"
+}
+symbols {
+  0 "CM=$(CM),C=$(C),SIG=CAV,SIGNAL=Cavity Probe,EGU=,V,RFS=$(RFS)"
+  1 "RFS=$(RFS),CM=$(CM),C=$(C),SIG=FWD,SIGNAL=Forward,EGU=sqrt(watts)"
+  2 "RFS=$(RFS),CM=$(CM),C=$(C),SIG=REV,SIGNAL=Reverse,EGU=sqrt(watts)"
+  3 "RFS=$(RFS),CM=$(CM),C=$(C),SIG=DRV,SIGNAL=Drive,EGU=sqrt(watts)"
+  4 "RFS=$(RFS),CM=$(CM),C=$(C),SIG=DAC,SIGNAL=DAC,EGU=sqrt(watts)"
+  5 "RFS=$(RFS),CM=$(CM),C=$(C),SIG=DF,SIGNAL=Detune,EGU=Hz"
+  6 "RFS=$(RFS),CM=$(CM),C=$(C),SIG=$(SIG),SIGNAL=$(SIGNAL),EGU=$(EGU)"
+}
+replaceSymbols {
+  0 1
+  1 1
+  2 1
+  3 1
+  4 1
+  5 1
+  6 1
+}
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 988
+y 568
+w 168
+h 16
+controlPv "SIOC:SYS0:AL00:TOD"
+precision 1
+fgColor index 14
+bgColor index 12
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 20
+y 564
+w 120
+h 16
+controlPv "SIOC:SYS0:AL00:MODE"
+precision 1
+fgColor index 14
+bgColor index 12
+font "helvetica-medium-r-12.0"
+endObjectProperties
+
+# (X-Y Graph)
+object xyGraphClass
+beginObjectProperties
+major 4
+minor 8
+release 0
+# Geometry
+x 260
+y 64
+w 228
+h 240
+# Appearance
+plotAreaBorder
+autoScaleBothDirections
+xLabel "samples"
+fgColor index 13
+bgColor index 2
+gridColor index 6
+font "helvetica-medium-r-12.0"
+# Operating Modes
+nPts 0
+# X axis properties
+showXAxis
+xAxisSrc "AutoScale"
+xMin 0
+xMax 20000
+# Y axis properties
+showYAxis
+yAxisSrc "AutoScale"
+yMax 1
+yLabelIntervals 8
+yAxisFormat "g"
+yAxisPrecision 1
+# Y2 axis properties
+y2AxisSrc "fromUser"
+y2Min -10
+y2Max 10
+# Trace Properties
+numTraces 1
+yPv {
+  0 "$(CM)00:RESA:CH11:WF"
+}
+nPv {
+  0 "$(CM)00:RESA:CH11:WF.NORD"
+}
+plotUpdateMode {
+  0 "xOrY"
+}
+opMode {
+  0 "plot"
+}
+xSigned {
+  0 1
+}
+ySigned {
+  0 1
+}
+plotColor {
+  0 index 25
+}
+endObjectProperties
+
+# (X-Y Graph)
+object xyGraphClass
+beginObjectProperties
+major 4
+minor 8
+release 0
+# Geometry
+x 500
+y 64
+w 228
+h 240
+# Appearance
+plotAreaBorder
+autoScaleBothDirections
+xLabel "samples"
+fgColor index 13
+bgColor index 2
+gridColor index 6
+font "helvetica-medium-r-12.0"
+# Operating Modes
+nPts 0
+# X axis properties
+showXAxis
+xAxisSrc "AutoScale"
+xMin 0
+xMax 20000
+# Y axis properties
+showYAxis
+yAxisSrc "AutoScale"
+yMax 1
+yLabelIntervals 8
+yAxisFormat "g"
+yAxisPrecision 1
+# Y2 axis properties
+y2AxisSrc "fromUser"
+y2Min -10
+y2Max 10
+# Trace Properties
+numTraces 1
+yPv {
+  0 "$(CM)00:RESA:CH12:WF"
+}
+nPv {
+  0 "$(CM)00:RESA:CH12:WF.NORD"
+}
+plotUpdateMode {
+  0 "xOrY"
+}
+opMode {
+  0 "plot"
+}
+xSigned {
+  0 1
+}
+ySigned {
+  0 1
+}
+plotColor {
+  0 index 25
+}
+endObjectProperties
+
+# (X-Y Graph)
+object xyGraphClass
+beginObjectProperties
+major 4
+minor 8
+release 0
+# Geometry
+x 740
+y 64
+w 228
+h 240
+# Appearance
+plotAreaBorder
+autoScaleBothDirections
+xLabel "samples"
+fgColor index 13
+bgColor index 2
+gridColor index 6
+font "helvetica-medium-r-12.0"
+# Operating Modes
+nPts 0
+# X axis properties
+showXAxis
+xAxisSrc "AutoScale"
+xMin 0
+xMax 20000
+# Y axis properties
+showYAxis
+yAxisSrc "AutoScale"
+yMax 1
+yLabelIntervals 8
+yAxisFormat "g"
+yAxisPrecision 1
+# Y2 axis properties
+y2AxisSrc "fromUser"
+y2Min -10
+y2Max 10
+# Trace Properties
+numTraces 1
+yPv {
+  0 "$(CM)00:RESA:CH13:WF"
+}
+nPv {
+  0 "$(CM)00:RESA:CH13:WF.NORD"
+}
+plotUpdateMode {
+  0 "xOrY"
+}
+opMode {
+  0 "plot"
+}
+xSigned {
+  0 1
+}
+ySigned {
+  0 1
+}
+plotColor {
+  0 index 25
+}
+endObjectProperties
+
+# (X-Y Graph)
+object xyGraphClass
+beginObjectProperties
+major 4
+minor 8
+release 0
+# Geometry
+x 980
+y 64
+w 228
+h 240
+# Appearance
+plotAreaBorder
+autoScaleBothDirections
+xLabel "samples"
+fgColor index 13
+bgColor index 2
+gridColor index 6
+font "helvetica-medium-r-12.0"
+# Operating Modes
+nPts 0
+# X axis properties
+showXAxis
+xAxisSrc "AutoScale"
+xMin 0
+xMax 20000
+# Y axis properties
+showYAxis
+yAxisSrc "AutoScale"
+yMax 1
+yLabelIntervals 8
+yAxisFormat "g"
+yAxisPrecision 1
+# Y2 axis properties
+y2AxisSrc "fromUser"
+y2Min -10
+y2Max 10
+# Trace Properties
+numTraces 1
+yPv {
+  0 "$(CM)00:RESA:CH14:WF"
+}
+nPv {
+  0 "$(CM)00:RESA:CH14:WF.NORD"
+}
+plotUpdateMode {
+  0 "xOrY"
+}
+opMode {
+  0 "plot"
+}
+xSigned {
+  0 1
+}
+ySigned {
+  0 1
+}
+plotColor {
+  0 index 25
+}
+endObjectProperties
+
+# (X-Y Graph)
+object xyGraphClass
+beginObjectProperties
+major 4
+minor 8
+release 0
+# Geometry
+x 20
+y 312
+w 228
+h 240
+# Appearance
+plotAreaBorder
+autoScaleBothDirections
+xLabel "samples"
+fgColor index 13
+bgColor index 2
+gridColor index 6
+font "helvetica-medium-r-12.0"
+# Operating Modes
+nPts 0
+# X axis properties
+showXAxis
+xAxisSrc "AutoScale"
+xMin 0
+xMax 20000
+# Y axis properties
+showYAxis
+yAxisSrc "AutoScale"
+yMax 1
+yLabelIntervals 8
+yAxisFormat "g"
+yAxisPrecision 1
+# Y2 axis properties
+y2AxisSrc "fromUser"
+y2Min -10
+y2Max 10
+# Trace Properties
+numTraces 1
+yPv {
+  0 "$(CM)00:RESA:CH15:WF"
+}
+nPv {
+  0 "$(CM)00:RESA:CH15:WF.NORD"
+}
+plotUpdateMode {
+  0 "xOrY"
+}
+opMode {
+  0 "plot"
+}
+xSigned {
+  0 1
+}
+ySigned {
+  0 1
+}
+plotColor {
+  0 index 25
+}
+endObjectProperties
+
+# (X-Y Graph)
+object xyGraphClass
+beginObjectProperties
+major 4
+minor 8
+release 0
+# Geometry
+x 980
+y 312
+w 228
+h 240
+# Appearance
+plotAreaBorder
+autoScaleBothDirections
+xLabel "samples"
+fgColor index 13
+bgColor index 2
+gridColor index 6
+font "helvetica-medium-r-12.0"
+# Operating Modes
+nPts 0
+# X axis properties
+showXAxis
+xAxisSrc "AutoScale"
+xMin 0
+xMax 20000
+# Y axis properties
+showYAxis
+yAxisSrc "AutoScale"
+yMax 1
+yLabelIntervals 8
+yAxisFormat "g"
+yAxisPrecision 1
+# Y2 axis properties
+y2AxisSrc "fromUser"
+y2Min -10
+y2Max 10
+# Trace Properties
+numTraces 1
+yPv {
+  0 "$(CM)00:RESA:CH19:WF"
+}
+nPv {
+  0 "$(CM)00:RESA:CH19:WF.NORD"
+}
+plotUpdateMode {
+  0 "xOrY"
+}
+opMode {
+  0 "plot"
+}
+xSigned {
+  0 1
+}
+ySigned {
+  0 1
+}
+plotColor {
+  0 index 25
+}
+endObjectProperties
+
+# (X-Y Graph)
+object xyGraphClass
+beginObjectProperties
+major 4
+minor 8
+release 0
+# Geometry
+x 740
+y 312
+w 228
+h 240
+# Appearance
+plotAreaBorder
+autoScaleBothDirections
+xLabel "samples"
+fgColor index 13
+bgColor index 2
+gridColor index 6
+font "helvetica-medium-r-12.0"
+# Operating Modes
+nPts 0
+# X axis properties
+showXAxis
+xAxisSrc "AutoScale"
+xMin 0
+xMax 20000
+# Y axis properties
+showYAxis
+yAxisSrc "AutoScale"
+yMax 1
+yLabelIntervals 8
+yAxisFormat "g"
+yAxisPrecision 1
+# Y2 axis properties
+y2AxisSrc "fromUser"
+y2Min -10
+y2Max 10
+# Trace Properties
+numTraces 1
+yPv {
+  0 "$(CM)00:RESA:CH18:WF"
+}
+nPv {
+  0 "$(CM)00:RESA:CH18:WF.NORD"
+}
+plotUpdateMode {
+  0 "xOrY"
+}
+opMode {
+  0 "plot"
+}
+xSigned {
+  0 1
+}
+ySigned {
+  0 1
+}
+plotColor {
+  0 index 25
+}
+endObjectProperties
+
+# (X-Y Graph)
+object xyGraphClass
+beginObjectProperties
+major 4
+minor 8
+release 0
+# Geometry
+x 500
+y 312
+w 228
+h 240
+# Appearance
+plotAreaBorder
+autoScaleBothDirections
+xLabel "samples"
+fgColor index 13
+bgColor index 2
+gridColor index 6
+font "helvetica-medium-r-12.0"
+# Operating Modes
+nPts 0
+# X axis properties
+showXAxis
+xAxisSrc "AutoScale"
+xMin 0
+xMax 20000
+# Y axis properties
+showYAxis
+yAxisSrc "AutoScale"
+yMax 1
+yLabelIntervals 8
+yAxisFormat "g"
+yAxisPrecision 1
+# Y2 axis properties
+y2AxisSrc "fromUser"
+y2Min -10
+y2Max 10
+# Trace Properties
+numTraces 1
+yPv {
+  0 "$(CM)00:RESA:CH17:WF"
+}
+nPv {
+  0 "$(CM)00:RESA:CH17:WF.NORD"
+}
+plotUpdateMode {
+  0 "xOrY"
+}
+opMode {
+  0 "plot"
+}
+xSigned {
+  0 1
+}
+ySigned {
+  0 1
+}
+plotColor {
+  0 index 25
+}
+endObjectProperties
+
+# (X-Y Graph)
+object xyGraphClass
+beginObjectProperties
+major 4
+minor 8
+release 0
+# Geometry
+x 260
+y 312
+w 228
+h 240
+# Appearance
+plotAreaBorder
+autoScaleBothDirections
+xLabel "samples"
+fgColor index 13
+bgColor index 2
+gridColor index 6
+font "helvetica-medium-r-12.0"
+# Operating Modes
+nPts 0
+# X axis properties
+showXAxis
+xAxisSrc "AutoScale"
+xMin 0
+xMax 20000
+# Y axis properties
+showYAxis
+yAxisSrc "AutoScale"
+yMax 1
+yLabelIntervals 8
+yAxisFormat "g"
+yAxisPrecision 1
+# Y2 axis properties
+y2AxisSrc "fromUser"
+y2Min -10
+y2Max 10
+# Trace Properties
+numTraces 1
+yPv {
+  0 "$(CM)00:RESA:CH16:WF"
+}
+nPv {
+  0 "$(CM)00:RESA:CH16:WF.NORD"
+}
+plotUpdateMode {
+  0 "xOrY"
+}
+opMode {
+  0 "plot"
+}
+xSigned {
+  0 1
+}
+ySigned {
+  0 1
+}
+plotColor {
+  0 index 25
+}
+endObjectProperties
+

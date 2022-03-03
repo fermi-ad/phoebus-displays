@@ -1,0 +1,957 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>SRF Cavity - $(CM)$(C)0</name>
+  <x>276</x>
+  <y>334</y>
+  <width>1272</width>
+  <height>1068</height>
+  <background_color>
+    <color name="GLOBAL canvas" red="200" green="200" blue="200">
+    </color>
+  </background_color>
+  <grid_step_x>4</grid_step_x>
+  <grid_step_y>4</grid_step_y>
+  <widget type="rectangle" version="2.0.0">
+    <name>EDM activeRectangleClass</name>
+    <width>1245</width>
+    <height>41</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color name="CRYO title" red="176" green="218" blue="249">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="CRYO title" red="176" green="218" blue="249">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>EDM activeExitButtonClass</name>
+    <actions>
+      <action type="execute">
+        <script file="EmbeddedPy">
+          <text><![CDATA[from org.csstudio.display.builder.runtime.script import ScriptUtil
+ScriptUtil.closeDisplay(widget)
+]]></text>
+        </script>
+        <description>close</description>
+      </action>
+    </actions>
+    <text>Exit</text>
+    <x>1140</x>
+    <y>8</y>
+    <width>48</width>
+    <height>24</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>SRF Cavity 
+Cryomodule $(CM)00 Cavity $(C)</text>
+    <x>8</x>
+    <width>280</width>
+    <height>40</height>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="VAC title" red="225" green="248" blue="177">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>EDM relatedDisplayClass</name>
+    <actions>
+      <action type="open_display">
+        <file>rf_srf_cavity_control_cm.bob</file>
+        <target>tab</target>
+      </action>
+    </actions>
+    <text>All 8 Cavities...</text>
+    <x>904</x>
+    <y>8</y>
+    <width>152</width>
+    <height>24</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="navtabs" version="2.0.0">
+    <name>EDM activePipClass</name>
+    <tabs>
+      <tab>
+        <name>Tab 1</name>
+        <file>rf_srf_cavity_embed.bob</file>
+        <macros>
+        </macros>
+        <group_name></group_name>
+      </tab>
+      <tab>
+        <name>Tab 2</name>
+        <file>rf_srf_char_embed.bob</file>
+        <macros>
+        </macros>
+        <group_name></group_name>
+      </tab>
+      <tab>
+        <name>Tab 3</name>
+        <file>rf_srf_detune_embed.bob</file>
+        <macros>
+        </macros>
+        <group_name></group_name>
+      </tab>
+      <tab>
+        <name>Tab 4</name>
+        <file>rf_srf_tuner_embed.bob</file>
+        <macros>
+        </macros>
+        <group_name></group_name>
+      </tab>
+      <tab>
+        <name>Tab 5</name>
+        <file>rf_srf_intlk_nocryo_embed.bob</file>
+        <macros>
+        </macros>
+        <group_name></group_name>
+      </tab>
+      <tab>
+        <name>Tab 6</name>
+        <file>rf_srf_controller_embed.bob</file>
+        <macros>
+        </macros>
+        <group_name></group_name>
+      </tab>
+      <tab>
+        <name>Tab 7</name>
+        <file>rf_srf_ampset_diag_embed.bob</file>
+        <macros>
+        </macros>
+        <group_name></group_name>
+      </tab>
+      <tab>
+        <name>Tab 8</name>
+        <file>rf_srf_sel_embed.bob</file>
+        <macros>
+        </macros>
+        <group_name></group_name>
+      </tab>
+      <tab>
+        <name>Tab 9</name>
+        <file>rf_srf_hardware_cm_embed.bob</file>
+        <macros>
+        </macros>
+        <group_name></group_name>
+      </tab>
+      <tab>
+        <name>Tab 10</name>
+        <file>rf_srf_cal_embed.bob</file>
+        <macros>
+        </macros>
+        <group_name></group_name>
+      </tab>
+    </tabs>
+    <x>8</x>
+    <y>84</y>
+    <width>1220</width>
+    <height>980</height>
+    <tab_width>0</tab_width>
+    <tab_height>0</tab_height>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+widget.setPropertyValue('active_tab', PVUtil.getInt(pvs[0]))
+]]></text>
+        <pv_name>LOC\\$(!W)dispPV=e:0,Overview,Char,Detune,Res,Intlk,Ctrl,Amp/Pha,SEL,HW,Cal</pv_name>
+      </script>
+    </scripts>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>EDM activeLineClass</name>
+    <x>80</x>
+    <y>100</y>
+    <width>1</width>
+    <height>1</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <arrow_length>15</arrow_length>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>EDM activeMessageButtonClass</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>LOC\\$(!W)dispPV=e:0,Overview,Char,Detune,Res,Intlk,Ctrl,Amp/Pha,SEL,HW,Cal</pv_name>
+        <value>0</value>
+        <description>Overview</description>
+      </action>
+      <action type="write_pv">
+        <pv_name>LOC\\$(!W)dispPV=e:0,Overview,Char,Detune,Res,Intlk,Ctrl,Amp/Pha,SEL,HW,Cal</pv_name>
+        <value>0</value>
+        <description>Overview</description>
+      </action>
+    </actions>
+    <text>Overview</text>
+    <x>24</x>
+    <y>48</y>
+    <width>108</width>
+    <height>32</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <rules>
+      <rule name="EDM visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0&gt;=0.0 &amp;&amp; pv0&lt;1.0">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="true">
+          <value>false</value>
+        </exp>
+        <pv_name>LOC\\$(!W)dispPV=e:0,Overview,Char,Detune,Res,Intlk,Ctrl,Amp/Pha,SEL,HW,Cal</pv_name>
+      </rule>
+    </rules>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>EDM activeMessageButtonClass</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>LOC\\$(!W)dispPV=e:0,Overview,Char,Detune,Res,Intlk,Ctrl,Amp/Pha,SEL,HW,Cal</pv_name>
+        <value>9</value>
+        <description>Signal Calib</description>
+      </action>
+      <action type="write_pv">
+        <pv_name>LOC\\$(!W)dispPV=e:0,Overview,Char,Detune,Res,Intlk,Ctrl,Amp/Pha,SEL,HW,Cal</pv_name>
+        <value>9</value>
+        <description>Signal Calib</description>
+      </action>
+    </actions>
+    <text>Signal Calib</text>
+    <x>1104</x>
+    <y>48</y>
+    <width>108</width>
+    <height>32</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <rules>
+      <rule name="EDM visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0&gt;=9.0 &amp;&amp; pv0&lt;10.0">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="true">
+          <value>false</value>
+        </exp>
+        <pv_name>LOC\\$(!W)dispPV=e:0,Overview,Char,Detune,Res,Intlk,Ctrl,Amp/Pha,SEL,HW,Cal</pv_name>
+      </rule>
+    </rules>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>EDM activeMessageButtonClass</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>LOC\\$(!W)dispPV=e:0,Overview,Char,Detune,Res,Intlk,Ctrl,Amp/Pha,SEL,HW,Cal</pv_name>
+        <value>8</value>
+        <description>Hardware</description>
+      </action>
+      <action type="write_pv">
+        <pv_name>LOC\\$(!W)dispPV=e:0,Overview,Char,Detune,Res,Intlk,Ctrl,Amp/Pha,SEL,HW,Cal</pv_name>
+        <value>8</value>
+        <description>Hardware</description>
+      </action>
+    </actions>
+    <text>Hardware</text>
+    <x>984</x>
+    <y>48</y>
+    <width>108</width>
+    <height>32</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <rules>
+      <rule name="EDM visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0&gt;=8.0 &amp;&amp; pv0&lt;9.0">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="true">
+          <value>false</value>
+        </exp>
+        <pv_name>LOC\\$(!W)dispPV=e:0,Overview,Char,Detune,Res,Intlk,Ctrl,Amp/Pha,SEL,HW,Cal</pv_name>
+      </rule>
+    </rules>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>EDM activeMessageButtonClass</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>LOC\\$(!W)dispPV=e:0,Overview,Char,Detune,Res,Intlk,Ctrl,Amp/Pha,SEL,HW,Cal</pv_name>
+        <value>7</value>
+        <description>Pulsed</description>
+      </action>
+      <action type="write_pv">
+        <pv_name>LOC\\$(!W)dispPV=e:0,Overview,Char,Detune,Res,Intlk,Ctrl,Amp/Pha,SEL,HW,Cal</pv_name>
+        <value>7</value>
+        <description>Pulsed</description>
+      </action>
+    </actions>
+    <text>Pulsed</text>
+    <x>864</x>
+    <y>48</y>
+    <width>108</width>
+    <height>32</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <rules>
+      <rule name="EDM visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0&gt;=7.0 &amp;&amp; pv0&lt;8.0">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="true">
+          <value>false</value>
+        </exp>
+        <pv_name>LOC\\$(!W)dispPV=e:0,Overview,Char,Detune,Res,Intlk,Ctrl,Amp/Pha,SEL,HW,Cal</pv_name>
+      </rule>
+    </rules>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>EDM activeMessageButtonClass</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>LOC\\$(!W)dispPV=e:0,Overview,Char,Detune,Res,Intlk,Ctrl,Amp/Pha,SEL,HW,Cal</pv_name>
+        <value>6</value>
+        <description>Ampl/Phas Diag</description>
+      </action>
+      <action type="write_pv">
+        <pv_name>LOC\\$(!W)dispPV=e:0,Overview,Char,Detune,Res,Intlk,Ctrl,Amp/Pha,SEL,HW,Cal</pv_name>
+        <value>6</value>
+        <description>Ampl/Phas Diag</description>
+      </action>
+    </actions>
+    <text>Ampl/Phas Diag</text>
+    <x>744</x>
+    <y>48</y>
+    <width>108</width>
+    <height>32</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <rules>
+      <rule name="EDM visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0&gt;=6.0 &amp;&amp; pv0&lt;7.0">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="true">
+          <value>false</value>
+        </exp>
+        <pv_name>LOC\\$(!W)dispPV=e:0,Overview,Char,Detune,Res,Intlk,Ctrl,Amp/Pha,SEL,HW,Cal</pv_name>
+      </rule>
+    </rules>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>EDM activeMessageButtonClass</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>LOC\\$(!W)dispPV=e:0,Overview,Char,Detune,Res,Intlk,Ctrl,Amp/Pha,SEL,HW,Cal</pv_name>
+        <value>5</value>
+        <description>RF Controller</description>
+      </action>
+      <action type="write_pv">
+        <pv_name>LOC\\$(!W)dispPV=e:0,Overview,Char,Detune,Res,Intlk,Ctrl,Amp/Pha,SEL,HW,Cal</pv_name>
+        <value>5</value>
+        <description>RF Controller</description>
+      </action>
+    </actions>
+    <text>RF Controller</text>
+    <x>624</x>
+    <y>48</y>
+    <width>108</width>
+    <height>32</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <rules>
+      <rule name="EDM visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0&gt;=5.0 &amp;&amp; pv0&lt;6.0">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="true">
+          <value>false</value>
+        </exp>
+        <pv_name>LOC\\$(!W)dispPV=e:0,Overview,Char,Detune,Res,Intlk,Ctrl,Amp/Pha,SEL,HW,Cal</pv_name>
+      </rule>
+    </rules>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>EDM activeMessageButtonClass</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>LOC\\$(!W)dispPV=e:0,Overview,Char,Detune,Res,Intlk,Ctrl,Amp/Pha,SEL,HW,Cal</pv_name>
+        <value>4</value>
+        <description>Interlocks</description>
+      </action>
+      <action type="write_pv">
+        <pv_name>LOC\\$(!W)dispPV=e:0,Overview,Char,Detune,Res,Intlk,Ctrl,Amp/Pha,SEL,HW,Cal</pv_name>
+        <value>4</value>
+        <description>Interlocks</description>
+      </action>
+    </actions>
+    <text>Interlocks</text>
+    <x>504</x>
+    <y>48</y>
+    <width>108</width>
+    <height>32</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <rules>
+      <rule name="EDM visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0&gt;=4.0 &amp;&amp; pv0&lt;5.0">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="true">
+          <value>false</value>
+        </exp>
+        <pv_name>LOC\\$(!W)dispPV=e:0,Overview,Char,Detune,Res,Intlk,Ctrl,Amp/Pha,SEL,HW,Cal</pv_name>
+      </rule>
+    </rules>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>EDM activeMessageButtonClass</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>LOC\\$(!W)dispPV=e:0,Overview,Char,Detune,Res,Intlk,Ctrl,Amp/Pha,SEL,HW,Cal</pv_name>
+        <value>3</value>
+        <description>Tuners</description>
+      </action>
+      <action type="write_pv">
+        <pv_name>LOC\\$(!W)dispPV=e:0,Overview,Char,Detune,Res,Intlk,Ctrl,Amp/Pha,SEL,HW,Cal</pv_name>
+        <value>3</value>
+        <description>Tuners</description>
+      </action>
+    </actions>
+    <text>Tuners</text>
+    <x>384</x>
+    <y>48</y>
+    <width>108</width>
+    <height>32</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <rules>
+      <rule name="EDM visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0&gt;=3.0 &amp;&amp; pv0&lt;4.0">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="true">
+          <value>false</value>
+        </exp>
+        <pv_name>LOC\\$(!W)dispPV=e:0,Overview,Char,Detune,Res,Intlk,Ctrl,Amp/Pha,SEL,HW,Cal</pv_name>
+      </rule>
+    </rules>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>EDM activeMessageButtonClass</name>
+    <actions>
+      <action type="open_display">
+        <file>rf_srf_cavity_main.bob</file>
+        <target>replace</target>
+        <description>Open Display</description>
+      </action>
+      <action type="write_pv">
+        <pv_name>LOC\\$(!W)dispPV=e:0,Overview,Char,Detune,Res,Intlk,Ctrl,Amp/Pha,SEL,HW,Cal</pv_name>
+        <value>1</value>
+        <description>Characterization</description>
+      </action>
+      <action type="write_pv">
+        <pv_name>LOC\\$(!W)dispPV=e:0,Overview,Char,Detune,Res,Intlk,Ctrl,Amp/Pha,SEL,HW,Cal</pv_name>
+        <value>1</value>
+        <description>Characterization</description>
+      </action>
+    </actions>
+    <text>Characterization</text>
+    <x>144</x>
+    <y>48</y>
+    <width>108</width>
+    <height>32</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <rules>
+      <rule name="EDM visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0&gt;=1.0 &amp;&amp; pv0&lt;2.0">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="true">
+          <value>false</value>
+        </exp>
+        <pv_name>LOC\\$(!W)dispPV=e:0,Overview,Char,Detune,Res,Intlk,Ctrl,Amp/Pha,SEL,HW,Cal</pv_name>
+      </rule>
+    </rules>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>EDM activeRectangleClass</name>
+    <x>623</x>
+    <y>47</y>
+    <width>110</width>
+    <height>34</height>
+    <line_width>2</line_width>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="EDM visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0&gt;=0.0 &amp;&amp; pv0&lt;1.0">
+          <value>false</value>
+        </exp>
+        <exp bool_exp="true">
+          <value>true</value>
+        </exp>
+        <pv_name>$(CM)$(C)0:CTRL_SUM.SEVR</pv_name>
+      </rule>
+    </rules>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[# EDM Alarm-sensitive color
+from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+cn = ( 'OK', 'MINOR', 'MAJOR', 'INVALID', 'DISCONNECTED' )[sevr]
+widget.setPropertyValue('line_color', WidgetColorService.getColor(cn))]]></text>
+        <pv_name>$(CM)$(C)0:CTRL_SUM</pv_name>
+      </script>
+    </scripts>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>EDM activeRectangleClass</name>
+    <x>1103</x>
+    <y>47</y>
+    <width>110</width>
+    <height>34</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color name="red-21" red="224" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="EDM visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0&gt;=0.0 &amp;&amp; pv0&lt;1.0">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="true">
+          <value>false</value>
+        </exp>
+        <pv_name>CALC\\LABELVIS($(CM)$(C)0:CAV:CAL_SCALE,$(CM)$(C)0:CAV:SCALE)</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>EDM activeRectangleClass</name>
+    <x>983</x>
+    <y>47</y>
+    <width>110</width>
+    <height>34</height>
+    <line_width>2</line_width>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="EDM visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0&gt;=2.0 &amp;&amp; pv0&lt;5.0">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="true">
+          <value>false</value>
+        </exp>
+        <pv_name>$(CM)00:RACK$(R):STATSUMY.SEVR</pv_name>
+      </rule>
+    </rules>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[# EDM Alarm-sensitive color
+from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+cn = ( 'OK', 'MINOR', 'MAJOR', 'INVALID', 'DISCONNECTED' )[sevr]
+widget.setPropertyValue('line_color', WidgetColorService.getColor(cn))]]></text>
+        <pv_name>$(CM)00:RACK$(R):STATSUMY</pv_name>
+      </script>
+    </scripts>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>EDM activeRectangleClass</name>
+    <x>503</x>
+    <y>47</y>
+    <width>110</width>
+    <height>34</height>
+    <line_width>2</line_width>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="EDM visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0&gt;=0.0 &amp;&amp; pv0&lt;1.0">
+          <value>false</value>
+        </exp>
+        <exp bool_exp="true">
+          <value>true</value>
+        </exp>
+        <pv_name>$(CM)$(C)0:RFPERMIT.SEVR</pv_name>
+      </rule>
+    </rules>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[# EDM Alarm-sensitive color
+from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+cn = ( 'OK', 'MINOR', 'MAJOR', 'INVALID', 'DISCONNECTED' )[sevr]
+widget.setPropertyValue('line_color', WidgetColorService.getColor(cn))]]></text>
+        <pv_name>$(CM)$(C)0:RFPERMIT</pv_name>
+      </script>
+    </scripts>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>EDM activeMessageButtonClass</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>LOC\\$(!W)dispPV=e:0,Overview,Char,Detune,Res,Intlk,Ctrl,Amp/Pha,SEL,HW,Cal</pv_name>
+        <value>2</value>
+        <description>Detune</description>
+      </action>
+      <action type="write_pv">
+        <pv_name>LOC\\$(!W)dispPV=e:0,Overview,Char,Detune,Res,Intlk,Ctrl,Amp/Pha,SEL,HW,Cal</pv_name>
+        <value>2</value>
+        <description>Detune</description>
+      </action>
+    </actions>
+    <text>Detune</text>
+    <x>264</x>
+    <y>48</y>
+    <width>108</width>
+    <height>32</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <rules>
+      <rule name="EDM visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0&gt;=2.0 &amp;&amp; pv0&lt;3.0">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="true">
+          <value>false</value>
+        </exp>
+        <pv_name>LOC\\$(!W)dispPV=e:0,Overview,Char,Detune,Res,Intlk,Ctrl,Amp/Pha,SEL,HW,Cal</pv_name>
+      </rule>
+    </rules>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group_1</name>
+    <x>104</x>
+    <y>841</y>
+    <width>50</width>
+    <height>30</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="action_button" version="3.0.0">
+      <name>Action Button_2</name>
+      <actions>
+        <action type="write_pv">
+          <pv_name>$(CM)$(C)0:STEP:MOVE_REQ_POS</pv_name>
+          <value>1</value>
+          <description>Write PV</description>
+        </action>
+      </actions>
+      <text></text>
+      <width>50</width>
+      <background_color>
+        <color red="0" green="128" blue="0">
+        </color>
+      </background_color>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="polygon" version="2.0.0">
+      <name>EDM activeLineClass_7</name>
+      <x>17</x>
+      <y>8</y>
+      <width>16</width>
+      <height>15</height>
+      <line_width>1</line_width>
+      <line_color>
+        <color name="Disconn/Invalid" red="255" green="255" blue="255">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="grey-1" red="236" green="236" blue="236">
+        </color>
+      </background_color>
+      <points>
+        <point x="0.0" y="0.0">
+        </point>
+        <point x="16.0" y="8.0">
+        </point>
+        <point x="0.0" y="15.0">
+        </point>
+        <point x="0.0" y="0.0">
+        </point>
+        <point x="0.0" y="0.0">
+        </point>
+        <point x="0.0" y="0.0">
+        </point>
+      </points>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>EDM activeLineClass_8</name>
+      <x>17</x>
+      <y>8</y>
+      <width>16</width>
+      <height>15</height>
+      <line_width>2</line_width>
+      <line_color>
+        <color name="grey-2" red="218" green="218" blue="218">
+        </color>
+      </line_color>
+      <arrow_length>15</arrow_length>
+      <points>
+        <point x="0.0" y="0.0">
+        </point>
+        <point x="16.0" y="8.0">
+        </point>
+        <point x="0.0" y="15.0">
+        </point>
+        <point x="0.0" y="0.0">
+        </point>
+        <point x="0.0" y="0.0">
+        </point>
+        <point x="0.0" y="0.0">
+        </point>
+        <point x="0.0" y="0.0">
+        </point>
+      </points>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group_2</name>
+    <x>4</x>
+    <y>841</y>
+    <width>50</width>
+    <height>30</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="action_button" version="3.0.0">
+      <name>Action Button_3</name>
+      <actions>
+        <action type="write_pv">
+          <pv_name>$(CM)$(C)0:STEP:MOVE_REQ_NEG</pv_name>
+          <value>1</value>
+          <description>Write PV</description>
+        </action>
+      </actions>
+      <text></text>
+      <width>50</width>
+      <background_color>
+        <color red="0" green="128" blue="0">
+        </color>
+      </background_color>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="polygon" version="2.0.0">
+      <name>EDM activeLineClass_9</name>
+      <x>14</x>
+      <y>8</y>
+      <width>16</width>
+      <height>15</height>
+      <line_width>1</line_width>
+      <line_color>
+        <color name="Disconn/Invalid" red="255" green="255" blue="255">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="grey-1" red="236" green="236" blue="236">
+        </color>
+      </background_color>
+      <points>
+        <point x="16.0" y="0.0">
+        </point>
+        <point x="0.0" y="8.0">
+        </point>
+        <point x="16.0" y="15.0">
+        </point>
+        <point x="16.0" y="0.0">
+        </point>
+        <point x="16.0" y="0.0">
+        </point>
+        <point x="16.0" y="0.0">
+        </point>
+      </points>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>EDM activeLineClass_10</name>
+      <x>14</x>
+      <y>8</y>
+      <width>16</width>
+      <height>15</height>
+      <line_width>2</line_width>
+      <line_color>
+        <color name="grey-2" red="218" green="218" blue="218">
+        </color>
+      </line_color>
+      <arrow_length>15</arrow_length>
+      <points>
+        <point x="16.0" y="0.0">
+        </point>
+        <point x="0.0" y="8.0">
+        </point>
+        <point x="16.0" y="15.0">
+        </point>
+        <point x="16.0" y="0.0">
+        </point>
+        <point x="16.0" y="0.0">
+        </point>
+        <point x="16.0" y="0.0">
+        </point>
+        <point x="16.0" y="0.0">
+        </point>
+      </points>
+    </widget>
+  </widget>
+</display>

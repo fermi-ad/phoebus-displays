@@ -1,0 +1,664 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>IOC Test Stand Watcher</name>
+  <macros>
+    <dev1>FNAL</dev1>
+    <dev10>PIP2IT-RF</dev10>
+    <dev11>PIP2IT-RF</dev11>
+    <dev12>PIP2IT-RF</dev12>
+    <dev13>PIP2IT-RF</dev13>
+    <dev2>PIP2-RF</dev2>
+    <dev3>PIP2IT-RF</dev3>
+    <dev4>PIP2IT-RF</dev4>
+    <dev5>PIP2IT-RF</dev5>
+    <dev6>PIP2IT-RF</dev6>
+    <dev7>PIP2IT-RF</dev7>
+    <dev8>PIP2IT-RF</dev8>
+    <dev9>PIP2IT-RF</dev9>
+    <sys1>IOC_TEST_RASPI2</sys1>
+    <sys10>AMP</sys10>
+    <sys11>AMP</sys11>
+    <sys12>AMP</sys12>
+    <sys13>AMP</sys13>
+    <sys2>FG</sys2>
+    <sys3>AMP</sys3>
+    <sys4>AMP</sys4>
+    <sys5>AMP</sys5>
+    <sys6>AMP</sys6>
+    <sys7>AMP</sys7>
+    <sys8>AMP</sys8>
+    <sys9>AMP</sys9>
+    <unit1>01</unit1>
+    <unit10>09</unit10>
+    <unit11>10</unit11>
+    <unit12>11</unit12>
+    <unit13>12</unit13>
+    <unit2>01</unit2>
+    <unit3>01</unit3>
+    <unit4>02</unit4>
+    <unit5>03</unit5>
+    <unit6>05</unit6>
+    <unit7>06</unit7>
+    <unit8>07</unit8>
+    <unit9>08</unit9>
+  </macros>
+  <width>1300</width>
+  <height>640</height>
+  <scripts>
+    <script file="EmbeddedPy">
+      <text><![CDATA[# Embedded python script
+from org.csstudio.display.builder.runtime.script import PVUtil, ScriptUtil
+print 'Hello'
+# widget.setPropertyValue('text', PVUtil.getString(pvs[0]))]]></text>
+      <pv_name>watcher:IOCstart</pv_name>
+      <pv_name>watcher:Tpresent</pv_name>
+      <pv_name>watcher:MagicN</pv_name>
+      <pv_name>watcher:Version</pv_name>
+      <pv_name>watcher:HeartBeat</pv_name>
+      <pv_name>watcher:Period</pv_name>
+      <pv_name>watcher:Flags</pv_name>
+      <pv_name>watcher:RPort</pv_name>
+      <pv_name>watcher:IOCname</pv_name>
+    </script>
+  </scripts>
+  <widget type="label" version="2.0.0">
+    <name>Label_20</name>
+    <text>Watcher Process</text>
+    <y>410</y>
+    <width>30</width>
+    <height>220</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="18.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="0" green="0" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <rotation_step>1</rotation_step>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_4</name>
+    <y>410</y>
+    <width>30</width>
+    <height>220</height>
+    <line_width>2</line_width>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <text>IOC Test Stand Watcher</text>
+    <width>1270</width>
+    <height>30</height>
+    <font>
+      <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="0" green="0" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="255" green="255" blue="77">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <border_width>3</border_width>
+    <border_color>
+      <color red="0" green="0" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_14</name>
+    <text>ALIVE Records</text>
+    <y>120</y>
+    <width>30</width>
+    <height>280</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="18.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="0" green="0" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <rotation_step>1</rotation_step>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_3</name>
+    <y>120</y>
+    <width>30</width>
+    <height>280</height>
+    <line_width>2</line_width>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle</name>
+    <y>40</y>
+    <width>1270</width>
+    <height>60</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_1</name>
+    <text>Watcher Server</text>
+    <x>10</x>
+    <y>50</y>
+    <width>180</width>
+    <height>40</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_2</name>
+    <class>COMMENT</class>
+    <text>IP Address</text>
+    <x>180</x>
+    <y>50</y>
+    <width>110</width>
+    <font use_class="true">
+      <font name="Comment" family="Liberation Sans" style="ITALIC" size="14.0">
+      </font>
+    </font>
+    <foreground_color use_class="true">
+      <color name="Text" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <transparent use_class="true">true</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words use_class="true">true</wrap_words>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_3</name>
+    <class>COMMENT</class>
+    <text>Port</text>
+    <x>300</x>
+    <y>50</y>
+    <width>50</width>
+    <font use_class="true">
+      <font name="Comment" family="Liberation Sans" style="ITALIC" size="14.0">
+      </font>
+    </font>
+    <foreground_color use_class="true">
+      <color name="Text" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <transparent use_class="true">true</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words use_class="true">true</wrap_words>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update</name>
+    <pv_name>$(dev1):$(sys1)_$(unit1):ALIVE.RHOST</pv_name>
+    <x>180</x>
+    <y>70</y>
+    <width>110</width>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_1</name>
+    <pv_name>$(dev1):$(sys1)_$(unit1):ALIVE.RPORT</pv_name>
+    <x>300</x>
+    <y>70</y>
+    <width>50</width>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_4</name>
+    <text>IOCs</text>
+    <x>30</x>
+    <y>100</y>
+    <width>1240</width>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <background_color>
+      <color red="255" green="255" blue="150">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_5</name>
+    <text>Name</text>
+    <x>40</x>
+    <y>130</y>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_6</name>
+    <text>Heartbeat</text>
+    <x>40</x>
+    <y>150</y>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_7</name>
+    <text>Port</text>
+    <x>40</x>
+    <y>170</y>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_8</name>
+    <text>Period</text>
+    <x>40</x>
+    <y>190</y>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_9</name>
+    <text>On/Off</text>
+    <x>40</x>
+    <y>210</y>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_10</name>
+    <text>ArchType</text>
+    <x>40</x>
+    <y>230</y>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_11</name>
+    <text>EPICS Base</text>
+    <x>40</x>
+    <y>250</y>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_12</name>
+    <text>Support</text>
+    <x>40</x>
+    <y>270</y>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_13</name>
+    <class>COMMENT</class>
+    <text>Version</text>
+    <x>360</x>
+    <y>50</y>
+    <width>50</width>
+    <font use_class="true">
+      <font name="Comment" family="Liberation Sans" style="ITALIC" size="14.0">
+      </font>
+    </font>
+    <foreground_color use_class="true">
+      <color name="Text" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <transparent use_class="true">true</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words use_class="true">true</wrap_words>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_20</name>
+    <pv_name>$(dev1):$(sys1)_$(unit1):ALIVE.VER</pv_name>
+    <x>360</x>
+    <y>70</y>
+    <width>50</width>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_15</name>
+    <text>Owner</text>
+    <x>40</x>
+    <y>290</y>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_16</name>
+    <text>Group</text>
+    <x>40</x>
+    <y>310</y>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_17</name>
+    <text>Location</text>
+    <x>40</x>
+    <y>330</y>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_18</name>
+    <text>Request Read</text>
+    <x>40</x>
+    <y>350</y>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_19</name>
+    <text>Suppress</text>
+    <x>40</x>
+    <y>370</y>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_21</name>
+    <text>Date (Y-M-D)</text>
+    <x>40</x>
+    <y>420</y>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_22</name>
+    <text>IOC Start</text>
+    <x>40</x>
+    <y>440</y>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_23</name>
+    <text>Version</text>
+    <x>40</x>
+    <y>500</y>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_24</name>
+    <text>Heartbeat</text>
+    <x>40</x>
+    <y>520</y>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_25</name>
+    <text>Port</text>
+    <x>40</x>
+    <y>540</y>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_26</name>
+    <text>Period</text>
+    <x>40</x>
+    <y>560</y>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_27</name>
+    <text>Flags</text>
+    <x>40</x>
+    <y>580</y>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_29</name>
+    <text>Magic Number</text>
+    <x>40</x>
+    <y>600</y>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_31</name>
+    <text>IOC Fail</text>
+    <x>40</x>
+    <y>460</y>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_32</name>
+    <text>Comm. Error</text>
+    <x>40</x>
+    <y>480</y>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_2</name>
+    <file>IOCcontainer.bob</file>
+    <macros>
+      <dev>FNAL</dev>
+      <sys>IOC_TEST_RASPI3</sys>
+      <unit>01</unit>
+    </macros>
+    <x>300</x>
+    <y>130</y>
+    <width>140</width>
+    <height>490</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_3</name>
+    <file>IOCcontainer.bob</file>
+    <macros>
+      <dev>FNAL</dev>
+      <sys>IOC_TEST_RASPI2</sys>
+      <unit>01</unit>
+    </macros>
+    <x>150</x>
+    <y>130</y>
+    <width>140</width>
+    <height>490</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_4</name>
+    <file>IOCcontainer.bob</file>
+    <macros>
+      <dev>FNAL</dev>
+      <sys>IOC_TEST_RASPI4</sys>
+      <unit>01</unit>
+    </macros>
+    <x>450</x>
+    <y>130</y>
+    <width>140</width>
+    <height>490</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_5</name>
+    <file>IOCcontainer.bob</file>
+    <macros>
+      <dev>FNAL</dev>
+      <sys>IOC_TEST_SOC</sys>
+      <unit>01</unit>
+    </macros>
+    <x>600</x>
+    <y>130</y>
+    <width>140</width>
+    <height>490</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_6</name>
+    <file>IOCcontainer.bob</file>
+    <macros>
+      <dev>FNAL</dev>
+      <sys>IOC_TEST_ACH</sys>
+      <unit>01</unit>
+    </macros>
+    <x>750</x>
+    <y>130</y>
+    <width>140</width>
+    <height>490</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_7</name>
+    <file>IOCcontainer.bob</file>
+    <macros>
+      <dev>FNAL</dev>
+      <sys>IOC_TEST_PIRM4</sys>
+      <unit>01</unit>
+    </macros>
+    <x>900</x>
+    <y>130</y>
+    <width>140</width>
+    <height>490</height>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button</name>
+    <actions>
+      <action type="open_display">
+        <file>IOCselect.bob</file>
+        <target>tab</target>
+        <description>IOC Statistics</description>
+      </action>
+    </actions>
+    <x>1160</x>
+    <y>60</y>
+    <width>90</width>
+    <height>20</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_2</name>
+    <x>30</x>
+    <y>120</y>
+    <width>1240</width>
+    <height>280</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_5</name>
+    <x>30</x>
+    <y>410</y>
+    <width>1240</width>
+    <height>220</height>
+    <transparent>true</transparent>
+  </widget>
+</display>

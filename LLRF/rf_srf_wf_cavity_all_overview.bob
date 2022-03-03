@@ -1,0 +1,4376 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>RF Waveforms - Cryomodule $(CM)00</name>
+  <x>13</x>
+  <y>58</y>
+  <width>1400</width>
+  <height>940</height>
+  <background_color>
+    <color name="grey-4" red="187" green="187" blue="187">
+    </color>
+  </background_color>
+  <grid_step_x>4</grid_step_x>
+  <grid_step_y>4</grid_step_y>
+  <widget type="rectangle" version="2.0.0">
+    <name>EDM activeRectangleClass</name>
+    <x>1132</x>
+    <y>368</y>
+    <width>149</width>
+    <height>225</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>EDM activeRectangleClass</name>
+    <width>1709</width>
+    <height>41</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color name="CRYO title" red="176" green="218" blue="249">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="CRYO title" red="176" green="218" blue="249">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>RF Waveforms - Cryomodule $(CM)00
+Cavity, Foward, Reverse Signals</text>
+    <x>12</x>
+    <width>348</width>
+    <height>40</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="VAC title" red="225" green="248" blue="177">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>EDM activeExitButtonClass</name>
+    <actions>
+      <action type="execute">
+        <script file="EmbeddedPy">
+          <text><![CDATA[from org.csstudio.display.builder.runtime.script import ScriptUtil
+ScriptUtil.closeDisplay(widget)
+]]></text>
+        </script>
+        <description>close</description>
+      </action>
+    </actions>
+    <text>Exit</text>
+    <x>1292</x>
+    <y>8</y>
+    <width>48</width>
+    <height>24</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="xyplot" version="2.0.0">
+    <name>EDM xyGraphClass</name>
+    <x>20</x>
+    <y>88</y>
+    <width>548</width>
+    <height>240</height>
+    <foreground_color>
+      <color name="grey-13" red="45" green="45" blue="45">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-2" red="218" green="218" blue="218">
+      </color>
+    </background_color>
+    <grid_color>
+      <color name="grey-13" red="45" green="45" blue="45">
+      </color>
+    </grid_color>
+    <title>Amplitude</title>
+    <title_font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </title_font>
+    <show_legend>false</show_legend>
+    <x_axis>
+      <title>seconds</title>
+      <autoscale>true</autoscale>
+      <log_scale>false</log_scale>
+      <minimum>0.0</minimum>
+      <maximum>100.0</maximum>
+      <show_grid>false</show_grid>
+      <title_font>
+        <font family="Liberation Sans" style="REGULAR" size="12.0">
+        </font>
+      </title_font>
+      <scale_font>
+        <font family="Liberation Sans" style="REGULAR" size="12.0">
+        </font>
+      </scale_font>
+      <visible>true</visible>
+    </x_axis>
+    <y_axes>
+      <y_axis>
+        <title>MV</title>
+        <autoscale>true</autoscale>
+        <log_scale>false</log_scale>
+        <minimum>0.0</minimum>
+        <maximum>100.0</maximum>
+        <show_grid>false</show_grid>
+        <title_font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </title_font>
+        <scale_font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </scale_font>
+        <visible>true</visible>
+      </y_axis>
+      <y_axis>
+        <title></title>
+        <autoscale>true</autoscale>
+        <log_scale>false</log_scale>
+        <minimum>0.0</minimum>
+        <maximum>100.0</maximum>
+        <show_grid>false</show_grid>
+        <title_font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </title_font>
+        <scale_font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </scale_font>
+        <visible>false</visible>
+      </y_axis>
+    </y_axes>
+    <traces>
+      <trace>
+        <name></name>
+        <x_pv>$(CM)10:CAV:TWF</x_pv>
+        <y_pv>$(CM)10:CAV:AWF</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color name="blue-26" red="0" green="0" blue="224">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name></name>
+        <x_pv>$(CM)20:CAV:TWF</x_pv>
+        <y_pv>$(CM)20:CAV:AWF</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color name="red-23" red="160" green="0" blue="0">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name></name>
+        <x_pv>$(CM)30:CAV:TWF</x_pv>
+        <y_pv>$(CM)30:CAV:AWF</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color name="cyan-31" red="0" green="224" blue="224">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name></name>
+        <x_pv>$(CM)40:CAV:TWF</x_pv>
+        <y_pv>$(CM)40:CAV:AWF</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color name="black-14" red="0" green="0" blue="0">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name></name>
+        <x_pv>$(CM)50:CAV:TWF</x_pv>
+        <y_pv>$(CM)50:CAV:AWF</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color name="orange-41" red="224" green="154" blue="84">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name></name>
+        <x_pv>$(CM)60:CAV:TWF</x_pv>
+        <y_pv>$(CM)60:CAV:AWF</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color name="Exit/Quit/Kill" red="255" green="0" blue="255">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name></name>
+        <x_pv>$(CM)70:CAV:TWF</x_pv>
+        <y_pv>$(CM)70:CAV:AWF</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color name="Monitor: alt" red="0" green="192" blue="0">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name></name>
+        <x_pv>$(CM)80:CAV:TWF</x_pv>
+        <y_pv>$(CM)80:CAV:AWF</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color name="purple-47" red="128" green="0" blue="128">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+    </traces>
+  </widget>
+  <widget type="xyplot" version="2.0.0">
+    <name>EDM xyGraphClass</name>
+    <x>576</x>
+    <y>88</y>
+    <width>548</width>
+    <height>240</height>
+    <foreground_color>
+      <color name="grey-13" red="45" green="45" blue="45">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-2" red="218" green="218" blue="218">
+      </color>
+    </background_color>
+    <grid_color>
+      <color name="grey-13" red="45" green="45" blue="45">
+      </color>
+    </grid_color>
+    <title>Phase</title>
+    <title_font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </title_font>
+    <show_legend>false</show_legend>
+    <x_axis>
+      <title>seconds</title>
+      <autoscale>true</autoscale>
+      <log_scale>false</log_scale>
+      <minimum>0.0</minimum>
+      <maximum>100.0</maximum>
+      <show_grid>false</show_grid>
+      <title_font>
+        <font family="Liberation Sans" style="REGULAR" size="12.0">
+        </font>
+      </title_font>
+      <scale_font>
+        <font family="Liberation Sans" style="REGULAR" size="12.0">
+        </font>
+      </scale_font>
+      <visible>true</visible>
+    </x_axis>
+    <y_axes>
+      <y_axis>
+        <title>degrees</title>
+        <autoscale>true</autoscale>
+        <log_scale>false</log_scale>
+        <minimum>0.0</minimum>
+        <maximum>100.0</maximum>
+        <show_grid>false</show_grid>
+        <title_font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </title_font>
+        <scale_font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </scale_font>
+        <visible>true</visible>
+      </y_axis>
+      <y_axis>
+        <title></title>
+        <autoscale>true</autoscale>
+        <log_scale>false</log_scale>
+        <minimum>0.0</minimum>
+        <maximum>100.0</maximum>
+        <show_grid>false</show_grid>
+        <title_font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </title_font>
+        <scale_font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </scale_font>
+        <visible>false</visible>
+      </y_axis>
+    </y_axes>
+    <traces>
+      <trace>
+        <name></name>
+        <x_pv>$(CM)10:CAV:TWF</x_pv>
+        <y_pv>$(CM)10:CAV:PWF</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color name="blue-26" red="0" green="0" blue="224">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name></name>
+        <x_pv>$(CM)20:CAV:TWF</x_pv>
+        <y_pv>$(CM)20:CAV:PWF</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color name="red-23" red="160" green="0" blue="0">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name></name>
+        <x_pv>$(CM)30:CAV:TWF</x_pv>
+        <y_pv>$(CM)30:CAV:PWF</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color name="cyan-31" red="0" green="224" blue="224">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name></name>
+        <x_pv>$(CM)40:CAV:TWF</x_pv>
+        <y_pv>$(CM)40:CAV:PWF</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color name="black-14" red="0" green="0" blue="0">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name></name>
+        <x_pv>$(CM)50:CAV:TWF</x_pv>
+        <y_pv>$(CM)50:CAV:PWF</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color name="orange-41" red="224" green="154" blue="84">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name></name>
+        <x_pv>$(CM)60:CAV:TWF</x_pv>
+        <y_pv>$(CM)60:CAV:PWF</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color name="Exit/Quit/Kill" red="255" green="0" blue="255">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name></name>
+        <x_pv>$(CM)70:CAV:TWF</x_pv>
+        <y_pv>$(CM)70:CAV:PWF</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color name="Monitor: alt" red="0" green="192" blue="0">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name></name>
+        <x_pv>$(CM)80:CAV:TWF</x_pv>
+        <y_pv>$(CM)80:CAV:PWF</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color name="purple-47" red="128" green="0" blue="128">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+    </traces>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>Cavity</text>
+    <x>272</x>
+    <y>72</y>
+    <width>600</width>
+    <height>16</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="xyplot" version="2.0.0">
+    <name>EDM xyGraphClass</name>
+    <x>20</x>
+    <y>364</y>
+    <width>548</width>
+    <height>240</height>
+    <foreground_color>
+      <color name="grey-13" red="45" green="45" blue="45">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-2" red="218" green="218" blue="218">
+      </color>
+    </background_color>
+    <grid_color>
+      <color name="grey-13" red="45" green="45" blue="45">
+      </color>
+    </grid_color>
+    <title>Amplitude</title>
+    <title_font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </title_font>
+    <show_legend>false</show_legend>
+    <x_axis>
+      <title>seconds</title>
+      <autoscale>true</autoscale>
+      <log_scale>false</log_scale>
+      <minimum>0.0</minimum>
+      <maximum>100.0</maximum>
+      <show_grid>false</show_grid>
+      <title_font>
+        <font family="Liberation Sans" style="REGULAR" size="12.0">
+        </font>
+      </title_font>
+      <scale_font>
+        <font family="Liberation Sans" style="REGULAR" size="12.0">
+        </font>
+      </scale_font>
+      <visible>true</visible>
+    </x_axis>
+    <y_axes>
+      <y_axis>
+        <title>W</title>
+        <autoscale>true</autoscale>
+        <log_scale>false</log_scale>
+        <minimum>0.0</minimum>
+        <maximum>100.0</maximum>
+        <show_grid>false</show_grid>
+        <title_font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </title_font>
+        <scale_font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </scale_font>
+        <visible>true</visible>
+      </y_axis>
+      <y_axis>
+        <title></title>
+        <autoscale>true</autoscale>
+        <log_scale>false</log_scale>
+        <minimum>0.0</minimum>
+        <maximum>100.0</maximum>
+        <show_grid>false</show_grid>
+        <title_font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </title_font>
+        <scale_font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </scale_font>
+        <visible>false</visible>
+      </y_axis>
+    </y_axes>
+    <traces>
+      <trace>
+        <name></name>
+        <x_pv>$(CM)10:FWD:TWF</x_pv>
+        <y_pv>$(CM)10:FWD:PWRWF</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color name="blue-26" red="0" green="0" blue="224">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name></name>
+        <x_pv>$(CM)20:FWD:TWF</x_pv>
+        <y_pv>$(CM)20:FWD:PWRWF</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color name="red-23" red="160" green="0" blue="0">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name></name>
+        <x_pv>$(CM)30:FWD:TWF</x_pv>
+        <y_pv>$(CM)30:FWD:PWRWF</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color name="cyan-31" red="0" green="224" blue="224">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name></name>
+        <x_pv>$(CM)40:FWD:TWF</x_pv>
+        <y_pv>$(CM)40:FWD:PWRWF</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color name="black-14" red="0" green="0" blue="0">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name></name>
+        <x_pv>$(CM)50:FWD:TWF</x_pv>
+        <y_pv>$(CM)50:FWD:PWRWF</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color name="orange-41" red="224" green="154" blue="84">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name></name>
+        <x_pv>$(CM)60:FWD:TWF</x_pv>
+        <y_pv>$(CM)60:FWD:PWRWF</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color name="Exit/Quit/Kill" red="255" green="0" blue="255">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name></name>
+        <x_pv>$(CM)70:FWD:TWF</x_pv>
+        <y_pv>$(CM)70:FWD:PWRWF</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color name="Monitor: alt" red="0" green="192" blue="0">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name></name>
+        <x_pv>$(CM)80:FWD:TWF</x_pv>
+        <y_pv>$(CM)80:FWD:PWRWF</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color name="purple-47" red="128" green="0" blue="128">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+    </traces>
+  </widget>
+  <widget type="xyplot" version="2.0.0">
+    <name>EDM xyGraphClass</name>
+    <x>576</x>
+    <y>364</y>
+    <width>548</width>
+    <height>240</height>
+    <foreground_color>
+      <color name="grey-13" red="45" green="45" blue="45">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-2" red="218" green="218" blue="218">
+      </color>
+    </background_color>
+    <grid_color>
+      <color name="grey-13" red="45" green="45" blue="45">
+      </color>
+    </grid_color>
+    <title>Phase</title>
+    <title_font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </title_font>
+    <show_legend>false</show_legend>
+    <x_axis>
+      <title>seconds</title>
+      <autoscale>true</autoscale>
+      <log_scale>false</log_scale>
+      <minimum>0.0</minimum>
+      <maximum>100.0</maximum>
+      <show_grid>false</show_grid>
+      <title_font>
+        <font family="Liberation Sans" style="REGULAR" size="12.0">
+        </font>
+      </title_font>
+      <scale_font>
+        <font family="Liberation Sans" style="REGULAR" size="12.0">
+        </font>
+      </scale_font>
+      <visible>true</visible>
+    </x_axis>
+    <y_axes>
+      <y_axis>
+        <title>degrees</title>
+        <autoscale>true</autoscale>
+        <log_scale>false</log_scale>
+        <minimum>0.0</minimum>
+        <maximum>100.0</maximum>
+        <show_grid>false</show_grid>
+        <title_font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </title_font>
+        <scale_font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </scale_font>
+        <visible>true</visible>
+      </y_axis>
+      <y_axis>
+        <title></title>
+        <autoscale>true</autoscale>
+        <log_scale>false</log_scale>
+        <minimum>0.0</minimum>
+        <maximum>100.0</maximum>
+        <show_grid>false</show_grid>
+        <title_font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </title_font>
+        <scale_font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </scale_font>
+        <visible>false</visible>
+      </y_axis>
+    </y_axes>
+    <traces>
+      <trace>
+        <name></name>
+        <x_pv>$(CM)10:FWD:TWF</x_pv>
+        <y_pv>$(CM)10:FWD:PWF</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color name="blue-26" red="0" green="0" blue="224">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name></name>
+        <x_pv>$(CM)20:FWD:TWF</x_pv>
+        <y_pv>$(CM)20:FWD:PWF</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color name="red-23" red="160" green="0" blue="0">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name></name>
+        <x_pv>$(CM)30:FWD:TWF</x_pv>
+        <y_pv>$(CM)30:FWD:PWF</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color name="cyan-31" red="0" green="224" blue="224">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name></name>
+        <x_pv>$(CM)40:FWD:TWF</x_pv>
+        <y_pv>$(CM)40:FWD:PWF</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color name="black-14" red="0" green="0" blue="0">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name></name>
+        <x_pv>$(CM)50:FWD:TWF</x_pv>
+        <y_pv>$(CM)50:FWD:PWF</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color name="orange-41" red="224" green="154" blue="84">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name></name>
+        <x_pv>$(CM)60:FWD:TWF</x_pv>
+        <y_pv>$(CM)60:FWD:PWF</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color name="Exit/Quit/Kill" red="255" green="0" blue="255">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name></name>
+        <x_pv>$(CM)70:FWD:TWF</x_pv>
+        <y_pv>$(CM)70:FWD:PWF</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color name="Monitor: alt" red="0" green="192" blue="0">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name></name>
+        <x_pv>$(CM)80:FWD:TWF</x_pv>
+        <y_pv>$(CM)80:FWD:PWF</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color name="purple-47" red="128" green="0" blue="128">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+    </traces>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>Forward</text>
+    <x>272</x>
+    <y>348</y>
+    <width>600</width>
+    <height>16</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>EDM Group 0</name>
+    <x>1248</x>
+    <y>396</y>
+    <width>17</width>
+    <height>17</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="bool_button" version="2.0.0">
+      <name>EDM activeMessageButtonClass</name>
+      <pv_name>loc://$(DID)wfDispCav1(1)</pv_name>
+      <width>16</width>
+      <height>16</height>
+      <off_label>null</off_label>
+      <off_color>
+        <color name="Controller" red="0" green="0" blue="255">
+        </color>
+      </off_color>
+      <on_label>null</on_label>
+      <on_color>
+        <color name="grey-4" red="187" green="187" blue="187">
+        </color>
+      </on_color>
+      <show_led>false</show_led>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="12.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="black-14" red="0" green="0" blue="0">
+        </color>
+      </foreground_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="bool_button" version="2.0.0">
+      <name>EDM activeMessageButtonClass</name>
+      <width>16</width>
+      <height>16</height>
+      <off_label>null</off_label>
+      <off_color>
+        <color name="grey-4" red="187" green="187" blue="187">
+        </color>
+      </off_color>
+      <on_label>null</on_label>
+      <on_color>
+        <color name="Controller" red="0" green="0" blue="255">
+        </color>
+      </on_color>
+      <show_led>false</show_led>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="12.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="black-14" red="0" green="0" blue="0">
+        </color>
+      </foreground_color>
+      <rules>
+        <rule name="EDM visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0&gt;=0.0 &amp;&amp; pv0&lt;1.0">
+            <value>true</value>
+          </exp>
+          <exp bool_exp="true">
+            <value>false</value>
+          </exp>
+          <pv_name>loc://$(DID)wfDispCav1(1)</pv_name>
+        </rule>
+      </rules>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>EDM Group 1</name>
+      <width>17</width>
+      <height>17</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <rules>
+        <rule name="EDM visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0&gt;=1.0 &amp;&amp; pv0&lt;2.0">
+            <value>true</value>
+          </exp>
+          <exp bool_exp="true">
+            <value>false</value>
+          </exp>
+          <pv_name>loc://$(DID)wfDispCav1(1)</pv_name>
+        </rule>
+      </rules>
+      <widget type="rectangle" version="2.0.0">
+        <name>EDM activeRectangleClass</name>
+        <width>15</width>
+        <height>15</height>
+        <line_width>1</line_width>
+        <line_color>
+          <color name="RING title" red="174" green="196" blue="195">
+          </color>
+        </line_color>
+        <background_color>
+          <color name="RING title" red="174" green="196" blue="195">
+          </color>
+        </background_color>
+      </widget>
+      <widget type="polyline" version="2.0.0">
+        <name>EDM activeLineClass</name>
+        <x>12</x>
+        <y>8</y>
+        <width>2</width>
+        <height>2</height>
+        <line_width>1</line_width>
+        <line_color>
+          <color name="black-14" red="0" green="0" blue="0">
+          </color>
+        </line_color>
+        <arrow_length>15</arrow_length>
+      </widget>
+      <widget type="polyline" version="2.0.0">
+        <name>EDM activeLineClass</name>
+        <width>14</width>
+        <height>14</height>
+        <points>
+          <point x="0.0" y="14.0">
+          </point>
+          <point x="0.0" y="0.0">
+          </point>
+          <point x="14.0" y="0.0">
+          </point>
+        </points>
+        <line_width>1</line_width>
+        <line_color>
+          <color name="grey-11" red="90" green="90" blue="90">
+          </color>
+        </line_color>
+        <arrow_length>15</arrow_length>
+      </widget>
+      <widget type="polyline" version="2.0.0">
+        <name>EDM activeLineClass</name>
+        <width>14</width>
+        <height>14</height>
+        <points>
+          <point x="14.0" y="0.0">
+          </point>
+          <point x="14.0" y="14.0">
+          </point>
+          <point x="0.0" y="14.0">
+          </point>
+        </points>
+        <line_width>1</line_width>
+        <line_color>
+          <color name="grey-1" red="236" green="236" blue="236">
+          </color>
+        </line_color>
+        <arrow_length>15</arrow_length>
+      </widget>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>EDM Group 2</name>
+    <x>1248</x>
+    <y>420</y>
+    <width>17</width>
+    <height>17</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="bool_button" version="2.0.0">
+      <name>EDM activeMessageButtonClass</name>
+      <pv_name>loc://$(DID)wfDispCav2(1)</pv_name>
+      <width>16</width>
+      <height>16</height>
+      <off_label>null</off_label>
+      <off_color>
+        <color name="Controller" red="0" green="0" blue="255">
+        </color>
+      </off_color>
+      <on_label>null</on_label>
+      <on_color>
+        <color name="grey-4" red="187" green="187" blue="187">
+        </color>
+      </on_color>
+      <show_led>false</show_led>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="12.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="black-14" red="0" green="0" blue="0">
+        </color>
+      </foreground_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="bool_button" version="2.0.0">
+      <name>EDM activeMessageButtonClass</name>
+      <width>16</width>
+      <height>16</height>
+      <off_label>null</off_label>
+      <off_color>
+        <color name="grey-4" red="187" green="187" blue="187">
+        </color>
+      </off_color>
+      <on_label>null</on_label>
+      <on_color>
+        <color name="Controller" red="0" green="0" blue="255">
+        </color>
+      </on_color>
+      <show_led>false</show_led>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="12.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="black-14" red="0" green="0" blue="0">
+        </color>
+      </foreground_color>
+      <rules>
+        <rule name="EDM visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0&gt;=0.0 &amp;&amp; pv0&lt;1.0">
+            <value>true</value>
+          </exp>
+          <exp bool_exp="true">
+            <value>false</value>
+          </exp>
+          <pv_name>loc://$(DID)wfDispCav2(1)</pv_name>
+        </rule>
+      </rules>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>EDM Group 3</name>
+      <width>17</width>
+      <height>17</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <rules>
+        <rule name="EDM visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0&gt;=1.0 &amp;&amp; pv0&lt;2.0">
+            <value>true</value>
+          </exp>
+          <exp bool_exp="true">
+            <value>false</value>
+          </exp>
+          <pv_name>loc://$(DID)wfDispCav2(1)</pv_name>
+        </rule>
+      </rules>
+      <widget type="rectangle" version="2.0.0">
+        <name>EDM activeRectangleClass</name>
+        <width>15</width>
+        <height>15</height>
+        <line_width>1</line_width>
+        <line_color>
+          <color name="RING title" red="174" green="196" blue="195">
+          </color>
+        </line_color>
+        <background_color>
+          <color name="RING title" red="174" green="196" blue="195">
+          </color>
+        </background_color>
+      </widget>
+      <widget type="polyline" version="2.0.0">
+        <name>EDM activeLineClass</name>
+        <x>12</x>
+        <y>8</y>
+        <width>2</width>
+        <height>2</height>
+        <line_width>1</line_width>
+        <line_color>
+          <color name="black-14" red="0" green="0" blue="0">
+          </color>
+        </line_color>
+        <arrow_length>15</arrow_length>
+      </widget>
+      <widget type="polyline" version="2.0.0">
+        <name>EDM activeLineClass</name>
+        <width>14</width>
+        <height>14</height>
+        <points>
+          <point x="0.0" y="14.0">
+          </point>
+          <point x="0.0" y="0.0">
+          </point>
+          <point x="14.0" y="0.0">
+          </point>
+        </points>
+        <line_width>1</line_width>
+        <line_color>
+          <color name="grey-11" red="90" green="90" blue="90">
+          </color>
+        </line_color>
+        <arrow_length>15</arrow_length>
+      </widget>
+      <widget type="polyline" version="2.0.0">
+        <name>EDM activeLineClass</name>
+        <width>14</width>
+        <height>14</height>
+        <points>
+          <point x="14.0" y="0.0">
+          </point>
+          <point x="14.0" y="14.0">
+          </point>
+          <point x="0.0" y="14.0">
+          </point>
+        </points>
+        <line_width>1</line_width>
+        <line_color>
+          <color name="grey-1" red="236" green="236" blue="236">
+          </color>
+        </line_color>
+        <arrow_length>15</arrow_length>
+      </widget>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>EDM Group 4</name>
+    <x>1248</x>
+    <y>444</y>
+    <width>17</width>
+    <height>17</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="bool_button" version="2.0.0">
+      <name>EDM activeMessageButtonClass</name>
+      <pv_name>loc://$(DID)wfDispCav3(1)</pv_name>
+      <width>16</width>
+      <height>16</height>
+      <off_label>null</off_label>
+      <off_color>
+        <color name="Controller" red="0" green="0" blue="255">
+        </color>
+      </off_color>
+      <on_label>null</on_label>
+      <on_color>
+        <color name="grey-4" red="187" green="187" blue="187">
+        </color>
+      </on_color>
+      <show_led>false</show_led>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="12.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="black-14" red="0" green="0" blue="0">
+        </color>
+      </foreground_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="bool_button" version="2.0.0">
+      <name>EDM activeMessageButtonClass</name>
+      <width>16</width>
+      <height>16</height>
+      <off_label>null</off_label>
+      <off_color>
+        <color name="grey-4" red="187" green="187" blue="187">
+        </color>
+      </off_color>
+      <on_label>null</on_label>
+      <on_color>
+        <color name="Controller" red="0" green="0" blue="255">
+        </color>
+      </on_color>
+      <show_led>false</show_led>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="12.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="black-14" red="0" green="0" blue="0">
+        </color>
+      </foreground_color>
+      <rules>
+        <rule name="EDM visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0&gt;=0.0 &amp;&amp; pv0&lt;1.0">
+            <value>true</value>
+          </exp>
+          <exp bool_exp="true">
+            <value>false</value>
+          </exp>
+          <pv_name>loc://$(DID)wfDispCav3(1)</pv_name>
+        </rule>
+      </rules>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>EDM Group 5</name>
+      <width>17</width>
+      <height>17</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <rules>
+        <rule name="EDM visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0&gt;=1.0 &amp;&amp; pv0&lt;2.0">
+            <value>true</value>
+          </exp>
+          <exp bool_exp="true">
+            <value>false</value>
+          </exp>
+          <pv_name>loc://$(DID)wfDispCav3(1)</pv_name>
+        </rule>
+      </rules>
+      <widget type="rectangle" version="2.0.0">
+        <name>EDM activeRectangleClass</name>
+        <width>15</width>
+        <height>15</height>
+        <line_width>1</line_width>
+        <line_color>
+          <color name="RING title" red="174" green="196" blue="195">
+          </color>
+        </line_color>
+        <background_color>
+          <color name="RING title" red="174" green="196" blue="195">
+          </color>
+        </background_color>
+      </widget>
+      <widget type="polyline" version="2.0.0">
+        <name>EDM activeLineClass</name>
+        <x>12</x>
+        <y>8</y>
+        <width>2</width>
+        <height>2</height>
+        <line_width>1</line_width>
+        <line_color>
+          <color name="black-14" red="0" green="0" blue="0">
+          </color>
+        </line_color>
+        <arrow_length>15</arrow_length>
+      </widget>
+      <widget type="polyline" version="2.0.0">
+        <name>EDM activeLineClass</name>
+        <width>14</width>
+        <height>14</height>
+        <points>
+          <point x="0.0" y="14.0">
+          </point>
+          <point x="0.0" y="0.0">
+          </point>
+          <point x="14.0" y="0.0">
+          </point>
+        </points>
+        <line_width>1</line_width>
+        <line_color>
+          <color name="grey-11" red="90" green="90" blue="90">
+          </color>
+        </line_color>
+        <arrow_length>15</arrow_length>
+      </widget>
+      <widget type="polyline" version="2.0.0">
+        <name>EDM activeLineClass</name>
+        <width>14</width>
+        <height>14</height>
+        <points>
+          <point x="14.0" y="0.0">
+          </point>
+          <point x="14.0" y="14.0">
+          </point>
+          <point x="0.0" y="14.0">
+          </point>
+        </points>
+        <line_width>1</line_width>
+        <line_color>
+          <color name="grey-1" red="236" green="236" blue="236">
+          </color>
+        </line_color>
+        <arrow_length>15</arrow_length>
+      </widget>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>EDM Group 6</name>
+    <x>1248</x>
+    <y>468</y>
+    <width>17</width>
+    <height>17</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="bool_button" version="2.0.0">
+      <name>EDM activeMessageButtonClass</name>
+      <pv_name>loc://$(DID)wfDispCav4(1)</pv_name>
+      <width>16</width>
+      <height>16</height>
+      <off_label>null</off_label>
+      <off_color>
+        <color name="Controller" red="0" green="0" blue="255">
+        </color>
+      </off_color>
+      <on_label>null</on_label>
+      <on_color>
+        <color name="grey-4" red="187" green="187" blue="187">
+        </color>
+      </on_color>
+      <show_led>false</show_led>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="12.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="black-14" red="0" green="0" blue="0">
+        </color>
+      </foreground_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="bool_button" version="2.0.0">
+      <name>EDM activeMessageButtonClass</name>
+      <width>16</width>
+      <height>16</height>
+      <off_label>null</off_label>
+      <off_color>
+        <color name="grey-4" red="187" green="187" blue="187">
+        </color>
+      </off_color>
+      <on_label>null</on_label>
+      <on_color>
+        <color name="Controller" red="0" green="0" blue="255">
+        </color>
+      </on_color>
+      <show_led>false</show_led>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="12.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="black-14" red="0" green="0" blue="0">
+        </color>
+      </foreground_color>
+      <rules>
+        <rule name="EDM visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0&gt;=0.0 &amp;&amp; pv0&lt;1.0">
+            <value>true</value>
+          </exp>
+          <exp bool_exp="true">
+            <value>false</value>
+          </exp>
+          <pv_name>loc://$(DID)wfDispCav4(1)</pv_name>
+        </rule>
+      </rules>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>EDM Group 7</name>
+      <width>17</width>
+      <height>17</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <rules>
+        <rule name="EDM visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0&gt;=1.0 &amp;&amp; pv0&lt;2.0">
+            <value>true</value>
+          </exp>
+          <exp bool_exp="true">
+            <value>false</value>
+          </exp>
+          <pv_name>loc://$(DID)wfDispCav4(1)</pv_name>
+        </rule>
+      </rules>
+      <widget type="rectangle" version="2.0.0">
+        <name>EDM activeRectangleClass</name>
+        <width>15</width>
+        <height>15</height>
+        <line_width>1</line_width>
+        <line_color>
+          <color name="RING title" red="174" green="196" blue="195">
+          </color>
+        </line_color>
+        <background_color>
+          <color name="RING title" red="174" green="196" blue="195">
+          </color>
+        </background_color>
+      </widget>
+      <widget type="polyline" version="2.0.0">
+        <name>EDM activeLineClass</name>
+        <x>12</x>
+        <y>8</y>
+        <width>2</width>
+        <height>2</height>
+        <line_width>1</line_width>
+        <line_color>
+          <color name="black-14" red="0" green="0" blue="0">
+          </color>
+        </line_color>
+        <arrow_length>15</arrow_length>
+      </widget>
+      <widget type="polyline" version="2.0.0">
+        <name>EDM activeLineClass</name>
+        <width>14</width>
+        <height>14</height>
+        <points>
+          <point x="0.0" y="14.0">
+          </point>
+          <point x="0.0" y="0.0">
+          </point>
+          <point x="14.0" y="0.0">
+          </point>
+        </points>
+        <line_width>1</line_width>
+        <line_color>
+          <color name="grey-11" red="90" green="90" blue="90">
+          </color>
+        </line_color>
+        <arrow_length>15</arrow_length>
+      </widget>
+      <widget type="polyline" version="2.0.0">
+        <name>EDM activeLineClass</name>
+        <width>14</width>
+        <height>14</height>
+        <points>
+          <point x="14.0" y="0.0">
+          </point>
+          <point x="14.0" y="14.0">
+          </point>
+          <point x="0.0" y="14.0">
+          </point>
+        </points>
+        <line_width>1</line_width>
+        <line_color>
+          <color name="grey-1" red="236" green="236" blue="236">
+          </color>
+        </line_color>
+        <arrow_length>15</arrow_length>
+      </widget>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>EDM Group 8</name>
+    <x>1248</x>
+    <y>492</y>
+    <width>17</width>
+    <height>17</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="bool_button" version="2.0.0">
+      <name>EDM activeMessageButtonClass</name>
+      <pv_name>loc://$(DID)wfDispCav5(1)</pv_name>
+      <width>16</width>
+      <height>16</height>
+      <off_label>null</off_label>
+      <off_color>
+        <color name="Controller" red="0" green="0" blue="255">
+        </color>
+      </off_color>
+      <on_label>null</on_label>
+      <on_color>
+        <color name="grey-4" red="187" green="187" blue="187">
+        </color>
+      </on_color>
+      <show_led>false</show_led>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="12.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="black-14" red="0" green="0" blue="0">
+        </color>
+      </foreground_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="bool_button" version="2.0.0">
+      <name>EDM activeMessageButtonClass</name>
+      <width>16</width>
+      <height>16</height>
+      <off_label>null</off_label>
+      <off_color>
+        <color name="grey-4" red="187" green="187" blue="187">
+        </color>
+      </off_color>
+      <on_label>null</on_label>
+      <on_color>
+        <color name="Controller" red="0" green="0" blue="255">
+        </color>
+      </on_color>
+      <show_led>false</show_led>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="12.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="black-14" red="0" green="0" blue="0">
+        </color>
+      </foreground_color>
+      <rules>
+        <rule name="EDM visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0&gt;=0.0 &amp;&amp; pv0&lt;1.0">
+            <value>true</value>
+          </exp>
+          <exp bool_exp="true">
+            <value>false</value>
+          </exp>
+          <pv_name>loc://$(DID)wfDispCav5(1)</pv_name>
+        </rule>
+      </rules>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>EDM Group 9</name>
+      <width>17</width>
+      <height>17</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <rules>
+        <rule name="EDM visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0&gt;=1.0 &amp;&amp; pv0&lt;2.0">
+            <value>true</value>
+          </exp>
+          <exp bool_exp="true">
+            <value>false</value>
+          </exp>
+          <pv_name>loc://$(DID)wfDispCav5(1)</pv_name>
+        </rule>
+      </rules>
+      <widget type="rectangle" version="2.0.0">
+        <name>EDM activeRectangleClass</name>
+        <width>15</width>
+        <height>15</height>
+        <line_width>1</line_width>
+        <line_color>
+          <color name="RING title" red="174" green="196" blue="195">
+          </color>
+        </line_color>
+        <background_color>
+          <color name="RING title" red="174" green="196" blue="195">
+          </color>
+        </background_color>
+      </widget>
+      <widget type="polyline" version="2.0.0">
+        <name>EDM activeLineClass</name>
+        <x>12</x>
+        <y>8</y>
+        <width>2</width>
+        <height>2</height>
+        <line_width>1</line_width>
+        <line_color>
+          <color name="black-14" red="0" green="0" blue="0">
+          </color>
+        </line_color>
+        <arrow_length>15</arrow_length>
+      </widget>
+      <widget type="polyline" version="2.0.0">
+        <name>EDM activeLineClass</name>
+        <width>14</width>
+        <height>14</height>
+        <points>
+          <point x="0.0" y="14.0">
+          </point>
+          <point x="0.0" y="0.0">
+          </point>
+          <point x="14.0" y="0.0">
+          </point>
+        </points>
+        <line_width>1</line_width>
+        <line_color>
+          <color name="grey-11" red="90" green="90" blue="90">
+          </color>
+        </line_color>
+        <arrow_length>15</arrow_length>
+      </widget>
+      <widget type="polyline" version="2.0.0">
+        <name>EDM activeLineClass</name>
+        <width>14</width>
+        <height>14</height>
+        <points>
+          <point x="14.0" y="0.0">
+          </point>
+          <point x="14.0" y="14.0">
+          </point>
+          <point x="0.0" y="14.0">
+          </point>
+        </points>
+        <line_width>1</line_width>
+        <line_color>
+          <color name="grey-1" red="236" green="236" blue="236">
+          </color>
+        </line_color>
+        <arrow_length>15</arrow_length>
+      </widget>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>EDM Group 10</name>
+    <x>1248</x>
+    <y>516</y>
+    <width>17</width>
+    <height>17</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="bool_button" version="2.0.0">
+      <name>EDM activeMessageButtonClass</name>
+      <pv_name>loc://$(DID)wfDispCav6(1)</pv_name>
+      <width>16</width>
+      <height>16</height>
+      <off_label>null</off_label>
+      <off_color>
+        <color name="Controller" red="0" green="0" blue="255">
+        </color>
+      </off_color>
+      <on_label>null</on_label>
+      <on_color>
+        <color name="grey-4" red="187" green="187" blue="187">
+        </color>
+      </on_color>
+      <show_led>false</show_led>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="12.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="black-14" red="0" green="0" blue="0">
+        </color>
+      </foreground_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="bool_button" version="2.0.0">
+      <name>EDM activeMessageButtonClass</name>
+      <width>16</width>
+      <height>16</height>
+      <off_label>null</off_label>
+      <off_color>
+        <color name="grey-4" red="187" green="187" blue="187">
+        </color>
+      </off_color>
+      <on_label>null</on_label>
+      <on_color>
+        <color name="Controller" red="0" green="0" blue="255">
+        </color>
+      </on_color>
+      <show_led>false</show_led>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="12.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="black-14" red="0" green="0" blue="0">
+        </color>
+      </foreground_color>
+      <rules>
+        <rule name="EDM visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0&gt;=0.0 &amp;&amp; pv0&lt;1.0">
+            <value>true</value>
+          </exp>
+          <exp bool_exp="true">
+            <value>false</value>
+          </exp>
+          <pv_name>loc://$(DID)wfDispCav6(1)</pv_name>
+        </rule>
+      </rules>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>EDM Group 11</name>
+      <width>17</width>
+      <height>17</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <rules>
+        <rule name="EDM visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0&gt;=1.0 &amp;&amp; pv0&lt;2.0">
+            <value>true</value>
+          </exp>
+          <exp bool_exp="true">
+            <value>false</value>
+          </exp>
+          <pv_name>loc://$(DID)wfDispCav6(1)</pv_name>
+        </rule>
+      </rules>
+      <widget type="rectangle" version="2.0.0">
+        <name>EDM activeRectangleClass</name>
+        <width>15</width>
+        <height>15</height>
+        <line_width>1</line_width>
+        <line_color>
+          <color name="RING title" red="174" green="196" blue="195">
+          </color>
+        </line_color>
+        <background_color>
+          <color name="RING title" red="174" green="196" blue="195">
+          </color>
+        </background_color>
+      </widget>
+      <widget type="polyline" version="2.0.0">
+        <name>EDM activeLineClass</name>
+        <x>12</x>
+        <y>8</y>
+        <width>2</width>
+        <height>2</height>
+        <line_width>1</line_width>
+        <line_color>
+          <color name="black-14" red="0" green="0" blue="0">
+          </color>
+        </line_color>
+        <arrow_length>15</arrow_length>
+      </widget>
+      <widget type="polyline" version="2.0.0">
+        <name>EDM activeLineClass</name>
+        <width>14</width>
+        <height>14</height>
+        <points>
+          <point x="0.0" y="14.0">
+          </point>
+          <point x="0.0" y="0.0">
+          </point>
+          <point x="14.0" y="0.0">
+          </point>
+        </points>
+        <line_width>1</line_width>
+        <line_color>
+          <color name="grey-11" red="90" green="90" blue="90">
+          </color>
+        </line_color>
+        <arrow_length>15</arrow_length>
+      </widget>
+      <widget type="polyline" version="2.0.0">
+        <name>EDM activeLineClass</name>
+        <width>14</width>
+        <height>14</height>
+        <points>
+          <point x="14.0" y="0.0">
+          </point>
+          <point x="14.0" y="14.0">
+          </point>
+          <point x="0.0" y="14.0">
+          </point>
+        </points>
+        <line_width>1</line_width>
+        <line_color>
+          <color name="grey-1" red="236" green="236" blue="236">
+          </color>
+        </line_color>
+        <arrow_length>15</arrow_length>
+      </widget>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>EDM Group 12</name>
+    <x>1248</x>
+    <y>540</y>
+    <width>17</width>
+    <height>17</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="bool_button" version="2.0.0">
+      <name>EDM activeMessageButtonClass</name>
+      <pv_name>loc://$(DID)wfDispCav7(1)</pv_name>
+      <width>16</width>
+      <height>16</height>
+      <off_label>null</off_label>
+      <off_color>
+        <color name="Controller" red="0" green="0" blue="255">
+        </color>
+      </off_color>
+      <on_label>null</on_label>
+      <on_color>
+        <color name="grey-4" red="187" green="187" blue="187">
+        </color>
+      </on_color>
+      <show_led>false</show_led>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="12.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="black-14" red="0" green="0" blue="0">
+        </color>
+      </foreground_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="bool_button" version="2.0.0">
+      <name>EDM activeMessageButtonClass</name>
+      <width>16</width>
+      <height>16</height>
+      <off_label>null</off_label>
+      <off_color>
+        <color name="grey-4" red="187" green="187" blue="187">
+        </color>
+      </off_color>
+      <on_label>null</on_label>
+      <on_color>
+        <color name="Controller" red="0" green="0" blue="255">
+        </color>
+      </on_color>
+      <show_led>false</show_led>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="12.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="black-14" red="0" green="0" blue="0">
+        </color>
+      </foreground_color>
+      <rules>
+        <rule name="EDM visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0&gt;=0.0 &amp;&amp; pv0&lt;1.0">
+            <value>true</value>
+          </exp>
+          <exp bool_exp="true">
+            <value>false</value>
+          </exp>
+          <pv_name>loc://$(DID)wfDispCav7(1)</pv_name>
+        </rule>
+      </rules>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>EDM Group 13</name>
+      <width>17</width>
+      <height>17</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <rules>
+        <rule name="EDM visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0&gt;=1.0 &amp;&amp; pv0&lt;2.0">
+            <value>true</value>
+          </exp>
+          <exp bool_exp="true">
+            <value>false</value>
+          </exp>
+          <pv_name>loc://$(DID)wfDispCav7(1)</pv_name>
+        </rule>
+      </rules>
+      <widget type="rectangle" version="2.0.0">
+        <name>EDM activeRectangleClass</name>
+        <width>15</width>
+        <height>15</height>
+        <line_width>1</line_width>
+        <line_color>
+          <color name="RING title" red="174" green="196" blue="195">
+          </color>
+        </line_color>
+        <background_color>
+          <color name="RING title" red="174" green="196" blue="195">
+          </color>
+        </background_color>
+      </widget>
+      <widget type="polyline" version="2.0.0">
+        <name>EDM activeLineClass</name>
+        <x>12</x>
+        <y>8</y>
+        <width>2</width>
+        <height>2</height>
+        <line_width>1</line_width>
+        <line_color>
+          <color name="black-14" red="0" green="0" blue="0">
+          </color>
+        </line_color>
+        <arrow_length>15</arrow_length>
+      </widget>
+      <widget type="polyline" version="2.0.0">
+        <name>EDM activeLineClass</name>
+        <width>14</width>
+        <height>14</height>
+        <points>
+          <point x="0.0" y="14.0">
+          </point>
+          <point x="0.0" y="0.0">
+          </point>
+          <point x="14.0" y="0.0">
+          </point>
+        </points>
+        <line_width>1</line_width>
+        <line_color>
+          <color name="grey-11" red="90" green="90" blue="90">
+          </color>
+        </line_color>
+        <arrow_length>15</arrow_length>
+      </widget>
+      <widget type="polyline" version="2.0.0">
+        <name>EDM activeLineClass</name>
+        <width>14</width>
+        <height>14</height>
+        <points>
+          <point x="14.0" y="0.0">
+          </point>
+          <point x="14.0" y="14.0">
+          </point>
+          <point x="0.0" y="14.0">
+          </point>
+        </points>
+        <line_width>1</line_width>
+        <line_color>
+          <color name="grey-1" red="236" green="236" blue="236">
+          </color>
+        </line_color>
+        <arrow_length>15</arrow_length>
+      </widget>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>EDM Group 14</name>
+    <x>1248</x>
+    <y>564</y>
+    <width>17</width>
+    <height>17</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="bool_button" version="2.0.0">
+      <name>EDM activeMessageButtonClass</name>
+      <pv_name>loc://$(DID)wfDispCav8(1)</pv_name>
+      <width>16</width>
+      <height>16</height>
+      <off_label>null</off_label>
+      <off_color>
+        <color name="Controller" red="0" green="0" blue="255">
+        </color>
+      </off_color>
+      <on_label>null</on_label>
+      <on_color>
+        <color name="grey-4" red="187" green="187" blue="187">
+        </color>
+      </on_color>
+      <show_led>false</show_led>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="12.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="black-14" red="0" green="0" blue="0">
+        </color>
+      </foreground_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="bool_button" version="2.0.0">
+      <name>EDM activeMessageButtonClass</name>
+      <width>16</width>
+      <height>16</height>
+      <off_label>null</off_label>
+      <off_color>
+        <color name="grey-4" red="187" green="187" blue="187">
+        </color>
+      </off_color>
+      <on_label>null</on_label>
+      <on_color>
+        <color name="Controller" red="0" green="0" blue="255">
+        </color>
+      </on_color>
+      <show_led>false</show_led>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="12.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="black-14" red="0" green="0" blue="0">
+        </color>
+      </foreground_color>
+      <rules>
+        <rule name="EDM visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0&gt;=0.0 &amp;&amp; pv0&lt;1.0">
+            <value>true</value>
+          </exp>
+          <exp bool_exp="true">
+            <value>false</value>
+          </exp>
+          <pv_name>loc://$(DID)wfDispCav8(1)</pv_name>
+        </rule>
+      </rules>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>EDM Group 15</name>
+      <width>17</width>
+      <height>17</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <rules>
+        <rule name="EDM visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0&gt;=1.0 &amp;&amp; pv0&lt;2.0">
+            <value>true</value>
+          </exp>
+          <exp bool_exp="true">
+            <value>false</value>
+          </exp>
+          <pv_name>loc://$(DID)wfDispCav8(1)</pv_name>
+        </rule>
+      </rules>
+      <widget type="rectangle" version="2.0.0">
+        <name>EDM activeRectangleClass</name>
+        <width>15</width>
+        <height>15</height>
+        <line_width>1</line_width>
+        <line_color>
+          <color name="RING title" red="174" green="196" blue="195">
+          </color>
+        </line_color>
+        <background_color>
+          <color name="RING title" red="174" green="196" blue="195">
+          </color>
+        </background_color>
+      </widget>
+      <widget type="polyline" version="2.0.0">
+        <name>EDM activeLineClass</name>
+        <x>12</x>
+        <y>8</y>
+        <width>2</width>
+        <height>2</height>
+        <line_width>1</line_width>
+        <line_color>
+          <color name="black-14" red="0" green="0" blue="0">
+          </color>
+        </line_color>
+        <arrow_length>15</arrow_length>
+      </widget>
+      <widget type="polyline" version="2.0.0">
+        <name>EDM activeLineClass</name>
+        <width>14</width>
+        <height>14</height>
+        <points>
+          <point x="0.0" y="14.0">
+          </point>
+          <point x="0.0" y="0.0">
+          </point>
+          <point x="14.0" y="0.0">
+          </point>
+        </points>
+        <line_width>1</line_width>
+        <line_color>
+          <color name="grey-11" red="90" green="90" blue="90">
+          </color>
+        </line_color>
+        <arrow_length>15</arrow_length>
+      </widget>
+      <widget type="polyline" version="2.0.0">
+        <name>EDM activeLineClass</name>
+        <width>14</width>
+        <height>14</height>
+        <points>
+          <point x="14.0" y="0.0">
+          </point>
+          <point x="14.0" y="14.0">
+          </point>
+          <point x="0.0" y="14.0">
+          </point>
+        </points>
+        <line_width>1</line_width>
+        <line_color>
+          <color name="grey-1" red="236" green="236" blue="236">
+          </color>
+        </line_color>
+        <arrow_length>15</arrow_length>
+      </widget>
+    </widget>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>Display Selection</text>
+    <x>1152</x>
+    <y>376</y>
+    <width>95</width>
+    <height>14</height>
+    <font>
+      <font family="Liberation Sans" style="ITALIC" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="xyplot" version="2.0.0">
+    <name>EDM xyGraphClass</name>
+    <x>20</x>
+    <y>644</y>
+    <width>548</width>
+    <height>240</height>
+    <foreground_color>
+      <color name="grey-13" red="45" green="45" blue="45">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-2" red="218" green="218" blue="218">
+      </color>
+    </background_color>
+    <grid_color>
+      <color name="grey-13" red="45" green="45" blue="45">
+      </color>
+    </grid_color>
+    <title>Amplitude</title>
+    <title_font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </title_font>
+    <show_legend>false</show_legend>
+    <x_axis>
+      <title>seconds</title>
+      <autoscale>true</autoscale>
+      <log_scale>false</log_scale>
+      <minimum>0.0</minimum>
+      <maximum>100.0</maximum>
+      <show_grid>false</show_grid>
+      <title_font>
+        <font family="Liberation Sans" style="REGULAR" size="12.0">
+        </font>
+      </title_font>
+      <scale_font>
+        <font family="Liberation Sans" style="REGULAR" size="12.0">
+        </font>
+      </scale_font>
+      <visible>true</visible>
+    </x_axis>
+    <y_axes>
+      <y_axis>
+        <title>W</title>
+        <autoscale>true</autoscale>
+        <log_scale>false</log_scale>
+        <minimum>0.0</minimum>
+        <maximum>100.0</maximum>
+        <show_grid>false</show_grid>
+        <title_font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </title_font>
+        <scale_font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </scale_font>
+        <visible>true</visible>
+      </y_axis>
+      <y_axis>
+        <title></title>
+        <autoscale>true</autoscale>
+        <log_scale>false</log_scale>
+        <minimum>0.0</minimum>
+        <maximum>100.0</maximum>
+        <show_grid>false</show_grid>
+        <title_font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </title_font>
+        <scale_font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </scale_font>
+        <visible>false</visible>
+      </y_axis>
+    </y_axes>
+    <traces>
+      <trace>
+        <name></name>
+        <x_pv>$(CM)10:REV:TWF</x_pv>
+        <y_pv>$(CM)10:REV:PWRWF</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color name="blue-26" red="0" green="0" blue="224">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name></name>
+        <x_pv>$(CM)20:REV:TWF</x_pv>
+        <y_pv>$(CM)20:REV:PWRWF</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color name="red-23" red="160" green="0" blue="0">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name></name>
+        <x_pv>$(CM)30:REV:TWF</x_pv>
+        <y_pv>$(CM)30:REV:PWRWF</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color name="cyan-31" red="0" green="224" blue="224">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name></name>
+        <x_pv>$(CM)40:REV:TWF</x_pv>
+        <y_pv>$(CM)40:REV:PWRWF</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color name="black-14" red="0" green="0" blue="0">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name></name>
+        <x_pv>$(CM)50:REV:TWF</x_pv>
+        <y_pv>$(CM)50:REV:PWRWF</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color name="orange-41" red="224" green="154" blue="84">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name></name>
+        <x_pv>$(CM)60:REV:TWF</x_pv>
+        <y_pv>$(CM)60:REV:PWRWF</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color name="Exit/Quit/Kill" red="255" green="0" blue="255">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name></name>
+        <x_pv>$(CM)70:REV:TWF</x_pv>
+        <y_pv>$(CM)70:REV:PWRWF</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color name="Monitor: alt" red="0" green="192" blue="0">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name></name>
+        <x_pv>$(CM)80:REV:TWF</x_pv>
+        <y_pv>$(CM)80:REV:PWRWF</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color name="purple-47" red="128" green="0" blue="128">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+    </traces>
+  </widget>
+  <widget type="xyplot" version="2.0.0">
+    <name>EDM xyGraphClass</name>
+    <x>576</x>
+    <y>644</y>
+    <width>548</width>
+    <height>240</height>
+    <foreground_color>
+      <color name="grey-13" red="45" green="45" blue="45">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-2" red="218" green="218" blue="218">
+      </color>
+    </background_color>
+    <grid_color>
+      <color name="grey-13" red="45" green="45" blue="45">
+      </color>
+    </grid_color>
+    <title>Phase</title>
+    <title_font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </title_font>
+    <show_legend>false</show_legend>
+    <x_axis>
+      <title>seconds</title>
+      <autoscale>true</autoscale>
+      <log_scale>false</log_scale>
+      <minimum>0.0</minimum>
+      <maximum>100.0</maximum>
+      <show_grid>false</show_grid>
+      <title_font>
+        <font family="Liberation Sans" style="REGULAR" size="12.0">
+        </font>
+      </title_font>
+      <scale_font>
+        <font family="Liberation Sans" style="REGULAR" size="12.0">
+        </font>
+      </scale_font>
+      <visible>true</visible>
+    </x_axis>
+    <y_axes>
+      <y_axis>
+        <title>degrees</title>
+        <autoscale>true</autoscale>
+        <log_scale>false</log_scale>
+        <minimum>0.0</minimum>
+        <maximum>100.0</maximum>
+        <show_grid>false</show_grid>
+        <title_font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </title_font>
+        <scale_font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </scale_font>
+        <visible>true</visible>
+      </y_axis>
+      <y_axis>
+        <title></title>
+        <autoscale>true</autoscale>
+        <log_scale>false</log_scale>
+        <minimum>0.0</minimum>
+        <maximum>100.0</maximum>
+        <show_grid>false</show_grid>
+        <title_font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </title_font>
+        <scale_font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </scale_font>
+        <visible>false</visible>
+      </y_axis>
+    </y_axes>
+    <traces>
+      <trace>
+        <name></name>
+        <x_pv>$(CM)10:REV:TWF</x_pv>
+        <y_pv>$(CM)10:REV:PWF</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color name="blue-26" red="0" green="0" blue="224">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name></name>
+        <x_pv>$(CM)20:REV:TWF</x_pv>
+        <y_pv>$(CM)20:REV:PWF</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color name="red-23" red="160" green="0" blue="0">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name></name>
+        <x_pv>$(CM)30:REV:TWF</x_pv>
+        <y_pv>$(CM)30:REV:PWF</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color name="cyan-31" red="0" green="224" blue="224">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name></name>
+        <x_pv>$(CM)40:REV:TWF</x_pv>
+        <y_pv>$(CM)40:REV:PWF</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color name="violet" red="255" green="0" blue="255">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name></name>
+        <x_pv>$(CM)50:REV:TWF</x_pv>
+        <y_pv>$(CM)50:REV:PWF</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color name="orange-41" red="224" green="154" blue="84">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name></name>
+        <x_pv>$(CM)60:REV:TWF</x_pv>
+        <y_pv>$(CM)60:REV:PWF</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color name="Exit/Quit/Kill" red="255" green="0" blue="255">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name></name>
+        <x_pv>$(CM)70:REV:TWF</x_pv>
+        <y_pv>$(CM)70:REV:PWF</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color name="Monitor: alt" red="0" green="192" blue="0">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name></name>
+        <x_pv>$(CM)80:REV:TWF</x_pv>
+        <y_pv>$(CM)80:REV:PWF</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color name="purple-47" red="128" green="0" blue="128">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+    </traces>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>Reverse</text>
+    <x>272</x>
+    <y>628</y>
+    <width>600</width>
+    <height>16</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>Cavity 1</text>
+    <x>1192</x>
+    <y>396</y>
+    <width>60</width>
+    <height>16</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>Cavity 2</text>
+    <x>1192</x>
+    <y>420</y>
+    <width>60</width>
+    <height>16</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>Cavity 3</text>
+    <x>1192</x>
+    <y>444</y>
+    <width>60</width>
+    <height>16</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>Cavity 4</text>
+    <x>1192</x>
+    <y>468</y>
+    <width>60</width>
+    <height>16</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>Cavity 5</text>
+    <x>1192</x>
+    <y>492</y>
+    <width>60</width>
+    <height>16</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>Cavity 6</text>
+    <x>1192</x>
+    <y>516</y>
+    <width>60</width>
+    <height>16</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>Cavity 7</text>
+    <x>1192</x>
+    <y>540</y>
+    <width>60</width>
+    <height>16</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>Cavity 8</text>
+    <x>1192</x>
+    <y>564</y>
+    <width>60</width>
+    <height>16</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>EDM activeLineClass</name>
+    <x>1140</x>
+    <y>404</y>
+    <width>40</width>
+    <height>0</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="40.0" y="0.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <line_color>
+      <color name="Controller" red="0" green="0" blue="255">
+      </color>
+    </line_color>
+    <arrow_length>15</arrow_length>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>EDM activeLineClass</name>
+    <x>1140</x>
+    <y>428</y>
+    <width>40</width>
+    <height>0</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="40.0" y="0.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <line_color>
+      <color name="red-23" red="160" green="0" blue="0">
+      </color>
+    </line_color>
+    <arrow_length>15</arrow_length>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>EDM activeLineClass</name>
+    <x>1140</x>
+    <y>452</y>
+    <width>40</width>
+    <height>0</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="40.0" y="0.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <line_color>
+      <color name="cyan-31" red="0" green="224" blue="224">
+      </color>
+    </line_color>
+    <arrow_length>15</arrow_length>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>EDM activeLineClass</name>
+    <x>1140</x>
+    <y>476</y>
+    <width>40</width>
+    <height>0</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="40.0" y="0.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <line_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <arrow_length>15</arrow_length>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>EDM activeLineClass</name>
+    <x>1140</x>
+    <y>500</y>
+    <width>40</width>
+    <height>0</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="40.0" y="0.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <line_color>
+      <color name="orange-41" red="224" green="154" blue="84">
+      </color>
+    </line_color>
+    <arrow_length>15</arrow_length>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>EDM activeLineClass</name>
+    <x>1140</x>
+    <y>524</y>
+    <width>40</width>
+    <height>0</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="40.0" y="0.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <line_color>
+      <color name="Exit/Quit/Kill" red="255" green="0" blue="255">
+      </color>
+    </line_color>
+    <arrow_length>15</arrow_length>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>EDM activeLineClass</name>
+    <x>1140</x>
+    <y>548</y>
+    <width>40</width>
+    <height>0</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="40.0" y="0.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <line_color>
+      <color name="Monitor: alt" red="0" green="192" blue="0">
+      </color>
+    </line_color>
+    <arrow_length>15</arrow_length>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>EDM activeLineClass</name>
+    <x>1140</x>
+    <y>572</y>
+    <width>40</width>
+    <height>0</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="40.0" y="0.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <line_color>
+      <color name="purple-47" red="128" green="0" blue="128">
+      </color>
+    </line_color>
+    <arrow_length>15</arrow_length>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>Cav1 Fwd</text>
+    <x>1316</x>
+    <y>392</y>
+    <width>59</width>
+    <height>14</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="red-23" red="160" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <auto_size>true</auto_size>
+    <rules>
+      <rule name="EDM visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0&gt;=0.0 &amp;&amp; pv0&lt;1.0">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="true">
+          <value>false</value>
+        </exp>
+        <pv_name>$(CM)10:FWD:ENABLE</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>Cav2 Fwd</text>
+    <x>1316</x>
+    <y>416</y>
+    <width>59</width>
+    <height>14</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="red-23" red="160" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <auto_size>true</auto_size>
+    <rules>
+      <rule name="EDM visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0&gt;=0.0 &amp;&amp; pv0&lt;1.0">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="true">
+          <value>false</value>
+        </exp>
+        <pv_name>$(CM)20:FWD:ENABLE</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>Cav3 Fwd</text>
+    <x>1316</x>
+    <y>440</y>
+    <width>59</width>
+    <height>14</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="red-23" red="160" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <auto_size>true</auto_size>
+    <rules>
+      <rule name="EDM visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0&gt;=0.0 &amp;&amp; pv0&lt;1.0">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="true">
+          <value>false</value>
+        </exp>
+        <pv_name>$(CM)30:FWD:ENABLE</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>Cav4 Fwd</text>
+    <x>1316</x>
+    <y>464</y>
+    <width>59</width>
+    <height>14</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="red-23" red="160" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <auto_size>true</auto_size>
+    <rules>
+      <rule name="EDM visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0&gt;=0.0 &amp;&amp; pv0&lt;1.0">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="true">
+          <value>false</value>
+        </exp>
+        <pv_name>$(CM)40:FWD:ENABLE</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>Cav5 Fwd</text>
+    <x>1316</x>
+    <y>488</y>
+    <width>59</width>
+    <height>14</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="red-23" red="160" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <auto_size>true</auto_size>
+    <rules>
+      <rule name="EDM visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0&gt;=0.0 &amp;&amp; pv0&lt;1.0">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="true">
+          <value>false</value>
+        </exp>
+        <pv_name>$(CM)50:FWD:ENABLE</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>Cav6 Fwd</text>
+    <x>1316</x>
+    <y>512</y>
+    <width>59</width>
+    <height>14</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="red-23" red="160" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <auto_size>true</auto_size>
+    <rules>
+      <rule name="EDM visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0&gt;=0.0 &amp;&amp; pv0&lt;1.0">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="true">
+          <value>false</value>
+        </exp>
+        <pv_name>$(CM)60:FWD:ENABLE</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>Cav7 Fwd</text>
+    <x>1316</x>
+    <y>536</y>
+    <width>59</width>
+    <height>14</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="red-23" red="160" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <auto_size>true</auto_size>
+    <rules>
+      <rule name="EDM visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0&gt;=0.0 &amp;&amp; pv0&lt;1.0">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="true">
+          <value>false</value>
+        </exp>
+        <pv_name>$(CM)70:FWD:ENABLE</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>Cav8 Fwd</text>
+    <x>1316</x>
+    <y>560</y>
+    <width>59</width>
+    <height>14</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="red-23" red="160" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <auto_size>true</auto_size>
+    <rules>
+      <rule name="EDM visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0&gt;=0.0 &amp;&amp; pv0&lt;1.0">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="true">
+          <value>false</value>
+        </exp>
+        <pv_name>$(CM)80:FWD:ENABLE</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>Cav1 Cav</text>
+    <x>1320</x>
+    <y>116</y>
+    <width>57</width>
+    <height>14</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="red-23" red="160" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <auto_size>true</auto_size>
+    <rules>
+      <rule name="EDM visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0&gt;=0.0 &amp;&amp; pv0&lt;1.0">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="true">
+          <value>false</value>
+        </exp>
+        <pv_name>$(CM)10:CAV:ENABLE</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>Cav2 Cav</text>
+    <x>1320</x>
+    <y>140</y>
+    <width>57</width>
+    <height>14</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="red-23" red="160" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <auto_size>true</auto_size>
+    <rules>
+      <rule name="EDM visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0&gt;=0.0 &amp;&amp; pv0&lt;1.0">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="true">
+          <value>false</value>
+        </exp>
+        <pv_name>$(CM)20:CAV:ENABLE</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>Cav3 Cav</text>
+    <x>1320</x>
+    <y>164</y>
+    <width>57</width>
+    <height>14</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="red-23" red="160" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <auto_size>true</auto_size>
+    <rules>
+      <rule name="EDM visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0&gt;=0.0 &amp;&amp; pv0&lt;1.0">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="true">
+          <value>false</value>
+        </exp>
+        <pv_name>$(CM)30:CAV:ENABLE</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>Cav4 Cav</text>
+    <x>1320</x>
+    <y>188</y>
+    <width>57</width>
+    <height>14</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="red-23" red="160" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <auto_size>true</auto_size>
+    <rules>
+      <rule name="EDM visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0&gt;=0.0 &amp;&amp; pv0&lt;1.0">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="true">
+          <value>false</value>
+        </exp>
+        <pv_name>$(CM)40:CAV:ENABLE</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>Cav5 Cav</text>
+    <x>1320</x>
+    <y>212</y>
+    <width>57</width>
+    <height>14</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="red-23" red="160" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <auto_size>true</auto_size>
+    <rules>
+      <rule name="EDM visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0&gt;=0.0 &amp;&amp; pv0&lt;1.0">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="true">
+          <value>false</value>
+        </exp>
+        <pv_name>$(CM)50:CAV:ENABLE</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>Cav6 Cav</text>
+    <x>1320</x>
+    <y>236</y>
+    <width>57</width>
+    <height>14</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="red-23" red="160" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <auto_size>true</auto_size>
+    <rules>
+      <rule name="EDM visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0&gt;=0.0 &amp;&amp; pv0&lt;1.0">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="true">
+          <value>false</value>
+        </exp>
+        <pv_name>$(CM)60:CAV:ENABLE</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>Cav7 Cav</text>
+    <x>1320</x>
+    <y>260</y>
+    <width>57</width>
+    <height>14</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="red-23" red="160" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <auto_size>true</auto_size>
+    <rules>
+      <rule name="EDM visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0&gt;=0.0 &amp;&amp; pv0&lt;1.0">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="true">
+          <value>false</value>
+        </exp>
+        <pv_name>$(CM)70:CAV:ENABLE</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>Cav8 Cav</text>
+    <x>1320</x>
+    <y>284</y>
+    <width>57</width>
+    <height>14</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="red-23" red="160" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <auto_size>true</auto_size>
+    <rules>
+      <rule name="EDM visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0&gt;=0.0 &amp;&amp; pv0&lt;1.0">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="true">
+          <value>false</value>
+        </exp>
+        <pv_name>$(CM)80:CAV:ENABLE</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>Cav1 Rev</text>
+    <x>1316</x>
+    <y>668</y>
+    <width>58</width>
+    <height>14</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="red-23" red="160" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <auto_size>true</auto_size>
+    <rules>
+      <rule name="EDM visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0&gt;=0.0 &amp;&amp; pv0&lt;1.0">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="true">
+          <value>false</value>
+        </exp>
+        <pv_name>$(CM)10:REV:ENABLE</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>Cav2 Rev</text>
+    <x>1316</x>
+    <y>692</y>
+    <width>58</width>
+    <height>14</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="red-23" red="160" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <auto_size>true</auto_size>
+    <rules>
+      <rule name="EDM visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0&gt;=0.0 &amp;&amp; pv0&lt;1.0">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="true">
+          <value>false</value>
+        </exp>
+        <pv_name>$(CM)20:REV:ENABLE</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>Cav3 Rev</text>
+    <x>1316</x>
+    <y>716</y>
+    <width>58</width>
+    <height>14</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="red-23" red="160" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <auto_size>true</auto_size>
+    <rules>
+      <rule name="EDM visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0&gt;=0.0 &amp;&amp; pv0&lt;1.0">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="true">
+          <value>false</value>
+        </exp>
+        <pv_name>$(CM)30:REV:ENABLE</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>Cav4 Rev</text>
+    <x>1316</x>
+    <y>740</y>
+    <width>58</width>
+    <height>14</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="red-23" red="160" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <auto_size>true</auto_size>
+    <rules>
+      <rule name="EDM visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0&gt;=0.0 &amp;&amp; pv0&lt;1.0">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="true">
+          <value>false</value>
+        </exp>
+        <pv_name>$(CM)40:REV:ENABLE</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>Cav5 Rev</text>
+    <x>1316</x>
+    <y>764</y>
+    <width>58</width>
+    <height>14</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="red-23" red="160" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <auto_size>true</auto_size>
+    <rules>
+      <rule name="EDM visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0&gt;=0.0 &amp;&amp; pv0&lt;1.0">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="true">
+          <value>false</value>
+        </exp>
+        <pv_name>$(CM)50:REV:ENABLE</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>Cav6 Rev</text>
+    <x>1316</x>
+    <y>788</y>
+    <width>58</width>
+    <height>14</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="red-23" red="160" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <auto_size>true</auto_size>
+    <rules>
+      <rule name="EDM visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0&gt;=0.0 &amp;&amp; pv0&lt;1.0">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="true">
+          <value>false</value>
+        </exp>
+        <pv_name>$(CM)60:REV:ENABLE</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>Cav7 Rev</text>
+    <x>1316</x>
+    <y>812</y>
+    <width>58</width>
+    <height>14</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="red-23" red="160" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <auto_size>true</auto_size>
+    <rules>
+      <rule name="EDM visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0&gt;=0.0 &amp;&amp; pv0&lt;1.0">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="true">
+          <value>false</value>
+        </exp>
+        <pv_name>$(CM)70:REV:ENABLE</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>Cav8 Rev</text>
+    <x>1316</x>
+    <y>836</y>
+    <width>58</width>
+    <height>14</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="red-23" red="160" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <auto_size>true</auto_size>
+    <rules>
+      <rule name="EDM visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0&gt;=0.0 &amp;&amp; pv0&lt;1.0">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="true">
+          <value>false</value>
+        </exp>
+        <pv_name>$(CM)80:REV:ENABLE</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>EDM activeLineClass</name>
+    <x>1244</x>
+    <y>136</y>
+    <width>0</width>
+    <height>0</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+    </points>
+    <line_width>1</line_width>
+    <line_color>
+      <color name="Wid-bg/Anno-pri" red="105" green="105" blue="105">
+      </color>
+    </line_color>
+    <arrow_length>15</arrow_length>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>EDM Group 16</name>
+    <x>1296</x>
+    <y>48</y>
+    <width>97</width>
+    <height>833</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="EDM visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0&gt;=0.0 &amp;&amp; pv0&lt;255.0">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="true">
+          <value>false</value>
+        </exp>
+        <pv_name>$(CM)00:CAV:DISPMASK_SUB.VALA</pv_name>
+      </rule>
+    </rules>
+    <widget type="rectangle" version="2.0.0">
+      <name>EDM activeRectangleClass</name>
+      <width>97</width>
+      <height>833</height>
+      <line_width>1</line_width>
+      <line_color>
+        <color name="Wid-bg/Anno-pri" red="105" green="105" blue="105">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="grey-4" red="187" green="187" blue="187">
+        </color>
+      </background_color>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>EDM activeXTextClass</name>
+      <text>Waveform
+acquisition
+DISABLED for:</text>
+      <x>4</x>
+      <y>8</y>
+      <width>88</width>
+      <height>42</height>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="12.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="red-23" red="160" green="0" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="grey-4" red="187" green="187" blue="187">
+        </color>
+      </background_color>
+      <auto_size>true</auto_size>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>EDM Group 17</name>
+    <x>1296</x>
+    <y>48</y>
+    <width>97</width>
+    <height>833</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="EDM visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0&gt;=0.0 &amp;&amp; pv0&lt;255.0">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="true">
+          <value>false</value>
+        </exp>
+        <pv_name>$(CM)00:FWD:DISPMASK_SUB.VALA</pv_name>
+      </rule>
+    </rules>
+    <widget type="rectangle" version="2.0.0">
+      <name>EDM activeRectangleClass</name>
+      <width>97</width>
+      <height>833</height>
+      <line_width>1</line_width>
+      <line_color>
+        <color name="Wid-bg/Anno-pri" red="105" green="105" blue="105">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="grey-4" red="187" green="187" blue="187">
+        </color>
+      </background_color>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>EDM activeXTextClass</name>
+      <text>Waveform
+acquisition
+DISABLED for:</text>
+      <x>4</x>
+      <y>8</y>
+      <width>88</width>
+      <height>42</height>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="12.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="red-23" red="160" green="0" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="grey-4" red="187" green="187" blue="187">
+        </color>
+      </background_color>
+      <auto_size>true</auto_size>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>EDM Group 18</name>
+    <x>1296</x>
+    <y>48</y>
+    <width>97</width>
+    <height>833</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="EDM visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0&gt;=0.0 &amp;&amp; pv0&lt;255.0">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="true">
+          <value>false</value>
+        </exp>
+        <pv_name>$(CM)00:REV:DISPMASK_SUB.VALA</pv_name>
+      </rule>
+    </rules>
+    <widget type="rectangle" version="2.0.0">
+      <name>EDM activeRectangleClass</name>
+      <width>97</width>
+      <height>833</height>
+      <line_width>1</line_width>
+      <line_color>
+        <color name="Wid-bg/Anno-pri" red="105" green="105" blue="105">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="grey-4" red="187" green="187" blue="187">
+        </color>
+      </background_color>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>EDM activeXTextClass</name>
+      <text>Waveform
+acquisition
+DISABLED for:</text>
+      <x>4</x>
+      <y>8</y>
+      <width>88</width>
+      <height>42</height>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="12.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="red-23" red="160" green="0" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="grey-4" red="187" green="187" blue="187">
+        </color>
+      </background_color>
+      <auto_size>true</auto_size>
+    </widget>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>EDM TextupdateClass</name>
+    <pv_name>IOC:$(CM):TOD</pv_name>
+    <x>956</x>
+    <y>896</y>
+    <width>168</width>
+    <height>16</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-12" red="70" green="70" blue="70">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>EDM TextupdateClass</name>
+    <pv_name>SIOC:SYS0:AL00:MODE</pv_name>
+    <x>20</x>
+    <y>896</y>
+    <width>120</width>
+    <height>16</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-12" red="70" green="70" blue="70">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>EDM activeCircleClass</name>
+    <x>1284</x>
+    <y>400</y>
+    <width>8</width>
+    <height>8</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[# EDM Alarm-sensitive color
+from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+cn = ( 'OK', 'MINOR', 'MAJOR', 'INVALID', 'DISCONNECTED' )[sevr]
+widget.setPropertyValue('background_color', WidgetColorService.getColor(cn))]]></text>
+        <pv_name>$(CM)00:RFS1A:STATUS</pv_name>
+      </script>
+    </scripts>
+  </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>EDM activeCircleClass</name>
+    <x>1284</x>
+    <y>424</y>
+    <width>8</width>
+    <height>8</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[# EDM Alarm-sensitive color
+from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+cn = ( 'OK', 'MINOR', 'MAJOR', 'INVALID', 'DISCONNECTED' )[sevr]
+widget.setPropertyValue('background_color', WidgetColorService.getColor(cn))]]></text>
+        <pv_name>$(CM)00:RFS1A:STATUS</pv_name>
+      </script>
+    </scripts>
+  </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>EDM activeCircleClass</name>
+    <x>1284</x>
+    <y>448</y>
+    <width>8</width>
+    <height>8</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[# EDM Alarm-sensitive color
+from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+cn = ( 'OK', 'MINOR', 'MAJOR', 'INVALID', 'DISCONNECTED' )[sevr]
+widget.setPropertyValue('background_color', WidgetColorService.getColor(cn))]]></text>
+        <pv_name>$(CM)00:RFS2A:STATUS</pv_name>
+      </script>
+    </scripts>
+  </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>EDM activeCircleClass</name>
+    <x>1284</x>
+    <y>472</y>
+    <width>8</width>
+    <height>8</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[# EDM Alarm-sensitive color
+from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+cn = ( 'OK', 'MINOR', 'MAJOR', 'INVALID', 'DISCONNECTED' )[sevr]
+widget.setPropertyValue('background_color', WidgetColorService.getColor(cn))]]></text>
+        <pv_name>$(CM)00:RFS2A:STATUS</pv_name>
+      </script>
+    </scripts>
+  </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>EDM activeCircleClass</name>
+    <x>1284</x>
+    <y>520</y>
+    <width>8</width>
+    <height>8</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[# EDM Alarm-sensitive color
+from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+cn = ( 'OK', 'MINOR', 'MAJOR', 'INVALID', 'DISCONNECTED' )[sevr]
+widget.setPropertyValue('background_color', WidgetColorService.getColor(cn))]]></text>
+        <pv_name>$(CM)00:RFS1B:STATUS</pv_name>
+      </script>
+    </scripts>
+  </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>EDM activeCircleClass</name>
+    <x>1284</x>
+    <y>496</y>
+    <width>8</width>
+    <height>8</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[# EDM Alarm-sensitive color
+from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+cn = ( 'OK', 'MINOR', 'MAJOR', 'INVALID', 'DISCONNECTED' )[sevr]
+widget.setPropertyValue('background_color', WidgetColorService.getColor(cn))]]></text>
+        <pv_name>$(CM)00:RFS1B:STATUS</pv_name>
+      </script>
+    </scripts>
+  </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>EDM activeCircleClass</name>
+    <x>1284</x>
+    <y>568</y>
+    <width>8</width>
+    <height>8</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[# EDM Alarm-sensitive color
+from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+cn = ( 'OK', 'MINOR', 'MAJOR', 'INVALID', 'DISCONNECTED' )[sevr]
+widget.setPropertyValue('background_color', WidgetColorService.getColor(cn))]]></text>
+        <pv_name>$(CM)00:RFS2B:STATUS</pv_name>
+      </script>
+    </scripts>
+  </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>EDM activeCircleClass</name>
+    <x>1284</x>
+    <y>544</y>
+    <width>8</width>
+    <height>8</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[# EDM Alarm-sensitive color
+from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+cn = ( 'OK', 'MINOR', 'MAJOR', 'INVALID', 'DISCONNECTED' )[sevr]
+widget.setPropertyValue('background_color', WidgetColorService.getColor(cn))]]></text>
+        <pv_name>$(CM)00:RFS2B:STATUS</pv_name>
+      </script>
+    </scripts>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>EDM relatedDisplayClass</name>
+    <actions>
+      <action type="open_display">
+        <file>rf_srf_hardware_cm.bob</file>
+        <target>tab</target>
+      </action>
+    </actions>
+    <text>Hardware...</text>
+    <x>1072</x>
+    <y>8</y>
+    <width>104</width>
+    <height>24</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>EDM activeRectangleClass</name>
+    <x>1072</x>
+    <y>8</y>
+    <width>105</width>
+    <height>25</height>
+    <line_width>1</line_width>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[# EDM Alarm-sensitive color
+from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+cn = ( 'OK', 'MINOR', 'MAJOR', 'INVALID', 'DISCONNECTED' )[sevr]
+widget.setPropertyValue('line_color', WidgetColorService.getColor(cn))]]></text>
+        <pv_name>$(CM)00:HWSTATSUM</pv_name>
+      </script>
+    </scripts>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>EDM relatedDisplayClass</name>
+    <actions>
+      <action type="open_display">
+        <file>rf_srf_wf_acq_cm.bob</file>
+        <target>tab</target>
+      </action>
+    </actions>
+    <text>Acq Control...</text>
+    <x>948</x>
+    <y>8</y>
+    <width>104</width>
+    <height>24</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>EDM relatedDisplayClass</name>
+    <actions>
+      <action type="open_display">
+        <file>rf_srf_wf_cavity_all_signal_main.bob</file>
+        <target>tab</target>
+        <description>Cavity Probe...</description>
+      </action>
+      <action type="open_display">
+        <file>rf_srf_wf_cavity_all_signal_main.bob</file>
+        <macros>
+          <EGU>sqrt(W)</EGU>
+          <SIG>FWD</SIG>
+          <SIGNAL>Forward</SIGNAL>
+        </macros>
+        <target>tab</target>
+        <description>Forward...</description>
+      </action>
+      <action type="open_display">
+        <file>rf_srf_wf_cavity_all_signal_main.bob</file>
+        <macros>
+          <EGU>sqrt(W)</EGU>
+          <SIG>REV</SIG>
+          <SIGNAL>Reverse</SIGNAL>
+        </macros>
+        <target>tab</target>
+        <description>Reverse...</description>
+      </action>
+      <action type="open_display">
+        <file>rf_srf_wf_cavity_all_signal_main.bob</file>
+        <macros>
+          <EGU>sqrt(W)</EGU>
+          <SIG>DRV</SIG>
+          <SIGNAL>Drive</SIGNAL>
+        </macros>
+        <target>tab</target>
+        <description>Drive (Loop)...</description>
+      </action>
+      <action type="open_display">
+        <file>rf_srf_wf_cavity_all_signal_main.bob</file>
+        <macros>
+          <EGU>sqrt(W)</EGU>
+          <SIG>DAC</SIG>
+          <SIGNAL>DAC</SIGNAL>
+        </macros>
+        <target>tab</target>
+        <description>DAC...</description>
+      </action>
+      <action type="open_display">
+        <file>rf_srf_wf_cavity_all_signal_main.bob</file>
+        <macros>
+          <EGU>Hz</EGU>
+          <SIG>DF</SIG>
+          <SIGNAL>Detune</SIGNAL>
+        </macros>
+        <target>tab</target>
+        <description>(Future) Detune...</description>
+      </action>
+      <action type="open_display">
+        <file>rf_srf_wf_cavity_all_overview.bob</file>
+        <target>tab</target>
+        <description>Cryomodule Overview...</description>
+      </action>
+    </actions>
+    <text>More Signals...</text>
+    <x>812</x>
+    <y>8</y>
+    <width>116</width>
+    <height>24</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+  </widget>
+</display>

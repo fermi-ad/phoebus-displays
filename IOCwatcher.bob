@@ -1,0 +1,1195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>IOCwatcher</name>
+  <macros>
+    <dev1>FNAL-AD</dev1>
+    <dev10>PIP2IT-RF</dev10>
+    <dev11>PIP2IT-RF</dev11>
+    <dev12>PIP2IT-RF</dev12>
+    <dev13>PIP2IT-RF</dev13>
+    <dev2>PIP2-RF</dev2>
+    <dev3>PIP2IT-RF</dev3>
+    <dev4>PIP2IT-RF</dev4>
+    <dev5>PIP2IT-RF</dev5>
+    <dev6>PIP2IT-RF</dev6>
+    <dev7>PIP2IT-RF</dev7>
+    <dev8>PIP2IT-RF</dev8>
+    <dev9>PIP2IT-RF</dev9>
+    <sys1>ENV</sys1>
+    <sys10>AMP</sys10>
+    <sys11>AMP</sys11>
+    <sys12>AMP</sys12>
+    <sys13>AMP</sys13>
+    <sys2>FG</sys2>
+    <sys3>AMP</sys3>
+    <sys4>AMP</sys4>
+    <sys5>AMP</sys5>
+    <sys6>AMP</sys6>
+    <sys7>AMP</sys7>
+    <sys8>AMP</sys8>
+    <sys9>AMP</sys9>
+    <unit1>01</unit1>
+    <unit10>09</unit10>
+    <unit11>10</unit11>
+    <unit12>11</unit12>
+    <unit13>12</unit13>
+    <unit2>01</unit2>
+    <unit3>01</unit3>
+    <unit4>02</unit4>
+    <unit5>03</unit5>
+    <unit6>05</unit6>
+    <unit7>06</unit7>
+    <unit8>07</unit8>
+    <unit9>08</unit9>
+  </macros>
+  <width>2120</width>
+  <height>690</height>
+  <scripts>
+    <script file="EmbeddedPy">
+      <text><![CDATA[# Embedded python script
+from org.csstudio.display.builder.runtime.script import PVUtil, ScriptUtil
+print 'Hello'
+# widget.setPropertyValue('text', PVUtil.getString(pvs[0]))]]></text>
+      <pv_name>watcher:IOCstart</pv_name>
+      <pv_name>watcher:Tpresent</pv_name>
+      <pv_name>watcher:MagicN</pv_name>
+      <pv_name>watcher:Version</pv_name>
+      <pv_name>watcher:HeartBeat</pv_name>
+      <pv_name>watcher:Period</pv_name>
+      <pv_name>watcher:Flags</pv_name>
+      <pv_name>watcher:RPort</pv_name>
+      <pv_name>watcher:IOCname</pv_name>
+    </script>
+  </scripts>
+  <widget type="label" version="2.0.0">
+    <name>Label_20</name>
+    <text>Watcher Process</text>
+    <y>440</y>
+    <width>30</width>
+    <height>220</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="18.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="0" green="0" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <rotation_step>1</rotation_step>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_4</name>
+    <y>440</y>
+    <width>30</width>
+    <height>220</height>
+    <line_width>2</line_width>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <text>IOC Watcher</text>
+    <width>2110</width>
+    <height>30</height>
+    <font>
+      <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="0" green="0" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="255" green="255" blue="77">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <border_width>3</border_width>
+    <border_color>
+      <color red="0" green="0" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_14</name>
+    <text>ALIVE Records</text>
+    <y>150</y>
+    <width>30</width>
+    <height>280</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="18.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="0" green="0" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <rotation_step>1</rotation_step>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_3</name>
+    <y>150</y>
+    <width>30</width>
+    <height>280</height>
+    <line_width>2</line_width>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle</name>
+    <y>40</y>
+    <width>2110</width>
+    <height>60</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_1</name>
+    <text>Watcher Server</text>
+    <x>10</x>
+    <y>50</y>
+    <width>180</width>
+    <height>40</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_2</name>
+    <class>COMMENT</class>
+    <text>IP Address</text>
+    <x>180</x>
+    <y>50</y>
+    <width>110</width>
+    <font use_class="true">
+      <font name="Comment" family="Liberation Sans" style="ITALIC" size="14.0">
+      </font>
+    </font>
+    <foreground_color use_class="true">
+      <color name="Text" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <transparent use_class="true">true</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words use_class="true">true</wrap_words>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_3</name>
+    <class>COMMENT</class>
+    <text>Port</text>
+    <x>300</x>
+    <y>50</y>
+    <width>50</width>
+    <font use_class="true">
+      <font name="Comment" family="Liberation Sans" style="ITALIC" size="14.0">
+      </font>
+    </font>
+    <foreground_color use_class="true">
+      <color name="Text" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <transparent use_class="true">true</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words use_class="true">true</wrap_words>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update</name>
+    <pv_name>$(dev1)-$(sys1)-$(unit1):ALIVE.RHOST</pv_name>
+    <x>180</x>
+    <y>70</y>
+    <width>110</width>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_1</name>
+    <pv_name>FNAL-AD-ENV-01:ALIVE.RPORT</pv_name>
+    <x>300</x>
+    <y>70</y>
+    <width>50</width>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_4</name>
+    <text>IOCs</text>
+    <x>30</x>
+    <y>130</y>
+    <width>2080</width>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <background_color>
+      <color red="255" green="255" blue="150">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_5</name>
+    <text>Name</text>
+    <x>40</x>
+    <y>160</y>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_6</name>
+    <text>Heartbeat</text>
+    <x>40</x>
+    <y>180</y>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_7</name>
+    <text>Port</text>
+    <x>40</x>
+    <y>200</y>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_8</name>
+    <text>Period</text>
+    <x>40</x>
+    <y>220</y>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_9</name>
+    <text>On/Off</text>
+    <x>40</x>
+    <y>240</y>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_10</name>
+    <text>ArchType</text>
+    <x>40</x>
+    <y>260</y>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_11</name>
+    <text>EPICS Base</text>
+    <x>40</x>
+    <y>280</y>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_12</name>
+    <text>Support</text>
+    <x>40</x>
+    <y>300</y>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_13</name>
+    <class>COMMENT</class>
+    <text>Version</text>
+    <x>360</x>
+    <y>50</y>
+    <width>50</width>
+    <font use_class="true">
+      <font name="Comment" family="Liberation Sans" style="ITALIC" size="14.0">
+      </font>
+    </font>
+    <foreground_color use_class="true">
+      <color name="Text" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <transparent use_class="true">true</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words use_class="true">true</wrap_words>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_20</name>
+    <pv_name>FNAL-AD-ENV-01:ALIVE.VER</pv_name>
+    <x>360</x>
+    <y>70</y>
+    <width>50</width>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_15</name>
+    <text>Owner</text>
+    <x>40</x>
+    <y>320</y>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_16</name>
+    <text>Group</text>
+    <x>40</x>
+    <y>340</y>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_17</name>
+    <text>Location</text>
+    <x>40</x>
+    <y>360</y>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_18</name>
+    <text>Request Read</text>
+    <x>40</x>
+    <y>380</y>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_19</name>
+    <text>Suppress</text>
+    <x>40</x>
+    <y>400</y>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_21</name>
+    <text>Date (Y-M-D)</text>
+    <x>40</x>
+    <y>450</y>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_22</name>
+    <text>IOC Start</text>
+    <x>40</x>
+    <y>470</y>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_23</name>
+    <text>Version</text>
+    <x>40</x>
+    <y>530</y>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_24</name>
+    <text>Heartbeat</text>
+    <x>40</x>
+    <y>550</y>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_25</name>
+    <text>Port</text>
+    <x>40</x>
+    <y>570</y>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_26</name>
+    <text>Period</text>
+    <x>40</x>
+    <y>590</y>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_27</name>
+    <text>Flags</text>
+    <x>40</x>
+    <y>610</y>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_29</name>
+    <text>Magic Number</text>
+    <x>40</x>
+    <y>630</y>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_31</name>
+    <text>IOC Fail</text>
+    <x>40</x>
+    <y>490</y>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_32</name>
+    <text>Comm. Error</text>
+    <x>40</x>
+    <y>510</y>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_1</name>
+    <file>IOCcontainer.bob</file>
+    <macros>
+      <dev>FNAL-AD</dev>
+      <sys>ENV</sys>
+      <unit>01</unit>
+    </macros>
+    <x>150</x>
+    <y>160</y>
+    <width>130</width>
+    <height>490</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_2</name>
+    <file>IOCcontainer.bob</file>
+    <macros>
+      <dev>PIP2-RF</dev>
+      <sys>FG</sys>
+      <unit>01</unit>
+    </macros>
+    <x>290</x>
+    <y>160</y>
+    <width>130</width>
+    <height>490</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_3</name>
+    <file>IOCcontainer.bob</file>
+    <macros>
+      <dev>PIP2IT-RF</dev>
+      <sys>AMP</sys>
+      <unit>01</unit>
+    </macros>
+    <x>430</x>
+    <y>160</y>
+    <width>130</width>
+    <height>490</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_4</name>
+    <file>IOCcontainer.bob</file>
+    <macros>
+      <dev>PIP2IT-RF</dev>
+      <sys>AMP</sys>
+      <unit>02</unit>
+    </macros>
+    <x>570</x>
+    <y>160</y>
+    <width>130</width>
+    <height>490</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_5</name>
+    <file>IOCcontainer.bob</file>
+    <macros>
+      <dev>PIP2IT-RF</dev>
+      <sys>AMP</sys>
+      <unit>03</unit>
+    </macros>
+    <x>710</x>
+    <y>160</y>
+    <width>130</width>
+    <height>490</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_6</name>
+    <file>IOCcontainer.bob</file>
+    <macros>
+      <dev>PIP2IT-RF</dev>
+      <sys>AMP</sys>
+      <unit>05</unit>
+    </macros>
+    <x>850</x>
+    <y>160</y>
+    <width>130</width>
+    <height>490</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_7</name>
+    <file>IOCcontainer.bob</file>
+    <macros>
+      <dev>PIP2IT-RF</dev>
+      <sys>AMP</sys>
+      <unit>06</unit>
+    </macros>
+    <x>990</x>
+    <y>160</y>
+    <width>130</width>
+    <height>490</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_8</name>
+    <file>IOCcontainer.bob</file>
+    <macros>
+      <dev>PIP2IT-RF</dev>
+      <sys>AMP</sys>
+      <unit>07</unit>
+    </macros>
+    <x>1130</x>
+    <y>160</y>
+    <width>130</width>
+    <height>490</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_9</name>
+    <file>IOCcontainer.bob</file>
+    <macros>
+      <dev>PIP2IT-RF</dev>
+      <sys>AMP</sys>
+      <unit>08</unit>
+    </macros>
+    <x>1270</x>
+    <y>160</y>
+    <width>130</width>
+    <height>490</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_10</name>
+    <file>IOCcontainer.bob</file>
+    <macros>
+      <dev>PIP2IT-RF</dev>
+      <sys>AMP</sys>
+      <unit>09</unit>
+    </macros>
+    <x>1410</x>
+    <y>160</y>
+    <width>130</width>
+    <height>490</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_11</name>
+    <file>IOCcontainer.bob</file>
+    <macros>
+      <dev>PIP2IT-RF</dev>
+      <sys>AMP</sys>
+      <unit>10</unit>
+    </macros>
+    <x>1550</x>
+    <y>160</y>
+    <width>130</width>
+    <height>490</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_12</name>
+    <file>IOCcontainer.bob</file>
+    <macros>
+      <dev>PIP2IT-RF</dev>
+      <sys>AMP</sys>
+      <unit>11</unit>
+    </macros>
+    <x>1690</x>
+    <y>160</y>
+    <width>130</width>
+    <height>490</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_13</name>
+    <file>IOCcontainer.bob</file>
+    <macros>
+      <dev>PIP2IT-RF</dev>
+      <sys>AMP</sys>
+      <unit>12</unit>
+    </macros>
+    <x>1830</x>
+    <y>160</y>
+    <width>130</width>
+    <height>490</height>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button</name>
+    <actions>
+      <action type="open_file">
+        <file>Environment.bob</file>
+        <description>Environment</description>
+      </action>
+    </actions>
+    <x>150</x>
+    <y>660</y>
+    <width>130</width>
+    <height>20</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_1</name>
+    <actions>
+      <action type="command">
+        <command>edm -x -eolc -m ioc=FNAL-IOC-IOTAT3-01 ioc_stats.edl</command>
+        <description>iocStats</description>
+      </action>
+    </actions>
+    <x>290</x>
+    <y>690</y>
+    <width>130</width>
+    <height>20</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_2</name>
+    <actions>
+      <action type="command">
+        <command>edm -x -eolc -m dev=PIP2IT-RF-AMP-01 ComarkTSV3000.edl</command>
+        <description>TSV3000-B1</description>
+      </action>
+    </actions>
+    <x>430</x>
+    <y>690</y>
+    <width>130</width>
+    <height>20</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_3</name>
+    <actions>
+      <action type="command">
+        <command>edm -x -eolc -m dev=PIP2IT-RF-AMP-02 ComarkTSV3000.edl</command>
+        <description>TSV3000-B2</description>
+      </action>
+    </actions>
+    <x>570</x>
+    <y>690</y>
+    <width>130</width>
+    <height>20</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_4</name>
+    <actions>
+      <action type="command">
+        <command>edm -x -eolc -m dev=PIP2IT-RF-AMP-03 ComarkTSV3000.edl</command>
+        <description>TSV3000-B3</description>
+      </action>
+    </actions>
+    <x>710</x>
+    <y>690</y>
+    <width>130</width>
+    <height>20</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_5</name>
+    <actions>
+      <action type="command">
+        <command>edm -x -eolc -m dev=PIP2IT-RF-AMP-05 Tomco7kW.edl</command>
+        <description>TSV3000-HWR1</description>
+      </action>
+    </actions>
+    <x>850</x>
+    <y>690</y>
+    <width>130</width>
+    <height>20</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_7</name>
+    <actions>
+      <action type="command">
+        <command>edm -x -eolc -m dev=PIP2IT-RF-AMP-07 Tomco7kW.edl</command>
+        <description>Tomco7kW-HWR3</description>
+      </action>
+    </actions>
+    <x>1130</x>
+    <y>690</y>
+    <width>130</width>
+    <height>20</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_8</name>
+    <actions>
+      <action type="command">
+        <command>edm -x -eolc -m dev=PIP2IT-RF-AMP-08 Tomco7kW.edl</command>
+        <description>Tomco7kW-HWR4</description>
+      </action>
+    </actions>
+    <x>1270</x>
+    <y>690</y>
+    <width>130</width>
+    <height>20</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_9</name>
+    <actions>
+      <action type="command">
+        <command>edm -x -eolc -m dev=PIP2IT-RF-AMP-09 Tomco7kW.edl</command>
+        <description>Tomco7kW-HWR5</description>
+      </action>
+    </actions>
+    <x>1410</x>
+    <y>690</y>
+    <width>130</width>
+    <height>20</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_10</name>
+    <actions>
+      <action type="command">
+        <command>edm -x -eolc -m dev=PIP2IT-RF-AMP-10 Tomco7kW.edl</command>
+        <description>Tomco7kW-HWR6</description>
+      </action>
+    </actions>
+    <x>1550</x>
+    <y>690</y>
+    <width>130</width>
+    <height>20</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_11</name>
+    <actions>
+      <action type="command">
+        <command>edm -x -eolc -m dev=PIP2IT-RF-AMP-11 Tomco7kW.edl</command>
+        <description>Tomco7kW-HWR7</description>
+      </action>
+    </actions>
+    <x>1690</x>
+    <y>690</y>
+    <width>130</width>
+    <height>20</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_12</name>
+    <actions>
+      <action type="command">
+        <command>edm -x -eolc -m dev=PIP2IT-RF-AMP-12 Tomco7kW.edl</command>
+        <description>Tomco7kW-HWR8</description>
+      </action>
+    </actions>
+    <x>1830</x>
+    <y>690</y>
+    <width>130</width>
+    <height>20</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_13</name>
+    <actions>
+      <action type="open_display">
+        <file>Tomco7kW.bob</file>
+        <macros>
+          <amp>HWR2</amp>
+          <dev>PIP2IT-RF-AMP-06</dev>
+        </macros>
+        <target>tab</target>
+        <description>Tomco7kW HWR2</description>
+      </action>
+    </actions>
+    <x>990</x>
+    <y>660</y>
+    <width>130</width>
+    <height>20</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_14</name>
+    <actions>
+      <action type="open_display">
+        <file>Tomco7kW.bob</file>
+        <macros>
+          <amp>HWR3</amp>
+          <dev>PIP2IT-RF-AMP-07</dev>
+        </macros>
+        <target>tab</target>
+        <description>Tomco7kW HWR3</description>
+      </action>
+    </actions>
+    <x>1130</x>
+    <y>660</y>
+    <width>130</width>
+    <height>20</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_15</name>
+    <actions>
+      <action type="open_display">
+        <file>Tomco7kW.bob</file>
+        <macros>
+          <amp>HWR4</amp>
+          <dev>PIP2IT-RF-AMP-08</dev>
+        </macros>
+        <target>tab</target>
+        <description>Tomco7kW HWR4</description>
+      </action>
+    </actions>
+    <x>1270</x>
+    <y>660</y>
+    <width>130</width>
+    <height>20</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_16</name>
+    <actions>
+      <action type="open_display">
+        <file>Tomco7kW.bob</file>
+        <macros>
+          <amp>HWR5</amp>
+          <dev>PIP2IT-RF-AMP-09</dev>
+        </macros>
+        <target>tab</target>
+        <description>Tomco7kW HWR5</description>
+      </action>
+    </actions>
+    <x>1410</x>
+    <y>660</y>
+    <width>130</width>
+    <height>20</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_17</name>
+    <actions>
+      <action type="open_display">
+        <file>Tomco7kW.bob</file>
+        <macros>
+          <amp>HWR6</amp>
+          <dev>PIP2IT-RF-AMP-10</dev>
+        </macros>
+        <target>tab</target>
+        <description>Tomco7kW HWR6</description>
+      </action>
+    </actions>
+    <x>1550</x>
+    <y>660</y>
+    <width>130</width>
+    <height>20</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_18</name>
+    <actions>
+      <action type="open_display">
+        <file>Tomco7kW.bob</file>
+        <macros>
+          <amp>HWR7</amp>
+          <dev>PIP2IT-RF-AMP-11</dev>
+        </macros>
+        <target>tab</target>
+        <description>Tomco7kW HWR7</description>
+      </action>
+    </actions>
+    <x>1690</x>
+    <y>660</y>
+    <width>130</width>
+    <height>20</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_19</name>
+    <actions>
+      <action type="open_display">
+        <file>Tomco7kW.bob</file>
+        <macros>
+          <amp>HWR8</amp>
+          <dev>PIP2IT-RF-AMP-12</dev>
+        </macros>
+        <target>tab</target>
+        <description>Tomco7kW HWR8</description>
+      </action>
+    </actions>
+    <x>1830</x>
+    <y>660</y>
+    <width>130</width>
+    <height>20</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_20</name>
+    <actions>
+      <action type="open_display">
+        <file>TSV3000.bob</file>
+        <macros>
+          <amp>B1</amp>
+          <dev>PIP2IT-RF-AMP-01</dev>
+        </macros>
+        <target>tab</target>
+        <description>TSV3000 B1</description>
+      </action>
+    </actions>
+    <x>430</x>
+    <y>660</y>
+    <width>130</width>
+    <height>20</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_21</name>
+    <actions>
+      <action type="open_display">
+        <file>TSV3000.bob</file>
+        <macros>
+          <amp>B2</amp>
+          <dev>PIP2IT-RF-AMP-02</dev>
+        </macros>
+        <target>tab</target>
+        <description>TSV3000 B2</description>
+      </action>
+    </actions>
+    <x>570</x>
+    <y>660</y>
+    <width>130</width>
+    <height>20</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_22</name>
+    <actions>
+      <action type="open_display">
+        <file>TSV3000.bob</file>
+        <macros>
+          <amp>B3</amp>
+          <dev>PIP2IT-RF-AMP-03</dev>
+        </macros>
+        <target>tab</target>
+        <description>TSV3000 B3</description>
+      </action>
+    </actions>
+    <x>710</x>
+    <y>660</y>
+    <width>130</width>
+    <height>20</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_23</name>
+    <actions>
+      <action type="open_display">
+        <file>TSV3000.bob</file>
+        <macros>
+          <amp>HWR1</amp>
+          <dev>PIP2IT-RF-AMP-05</dev>
+        </macros>
+        <target>tab</target>
+        <description>TSV3000 HWR1</description>
+      </action>
+    </actions>
+    <x>850</x>
+    <y>660</y>
+    <width>130</width>
+    <height>20</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_24</name>
+    <actions>
+      <action type="command">
+        <command>edm -x -eolc -m dev=PIP2IT-RF-AMP-06 Tomco7kW.edl</command>
+        <description>Tomco7kW-HWR2</description>
+      </action>
+    </actions>
+    <x>990</x>
+    <y>690</y>
+    <width>130</width>
+    <height>20</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_14</name>
+    <file>IOCcontainer.bob</file>
+    <macros>
+      <dev>PIP2IT-RF</dev>
+      <sys>AMP</sys>
+      <unit>13</unit>
+    </macros>
+    <x>1970</x>
+    <y>160</y>
+    <width>130</width>
+    <height>490</height>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_25</name>
+    <actions>
+      <action type="open_display">
+        <file>Tomco7kW.bob</file>
+        <macros>
+          <amp>HSPR</amp>
+          <dev>PIP2IT-RF-AMP-13</dev>
+        </macros>
+        <target>tab</target>
+        <description>Tomco7kW HSPR</description>
+      </action>
+    </actions>
+    <x>1970</x>
+    <y>660</y>
+    <width>130</width>
+    <height>20</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_26</name>
+    <actions>
+      <action type="command">
+        <command>edm -x -eolc -m dev=PIP2IT-RF-AMP-13 Tomco7kW.edl</command>
+        <description>Tomco7kW-HSPR</description>
+      </action>
+    </actions>
+    <x>1970</x>
+    <y>690</y>
+    <width>130</width>
+    <height>20</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_2</name>
+    <x>30</x>
+    <y>150</y>
+    <width>2080</width>
+    <height>280</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_5</name>
+    <x>30</x>
+    <y>440</y>
+    <width>2080</width>
+    <height>220</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_27</name>
+    <actions>
+      <action type="open_display">
+        <file>ioc_stats.bob</file>
+        <macros>
+          <dev>PIP2-RF-FG-01</dev>
+        </macros>
+        <target>tab</target>
+        <description>iocStats</description>
+      </action>
+    </actions>
+    <x>290</x>
+    <y>660</y>
+    <width>130</width>
+    <height>20</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+</display>

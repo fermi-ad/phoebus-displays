@@ -1,0 +1,2695 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>Quench Interlock - $(CM)$(C)0</name>
+  <x>119</x>
+  <y>64</y>
+  <width>640</width>
+  <height>380</height>
+  <background_color>
+    <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
+    </color>
+  </background_color>
+  <grid_step_x>4</grid_step_x>
+  <grid_step_y>4</grid_step_y>
+  <widget type="textupdate" version="2.0.0">
+    <name>EDM TextupdateClass</name>
+    <pv_name>SIOC:SYS0:AL00:TOD</pv_name>
+    <x>444</x>
+    <y>324</y>
+    <width>168</width>
+    <height>16</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-12" red="70" green="70" blue="70">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>EDM TextupdateClass</name>
+    <pv_name>SIOC:SYS0:AL00:MODE</pv_name>
+    <x>24</x>
+    <y>324</y>
+    <width>120</width>
+    <height>16</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-12" red="70" green="70" blue="70">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>EDM activeRectangleClass</name>
+    <width>1245</width>
+    <height>41</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color name="CRYO title" red="176" green="218" blue="249">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="CRYO title" red="176" green="218" blue="249">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>SRF Quench Interlock
+Cryomodule $(CM)00 Cavity $(C)</text>
+    <x>8</x>
+    <width>280</width>
+    <height>40</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="VAC title" red="225" green="248" blue="177">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>EDM activeExitButtonClass</name>
+    <actions>
+      <action type="execute">
+        <script file="EmbeddedPy">
+          <text><![CDATA[from org.csstudio.display.builder.runtime.script import ScriptUtil
+ScriptUtil.closeDisplay(widget)
+]]></text>
+        </script>
+        <description>close</description>
+      </action>
+    </actions>
+    <text>Exit</text>
+    <x>532</x>
+    <y>8</y>
+    <width>48</width>
+    <height>24</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>EDM Group 0</name>
+    <x>676</x>
+    <y>328</y>
+    <width>377</width>
+    <height>189</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="rectangle" version="2.0.0">
+      <name>EDM activeRectangleClass</name>
+      <x>8</x>
+      <y>12</y>
+      <width>357</width>
+      <height>173</height>
+      <line_width>1</line_width>
+      <line_color>
+        <color name="GLOBAL canvas" red="200" green="200" blue="200">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="GLOBAL canvas" red="200" green="200" blue="200">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>EDM Group 1</name>
+      <y>88</y>
+      <width>165</width>
+      <height>85</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <rules>
+        <rule name="EDM visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0&gt;=1.0 &amp;&amp; pv0&lt;2.0">
+            <value>true</value>
+          </exp>
+          <exp bool_exp="true">
+            <value>false</value>
+          </exp>
+          <pv_name>$(CM)$(C)0:QUENCHR_MAXV</pv_name>
+        </rule>
+      </rules>
+      <widget type="label" version="2.0.0">
+        <name>EDM activeXTextClass</name>
+        <text>Maximum 
+resets</text>
+        <width>72</width>
+        <height>24</height>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="10.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="black-14" red="0" green="0" blue="0">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="Disconn/Invalid" red="255" green="255" blue="255">
+          </color>
+        </background_color>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>EDM activeXTextDspClass</name>
+        <pv_name>$(CM)$(C)0:QUENCHR_MAX</pv_name>
+        <x>76</x>
+        <width>68</width>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="green-16" red="0" green="224" blue="0">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="grey-12" red="70" green="70" blue="70">
+          </color>
+        </background_color>
+        <format>1</format>
+        <precision>0</precision>
+        <show_units>false</show_units>
+        <horizontal_alignment>1</horizontal_alignment>
+      </widget>
+      <widget type="action_button" version="3.0.0">
+        <name>EDM activeMessageButtonClass</name>
+        <actions>
+          <action type="write_pv">
+            <pv_name>$(CM)$(C)0:QUENCHR_CNTCLR</pv_name>
+            <value>0</value>
+            <description>Clear</description>
+          </action>
+        </actions>
+        <text>Clear</text>
+        <x>88</x>
+        <y>64</y>
+        <width>44</width>
+        <height>20</height>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="black-14" red="0" green="0" blue="0">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="grey-4" red="187" green="187" blue="187">
+          </color>
+        </background_color>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>EDM activeXTextDspClass</name>
+        <pv_name>$(CM)$(C)0:QUENCHR_CNT</pv_name>
+        <x>76</x>
+        <y>32</y>
+        <width>68</width>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="green-16" red="0" green="224" blue="0">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="grey-12" red="70" green="70" blue="70">
+          </color>
+        </background_color>
+        <format>1</format>
+        <show_units>false</show_units>
+        <horizontal_alignment>1</horizontal_alignment>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>EDM activeXTextClass</name>
+        <text>Counter</text>
+        <y>32</y>
+        <width>72</width>
+        <height>24</height>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="black-14" red="0" green="0" blue="0">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="Disconn/Invalid" red="255" green="255" blue="255">
+          </color>
+        </background_color>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>EDM Group 2</name>
+      <y>56</y>
+      <width>145</width>
+      <height>25</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <rules>
+        <rule name="EDM visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0&gt;=1.0 &amp;&amp; pv0&lt;2.0">
+            <value>true</value>
+          </exp>
+          <exp bool_exp="true">
+            <value>false</value>
+          </exp>
+          <pv_name>$(CM)$(C)0:QUENCHR_AUTOV</pv_name>
+        </rule>
+      </rules>
+      <widget type="label" version="2.0.0">
+        <name>EDM activeXTextClass</name>
+        <text>Unlimited 
+resets?</text>
+        <width>72</width>
+        <height>24</height>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="10.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="black-14" red="0" green="0" blue="0">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="Disconn/Invalid" red="255" green="255" blue="255">
+          </color>
+        </background_color>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>EDM activeXTextDspClass</name>
+        <pv_name>$(CM)$(C)0:QUENCHR_UNLIM</pv_name>
+        <x>76</x>
+        <width>68</width>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="green-16" red="0" green="224" blue="0">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="grey-12" red="70" green="70" blue="70">
+          </color>
+        </background_color>
+        <precision>2</precision>
+        <show_units>false</show_units>
+        <horizontal_alignment>1</horizontal_alignment>
+      </widget>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>EDM activeXTextClass</name>
+      <text>Quench Auto-Reset</text>
+      <x>8</x>
+      <width>156</width>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="12.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="black-14" red="0" green="0" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="GLOBAL canvas" red="200" green="200" blue="200">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>EDM activeXTextClass</name>
+      <text>Auto-reset faults?</text>
+      <x>72</x>
+      <y>24</y>
+      <width>116</width>
+      <height>24</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="12.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="black-14" red="0" green="0" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="grey-4" red="187" green="187" blue="187">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="combo" version="2.0.0">
+      <name>EDM activeMenuButtonClass</name>
+      <pv_name>$(CM)$(C)0:QUENCHR_AUTO</pv_name>
+      <x>184</x>
+      <y>24</y>
+      <width>72</width>
+      <height>20</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="12.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="black-14" red="0" green="0" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="GLOBAL canvas" red="200" green="200" blue="200">
+        </color>
+      </background_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>EDM Group 3</name>
+      <x>180</x>
+      <y>148</y>
+      <width>85</width>
+      <height>25</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <rules>
+        <rule name="EDM visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0&gt;=1.0 &amp;&amp; pv0&lt;2.0">
+            <value>true</value>
+          </exp>
+          <exp bool_exp="true">
+            <value>false</value>
+          </exp>
+          <pv_name>$(CM)$(C)0:QUENCHR_AABSV</pv_name>
+        </rule>
+      </rules>
+      <widget type="label" version="2.0.0">
+        <name>EDM activeXTextClass</name>
+        <text>MV</text>
+        <x>56</x>
+        <width>28</width>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="black-14" red="0" green="0" blue="0">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="Disconn/Invalid" red="255" green="255" blue="255">
+          </color>
+        </background_color>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>EDM activeXTextDspClass</name>
+        <pv_name>$(CM)$(C)0:QUENCHR_AABS</pv_name>
+        <width>52</width>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="green-16" red="0" green="224" blue="0">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="grey-12" red="70" green="70" blue="70">
+          </color>
+        </background_color>
+        <format>1</format>
+        <show_units>false</show_units>
+        <horizontal_alignment>1</horizontal_alignment>
+      </widget>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>EDM Group 4</name>
+      <x>180</x>
+      <y>148</y>
+      <width>85</width>
+      <height>25</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <rules>
+        <rule name="EDM visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0&gt;=0.0 &amp;&amp; pv0&lt;1.0">
+            <value>true</value>
+          </exp>
+          <exp bool_exp="true">
+            <value>false</value>
+          </exp>
+          <pv_name>$(CM)$(C)0:QUENCHR_AABSV</pv_name>
+        </rule>
+      </rules>
+      <widget type="label" version="2.0.0">
+        <name>EDM activeXTextClass</name>
+        <text>MV</text>
+        <x>56</x>
+        <width>28</width>
+        <font>
+          <font family="Liberation Sans" style="ITALIC" size="12.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="grey-12" red="70" green="70" blue="70">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="Disconn/Invalid" red="255" green="255" blue="255">
+          </color>
+        </background_color>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>EDM activeXTextDspClass</name>
+        <pv_name>$(CM)$(C)0:QUENCHR_AABS</pv_name>
+        <width>52</width>
+        <font>
+          <font family="Liberation Sans" style="ITALIC" size="12.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="grey-2" red="218" green="218" blue="218">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="grey-7" red="145" green="145" blue="145">
+          </color>
+        </background_color>
+        <format>1</format>
+        <show_units>false</show_units>
+        <horizontal_alignment>1</horizontal_alignment>
+      </widget>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>EDM activeXTextClass</name>
+      <text>Recovery ADES</text>
+      <x>196</x>
+      <y>120</y>
+      <width>108</width>
+      <height>24</height>
+      <font>
+        <font family="Liberation Sans" style="ITALIC" size="12.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="grey-12" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="Disconn/Invalid" red="255" green="255" blue="255">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <rules>
+        <rule name="EDM visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0&gt;=0.0 &amp;&amp; pv0&lt;1.0">
+            <value>true</value>
+          </exp>
+          <exp bool_exp="true">
+            <value>false</value>
+          </exp>
+          <pv_name>$(CM)$(C)0:QUENCHR_ATYPEV</pv_name>
+        </rule>
+      </rules>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>EDM activeXTextClass</name>
+      <text>Recovery ADES</text>
+      <x>196</x>
+      <y>120</y>
+      <width>108</width>
+      <height>24</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="12.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="black-14" red="0" green="0" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="Disconn/Invalid" red="255" green="255" blue="255">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <rules>
+        <rule name="EDM visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0&gt;=1.0 &amp;&amp; pv0&lt;2.0">
+            <value>true</value>
+          </exp>
+          <exp bool_exp="true">
+            <value>false</value>
+          </exp>
+          <pv_name>$(CM)$(C)0:QUENCHR_ATYPEV</pv_name>
+        </rule>
+      </rules>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>EDM Group 5</name>
+      <y>88</y>
+      <width>165</width>
+      <height>85</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <rules>
+        <rule name="EDM visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0&gt;=0.0 &amp;&amp; pv0&lt;1.0">
+            <value>true</value>
+          </exp>
+          <exp bool_exp="true">
+            <value>false</value>
+          </exp>
+          <pv_name>$(CM)$(C)0:QUENCHR_MAXV</pv_name>
+        </rule>
+      </rules>
+      <widget type="label" version="2.0.0">
+        <name>EDM activeXTextClass</name>
+        <text>Maximum 
+resets</text>
+        <width>72</width>
+        <height>24</height>
+        <font>
+          <font family="Liberation Sans" style="ITALIC" size="10.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="grey-12" red="70" green="70" blue="70">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="Disconn/Invalid" red="255" green="255" blue="255">
+          </color>
+        </background_color>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>EDM activeXTextDspClass</name>
+        <pv_name>$(CM)$(C)0:QUENCHR_MAX</pv_name>
+        <x>76</x>
+        <width>68</width>
+        <font>
+          <font family="Liberation Sans" style="ITALIC" size="12.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="grey-2" red="218" green="218" blue="218">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="grey-7" red="145" green="145" blue="145">
+          </color>
+        </background_color>
+        <format>1</format>
+        <precision>0</precision>
+        <show_units>false</show_units>
+        <horizontal_alignment>1</horizontal_alignment>
+      </widget>
+      <widget type="action_button" version="3.0.0">
+        <name>EDM activeMessageButtonClass</name>
+        <actions>
+          <action type="write_pv">
+            <pv_name>$(CM)$(C)0:QUENCHR_CNTCLR</pv_name>
+            <value>0</value>
+            <description>Clear</description>
+          </action>
+        </actions>
+        <text>Clear</text>
+        <x>88</x>
+        <y>64</y>
+        <width>44</width>
+        <height>20</height>
+        <font>
+          <font family="Liberation Sans" style="ITALIC" size="12.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="grey-2" red="218" green="218" blue="218">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="grey-7" red="145" green="145" blue="145">
+          </color>
+        </background_color>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>EDM activeXTextDspClass</name>
+        <pv_name>$(CM)$(C)0:QUENCHR_CNT</pv_name>
+        <x>76</x>
+        <y>32</y>
+        <width>68</width>
+        <font>
+          <font family="Liberation Sans" style="ITALIC" size="12.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="grey-2" red="218" green="218" blue="218">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="grey-7" red="145" green="145" blue="145">
+          </color>
+        </background_color>
+        <format>1</format>
+        <show_units>false</show_units>
+        <horizontal_alignment>1</horizontal_alignment>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>EDM activeXTextClass</name>
+        <text>Counter</text>
+        <y>32</y>
+        <width>72</width>
+        <height>24</height>
+        <font>
+          <font family="Liberation Sans" style="ITALIC" size="12.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="grey-12" red="70" green="70" blue="70">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="Disconn/Invalid" red="255" green="255" blue="255">
+          </color>
+        </background_color>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>EDM Group 6</name>
+      <x>268</x>
+      <y>136</y>
+      <width>109</width>
+      <height>53</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <rules>
+        <rule name="EDM visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0&gt;=1.0 &amp;&amp; pv0&lt;2.0">
+            <value>true</value>
+          </exp>
+          <exp bool_exp="true">
+            <value>false</value>
+          </exp>
+          <pv_name>$(CM)$(C)0:QUENCHR_ARELV</pv_name>
+        </rule>
+      </rules>
+      <widget type="textupdate" version="2.0.0">
+        <name>EDM activeXTextDspClass</name>
+        <pv_name>$(CM)$(C)0:QUENCHR_AREL</pv_name>
+        <y>12</y>
+        <width>52</width>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="green-16" red="0" green="224" blue="0">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="grey-12" red="70" green="70" blue="70">
+          </color>
+        </background_color>
+        <format>1</format>
+        <show_units>false</show_units>
+        <horizontal_alignment>1</horizontal_alignment>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>EDM activeXTextClass</name>
+        <text>% of
+current
+setting</text>
+        <x>56</x>
+        <width>52</width>
+        <height>52</height>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="black-14" red="0" green="0" blue="0">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="Disconn/Invalid" red="255" green="255" blue="255">
+          </color>
+        </background_color>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>EDM Group 7</name>
+      <x>268</x>
+      <y>136</y>
+      <width>109</width>
+      <height>53</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <rules>
+        <rule name="EDM visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0&gt;=0.0 &amp;&amp; pv0&lt;1.0">
+            <value>true</value>
+          </exp>
+          <exp bool_exp="true">
+            <value>false</value>
+          </exp>
+          <pv_name>$(CM)$(C)0:QUENCHR_ARELV</pv_name>
+        </rule>
+      </rules>
+      <widget type="textupdate" version="2.0.0">
+        <name>EDM activeXTextDspClass</name>
+        <pv_name>$(CM)$(C)0:QUENCHR_AREL</pv_name>
+        <y>12</y>
+        <width>52</width>
+        <font>
+          <font family="Liberation Sans" style="ITALIC" size="12.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="grey-2" red="218" green="218" blue="218">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="grey-7" red="145" green="145" blue="145">
+          </color>
+        </background_color>
+        <format>1</format>
+        <show_units>false</show_units>
+        <horizontal_alignment>1</horizontal_alignment>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>EDM activeXTextClass</name>
+        <text>% of
+current
+setting</text>
+        <x>56</x>
+        <width>52</width>
+        <height>52</height>
+        <font>
+          <font family="Liberation Sans" style="ITALIC" size="12.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="grey-12" red="70" green="70" blue="70">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="Disconn/Invalid" red="255" green="255" blue="255">
+          </color>
+        </background_color>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>EDM Group 8</name>
+      <x>176</x>
+      <y>56</y>
+      <width>145</width>
+      <height>25</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <rules>
+        <rule name="EDM visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0&gt;=1.0 &amp;&amp; pv0&lt;2.0">
+            <value>true</value>
+          </exp>
+          <exp bool_exp="true">
+            <value>false</value>
+          </exp>
+          <pv_name>$(CM)$(C)0:QUENCHR_AUTOV</pv_name>
+        </rule>
+      </rules>
+      <widget type="label" version="2.0.0">
+        <name>EDM activeXTextClass</name>
+        <text>Same 
+amplitude?</text>
+        <width>72</width>
+        <height>24</height>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="10.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="black-14" red="0" green="0" blue="0">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="grey-4" red="187" green="187" blue="187">
+          </color>
+        </background_color>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>EDM activeXTextDspClass</name>
+        <pv_name>$(CM)$(C)0:QUENCHR_AMODE</pv_name>
+        <x>76</x>
+        <width>68</width>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="green-16" red="0" green="224" blue="0">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="grey-12" red="70" green="70" blue="70">
+          </color>
+        </background_color>
+        <precision>2</precision>
+        <show_units>false</show_units>
+        <horizontal_alignment>1</horizontal_alignment>
+      </widget>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>EDM Group 9</name>
+      <x>176</x>
+      <y>88</y>
+      <width>145</width>
+      <height>25</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <rules>
+        <rule name="EDM visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0&gt;=1.0 &amp;&amp; pv0&lt;2.0">
+            <value>true</value>
+          </exp>
+          <exp bool_exp="true">
+            <value>false</value>
+          </exp>
+          <pv_name>$(CM)$(C)0:QUENCHR_ATYPEV</pv_name>
+        </rule>
+      </rules>
+      <widget type="label" version="2.0.0">
+        <name>EDM activeXTextClass</name>
+        <text>Specify 
+amplitude</text>
+        <width>72</width>
+        <height>24</height>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="10.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="black-14" red="0" green="0" blue="0">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="Disconn/Invalid" red="255" green="255" blue="255">
+          </color>
+        </background_color>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>EDM activeXTextDspClass</name>
+        <pv_name>$(CM)$(C)0:QUENCHR_ATYPE</pv_name>
+        <x>76</x>
+        <width>68</width>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="green-16" red="0" green="224" blue="0">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="grey-12" red="70" green="70" blue="70">
+          </color>
+        </background_color>
+        <precision>2</precision>
+        <show_units>false</show_units>
+        <horizontal_alignment>1</horizontal_alignment>
+      </widget>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>EDM Group 10</name>
+      <x>176</x>
+      <y>88</y>
+      <width>145</width>
+      <height>25</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <rules>
+        <rule name="EDM visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0&gt;=0.0 &amp;&amp; pv0&lt;1.0">
+            <value>true</value>
+          </exp>
+          <exp bool_exp="true">
+            <value>false</value>
+          </exp>
+          <pv_name>$(CM)$(C)0:QUENCHR_ATYPEV</pv_name>
+        </rule>
+      </rules>
+      <widget type="label" version="2.0.0">
+        <name>EDM activeXTextClass</name>
+        <text>Specify 
+amplitude</text>
+        <width>72</width>
+        <height>24</height>
+        <font>
+          <font family="Liberation Sans" style="ITALIC" size="10.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="grey-12" red="70" green="70" blue="70">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="Disconn/Invalid" red="255" green="255" blue="255">
+          </color>
+        </background_color>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>EDM activeXTextDspClass</name>
+        <pv_name>$(CM)$(C)0:QUENCHR_ATYPE</pv_name>
+        <x>76</x>
+        <width>68</width>
+        <font>
+          <font family="Liberation Sans" style="ITALIC" size="12.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="grey-2" red="218" green="218" blue="218">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="grey-7" red="145" green="145" blue="145">
+          </color>
+        </background_color>
+        <precision>2</precision>
+        <show_units>false</show_units>
+        <horizontal_alignment>1</horizontal_alignment>
+      </widget>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>EDM Group 11</name>
+      <x>172</x>
+      <y>56</y>
+      <width>149</width>
+      <height>25</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <rules>
+        <rule name="EDM visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0&gt;=0.0 &amp;&amp; pv0&lt;1.0">
+            <value>true</value>
+          </exp>
+          <exp bool_exp="true">
+            <value>false</value>
+          </exp>
+          <pv_name>$(CM)$(C)0:QUENCHR_AUTOV</pv_name>
+        </rule>
+      </rules>
+      <widget type="label" version="2.0.0">
+        <name>EDM activeXTextClass</name>
+        <text>Same 
+amplitude?</text>
+        <width>72</width>
+        <height>24</height>
+        <font>
+          <font family="Liberation Sans" style="ITALIC" size="10.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="grey-12" red="70" green="70" blue="70">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="grey-4" red="187" green="187" blue="187">
+          </color>
+        </background_color>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>EDM activeXTextDspClass</name>
+        <pv_name>$(CM)$(C)0:QUENCHR_AMODE</pv_name>
+        <x>80</x>
+        <width>68</width>
+        <font>
+          <font family="Liberation Sans" style="ITALIC" size="12.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="grey-2" red="218" green="218" blue="218">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="grey-7" red="145" green="145" blue="145">
+          </color>
+        </background_color>
+        <precision>2</precision>
+        <show_units>false</show_units>
+        <horizontal_alignment>1</horizontal_alignment>
+      </widget>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>EDM Group 12</name>
+      <y>56</y>
+      <width>145</width>
+      <height>25</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <rules>
+        <rule name="EDM visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0&gt;=0.0 &amp;&amp; pv0&lt;1.0">
+            <value>true</value>
+          </exp>
+          <exp bool_exp="true">
+            <value>false</value>
+          </exp>
+          <pv_name>$(CM)$(C)0:QUENCHR_AUTOV</pv_name>
+        </rule>
+      </rules>
+      <widget type="label" version="2.0.0">
+        <name>EDM activeXTextClass</name>
+        <text>Unlimited 
+resets?</text>
+        <width>72</width>
+        <height>24</height>
+        <font>
+          <font family="Liberation Sans" style="ITALIC" size="10.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="grey-12" red="70" green="70" blue="70">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="Disconn/Invalid" red="255" green="255" blue="255">
+          </color>
+        </background_color>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>EDM activeXTextDspClass</name>
+        <pv_name>$(CM)$(C)0:QUENCHR_UNLIM</pv_name>
+        <x>76</x>
+        <width>68</width>
+        <font>
+          <font family="Liberation Sans" style="ITALIC" size="12.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="grey-2" red="218" green="218" blue="218">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="grey-7" red="145" green="145" blue="145">
+          </color>
+        </background_color>
+        <precision>2</precision>
+        <show_units>false</show_units>
+        <horizontal_alignment>1</horizontal_alignment>
+      </widget>
+    </widget>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>EDM activeRectangleClass</name>
+    <x>24</x>
+    <y>64</y>
+    <width>593</width>
+    <height>253</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>Formula</text>
+    <x>24</x>
+    <y>52</y>
+    <width>112</width>
+    <height>24</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>EDM activeXTextDspClass</name>
+    <pv_name>$(CM)$(C)0:CONST_QUENCH_REV_RBV</pv_name>
+    <x>204</x>
+    <y>108</y>
+    <width>56</width>
+    <height>24</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
+      </color>
+    </background_color>
+    <precision>3</precision>
+    <show_units>false</show_units>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>EDM activeXTextDspClass</name>
+    <pv_name>$(CM)$(C)0:CONST_QUENCH_FWD_RBV</pv_name>
+    <x>80</x>
+    <y>108</y>
+    <width>56</width>
+    <height>24</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
+      </color>
+    </background_color>
+    <precision>3</precision>
+    <show_units>false</show_units>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>EDM activeXTextDspClass</name>
+    <pv_name>$(CM)$(C)0:CONST_QUENCH_CAV_RBV</pv_name>
+    <x>332</x>
+    <y>108</y>
+    <width>56</width>
+    <height>24</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
+      </color>
+    </background_color>
+    <precision>3</precision>
+    <show_units>false</show_units>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>EDM activeXTextDspClass</name>
+    <pv_name>$(CM)$(C)0:CONST_QUENCH_THRESH_RBV</pv_name>
+    <x>516</x>
+    <y>108</y>
+    <width>56</width>
+    <height>24</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
+      </color>
+    </background_color>
+    <precision>3</precision>
+    <show_units>false</show_units>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>Trip if:</text>
+    <x>28</x>
+    <y>76</y>
+    <width>68</width>
+    <height>24</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>* rev^2 -</text>
+    <x>268</x>
+    <y>108</y>
+    <width>56</width>
+    <height>24</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>* fwd^2 -</text>
+    <x>144</x>
+    <y>108</y>
+    <width>56</width>
+    <height>24</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>* (dcav/dt)^2   ]   &gt;</text>
+    <x>396</x>
+    <y>108</y>
+    <width>112</width>
+    <height>24</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>[</text>
+    <x>52</x>
+    <y>108</y>
+    <width>28</width>
+    <height>24</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>EDM activeXTextDspClass</name>
+    <pv_name>$(CM)$(C)0:CONST_QUENCH_FSW.EGU</pv_name>
+    <x>412</x>
+    <y>176</y>
+    <width>48</width>
+    <height>24</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-12" red="70" green="70" blue="70">
+      </color>
+    </background_color>
+    <format>2</format>
+    <precision>3</precision>
+    <show_units>false</show_units>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>EDM activeXTextDspClass</name>
+    <pv_name>$(CM)$(C)0:CONST_QUENCH_FSW</pv_name>
+    <x>324</x>
+    <y>176</y>
+    <width>84</width>
+    <height>24</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <precision>1</precision>
+    <show_units>false</show_units>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>EDM activeXTextDspClass</name>
+    <pv_name>$(CM)$(C)0:CONST_QUENCH_FSW</pv_name>
+    <x>232</x>
+    <y>176</y>
+    <width>84</width>
+    <height>24</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
+      </color>
+    </background_color>
+    <precision>1</precision>
+    <show_units>false</show_units>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>Requested</text>
+    <x>136</x>
+    <y>176</y>
+    <width>88</width>
+    <height>24</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Disconn/Invalid" red="255" green="255" blue="255">
+      </color>
+    </background_color>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>EDM activeXTextDspClass</name>
+    <pv_name>$(CM)$(C)0:CONST_QUENCH_CALC.VALC</pv_name>
+    <x>232</x>
+    <y>208</y>
+    <width>84</width>
+    <height>24</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
+      </color>
+    </background_color>
+    <precision>1</precision>
+    <show_units>false</show_units>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>In-use</text>
+    <x>136</x>
+    <y>208</y>
+    <width>88</width>
+    <height>24</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Disconn/Invalid" red="255" green="255" blue="255">
+      </color>
+    </background_color>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>Full-scale value used to calculate
+quench detection parameters</text>
+    <x>228</x>
+    <y>148</y>
+    <width>192</width>
+    <height>24</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Disconn/Invalid" red="255" green="255" blue="255">
+      </color>
+    </background_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>Requested value overridden</text>
+    <x>324</x>
+    <y>208</y>
+    <width>188</width>
+    <height>24</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Monitor: MINOR" red="255" green="255" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <rules>
+      <rule name="EDM visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0&gt;=1.0 &amp;&amp; pv0&lt;2.0">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="true">
+          <value>false</value>
+        </exp>
+        <pv_name>$(CM)$(C)0:CONST_QUENCH_CALC.VALB</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>EDM activeXTextDspClass</name>
+    <pv_name>$(CM)$(C)0:QUENCH_THRESH</pv_name>
+    <x>232</x>
+    <y>264</y>
+    <width>84</width>
+    <height>24</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
+      </color>
+    </background_color>
+    <precision>1</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>Quench
+Threshold</text>
+    <x>136</x>
+    <y>264</y>
+    <width>88</width>
+    <height>24</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Disconn/Invalid" red="255" green="255" blue="255">
+      </color>
+    </background_color>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>EDM activeXTextDspClass</name>
+    <pv_name>$(CM)$(C)0:QUENCH_THRESH.EGU</pv_name>
+    <x>412</x>
+    <y>264</y>
+    <width>48</width>
+    <height>24</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-12" red="70" green="70" blue="70">
+      </color>
+    </background_color>
+    <format>2</format>
+    <precision>3</precision>
+    <show_units>false</show_units>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>EDM activeXTextDspClass</name>
+    <pv_name>$(CM)$(C)0:QUENCH_THRESH</pv_name>
+    <x>324</x>
+    <y>264</y>
+    <width>84</width>
+    <height>24</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <precision>1</precision>
+    <show_units>false</show_units>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>EDM Group 13</name>
+    <x>24</x>
+    <y>516</y>
+    <width>593</width>
+    <height>293</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="rectangle" version="2.0.0">
+      <name>EDM activeRectangleClass</name>
+      <y>12</y>
+      <width>593</width>
+      <height>281</height>
+      <line_width>1</line_width>
+      <line_color>
+        <color name="GLOBAL canvas" red="200" green="200" blue="200">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="GLOBAL canvas" red="200" green="200" blue="200">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>EDM activeXTextClass</name>
+      <text>Configure Auto-Reset</text>
+      <width>172</width>
+      <height>24</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="12.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="black-14" red="0" green="0" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="GLOBAL canvas" red="200" green="200" blue="200">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>EDM activeXTextClass</name>
+      <text>Auto-reset faults?</text>
+      <x>180</x>
+      <y>44</y>
+      <width>116</width>
+      <height>24</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="12.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="black-14" red="0" green="0" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="grey-4" red="187" green="187" blue="187">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="combo" version="2.0.0">
+      <name>EDM activeMenuButtonClass</name>
+      <pv_name>$(CM)$(C)0:QUENCHR_AUTO</pv_name>
+      <x>292</x>
+      <y>44</y>
+      <width>72</width>
+      <height>24</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="12.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="black-14" red="0" green="0" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="GLOBAL canvas" red="200" green="200" blue="200">
+        </color>
+      </background_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>EDM Group 14</name>
+      <x>60</x>
+      <y>104</y>
+      <width>161</width>
+      <height>25</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <rules>
+        <rule name="EDM visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0&gt;=1.0 &amp;&amp; pv0&lt;2.0">
+            <value>true</value>
+          </exp>
+          <exp bool_exp="true">
+            <value>false</value>
+          </exp>
+          <pv_name>$(CM)$(C)0:QUENCHR_AUTOV</pv_name>
+        </rule>
+      </rules>
+      <widget type="label" version="2.0.0">
+        <name>EDM activeXTextClass</name>
+        <text>Unlimited 
+resets?</text>
+        <width>72</width>
+        <height>24</height>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="10.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="black-14" red="0" green="0" blue="0">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="Disconn/Invalid" red="255" green="255" blue="255">
+          </color>
+        </background_color>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="combo" version="2.0.0">
+        <name>EDM activeMenuButtonClass</name>
+        <pv_name>$(CM)$(C)0:QUENCHR_UNLIM</pv_name>
+        <x>76</x>
+        <width>84</width>
+        <height>24</height>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="black-14" red="0" green="0" blue="0">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="GLOBAL canvas" red="200" green="200" blue="200">
+          </color>
+        </background_color>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>EDM Group 15</name>
+      <x>60</x>
+      <y>104</y>
+      <width>161</width>
+      <height>25</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <rules>
+        <rule name="EDM visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0&gt;=0.0 &amp;&amp; pv0&lt;1.0">
+            <value>true</value>
+          </exp>
+          <exp bool_exp="true">
+            <value>false</value>
+          </exp>
+          <pv_name>$(CM)$(C)0:QUENCHR_AUTOV</pv_name>
+        </rule>
+      </rules>
+      <widget type="label" version="2.0.0">
+        <name>EDM activeXTextClass</name>
+        <text>Unlimited 
+resets?</text>
+        <width>72</width>
+        <height>24</height>
+        <font>
+          <font family="Liberation Sans" style="ITALIC" size="10.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="grey-12" red="70" green="70" blue="70">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="Disconn/Invalid" red="255" green="255" blue="255">
+          </color>
+        </background_color>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="combo" version="2.0.0">
+        <name>EDM activeMenuButtonClass</name>
+        <pv_name>$(CM)$(C)0:QUENCHR_UNLIM</pv_name>
+        <x>76</x>
+        <width>84</width>
+        <height>24</height>
+        <font>
+          <font family="Liberation Sans" style="ITALIC" size="12.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="grey-2" red="218" green="218" blue="218">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="grey-7" red="145" green="145" blue="145">
+          </color>
+        </background_color>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>EDM Group 16</name>
+      <x>60</x>
+      <y>152</y>
+      <width>213</width>
+      <height>73</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <rules>
+        <rule name="EDM visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0&gt;=1.0 &amp;&amp; pv0&lt;2.0">
+            <value>true</value>
+          </exp>
+          <exp bool_exp="true">
+            <value>false</value>
+          </exp>
+          <pv_name>$(CM)$(C)0:QUENCHR_MAXV</pv_name>
+        </rule>
+      </rules>
+      <widget type="label" version="2.0.0">
+        <name>EDM activeXTextClass</name>
+        <text>Maximum 
+resets</text>
+        <width>72</width>
+        <height>24</height>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="10.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="black-14" red="0" green="0" blue="0">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="Disconn/Invalid" red="255" green="255" blue="255">
+          </color>
+        </background_color>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="textentry" version="3.0.0">
+        <name>EDM activeXTextDspClass</name>
+        <pv_name>$(CM)$(C)0:QUENCHR_MAX</pv_name>
+        <x>76</x>
+        <width>84</width>
+        <height>24</height>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="black-14" red="0" green="0" blue="0">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="GLOBAL canvas" red="200" green="200" blue="200">
+          </color>
+        </background_color>
+        <format>1</format>
+        <precision>0</precision>
+        <show_units>false</show_units>
+      </widget>
+      <widget type="action_button" version="3.0.0">
+        <name>EDM activeMessageButtonClass</name>
+        <actions>
+          <action type="write_pv">
+            <pv_name>$(CM)$(C)0:QUENCHR_CNTCLR</pv_name>
+            <value>0</value>
+            <description>Clear</description>
+          </action>
+        </actions>
+        <text>Clear</text>
+        <x>168</x>
+        <y>48</y>
+        <width>44</width>
+        <height>24</height>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="black-14" red="0" green="0" blue="0">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="grey-4" red="187" green="187" blue="187">
+          </color>
+        </background_color>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>EDM activeXTextDspClass</name>
+        <pv_name>$(CM)$(C)0:QUENCHR_CNT</pv_name>
+        <x>76</x>
+        <y>48</y>
+        <width>84</width>
+        <height>24</height>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="green-16" red="0" green="224" blue="0">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="grey-12" red="70" green="70" blue="70">
+          </color>
+        </background_color>
+        <format>1</format>
+        <show_units>false</show_units>
+        <horizontal_alignment>1</horizontal_alignment>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>EDM activeXTextClass</name>
+        <text>Counter</text>
+        <y>48</y>
+        <width>72</width>
+        <height>24</height>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="black-14" red="0" green="0" blue="0">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="Disconn/Invalid" red="255" green="255" blue="255">
+          </color>
+        </background_color>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>EDM Group 17</name>
+      <x>60</x>
+      <y>152</y>
+      <width>213</width>
+      <height>73</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <rules>
+        <rule name="EDM visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0&gt;=0.0 &amp;&amp; pv0&lt;1.0">
+            <value>true</value>
+          </exp>
+          <exp bool_exp="true">
+            <value>false</value>
+          </exp>
+          <pv_name>$(CM)$(C)0:QUENCHR_MAXV</pv_name>
+        </rule>
+      </rules>
+      <widget type="label" version="2.0.0">
+        <name>EDM activeXTextClass</name>
+        <text>Maximum 
+resets</text>
+        <width>72</width>
+        <height>24</height>
+        <font>
+          <font family="Liberation Sans" style="ITALIC" size="10.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="grey-12" red="70" green="70" blue="70">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="Disconn/Invalid" red="255" green="255" blue="255">
+          </color>
+        </background_color>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="textentry" version="3.0.0">
+        <name>EDM activeXTextDspClass</name>
+        <pv_name>$(CM)$(C)0:QUENCHR_MAX</pv_name>
+        <x>76</x>
+        <width>84</width>
+        <height>24</height>
+        <font>
+          <font family="Liberation Sans" style="ITALIC" size="12.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="grey-2" red="218" green="218" blue="218">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="grey-7" red="145" green="145" blue="145">
+          </color>
+        </background_color>
+        <format>1</format>
+        <precision>0</precision>
+        <show_units>false</show_units>
+      </widget>
+      <widget type="action_button" version="3.0.0">
+        <name>EDM activeMessageButtonClass</name>
+        <actions>
+          <action type="write_pv">
+            <pv_name>$(CM)$(C)0:QUENCHR_CNTCLR</pv_name>
+            <value>0</value>
+            <description>Clear</description>
+          </action>
+        </actions>
+        <text>Clear</text>
+        <x>168</x>
+        <y>48</y>
+        <width>44</width>
+        <height>24</height>
+        <font>
+          <font family="Liberation Sans" style="ITALIC" size="12.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="grey-2" red="218" green="218" blue="218">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="grey-7" red="145" green="145" blue="145">
+          </color>
+        </background_color>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>EDM activeXTextDspClass</name>
+        <pv_name>$(CM)$(C)0:QUENCHR_CNT</pv_name>
+        <x>76</x>
+        <y>48</y>
+        <width>84</width>
+        <height>24</height>
+        <font>
+          <font family="Liberation Sans" style="ITALIC" size="12.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="grey-2" red="218" green="218" blue="218">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="grey-7" red="145" green="145" blue="145">
+          </color>
+        </background_color>
+        <format>1</format>
+        <show_units>false</show_units>
+        <horizontal_alignment>1</horizontal_alignment>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>EDM activeXTextClass</name>
+        <text>Counter</text>
+        <y>48</y>
+        <width>72</width>
+        <height>24</height>
+        <font>
+          <font family="Liberation Sans" style="ITALIC" size="12.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="grey-12" red="70" green="70" blue="70">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="Disconn/Invalid" red="255" green="255" blue="255">
+          </color>
+        </background_color>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>EDM Group 18</name>
+      <x>304</x>
+      <y>104</y>
+      <width>161</width>
+      <height>25</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <rules>
+        <rule name="EDM visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0&gt;=1.0 &amp;&amp; pv0&lt;2.0">
+            <value>true</value>
+          </exp>
+          <exp bool_exp="true">
+            <value>false</value>
+          </exp>
+          <pv_name>$(CM)$(C)0:QUENCHR_AUTOV</pv_name>
+        </rule>
+      </rules>
+      <widget type="label" version="2.0.0">
+        <name>EDM activeXTextClass</name>
+        <text>Same 
+amplitude?</text>
+        <width>72</width>
+        <height>24</height>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="10.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="black-14" red="0" green="0" blue="0">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="grey-4" red="187" green="187" blue="187">
+          </color>
+        </background_color>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="combo" version="2.0.0">
+        <name>EDM activeMenuButtonClass</name>
+        <pv_name>$(CM)$(C)0:QUENCHR_AMODE</pv_name>
+        <x>76</x>
+        <width>84</width>
+        <height>24</height>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="black-14" red="0" green="0" blue="0">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="GLOBAL canvas" red="200" green="200" blue="200">
+          </color>
+        </background_color>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>EDM Group 19</name>
+      <x>304</x>
+      <y>104</y>
+      <width>161</width>
+      <height>25</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <rules>
+        <rule name="EDM visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0&gt;=0.0 &amp;&amp; pv0&lt;1.0">
+            <value>true</value>
+          </exp>
+          <exp bool_exp="true">
+            <value>false</value>
+          </exp>
+          <pv_name>$(CM)$(C)0:QUENCHR_AUTOV</pv_name>
+        </rule>
+      </rules>
+      <widget type="label" version="2.0.0">
+        <name>EDM activeXTextClass</name>
+        <text>Same 
+amplitude?</text>
+        <width>72</width>
+        <height>24</height>
+        <font>
+          <font family="Liberation Sans" style="ITALIC" size="10.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="grey-12" red="70" green="70" blue="70">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="grey-4" red="187" green="187" blue="187">
+          </color>
+        </background_color>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="combo" version="2.0.0">
+        <name>EDM activeMenuButtonClass</name>
+        <pv_name>$(CM)$(C)0:QUENCHR_AMODE</pv_name>
+        <x>76</x>
+        <width>84</width>
+        <height>24</height>
+        <font>
+          <font family="Liberation Sans" style="ITALIC" size="12.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="grey-2" red="218" green="218" blue="218">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="grey-7" red="145" green="145" blue="145">
+          </color>
+        </background_color>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>EDM Group 20</name>
+      <x>304</x>
+      <y>152</y>
+      <width>161</width>
+      <height>69</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <rules>
+        <rule name="EDM visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0&gt;=1.0 &amp;&amp; pv0&lt;2.0">
+            <value>true</value>
+          </exp>
+          <exp bool_exp="true">
+            <value>false</value>
+          </exp>
+          <pv_name>$(CM)$(C)0:QUENCHR_ATYPEV</pv_name>
+        </rule>
+      </rules>
+      <widget type="label" version="2.0.0">
+        <name>EDM activeXTextClass</name>
+        <text>Specify 
+amplitude</text>
+        <width>72</width>
+        <height>24</height>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="10.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="black-14" red="0" green="0" blue="0">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="Disconn/Invalid" red="255" green="255" blue="255">
+          </color>
+        </background_color>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="combo" version="2.0.0">
+        <name>EDM activeMenuButtonClass</name>
+        <pv_name>$(CM)$(C)0:QUENCHR_ATYPE</pv_name>
+        <x>76</x>
+        <width>84</width>
+        <height>24</height>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="black-14" red="0" green="0" blue="0">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="GLOBAL canvas" red="200" green="200" blue="200">
+          </color>
+        </background_color>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>EDM activeXTextClass</name>
+        <text>Recovery ADES</text>
+        <x>36</x>
+        <y>44</y>
+        <width>108</width>
+        <height>24</height>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="black-14" red="0" green="0" blue="0">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="Disconn/Invalid" red="255" green="255" blue="255">
+          </color>
+        </background_color>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>EDM Group 21</name>
+      <x>304</x>
+      <y>152</y>
+      <width>161</width>
+      <height>69</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <rules>
+        <rule name="EDM visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0&gt;=0.0 &amp;&amp; pv0&lt;1.0">
+            <value>true</value>
+          </exp>
+          <exp bool_exp="true">
+            <value>false</value>
+          </exp>
+          <pv_name>$(CM)$(C)0:QUENCHR_ATYPEV</pv_name>
+        </rule>
+      </rules>
+      <widget type="label" version="2.0.0">
+        <name>EDM activeXTextClass</name>
+        <text>Specify 
+amplitude</text>
+        <width>72</width>
+        <height>24</height>
+        <font>
+          <font family="Liberation Sans" style="ITALIC" size="10.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="grey-12" red="70" green="70" blue="70">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="Disconn/Invalid" red="255" green="255" blue="255">
+          </color>
+        </background_color>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="combo" version="2.0.0">
+        <name>EDM activeMenuButtonClass</name>
+        <pv_name>$(CM)$(C)0:QUENCHR_ATYPE</pv_name>
+        <x>76</x>
+        <width>84</width>
+        <height>24</height>
+        <font>
+          <font family="Liberation Sans" style="ITALIC" size="12.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="grey-2" red="218" green="218" blue="218">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="grey-7" red="145" green="145" blue="145">
+          </color>
+        </background_color>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>EDM activeXTextClass</name>
+        <text>Recovery ADES</text>
+        <x>36</x>
+        <y>44</y>
+        <width>108</width>
+        <height>24</height>
+        <font>
+          <font family="Liberation Sans" style="ITALIC" size="12.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="grey-12" red="70" green="70" blue="70">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="Disconn/Invalid" red="255" green="255" blue="255">
+          </color>
+        </background_color>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>EDM Group 22</name>
+      <x>320</x>
+      <y>228</y>
+      <width>85</width>
+      <height>25</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <rules>
+        <rule name="EDM visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0&gt;=1.0 &amp;&amp; pv0&lt;2.0">
+            <value>true</value>
+          </exp>
+          <exp bool_exp="true">
+            <value>false</value>
+          </exp>
+          <pv_name>$(CM)$(C)0:QUENCHR_AABSV</pv_name>
+        </rule>
+      </rules>
+      <widget type="label" version="2.0.0">
+        <name>EDM activeXTextClass</name>
+        <text>MV</text>
+        <x>56</x>
+        <width>28</width>
+        <height>24</height>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="black-14" red="0" green="0" blue="0">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="Disconn/Invalid" red="255" green="255" blue="255">
+          </color>
+        </background_color>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="textentry" version="3.0.0">
+        <name>EDM activeXTextDspClass</name>
+        <pv_name>$(CM)$(C)0:QUENCHR_AABS</pv_name>
+        <width>52</width>
+        <height>24</height>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="black-14" red="0" green="0" blue="0">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="GLOBAL canvas" red="200" green="200" blue="200">
+          </color>
+        </background_color>
+        <format>1</format>
+        <show_units>false</show_units>
+      </widget>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>EDM Group 23</name>
+      <x>320</x>
+      <y>228</y>
+      <width>85</width>
+      <height>25</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <rules>
+        <rule name="EDM visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0&gt;=0.0 &amp;&amp; pv0&lt;1.0">
+            <value>true</value>
+          </exp>
+          <exp bool_exp="true">
+            <value>false</value>
+          </exp>
+          <pv_name>$(CM)$(C)0:QUENCHR_AABSV</pv_name>
+        </rule>
+      </rules>
+      <widget type="label" version="2.0.0">
+        <name>EDM activeXTextClass</name>
+        <text>MV</text>
+        <x>56</x>
+        <width>28</width>
+        <height>24</height>
+        <font>
+          <font family="Liberation Sans" style="ITALIC" size="12.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="grey-12" red="70" green="70" blue="70">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="Disconn/Invalid" red="255" green="255" blue="255">
+          </color>
+        </background_color>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="textentry" version="3.0.0">
+        <name>EDM activeXTextDspClass</name>
+        <pv_name>$(CM)$(C)0:QUENCHR_AABS</pv_name>
+        <width>52</width>
+        <height>24</height>
+        <font>
+          <font family="Liberation Sans" style="ITALIC" size="12.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="grey-2" red="218" green="218" blue="218">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="grey-7" red="145" green="145" blue="145">
+          </color>
+        </background_color>
+        <format>1</format>
+        <show_units>false</show_units>
+      </widget>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>EDM Group 24</name>
+      <x>420</x>
+      <y>228</y>
+      <width>109</width>
+      <height>53</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <rules>
+        <rule name="EDM visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0&gt;=1.0 &amp;&amp; pv0&lt;2.0">
+            <value>true</value>
+          </exp>
+          <exp bool_exp="true">
+            <value>false</value>
+          </exp>
+          <pv_name>$(CM)$(C)0:QUENCHR_ARELV</pv_name>
+        </rule>
+      </rules>
+      <widget type="textentry" version="3.0.0">
+        <name>EDM activeXTextDspClass</name>
+        <pv_name>$(CM)$(C)0:QUENCHR_AREL</pv_name>
+        <width>52</width>
+        <height>24</height>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="black-14" red="0" green="0" blue="0">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="GLOBAL canvas" red="200" green="200" blue="200">
+          </color>
+        </background_color>
+        <format>1</format>
+        <show_units>false</show_units>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>EDM activeXTextClass</name>
+        <text>% of
+current
+setting</text>
+        <x>56</x>
+        <width>52</width>
+        <height>52</height>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="black-14" red="0" green="0" blue="0">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="Disconn/Invalid" red="255" green="255" blue="255">
+          </color>
+        </background_color>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>EDM Group 25</name>
+      <x>420</x>
+      <y>228</y>
+      <width>109</width>
+      <height>53</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <rules>
+        <rule name="EDM visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0&gt;=0.0 &amp;&amp; pv0&lt;1.0">
+            <value>true</value>
+          </exp>
+          <exp bool_exp="true">
+            <value>false</value>
+          </exp>
+          <pv_name>$(CM)$(C)0:QUENCHR_ARELV</pv_name>
+        </rule>
+      </rules>
+      <widget type="textentry" version="3.0.0">
+        <name>EDM activeXTextDspClass</name>
+        <pv_name>$(CM)$(C)0:QUENCHR_AREL</pv_name>
+        <width>52</width>
+        <height>24</height>
+        <font>
+          <font family="Liberation Sans" style="ITALIC" size="12.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="grey-2" red="218" green="218" blue="218">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="grey-7" red="145" green="145" blue="145">
+          </color>
+        </background_color>
+        <format>1</format>
+        <show_units>false</show_units>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>EDM activeXTextClass</name>
+        <text>% of
+current
+setting</text>
+        <x>56</x>
+        <width>52</width>
+        <height>52</height>
+        <font>
+          <font family="Liberation Sans" style="ITALIC" size="12.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="grey-12" red="70" green="70" blue="70">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="Disconn/Invalid" red="255" green="255" blue="255">
+          </color>
+        </background_color>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+    </widget>
+  </widget>
+</display>

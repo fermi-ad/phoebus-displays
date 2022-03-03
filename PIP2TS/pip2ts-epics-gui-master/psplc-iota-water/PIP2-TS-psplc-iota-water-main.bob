@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>Psplc_overview</name>
+  <macros>
+    <COMPLEX>PIP2TS</COMPLEX>
+    <SYS>IOTA</SYS>
+  </macros>
+  <width>1750</width>
+  <height>665</height>
+  <background_color>
+    <color name="Button_Background" red="210" green="210" blue="210">
+    </color>
+  </background_color>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_1</name>
+    <macros>
+      <DESC>Psplc iota connection status:</DESC>
+      <PV>_Water_Asyn:STAT.CNCT</PV>
+    </macros>
+    <file>resources/PIP2-TS-psplc-iota-water-text-readback.bob</file>
+    <x>720</x>
+    <y>80</y>
+    <width>340</width>
+    <height>22</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_3</name>
+    <text>Psplc iota disconnect:</text>
+    <x>735</x>
+    <y>140</y>
+    <width>215</width>
+    <font>
+      <font family="sans" style="REGULAR" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_2</name>
+    <actions>
+      <action type="execute">
+        <script file="EmbeddedPy">
+          <text><![CDATA[# Embedded python script
+from org.csstudio.display.builder.runtime.script import PVUtil
+
+name = widget.getPropertyValue('pv_name')
+
+ENBL = name  + ".ENBL"
+CNCT = name + ".CNCT"
+
+PVUtil.writePV(ENBL, 0, 1000)
+PVUtil.writePV(CNCT, 0, 1000)]]></text>
+        </script>
+        <description>Execute Script</description>
+      </action>
+    </actions>
+    <pv_name>$(COMPLEX):$(SYS)_Water_Asyn:STAT</pv_name>
+    <text>Disconnect</text>
+    <x>960</x>
+    <y>140</y>
+    <height>22</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_4</name>
+    <text>Psplc iota connect:</text>
+    <x>735</x>
+    <y>110</y>
+    <width>215</width>
+    <font>
+      <font family="sans" style="REGULAR" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_3</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(pv_name)</pv_name>
+        <value>1</value>
+        <description>Write PV</description>
+      </action>
+    </actions>
+    <pv_name>$(COMPLEX):$(SYS)_Water_Asyn:STAT.ENBL</pv_name>
+    <text>Connect</text>
+    <x>960</x>
+    <y>110</y>
+    <height>22</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle</name>
+    <x>720</x>
+    <y>70</y>
+    <width>350</width>
+    <height>3</height>
+    <line_color>
+      <color name="Grid" red="128" green="128" blue="128">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="Grid" red="128" green="128" blue="128">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Temperatures</name>
+    <text>Connection status</text>
+    <x>735</x>
+    <y>50</y>
+    <width>164</width>
+    <font>
+      <font family="sans" style="BOLD" size="16.0">
+      </font>
+    </font>
+    <background_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display</name>
+    <file>resources/PIP2-TS-psplc-iota-water-readbacks.bob</file>
+    <x>10</x>
+    <y>50</y>
+    <width>350</width>
+    <height>550</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_4</name>
+    <macros>
+      <HEAD>LCW600 upper</HEAD>
+      <PV>$(SYS)_LCW600_UpperWater:STAT</PV>
+    </macros>
+    <file>resources/PIP2-TS-psplc-iota-water-display-status.bob</file>
+    <x>380</x>
+    <y>50</y>
+    <width>150</width>
+    <height>295</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_6</name>
+    <macros>
+      <HEAD>LCW600 lower</HEAD>
+      <PV>$(SYS)_LCW600_LowerWater:STAT</PV>
+    </macros>
+    <file>resources/PIP2-TS-psplc-iota-water-display-status.bob</file>
+    <x>550</x>
+    <y>50</y>
+    <width>150</width>
+    <height>295</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_2</name>
+    <file>resources/PIP2-TS-psplc-iota-water-setpoints.bob</file>
+    <x>10</x>
+    <y>605</y>
+    <width>350</width>
+    <height>60</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_5</name>
+    <macros>
+      <HEAD>LCW604 upper</HEAD>
+      <PV>$(SYS)_LCW604_UpperWater:STAT</PV>
+    </macros>
+    <file>resources/PIP2-TS-psplc-iota-water-display-status.bob</file>
+    <x>380</x>
+    <y>370</y>
+    <width>150</width>
+    <height>295</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_7</name>
+    <macros>
+      <HEAD>LCW604 lower</HEAD>
+      <PV>$(SYS)_LCW604_LowerWater:STAT</PV>
+    </macros>
+    <file>resources/PIP2-TS-psplc-iota-water-display-status.bob</file>
+    <x>550</x>
+    <y>370</y>
+    <width>150</width>
+    <height>295</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_3</name>
+    <macros>
+      <NAME>PSPLC IOTA Water</NAME>
+    </macros>
+    <file>../common/PIP2-main_header.bob</file>
+    <width>1750</width>
+    <height>33</height>
+    <resize>2</resize>
+  </widget>
+</display>
