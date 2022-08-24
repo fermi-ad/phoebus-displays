@@ -8,7 +8,7 @@
   <scroll_step>5</scroll_step>
   <scroll>false</scroll>
   <start>2019-05-28 00:00:00.000</start>
-  <end>2022-02-25 11:29:45.719</end>
+  <end>2022-07-25 11:52:40.232</end>
   <archive_rescale>STAGGER</archive_rescale>
   <foreground>
     <red>0</red>
@@ -36,8 +36,8 @@
         <green>0</green>
         <blue>0</blue>
       </color>
-      <min>-42.300000000000004</min>
-      <max>51.0</max>
+      <min>19.91</min>
+      <max>24.52</max>
       <grid>true</grid>
       <autoscale>false</autoscale>
       <log_scale>false</log_scale>
@@ -65,11 +65,6 @@
       <period>0.0</period>
       <ring_size>5000</ring_size>
       <request>OPTIMIZED</request>
-      <archive>
-        <name>archiver2</name>
-        <url>pbraw://archiver2.fnal.gov:17668/retrieval</url>
-        <key>1</key>
-      </archive>
     </pv>
     <pv>
       <display_name>BTE 2nd Floor</display_name>
@@ -90,11 +85,6 @@
       <period>0.0</period>
       <ring_size>5000</ring_size>
       <request>OPTIMIZED</request>
-      <archive>
-        <name>archiver2</name>
-        <url>pbraw://archiver2.fnal.gov:17668/retrieval</url>
-        <key>1</key>
-      </archive>
     </pv>
     <pv>
       <display_name>Heat Index</display_name>
@@ -115,11 +105,6 @@
       <period>0.0</period>
       <ring_size>5000</ring_size>
       <request>OPTIMIZED</request>
-      <archive>
-        <name>archiver2</name>
-        <url>pbraw://archiver2.fnal.gov:17668/retrieval</url>
-        <key>1</key>
-      </archive>
     </pv>
     <pv>
       <display_name>Wind Chill</display_name>
@@ -140,11 +125,6 @@
       <period>0.0</period>
       <ring_size>5000</ring_size>
       <request>OPTIMIZED</request>
-      <archive>
-        <name>archiver2</name>
-        <url>pbraw://archiver2.fnal.gov:17668/retrieval</url>
-        <key>1</key>
-      </archive>
     </pv>
     <pv>
       <display_name>Outdoor Temperature</display_name>
@@ -165,11 +145,6 @@
       <period>0.0</period>
       <ring_size>5000</ring_size>
       <request>OPTIMIZED</request>
-      <archive>
-        <name>archiver2</name>
-        <url>pbraw://archiver2.fnal.gov:17668/retrieval</url>
-        <key>1</key>
-      </archive>
     </pv>
   </pvlist>
 </databrowser>

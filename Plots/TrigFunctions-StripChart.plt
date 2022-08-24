@@ -5,7 +5,7 @@
   <show_toolbar>true</show_toolbar>
   <grid>true</grid>
   <update_period>0.1</update_period>
-  <scroll_step>5</scroll_step>
+  <scroll_step>1</scroll_step>
   <scroll>true</scroll>
   <start>-1 minutes</start>
   <end>now</end>
