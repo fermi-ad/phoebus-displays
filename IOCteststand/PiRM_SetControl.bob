@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>PiRM Set Control</name>
+  <width>285</width>
+  <height>280</height>
+  <widget type="group" version="2.0.0">
+    <name>Group</name>
+    <width>285</width>
+    <height>280</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="byte_monitor" version="2.0.0">
+      <name>Byte Monitor</name>
+      <pv_name>$(dev)_01:calControl</pv_name>
+      <x>10</x>
+      <y>45</y>
+      <width>20</width>
+      <height>200</height>
+      <bitReverse>true</bitReverse>
+      <horizontal>false</horizontal>
+      <square>true</square>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>Group_1</name>
+      <x>40</x>
+      <y>45</y>
+      <width>245</width>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="checkbox" version="2.0.0">
+        <name>Check Box</name>
+        <pv_name>$(dev)_01:wControl</pv_name>
+        <label>Enable Chain Trigger</label>
+        <width>220</width>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="checkbox" version="2.0.0">
+        <name>Check Box_1</name>
+        <pv_name>$(dev)_01:wControl</pv_name>
+        <bit>1</bit>
+        <label>Synchronize</label>
+        <y>20</y>
+        <width>220</width>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="checkbox" version="2.0.0">
+        <name>Check Box_2</name>
+        <pv_name>$(dev)_01:wControl</pv_name>
+        <bit>3</bit>
+        <label>Enable Booster Reset Trigger</label>
+        <y>60</y>
+        <width>220</width>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="checkbox" version="2.0.0">
+        <name>Check Box_4</name>
+        <pv_name>$(dev)_01:wControl</pv_name>
+        <bit>4</bit>
+        <label>External/Internal Prescaler Reset</label>
+        <y>80</y>
+        <width>220</width>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="choice" version="2.0.0">
+        <name>Choice Button_3</name>
+        <pv_name>$(dev)_01:ClockRate</pv_name>
+        <y>100</y>
+        <width>60</width>
+        <height>80</height>
+        <horizontal>false</horizontal>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <items>
+          <item></item>
+          <item></item>
+          <item></item>
+          <item></item>
+        </items>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_142</name>
+        <text>Timer Clock Rate Select</text>
+        <x>70</x>
+        <y>100</y>
+        <width>175</width>
+        <height>80</height>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="checkbox" version="2.0.0">
+        <name>Check Box_5</name>
+        <pv_name>$(dev)_01:wControl</pv_name>
+        <bit>7</bit>
+        <label>Enable Timer</label>
+        <y>180</y>
+        <width>220</width>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="bool_button" version="2.0.0">
+        <name>Boolean Button</name>
+        <pv_name>$(dev)_01:wControl</pv_name>
+        <bit>2</bit>
+        <y>40</y>
+        <width>120</width>
+        <height>20</height>
+        <off_label>External Trigger</off_label>
+        <off_color>
+          <color name="Button_Background" red="210" green="210" blue="210">
+          </color>
+        </off_color>
+        <on_label>Internal Trigger</on_label>
+        <on_color>
+          <color name="Button_Background" red="210" green="210" blue="210">
+          </color>
+        </on_color>
+        <show_led>false</show_led>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_143</name>
+      <text>Value</text>
+      <y>20</y>
+      <width>40</width>
+      <background_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_144</name>
+      <text>Set Value</text>
+      <x>40</x>
+      <y>20</y>
+      <width>245</width>
+      <background_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_145</name>
+      <text>PiRM Set Timer Control</text>
+      <width>285</width>
+      <background_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Action Button_9</name>
+      <actions>
+        <action type="write_pv">
+          <pv_name>$(dev)_01:calControl.PROC</pv_name>
+          <value>1</value>
+          <description>WritePV</description>
+        </action>
+      </actions>
+      <text>Write Control Word</text>
+      <x>10</x>
+      <y>255</y>
+      <width>265</width>
+      <height>20</height>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_1</name>
+      <y>250</y>
+      <width>285</width>
+      <height>1</height>
+      <points>
+        <point x="285.0" y="0.0">
+        </point>
+        <point x="0.0" y="0.0">
+        </point>
+      </points>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <actions>
+        <action type="write_pv">
+          <pv_name>$(dev)_01:calControl.PROC</pv_name>
+          <value>1</value>
+          <description>WritePV</description>
+        </action>
+      </actions>
+    </widget>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle_4</name>
+      <y>40</y>
+      <width>285</width>
+      <height>240</height>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <transparent>true</transparent>
+    </widget>
+  </widget>
+</display>
