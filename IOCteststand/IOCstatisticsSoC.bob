@@ -69,7 +69,7 @@
   </widget>
   <widget type="rectangle" version="2.0.0">
     <name>EDM activeRectangleClass</name>
-    <width>1350</width>
+    <width>1430</width>
     <height>40</height>
     <line_width>1</line_width>
     <line_color>
@@ -84,7 +84,7 @@
   <widget type="label" version="2.0.0">
     <name>EDM activeXTextClass</name>
     <text>IOC Diagnostics: $(board)</text>
-    <width>1350</width>
+    <width>1430</width>
     <height>40</height>
     <font>
       <font family="Liberation Sans" style="BOLD" size="20.0">
@@ -100,6 +100,7 @@
     </background_color>
     <horizontal_alignment>1</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
     <border_width>2</border_width>
   </widget>
   <widget type="label" version="2.0.0">
@@ -136,7 +137,7 @@ ScriptUtil.closeDisplay(widget)
       </action>
     </actions>
     <text>Exit</text>
-    <x>1290</x>
+    <x>1370</x>
     <y>5</y>
     <width>50</width>
     <font>
@@ -1966,5 +1967,314 @@ RAM Block</text>
     </background_color>
     <horizontal_alignment>2</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group</name>
+    <x>720</x>
+    <y>510</y>
+    <width>700</width>
+    <height>330</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="group" version="2.0.0">
+      <name>Group</name>
+      <x>10</x>
+      <y>310</y>
+      <width>260</width>
+      <height>20</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="textentry" version="3.0.0">
+        <name>Text Entry_3</name>
+        <pv_name>$(dev2)sTrigPhase</pv_name>
+        <x>180</x>
+        <width>80</width>
+        <format>1</format>
+        <precision>0</precision>
+        <horizontal_alignment>1</horizontal_alignment>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_4</name>
+        <pv_name>$(dev2)TrigPhase</pv_name>
+        <x>90</x>
+        <width>80</width>
+        <background_color>
+          <color name="Button_Background" red="210" green="210" blue="210">
+          </color>
+        </background_color>
+        <format>4</format>
+        <precision>4</precision>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_4</name>
+        <text>Phase</text>
+        <width>70</width>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>Group</name>
+      <x>380</x>
+      <y>310</y>
+      <width>260</width>
+      <height>20</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="textentry" version="3.0.0">
+        <name>Text Entry_2</name>
+        <pv_name>$(dev2)sTrigFrequency</pv_name>
+        <x>180</x>
+        <width>80</width>
+        <format>1</format>
+        <precision>0</precision>
+        <horizontal_alignment>1</horizontal_alignment>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_3</name>
+        <pv_name>$(dev2)TrigFrequency</pv_name>
+        <x>80</x>
+        <width>80</width>
+        <background_color>
+          <color name="Button_Background" red="210" green="210" blue="210">
+          </color>
+        </background_color>
+        <format>4</format>
+        <precision>4</precision>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_3</name>
+        <text>Frequency</text>
+        <width>70</width>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>Group</name>
+      <width>700</width>
+      <height>300</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="xyplot" version="2.0.0">
+        <name>X/Y Plot_1</name>
+        <width>700</width>
+        <background_color>
+          <color name="Button_Background" red="210" green="210" blue="210">
+          </color>
+        </background_color>
+        <title>FPGA Waveforms</title>
+        <rules>
+          <rule name="Sine" prop_id="traces[0].visible" out_exp="false">
+            <exp bool_exp="!pv0">
+              <value>false</value>
+            </exp>
+            <pv_name>loc://Sine</pv_name>
+          </rule>
+          <rule name="Cosine" prop_id="traces[1].visible" out_exp="false">
+            <exp bool_exp="!pv0">
+              <value>false</value>
+            </exp>
+            <pv_name>loc://Cosine</pv_name>
+          </rule>
+        </rules>
+        <tooltip></tooltip>
+        <x_axis>
+          <title>Time (ns)</title>
+          <autoscale>false</autoscale>
+          <log_scale>false</log_scale>
+          <minimum>0.0</minimum>
+          <maximum>5000.0</maximum>
+          <show_grid>true</show_grid>
+          <title_font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </title_font>
+          <scale_font>
+            <font name="Default" family="Liberation Sans" style="REGULAR" size="14.0">
+            </font>
+          </scale_font>
+          <visible>true</visible>
+        </x_axis>
+        <y_axes>
+          <y_axis>
+            <title>Amplitude (arb. units)</title>
+            <autoscale>false</autoscale>
+            <log_scale>false</log_scale>
+            <minimum>-2.5E9</minimum>
+            <maximum>2.5E9</maximum>
+            <show_grid>true</show_grid>
+            <title_font>
+              <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+              </font>
+            </title_font>
+            <scale_font>
+              <font name="Default" family="Liberation Sans" style="REGULAR" size="14.0">
+              </font>
+            </scale_font>
+            <visible>true</visible>
+          </y_axis>
+        </y_axes>
+        <traces>
+          <trace>
+            <name></name>
+            <x_pv>$(dev2)wfTime</x_pv>
+            <y_pv>$(dev2)wf1Read32Bit</y_pv>
+            <err_pv></err_pv>
+            <axis>0</axis>
+            <trace_type>1</trace_type>
+            <color>
+              <color red="0" green="0" blue="255">
+              </color>
+            </color>
+            <line_width>1</line_width>
+            <line_style>0</line_style>
+            <point_type>0</point_type>
+            <point_size>10</point_size>
+            <visible>true</visible>
+          </trace>
+          <trace>
+            <name></name>
+            <x_pv>$(dev2)wfTime</x_pv>
+            <y_pv>$(dev2)wf2Read32Bit</y_pv>
+            <err_pv></err_pv>
+            <axis>0</axis>
+            <trace_type>1</trace_type>
+            <color>
+              <color red="255" green="0" blue="0">
+              </color>
+            </color>
+            <line_width>1</line_width>
+            <line_style>0</line_style>
+            <point_type>0</point_type>
+            <point_size>10</point_size>
+            <visible>true</visible>
+          </trace>
+        </traces>
+      </widget>
+      <widget type="checkbox" version="2.0.0">
+        <name>Sine Check Box</name>
+        <pv_name>loc://Sine</pv_name>
+        <label>Sine</label>
+        <x>30</x>
+        <y>280</y>
+        <width>70</width>
+        <height>15</height>
+        <foreground_color>
+          <color red="0" green="0" blue="255">
+          </color>
+        </foreground_color>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="checkbox" version="2.0.0">
+        <name>Cosine Check Box</name>
+        <pv_name>loc://Cosine</pv_name>
+        <label>Cosine</label>
+        <x>120</x>
+        <y>280</y>
+        <width>70</width>
+        <height>15</height>
+        <foreground_color>
+          <color red="255" green="0" blue="0">
+          </color>
+        </foreground_color>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group</name>
+    <x>10</x>
+    <y>510</y>
+    <width>700</width>
+    <height>330</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="stripchart" version="2.0.0">
+      <name>Strip Chart</name>
+      <width>700</width>
+      <background_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </background_color>
+      <show_grid>true</show_grid>
+      <title>FPGA Ramp</title>
+      <show_toolbar>false</show_toolbar>
+      <show_legend>true</show_legend>
+      <y_axes>
+        <y_axis>
+          <title>Amplitude</title>
+          <autoscale>false</autoscale>
+          <log_scale>false</log_scale>
+          <minimum>-50000.0</minimum>
+          <maximum>50000.0</maximum>
+          <show_grid>true</show_grid>
+          <visible>true</visible>
+        </y_axis>
+      </y_axes>
+      <traces>
+        <trace>
+          <name>ramp</name>
+          <y_pv>$(dev2)RampVal</y_pv>
+          <axis>0</axis>
+          <trace_type>2</trace_type>
+          <color>
+            <color red="255" green="0" blue="0">
+            </color>
+          </color>
+          <line_width>2</line_width>
+          <point_type>0</point_type>
+          <point_size>10</point_size>
+          <visible>true</visible>
+        </trace>
+      </traces>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>Group</name>
+      <x>25</x>
+      <y>310</y>
+      <width>450</width>
+      <height>20</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_2</name>
+        <pv_name>$(dev2)RampVal</pv_name>
+        <background_color>
+          <color name="Button_Background" red="210" green="210" blue="210">
+          </color>
+        </background_color>
+        <format>4</format>
+        <precision>4</precision>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="textentry" version="3.0.0">
+        <name>Text Entry_1</name>
+        <pv_name>$(dev2)RampSlope</pv_name>
+        <x>370</x>
+        <width>80</width>
+        <format>1</format>
+        <precision>0</precision>
+        <horizontal_alignment>1</horizontal_alignment>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_1</name>
+        <text>Ramp Slope</text>
+        <x>220</x>
+        <width>90</width>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+    </widget>
   </widget>
 </display>
