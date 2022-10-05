@@ -2,8 +2,7 @@
 
 # Phoebus build and installation location
 TOP="/usr/local"
-#EPICS_CONFIG="/usr/local/epics/Config"
-EPICS_CONFIG="/home/epics/epicsDEV/Config"
+EPICS_CONFIG="/usr/local/epics/Config"
 
 #export JAVA_HOME=$TOP/lib/jvm/jdk-11.0.2
 export JAVA_HOME=/usr/local/jdk-13.0.2
