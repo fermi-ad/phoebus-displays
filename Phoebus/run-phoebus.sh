@@ -24,7 +24,8 @@ fi
 
 # To get one instance, use server mode
 ID=$(id -u)
-OPT="-server 4$ID"
+#OPT="-server 4$ID"
+OPT=""
 
 JDK_JAVA_OPTIONS=" -DCA_DISABLE_REPEATER=true"
 JDK_JAVA_OPTIONS="$JDK_JAVA_OPTIONS -Dnashorn.args=--no-deprecation-warning"
