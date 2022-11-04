@@ -34,7 +34,7 @@
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label</name>
-    <text>PIP2TS HB650 Cavity $(cav)</text>
+    <text>PIP2IT pHB650 Cavity $(cav)</text>
     <width>700</width>
     <height>40</height>
     <font>
@@ -368,6 +368,24 @@
     <height>35</height>
     <style>3</style>
     <transparent>true</transparent>
+    <widget type="action_button" version="3.0.0">
+      <name>Action Button</name>
+      <actions>
+        <action type="open_display">
+          <file>../HeaterCtrl.bob</file>
+          <macros>
+            <dev>HTRVSL</dev>
+          </macros>
+          <target>window</target>
+          <description>Open Heater Display</description>
+        </action>
+      </actions>
+      <text></text>
+      <width>50</width>
+      <height>35</height>
+      <transparent>true</transparent>
+      <tooltip>$(actions)</tooltip>
+    </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_186</name>
       <pv_name>$(htr)HTRVSL:Name</pv_name>
@@ -391,84 +409,51 @@
       <vertical_alignment>1</vertical_alignment>
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
-    <widget type="group" version="2.0.0">
-      <name>Group_2</name>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_63</name>
       <y>5</y>
       <width>45</width>
       <height>10</height>
       <visible>false</visible>
-      <style>3</style>
+      <points>
+        <point x="0.0" y="5.0">
+        </point>
+        <point x="2.5" y="5.0">
+        </point>
+        <point x="5.0" y="0.0">
+        </point>
+        <point x="10.0" y="10.0">
+        </point>
+        <point x="15.0" y="0.0">
+        </point>
+        <point x="20.0" y="10.0">
+        </point>
+        <point x="25.0" y="0.0">
+        </point>
+        <point x="30.0" y="10.0">
+        </point>
+        <point x="35.0" y="0.0">
+        </point>
+        <point x="40.0" y="10.0">
+        </point>
+        <point x="42.5" y="5.0">
+        </point>
+        <point x="45.0" y="5.0">
+        </point>
+      </points>
+      <line_color>
+        <color red="255" green="0" blue="0">
+        </color>
+      </line_color>
+      <arrow_length>10</arrow_length>
       <rules>
-        <rule name="Heater On" prop_id="visible" out_exp="false">
-          <exp bool_exp="!pv0&gt;0.5">
+        <rule name="Show" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0">
             <value>true</value>
           </exp>
-          <pv_name>$(htr)HTRC6:WATT</pv_name>
+          <pv_name>$(htr)HTRVSL:HTRON</pv_name>
         </rule>
       </rules>
-      <widget type="polyline" version="2.0.0">
-        <name>Polyline_63</name>
-        <width>45</width>
-        <height>10</height>
-        <visible>false</visible>
-        <points>
-          <point x="0.0" y="5.0">
-          </point>
-          <point x="2.5" y="5.0">
-          </point>
-          <point x="5.0" y="0.0">
-          </point>
-          <point x="10.0" y="10.0">
-          </point>
-          <point x="15.0" y="0.0">
-          </point>
-          <point x="20.0" y="10.0">
-          </point>
-          <point x="25.0" y="0.0">
-          </point>
-          <point x="30.0" y="10.0">
-          </point>
-          <point x="35.0" y="0.0">
-          </point>
-          <point x="40.0" y="10.0">
-          </point>
-          <point x="42.5" y="5.0">
-          </point>
-          <point x="45.0" y="5.0">
-          </point>
-        </points>
-        <line_color>
-          <color red="255" green="0" blue="0">
-          </color>
-        </line_color>
-        <arrow_length>10</arrow_length>
-        <rules>
-          <rule name="Show" prop_id="visible" out_exp="false">
-            <exp bool_exp="pv0&gt;0.5">
-              <value>true</value>
-            </exp>
-            <pv_name>$(htr)HTRVSL:WATT</pv_name>
-          </rule>
-        </rules>
-      </widget>
-    </widget>
-    <widget type="action_button" version="3.0.0">
-      <name>Action Button</name>
-      <actions>
-        <action type="open_display">
-          <file>../HeaterCtrl.bob</file>
-          <macros>
-            <dev>HTRVSL</dev>
-          </macros>
-          <target>window</target>
-          <description>Open Heater Display</description>
-        </action>
-      </actions>
-      <text></text>
-      <width>50</width>
-      <height>35</height>
-      <transparent>true</transparent>
-      <tooltip>$(actions)</tooltip>
     </widget>
   </widget>
   <widget type="rectangle" version="2.0.0">
@@ -916,10 +901,10 @@ Window </text>
       <arrow_length>10</arrow_length>
       <rules>
         <rule name="Heater On" prop_id="visible" out_exp="false">
-          <exp bool_exp="pv0&gt;0.5">
+          <exp bool_exp="pv0">
             <value>true</value>
           </exp>
-          <pv_name>$(htr)HTRC$(cav):WATT</pv_name>
+          <pv_name>$(htr)HTRC$(cav):HTRON</pv_name>
         </rule>
       </rules>
     </widget>

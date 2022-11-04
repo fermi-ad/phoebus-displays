@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <display version="2.0.0">
   <name>HB650 Cavity Details - prototype</name>
-  <width>1000</width>
+  <width>700</width>
   <height>500</height>
   <grid_step_x>5</grid_step_x>
   <grid_step_y>5</grid_step_y>
@@ -34,7 +34,7 @@
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label</name>
-    <text>PIP2TS HB650 Cavity $(cav)</text>
+    <text>PIP2IT pHB650 Cavity $(cav)</text>
     <width>700</width>
     <height>40</height>
     <font>
@@ -1024,6 +1024,24 @@
     <height>35</height>
     <style>3</style>
     <transparent>true</transparent>
+    <widget type="action_button" version="3.0.0">
+      <name>Action Button</name>
+      <actions>
+        <action type="open_display">
+          <file>../HeaterCtrl.bob</file>
+          <macros>
+            <dev>HTRVSL</dev>
+          </macros>
+          <target>window</target>
+          <description>Open Heater Display</description>
+        </action>
+      </actions>
+      <text></text>
+      <width>50</width>
+      <height>35</height>
+      <transparent>true</transparent>
+      <tooltip>$(actions)</tooltip>
+    </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_186</name>
       <pv_name>$(htr)HTRVSL:Name</pv_name>
@@ -1047,76 +1065,51 @@
       <vertical_alignment>1</vertical_alignment>
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
-    <widget type="group" version="2.0.0">
-      <name>Group_2</name>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_63</name>
       <y>5</y>
       <width>45</width>
       <height>10</height>
-      <style>3</style>
-      <transparent>true</transparent>
-      <widget type="polyline" version="2.0.0">
-        <name>Polyline_63</name>
-        <width>45</width>
-        <height>10</height>
-        <visible>false</visible>
-        <points>
-          <point x="0.0" y="5.0">
-          </point>
-          <point x="2.5" y="5.0">
-          </point>
-          <point x="5.0" y="0.0">
-          </point>
-          <point x="10.0" y="10.0">
-          </point>
-          <point x="15.0" y="0.0">
-          </point>
-          <point x="20.0" y="10.0">
-          </point>
-          <point x="25.0" y="0.0">
-          </point>
-          <point x="30.0" y="10.0">
-          </point>
-          <point x="35.0" y="0.0">
-          </point>
-          <point x="40.0" y="10.0">
-          </point>
-          <point x="42.5" y="5.0">
-          </point>
-          <point x="45.0" y="5.0">
-          </point>
-        </points>
-        <line_color>
-          <color red="255" green="0" blue="0">
-          </color>
-        </line_color>
-        <arrow_length>10</arrow_length>
-        <rules>
-          <rule name="Show" prop_id="visible" out_exp="false">
-            <exp bool_exp="pv0&gt;0.5">
-              <value>true</value>
-            </exp>
-            <pv_name>$(htr)HTRVSL:WATT</pv_name>
-          </rule>
-        </rules>
-      </widget>
-    </widget>
-    <widget type="action_button" version="3.0.0">
-      <name>Action Button</name>
-      <actions>
-        <action type="open_display">
-          <file>../HeaterCtrl.bob</file>
-          <macros>
-            <dev>HTRVSL</dev>
-          </macros>
-          <target>window</target>
-          <description>Open Heater Display</description>
-        </action>
-      </actions>
-      <text></text>
-      <width>50</width>
-      <height>35</height>
-      <transparent>true</transparent>
-      <tooltip>$(actions)</tooltip>
+      <visible>false</visible>
+      <points>
+        <point x="0.0" y="5.0">
+        </point>
+        <point x="2.5" y="5.0">
+        </point>
+        <point x="5.0" y="0.0">
+        </point>
+        <point x="10.0" y="10.0">
+        </point>
+        <point x="15.0" y="0.0">
+        </point>
+        <point x="20.0" y="10.0">
+        </point>
+        <point x="25.0" y="0.0">
+        </point>
+        <point x="30.0" y="10.0">
+        </point>
+        <point x="35.0" y="0.0">
+        </point>
+        <point x="40.0" y="10.0">
+        </point>
+        <point x="42.5" y="5.0">
+        </point>
+        <point x="45.0" y="5.0">
+        </point>
+      </points>
+      <line_color>
+        <color red="255" green="0" blue="0">
+        </color>
+      </line_color>
+      <arrow_length>10</arrow_length>
+      <rules>
+        <rule name="Heater On" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0">
+            <value>true</value>
+          </exp>
+          <pv_name>$(htr)HTRVSL:HTRON</pv_name>
+        </rule>
+      </rules>
     </widget>
   </widget>
   <widget type="rectangle" version="2.0.0">
@@ -1705,10 +1698,10 @@ Window </text>
       <arrow_length>10</arrow_length>
       <rules>
         <rule name="Heater On" prop_id="visible" out_exp="false">
-          <exp bool_exp="pv0&gt;0.5">
-            <value>false</value>
+          <exp bool_exp="pv0">
+            <value>true</value>
           </exp>
-          <pv_name>$(htr)HTRC$(cav):WATT</pv_name>
+          <pv_name>$(htr)HTRC$(cav):HTRON</pv_name>
         </rule>
       </rules>
     </widget>
@@ -1731,407 +1724,5 @@ Window </text>
     </line_color>
     <arrows>2</arrows>
     <arrow_length>7</arrow_length>
-  </widget>
-  <widget type="polyline" version="2.0.0">
-    <name>Polyline_96</name>
-    <x>720</x>
-    <y>130</y>
-    <width>10</width>
-    <height>45</height>
-    <points>
-      <point x="5.0" y="0.0">
-      </point>
-      <point x="5.0" y="2.5">
-      </point>
-      <point x="0.0" y="5.0">
-      </point>
-      <point x="10.0" y="10.0">
-      </point>
-      <point x="0.0" y="15.0">
-      </point>
-      <point x="10.0" y="20.0">
-      </point>
-      <point x="0.0" y="25.0">
-      </point>
-      <point x="10.0" y="30.0">
-      </point>
-      <point x="0.0" y="35.0">
-      </point>
-      <point x="10.0" y="40.0">
-      </point>
-      <point x="5.0" y="42.5">
-      </point>
-      <point x="5.0" y="45.0">
-      </point>
-    </points>
-    <line_color>
-      <color red="255" green="0" blue="0">
-      </color>
-    </line_color>
-    <arrow_length>10</arrow_length>
-    <rules>
-      <rule name="Heater On" prop_id="visible" out_exp="false">
-        <exp bool_exp="pv0&gt;0.5">
-          <value>false</value>
-        </exp>
-        <pv_name>$(htr)HTRC$(cav):WATT</pv_name>
-      </rule>
-    </rules>
-  </widget>
-  <widget type="polyline" version="2.0.0">
-    <name>Polyline_97</name>
-    <x>755</x>
-    <y>130</y>
-    <width>10</width>
-    <height>45</height>
-    <points>
-      <point x="5.0" y="0.0">
-      </point>
-      <point x="5.0" y="2.5">
-      </point>
-      <point x="0.0" y="5.0">
-      </point>
-      <point x="10.0" y="10.0">
-      </point>
-      <point x="0.0" y="15.0">
-      </point>
-      <point x="10.0" y="20.0">
-      </point>
-      <point x="0.0" y="25.0">
-      </point>
-      <point x="10.0" y="30.0">
-      </point>
-      <point x="0.0" y="35.0">
-      </point>
-      <point x="10.0" y="40.0">
-      </point>
-      <point x="5.0" y="42.5">
-      </point>
-      <point x="5.0" y="45.0">
-      </point>
-    </points>
-    <line_color>
-      <color red="255" green="0" blue="0">
-      </color>
-    </line_color>
-    <arrow_length>10</arrow_length>
-    <rules>
-      <rule name="Heater On" prop_id="visible" out_exp="false">
-        <exp bool_exp="pv0&gt;0.5">
-          <value>true</value>
-        </exp>
-        <pv_name>$(htr)HTRC$(cav):WATT</pv_name>
-      </rule>
-    </rules>
-  </widget>
-  <widget type="polyline" version="2.0.0">
-    <name>Polyline_98</name>
-    <x>720</x>
-    <y>215</y>
-    <width>10</width>
-    <height>45</height>
-    <visible>false</visible>
-    <points>
-      <point x="5.0" y="0.0">
-      </point>
-      <point x="5.0" y="2.5">
-      </point>
-      <point x="0.0" y="5.0">
-      </point>
-      <point x="10.0" y="10.0">
-      </point>
-      <point x="5.0" y="5.0">
-      </point>
-      <point x="10.0" y="20.0">
-      </point>
-      <point x="0.0" y="25.0">
-      </point>
-      <point x="10.0" y="30.0">
-      </point>
-      <point x="0.0" y="35.0">
-      </point>
-      <point x="10.0" y="40.0">
-      </point>
-      <point x="5.0" y="42.5">
-      </point>
-      <point x="5.0" y="45.0">
-      </point>
-    </points>
-    <line_color>
-      <color red="255" green="0" blue="0">
-      </color>
-    </line_color>
-    <arrow_length>10</arrow_length>
-    <rules>
-      <rule name="Heater On" prop_id="visible" out_exp="false">
-        <exp bool_exp="pv0&gt;0.5">
-          <value>false</value>
-        </exp>
-        <pv_name>$(htr)HTRC$(cav):WATT</pv_name>
-      </rule>
-    </rules>
-  </widget>
-  <widget type="polyline" version="2.0.0">
-    <name>Polyline_99</name>
-    <x>750</x>
-    <y>225</y>
-    <width>10</width>
-    <height>45</height>
-    <visible>false</visible>
-    <points>
-      <point x="5.0" y="0.0">
-      </point>
-      <point x="5.0" y="2.5">
-      </point>
-      <point x="0.0" y="5.0">
-      </point>
-      <point x="10.0" y="10.0">
-      </point>
-      <point x="0.0" y="15.0">
-      </point>
-      <point x="10.0" y="20.0">
-      </point>
-      <point x="0.0" y="25.0">
-      </point>
-      <point x="10.0" y="30.0">
-      </point>
-      <point x="0.0" y="35.0">
-      </point>
-      <point x="10.0" y="40.0">
-      </point>
-      <point x="5.0" y="42.5">
-      </point>
-      <point x="5.0" y="45.0">
-      </point>
-    </points>
-    <line_color>
-      <color red="255" green="0" blue="0">
-      </color>
-    </line_color>
-    <arrow_length>10</arrow_length>
-    <rules>
-      <rule name="Heater On" prop_id="visible" out_exp="false">
-        <exp bool_exp="pv0&gt;0.5">
-          <value>true</value>
-        </exp>
-        <pv_name>$(htr)HTRC$(cav):WATT</pv_name>
-      </rule>
-    </rules>
-  </widget>
-  <widget type="polyline" version="2.0.0">
-    <name>Polyline_100</name>
-    <x>820</x>
-    <y>130</y>
-    <width>10</width>
-    <height>45</height>
-    <points>
-      <point x="5.0" y="0.0">
-      </point>
-      <point x="5.0" y="2.5">
-      </point>
-      <point x="0.0" y="5.0">
-      </point>
-      <point x="10.0" y="10.0">
-      </point>
-      <point x="0.0" y="15.0">
-      </point>
-      <point x="10.0" y="20.0">
-      </point>
-      <point x="0.0" y="25.0">
-      </point>
-      <point x="10.0" y="30.0">
-      </point>
-      <point x="0.0" y="35.0">
-      </point>
-      <point x="10.0" y="40.0">
-      </point>
-      <point x="5.0" y="42.5">
-      </point>
-      <point x="5.0" y="45.0">
-      </point>
-    </points>
-    <line_color>
-      <color red="255" green="0" blue="0">
-      </color>
-    </line_color>
-    <arrow_length>10</arrow_length>
-    <rules>
-      <rule name="Heater On" prop_id="visible" out_exp="false">
-        <exp bool_exp="!pv0&gt;0.5">
-          <value>false</value>
-        </exp>
-        <pv_name>$(htr)HTRC$(cav):WATT</pv_name>
-      </rule>
-    </rules>
-  </widget>
-  <widget type="polyline" version="2.0.0">
-    <name>Polyline_101</name>
-    <x>855</x>
-    <y>130</y>
-    <width>10</width>
-    <height>45</height>
-    <points>
-      <point x="5.0" y="0.0">
-      </point>
-      <point x="5.0" y="2.5">
-      </point>
-      <point x="0.0" y="5.0">
-      </point>
-      <point x="10.0" y="10.0">
-      </point>
-      <point x="0.0" y="15.0">
-      </point>
-      <point x="10.0" y="20.0">
-      </point>
-      <point x="0.0" y="25.0">
-      </point>
-      <point x="10.0" y="30.0">
-      </point>
-      <point x="0.0" y="35.0">
-      </point>
-      <point x="10.0" y="40.0">
-      </point>
-      <point x="5.0" y="42.5">
-      </point>
-      <point x="5.0" y="45.0">
-      </point>
-    </points>
-    <line_color>
-      <color red="255" green="0" blue="0">
-      </color>
-    </line_color>
-    <arrow_length>10</arrow_length>
-    <rules>
-      <rule name="Heater On" prop_id="visible" out_exp="false">
-        <exp bool_exp="!pv0&gt;0.5">
-          <value>true</value>
-        </exp>
-        <pv_name>$(htr)HTRC$(cav):WATT</pv_name>
-      </rule>
-    </rules>
-  </widget>
-  <widget type="polyline" version="2.0.0">
-    <name>Polyline_102</name>
-    <x>820</x>
-    <y>215</y>
-    <width>10</width>
-    <height>45</height>
-    <visible>false</visible>
-    <points>
-      <point x="5.0" y="0.0">
-      </point>
-      <point x="5.0" y="2.5">
-      </point>
-      <point x="0.0" y="5.0">
-      </point>
-      <point x="10.0" y="10.0">
-      </point>
-      <point x="5.0" y="5.0">
-      </point>
-      <point x="10.0" y="20.0">
-      </point>
-      <point x="0.0" y="25.0">
-      </point>
-      <point x="10.0" y="30.0">
-      </point>
-      <point x="0.0" y="35.0">
-      </point>
-      <point x="10.0" y="40.0">
-      </point>
-      <point x="5.0" y="42.5">
-      </point>
-      <point x="5.0" y="45.0">
-      </point>
-    </points>
-    <line_color>
-      <color red="255" green="0" blue="0">
-      </color>
-    </line_color>
-    <arrow_length>10</arrow_length>
-    <rules>
-      <rule name="Heater On" prop_id="visible" out_exp="false">
-        <exp bool_exp="!pv0&gt;0.5">
-          <value>false</value>
-        </exp>
-        <pv_name>$(htr)HTRC$(cav):WATT</pv_name>
-      </rule>
-    </rules>
-  </widget>
-  <widget type="polyline" version="2.0.0">
-    <name>Polyline_107</name>
-    <x>850</x>
-    <y>225</y>
-    <width>10</width>
-    <height>45</height>
-    <visible>false</visible>
-    <points>
-      <point x="5.0" y="0.0">
-      </point>
-      <point x="5.0" y="2.5">
-      </point>
-      <point x="0.0" y="5.0">
-      </point>
-      <point x="10.0" y="10.0">
-      </point>
-      <point x="0.0" y="0.0">
-      </point>
-      <point x="10.0" y="20.0">
-      </point>
-      <point x="0.0" y="25.0">
-      </point>
-      <point x="10.0" y="30.0">
-      </point>
-      <point x="0.0" y="35.0">
-      </point>
-      <point x="10.0" y="40.0">
-      </point>
-      <point x="5.0" y="42.5">
-      </point>
-      <point x="5.0" y="45.0">
-      </point>
-    </points>
-    <line_color>
-      <color red="255" green="0" blue="0">
-      </color>
-    </line_color>
-    <arrow_length>10</arrow_length>
-    <rules>
-      <rule name="Heater On" prop_id="visible" out_exp="false">
-        <exp bool_exp="!pv0&gt;0.5">
-          <value>true</value>
-        </exp>
-        <pv_name>$(htr)HTRC$(cav):WATT</pv_name>
-      </rule>
-    </rules>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label_5</name>
-    <text>Visible</text>
-    <x>935</x>
-    <y>155</y>
-    <width>50</width>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label_6</name>
-    <text>Invisible</text>
-    <x>935</x>
-    <y>235</y>
-    <width>65</width>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label_7</name>
-    <text>pv0&gt;0.5</text>
-    <x>720</x>
-    <y>80</y>
-    <width>60</width>
-    <horizontal_alignment>1</horizontal_alignment>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label_9</name>
-    <text>!pv0&gt;0.5</text>
-    <x>820</x>
-    <y>80</y>
-    <width>60</width>
-    <horizontal_alignment>1</horizontal_alignment>
   </widget>
 </display>
