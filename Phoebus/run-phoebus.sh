@@ -7,6 +7,7 @@ EPICS_CONFIG="/usr/local/epics/Config"
 #export JAVA_HOME=$TOP/lib/jvm/jdk-11.0.2
 export JAVA_HOME=/usr/local/jdk-13.0.2
 export PATH="$JAVA_HOME/bin:$PATH"
+export EPICS_CA_ADDR_LIST="${EPICS_CA_ADDR_LIST} 131.225.120.160:6721 131.225.120.160:6722 131.225.120.160:6723"
 
 echo $TOP
 V="4.6.6-SNAPSHOT"

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <display version="2.0.0">
   <name>HB650Vacuum</name>
+  <width>1300</width>
   <widget type="label" version="2.0.0">
     <name>Label</name>
     <text>PIP2IT pHB650 Vacuum</text>
-    <width>800</width>
+    <width>1300</width>
     <height>40</height>
     <font>
       <font family="Liberation Sans" style="BOLD" size="22.0">
@@ -25,8 +26,8 @@
   </widget>
   <widget type="group" version="2.0.0">
     <name>Group_12</name>
-    <x>440</x>
-    <y>180</y>
+    <x>990</x>
+    <y>530</y>
     <width>88</width>
     <height>42</height>
     <style>3</style>
@@ -120,8 +121,8 @@
   </widget>
   <widget type="group" version="2.0.0">
     <name>Group_15</name>
-    <x>530</x>
-    <y>380</y>
+    <x>860</x>
+    <y>500</y>
     <width>100</width>
     <height>80</height>
     <style>3</style>
@@ -243,5 +244,144 @@ Vacuum</text>
         </rule>
       </rules>
     </widget>
+  </widget>
+  <widget type="picture" version="2.0.0">
+    <name>Picture</name>
+    <file>../../images/HB650Cryostat-new.png</file>
+    <x>90</x>
+    <y>150</y>
+    <width>1120</width>
+    <height>260</height>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_2</name>
+    <x>130</x>
+    <y>310</y>
+    <width>1050</width>
+    <height>10</height>
+    <line_width>1</line_width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_9</name>
+    <text>Beamline
+Vacuum</text>
+    <x>1180</x>
+    <y>340</y>
+    <height>35</height>
+    <background_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_3</name>
+    <x>1180</x>
+    <y>295</y>
+    <height>45</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="Read_Background" red="240" green="240" blue="240">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_233</name>
+    <pv_name>$(vac)BDSPG:VacP</pv_name>
+    <x>1180</x>
+    <y>325</y>
+    <height>15</height>
+    <visible>false</visible>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="11.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Attention" red="255" green="160" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="44" green="44" blue="44">
+      </color>
+    </background_color>
+    <format>2</format>
+    <precision>2</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <rules>
+      <rule name="Show Value" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0&lt;=0.002">
+          <value>true</value>
+        </exp>
+        <pv_name>$(vac)02:VacP</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_234</name>
+    <pv_name>$(vac)01:VacP.DESC</pv_name>
+    <x>1180</x>
+    <y>310</y>
+    <height>15</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="11.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Attention" red="255" green="160" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="44" green="44" blue="44">
+      </color>
+    </background_color>
+    <format>2</format>
+    <precision>2</precision>
+    <show_units>false</show_units>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_235</name>
+    <pv_name>$(vac)BDSCG:VacP</pv_name>
+    <x>1180</x>
+    <y>295</y>
+    <height>15</height>
+    <visible>false</visible>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="11.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Attention" red="255" green="160" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="44" green="44" blue="44">
+      </color>
+    </background_color>
+    <format>2</format>
+    <precision>2</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <rules>
+      <rule name="Show Value" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0&gt;0.002">
+          <value>true</value>
+        </exp>
+        <pv_name>$(vac)02:VacP</pv_name>
+      </rule>
+    </rules>
   </widget>
 </display>
