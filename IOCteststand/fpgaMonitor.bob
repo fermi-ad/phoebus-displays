@@ -94,33 +94,6 @@
     <precision>0</precision>
     <horizontal_alignment>1</horizontal_alignment>
   </widget>
-  <widget type="textentry" version="3.0.0">
-    <name>Text Entry_2</name>
-    <pv_name>$(dev)sTrigFrequency</pv_name>
-    <x>670</x>
-    <y>410</y>
-    <width>80</width>
-    <format>1</format>
-    <precision>0</precision>
-    <horizontal_alignment>1</horizontal_alignment>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>Text Update_2</name>
-    <pv_name>$(dev)TrigFrequency</pv_name>
-    <x>570</x>
-    <y>410</y>
-    <width>80</width>
-    <background_color>
-      <color name="Button_Background" red="210" green="210" blue="210">
-      </color>
-    </background_color>
-    <format>4</format>
-    <precision>4</precision>
-    <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
   <widget type="label" version="2.0.0">
     <name>Label_1</name>
     <text>Ramp Slope</text>
@@ -129,56 +102,6 @@
     <width>90</width>
     <horizontal_alignment>1</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label_3</name>
-    <text>Frequency</text>
-    <x>490</x>
-    <y>410</y>
-    <width>70</width>
-    <horizontal_alignment>2</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-  </widget>
-  <widget type="group" version="2.0.0">
-    <name>Group</name>
-    <x>50</x>
-    <y>410</y>
-    <width>260</width>
-    <height>20</height>
-    <style>3</style>
-    <transparent>true</transparent>
-    <widget type="textentry" version="3.0.0">
-      <name>Text Entry_1</name>
-      <pv_name>$(dev)sTrigPhase</pv_name>
-      <x>180</x>
-      <width>80</width>
-      <format>1</format>
-      <precision>0</precision>
-      <horizontal_alignment>1</horizontal_alignment>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-    </widget>
-    <widget type="textupdate" version="2.0.0">
-      <name>Text Update_1</name>
-      <pv_name>$(dev)TrigPhase</pv_name>
-      <x>90</x>
-      <width>80</width>
-      <background_color>
-        <color name="Button_Background" red="210" green="210" blue="210">
-        </color>
-      </background_color>
-      <format>4</format>
-      <precision>4</precision>
-      <horizontal_alignment>1</horizontal_alignment>
-      <vertical_alignment>1</vertical_alignment>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-    </widget>
-    <widget type="label" version="2.0.0">
-      <name>Label_2</name>
-      <text>Phase</text>
-      <width>70</width>
-      <horizontal_alignment>2</horizontal_alignment>
-      <vertical_alignment>1</vertical_alignment>
-    </widget>
   </widget>
   <widget type="group" version="2.0.0">
     <name>Group</name>
@@ -251,7 +174,7 @@
         <trace>
           <name></name>
           <x_pv>$(dev)wfTime</x_pv>
-          <y_pv>$(dev)wf1Read32Bit</y_pv>
+          <y_pv>$(dev)wfSine</y_pv>
           <err_pv></err_pv>
           <axis>0</axis>
           <trace_type>1</trace_type>
@@ -268,7 +191,7 @@
         <trace>
           <name></name>
           <x_pv>$(dev)wfTime</x_pv>
-          <y_pv>$(dev)wf2Read32Bit</y_pv>
+          <y_pv>$(dev)wfCosine</y_pv>
           <err_pv></err_pv>
           <axis>0</axis>
           <trace_type>1</trace_type>
@@ -328,5 +251,108 @@
       <color red="0" green="0" blue="0">
       </color>
     </line_color>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group</name>
+    <x>260</x>
+    <y>410</y>
+    <width>250</width>
+    <height>20</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="textentry" version="3.0.0">
+      <name>Text Entry_1</name>
+      <pv_name>$(dev)sTrigPhase</pv_name>
+      <x>170</x>
+      <width>80</width>
+      <format>1</format>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_1</name>
+      <pv_name>$(dev)TrigPhase</pv_name>
+      <x>80</x>
+      <width>80</width>
+      <background_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </background_color>
+      <format>4</format>
+      <precision>4</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_2</name>
+      <text>Phase:</text>
+      <width>75</width>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group</name>
+    <x>550</x>
+    <y>410</y>
+    <width>250</width>
+    <height>20</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="textentry" version="3.0.0">
+      <name>Text Entry_2</name>
+      <pv_name>$(dev)sTrigFrequency</pv_name>
+      <x>170</x>
+      <width>80</width>
+      <format>1</format>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_2</name>
+      <pv_name>$(dev)TrigFrequency</pv_name>
+      <x>80</x>
+      <width>80</width>
+      <background_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </background_color>
+      <format>4</format>
+      <precision>4</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_3</name>
+      <text>Frequency:</text>
+      <width>75</width>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>Boolean Button</name>
+    <pv_name>$(dev)seqReadRampVal.DISA</pv_name>
+    <x>30</x>
+    <y>50</y>
+    <height>20</height>
+    <off_label>Disable</off_label>
+    <on_label>Enable</on_label>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>Boolean Button_1</name>
+    <pv_name>$(dev)sIRQ8</pv_name>
+    <x>20</x>
+    <y>410</y>
+    <width>120</width>
+    <height>20</height>
+    <off_label>Disable IRQ8</off_label>
+    <on_label>Enable IRQ8</on_label>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
 </display>
