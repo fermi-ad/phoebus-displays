@@ -16,7 +16,7 @@
   <x>520</x>
   <y>335</y>
   <width>1130</width>
-  <height>900</height>
+  <height>940</height>
   <grid_step_x>5</grid_step_x>
   <grid_step_y>5</grid_step_y>
   <widget type="picture" version="2.0.0">
@@ -185,8 +185,8 @@
     <name>Action Button_23</name>
     <actions>
       <action type="open_display">
-        <file>HB650FluxGateSelect.bob</file>
-        <target>tab</target>
+        <file>HB650FluxGates.bob</file>
+        <target>window</target>
         <description>Flux Gates</description>
       </action>
     </actions>
@@ -195,6 +195,7 @@
     <y>230</y>
     <width>160</width>
     <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_1</name>
@@ -876,30 +877,6 @@
       <arrow_length>10</arrow_length>
     </widget>
   </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>Text Update_169</name>
-    <pv_name>$(htr)HTRC3:Name</pv_name>
-    <x>435</x>
-    <y>577</y>
-    <width>50</width>
-    <height>15</height>
-    <font>
-      <font family="Liberation Sans" style="REGULAR" size="11.0">
-      </font>
-    </font>
-    <foreground_color>
-      <color red="255" green="0" blue="0">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color red="44" green="44" blue="44">
-      </color>
-    </background_color>
-    <precision>2</precision>
-    <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
   <widget type="polyline" version="2.0.0">
     <name>Polyline_86</name>
     <x>440</x>
@@ -993,30 +970,6 @@
     <precision>2</precision>
     <horizontal_alignment>1</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
-  </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>Text Update_174</name>
-    <pv_name>$(htr)HTRC4:Name</pv_name>
-    <x>595</x>
-    <y>577</y>
-    <width>50</width>
-    <height>15</height>
-    <font>
-      <font family="Liberation Sans" style="REGULAR" size="11.0">
-      </font>
-    </font>
-    <foreground_color>
-      <color red="255" green="0" blue="0">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color red="44" green="44" blue="44">
-      </color>
-    </background_color>
-    <precision>2</precision>
-    <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="polyline" version="2.0.0">
     <name>Polyline_87</name>
@@ -1112,30 +1065,6 @@
     <horizontal_alignment>1</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
   </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>Text Update_179</name>
-    <pv_name>$(htr)HTRC5:Name</pv_name>
-    <x>770</x>
-    <y>577</y>
-    <width>50</width>
-    <height>15</height>
-    <font>
-      <font family="Liberation Sans" style="REGULAR" size="11.0">
-      </font>
-    </font>
-    <foreground_color>
-      <color red="255" green="0" blue="0">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color red="44" green="44" blue="44">
-      </color>
-    </background_color>
-    <precision>2</precision>
-    <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
   <widget type="polyline" version="2.0.0">
     <name>Polyline_88</name>
     <x>775</x>
@@ -1230,30 +1159,6 @@
     <horizontal_alignment>1</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
   </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>Text Update_184</name>
-    <pv_name>$(htr)HTRC6:Name</pv_name>
-    <x>915</x>
-    <y>577</y>
-    <width>50</width>
-    <height>18</height>
-    <font>
-      <font family="Liberation Sans" style="REGULAR" size="11.0">
-      </font>
-    </font>
-    <foreground_color>
-      <color red="255" green="0" blue="0">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color red="44" green="44" blue="44">
-      </color>
-    </background_color>
-    <precision>2</precision>
-    <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
   <widget type="polyline" version="2.0.0">
     <name>Polyline_89</name>
     <x>920</x>
@@ -1307,6 +1212,7 @@
     <y>620</y>
     <width>1</width>
     <height>55</height>
+    <visible>false</visible>
     <points>
       <point x="0.0" y="0.0">
       </point>
@@ -1319,6 +1225,14 @@
     </line_color>
     <arrows>1</arrows>
     <arrow_length>10</arrow_length>
+    <rules>
+      <rule name="Show Flow" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0=1">
+          <value>true</value>
+        </exp>
+        <pv_name>$(vlv)PVCD:VLVstat</pv_name>
+      </rule>
+    </rules>
   </widget>
   <widget type="group" version="2.0.0">
     <name>Group</name>
@@ -1941,6 +1855,7 @@ Pressure</text>
     <y>620</y>
     <width>1</width>
     <height>55</height>
+    <visible>false</visible>
     <points>
       <point x="0.0" y="0.0">
       </point>
@@ -1953,6 +1868,14 @@ Pressure</text>
     </line_color>
     <arrows>1</arrows>
     <arrow_length>10</arrow_length>
+    <rules>
+      <rule name="Show Flow" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0=1">
+          <value>true</value>
+        </exp>
+        <pv_name>$(vlv)PVCD:VLVstat</pv_name>
+      </rule>
+    </rules>
   </widget>
   <widget type="polyline" version="2.0.0">
     <name>Polyline_18</name>
@@ -1960,6 +1883,7 @@ Pressure</text>
     <y>620</y>
     <width>1</width>
     <height>55</height>
+    <visible>false</visible>
     <points>
       <point x="0.0" y="0.0">
       </point>
@@ -1972,6 +1896,14 @@ Pressure</text>
     </line_color>
     <arrows>1</arrows>
     <arrow_length>10</arrow_length>
+    <rules>
+      <rule name="Show Flow" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0=1">
+          <value>true</value>
+        </exp>
+        <pv_name>$(vlv)PVCD:VLVstat</pv_name>
+      </rule>
+    </rules>
   </widget>
   <widget type="polyline" version="2.0.0">
     <name>Polyline_19</name>
@@ -1979,6 +1911,7 @@ Pressure</text>
     <y>620</y>
     <width>1</width>
     <height>55</height>
+    <visible>false</visible>
     <points>
       <point x="0.0" y="0.0">
       </point>
@@ -1991,6 +1924,14 @@ Pressure</text>
     </line_color>
     <arrows>1</arrows>
     <arrow_length>10</arrow_length>
+    <rules>
+      <rule name="Show Flow" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0=1">
+          <value>true</value>
+        </exp>
+        <pv_name>$(vlv)PVCD:VLVstat</pv_name>
+      </rule>
+    </rules>
   </widget>
   <widget type="polyline" version="2.0.0">
     <name>Polyline_20</name>
@@ -1998,6 +1939,7 @@ Pressure</text>
     <y>620</y>
     <width>1</width>
     <height>55</height>
+    <visible>false</visible>
     <points>
       <point x="0.0" y="0.0">
       </point>
@@ -2010,6 +1952,14 @@ Pressure</text>
     </line_color>
     <arrows>1</arrows>
     <arrow_length>10</arrow_length>
+    <rules>
+      <rule name="Show Flow" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0=1">
+          <value>true</value>
+        </exp>
+        <pv_name>$(vlv)PVCD:VLVstat</pv_name>
+      </rule>
+    </rules>
   </widget>
   <widget type="group" version="2.0.0">
     <name>Group_7</name>
@@ -2055,6 +2005,7 @@ Pressure</text>
     <y>620</y>
     <width>1</width>
     <height>55</height>
+    <visible>false</visible>
     <points>
       <point x="0.0" y="0.0">
       </point>
@@ -2067,6 +2018,14 @@ Pressure</text>
     </line_color>
     <arrows>1</arrows>
     <arrow_length>10</arrow_length>
+    <rules>
+      <rule name="Show Flow" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0=1">
+          <value>true</value>
+        </exp>
+        <pv_name>$(vlv)PVCD:VLVstat</pv_name>
+      </rule>
+    </rules>
   </widget>
   <widget type="polyline" version="2.0.0">
     <name>Polyline_74</name>
@@ -2109,30 +2068,6 @@ Pressure</text>
     <horizontal_alignment>1</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
     <border_width>1</border_width>
-  </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>Text Update_133</name>
-    <pv_name>$(htr)HTRC1:Name</pv_name>
-    <x>120</x>
-    <y>577</y>
-    <width>50</width>
-    <height>15</height>
-    <font>
-      <font family="Liberation Sans" style="REGULAR" size="11.0">
-      </font>
-    </font>
-    <foreground_color>
-      <color red="255" green="0" blue="0">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color red="44" green="44" blue="44">
-      </color>
-    </background_color>
-    <precision>2</precision>
-    <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="action_button" version="3.0.0">
     <name>Action Button</name>
@@ -2374,30 +2309,6 @@ Vacuum</text>
     <horizontal_alignment>1</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
   </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>Text Update_164</name>
-    <pv_name>$(htr)HTRC2:Name</pv_name>
-    <x>275</x>
-    <y>577</y>
-    <width>50</width>
-    <height>15</height>
-    <font>
-      <font family="Liberation Sans" style="REGULAR" size="11.0">
-      </font>
-    </font>
-    <foreground_color>
-      <color red="255" green="0" blue="0">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color red="44" green="44" blue="44">
-      </color>
-    </background_color>
-    <precision>2</precision>
-    <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
   <widget type="polyline" version="2.0.0">
     <name>Polyline_85</name>
     <x>280</x>
@@ -2604,8 +2515,6 @@ Vacuum</text>
       <point x="0.0" y="155.0">
       </point>
       <point x="950.0" y="155.0">
-      </point>
-      <point x="950.0" y="100.0">
       </point>
     </points>
     <line_color>
@@ -3212,7 +3121,7 @@ Vacuum</text>
     <name>Text Update_186</name>
     <pv_name>$(vlv)PVCD:Name</pv_name>
     <x>412</x>
-    <y>350</y>
+    <y>335</y>
     <width>50</width>
     <height>15</height>
     <font>
@@ -3236,7 +3145,7 @@ Vacuum</text>
     <name>Text Update_187</name>
     <pv_name>$(vlv)PVCD:Open_r</pv_name>
     <x>412</x>
-    <y>335</y>
+    <y>350</y>
     <width>50</width>
     <height>15</height>
     <font>
@@ -7359,5 +7268,323 @@ Suction</text>
         <pv_name>$(htr)HTRVSL:HTRON</pv_name>
       </rule>
     </rules>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group_1</name>
+    <x>135</x>
+    <y>895</y>
+    <width>945</width>
+    <height>40</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle_7</name>
+      <width>945</width>
+      <height>40</height>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="Read_Background" red="240" green="240" blue="240">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_156</name>
+      <pv_name>$(temp)FG101:Name</pv_name>
+      <x>10</x>
+      <y>20</y>
+      <width>50</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="Attention" red="255" green="160" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color red="44" green="44" blue="44">
+        </color>
+      </background_color>
+      <precision>2</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_164</name>
+      <pv_name>$(temp)FG101:Flux</pv_name>
+      <x>10</x>
+      <y>5</y>
+      <width>50</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="Attention" red="255" green="160" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color red="44" green="44" blue="44">
+        </color>
+      </background_color>
+      <precision>2</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_232</name>
+      <pv_name>$(temp)FG201:Name</pv_name>
+      <x>175</x>
+      <y>20</y>
+      <width>50</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="Attention" red="255" green="160" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color red="44" green="44" blue="44">
+        </color>
+      </background_color>
+      <precision>2</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_233</name>
+      <pv_name>$(temp)FG201:Flux</pv_name>
+      <x>175</x>
+      <y>5</y>
+      <width>50</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="Attention" red="255" green="160" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color red="44" green="44" blue="44">
+        </color>
+      </background_color>
+      <precision>2</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_234</name>
+      <pv_name>$(temp)FG301:Name</pv_name>
+      <x>336</x>
+      <y>20</y>
+      <width>50</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="Attention" red="255" green="160" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color red="44" green="44" blue="44">
+        </color>
+      </background_color>
+      <precision>2</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_235</name>
+      <pv_name>$(temp)FG301:Flux</pv_name>
+      <x>336</x>
+      <y>5</y>
+      <width>50</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="Attention" red="255" green="160" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color red="44" green="44" blue="44">
+        </color>
+      </background_color>
+      <precision>2</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_236</name>
+      <pv_name>$(temp)FG401:Name</pv_name>
+      <x>495</x>
+      <y>20</y>
+      <width>50</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="Attention" red="255" green="160" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color red="44" green="44" blue="44">
+        </color>
+      </background_color>
+      <precision>2</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_237</name>
+      <pv_name>$(temp)FG401:Flux</pv_name>
+      <x>495</x>
+      <y>5</y>
+      <width>50</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="Attention" red="255" green="160" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color red="44" green="44" blue="44">
+        </color>
+      </background_color>
+      <precision>2</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_238</name>
+      <pv_name>$(temp)FG501:Name</pv_name>
+      <x>660</x>
+      <y>20</y>
+      <width>50</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="Attention" red="255" green="160" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color red="44" green="44" blue="44">
+        </color>
+      </background_color>
+      <precision>2</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_239</name>
+      <pv_name>$(temp)FG501:Flux</pv_name>
+      <x>660</x>
+      <y>5</y>
+      <width>50</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="Attention" red="255" green="160" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color red="44" green="44" blue="44">
+        </color>
+      </background_color>
+      <precision>2</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_240</name>
+      <pv_name>$(temp)FG601:Name</pv_name>
+      <x>810</x>
+      <y>20</y>
+      <width>50</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="Attention" red="255" green="160" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color red="44" green="44" blue="44">
+        </color>
+      </background_color>
+      <precision>2</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_241</name>
+      <pv_name>$(temp)FG601:Flux</pv_name>
+      <x>810</x>
+      <y>5</y>
+      <width>50</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="Attention" red="255" green="160" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color red="44" green="44" blue="44">
+        </color>
+      </background_color>
+      <precision>2</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_48</name>
+      <text>FluxGates</text>
+      <x>870</x>
+      <y>10</y>
+      <width>70</width>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
   </widget>
 </display>
