@@ -8,7 +8,7 @@
   <scroll_step>5</scroll_step>
   <scroll>false</scroll>
   <start>2019-05-28 00:00:00.000</start>
-  <end>2022-12-21 11:44:11.195</end>
+  <end>2022-12-29 18:05:33.351</end>
   <archive_rescale>STAGGER</archive_rescale>
   <foreground>
     <red>0</red>
@@ -36,8 +36,8 @@
         <green>0</green>
         <blue>0</blue>
       </color>
-      <min>-42.300000000000004</min>
-      <max>51.0</max>
+      <min>-50.0</min>
+      <max>52.0</max>
       <grid>true</grid>
       <autoscale>false</autoscale>
       <log_scale>false</log_scale>
