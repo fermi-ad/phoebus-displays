@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <display version="2.0.0">
   <name>HB650Vacuum</name>
-  <width>2300</width>
+  <width>1300</width>
   <height>860</height>
   <widget type="picture" version="2.0.0">
     <name>Picture</name>
@@ -36,7 +36,7 @@
   <widget type="label" version="2.0.0">
     <name>Label</name>
     <text>PIP2IT pHB650 Vacuum</text>
-    <width>2300</width>
+    <width>1300</width>
     <height>40</height>
     <font>
       <font family="Liberation Sans" style="BOLD" size="22.0">
@@ -579,38 +579,6 @@
           </color>
         </background_color>
       </widget>
-      <widget type="textupdate" version="2.0.0">
-        <name>Text Update_309</name>
-        <pv_name>$(vac)PCC051:Name</pv_name>
-        <y>50</y>
-        <height>15</height>
-        <visible>false</visible>
-        <font>
-          <font family="Liberation Sans" style="BOLD" size="12.0">
-          </font>
-        </font>
-        <foreground_color>
-          <color name="Attention" red="255" green="160" blue="0">
-          </color>
-        </foreground_color>
-        <background_color>
-          <color red="44" green="44" blue="44">
-          </color>
-        </background_color>
-        <show_units>false</show_units>
-        <horizontal_alignment>1</horizontal_alignment>
-        <vertical_alignment>1</vertical_alignment>
-        <wrap_words>false</wrap_words>
-        <rules>
-          <rule name="Show Name" prop_id="visible" out_exp="false">
-            <exp bool_exp="pv0&lt;=2e-3">
-              <value>true</value>
-            </exp>
-            <pv_name>$(vac)PPG051:VacP</pv_name>
-          </rule>
-        </rules>
-        <border_alarm_sensitive>false</border_alarm_sensitive>
-      </widget>
       <widget type="label" version="2.0.0">
         <name>Label_16</name>
         <text>Insulating
@@ -636,7 +604,7 @@ Vacuum</text>
           </font>
         </font>
         <foreground_color>
-          <color red="0" green="128" blue="0">
+          <color red="128" green="176" blue="0">
           </color>
         </foreground_color>
         <background_color>
@@ -655,6 +623,12 @@ Vacuum</text>
             </exp>
             <pv_name>$(vac)PPG051:VacP</pv_name>
           </rule>
+          <rule name="Show Unit" prop_id="show_units" out_exp="false">
+            <exp bool_exp="pv0&gt;2e-3">
+              <value>true</value>
+            </exp>
+            <pv_name>$(vac)PPG051:VacP</pv_name>
+          </rule>
         </rules>
       </widget>
       <widget type="textupdate" version="2.0.0">
@@ -668,7 +642,7 @@ Vacuum</text>
           </font>
         </font>
         <foreground_color>
-          <color red="0" green="128" blue="0">
+          <color red="128" green="176" blue="0">
           </color>
         </foreground_color>
         <background_color>
@@ -683,6 +657,12 @@ Vacuum</text>
         <wrap_words>false</wrap_words>
         <rules>
           <rule name="Show Value" prop_id="visible" out_exp="false">
+            <exp bool_exp="pv0&gt;2e-3">
+              <value>true</value>
+            </exp>
+            <pv_name>$(vac)PPG051:VacP</pv_name>
+          </rule>
+          <rule name="Show Unit" prop_id="show_units" out_exp="false">
             <exp bool_exp="pv0&gt;2e-3">
               <value>true</value>
             </exp>
@@ -721,6 +701,12 @@ Vacuum</text>
             </exp>
             <pv_name>$(vac)PPG051:VacP</pv_name>
           </rule>
+          <rule name="Show Units" prop_id="show_units" out_exp="false">
+            <exp bool_exp="pv0&lt;=2e-3">
+              <value>true</value>
+            </exp>
+            <pv_name>$(vac)PPG051:VacP</pv_name>
+          </rule>
         </rules>
       </widget>
       <widget type="textupdate" version="2.0.0">
@@ -754,6 +740,12 @@ Vacuum</text>
             </exp>
             <pv_name>$(vac)PPG051:VacP</pv_name>
           </rule>
+          <rule name="Show Units" prop_id="show_units" out_exp="false">
+            <exp bool_exp="pv0&lt;=2e-3">
+              <value>true</value>
+            </exp>
+            <pv_name>$(vac)PPG051:VacP</pv_name>
+          </rule>
         </rules>
         <border_alarm_sensitive>false</border_alarm_sensitive>
       </widget>
@@ -772,7 +764,7 @@ Vacuum</text>
           </color>
         </foreground_color>
         <background_color>
-          <color red="44" green="44" blue="44">
+          <color red="0" green="0" blue="0">
           </color>
         </background_color>
         <show_units>false</show_units>
@@ -782,6 +774,38 @@ Vacuum</text>
         <rules>
           <rule name="Show Name" prop_id="visible" out_exp="false">
             <exp bool_exp="pv0&gt;2e-3">
+              <value>true</value>
+            </exp>
+            <pv_name>$(vac)PPG051:VacP</pv_name>
+          </rule>
+        </rules>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_309</name>
+        <pv_name>$(vac)PCC051:Name</pv_name>
+        <y>50</y>
+        <height>15</height>
+        <visible>false</visible>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="12.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="Attention" red="255" green="160" blue="0">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color red="0" green="0" blue="0">
+          </color>
+        </background_color>
+        <show_units>false</show_units>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <rules>
+          <rule name="Show Name" prop_id="visible" out_exp="false">
+            <exp bool_exp="pv0&lt;=2e-3">
               <value>true</value>
             </exp>
             <pv_name>$(vac)PPG051:VacP</pv_name>
@@ -2868,424 +2892,6 @@ Permits</text>
     <x>170</x>
     <y>560</y>
   </widget>
-  <widget type="stripchart" version="2.1.0">
-    <name>Strip Chart_1</name>
-    <x>1340</x>
-    <y>50</y>
-    <width>950</width>
-    <height>260</height>
-    <foreground_color>
-      <color red="255" green="255" blue="255">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color red="0" green="0" blue="0">
-      </color>
-    </background_color>
-    <show_grid>true</show_grid>
-    <title>Insulating Vacuum</title>
-    <scale_font>
-      <font family="Liberation Sans" style="REGULAR" size="11.0">
-      </font>
-    </scale_font>
-    <show_toolbar>false</show_toolbar>
-    <show_legend>true</show_legend>
-    <start>-12 minutes</start>
-    <end>now</end>
-    <y_axes>
-      <y_axis>
-        <title>Vacuum Pressure (Torr)</title>
-        <autoscale>true</autoscale>
-        <log_scale>true</log_scale>
-        <minimum>0.0</minimum>
-        <maximum>800.0</maximum>
-        <show_grid>true</show_grid>
-        <visible>true</visible>
-        <color>
-          <color red="255" green="255" blue="255">
-          </color>
-        </color>
-      </y_axis>
-      <y_axis>
-        <title>Statuses</title>
-        <autoscale>false</autoscale>
-        <log_scale>false</log_scale>
-        <minimum>-0.5</minimum>
-        <maximum>4.5</maximum>
-        <show_grid>true</show_grid>
-        <visible>true</visible>
-        <color>
-          <color red="255" green="255" blue="0">
-          </color>
-        </color>
-      </y_axis>
-    </y_axes>
-    <traces>
-      <trace>
-        <name>Foreline Vac.</name>
-        <y_pv>$(vac)PPG053:VacP</y_pv>
-        <axis>0</axis>
-        <trace_type>2</trace_type>
-        <color>
-          <color red="0" green="255" blue="255">
-          </color>
-        </color>
-        <line_width>2</line_width>
-        <point_type>0</point_type>
-        <point_size>10</point_size>
-        <visible>true</visible>
-      </trace>
-      <trace>
-        <name>Turbo Pirani Vac.</name>
-        <y_pv>$(vac)PPG052:VacP</y_pv>
-        <axis>0</axis>
-        <trace_type>2</trace_type>
-        <color>
-          <color red="179" green="26" blue="26">
-          </color>
-        </color>
-        <line_width>2</line_width>
-        <point_type>0</point_type>
-        <point_size>10</point_size>
-        <visible>true</visible>
-      </trace>
-      <trace>
-        <name>Turbo CC Vac.</name>
-        <y_pv>$(vac)PCC052:VacP</y_pv>
-        <axis>0</axis>
-        <trace_type>2</trace_type>
-        <color>
-          <color red="255" green="0" blue="0">
-          </color>
-        </color>
-        <line_width>2</line_width>
-        <point_type>0</point_type>
-        <point_size>10</point_size>
-        <visible>true</visible>
-      </trace>
-      <trace>
-        <name>IV Pirani Vac.</name>
-        <y_pv>$(vac)PPG051:VacP</y_pv>
-        <axis>0</axis>
-        <trace_type>2</trace_type>
-        <color>
-          <color red="0" green="128" blue="0">
-          </color>
-        </color>
-        <line_width>2</line_width>
-        <point_type>0</point_type>
-        <point_size>10</point_size>
-        <visible>true</visible>
-      </trace>
-      <trace>
-        <name>IV CC Vac.</name>
-        <y_pv>$(vac)PCC051:VacP</y_pv>
-        <axis>0</axis>
-        <trace_type>2</trace_type>
-        <color>
-          <color red="0" green="255" blue="0">
-          </color>
-        </color>
-        <line_width>2</line_width>
-        <point_type>0</point_type>
-        <point_size>10</point_size>
-        <visible>true</visible>
-      </trace>
-      <trace>
-        <name>ASB Valve Interlock</name>
-        <y_pv>$(vac)VS053:ILK</y_pv>
-        <axis>1</axis>
-        <trace_type>2</trace_type>
-        <color>
-          <color red="0" green="234" blue="255">
-          </color>
-        </color>
-        <line_width>1</line_width>
-        <point_type>0</point_type>
-        <point_size>10</point_size>
-        <visible>true</visible>
-      </trace>
-      <trace>
-        <name>ASB Valve OverRide</name>
-        <y_pv>$(vac)VS053:OverRide</y_pv>
-        <axis>1</axis>
-        <trace_type>2</trace_type>
-        <color>
-          <color red="35" green="98" blue="143">
-          </color>
-        </color>
-        <line_width>1</line_width>
-        <point_type>0</point_type>
-        <point_size>10</point_size>
-        <visible>true</visible>
-      </trace>
-      <trace>
-        <name>ASB Valve Status</name>
-        <y_pv>$(vac)VS053:ValveStatus</y_pv>
-        <axis>1</axis>
-        <trace_type>2</trace_type>
-        <color>
-          <color red="0" green="0" blue="255">
-          </color>
-        </color>
-        <line_width>1</line_width>
-        <point_type>0</point_type>
-        <point_size>10</point_size>
-        <visible>true</visible>
-      </trace>
-      <trace>
-        <name>Turbo Valve Status</name>
-        <y_pv>$(vac):VT052:plotValveStatus</y_pv>
-        <axis>1</axis>
-        <trace_type>2</trace_type>
-        <color>
-          <color red="255" green="0" blue="255">
-          </color>
-        </color>
-        <line_width>1</line_width>
-        <point_type>0</point_type>
-        <point_size>10</point_size>
-        <visible>true</visible>
-      </trace>
-    </traces>
-  </widget>
-  <widget type="stripchart" version="2.1.0">
-    <name>Strip Chart_2</name>
-    <x>1340</x>
-    <y>320</y>
-    <width>950</width>
-    <height>260</height>
-    <foreground_color>
-      <color red="255" green="255" blue="255">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color red="0" green="0" blue="0">
-      </color>
-    </background_color>
-    <show_grid>true</show_grid>
-    <title>Beamline/Cavity Vacuum</title>
-    <scale_font>
-      <font family="Liberation Sans" style="REGULAR" size="11.0">
-      </font>
-    </scale_font>
-    <show_toolbar>false</show_toolbar>
-    <show_legend>true</show_legend>
-    <start>-12 hours</start>
-    <end>now</end>
-    <y_axes>
-      <y_axis>
-        <title>Vacuum Pressure (Torr)</title>
-        <autoscale>true</autoscale>
-        <log_scale>true</log_scale>
-        <minimum>0.0</minimum>
-        <maximum>800.0</maximum>
-        <show_grid>true</show_grid>
-        <visible>true</visible>
-        <color>
-          <color red="255" green="255" blue="255">
-          </color>
-        </color>
-      </y_axis>
-      <y_axis>
-        <title>Statuses</title>
-        <autoscale>false</autoscale>
-        <log_scale>false</log_scale>
-        <minimum>-0.5</minimum>
-        <maximum>4.5</maximum>
-        <show_grid>true</show_grid>
-        <visible>true</visible>
-        <color>
-          <color red="255" green="255" blue="0">
-          </color>
-        </color>
-      </y_axis>
-    </y_axes>
-    <traces>
-      <trace>
-        <name>Foreline Vac.</name>
-        <y_pv>$(vac)PPG103:VacP</y_pv>
-        <axis>0</axis>
-        <trace_type>2</trace_type>
-        <color>
-          <color red="0" green="255" blue="255">
-          </color>
-        </color>
-        <line_width>2</line_width>
-        <point_type>0</point_type>
-        <point_size>10</point_size>
-        <visible>true</visible>
-      </trace>
-      <trace>
-        <name>BL Pirani Vac.</name>
-        <y_pv>$(vac)PPG101:VacP</y_pv>
-        <axis>0</axis>
-        <trace_type>2</trace_type>
-        <color>
-          <color red="0" green="128" blue="60">
-          </color>
-        </color>
-        <line_width>2</line_width>
-        <point_type>0</point_type>
-        <point_size>10</point_size>
-        <visible>true</visible>
-      </trace>
-      <trace>
-        <name>BL CC Vac.</name>
-        <y_pv>$(vac)PCC101:VacP</y_pv>
-        <axis>0</axis>
-        <trace_type>2</trace_type>
-        <color>
-          <color red="0" green="255" blue="0">
-          </color>
-        </color>
-        <line_width>2</line_width>
-        <point_type>0</point_type>
-        <point_size>10</point_size>
-        <visible>true</visible>
-      </trace>
-      <trace>
-        <name>Ion Pump Vac.</name>
-        <y_pv>$(vac)PPG101:VacP</y_pv>
-        <axis>0</axis>
-        <trace_type>2</trace_type>
-        <color>
-          <color red="170" green="0" blue="255">
-          </color>
-        </color>
-        <line_width>2</line_width>
-        <point_type>0</point_type>
-        <point_size>10</point_size>
-        <visible>true</visible>
-      </trace>
-    </traces>
-  </widget>
-  <widget type="stripchart" version="2.1.0">
-    <name>Strip Chart_3</name>
-    <x>1340</x>
-    <y>590</y>
-    <width>950</width>
-    <height>260</height>
-    <foreground_color>
-      <color red="255" green="255" blue="255">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color red="0" green="0" blue="0">
-      </color>
-    </background_color>
-    <show_grid>true</show_grid>
-    <title>Coupler Vacuum</title>
-    <scale_font>
-      <font family="Liberation Sans" style="REGULAR" size="11.0">
-      </font>
-    </scale_font>
-    <show_toolbar>false</show_toolbar>
-    <show_legend>true</show_legend>
-    <start>-12 hours</start>
-    <end>now</end>
-    <y_axes>
-      <y_axis>
-        <title>Vacuum Pressure (Torr)</title>
-        <autoscale>true</autoscale>
-        <log_scale>true</log_scale>
-        <minimum>0.0</minimum>
-        <maximum>800.0</maximum>
-        <show_grid>true</show_grid>
-        <visible>true</visible>
-        <color>
-          <color red="255" green="255" blue="255">
-          </color>
-        </color>
-      </y_axis>
-    </y_axes>
-    <traces>
-      <trace>
-        <name>Coupler 1</name>
-        <y_pv>$(vac)PCC171:VacP</y_pv>
-        <axis>0</axis>
-        <trace_type>2</trace_type>
-        <color>
-          <color red="0" green="0" blue="255">
-          </color>
-        </color>
-        <line_width>2</line_width>
-        <point_type>0</point_type>
-        <point_size>10</point_size>
-        <visible>true</visible>
-      </trace>
-      <trace>
-        <name>Coupler 2</name>
-        <y_pv>$(vac)PCC271:VacP</y_pv>
-        <axis>0</axis>
-        <trace_type>2</trace_type>
-        <color>
-          <color red="255" green="0" blue="0">
-          </color>
-        </color>
-        <line_width>2</line_width>
-        <point_type>0</point_type>
-        <point_size>10</point_size>
-        <visible>true</visible>
-      </trace>
-      <trace>
-        <name>Coupler 3</name>
-        <y_pv>$(vac)PCC371:VacP</y_pv>
-        <axis>0</axis>
-        <trace_type>2</trace_type>
-        <color>
-          <color red="0" green="255" blue="0">
-          </color>
-        </color>
-        <line_width>2</line_width>
-        <point_type>0</point_type>
-        <point_size>10</point_size>
-        <visible>true</visible>
-      </trace>
-      <trace>
-        <name>Coupler 4</name>
-        <y_pv>$(vac)PCC471:VacP</y_pv>
-        <axis>0</axis>
-        <trace_type>2</trace_type>
-        <color>
-          <color red="170" green="0" blue="255">
-          </color>
-        </color>
-        <line_width>2</line_width>
-        <point_type>0</point_type>
-        <point_size>10</point_size>
-        <visible>true</visible>
-      </trace>
-      <trace>
-        <name>Coupler 5</name>
-        <y_pv>$(vac)PCC571:VacP</y_pv>
-        <axis>0</axis>
-        <trace_type>2</trace_type>
-        <color>
-          <color red="255" green="255" blue="0">
-          </color>
-        </color>
-        <line_width>2</line_width>
-        <point_type>0</point_type>
-        <point_size>10</point_size>
-        <visible>true</visible>
-      </trace>
-      <trace>
-        <name>Coupler 6</name>
-        <y_pv>$(vac)PCC671:VacP</y_pv>
-        <axis>0</axis>
-        <trace_type>2</trace_type>
-        <color>
-          <color red="0" green="234" blue="255">
-          </color>
-        </color>
-        <line_width>2</line_width>
-        <point_type>0</point_type>
-        <point_size>10</point_size>
-        <visible>true</visible>
-      </trace>
-    </traces>
-  </widget>
   <widget type="group" version="2.0.0">
     <name>Group</name>
     <x>780</x>
@@ -3452,6 +3058,176 @@ Vacuum</text>
           </color>
         </background_color>
       </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_15</name>
+        <text>IV Turbo
+Vacuum</text>
+        <height>35</height>
+        <background_color>
+          <color name="Button_Background" red="210" green="210" blue="210">
+          </color>
+        </background_color>
+        <transparent>false</transparent>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <border_width>1</border_width>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_269</name>
+        <pv_name>$(vac)PPG052:VacP</pv_name>
+        <y>35</y>
+        <height>15</height>
+        <visible>false</visible>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="12.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color red="179" green="26" blue="26">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color red="0" green="0" blue="0">
+          </color>
+        </background_color>
+        <format>2</format>
+        <precision>2</precision>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <rules>
+          <rule name="Show Value" prop_id="visible" out_exp="false">
+            <exp bool_exp="pv0&gt;2e-3">
+              <value>true</value>
+            </exp>
+            <pv_name>$(vac)PPG052:VacP</pv_name>
+          </rule>
+          <rule name="Show Units" prop_id="show_units" out_exp="false">
+            <exp bool_exp="pv0&gt;2e-3">
+              <value>true</value>
+            </exp>
+            <pv_name>$(vac)PPG052:VacP</pv_name>
+          </rule>
+        </rules>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_270</name>
+        <pv_name>$(vac)PPG052:VacP</pv_name>
+        <y>35</y>
+        <height>15</height>
+        <visible>false</visible>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="12.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color red="179" green="26" blue="26">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color red="0" green="0" blue="0">
+          </color>
+        </background_color>
+        <format>2</format>
+        <precision>2</precision>
+        <show_units>false</show_units>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <rules>
+          <rule name="Show Value" prop_id="visible" out_exp="false">
+            <exp bool_exp="pv0&gt;2e-3">
+              <value>true</value>
+            </exp>
+            <pv_name>$(vac)PPG052:VacP</pv_name>
+          </rule>
+          <rule name="Show Units" prop_id="show_units" out_exp="false">
+            <exp bool_exp="pv0&gt;2e-3">
+              <value>true</value>
+            </exp>
+            <pv_name>$(vac)PPG052:VacP</pv_name>
+          </rule>
+        </rules>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_271</name>
+        <pv_name>$(vac)PCC052:VacP</pv_name>
+        <y>65</y>
+        <height>15</height>
+        <visible>false</visible>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="12.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color red="255" green="0" blue="0">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color red="0" green="0" blue="0">
+          </color>
+        </background_color>
+        <format>2</format>
+        <precision>2</precision>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <rules>
+          <rule name="Show Value" prop_id="visible" out_exp="false">
+            <exp bool_exp="pv0&lt;=2e-3">
+              <value>true</value>
+            </exp>
+            <pv_name>$(vac)PPG052:VacP</pv_name>
+          </rule>
+          <rule name="Show Units" prop_id="show_units" out_exp="false">
+            <exp bool_exp="pv0&lt;=2e-3">
+              <value>true</value>
+            </exp>
+            <pv_name>$(vac)PPG052:VacP</pv_name>
+          </rule>
+        </rules>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_272</name>
+        <pv_name>$(vac)PCC052:VacP</pv_name>
+        <y>65</y>
+        <height>15</height>
+        <visible>false</visible>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="12.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color red="255" green="0" blue="0">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color red="0" green="0" blue="0">
+          </color>
+        </background_color>
+        <format>2</format>
+        <precision>2</precision>
+        <show_units>false</show_units>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <rules>
+          <rule name="Show Value" prop_id="visible" out_exp="false">
+            <exp bool_exp="pv0&lt;=2e-3">
+              <value>true</value>
+            </exp>
+            <pv_name>$(vac)PPG052:VacP</pv_name>
+          </rule>
+          <rule name="Show Units" prop_id="show_units" out_exp="false">
+            <exp bool_exp="pv0&lt;=2e-3">
+              <value>true</value>
+            </exp>
+            <pv_name>$(vac)PPG052:VacP</pv_name>
+          </rule>
+        </rules>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
       <widget type="textupdate" version="2.0.0">
         <name>Text Update_302</name>
         <pv_name>$(vac)PPG052:Name</pv_name>
@@ -3508,152 +3284,6 @@ Vacuum</text>
         <wrap_words>false</wrap_words>
         <rules>
           <rule name="Show Name" prop_id="visible" out_exp="false">
-            <exp bool_exp="pv0&lt;=2e-3">
-              <value>true</value>
-            </exp>
-            <pv_name>$(vac)PPG052:VacP</pv_name>
-          </rule>
-        </rules>
-        <border_alarm_sensitive>false</border_alarm_sensitive>
-      </widget>
-      <widget type="label" version="2.0.0">
-        <name>Label_15</name>
-        <text>IV Turbo
-Vacuum</text>
-        <height>35</height>
-        <background_color>
-          <color name="Button_Background" red="210" green="210" blue="210">
-          </color>
-        </background_color>
-        <transparent>false</transparent>
-        <horizontal_alignment>1</horizontal_alignment>
-        <vertical_alignment>1</vertical_alignment>
-        <border_width>1</border_width>
-      </widget>
-      <widget type="textupdate" version="2.0.0">
-        <name>Text Update_269</name>
-        <pv_name>$(vac)PPG052:VacP</pv_name>
-        <y>35</y>
-        <height>15</height>
-        <visible>false</visible>
-        <font>
-          <font family="Liberation Sans" style="BOLD" size="12.0">
-          </font>
-        </font>
-        <foreground_color>
-          <color red="179" green="26" blue="26">
-          </color>
-        </foreground_color>
-        <background_color>
-          <color red="0" green="0" blue="0">
-          </color>
-        </background_color>
-        <format>2</format>
-        <precision>2</precision>
-        <horizontal_alignment>1</horizontal_alignment>
-        <vertical_alignment>1</vertical_alignment>
-        <wrap_words>false</wrap_words>
-        <rules>
-          <rule name="Show Value" prop_id="visible" out_exp="false">
-            <exp bool_exp="pv0&gt;2e-3">
-              <value>true</value>
-            </exp>
-            <pv_name>$(vac)PPG052:VacP</pv_name>
-          </rule>
-        </rules>
-      </widget>
-      <widget type="textupdate" version="2.0.0">
-        <name>Text Update_270</name>
-        <pv_name>$(vac)PPG052:VacP</pv_name>
-        <y>35</y>
-        <height>15</height>
-        <visible>false</visible>
-        <font>
-          <font family="Liberation Sans" style="BOLD" size="12.0">
-          </font>
-        </font>
-        <foreground_color>
-          <color red="179" green="26" blue="26">
-          </color>
-        </foreground_color>
-        <background_color>
-          <color red="0" green="0" blue="0">
-          </color>
-        </background_color>
-        <format>2</format>
-        <precision>2</precision>
-        <show_units>false</show_units>
-        <horizontal_alignment>1</horizontal_alignment>
-        <vertical_alignment>1</vertical_alignment>
-        <wrap_words>false</wrap_words>
-        <rules>
-          <rule name="Show Value" prop_id="visible" out_exp="false">
-            <exp bool_exp="pv0&gt;2e-3">
-              <value>true</value>
-            </exp>
-            <pv_name>$(vac)PPG052:VacP</pv_name>
-          </rule>
-        </rules>
-        <border_alarm_sensitive>false</border_alarm_sensitive>
-      </widget>
-      <widget type="textupdate" version="2.0.0">
-        <name>Text Update_271</name>
-        <pv_name>$(vac)PCC052:VacP</pv_name>
-        <y>65</y>
-        <height>15</height>
-        <visible>false</visible>
-        <font>
-          <font family="Liberation Sans" style="BOLD" size="12.0">
-          </font>
-        </font>
-        <foreground_color>
-          <color red="255" green="0" blue="0">
-          </color>
-        </foreground_color>
-        <background_color>
-          <color red="0" green="0" blue="0">
-          </color>
-        </background_color>
-        <format>2</format>
-        <precision>2</precision>
-        <horizontal_alignment>1</horizontal_alignment>
-        <vertical_alignment>1</vertical_alignment>
-        <wrap_words>false</wrap_words>
-        <rules>
-          <rule name="Show Value" prop_id="visible" out_exp="false">
-            <exp bool_exp="pv0&lt;=2e-3">
-              <value>true</value>
-            </exp>
-            <pv_name>$(vac)PPG052:VacP</pv_name>
-          </rule>
-        </rules>
-      </widget>
-      <widget type="textupdate" version="2.0.0">
-        <name>Text Update_272</name>
-        <pv_name>$(vac)PCC052:VacP</pv_name>
-        <y>65</y>
-        <height>15</height>
-        <visible>false</visible>
-        <font>
-          <font family="Liberation Sans" style="BOLD" size="12.0">
-          </font>
-        </font>
-        <foreground_color>
-          <color red="255" green="0" blue="0">
-          </color>
-        </foreground_color>
-        <background_color>
-          <color red="0" green="0" blue="0">
-          </color>
-        </background_color>
-        <format>2</format>
-        <precision>2</precision>
-        <show_units>false</show_units>
-        <horizontal_alignment>1</horizontal_alignment>
-        <vertical_alignment>1</vertical_alignment>
-        <wrap_words>false</wrap_words>
-        <rules>
-          <rule name="Show Value" prop_id="visible" out_exp="false">
             <exp bool_exp="pv0&lt;=2e-3">
               <value>true</value>
             </exp>
@@ -3780,5 +3410,21 @@ Vacuum</text>
       <color red="255" green="0" blue="0">
       </color>
     </line_color>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_1</name>
+    <actions>
+      <action type="open_display">
+        <file>../../Plots/HB650InsulatingVacuum.bob</file>
+        <target>window</target>
+        <description>IV Strip Charts</description>
+      </action>
+    </actions>
+    <text>IV Strip Charts</text>
+    <x>1150</x>
+    <y>675</y>
+    <width>130</width>
+    <height>25</height>
+    <tooltip>$(actions)</tooltip>
   </widget>
 </display>
