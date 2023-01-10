@@ -19,14 +19,6 @@
   <height>940</height>
   <grid_step_x>5</grid_step_x>
   <grid_step_y>5</grid_step_y>
-  <widget type="picture" version="2.0.0">
-    <name>Picture</name>
-    <file>../../images/HB650Cryostat-new.png</file>
-    <x>25</x>
-    <y>417</y>
-    <width>1100</width>
-    <height>270</height>
-  </widget>
   <widget type="polygon" version="2.0.0">
     <name>Polygon</name>
     <x>365</x>
@@ -56,6 +48,42 @@
       <color red="230" green="230" blue="230">
       </color>
     </background_color>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_35</name>
+    <macros>
+      <dev>PVCD</dev>
+    </macros>
+    <file>../ValveStatusUp.bob</file>
+    <x>415</x>
+    <y>335</y>
+    <width>55</width>
+    <height>35</height>
+  </widget>
+  <widget type="symbol" version="2.0.0">
+    <name>Symbol_4</name>
+    <pv_name>$(vlv)PVCD:VLVstat</pv_name>
+    <symbols>
+      <symbol>../../images/CVwhite.png</symbol>
+      <symbol>../../images/CVgreen.png</symbol>
+      <symbol>../../images/CVred.png</symbol>
+    </symbols>
+    <x>380</x>
+    <y>335</y>
+    <width>30</width>
+    <height>30</height>
+    <initial_index>1</initial_index>
+    <rotation>270.0</rotation>
+    <show_index>true</show_index>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="picture" version="2.0.0">
+    <name>Picture</name>
+    <file>../../images/HB650Cryostat-new.png</file>
+    <x>25</x>
+    <y>417</y>
+    <width>1100</width>
+    <height>270</height>
   </widget>
   <widget type="label" version="2.0.0">
     <name>HB650-$(cm) Cryostat</name>
@@ -2664,44 +2692,6 @@ Pressure</text>
     </widget>
   </widget>
   <widget type="action_button" version="3.0.0">
-    <name>Action Button_10</name>
-    <actions>
-      <action type="open_display">
-        <file>ValveCtrl.bob</file>
-        <macros>
-          <valve>PVCD</valve>
-        </macros>
-        <target>window</target>
-        <description>Open Valve Display</description>
-      </action>
-    </actions>
-    <text></text>
-    <x>380</x>
-    <y>335</y>
-    <width>83</width>
-    <height>35</height>
-    <transparent>true</transparent>
-    <tooltip>$(actions)</tooltip>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
-  <widget type="symbol" version="2.0.0">
-    <name>Symbol_4</name>
-    <pv_name>$(vlv)PVCD:VLVstat</pv_name>
-    <symbols>
-      <symbol>../../images/CVwhite.png</symbol>
-      <symbol>../../images/CVgreen.png</symbol>
-      <symbol>../../images/CVred.png</symbol>
-    </symbols>
-    <x>380</x>
-    <y>335</y>
-    <width>30</width>
-    <height>30</height>
-    <initial_index>1</initial_index>
-    <rotation>270.0</rotation>
-    <show_index>true</show_index>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
-  <widget type="action_button" version="3.0.0">
     <name>Action Button_4</name>
     <actions>
       <action type="open_display">
@@ -2778,26 +2768,6 @@ Pressure</text>
     <y>395</y>
     <width>48</width>
     <height>50</height>
-    <transparent>true</transparent>
-    <tooltip>$(actions)</tooltip>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Action Button_6</name>
-    <actions>
-      <action type="open_display">
-        <file>../ValveCtrl.bob</file>
-        <macros>
-          <valve>PVJT</valve>
-        </macros>
-        <target>window</target>
-        <description>Open Valve Display</description>
-      </action>
-    </actions>
-    <text></text>
-    <x>542</x>
-    <y>330</y>
-    <width>85</width>
-    <height>35</height>
     <transparent>true</transparent>
     <tooltip>$(actions)</tooltip>
   </widget>
@@ -6247,17 +6217,6 @@ Vacuum</text>
     <height>35</height>
   </widget>
   <widget type="embedded" version="2.0.0">
-    <name>Embedded Display_35</name>
-    <macros>
-      <dev>PVCD</dev>
-    </macros>
-    <file>../ValveStatusUp.bob</file>
-    <x>415</x>
-    <y>335</y>
-    <width>55</width>
-    <height>35</height>
-  </widget>
-  <widget type="embedded" version="2.0.0">
     <name>Embedded Display_36</name>
     <macros>
       <dev>PVJT</dev>
@@ -6531,5 +6490,46 @@ Vacuum</text>
     <y>140</y>
     <width>55</width>
     <height>35</height>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_10</name>
+    <actions>
+      <action type="open_display">
+        <file>../ValveCtrl.bob</file>
+        <macros>
+          <valve>PVCD</valve>
+        </macros>
+        <target>window</target>
+        <description>Open Valve Display</description>
+      </action>
+    </actions>
+    <text></text>
+    <x>380</x>
+    <y>335</y>
+    <width>83</width>
+    <height>35</height>
+    <transparent>true</transparent>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_6</name>
+    <actions>
+      <action type="open_display">
+        <file>../ValveCtrl.bob</file>
+        <macros>
+          <valve>PVJT</valve>
+        </macros>
+        <target>window</target>
+        <description>Open Valve Display</description>
+      </action>
+    </actions>
+    <text></text>
+    <x>542</x>
+    <y>330</y>
+    <width>85</width>
+    <height>35</height>
+    <transparent>true</transparent>
+    <tooltip>$(actions)</tooltip>
   </widget>
 </display>
