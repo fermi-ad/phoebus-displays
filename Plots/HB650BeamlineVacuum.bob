@@ -16,7 +16,7 @@
       </color>
     </background_color>
     <show_grid>true</show_grid>
-    <title>Insulating Vacuum Pressures</title>
+    <title>Beamline/Cavity Vacuum Pressures</title>
     <scale_font>
       <font family="Liberation Sans" style="REGULAR" size="11.0">
       </font>
@@ -48,12 +48,6 @@
         </exp>
         <pv_name>loc://vacp4</pv_name>
       </rule>
-      <rule name="Show Trace 5" prop_id="traces[4].visible" out_exp="false">
-        <exp bool_exp="pv0">
-          <value>true</value>
-        </exp>
-        <pv_name>loc://vacp5</pv_name>
-      </rule>
     </rules>
     <start>-15 minutes</start>
     <end>now</end>
@@ -75,7 +69,7 @@
     <traces>
       <trace>
         <name>Foreline Vac.</name>
-        <y_pv>$(vac)PPG053:VacP</y_pv>
+        <y_pv>$(vac)PPG103:VacP</y_pv>
         <axis>0</axis>
         <trace_type>2</trace_type>
         <color>
@@ -88,36 +82,8 @@
         <visible>false</visible>
       </trace>
       <trace>
-        <name>Turbo Pirani Vac.</name>
-        <y_pv>$(vac)PPG052:VacP</y_pv>
-        <axis>0</axis>
-        <trace_type>2</trace_type>
-        <color>
-          <color red="179" green="26" blue="26">
-          </color>
-        </color>
-        <line_width>2</line_width>
-        <point_type>0</point_type>
-        <point_size>10</point_size>
-        <visible>false</visible>
-      </trace>
-      <trace>
-        <name>Turbo CC Vac.</name>
-        <y_pv>$(vac)PCC052:VacP</y_pv>
-        <axis>0</axis>
-        <trace_type>2</trace_type>
-        <color>
-          <color red="255" green="0" blue="0">
-          </color>
-        </color>
-        <line_width>2</line_width>
-        <point_type>0</point_type>
-        <point_size>10</point_size>
-        <visible>false</visible>
-      </trace>
-      <trace>
         <name>IV Pirani Vac.</name>
-        <y_pv>$(vac)PPG051:VacP</y_pv>
+        <y_pv>$(vac)PPG101:VacP</y_pv>
         <axis>0</axis>
         <trace_type>2</trace_type>
         <color>
@@ -131,7 +97,7 @@
       </trace>
       <trace>
         <name>IV CC Vac.</name>
-        <y_pv>$(vac)PCC051:VacP</y_pv>
+        <y_pv>$(vac)PCC101:VacP</y_pv>
         <axis>0</axis>
         <trace_type>2</trace_type>
         <color>
@@ -143,11 +109,25 @@
         <point_size>10</point_size>
         <visible>false</visible>
       </trace>
+      <trace>
+        <name>Ion Pump Vac.</name>
+        <y_pv>$(vac)PII101:VacP</y_pv>
+        <axis>0</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color red="170" green="0" blue="255">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>false</visible>
+      </trace>
     </traces>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label</name>
-    <text>PIP2IT pHB650 Insulating Vacuum</text>
+    <text>PIP2IT pHB650 Beamline/Cavity Vacuum</text>
     <width>1080</width>
     <height>40</height>
     <font>
@@ -292,108 +272,93 @@
       </trace>
     </traces>
   </widget>
-  <widget type="group" version="2.0.0">
-    <name>Group</name>
+  <widget type="checkbox" version="2.0.0">
+    <name>Check Box_9</name>
+    <pv_name>loc://vacp1</pv_name>
+    <label>Foreline</label>
+    <x>960</x>
+    <y>135</y>
+    <width>110</width>
+    <height>15</height>
+    <foreground_color>
+      <color red="0" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="checkbox" version="2.0.0">
+    <name>Check Box_11</name>
+    <pv_name>loc://vacp4</pv_name>
+    <label>Turbo CC</label>
+    <x>960</x>
+    <y>180</y>
+    <width>110</width>
+    <height>15</height>
+    <foreground_color>
+      <color red="170" green="0" blue="255">
+      </color>
+    </foreground_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="checkbox" version="2.0.0">
+    <name>Check Box_12</name>
+    <pv_name>loc://vacp2</pv_name>
+    <label>IV Pirani</label>
+    <x>960</x>
+    <y>150</y>
+    <width>110</width>
+    <height>15</height>
+    <foreground_color>
+      <color red="128" green="176" blue="0">
+      </color>
+    </foreground_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="checkbox" version="2.0.0">
+    <name>Check Box_13</name>
+    <pv_name>loc://vacp3</pv_name>
+    <label>IV CC</label>
+    <x>960</x>
+    <y>165</y>
+    <width>110</width>
+    <height>15</height>
+    <foreground_color>
+      <color red="0" green="255" blue="0">
+      </color>
+    </foreground_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_1</name>
+    <text>Select Traces</text>
     <x>960</x>
     <y>110</y>
     <width>110</width>
-    <height>105</height>
-    <style>3</style>
-    <transparent>true</transparent>
-    <widget type="checkbox" version="2.0.0">
-      <name>Check Box_9</name>
-      <pv_name>loc://vacp1</pv_name>
-      <label>Foreline</label>
-      <y>25</y>
-      <width>110</width>
-      <height>15</height>
-      <foreground_color>
-        <color red="0" green="255" blue="255">
-        </color>
-      </foreground_color>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-    </widget>
-    <widget type="checkbox" version="2.0.0">
-      <name>Check Box_10</name>
-      <pv_name>loc://vacp2</pv_name>
-      <label>Turbo Pirani</label>
-      <y>40</y>
-      <width>110</width>
-      <height>15</height>
-      <foreground_color>
-        <color red="179" green="26" blue="26">
-        </color>
-      </foreground_color>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-    </widget>
-    <widget type="checkbox" version="2.0.0">
-      <name>Check Box_11</name>
-      <pv_name>loc://vacp3</pv_name>
-      <label>Turbo CC</label>
-      <y>55</y>
-      <width>110</width>
-      <height>15</height>
-      <foreground_color>
-        <color red="255" green="0" blue="0">
-        </color>
-      </foreground_color>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-    </widget>
-    <widget type="checkbox" version="2.0.0">
-      <name>Check Box_12</name>
-      <pv_name>loc://vacp4</pv_name>
-      <label>IV Pirani</label>
-      <y>70</y>
-      <width>110</width>
-      <height>15</height>
-      <foreground_color>
-        <color red="128" green="176" blue="0">
-        </color>
-      </foreground_color>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-    </widget>
-    <widget type="checkbox" version="2.0.0">
-      <name>Check Box_13</name>
-      <pv_name>loc://vacp5</pv_name>
-      <label>IV CC</label>
-      <y>85</y>
-      <width>110</width>
-      <height>15</height>
-      <foreground_color>
-        <color red="0" green="255" blue="0">
-        </color>
-      </foreground_color>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-    </widget>
-    <widget type="label" version="2.0.0">
-      <name>Label_1</name>
-      <text>Select Traces</text>
-      <width>110</width>
-      <font>
-        <font family="Liberation Sans" style="BOLD" size="14.0">
-        </font>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
       </font>
-      <background_color>
-        <color name="Button_Background" red="210" green="210" blue="210">
-        </color>
-      </background_color>
-      <transparent>false</transparent>
-      <horizontal_alignment>1</horizontal_alignment>
-      <vertical_alignment>1</vertical_alignment>
-      <wrap_words>false</wrap_words>
-      <border_width>1</border_width>
-    </widget>
-    <widget type="rectangle" version="2.0.0">
-      <name>Rectangle</name>
-      <y>20</y>
-      <width>110</width>
-      <height>85</height>
-      <line_width>1</line_width>
-      <line_color>
-        <color red="0" green="0" blue="0">
-        </color>
-      </line_color>
-      <transparent>true</transparent>
-    </widget>
+    </font>
+    <background_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle</name>
+    <x>960</x>
+    <y>130</y>
+    <width>110</width>
+    <height>70</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <transparent>true</transparent>
   </widget>
 </display>
