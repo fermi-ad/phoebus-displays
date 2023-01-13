@@ -19,9 +19,10 @@ fi
 
 # figure out the path to the configuration settings
 if [[ -z "${PHOEBUS_CONFIG}" ]]; then
-#  PHOEBUS_CONFIG=${TOP}/phoebus-fnal/config/settings.ini
     PHOEBUS_CONFIG=${EPICS_CONFIG}/CSS/Phoebus/settings.ini
 fi
+PIP2IT_LAYOUT=${EPICS_CONFIG}/CSS/Phoebus/pip2it.memento
+
 
 # To get one instance, use server mode
 ID=$(id -u)
@@ -38,4 +39,4 @@ export JDK_JAVA_OPTIONS
 
 echo $JDK_JAVA_OPTIONS
 
-java -jar $PHOEBUS_JAR -settings $PHOEBUS_CONFIG -logging $TOP/phoebus-fnal/config/logging.properties $OPT "$@" &
+java -jar $PHOEBUS_JAR -settings $PHOEBUS_CONFIG -layout $PIP2IT_LAYOUT -logging $TOP/phoebus-fnal/config/logging.properties $OPT "$@" &
