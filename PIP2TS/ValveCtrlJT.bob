@@ -2,7 +2,7 @@
 <display version="2.0.0">
   <name>Valve Loop</name>
   <width>555</width>
-  <height>240</height>
+  <height>260</height>
   <grid_step_x>5</grid_step_x>
   <grid_step_y>5</grid_step_y>
   <widget type="label" version="2.0.0">
@@ -346,5 +346,219 @@
     <precision>2</precision>
     <horizontal_alignment>2</horizontal_alignment>
     <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group_19</name>
+    <x>360</x>
+    <y>125</y>
+    <width>60</width>
+    <height>125</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_290</name>
+      <pv_name>$(lhe)LT041:LHeLvl.DESC</pv_name>
+      <x>5</x>
+      <width>50</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="11.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="Write_Background" red="128" green="255" blue="255">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color red="44" green="44" blue="44">
+        </color>
+      </background_color>
+      <precision>2</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_291</name>
+      <pv_name>$(lhe)LT041:LHeLvl</pv_name>
+      <x>5</x>
+      <y>95</y>
+      <width>50</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="11.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="Write_Background" red="128" green="255" blue="255">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color red="44" green="44" blue="44">
+        </color>
+      </background_color>
+      <precision>2</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_292</name>
+      <pv_name>$(lhe)LT041:Name</pv_name>
+      <x>5</x>
+      <y>110</y>
+      <width>50</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="11.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="Write_Background" red="128" green="255" blue="255">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color red="44" green="44" blue="44">
+        </color>
+      </background_color>
+      <precision>2</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="tank" version="2.0.0">
+      <name>Tank_2</name>
+      <pv_name>$(lhe)LT041:LHeLvl</pv_name>
+      <x>10</x>
+      <y>15</y>
+      <width>40</width>
+      <height>80</height>
+      <fill_color>
+        <color name="Write_Background" red="128" green="255" blue="255">
+        </color>
+      </fill_color>
+      <scale_visible>false</scale_visible>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <limits_from_pv>false</limits_from_pv>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Action Button_8</name>
+      <actions>
+        <action type="open_display">
+          <file>../HeaterCtrl.bob</file>
+          <macros>
+            <dev>HTRCAN</dev>
+          </macros>
+          <target>window</target>
+          <description>Open Heater Display</description>
+        </action>
+      </actions>
+      <text></text>
+      <x>15</x>
+      <y>30</y>
+      <width>20</width>
+      <height>50</height>
+      <transparent>true</transparent>
+      <rules>
+        <rule name="Show" prop_id="name" out_exp="false">
+          <exp bool_exp="pv0&gt;=0.1">
+            <value>Action Button_7</value>
+          </exp>
+          <pv_name>sim://sine</pv_name>
+        </rule>
+      </rules>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_97</name>
+      <x>20</x>
+      <y>35</y>
+      <width>10</width>
+      <height>45</height>
+      <visible>false</visible>
+      <points>
+        <point x="5.0" y="0.0">
+        </point>
+        <point x="5.0" y="2.5">
+        </point>
+        <point x="0.0" y="5.0">
+        </point>
+        <point x="10.0" y="10.0">
+        </point>
+        <point x="0.0" y="15.0">
+        </point>
+        <point x="10.0" y="20.0">
+        </point>
+        <point x="0.0" y="25.0">
+        </point>
+        <point x="10.0" y="30.0">
+        </point>
+        <point x="0.0" y="35.0">
+        </point>
+        <point x="10.0" y="40.0">
+        </point>
+        <point x="5.0" y="42.5">
+        </point>
+        <point x="5.0" y="45.0">
+        </point>
+      </points>
+      <line_color>
+        <color red="255" green="0" blue="0">
+        </color>
+      </line_color>
+      <arrow_length>10</arrow_length>
+      <rules>
+        <rule name="Heater On" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0">
+            <value>true</value>
+          </exp>
+          <pv_name>$(htr)HTRCAN:HTRON</pv_name>
+        </rule>
+      </rules>
+    </widget>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_98</name>
+    <x>415</x>
+    <y>180</y>
+    <width>10</width>
+    <height>45</height>
+    <visible>false</visible>
+    <points>
+      <point x="5.0" y="0.0">
+      </point>
+      <point x="5.0" y="2.5">
+      </point>
+      <point x="0.0" y="5.0">
+      </point>
+      <point x="10.0" y="10.0">
+      </point>
+      <point x="0.0" y="15.0">
+      </point>
+      <point x="10.0" y="20.0">
+      </point>
+      <point x="0.0" y="25.0">
+      </point>
+      <point x="10.0" y="30.0">
+      </point>
+      <point x="0.0" y="35.0">
+      </point>
+      <point x="10.0" y="40.0">
+      </point>
+      <point x="5.0" y="42.5">
+      </point>
+      <point x="5.0" y="45.0">
+      </point>
+    </points>
+    <line_color>
+      <color name="STOP" red="255" green="0" blue="0">
+      </color>
+    </line_color>
+    <rules>
+      <rule name="Heater On" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0">
+          <value>true</value>
+        </exp>
+        <pv_name>$(htr)HTRC5:HTRON</pv_name>
+      </rule>
+    </rules>
   </widget>
 </display>
