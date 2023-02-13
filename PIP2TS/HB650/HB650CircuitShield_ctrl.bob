@@ -708,7 +708,7 @@
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display_61</name>
     <macros>
-      <sensor>PV616H</sensor>
+      <sensor>1PTLSL</sensor>
     </macros>
     <file>../PressureSensorDown.bob</file>
     <x>100</x>
@@ -719,7 +719,7 @@
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display_66</name>
     <macros>
-      <sensor>TP604H</sensor>
+      <sensor>TP601H</sensor>
     </macros>
     <file>../TempSensorDown.bob</file>
     <x>125</x>
@@ -864,6 +864,271 @@
         <color red="0" green="0" blue="0">
         </color>
       </line_color>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group_91</name>
+    <x>10</x>
+    <y>220</y>
+    <width>81</width>
+    <height>68</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="group" version="2.0.0">
+      <name>Group_92</name>
+      <width>70</width>
+      <height>68</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>Label_16</name>
+        <text>GHe Flow</text>
+        <width>70</width>
+        <background_color>
+          <color name="Button_Background" red="210" green="210" blue="210">
+          </color>
+        </background_color>
+        <transparent>false</transparent>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <border_width>1</border_width>
+      </widget>
+      <widget type="rectangle" version="2.0.0">
+        <name>Rectangle_12</name>
+        <y>22</y>
+        <width>70</width>
+        <height>46</height>
+        <line_width>1</line_width>
+        <line_color>
+          <color red="0" green="0" blue="0">
+          </color>
+        </line_color>
+        <background_color>
+          <color name="Read_Background" red="240" green="240" blue="240">
+          </color>
+        </background_color>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_215</name>
+        <pv_name>$(flow)FT600A:GHeFlow</pv_name>
+        <y>22</y>
+        <width>70</width>
+        <height>15</height>
+        <visible>false</visible>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="11.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="Write_Background" red="128" green="255" blue="255">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color red="44" green="44" blue="44">
+          </color>
+        </background_color>
+        <precision>2</precision>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <rules>
+          <rule name="View Upper Range Flow" prop_id="visible" out_exp="false">
+            <exp bool_exp="pv0&gt;10.0">
+              <value>true</value>
+            </exp>
+            <pv_name>$(flow)FT600A:GHeFlow</pv_name>
+          </rule>
+          <rule name="Show units" prop_id="show_units" out_exp="false">
+            <exp bool_exp="pv0&gt;10.0">
+              <value>true</value>
+            </exp>
+            <pv_name>$(flow)FT600A:GHeFlow</pv_name>
+          </rule>
+        </rules>
+        <border_width>1</border_width>
+        <border_color>
+          <color name="Write_Background" red="128" green="255" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_216</name>
+        <pv_name>$(flow)FT600B:GHeFlow</pv_name>
+        <y>52</y>
+        <width>70</width>
+        <height>15</height>
+        <visible>false</visible>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="11.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="Write_Background" red="128" green="255" blue="255">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color red="44" green="44" blue="44">
+          </color>
+        </background_color>
+        <precision>2</precision>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <rules>
+          <rule name="View Lower Range Flow" prop_id="visible" out_exp="false">
+            <exp bool_exp="pv0&lt;=10.0">
+              <value>true</value>
+            </exp>
+            <pv_name>$(flow)FT600A:GHeFlow</pv_name>
+          </rule>
+          <rule name="Show units" prop_id="show_units" out_exp="false">
+            <exp bool_exp="pv0&lt;=10.0">
+              <value>true</value>
+            </exp>
+            <pv_name>$(flow)FT600A:GHeFlow</pv_name>
+          </rule>
+        </rules>
+        <border_width>1</border_width>
+        <border_color>
+          <color name="Write_Background" red="128" green="255" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_220</name>
+        <pv_name>$(flow)FT600B:Name</pv_name>
+        <y>37</y>
+        <width>70</width>
+        <height>15</height>
+        <visible>false</visible>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="11.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="Write_Background" red="128" green="255" blue="255">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color red="44" green="44" blue="44">
+          </color>
+        </background_color>
+        <format>6</format>
+        <show_units>false</show_units>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <rules>
+          <rule name="Show Name" prop_id="visible" out_exp="false">
+            <exp bool_exp="pv0&lt;=10.0">
+              <value>true</value>
+            </exp>
+            <pv_name>$(flow)FT600A:GHeFlow</pv_name>
+          </rule>
+        </rules>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <border_width>1</border_width>
+        <border_color>
+          <color name="Write_Background" red="128" green="255" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_221</name>
+        <pv_name>$(flow)FT600A:Name</pv_name>
+        <y>37</y>
+        <width>70</width>
+        <height>15</height>
+        <visible>false</visible>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="11.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="Write_Background" red="128" green="255" blue="255">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color red="44" green="44" blue="44">
+          </color>
+        </background_color>
+        <format>6</format>
+        <precision>0</precision>
+        <show_units>false</show_units>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <rules>
+          <rule name="Show Name" prop_id="visible" out_exp="false">
+            <exp bool_exp="pv0&gt;10.0">
+              <value>true</value>
+            </exp>
+            <pv_name>$(flow)FT600A:GHeFlow</pv_name>
+          </rule>
+        </rules>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <border_width>1</border_width>
+        <border_color>
+          <color name="Write_Background" red="128" green="255" blue="255">
+          </color>
+        </border_color>
+      </widget>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_162</name>
+      <x>80</x>
+      <y>28</y>
+      <width>1</width>
+      <height>25</height>
+      <visible>false</visible>
+      <points>
+        <point x="0.0" y="25.0">
+        </point>
+        <point x="0.0" y="0.0">
+        </point>
+      </points>
+      <line_color>
+        <color name="Write_Background" red="128" green="255" blue="255">
+        </color>
+      </line_color>
+      <arrows>2</arrows>
+      <arrow_length>10</arrow_length>
+      <rules>
+        <rule name="Show Up Arrow" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0&gt;10.0">
+            <value>true</value>
+          </exp>
+          <pv_name>$(flow)FT600A:VacP</pv_name>
+        </rule>
+      </rules>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_163</name>
+      <x>80</x>
+      <y>38</y>
+      <width>1</width>
+      <height>25</height>
+      <visible>false</visible>
+      <points>
+        <point x="0.0" y="25.0">
+        </point>
+        <point x="0.0" y="0.0">
+        </point>
+      </points>
+      <line_color>
+        <color name="Write_Background" red="128" green="255" blue="255">
+        </color>
+      </line_color>
+      <arrows>1</arrows>
+      <arrow_length>10</arrow_length>
+      <rules>
+        <rule name="Show Down Arrow" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0&lt;=10.0">
+            <value>true</value>
+          </exp>
+          <pv_name>$(flow)FT600B:GHeFlow</pv_name>
+        </rule>
+      </rules>
     </widget>
   </widget>
 </display>
