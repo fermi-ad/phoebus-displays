@@ -3,6 +3,8 @@
   <name>HB650Vacuum</name>
   <width>1300</width>
   <height>830</height>
+  <grid_step_x>5</grid_step_x>
+  <grid_step_y>5</grid_step_y>
   <widget type="rectangle" version="2.0.0">
     <name>Rectangle_7</name>
     <y>40</y>
@@ -1234,7 +1236,7 @@ Vacuum</text>
     <name>Choice Button_3</name>
     <pv_name>$(vac)VT102:sOpen</pv_name>
     <x>75</x>
-    <y>700</y>
+    <y>695</y>
     <width>40</width>
     <height>30</height>
     <font>
@@ -2946,36 +2948,6 @@ Vacuum</text>
       <y>40</y>
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
-    <widget type="action_button" version="3.0.0">
-      <name>Action Button_6</name>
-      <actions>
-        <action type="write_pv">
-          <pv_name>$(vac)RFPI:sReset.PROC</pv_name>
-          <value>1</value>
-          <description>Reset</description>
-        </action>
-      </actions>
-      <pv_name>$(vac)RFPI:sReset</pv_name>
-      <x>10</x>
-      <y>65</y>
-      <width>50</width>
-      <height>15</height>
-      <font>
-        <font family="Liberation Sans" style="REGULAR" size="11.0">
-        </font>
-      </font>
-      <rules>
-        <rule name="Make Visible" prop_id="visible" out_exp="false">
-          <exp bool_exp="pv0=0">
-            <value>true</value>
-          </exp>
-          <pv_name>$(vac)RFPI:Permit</pv_name>
-        </rule>
-      </rules>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-      <show_confirm_dialog>true</show_confirm_dialog>
-      <confirm_message>Are your sure you want to reset the Vacuum Permit?</confirm_message>
-    </widget>
     <widget type="label" version="2.0.0">
       <name>Label_30</name>
       <text>Vacuum Permit</text>
@@ -3047,28 +3019,6 @@ Vacuum</text>
       <wrap_words>false</wrap_words>
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label</name>
-    <text>PIP2IT pHB650 Vacuum</text>
-    <width>1300</width>
-    <height>40</height>
-    <font>
-      <font family="Liberation Sans" style="BOLD" size="22.0">
-      </font>
-    </font>
-    <foreground_color>
-      <color red="255" green="255" blue="255">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color red="175" green="39" blue="47">
-      </color>
-    </background_color>
-    <transparent>false</transparent>
-    <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <border_width>2</border_width>
   </widget>
   <widget type="symbol" version="2.0.0">
     <name>Symbol_36</name>
@@ -3311,5 +3261,108 @@ Permits</text>
       <height>25</height>
       <tooltip>$(actions)</tooltip>
     </widget>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_9</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(vac)RFPI:sReset.PROC</pv_name>
+        <value>1</value>
+        <description>Reset</description>
+      </action>
+    </actions>
+    <pv_name>$(vac)AFX71:sReset</pv_name>
+    <x>210</x>
+    <y>605</y>
+    <width>80</width>
+    <height>15</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="11.0">
+      </font>
+    </font>
+    <rules>
+      <rule name="Make Visible" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0=0">
+          <value>true</value>
+        </exp>
+        <pv_name>$(vac)RFPI:Permit</pv_name>
+      </rule>
+    </rules>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <show_confirm_dialog>true</show_confirm_dialog>
+    <confirm_message>Are your sure you want to reset the Vacuum Permit?</confirm_message>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_6</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(vac)RFPI:sReset.PROC</pv_name>
+        <value>1</value>
+        <description>Reset</description>
+      </action>
+    </actions>
+    <pv_name>$(vac)RFPI:sReset</pv_name>
+    <x>1200</x>
+    <y>605</y>
+    <width>80</width>
+    <height>15</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="11.0">
+      </font>
+    </font>
+    <rules>
+      <rule name="Make Visible" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0=0">
+          <value>true</value>
+        </exp>
+        <pv_name>$(vac)RFPI:Permit</pv_name>
+      </rule>
+    </rules>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <show_confirm_dialog>true</show_confirm_dialog>
+    <confirm_message>Are your sure you want to reset the Vacuum Permit?</confirm_message>
+  </widget>
+  <widget type="choice" version="2.0.0">
+    <name>Choice Button_5</name>
+    <pv_name>$(vac)VG101:sOpen</pv_name>
+    <x>125</x>
+    <y>400</y>
+    <width>40</width>
+    <height>30</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <horizontal>false</horizontal>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <items>
+      <item>Close</item>
+      <item>Open</item>
+    </items>
+    <items_from_pv>false</items_from_pv>
+    <show_confirm_dialog>true</show_confirm_dialog>
+    <confirm_message>Are your sure you want to change BL Turbo Isolation Valve?</confirm_message>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <text>PIP2IT pHB650 Vacuum</text>
+    <width>1300</width>
+    <height>40</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="175" green="39" blue="47">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <border_width>2</border_width>
   </widget>
 </display>
