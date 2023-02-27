@@ -262,8 +262,8 @@
     </widget>
     <widget type="checkbox" version="2.0.0">
       <name>Check Box_20</name>
-      <pv_name>loc://blsta2</pv_name>
-      <label>ASB OverRide</label>
+      <pv_name>loc://He2</pv_name>
+      <label>GHe Pressure</label>
       <x>5</x>
       <y>40</y>
       <width>120</width>
@@ -276,8 +276,8 @@
     </widget>
     <widget type="checkbox" version="2.0.0">
       <name>Check Box_21</name>
-      <pv_name>loc://blsta3</pv_name>
-      <label>ASB Status</label>
+      <pv_name>loc://He3</pv_name>
+      <label>GHe Pressure</label>
       <x>5</x>
       <y>55</y>
       <width>120</width>
@@ -290,28 +290,28 @@
     </widget>
     <widget type="checkbox" version="2.0.0">
       <name>Check Box_22</name>
-      <pv_name>loc://blsta4</pv_name>
-      <label>Turbo Vlv Stat</label>
+      <pv_name>loc://He4</pv_name>
+      <label>He Flow</label>
       <x>5</x>
       <y>70</y>
       <width>120</width>
       <height>15</height>
       <foreground_color>
-        <color red="255" green="255" blue="0">
+        <color red="170" green="0" blue="255">
         </color>
       </foreground_color>
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="checkbox" version="2.0.0">
       <name>Check Box_23</name>
-      <pv_name>loc://blsta5</pv_name>
-      <label>Scroll Status</label>
+      <pv_name>loc://He5</pv_name>
+      <label>Min Temp.</label>
       <x>5</x>
       <y>85</y>
       <width>120</width>
       <height>15</height>
       <foreground_color>
-        <color red="170" green="0" blue="255">
+        <color red="255" green="255" blue="0">
         </color>
       </foreground_color>
       <border_alarm_sensitive>false</border_alarm_sensitive>
@@ -336,14 +336,14 @@
     </widget>
     <widget type="checkbox" version="2.0.0">
       <name>Check Box_24</name>
-      <pv_name>loc://blsta6</pv_name>
-      <label>Turbo Status</label>
+      <pv_name>loc://He6</pv_name>
+      <label>Max Temp.</label>
       <x>5</x>
       <y>100</y>
       <width>120</width>
       <height>15</height>
       <foreground_color>
-        <color red="255" green="127" blue="0">
+        <color red="0" green="0" blue="255">
         </color>
       </foreground_color>
       <border_alarm_sensitive>false</border_alarm_sensitive>
@@ -362,7 +362,7 @@
       </color>
     </background_color>
     <show_grid>true</show_grid>
-    <title>Levels - Pressures - Flow - Temperatures</title>
+    <title>Level - Pressures - Flow - Temperatures</title>
     <scale_font>
       <font family="Liberation Sans" style="REGULAR" size="11.0">
       </font>
@@ -392,7 +392,7 @@
         <minimum>-5.0</minimum>
         <maximum>100.0</maximum>
         <show_grid>true</show_grid>
-        <visible>true</visible>
+        <visible>false</visible>
         <color>
           <color red="0" green="255" blue="255">
           </color>
@@ -425,7 +425,7 @@
         </color>
       </y_axis>
       <y_axis>
-        <title>Flow</title>
+        <title>Flow (g/s)</title>
         <autoscale>false</autoscale>
         <log_scale>false</log_scale>
         <minimum>0.0</minimum>
@@ -433,7 +433,7 @@
         <show_grid>false</show_grid>
         <visible>true</visible>
         <color>
-          <color name="Text" red="0" green="0" blue="0">
+          <color red="170" green="0" blue="255">
           </color>
         </color>
       </y_axis>
@@ -467,8 +467,8 @@
         <visible>false</visible>
       </trace>
       <trace>
-        <name>ASB Valve OverRide</name>
-        <y_pv>$(vac)VS103:OverRide</y_pv>
+        <name>GHe Pressure</name>
+        <y_pv>$(ghe)PT041:GHeP</y_pv>
         <axis>0</axis>
         <trace_type>2</trace_type>
         <color>
@@ -481,8 +481,8 @@
         <visible>false</visible>
       </trace>
       <trace>
-        <name>ASB Valve Status</name>
-        <y_pv>$(vac)VS103:ValveStatus</y_pv>
+        <name>GHe Pressure</name>
+        <y_pv>$(ghe)PT042:GHeP</y_pv>
         <axis>0</axis>
         <trace_type>2</trace_type>
         <color>
@@ -495,8 +495,22 @@
         <visible>false</visible>
       </trace>
       <trace>
-        <name>Turbo Valve Status</name>
-        <y_pv>$(vac)VT102:ValveStatus</y_pv>
+        <name>He Flow</name>
+        <y_pv>$(flow)FT600B:GHeFlow</y_pv>
+        <axis>3</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color red="170" green="0" blue="255">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>false</visible>
+      </trace>
+      <trace>
+        <name>Cavity Minimum Temp.</name>
+        <y_pv>$(temp)CAV:Tmin</y_pv>
         <axis>0</axis>
         <trace_type>2</trace_type>
         <color>
@@ -509,26 +523,12 @@
         <visible>false</visible>
       </trace>
       <trace>
-        <name>Scroll Pump Status</name>
-        <y_pv>$(vac)PS103:PumpStatus</y_pv>
+        <name>Cavity Maximum Temperature</name>
+        <y_pv>$(temp)CAV:Tmax</y_pv>
         <axis>0</axis>
         <trace_type>2</trace_type>
         <color>
-          <color red="255" green="0" blue="255">
-          </color>
-        </color>
-        <line_width>2</line_width>
-        <point_type>0</point_type>
-        <point_size>10</point_size>
-        <visible>false</visible>
-      </trace>
-      <trace>
-        <name>Turbo Pump Status</name>
-        <y_pv>$(vac)PT102:PumpStatus</y_pv>
-        <axis>0</axis>
-        <trace_type>2</trace_type>
-        <color>
-          <color red="255" green="127" blue="0">
+          <color red="0" green="0" blue="255">
           </color>
         </color>
         <line_width>2</line_width>
