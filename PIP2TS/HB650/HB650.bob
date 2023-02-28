@@ -3,6 +3,7 @@
   <name>HB650-$(cm)</name>
   <macros>
     <cplr>PIP2IT:pHB650_HPRF_CPLR</cplr>
+    <cry>PIP2IT:pHB650_CRYO_</cry>
     <dev>PIP2IT:pHB650_HPRF_SSA</dev>
     <env>PIP2IT:pHB650_ENV_</env>
     <fg>PIP2IT:pHB650_CTRL_</fg>
@@ -10,7 +11,6 @@
     <lhe>PIP2IT:pHB650_CRYO_</lhe>
     <rf06>PIP2IT:pHB650_HPRF_PLC</rf06>
     <safety>PIP2IT:SSR1_SAFETY_PMT_</safety>
-    <temp>PIP2IT:pHB650_CRYO_TEMP_</temp>
     <vac>PIP2IT:pHB650_VAC_</vac>
   </macros>
   <width>1000</width>
@@ -22,11 +22,11 @@
   <grid_step_x>5</grid_step_x>
   <grid_step_y>5</grid_step_y>
   <widget type="label" version="2.0.0">
-    <name>Label_13</name>
-    <text>  Vacuum</text>
-    <x>245</x>
+    <name>Label_11</name>
+    <text>  CRYO</text>
+    <x>530</x>
     <y>50</y>
-    <width>245</width>
+    <width>190</width>
     <height>65</height>
     <font>
       <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
@@ -39,12 +39,18 @@
     <transparent>false</transparent>
     <border_width>1</border_width>
   </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED</name>
+    <pv_name>$(cry)RFPI:Permit</pv_name>
+    <x>660</x>
+    <y>55</y>
+  </widget>
   <widget type="label" version="2.0.0">
-    <name>Label_11</name>
-    <text>  CRYO</text>
-    <x>530</x>
+    <name>Label_13</name>
+    <text>  Vacuum</text>
+    <x>245</x>
     <y>50</y>
-    <width>190</width>
+    <width>245</width>
     <height>65</height>
     <font>
       <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
@@ -1227,12 +1233,6 @@ Enable</text>
       </rule>
     </rules>
     <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
-  <widget type="led" version="2.0.0">
-    <name>LED</name>
-    <pv_name>$(safety)01:CryPmt</pv_name>
-    <x>660</x>
-    <y>55</y>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_55</name>
