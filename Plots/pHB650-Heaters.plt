@@ -8,7 +8,7 @@
   <scroll_step>1</scroll_step>
   <scroll>false</scroll>
   <start>2023-03-06 09:00:00.000</start>
-  <end>2023-03-07 10:47:14.241</end>
+  <end>2023-03-08 11:13:05.204</end>
   <archive_rescale>STAGGER</archive_rescale>
   <foreground>
     <red>204</red>
@@ -36,9 +36,26 @@
         <green>204</green>
         <blue>204</blue>
       </color>
-      <min>-0.8</min>
-      <max>8.78</max>
+      <min>-10.4</min>
+      <max>8.8</max>
       <grid>true</grid>
+      <autoscale>false</autoscale>
+      <log_scale>false</log_scale>
+    </axis>
+    <axis>
+      <visible>true</visible>
+      <name>LHe Level</name>
+      <use_axis_name>true</use_axis_name>
+      <use_trace_names>false</use_trace_names>
+      <right>true</right>
+      <color>
+        <red>0</red>
+        <green>255</green>
+        <blue>255</blue>
+      </color>
+      <min>-9.0</min>
+      <max>210.0</max>
+      <grid>false</grid>
       <autoscale>false</autoscale>
       <log_scale>false</log_scale>
     </axis>
@@ -225,6 +242,31 @@
       <period>0.0</period>
       <ring_size>5000</ring_size>
       <request>OPTIMIZED</request>
+    </pv>
+    <pv>
+      <display_name>PIP2IT:pHB650_CRYO_LT041:LHeLvl</display_name>
+      <visible>true</visible>
+      <name>PIP2IT:pHB650_CRYO_LT041:LHeLvl</name>
+      <axis>1</axis>
+      <color>
+        <red>0</red>
+        <green>255</green>
+        <blue>255</blue>
+      </color>
+      <trace_type>AREA</trace_type>
+      <linewidth>3</linewidth>
+      <line_style>SOLID</line_style>
+      <point_type>NONE</point_type>
+      <point_size>1</point_size>
+      <waveform_index>0</waveform_index>
+      <period>0.0</period>
+      <ring_size>5000</ring_size>
+      <request>OPTIMIZED</request>
+      <archive>
+        <name>archiver1</name>
+        <url>pbraw://archiver1.fnal.gov:17668/retrieval</url>
+        <key>1</key>
+      </archive>
     </pv>
   </pvlist>
 </databrowser>
