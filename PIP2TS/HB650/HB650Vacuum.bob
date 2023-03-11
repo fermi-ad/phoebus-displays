@@ -3050,7 +3050,7 @@ Permits</text>
       </rules>
       <border_alarm_sensitive>false</border_alarm_sensitive>
       <show_confirm_dialog>true</show_confirm_dialog>
-      <confirm_message>Are your sure you want to reset the Vacuum Permit?</confirm_message>
+      <confirm_message>Are your sure you want to reset the AirFlow Permit?</confirm_message>
     </widget>
     <widget type="rectangle" version="2.0.0">
       <name>Rectangle_13</name>
@@ -3338,5 +3338,65 @@ Permits</text>
     <horizontal_alignment>1</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
     <border_width>2</border_width>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_10</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>PIP2IT:pHB650_PLC_650-plc111:B23036</pv_name>
+        <value>1</value>
+        <description>Flow Reset</description>
+      </action>
+    </actions>
+    <pv_name>PIP2IT:pHB650_PLC_650-plc111:B23036</pv_name>
+    <x>210</x>
+    <y>630</y>
+    <width>80</width>
+    <height>15</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="11.0">
+      </font>
+    </font>
+    <rules>
+      <rule name="Make Visible" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0=0">
+          <value>true</value>
+        </exp>
+        <pv_name>$(vac)RFPI:Permit</pv_name>
+      </rule>
+    </rules>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <show_confirm_dialog>true</show_confirm_dialog>
+    <confirm_message>Are your sure you want to reset the AirFlow Permit?</confirm_message>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_11</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>PIP2IT:pHB650_PLC_650-plc111:B23037</pv_name>
+        <value>1</value>
+        <description>Vacuum Reset</description>
+      </action>
+    </actions>
+    <pv_name>PIP2IT:pHB650_PLC_650-plc111:B23037</pv_name>
+    <x>1200</x>
+    <y>630</y>
+    <width>80</width>
+    <height>15</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="11.0">
+      </font>
+    </font>
+    <rules>
+      <rule name="Make Visible" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0=0">
+          <value>true</value>
+        </exp>
+        <pv_name>$(vac)RFPI:Permit</pv_name>
+      </rule>
+    </rules>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <show_confirm_dialog>true</show_confirm_dialog>
+    <confirm_message>Are your sure you want to reset the Vacuum Permit?</confirm_message>
   </widget>
 </display>
