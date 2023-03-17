@@ -8,19 +8,19 @@
   <scroll_step>1</scroll_step>
   <scroll>false</scroll>
   <start>2023-01-31 00:00:00.000</start>
-  <end>2023-03-08 10:06:08.607</end>
-  <archive_rescale>STAGGER</archive_rescale>
+  <end>2023-03-09 00:00:00.000</end>
+  <archive_rescale>NONE</archive_rescale>
   <foreground>
-    <red>0</red>
-    <green>0</green>
-    <blue>0</blue>
+    <red>230</red>
+    <green>230</green>
+    <blue>230</blue>
   </foreground>
   <background>
-    <red>255</red>
-    <green>255</green>
-    <blue>255</blue>
+    <red>51</red>
+    <green>51</green>
+    <blue>51</blue>
   </background>
-  <title_font>Liberation Sans|20|1</title_font>
+  <title_font>Liberation Sans|24|1</title_font>
   <label_font>Liberation Sans|14|1</label_font>
   <scale_font>Liberation Sans|12|0</scale_font>
   <legend_font>Liberation Sans|14|0</legend_font>
@@ -32,12 +32,12 @@
       <use_trace_names>false</use_trace_names>
       <right>false</right>
       <color>
-        <red>0</red>
-        <green>0</green>
-        <blue>0</blue>
+        <red>230</red>
+        <green>230</green>
+        <blue>230</blue>
       </color>
       <min>1.0E-9</min>
-      <max>3162277.6601683795</max>
+      <max>10000.0</max>
       <grid>true</grid>
       <autoscale>false</autoscale>
       <log_scale>true</log_scale>
@@ -78,7 +78,7 @@
       <axis>0</axis>
       <color>
         <red>0</red>
-        <green>0</green>
+        <green>127</green>
         <blue>255</blue>
       </color>
       <trace_type>AREA</trace_type>

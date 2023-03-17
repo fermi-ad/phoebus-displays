@@ -8,8 +8,8 @@
   <scroll_step>1</scroll_step>
   <scroll>false</scroll>
   <start>2023-03-01 09:00:00.000</start>
-  <end>2023-03-10 10:49:49.719</end>
-  <archive_rescale>STAGGER</archive_rescale>
+  <end>2023-03-09 00:00:00.000</end>
+  <archive_rescale>NONE</archive_rescale>
   <foreground>
     <red>204</red>
     <green>204</green>
@@ -20,7 +20,7 @@
     <green>51</green>
     <blue>51</blue>
   </background>
-  <title_font>Liberation Sans|20|1</title_font>
+  <title_font>Liberation Sans|24|1</title_font>
   <label_font>Liberation Sans|14|1</label_font>
   <scale_font>Liberation Sans|12|0</scale_font>
   <legend_font>Liberation Sans|14|0</legend_font>
@@ -36,8 +36,8 @@
         <green>204</green>
         <blue>204</blue>
       </color>
-      <min>2.0</min>
-      <max>327.0</max>
+      <min>0.0</min>
+      <max>310.0</max>
       <grid>true</grid>
       <autoscale>false</autoscale>
       <log_scale>false</log_scale>
