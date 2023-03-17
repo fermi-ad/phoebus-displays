@@ -8,8 +8,8 @@
   <scroll_step>1</scroll_step>
   <scroll>false</scroll>
   <start>2023-03-01 09:00:00.000</start>
-  <end>2023-03-08 11:12:49.077</end>
-  <archive_rescale>STAGGER</archive_rescale>
+  <end>2023-03-09 00:00:00.000</end>
+  <archive_rescale>NONE</archive_rescale>
   <foreground>
     <red>204</red>
     <green>204</green>
@@ -20,7 +20,7 @@
     <green>51</green>
     <blue>51</blue>
   </background>
-  <title_font>Liberation Sans|20|1</title_font>
+  <title_font>Liberation Sans|24|1</title_font>
   <label_font>Liberation Sans|14|1</label_font>
   <scale_font>Liberation Sans|12|0</scale_font>
   <legend_font>Liberation Sans|14|0</legend_font>
@@ -36,9 +36,26 @@
         <green>204</green>
         <blue>204</blue>
       </color>
-      <min>284.90000000000003</min>
-      <max>296.90000000000003</max>
+      <min>275.0</min>
+      <max>300.0</max>
       <grid>true</grid>
+      <autoscale>false</autoscale>
+      <log_scale>false</log_scale>
+    </axis>
+    <axis>
+      <visible>true</visible>
+      <name>Heater Power (W)</name>
+      <use_axis_name>true</use_axis_name>
+      <use_trace_names>false</use_trace_names>
+      <right>true</right>
+      <color>
+        <red>255</red>
+        <green>255</green>
+        <blue>0</blue>
+      </color>
+      <min>0.0</min>
+      <max>16.0</max>
+      <grid>false</grid>
       <autoscale>false</autoscale>
       <log_scale>false</log_scale>
     </axis>
@@ -77,9 +94,9 @@
       <name>PIP2IT:pHB650_CRYO_TP273:TempK</name>
       <axis>0</axis>
       <color>
-        <red>68</red>
-        <green>68</green>
-        <blue>229</blue>
+        <red>0</red>
+        <green>255</green>
+        <blue>0</blue>
       </color>
       <trace_type>AREA</trace_type>
       <linewidth>1</linewidth>
@@ -102,9 +119,9 @@
       <name>PIP2IT:pHB650_CRYO_TP373:TempK</name>
       <axis>0</axis>
       <color>
-        <red>229</red>
-        <green>149</green>
-        <blue>68</blue>
+        <red>255</red>
+        <green>127</green>
+        <blue>0</blue>
       </color>
       <trace_type>AREA</trace_type>
       <linewidth>1</linewidth>
@@ -127,9 +144,9 @@
       <name>PIP2IT:pHB650_CRYO_TP473:TempK</name>
       <axis>0</axis>
       <color>
-        <red>68</red>
-        <green>229</green>
-        <blue>149</blue>
+        <red>255</red>
+        <green>0</green>
+        <blue>255</blue>
       </color>
       <trace_type>AREA</trace_type>
       <linewidth>1</linewidth>
@@ -152,9 +169,9 @@
       <name>PIP2IT:pHB650_CRYO_TP573:TempK</name>
       <axis>0</axis>
       <color>
-        <red>149</red>
-        <green>68</green>
-        <blue>229</blue>
+        <red>0</red>
+        <green>127</green>
+        <blue>255</blue>
       </color>
       <trace_type>AREA</trace_type>
       <linewidth>1</linewidth>
@@ -177,12 +194,162 @@
       <name>PIP2IT:pHB650_CRYO_TP673:TempK</name>
       <axis>0</axis>
       <color>
-        <red>229</red>
-        <green>229</green>
-        <blue>68</blue>
+        <red>255</red>
+        <green>255</green>
+        <blue>0</blue>
       </color>
       <trace_type>AREA</trace_type>
       <linewidth>1</linewidth>
+      <line_style>SOLID</line_style>
+      <point_type>NONE</point_type>
+      <point_size>1</point_size>
+      <waveform_index>0</waveform_index>
+      <period>0.0</period>
+      <ring_size>5000</ring_size>
+      <request>OPTIMIZED</request>
+      <archive>
+        <name>archiver1</name>
+        <url>pbraw://archiver1.fnal.gov:17668/retrieval</url>
+        <key>1</key>
+      </archive>
+    </pv>
+    <pv>
+      <display_name>HTR1</display_name>
+      <visible>true</visible>
+      <name>PIP2IT:pHB650_CRYO_HTRC1:WATT</name>
+      <axis>1</axis>
+      <color>
+        <red>255</red>
+        <green>0</green>
+        <blue>0</blue>
+      </color>
+      <trace_type>AREA</trace_type>
+      <linewidth>2</linewidth>
+      <line_style>SOLID</line_style>
+      <point_type>NONE</point_type>
+      <point_size>1</point_size>
+      <waveform_index>0</waveform_index>
+      <period>0.0</period>
+      <ring_size>5000</ring_size>
+      <request>OPTIMIZED</request>
+      <archive>
+        <name>archiver1</name>
+        <url>pbraw://archiver1.fnal.gov:17668/retrieval</url>
+        <key>1</key>
+      </archive>
+    </pv>
+    <pv>
+      <display_name>HTR2</display_name>
+      <visible>true</visible>
+      <name>PIP2IT:pHB650_CRYO_HTRC2:WATT</name>
+      <axis>1</axis>
+      <color>
+        <red>0</red>
+        <green>255</green>
+        <blue>0</blue>
+      </color>
+      <trace_type>AREA</trace_type>
+      <linewidth>2</linewidth>
+      <line_style>SOLID</line_style>
+      <point_type>NONE</point_type>
+      <point_size>1</point_size>
+      <waveform_index>0</waveform_index>
+      <period>0.0</period>
+      <ring_size>5000</ring_size>
+      <request>OPTIMIZED</request>
+      <archive>
+        <name>archiver1</name>
+        <url>pbraw://archiver1.fnal.gov:17668/retrieval</url>
+        <key>1</key>
+      </archive>
+    </pv>
+    <pv>
+      <display_name>HTR3</display_name>
+      <visible>true</visible>
+      <name>PIP2IT:pHB650_CRYO_HTRC3:WATT</name>
+      <axis>1</axis>
+      <color>
+        <red>255</red>
+        <green>127</green>
+        <blue>0</blue>
+      </color>
+      <trace_type>AREA</trace_type>
+      <linewidth>2</linewidth>
+      <line_style>SOLID</line_style>
+      <point_type>NONE</point_type>
+      <point_size>1</point_size>
+      <waveform_index>0</waveform_index>
+      <period>0.0</period>
+      <ring_size>5000</ring_size>
+      <request>OPTIMIZED</request>
+      <archive>
+        <name>archiver1</name>
+        <url>pbraw://archiver1.fnal.gov:17668/retrieval</url>
+        <key>1</key>
+      </archive>
+    </pv>
+    <pv>
+      <display_name>HTR4</display_name>
+      <visible>true</visible>
+      <name>PIP2IT:pHB650_CRYO_HTRC4:WATT</name>
+      <axis>1</axis>
+      <color>
+        <red>255</red>
+        <green>0</green>
+        <blue>255</blue>
+      </color>
+      <trace_type>AREA</trace_type>
+      <linewidth>2</linewidth>
+      <line_style>SOLID</line_style>
+      <point_type>NONE</point_type>
+      <point_size>1</point_size>
+      <waveform_index>0</waveform_index>
+      <period>0.0</period>
+      <ring_size>5000</ring_size>
+      <request>OPTIMIZED</request>
+      <archive>
+        <name>archiver1</name>
+        <url>pbraw://archiver1.fnal.gov:17668/retrieval</url>
+        <key>1</key>
+      </archive>
+    </pv>
+    <pv>
+      <display_name>HTR5</display_name>
+      <visible>true</visible>
+      <name>PIP2IT:pHB650_CRYO_HTRC5:WATT</name>
+      <axis>1</axis>
+      <color>
+        <red>0</red>
+        <green>127</green>
+        <blue>255</blue>
+      </color>
+      <trace_type>AREA</trace_type>
+      <linewidth>2</linewidth>
+      <line_style>SOLID</line_style>
+      <point_type>NONE</point_type>
+      <point_size>1</point_size>
+      <waveform_index>0</waveform_index>
+      <period>0.0</period>
+      <ring_size>5000</ring_size>
+      <request>OPTIMIZED</request>
+      <archive>
+        <name>archiver1</name>
+        <url>pbraw://archiver1.fnal.gov:17668/retrieval</url>
+        <key>1</key>
+      </archive>
+    </pv>
+    <pv>
+      <display_name>HTR6</display_name>
+      <visible>true</visible>
+      <name>PIP2IT:pHB650_CRYO_HTRC6:WATT</name>
+      <axis>1</axis>
+      <color>
+        <red>255</red>
+        <green>255</green>
+        <blue>0</blue>
+      </color>
+      <trace_type>AREA</trace_type>
+      <linewidth>2</linewidth>
       <line_style>SOLID</line_style>
       <point_type>NONE</point_type>
       <point_size>1</point_size>
