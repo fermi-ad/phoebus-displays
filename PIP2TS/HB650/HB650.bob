@@ -8,7 +8,9 @@
     <env>PIP2IT:pHB650_ENV_</env>
     <fg>PIP2IT:pHB650_CTRL_</fg>
     <ghe>PIP2IT:pHB650_CRYO_</ghe>
+    <hprf>PIP2IT:pHB650_HPRF_</hprf>
     <lhe>PIP2IT:pHB650_CRYO_</lhe>
+    <llrf>PIP2IT:PHB650:H1</llrf>
     <rf06>PIP2IT:pHB650_HPRF_PLC</rf06>
     <rfpi>PIP2IT:pHB650_RFPI_</rfpi>
     <vac>PIP2IT:pHB650_VAC_</vac>
@@ -21,6 +23,41 @@
   </background_color>
   <grid_step_x>5</grid_step_x>
   <grid_step_y>5</grid_step_y>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_4</name>
+    <x>290</x>
+    <y>390</y>
+    <width>90</width>
+    <height>80</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="Grid" red="128" green="128" blue="128">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_21</name>
+    <actions>
+      <action type="open_display">
+        <file>HB650-SSA.bob</file>
+        <macros>
+          <ssa>2</ssa>
+        </macros>
+        <target>tab</target>
+      </action>
+    </actions>
+    <text></text>
+    <x>290</x>
+    <y>390</y>
+    <width>90</width>
+    <height>80</height>
+    <transparent>true</transparent>
+    <tooltip>$(actions)</tooltip>
+  </widget>
   <widget type="rectangle" version="2.0.0">
     <name>Rectangle_5</name>
     <x>400</x>
@@ -766,22 +803,6 @@
       <color name="OK" red="0" green="255" blue="0">
       </color>
     </on_color>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Action Button_1</name>
-    <actions>
-      <action type="open_display">
-        <file>IPMSselect.bob</file>
-        <target>tab</target>
-        <description>IPMS Selector</description>
-      </action>
-    </actions>
-    <text>SSA Expert Control</text>
-    <x>620</x>
-    <y>560</y>
-    <width>130</width>
-    <height>25</height>
-    <tooltip>$(actions)</tooltip>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_96</name>
@@ -1816,6 +1837,7 @@ Enable</text>
     <pv_name>$(dev)3-00:OffOn</pv_name>
     <x>405</x>
     <y>410</y>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
     <states>
       <state>
         <value>0</value>
@@ -1846,9 +1868,10 @@ Enable</text>
   </widget>
   <widget type="multi_state_led" version="2.0.0">
     <name>LED (Multi State)_11</name>
-    <pv_name>$(dev)3-00:RFEnable</pv_name>
+    <pv_name>$(rfpi)SSA3:LLRF</pv_name>
     <x>465</x>
     <y>410</y>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
     <states>
       <state>
         <value>0</value>
@@ -1949,6 +1972,7 @@ Enable</text>
     <pv_name>$(dev)4-00:OffOn</pv_name>
     <x>515</x>
     <y>410</y>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
     <states>
       <state>
         <value>0</value>
@@ -1979,9 +2003,10 @@ Enable</text>
   </widget>
   <widget type="multi_state_led" version="2.0.0">
     <name>LED (Multi State)_13</name>
-    <pv_name>$(dev)4-00:RFEnable</pv_name>
+    <pv_name>$(rfpi)SSA4:LLRF</pv_name>
     <x>575</x>
     <y>410</y>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
     <states>
       <state>
         <value>0</value>
@@ -2082,6 +2107,7 @@ Enable</text>
     <pv_name>$(dev)5-00:OffOn</pv_name>
     <x>633</x>
     <y>410</y>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
     <states>
       <state>
         <value>0</value>
@@ -2112,9 +2138,10 @@ Enable</text>
   </widget>
   <widget type="multi_state_led" version="2.0.0">
     <name>LED (Multi State)_15</name>
-    <pv_name>$(dev)5-00:RFEnable</pv_name>
+    <pv_name>$(rfpi)SSA5:LLRF</pv_name>
     <x>693</x>
     <y>410</y>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
     <states>
       <state>
         <value>0</value>
@@ -2212,9 +2239,10 @@ Enable</text>
   </widget>
   <widget type="multi_state_led" version="2.0.0">
     <name>LED (Multi State)_16</name>
-    <pv_name>$(dev)6-00:OffOn</pv_name>
+    <pv_name>$(hprf)SSA6:ACon</pv_name>
     <x>735</x>
     <y>410</y>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
     <states>
       <state>
         <value>0</value>
@@ -2245,9 +2273,10 @@ Enable</text>
   </widget>
   <widget type="multi_state_led" version="2.0.0">
     <name>LED (Multi State)_17</name>
-    <pv_name>$(dev)6-00:RFEnable</pv_name>
+    <pv_name>$(rfpi)SSA6:LLRF</pv_name>
     <x>795</x>
     <y>410</y>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
     <states>
       <state>
         <value>0</value>
@@ -2727,24 +2756,6 @@ Enable</text>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
   </widget>
-  <widget type="byte_monitor" version="2.0.0">
-    <name>Byte Monitor_11</name>
-    <pv_name>$(dev)2-00:ssaModules</pv_name>
-    <x>185</x>
-    <y>455</y>
-    <width>80</width>
-    <height>10</height>
-    <bitReverse>true</bitReverse>
-    <square>true</square>
-    <off_color>
-      <color name="Off" red="60" green="100" blue="60">
-      </color>
-    </off_color>
-    <on_color>
-      <color name="OK" red="0" green="255" blue="0">
-      </color>
-    </on_color>
-  </widget>
   <widget type="action_button" version="3.0.0">
     <name>Action Button_49</name>
     <actions execute_as_one="true">
@@ -2876,6 +2887,7 @@ Enable</text>
     <pv_name>$(dev)1-00:OffOn</pv_name>
     <x>185</x>
     <y>410</y>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
     <states>
       <state>
         <value>0</value>
@@ -2906,9 +2918,10 @@ Enable</text>
   </widget>
   <widget type="multi_state_led" version="2.0.0">
     <name>LED (Multi State)_18</name>
-    <pv_name>$(dev)1-00:RFEnable</pv_name>
+    <pv_name>$(rfpi)SSA1:LLRF</pv_name>
     <x>245</x>
     <y>410</y>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
     <states>
       <state>
         <value>0</value>
@@ -2966,24 +2979,6 @@ Enable</text>
     <border_alarm_sensitive>false</border_alarm_sensitive>
     <show_confirm_dialog>1</show_confirm_dialog>
     <confirm_message>Are you sure you want to Start or Stop HB650-SSA2?</confirm_message>
-  </widget>
-  <widget type="byte_monitor" version="2.0.0">
-    <name>Byte Monitor_6</name>
-    <pv_name>$(dev)2-00:ssaModules</pv_name>
-    <x>295</x>
-    <y>455</y>
-    <width>80</width>
-    <height>10</height>
-    <bitReverse>true</bitReverse>
-    <square>true</square>
-    <off_color>
-      <color name="Off" red="60" green="100" blue="60">
-      </color>
-    </off_color>
-    <on_color>
-      <color name="OK" red="0" green="255" blue="0">
-      </color>
-    </on_color>
   </widget>
   <widget type="action_button" version="3.0.0">
     <name>Action Button_44</name>
@@ -3054,22 +3049,6 @@ Enable</text>
     <show_confirm_dialog>2</show_confirm_dialog>
     <confirm_message>Are you sure you want to Reset HB650-SSA2?</confirm_message>
   </widget>
-  <widget type="rectangle" version="2.0.0">
-    <name>Rectangle_4</name>
-    <x>290</x>
-    <y>390</y>
-    <width>90</width>
-    <height>80</height>
-    <line_width>1</line_width>
-    <line_color>
-      <color red="0" green="0" blue="0">
-      </color>
-    </line_color>
-    <background_color>
-      <color name="Grid" red="128" green="128" blue="128">
-      </color>
-    </background_color>
-  </widget>
   <widget type="label" version="2.0.0">
     <name>Label_34</name>
     <text>SSA2</text>
@@ -3116,6 +3095,7 @@ Enable</text>
     <pv_name>$(dev)2-00:OffOn</pv_name>
     <x>295</x>
     <y>410</y>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
     <states>
       <state>
         <value>0</value>
@@ -3146,9 +3126,10 @@ Enable</text>
   </widget>
   <widget type="multi_state_led" version="2.0.0">
     <name>LED (Multi State)_9</name>
-    <pv_name>$(dev)2-00:RFEnable</pv_name>
+    <pv_name>$(rfpi)SSA2:LLRF</pv_name>
     <x>355</x>
     <y>410</y>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
     <states>
       <state>
         <value>0</value>
@@ -3167,25 +3148,6 @@ Enable</text>
         </color>
       </state>
     </states>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Action Button_21</name>
-    <actions>
-      <action type="open_display">
-        <file>HB650-SSA.bob</file>
-        <macros>
-          <ssa>2</ssa>
-        </macros>
-        <target>tab</target>
-      </action>
-    </actions>
-    <text></text>
-    <x>290</x>
-    <y>390</y>
-    <width>90</width>
-    <height>80</height>
-    <transparent>true</transparent>
-    <tooltip>$(actions)</tooltip>
   </widget>
   <widget type="bool_button" version="2.0.0">
     <name>Boolean Button_8</name>
@@ -3225,5 +3187,561 @@ Enable</text>
       <color name="OK" red="0" green="255" blue="0">
       </color>
     </on_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_17</name>
+    <pv_name>$(llrf)60:RFMODE</pv_name>
+    <x>830</x>
+    <y>560</y>
+    <width>85</width>
+    <height>15</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="11.0">
+      </font>
+    </font>
+    <background_color>
+      <color red="255" green="255" blue="0">
+      </color>
+    </background_color>
+    <precision>2</precision>
+    <show_units>false</show_units>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_18</name>
+    <pv_name>$(llrf)60:CAV:PWRMEAN</pv_name>
+    <x>830</x>
+    <y>590</y>
+    <width>85</width>
+    <height>15</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="11.0">
+      </font>
+    </font>
+    <background_color>
+      <color red="255" green="255" blue="0">
+      </color>
+    </background_color>
+    <format>2</format>
+    <precision>2</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_23</name>
+    <pv_name>$(llrf)60:FWD:PWRMEAN</pv_name>
+    <x>830</x>
+    <y>605</y>
+    <width>85</width>
+    <height>15</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="11.0">
+      </font>
+    </font>
+    <background_color>
+      <color red="255" green="255" blue="0">
+      </color>
+    </background_color>
+    <format>2</format>
+    <precision>2</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_24</name>
+    <pv_name>$(llrf)60:FWD:PMEAN</pv_name>
+    <x>925</x>
+    <y>605</y>
+    <width>70</width>
+    <height>15</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="11.0">
+      </font>
+    </font>
+    <background_color>
+      <color red="255" green="255" blue="0">
+      </color>
+    </background_color>
+    <precision>2</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_25</name>
+    <pv_name>$(llrf)60:REV:PWRMEAN</pv_name>
+    <x>830</x>
+    <y>620</y>
+    <width>85</width>
+    <height>15</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="11.0">
+      </font>
+    </font>
+    <background_color>
+      <color red="255" green="255" blue="0">
+      </color>
+    </background_color>
+    <format>2</format>
+    <precision>2</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_26</name>
+    <pv_name>$(llrf)60:REV:PMEAN</pv_name>
+    <x>925</x>
+    <y>620</y>
+    <width>70</width>
+    <height>15</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="11.0">
+      </font>
+    </font>
+    <background_color>
+      <color red="255" green="255" blue="0">
+      </color>
+    </background_color>
+    <precision>2</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_57</name>
+    <text>Mode</text>
+    <x>765</x>
+    <y>560</y>
+    <width>60</width>
+    <height>15</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="11.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_64</name>
+    <text>Cavity</text>
+    <x>765</x>
+    <y>590</y>
+    <width>60</width>
+    <height>15</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="11.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_65</name>
+    <text>Forward</text>
+    <x>765</x>
+    <y>605</y>
+    <width>60</width>
+    <height>15</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="11.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_67</name>
+    <text>Reflected</text>
+    <x>765</x>
+    <y>620</y>
+    <width>60</width>
+    <height>15</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="11.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_68</name>
+    <text>Frequency</text>
+    <x>765</x>
+    <y>575</y>
+    <width>60</width>
+    <height>15</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="11.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_28</name>
+    <pv_name>$(llrf)60:DF</pv_name>
+    <x>830</x>
+    <y>575</y>
+    <width>85</width>
+    <height>15</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="11.0">
+      </font>
+    </font>
+    <background_color>
+      <color red="255" green="255" blue="0">
+      </color>
+    </background_color>
+    <precision>2</precision>
+    <show_units>false</show_units>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group</name>
+    <x>865</x>
+    <y>235</y>
+    <width>125</width>
+    <height>320</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="group" version="2.0.0">
+      <name>Group</name>
+      <width>125</width>
+      <height>320</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="byte_monitor" version="2.0.0">
+        <name>Byte Monitor_111</name>
+        <pv_name>$(hprf)SSA6:Status</pv_name>
+        <width>20</width>
+        <height>160</height>
+        <bitReverse>true</bitReverse>
+        <horizontal>false</horizontal>
+        <square>true</square>
+        <off_color>
+          <color name="MAJOR" red="255" green="0" blue="0">
+          </color>
+        </off_color>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_29</name>
+        <pv_name>$(hprf)SSA6:Status.ZRST</pv_name>
+        <x>25</x>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="11.0">
+          </font>
+        </font>
+        <format>6</format>
+        <show_units>false</show_units>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_30</name>
+        <pv_name>$(hprf)SSA6:Status.ONST</pv_name>
+        <x>25</x>
+        <y>20</y>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="11.0">
+          </font>
+        </font>
+        <format>6</format>
+        <show_units>false</show_units>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_31</name>
+        <pv_name>$(hprf)SSA6:Status.TWST</pv_name>
+        <x>25</x>
+        <y>40</y>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="11.0">
+          </font>
+        </font>
+        <format>6</format>
+        <show_units>false</show_units>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_32</name>
+        <pv_name>$(hprf)SSA6:Status.THST</pv_name>
+        <x>25</x>
+        <y>60</y>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="11.0">
+          </font>
+        </font>
+        <format>6</format>
+        <show_units>false</show_units>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_33</name>
+        <pv_name>$(hprf)SSA6:Status.FRST</pv_name>
+        <x>25</x>
+        <y>80</y>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="11.0">
+          </font>
+        </font>
+        <format>6</format>
+        <show_units>false</show_units>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_34</name>
+        <pv_name>$(hprf)SSA6:Status.FVST</pv_name>
+        <x>25</x>
+        <y>100</y>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="11.0">
+          </font>
+        </font>
+        <format>6</format>
+        <show_units>false</show_units>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_35</name>
+        <pv_name>$(hprf)SSA6:Status.SXST</pv_name>
+        <x>25</x>
+        <y>120</y>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="11.0">
+          </font>
+        </font>
+        <format>6</format>
+        <show_units>false</show_units>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_36</name>
+        <pv_name>$(hprf)SSA6:Status.SVST</pv_name>
+        <x>25</x>
+        <y>140</y>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="11.0">
+          </font>
+        </font>
+        <format>6</format>
+        <show_units>false</show_units>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_37</name>
+        <pv_name>$(hprf)SSA6:Status.EIST</pv_name>
+        <x>25</x>
+        <y>160</y>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="11.0">
+          </font>
+        </font>
+        <format>6</format>
+        <show_units>false</show_units>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_38</name>
+        <pv_name>$(hprf)SSA6:Status.NIST</pv_name>
+        <x>25</x>
+        <y>180</y>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="11.0">
+          </font>
+        </font>
+        <format>6</format>
+        <show_units>false</show_units>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_39</name>
+        <pv_name>$(hprf)SSA6:Status.TEST</pv_name>
+        <x>25</x>
+        <y>200</y>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="11.0">
+          </font>
+        </font>
+        <format>6</format>
+        <show_units>false</show_units>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_40</name>
+        <pv_name>$(hprf)SSA6:Status.ELST</pv_name>
+        <x>25</x>
+        <y>220</y>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="11.0">
+          </font>
+        </font>
+        <format>6</format>
+        <show_units>false</show_units>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_41</name>
+        <pv_name>$(hprf)SSA6:Status.TWST</pv_name>
+        <x>25</x>
+        <y>240</y>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="11.0">
+          </font>
+        </font>
+        <format>6</format>
+        <show_units>false</show_units>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_42</name>
+        <pv_name>$(hprf)SSA6:Status.THST</pv_name>
+        <x>25</x>
+        <y>260</y>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="11.0">
+          </font>
+        </font>
+        <format>6</format>
+        <show_units>false</show_units>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_43</name>
+        <pv_name>$(hprf)SSA6:Status.FTST</pv_name>
+        <x>25</x>
+        <y>280</y>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="11.0">
+          </font>
+        </font>
+        <format>6</format>
+        <show_units>false</show_units>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_44</name>
+        <pv_name>$(hprf)SSA6:Status.FFST</pv_name>
+        <x>25</x>
+        <y>300</y>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="11.0">
+          </font>
+        </font>
+        <format>6</format>
+        <show_units>false</show_units>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="byte_monitor" version="2.0.0">
+        <name>Byte Monitor_112</name>
+        <pv_name>$(hprf)SSA6:Status</pv_name>
+        <y>160</y>
+        <width>20</width>
+        <height>160</height>
+        <startBit>8</startBit>
+        <bitReverse>true</bitReverse>
+        <horizontal>false</horizontal>
+        <square>true</square>
+        <off_color>
+          <color name="OK" red="0" green="255" blue="0">
+          </color>
+        </off_color>
+        <on_color>
+          <color red="255" green="0" blue="0">
+          </color>
+        </on_color>
+      </widget>
+    </widget>
+  </widget>
+  <widget type="byte_monitor" version="2.0.0">
+    <name>Byte Monitor_6</name>
+    <pv_name>$(dev)2-00:ssaModules</pv_name>
+    <x>295</x>
+    <y>455</y>
+    <width>80</width>
+    <height>10</height>
+    <bitReverse>true</bitReverse>
+    <square>true</square>
+    <off_color>
+      <color name="Off" red="60" green="100" blue="60">
+      </color>
+    </off_color>
+    <on_color>
+      <color name="OK" red="0" green="255" blue="0">
+      </color>
+    </on_color>
+  </widget>
+  <widget type="byte_monitor" version="2.0.0">
+    <name>Byte Monitor_11</name>
+    <pv_name>$(dev)2-00:ssaModules</pv_name>
+    <x>185</x>
+    <y>455</y>
+    <width>80</width>
+    <height>10</height>
+    <bitReverse>true</bitReverse>
+    <square>true</square>
+    <off_color>
+      <color name="Off" red="60" green="100" blue="60">
+      </color>
+    </off_color>
+    <on_color>
+      <color name="OK" red="0" green="255" blue="0">
+      </color>
+    </on_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_70</name>
+    <text>Phase</text>
+    <x>925</x>
+    <y>585</y>
+    <width>70</width>
+    <height>15</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="11.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
   </widget>
 </display>
