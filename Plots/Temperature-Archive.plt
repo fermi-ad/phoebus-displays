@@ -8,7 +8,7 @@
   <scroll_step>5</scroll_step>
   <scroll>false</scroll>
   <start>2019-05-28 00:00:00.000</start>
-  <end>2023-01-23 09:54:26.844</end>
+  <end>2023-04-11 16:01:37.106</end>
   <archive_rescale>STAGGER</archive_rescale>
   <foreground>
     <red>0</red>
