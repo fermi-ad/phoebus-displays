@@ -2568,26 +2568,6 @@ Enable</text>
     <confirm_message>Are you sure you want to Enable RF for HB650-SSA5?</confirm_message>
   </widget>
   <widget type="bool_button" version="2.0.0">
-    <name>Boolean Button_20</name>
-    <pv_name>$(hprf)SSA6:sOffOn</pv_name>
-    <x>730</x>
-    <y>470</y>
-    <width>90</width>
-    <height>20</height>
-    <off_label>Power On</off_label>
-    <off_color>
-      <color name="STOP" red="255" green="0" blue="0">
-      </color>
-    </off_color>
-    <on_label>Power Off</on_label>
-    <show_led>false</show_led>
-    <actions>
-    </actions>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-    <show_confirm_dialog>1</show_confirm_dialog>
-    <confirm_message>Are you sure you want to Start or Stop HB650-SSA6?</confirm_message>
-  </widget>
-  <widget type="bool_button" version="2.0.0">
     <name>Boolean Button_2</name>
     <pv_name>$(dev)3-00:Reset.PROC</pv_name>
     <x>400</x>
@@ -2655,28 +2635,6 @@ Enable</text>
     <mode>1</mode>
     <show_confirm_dialog>2</show_confirm_dialog>
     <confirm_message>Are you sure you want to Reset HB650-SSA5?</confirm_message>
-  </widget>
-  <widget type="bool_button" version="2.0.0">
-    <name>Boolean Button_6</name>
-    <pv_name>$(hprf)SSA6:sReset</pv_name>
-    <x>730</x>
-    <y>490</y>
-    <width>90</width>
-    <height>20</height>
-    <off_label>Amp Reset</off_label>
-    <off_color>
-      <color name="Button_Background" red="210" green="210" blue="210">
-      </color>
-    </off_color>
-    <on_label>Amp Reset</on_label>
-    <on_color>
-      <color name="Button_Background" red="210" green="210" blue="210">
-      </color>
-    </on_color>
-    <show_led>false</show_led>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-    <mode>1</mode>
-    <confirm_message>Are you sure you want to Reset HB650-SSA6?</confirm_message>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_37</name>
@@ -3684,5 +3642,63 @@ Enable</text>
     <horizontal_alignment>1</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
     <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button</name>
+    <actions execute_as_one="true">
+      <action type="write_pv">
+        <pv_name>$(hprf)SSA6:sOUT</pv_name>
+        <value>1</value>
+        <description>Power Off</description>
+      </action>
+    </actions>
+    <pv_name>$(hprf)SSA6:sOUT</pv_name>
+    <x>730</x>
+    <y>470</y>
+    <width>90</width>
+    <height>20</height>
+    <background_color>
+      <color name="On" red="0" green="255" blue="0">
+      </color>
+    </background_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_1</name>
+    <actions execute_as_one="true">
+      <action type="write_pv">
+        <pv_name>$(hprf)SSA6:sOUT</pv_name>
+        <value>2</value>
+        <description>Power On</description>
+      </action>
+    </actions>
+    <pv_name>$(hprf)SSA6:sOUT</pv_name>
+    <x>730</x>
+    <y>490</y>
+    <width>90</width>
+    <height>20</height>
+    <background_color>
+      <color name="STOP" red="255" green="0" blue="0">
+      </color>
+    </background_color>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_2</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(hprf)SSA6:sOUT</pv_name>
+        <value>4</value>
+        <description>Amplifier Reset</description>
+      </action>
+    </actions>
+    <pv_name>$(hprf)SSA6:sOUT</pv_name>
+    <x>730</x>
+    <y>510</y>
+    <width>90</width>
+    <height>20</height>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
 </display>
