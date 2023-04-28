@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Phoebus build and installation location
-TOP="/usr/local"
+TOP="/usr/local/epics"
 EPICS_CONFIG="/usr/local/epics/Config"
 
 export JAVA_HOME=/usr/local/jdk-13.0.2
@@ -14,7 +14,7 @@ V="4.7.2-SNAPSHOT"
 
 # figure out the path to the product jar
 if [[ -z "${PHOEBUS_JAR}" ]]; then
-  PHOEBUS_JAR=${TOP}/phoebus-fnal/products/target/fnal-product-${V}.jar
+  PHOEBUS_JAR=${TOP}/phoebus-fnal/product-fnal/target/fnal-product-${V}.jar
 fi
 
 # figure out the path to the configuration settings
