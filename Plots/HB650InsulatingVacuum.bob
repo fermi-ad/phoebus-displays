@@ -1,51 +1,568 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <display version="2.0.0">
-  <name>Display</name>
+  <name>Insulating Vacuum</name>
+  <width>1100</width>
+  <height>680</height>
+  <widget type="stripchart" version="2.1.0">
+    <name>Strip Chart_1</name>
+    <y>50</y>
+    <width>950</width>
+    <foreground_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <show_grid>true</show_grid>
+    <title>Insulating Vacuum Pressures</title>
+    <scale_font>
+      <font family="Liberation Sans" style="REGULAR" size="11.0">
+      </font>
+    </scale_font>
+    <show_legend>true</show_legend>
+    <rules>
+      <rule name="Show Trace 1" prop_id="traces[0].visible" out_exp="false">
+        <exp bool_exp="pv0">
+          <value>true</value>
+        </exp>
+        <pv_name>loc://ivvacp1</pv_name>
+      </rule>
+      <rule name="Show Trace 2" prop_id="traces[1].visible" out_exp="false">
+        <exp bool_exp="pv0">
+          <value>true</value>
+        </exp>
+        <pv_name>loc://ivvacp2</pv_name>
+      </rule>
+      <rule name="Show Trace 3" prop_id="traces[2].visible" out_exp="false">
+        <exp bool_exp="pv0">
+          <value>true</value>
+        </exp>
+        <pv_name>loc://ivvacp3</pv_name>
+      </rule>
+      <rule name="Show Trace 4" prop_id="traces[3].visible" out_exp="false">
+        <exp bool_exp="pv0">
+          <value>true</value>
+        </exp>
+        <pv_name>loc://ivvacp4</pv_name>
+      </rule>
+      <rule name="Show Trace 5" prop_id="traces[4].visible" out_exp="false">
+        <exp bool_exp="pv0">
+          <value>true</value>
+        </exp>
+        <pv_name>loc://ivvacp5</pv_name>
+      </rule>
+    </rules>
+    <start>-15 minutes</start>
+    <end>now</end>
+    <y_axes>
+      <y_axis>
+        <title>Vacuum Pressure (Torr)</title>
+        <autoscale>true</autoscale>
+        <log_scale>true</log_scale>
+        <minimum>0.0</minimum>
+        <maximum>800.0</maximum>
+        <show_grid>true</show_grid>
+        <visible>true</visible>
+        <color>
+          <color red="255" green="255" blue="255">
+          </color>
+        </color>
+      </y_axis>
+    </y_axes>
+    <traces>
+      <trace>
+        <name>Foreline Vac.</name>
+        <y_pv>$(vac)PPG053:VacP</y_pv>
+        <axis>0</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color red="0" green="255" blue="255">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>false</visible>
+      </trace>
+      <trace>
+        <name>Turbo Pirani Vac.</name>
+        <y_pv>$(vac)PPG052:VacP</y_pv>
+        <axis>0</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color red="179" green="26" blue="26">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>false</visible>
+      </trace>
+      <trace>
+        <name>Turbo CC Vac.</name>
+        <y_pv>$(vac)PCC052:VacP</y_pv>
+        <axis>0</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color red="255" green="0" blue="0">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>false</visible>
+      </trace>
+      <trace>
+        <name>IV Pirani Vac.</name>
+        <y_pv>$(vac)PPG051:VacP</y_pv>
+        <axis>0</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color red="128" green="176" blue="0">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>false</visible>
+      </trace>
+      <trace>
+        <name>IV CC Vac.</name>
+        <y_pv>$(vac)PCC051:VacP</y_pv>
+        <axis>0</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color red="0" green="255" blue="0">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>false</visible>
+      </trace>
+    </traces>
+  </widget>
   <widget type="label" version="2.0.0">
     <name>Label</name>
-    <class>TITLE</class>
-    <text>My Display</text>
-    <x use_class="true">0</x>
-    <y use_class="true">0</y>
-    <width>550</width>
-    <height>31</height>
-    <font use_class="true">
-      <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+    <text>PIP2IT pHB650 Insulating Vacuum</text>
+    <width>1100</width>
+    <height>40</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="22.0">
       </font>
     </font>
-    <foreground_color use_class="true">
-      <color name="Text" red="0" green="0" blue="0">
+    <foreground_color>
+      <color red="255" green="255" blue="255">
       </color>
     </foreground_color>
-    <transparent use_class="true">true</transparent>
+    <background_color>
+      <color red="153" green="0" blue="0">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <border_width>2</border_width>
   </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label_1</name>
-    <text>Some Value:</text>
-    <y>50</y>
-  </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
-    <pv_name>sim://sine</pv_name>
-    <x>100</x>
-    <y>50</y>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label_2</name>
-    <class>COMMENT</class>
-    <text>Some comment.</text>
-    <x>220</x>
-    <y>50</y>
-    <width>140</width>
-    <font use_class="true">
-      <font name="Comment" family="Liberation Sans" style="ITALIC" size="14.0">
+  <widget type="stripchart" version="2.1.0">
+    <name>Strip Chart_2</name>
+    <y>360</y>
+    <width>950</width>
+    <foreground_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <show_grid>true</show_grid>
+    <title>Insulating Vacuum Statuses</title>
+    <scale_font>
+      <font family="Liberation Sans" style="REGULAR" size="11.0">
       </font>
-    </font>
-    <foreground_color use_class="true">
-      <color name="Text" red="0" green="0" blue="0">
-      </color>
-    </foreground_color>
-    <transparent use_class="true">true</transparent>
-    <wrap_words use_class="true">true</wrap_words>
+    </scale_font>
+    <show_legend>true</show_legend>
+    <rules>
+      <rule name="Show Status 1" prop_id="traces[0].visible" out_exp="false">
+        <exp bool_exp="pv0">
+          <value>true</value>
+        </exp>
+        <pv_name>loc://ivsta1</pv_name>
+      </rule>
+      <rule name="Show Status 2" prop_id="traces[1].visible" out_exp="false">
+        <exp bool_exp="pv0">
+          <value>true</value>
+        </exp>
+        <pv_name>loc://ivsta2</pv_name>
+      </rule>
+      <rule name="Show Status 3" prop_id="traces[2].visible" out_exp="false">
+        <exp bool_exp="pv0">
+          <value>true</value>
+        </exp>
+        <pv_name>loc://ivsta3</pv_name>
+      </rule>
+      <rule name="Show Status 4" prop_id="traces[3].visible" out_exp="false">
+        <exp bool_exp="pv0">
+          <value>true</value>
+        </exp>
+        <pv_name>loc://ivsta4</pv_name>
+      </rule>
+      <rule name="Show Status 5" prop_id="traces[4].visible" out_exp="false">
+        <exp bool_exp="pv0">
+          <value>true</value>
+        </exp>
+        <pv_name>loc://ivsta5</pv_name>
+      </rule>
+      <rule name="Show Status 6" prop_id="traces[5].visible" out_exp="false">
+        <exp bool_exp="pv0">
+          <value>true</value>
+        </exp>
+        <pv_name>loc://ivsta6</pv_name>
+      </rule>
+    </rules>
+    <start>-15 minutes</start>
+    <end>now</end>
+    <y_axes>
+      <y_axis>
+        <title>Statuses</title>
+        <autoscale>false</autoscale>
+        <log_scale>false</log_scale>
+        <minimum>-0.5</minimum>
+        <maximum>4.5</maximum>
+        <show_grid>true</show_grid>
+        <visible>true</visible>
+        <color>
+          <color red="255" green="255" blue="255">
+          </color>
+        </color>
+      </y_axis>
+    </y_axes>
+    <traces>
+      <trace>
+        <name>ASB Valve ILK</name>
+        <y_pv>$(vac)VS053:ILK</y_pv>
+        <axis>0</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color red="0" green="255" blue="255">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>false</visible>
+      </trace>
+      <trace>
+        <name>ASB Valve OverRide</name>
+        <y_pv>$(vac)VS053:OverRide</y_pv>
+        <axis>0</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color red="255" green="0" blue="0">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>false</visible>
+      </trace>
+      <trace>
+        <name>ASB Valve Status</name>
+        <y_pv>$(vac)VS053:ValveStatus</y_pv>
+        <axis>0</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color red="0" green="255" blue="0">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>false</visible>
+      </trace>
+      <trace>
+        <name>Turbo Valve Status</name>
+        <y_pv>$(vac)VT052:ValveStatus</y_pv>
+        <axis>0</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color red="255" green="255" blue="0">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>false</visible>
+      </trace>
+      <trace>
+        <name>Scroll Pump Status</name>
+        <y_pv>$(vac)PS053:PumpStatus</y_pv>
+        <axis>0</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color red="255" green="0" blue="255">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>false</visible>
+      </trace>
+      <trace>
+        <name>Turbo Pump Status</name>
+        <y_pv>$(vac)PT052:PumpStatus</y_pv>
+        <axis>0</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color red="255" green="127" blue="0">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>false</visible>
+      </trace>
+    </traces>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group</name>
+    <x>960</x>
+    <y>90</y>
+    <width>130</width>
+    <height>105</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle</name>
+      <y>20</y>
+      <width>130</width>
+      <height>85</height>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <background_color>
+        <color red="128" green="128" blue="128">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="checkbox" version="2.0.0">
+      <name>Check Box_9</name>
+      <pv_name>loc://ivvacp1</pv_name>
+      <label>Foreline</label>
+      <x>5</x>
+      <y>25</y>
+      <width>120</width>
+      <height>15</height>
+      <foreground_color>
+        <color red="0" green="255" blue="255">
+        </color>
+      </foreground_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="checkbox" version="2.0.0">
+      <name>Check Box_10</name>
+      <pv_name>loc://ivvacp2</pv_name>
+      <label>Turbo Pirani</label>
+      <x>5</x>
+      <y>40</y>
+      <width>120</width>
+      <height>15</height>
+      <foreground_color>
+        <color red="179" green="26" blue="26">
+        </color>
+      </foreground_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="checkbox" version="2.0.0">
+      <name>Check Box_11</name>
+      <pv_name>loc://ivvacp3</pv_name>
+      <label>Turbo CC</label>
+      <x>5</x>
+      <y>55</y>
+      <width>120</width>
+      <height>15</height>
+      <foreground_color>
+        <color red="255" green="0" blue="0">
+        </color>
+      </foreground_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="checkbox" version="2.0.0">
+      <name>Check Box_12</name>
+      <pv_name>loc://ivvacp4</pv_name>
+      <label>IV Pirani</label>
+      <x>5</x>
+      <y>70</y>
+      <width>120</width>
+      <height>15</height>
+      <foreground_color>
+        <color red="128" green="176" blue="0">
+        </color>
+      </foreground_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="checkbox" version="2.0.0">
+      <name>Check Box_13</name>
+      <pv_name>loc://ivvacp5</pv_name>
+      <label>IV CC</label>
+      <x>5</x>
+      <y>85</y>
+      <width>120</width>
+      <height>15</height>
+      <foreground_color>
+        <color red="0" green="255" blue="0">
+        </color>
+      </foreground_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_1</name>
+      <text>Select Traces</text>
+      <width>130</width>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <background_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_width>1</border_width>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group</name>
+    <x>960</x>
+    <y>400</y>
+    <width>130</width>
+    <height>120</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle_2</name>
+      <y>20</y>
+      <width>130</width>
+      <height>100</height>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <background_color>
+        <color red="128" green="128" blue="128">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="checkbox" version="2.0.0">
+      <name>Check Box_19</name>
+      <pv_name>loc://ivsta1</pv_name>
+      <label>ASB ILK</label>
+      <x>5</x>
+      <y>25</y>
+      <width>120</width>
+      <height>15</height>
+      <foreground_color>
+        <color red="0" green="255" blue="255">
+        </color>
+      </foreground_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="checkbox" version="2.0.0">
+      <name>Check Box_20</name>
+      <pv_name>loc://ivsta2</pv_name>
+      <label>ASB OverRide</label>
+      <x>5</x>
+      <y>40</y>
+      <width>120</width>
+      <height>15</height>
+      <foreground_color>
+        <color red="255" green="0" blue="0">
+        </color>
+      </foreground_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="checkbox" version="2.0.0">
+      <name>Check Box_21</name>
+      <pv_name>loc://ivsta3</pv_name>
+      <label>ASB Status</label>
+      <x>5</x>
+      <y>55</y>
+      <width>120</width>
+      <height>15</height>
+      <foreground_color>
+        <color red="0" green="255" blue="0">
+        </color>
+      </foreground_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="checkbox" version="2.0.0">
+      <name>Check Box_22</name>
+      <pv_name>loc://ivsta4</pv_name>
+      <label>Turbo Vlv Stat</label>
+      <x>5</x>
+      <y>70</y>
+      <width>120</width>
+      <height>15</height>
+      <foreground_color>
+        <color red="255" green="255" blue="0">
+        </color>
+      </foreground_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="checkbox" version="2.0.0">
+      <name>Check Box_23</name>
+      <pv_name>loc://ivsta5</pv_name>
+      <label>Scroll Status</label>
+      <x>5</x>
+      <y>85</y>
+      <width>120</width>
+      <height>15</height>
+      <foreground_color>
+        <color red="170" green="0" blue="255">
+        </color>
+      </foreground_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_3</name>
+      <text>Select Traces</text>
+      <width>130</width>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <background_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="checkbox" version="2.0.0">
+      <name>Check Box_24</name>
+      <pv_name>loc://ivsta6</pv_name>
+      <label>Turbo Status</label>
+      <x>5</x>
+      <y>100</y>
+      <width>120</width>
+      <height>15</height>
+      <foreground_color>
+        <color red="255" green="127" blue="0">
+        </color>
+      </foreground_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
   </widget>
 </display>
