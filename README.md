@@ -1,6 +1,6 @@
-# Controls Displays
+# Phoebus Displays
 
-This repository contains the Graphical Interfaces to the EPICS IOCs
+This repository contains the Graphical Interfaces to the EPICS IOCs consumed by Phoebus. 
 
 ## Current Status
 
@@ -13,7 +13,7 @@ The test folder provides a test area for displays that require an end-to-end tes
 
 
 ```
-controls-displays/
+phoebus-displays/
 ├── Examples
 ├── Templates
 ├── Common
@@ -36,7 +36,7 @@ controls-displays/
 
 As with all contributions to the Fermilab EPICS code , one must acquire a github enterprise account so that your code may be merged with the standard deployment.
 
-Furthermore, one must be added as a member of the controls-displays-dev team; to become a member, please make a request to Mariana González (mariana@fnal.gov), or Pierrick Hanlet (hanlet@fnal.gov).
+Furthermore, one must be added as a member of the phoebus-displays team; to become a member, please make a request to Mariana González (mariana@fnal.gov), or Pierrick Hanlet (hanlet@fnal.gov).
 
 ### Local Development
 
