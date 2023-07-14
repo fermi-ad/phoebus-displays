@@ -9,7 +9,7 @@
   <scroll>true</scroll>
   <start>-1 days</start>
   <end>now</end>
-  <archive_rescale>STAGGER</archive_rescale>
+  <archive_rescale>NONE</archive_rescale>
   <foreground>
     <red>0</red>
     <green>0</green>
@@ -21,7 +21,7 @@
     <blue>230</blue>
   </background>
   <title_font>Liberation Sans|18|1</title_font>
-  <label_font>Liberation Sans|14|1</label_font>
+  <label_font>Liberation Sans|12|1</label_font>
   <scale_font>Liberation Sans|10|0</scale_font>
   <legend_font>Liberation Sans|12|0</legend_font>
   <axes>
@@ -33,11 +33,11 @@
       <right>true</right>
       <color>
         <red>0</red>
-        <green>0</green>
+        <green>128</green>
         <blue>0</blue>
       </color>
-      <min>-467.0</min>
-      <max>395.0</max>
+      <min>-200.0</min>
+      <max>370.0</max>
       <grid>false</grid>
       <autoscale>false</autoscale>
       <log_scale>false</log_scale>
@@ -49,12 +49,12 @@
       <use_trace_names>false</use_trace_names>
       <right>false</right>
       <color>
-        <red>0</red>
+        <red>255</red>
         <green>0</green>
         <blue>0</blue>
       </color>
-      <min>-0.4</min>
-      <max>16.7</max>
+      <min>-0.7000000000000001</min>
+      <max>16.1</max>
       <grid>true</grid>
       <autoscale>false</autoscale>
       <log_scale>false</log_scale>
@@ -83,8 +83,8 @@
       <ring_size>5000</ring_size>
       <request>OPTIMIZED</request>
       <archive>
-        <name>pbraw://vclx4.fnal.gov:17668/retrieval</name>
-        <url>pbraw://vclx4.fnal.gov:17668/retrieval</url>
+        <name>archiver2</name>
+        <url>pbraw://archiver2.fnal.gov:17668/retrieval</url>
         <key>1</key>
       </archive>
     </pv>
@@ -108,8 +108,8 @@
       <ring_size>5000</ring_size>
       <request>OPTIMIZED</request>
       <archive>
-        <name>pbraw://vclx4.fnal.gov:17668/retrieval</name>
-        <url>pbraw://vclx4.fnal.gov:17668/retrieval</url>
+        <name>archiver2</name>
+        <url>pbraw://archiver2.fnal.gov:17668/retrieval</url>
         <key>1</key>
       </archive>
     </pv>
@@ -133,8 +133,8 @@
       <ring_size>5000</ring_size>
       <request>OPTIMIZED</request>
       <archive>
-        <name>pbraw://vclx4.fnal.gov:17668/retrieval</name>
-        <url>pbraw://vclx4.fnal.gov:17668/retrieval</url>
+        <name>archiver2</name>
+        <url>pbraw://archiver2.fnal.gov:17668/retrieval</url>
         <key>1</key>
       </archive>
     </pv>
