@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2023-07-04 20:40:32 by epics-->
+<!--Saved on 2023-07-21 17:32:29 by epics-->
 <display version="2.0.0">
   <name>HB650Vacuum</name>
   <macros>
@@ -2613,12 +2613,12 @@ Permits</text>
       <name>Action Button_9</name>
       <actions>
         <action type="write_pv">
-          <pv_name>$(vac)RFPI:sReset.PROC</pv_name>
+          <pv_name>$(vac)AFPMT:sReset</pv_name>
           <value>1</value>
           <description>Reset</description>
         </action>
       </actions>
-      <pv_name>$(vac)AFX71:sReset</pv_name>
+      <pv_name>$(vac)AFPMT:sReset</pv_name>
       <y>125</y>
       <width>80</width>
       <height>15</height>
@@ -2877,12 +2877,12 @@ Permits</text>
       <name>Action Button_6</name>
       <actions>
         <action type="write_pv">
-          <pv_name>$(vac)RFPI:sReset.PROC</pv_name>
+          <pv_name>$(vac)VACPMT:sReset</pv_name>
           <value>1</value>
           <description>Reset</description>
         </action>
       </actions>
-      <pv_name>$(vac)RFPI:sReset</pv_name>
+      <pv_name>$(vac)VACPMT:sReset</pv_name>
       <y>125</y>
       <width>80</width>
       <height>15</height>
@@ -2902,100 +2902,6 @@ Permits</text>
       <show_confirm_dialog>true</show_confirm_dialog>
       <confirm_message>Are your sure you want to reset the Vacuum Permit?</confirm_message>
     </widget>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Action Button_10</name>
-    <actions>
-      <action type="write_pv">
-        <pv_name>PIP2IT:pHB650_PLC_650-plc111:B23036</pv_name>
-        <value>1</value>
-        <description>Flow Reset</description>
-      </action>
-    </actions>
-    <pv_name>PIP2IT:pHB650_PLC_650-plc111:B23036</pv_name>
-    <x>210</x>
-    <y>630</y>
-    <width>80</width>
-    <height>15</height>
-    <font>
-      <font family="Liberation Sans" style="REGULAR" size="11.0">
-      </font>
-    </font>
-    <rules>
-      <rule name="Make Visible" prop_id="visible" out_exp="false">
-        <exp bool_exp="pv0=0">
-          <value>true</value>
-        </exp>
-        <pv_name>$(vac)RFPI:Permit</pv_name>
-      </rule>
-    </rules>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-    <show_confirm_dialog>true</show_confirm_dialog>
-    <confirm_message>Are your sure you want to reset the AirFlow Permit?</confirm_message>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Action Button_11</name>
-    <actions>
-      <action type="write_pv">
-        <pv_name>PIP2IT:pHB650_PLC_650-plc111:B23037.PROC</pv_name>
-        <value>1</value>
-        <description>Vacuum Reset</description>
-      </action>
-    </actions>
-    <pv_name>PIP2IT:pHB650_PLC_650-plc111:B23037</pv_name>
-    <x>1200</x>
-    <y>630</y>
-    <width>80</width>
-    <height>15</height>
-    <font>
-      <font family="Liberation Sans" style="REGULAR" size="11.0">
-      </font>
-    </font>
-    <rules>
-      <rule name="Make Visible" prop_id="visible" out_exp="false">
-        <exp bool_exp="pv0=0">
-          <value>true</value>
-        </exp>
-        <pv_name>$(vac)RFPI:Permit</pv_name>
-      </rule>
-    </rules>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-    <show_confirm_dialog>true</show_confirm_dialog>
-    <confirm_message>Are your sure you want to reset the Vacuum Permit?</confirm_message>
-  </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>Text Update_336</name>
-    <pv_name>$(vac)AFX71:FlowLimL</pv_name>
-    <x>310</x>
-    <y>570</y>
-    <width>90</width>
-    <height>15</height>
-    <font>
-      <font family="Liberation Sans" style="REGULAR" size="11.0">
-      </font>
-    </font>
-    <format>1</format>
-    <precision>2</precision>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>Text Update_337</name>
-    <pv_name>$(vac)AFX71:FlowLimH</pv_name>
-    <x>310</x>
-    <y>590</y>
-    <width>90</width>
-    <height>15</height>
-    <font>
-      <font family="Liberation Sans" style="REGULAR" size="11.0">
-      </font>
-    </font>
-    <format>1</format>
-    <precision>2</precision>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="group" version="2.0.0">
     <name>Group</name>
@@ -3397,74 +3303,6 @@ Permits</text>
       </color>
     </border_color>
   </widget>
-  <widget type="textentry" version="3.0.0">
-    <name>Text Entry</name>
-    <pv_name>$(vac)AFX71:sFlowLimL</pv_name>
-    <x>420</x>
-    <y>570</y>
-    <width>70</width>
-    <height>15</height>
-    <font>
-      <font family="Liberation Sans" style="REGULAR" size="11.0">
-      </font>
-    </font>
-    <format>1</format>
-    <precision>2</precision>
-    <horizontal_alignment>1</horizontal_alignment>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
-  <widget type="textentry" version="3.0.0">
-    <name>Text Entry_1</name>
-    <pv_name>$(vac)AFX71:sFlowLimH</pv_name>
-    <x>420</x>
-    <y>590</y>
-    <width>70</width>
-    <height>15</height>
-    <font>
-      <font family="Liberation Sans" style="REGULAR" size="11.0">
-      </font>
-    </font>
-    <format>1</format>
-    <precision>2</precision>
-    <horizontal_alignment>1</horizontal_alignment>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>Text Update_338</name>
-    <pv_name>PIP2IT:pHB650_PLC_650-plc111:sAFLL</pv_name>
-    <x>500</x>
-    <y>570</y>
-    <width>70</width>
-    <height>15</height>
-    <font>
-      <font family="Liberation Sans" style="REGULAR" size="11.0">
-      </font>
-    </font>
-    <format>4</format>
-    <precision>2</precision>
-    <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>Text Update_339</name>
-    <pv_name>PIP2IT:pHB650_PLC_650-plc111:sAFHL</pv_name>
-    <x>500</x>
-    <y>590</y>
-    <width>70</width>
-    <height>15</height>
-    <font>
-      <font family="Liberation Sans" style="REGULAR" size="11.0">
-      </font>
-    </font>
-    <format>4</format>
-    <precision>2</precision>
-    <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
   <widget type="label" version="2.0.0">
     <name>Label</name>
     <text>PIP2IT pHB650 Vacuum</text>
@@ -3486,5 +3324,254 @@ Permits</text>
     <horizontal_alignment>1</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
     <border_width>2</border_width>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group</name>
+    <x>300</x>
+    <y>575</y>
+    <width>185</width>
+    <height>45</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>Label_48</name>
+      <text>Low Limit</text>
+      <y>15</y>
+      <width>60</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="11.0">
+        </font>
+      </font>
+      <background_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_73</name>
+      <text>High Limit</text>
+      <y>30</y>
+      <width>60</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="11.0">
+        </font>
+      </font>
+      <background_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Text Entry</name>
+      <pv_name>$(vac)AFX71:sFlowLimL</pv_name>
+      <x>65</x>
+      <y>15</y>
+      <width>60</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <format>1</format>
+      <precision>2</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Text Entry_1</name>
+      <pv_name>$(vac)AFX71:sFlowLimH</pv_name>
+      <x>65</x>
+      <y>30</y>
+      <width>60</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <format>1</format>
+      <precision>2</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_47</name>
+      <text>Set</text>
+      <x>65</x>
+      <width>60</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="11.0">
+        </font>
+      </font>
+      <background_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_336</name>
+      <pv_name>$(vac)AFX71:FlowLimL</pv_name>
+      <x>125</x>
+      <y>15</y>
+      <width>60</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <format>1</format>
+      <precision>2</precision>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_337</name>
+      <pv_name>$(vac)AFX71:FlowLimH</pv_name>
+      <x>125</x>
+      <y>30</y>
+      <width>60</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <format>1</format>
+      <precision>2</precision>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_41</name>
+      <text>Value</text>
+      <x>125</x>
+      <width>60</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="11.0">
+        </font>
+      </font>
+      <background_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <border_width>1</border_width>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group_3</name>
+    <x>1190</x>
+    <y>410</y>
+    <width>100</width>
+    <height>65</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle_17</name>
+      <y>35</y>
+      <height>30</height>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="Read_Background" red="240" green="240" blue="240">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_266</name>
+      <pv_name>$(vac)PCC201:VacP</pv_name>
+      <y>50</y>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="12.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color red="0" green="255" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </background_color>
+      <format>2</format>
+      <precision>2</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_333</name>
+      <pv_name>$(vac)PCC201:Name</pv_name>
+      <y>35</y>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="12.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="Attention" red="255" green="160" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </background_color>
+      <show_units>false</show_units>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_74</name>
+      <text>DS Cavity
+Vacuum</text>
+      <height>35</height>
+      <background_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_1</name>
+      <pv_name>$(vac)PCC201:PumpStatus</pv_name>
+      <x>5</x>
+      <y>10</y>
+      <width>15</width>
+      <height>15</height>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
   </widget>
 </display>
