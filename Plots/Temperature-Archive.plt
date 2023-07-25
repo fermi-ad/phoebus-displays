@@ -36,8 +36,8 @@
         <green>0</green>
         <blue>0</blue>
       </color>
-      <min>-50.0</min>
-      <max>52.0</max>
+      <min>10.0</min>
+      <max>35.1</max>
       <grid>true</grid>
       <autoscale>false</autoscale>
       <log_scale>false</log_scale>
@@ -98,7 +98,7 @@
     </pv>
     <pv>
       <display_name>Heat Index</display_name>
-      <visible>true</visible>
+      <visible>false</visible>
       <name>FNAL-AD-ENV-01:HEATIX</name>
       <axis>0</axis>
       <color>
@@ -123,7 +123,7 @@
     </pv>
     <pv>
       <display_name>Wind Chill</display_name>
-      <visible>true</visible>
+      <visible>false</visible>
       <name>FNAL-AD-ENV-01:WCHILL</name>
       <axis>0</axis>
       <color>
@@ -148,7 +148,7 @@
     </pv>
     <pv>
       <display_name>Outdoor Temperature</display_name>
-      <visible>true</visible>
+      <visible>false</visible>
       <name>FNAL-AD-ENV-01:OUTTMP</name>
       <axis>0</axis>
       <color>
