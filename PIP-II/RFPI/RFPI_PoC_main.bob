@@ -8,11 +8,11 @@
     <Rzynq>logic:</Rzynq>
   </macros>
   <width>640</width>
-  <height>690</height>
+  <height>720</height>
   <widget type="group" version="2.0.0">
     <name>Permits_group</name>
     <x>20</x>
-    <y>450</y>
+    <y>490</y>
     <width>290</width>
     <height>220</height>
     <style>3</style>
@@ -198,22 +198,6 @@
       <color name="BACKGROUND" red="220" green="225" blue="221">
       </color>
     </background_color>
-    <widget type="rectangle" version="2.0.0">
-      <name>Inputs_rectangle</name>
-      <width>600</width>
-      <height>370</height>
-      <line_width>2</line_width>
-      <line_color>
-        <color name="GROUP-BORDER" red="150" green="155" blue="151">
-        </color>
-      </line_color>
-      <background_color>
-        <color name="BACKGROUND" red="220" green="225" blue="221">
-        </color>
-      </background_color>
-      <corner_width>10</corner_width>
-      <corner_height>10</corner_height>
-    </widget>
     <widget type="label" version="2.0.0">
       <name>Inputs_title</name>
       <class>HEADER2</class>
@@ -235,7 +219,7 @@
   <widget type="group" version="2.0.0">
     <name>Diagnostics_group</name>
     <x>330</x>
-    <y>450</y>
+    <y>490</y>
     <width>290</width>
     <height>110</height>
     <style>3</style>
@@ -305,442 +289,23 @@
       <tooltip>$(actions)</tooltip>
     </widget>
   </widget>
-  <widget type="group" version="2.0.0">
-    <name>Analog_group</name>
-    <x>330</x>
-    <y>120</y>
-    <width>270</width>
-    <height>300</height>
-    <style>3</style>
+  <widget type="rectangle" version="2.0.0">
+    <name>Inputs_rectangle</name>
+    <x>20</x>
+    <y>70</y>
+    <width>600</width>
+    <height>410</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color name="GROUP-BORDER" red="150" green="155" blue="151">
+      </color>
+    </line_color>
     <background_color>
       <color name="BACKGROUND" red="220" green="225" blue="221">
       </color>
     </background_color>
-    <widget type="rectangle" version="2.0.0">
-      <name>Analog_rectangle</name>
-      <width>270</width>
-      <height>300</height>
-      <line_width>2</line_width>
-      <line_color>
-        <color name="GROUP-BORDER" red="150" green="155" blue="151">
-        </color>
-      </line_color>
-      <background_color>
-        <color name="GROUP-BACKGROUND" red="200" green="205" blue="201">
-        </color>
-      </background_color>
-      <corner_width>10</corner_width>
-      <corner_height>10</corner_height>
-    </widget>
-    <widget type="label" version="2.0.0">
-      <name>Analog_title</name>
-      <class>HEADER3</class>
-      <text>Analog</text>
-      <width>280</width>
-      <height>40</height>
-      <font use_class="true">
-        <font name="Header 3" family="Source Sans Pro" style="BOLD_ITALIC" size="18.0">
-        </font>
-      </font>
-      <foreground_color use_class="true">
-        <color name="Text" red="25" green="25" blue="25">
-        </color>
-      </foreground_color>
-      <horizontal_alignment>1</horizontal_alignment>
-      <vertical_alignment>1</vertical_alignment>
-    </widget>
-    <widget type="action_button" version="3.0.0">
-      <name>HVCouplerBiasCurrent_button</name>
-      <actions>
-        <action type="open_display">
-          <file>expert/analog_input_expert.bob</file>
-          <macros>
-            <CHANNEL_NAME>HV Coupler Bias Current</CHANNEL_NAME>
-            <NAME>HVCURR</NAME>
-            <P>$(Pzynq)</P>
-            <R>$(Rzynq)</R>
-          </macros>
-          <target>tab</target>
-          <description>Open Display</description>
-        </action>
-      </actions>
-      <text>HV Coupler Bias Curr.</text>
-      <x>60</x>
-      <y>263</y>
-      <width>190</width>
-      <tooltip>$(actions)</tooltip>
-    </widget>
-    <widget type="action_button" version="3.0.0">
-      <name>HVCouplerBiasVolt_button</name>
-      <actions>
-        <action type="open_display">
-          <file>expert/analog_input_expert.bob</file>
-          <macros>
-            <CHANNEL_NAME>HV Coupler Bias Voltage</CHANNEL_NAME>
-            <NAME>HVVOLT</NAME>
-            <P>$(Pzynq)</P>
-            <R>$(Rzynq)</R>
-          </macros>
-          <target>tab</target>
-          <description>Open Display</description>
-        </action>
-      </actions>
-      <text>HV Coupler Bias Voltage</text>
-      <x>60</x>
-      <y>221</y>
-      <width>190</width>
-      <tooltip>$(actions)</tooltip>
-    </widget>
-    <widget type="action_button" version="3.0.0">
-      <name>Temperature2_button</name>
-      <actions>
-        <action type="open_display">
-          <file>expert/analog_input_expert.bob</file>
-          <macros>
-            <CHANNEL_NAME>Temperature Sensor RTD2</CHANNEL_NAME>
-            <NAME>RTD2</NAME>
-            <P>$(Pzynq)</P>
-            <R>$(Rzynq)</R>
-          </macros>
-          <target>tab</target>
-          <description>Open Display</description>
-        </action>
-      </actions>
-      <text>Temperature Sensor RTD2</text>
-      <x>60</x>
-      <y>184</y>
-      <width>190</width>
-      <tooltip>$(actions)</tooltip>
-    </widget>
-    <widget type="multi_state_led" version="2.0.0">
-      <name>FieldEmission_LED</name>
-      <pv_name>$(Pzynq)$(Rzynq)FEP1Status_r</pv_name>
-      <x>20</x>
-      <y>36</y>
-      <width>30</width>
-      <height>30</height>
-      <states>
-        <state>
-          <value>0</value>
-          <label></label>
-          <color>
-            <color name="ON" red="70" green="255" blue="70">
-            </color>
-          </color>
-        </state>
-        <state>
-          <value>1</value>
-          <label></label>
-          <color>
-            <color name="MAJOR" red="252" green="13" blue="27">
-            </color>
-          </color>
-        </state>
-        <state>
-          <value>2</value>
-          <label></label>
-          <color>
-            <color name="WARNING" red="252" green="242" blue="17">
-            </color>
-          </color>
-        </state>
-      </states>
-      <fallback_label></fallback_label>
-    </widget>
-    <widget type="multi_state_led" version="2.0.0">
-      <name>RFAntenna_LED</name>
-      <pv_name>$(Pzynq)$(Rzynq)NIRP1Status_r</pv_name>
-      <x>20</x>
-      <y>73</y>
-      <width>30</width>
-      <height>30</height>
-      <states>
-        <state>
-          <value>0</value>
-          <label></label>
-          <color>
-            <color name="ON" red="70" green="255" blue="70">
-            </color>
-          </color>
-        </state>
-        <state>
-          <value>1</value>
-          <label></label>
-          <color>
-            <color name="MAJOR" red="252" green="13" blue="27">
-            </color>
-          </color>
-        </state>
-        <state>
-          <value>2</value>
-          <label></label>
-          <color>
-            <color name="WARNING" red="252" green="242" blue="17">
-            </color>
-          </color>
-        </state>
-      </states>
-      <fallback_label></fallback_label>
-    </widget>
-    <widget type="multi_state_led" version="2.0.0">
-      <name>Temperature2_LED</name>
-      <pv_name>$(Pzynq)$(Rzynq)RTD2Status_r</pv_name>
-      <x>20</x>
-      <y>184</y>
-      <width>30</width>
-      <height>30</height>
-      <states>
-        <state>
-          <value>0</value>
-          <label></label>
-          <color>
-            <color name="ON" red="70" green="255" blue="70">
-            </color>
-          </color>
-        </state>
-        <state>
-          <value>1</value>
-          <label></label>
-          <color>
-            <color name="MAJOR" red="252" green="13" blue="27">
-            </color>
-          </color>
-        </state>
-        <state>
-          <value>2</value>
-          <label></label>
-          <color>
-            <color name="WARNING" red="252" green="242" blue="17">
-            </color>
-          </color>
-        </state>
-      </states>
-      <fallback_label></fallback_label>
-    </widget>
-    <widget type="multi_state_led" version="2.0.0">
-      <name>HVCouplerBiasVolt_LED</name>
-      <pv_name>$(Pzynq)$(Rzynq)HVVOLTStatus_r</pv_name>
-      <x>20</x>
-      <y>221</y>
-      <width>30</width>
-      <height>30</height>
-      <states>
-        <state>
-          <value>0</value>
-          <label></label>
-          <color>
-            <color name="ON" red="70" green="255" blue="70">
-            </color>
-          </color>
-        </state>
-        <state>
-          <value>1</value>
-          <label></label>
-          <color>
-            <color name="MAJOR" red="252" green="13" blue="27">
-            </color>
-          </color>
-        </state>
-        <state>
-          <value>2</value>
-          <label></label>
-          <color>
-            <color name="WARNING" red="252" green="242" blue="17">
-            </color>
-          </color>
-        </state>
-      </states>
-      <fallback_label></fallback_label>
-    </widget>
-    <widget type="multi_state_led" version="2.0.0">
-      <name>HVCouplerBiasCurr_LED</name>
-      <pv_name>$(Pzynq)$(Rzynq)HVCURRStatus_r</pv_name>
-      <x>20</x>
-      <y>263</y>
-      <width>30</width>
-      <height>30</height>
-      <states>
-        <state>
-          <value>0</value>
-          <label></label>
-          <color>
-            <color name="ON" red="70" green="255" blue="70">
-            </color>
-          </color>
-        </state>
-        <state>
-          <value>1</value>
-          <label></label>
-          <color>
-            <color name="MAJOR" red="252" green="13" blue="27">
-            </color>
-          </color>
-        </state>
-        <state>
-          <value>2</value>
-          <label></label>
-          <color>
-            <color name="WARNING" red="252" green="242" blue="17">
-            </color>
-          </color>
-        </state>
-      </states>
-      <fallback_label></fallback_label>
-    </widget>
-    <widget type="action_button" version="3.0.0">
-      <name>RFAntenna_button_2</name>
-      <actions>
-        <action type="open_display">
-          <file>expert/analog_input_expert.bob</file>
-          <macros>
-            <CHANNEL_NAME>RF Power</CHANNEL_NAME>
-            <NAME>NIRP2</NAME>
-            <P>$(Pzynq)</P>
-            <R>$(Rzynq)</R>
-          </macros>
-          <target>tab</target>
-          <description>Open Display</description>
-        </action>
-      </actions>
-      <text>RF Antenna (NIRP2)</text>
-      <x>60</x>
-      <y>110</y>
-      <width>190</width>
-      <tooltip>$(actions)</tooltip>
-    </widget>
-    <widget type="multi_state_led" version="2.0.0">
-      <name>RFAntenna_LED_2</name>
-      <pv_name>$(Pzynq)$(Rzynq)NIRP2Status_r</pv_name>
-      <x>20</x>
-      <y>110</y>
-      <width>30</width>
-      <height>30</height>
-      <states>
-        <state>
-          <value>0</value>
-          <label></label>
-          <color>
-            <color name="ON" red="70" green="255" blue="70">
-            </color>
-          </color>
-        </state>
-        <state>
-          <value>1</value>
-          <label></label>
-          <color>
-            <color name="MAJOR" red="252" green="13" blue="27">
-            </color>
-          </color>
-        </state>
-        <state>
-          <value>2</value>
-          <label></label>
-          <color>
-            <color name="WARNING" red="252" green="242" blue="17">
-            </color>
-          </color>
-        </state>
-      </states>
-      <fallback_label></fallback_label>
-    </widget>
-    <widget type="action_button" version="3.0.0">
-      <name>FieldEmission_button</name>
-      <actions>
-        <action type="open_display">
-          <file>expert/analog_input_expert.bob</file>
-          <macros>
-            <CHANNEL_NAME>Field Emission Probe</CHANNEL_NAME>
-            <NAME>FEP1</NAME>
-            <P>$(Pzynq)</P>
-            <R>$(Rzynq)</R>
-          </macros>
-          <target>tab</target>
-          <description>Open Display</description>
-        </action>
-      </actions>
-      <text>Field Emission Probe</text>
-      <x>60</x>
-      <y>36</y>
-      <width>190</width>
-      <tooltip>$(actions)</tooltip>
-    </widget>
-    <widget type="action_button" version="3.0.0">
-      <name>RFAntenna_button</name>
-      <actions>
-        <action type="open_display">
-          <file>expert/analog_input_expert.bob</file>
-          <macros>
-            <CHANNEL_NAME>RF Antenna</CHANNEL_NAME>
-            <NAME>NIRP1</NAME>
-            <P>$(Pzynq)</P>
-            <R>$(Rzynq)</R>
-          </macros>
-          <target>tab</target>
-          <description>Open Display</description>
-        </action>
-      </actions>
-      <text>RF Antenna (NIRP)</text>
-      <x>60</x>
-      <y>73</y>
-      <width>190</width>
-      <tooltip>$(actions)</tooltip>
-    </widget>
-    <widget type="action_button" version="3.0.0">
-      <name>RFAntenna_button_3</name>
-      <actions>
-        <action type="open_display">
-          <file>expert/analog_input_expert.bob</file>
-          <macros>
-            <CHANNEL_NAME>RF Power</CHANNEL_NAME>
-            <NAME>NIRP3</NAME>
-            <P>$(Pzynq)</P>
-            <R>$(Rzynq)</R>
-          </macros>
-          <target>tab</target>
-          <description>Open Display</description>
-        </action>
-      </actions>
-      <text>RF Antenna (NIRP3)</text>
-      <x>60</x>
-      <y>147</y>
-      <width>190</width>
-      <tooltip>$(actions)</tooltip>
-    </widget>
-    <widget type="multi_state_led" version="2.0.0">
-      <name>RFAntenna_LED_3</name>
-      <pv_name>$(Pzynq)$(Rzynq)NIRP3Status_r</pv_name>
-      <x>20</x>
-      <y>147</y>
-      <width>30</width>
-      <height>30</height>
-      <states>
-        <state>
-          <value>0</value>
-          <label></label>
-          <color>
-            <color name="ON" red="70" green="255" blue="70">
-            </color>
-          </color>
-        </state>
-        <state>
-          <value>1</value>
-          <label></label>
-          <color>
-            <color name="MAJOR" red="252" green="13" blue="27">
-            </color>
-          </color>
-        </state>
-        <state>
-          <value>2</value>
-          <label></label>
-          <color>
-            <color name="WARNING" red="252" green="242" blue="17">
-            </color>
-          </color>
-        </state>
-      </states>
-      <fallback_label></fallback_label>
-    </widget>
+    <corner_width>10</corner_width>
+    <corner_height>10</corner_height>
   </widget>
   <widget type="group" version="2.0.0">
     <name>Binary_group</name>
@@ -1155,7 +720,7 @@
     <pv_name>$(Pzynq)$(Rzynq)ResetAll1_s</pv_name>
     <text>Reset</text>
     <x>330</x>
-    <y>630</y>
+    <y>670</y>
     <width>130</width>
     <height>40</height>
     <font>
@@ -1179,9 +744,501 @@
     </actions>
     <text>Settings</text>
     <x>480</x>
-    <y>630</y>
+    <y>670</y>
     <width>140</width>
     <height>40</height>
     <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Analog_rectangle</name>
+    <x>330</x>
+    <y>120</y>
+    <width>270</width>
+    <height>340</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color name="GROUP-BORDER" red="150" green="155" blue="151">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="GROUP-BACKGROUND" red="200" green="205" blue="201">
+      </color>
+    </background_color>
+    <corner_width>10</corner_width>
+    <corner_height>10</corner_height>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Analog_group</name>
+    <x>330</x>
+    <y>120</y>
+    <width>270</width>
+    <height>324</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="action_button" version="3.0.0">
+      <name>HVCouplerBiasVolt_button</name>
+      <actions>
+        <action type="open_display">
+          <file>expert/analog_input_expert.bob</file>
+          <macros>
+            <CHANNEL_NAME>HV Coupler Bias Voltage</CHANNEL_NAME>
+            <NAME>HVVOLT</NAME>
+            <P>$(Pzynq)</P>
+            <R>$(Rzynq)</R>
+          </macros>
+          <target>tab</target>
+          <description>Open Display</description>
+        </action>
+      </actions>
+      <text>HV Coupler Bias Voltage</text>
+      <x>60</x>
+      <y>252</y>
+      <width>190</width>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Temperature2_button</name>
+      <actions>
+        <action type="open_display">
+          <file>expert/analog_input_expert.bob</file>
+          <macros>
+            <CHANNEL_NAME>Temperature Sensor RTD2</CHANNEL_NAME>
+            <NAME>RTD2</NAME>
+            <P>$(Pzynq)</P>
+            <R>$(Rzynq)</R>
+          </macros>
+          <target>tab</target>
+          <description>Open Display</description>
+        </action>
+      </actions>
+      <text>Temperature Sensor RTD2</text>
+      <x>60</x>
+      <y>216</y>
+      <width>190</width>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>Temperature2_LED</name>
+      <pv_name>$(Pzynq)$(Rzynq)RTD2Status_r</pv_name>
+      <x>20</x>
+      <y>216</y>
+      <width>30</width>
+      <height>30</height>
+      <states>
+        <state>
+          <value>0</value>
+          <label></label>
+          <color>
+            <color name="ON" red="70" green="255" blue="70">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>1</value>
+          <label></label>
+          <color>
+            <color name="MAJOR" red="252" green="13" blue="27">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>2</value>
+          <label></label>
+          <color>
+            <color name="WARNING" red="252" green="242" blue="17">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label></fallback_label>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>HVCouplerBiasVolt_LED</name>
+      <pv_name>$(Pzynq)$(Rzynq)HVVOLTStatus_r</pv_name>
+      <x>20</x>
+      <y>252</y>
+      <width>30</width>
+      <height>30</height>
+      <states>
+        <state>
+          <value>0</value>
+          <label></label>
+          <color>
+            <color name="ON" red="70" green="255" blue="70">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>1</value>
+          <label></label>
+          <color>
+            <color name="MAJOR" red="252" green="13" blue="27">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>2</value>
+          <label></label>
+          <color>
+            <color name="WARNING" red="252" green="242" blue="17">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label></fallback_label>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>HVCouplerBiasCurrent_button</name>
+      <actions>
+        <action type="open_display">
+          <file>expert/analog_input_expert.bob</file>
+          <macros>
+            <CHANNEL_NAME>HV Coupler Bias Current</CHANNEL_NAME>
+            <NAME>HVCURR</NAME>
+            <P>$(Pzynq)</P>
+            <R>$(Rzynq)</R>
+          </macros>
+          <target>tab</target>
+          <description>Open Display</description>
+        </action>
+      </actions>
+      <text>HV Coupler Bias Curr.</text>
+      <x>60</x>
+      <y>290</y>
+      <width>190</width>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>HVCouplerBiasCurr_LED</name>
+      <pv_name>$(Pzynq)$(Rzynq)HVCURRStatus_r</pv_name>
+      <x>20</x>
+      <y>289</y>
+      <width>30</width>
+      <height>30</height>
+      <states>
+        <state>
+          <value>0</value>
+          <label></label>
+          <color>
+            <color name="ON" red="70" green="255" blue="70">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>1</value>
+          <label></label>
+          <color>
+            <color name="MAJOR" red="252" green="13" blue="27">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>2</value>
+          <label></label>
+          <color>
+            <color name="WARNING" red="252" green="242" blue="17">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label></fallback_label>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Analog_title</name>
+      <class>HEADER3</class>
+      <text>Analog</text>
+      <width>280</width>
+      <height>40</height>
+      <font use_class="true">
+        <font name="Header 3" family="Source Sans Pro" style="BOLD_ITALIC" size="18.0">
+        </font>
+      </font>
+      <foreground_color use_class="true">
+        <color name="Text" red="25" green="25" blue="25">
+        </color>
+      </foreground_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>FieldEmission_LED</name>
+      <pv_name>$(Pzynq)$(Rzynq)FEP1Status_r</pv_name>
+      <x>20</x>
+      <y>36</y>
+      <width>30</width>
+      <height>30</height>
+      <states>
+        <state>
+          <value>0</value>
+          <label></label>
+          <color>
+            <color name="ON" red="70" green="255" blue="70">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>1</value>
+          <label></label>
+          <color>
+            <color name="MAJOR" red="252" green="13" blue="27">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>2</value>
+          <label></label>
+          <color>
+            <color name="WARNING" red="252" green="242" blue="17">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label></fallback_label>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>RFAntenna_LED</name>
+      <pv_name>$(Pzynq)$(Rzynq)NIRP1Status_r</pv_name>
+      <x>20</x>
+      <y>72</y>
+      <width>30</width>
+      <height>30</height>
+      <states>
+        <state>
+          <value>0</value>
+          <label></label>
+          <color>
+            <color name="ON" red="70" green="255" blue="70">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>1</value>
+          <label></label>
+          <color>
+            <color name="MAJOR" red="252" green="13" blue="27">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>2</value>
+          <label></label>
+          <color>
+            <color name="WARNING" red="252" green="242" blue="17">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label></fallback_label>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>RFAntenna_button_2</name>
+      <actions>
+        <action type="open_display">
+          <file>expert/analog_input_expert.bob</file>
+          <macros>
+            <CHANNEL_NAME>RF Antenna 2</CHANNEL_NAME>
+            <NAME>NIRP2</NAME>
+            <P>$(Pzynq)</P>
+            <R>$(Rzynq)</R>
+          </macros>
+          <target>tab</target>
+          <description>Open Display</description>
+        </action>
+      </actions>
+      <text>RF Antenna 2 (NIRP2)</text>
+      <x>60</x>
+      <y>108</y>
+      <width>190</width>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>RFAntenna_LED_2</name>
+      <pv_name>$(Pzynq)$(Rzynq)NIRP2Status_r</pv_name>
+      <x>20</x>
+      <y>108</y>
+      <width>30</width>
+      <height>30</height>
+      <states>
+        <state>
+          <value>0</value>
+          <label></label>
+          <color>
+            <color name="ON" red="70" green="255" blue="70">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>1</value>
+          <label></label>
+          <color>
+            <color name="MAJOR" red="252" green="13" blue="27">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>2</value>
+          <label></label>
+          <color>
+            <color name="WARNING" red="252" green="242" blue="17">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label></fallback_label>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>FieldEmission_button</name>
+      <actions>
+        <action type="open_display">
+          <file>expert/analog_input_expert.bob</file>
+          <macros>
+            <CHANNEL_NAME>Field Emission Probe</CHANNEL_NAME>
+            <NAME>FEP1</NAME>
+            <P>$(Pzynq)</P>
+            <R>$(Rzynq)</R>
+          </macros>
+          <target>tab</target>
+          <description>Open Display</description>
+        </action>
+      </actions>
+      <text>Field Emission Probe</text>
+      <x>60</x>
+      <y>36</y>
+      <width>190</width>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>RFAntenna_button</name>
+      <actions>
+        <action type="open_display">
+          <file>expert/analog_input_expert.bob</file>
+          <macros>
+            <CHANNEL_NAME>RF Antenna 1</CHANNEL_NAME>
+            <NAME>NIRP1</NAME>
+            <P>$(Pzynq)</P>
+            <R>$(Rzynq)</R>
+          </macros>
+          <target>tab</target>
+          <description>Open Display</description>
+        </action>
+      </actions>
+      <text>RF Antenna 1 (NIRP1)</text>
+      <x>60</x>
+      <y>72</y>
+      <width>190</width>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>RFAntenna_button_3</name>
+      <actions>
+        <action type="open_display">
+          <file>expert/analog_input_expert.bob</file>
+          <macros>
+            <CHANNEL_NAME>RF Antenna 3</CHANNEL_NAME>
+            <NAME>NIRP3</NAME>
+            <P>$(Pzynq)</P>
+            <R>$(Rzynq)</R>
+          </macros>
+          <target>tab</target>
+          <description>Open Display</description>
+        </action>
+      </actions>
+      <text>RF Antenna 3 (NIRP3)</text>
+      <x>60</x>
+      <y>144</y>
+      <width>190</width>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>RFAntenna_LED_3</name>
+      <pv_name>$(Pzynq)$(Rzynq)NIRP3Status_r</pv_name>
+      <x>20</x>
+      <y>144</y>
+      <width>30</width>
+      <height>30</height>
+      <states>
+        <state>
+          <value>0</value>
+          <label></label>
+          <color>
+            <color name="ON" red="70" green="255" blue="70">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>1</value>
+          <label></label>
+          <color>
+            <color name="MAJOR" red="252" green="13" blue="27">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>2</value>
+          <label></label>
+          <color>
+            <color name="WARNING" red="252" green="242" blue="17">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label></fallback_label>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>RFAntenna_button_4</name>
+      <actions>
+        <action type="open_display">
+          <file>expert/analog_input_expert.bob</file>
+          <macros>
+            <CHANNEL_NAME>Reflected Power</CHANNEL_NAME>
+            <NAME>NIRP4</NAME>
+            <P>$(Pzynq)</P>
+            <R>$(Rzynq)</R>
+          </macros>
+          <target>tab</target>
+          <description>Open Display</description>
+        </action>
+      </actions>
+      <text>Reflected (NIRP4)</text>
+      <x>60</x>
+      <y>180</y>
+      <width>190</width>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>RFAntenna_LED_4</name>
+      <pv_name>$(Pzynq)$(Rzynq)NIRP4Status_r</pv_name>
+      <x>20</x>
+      <y>180</y>
+      <width>30</width>
+      <height>30</height>
+      <states>
+        <state>
+          <value>0</value>
+          <label></label>
+          <color>
+            <color name="ON" red="70" green="255" blue="70">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>1</value>
+          <label></label>
+          <color>
+            <color name="MAJOR" red="252" green="13" blue="27">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>2</value>
+          <label></label>
+          <color>
+            <color name="WARNING" red="252" green="242" blue="17">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label></fallback_label>
+    </widget>
   </widget>
 </display>
