@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2023-08-10 20:37:51 by epics-->
+<!--Saved on 2023-08-10 21:27:16 by epics-->
 <display version="2.0.0">
   <name>Instrumentation Heater Control</name>
   <width>820</width>
@@ -83,29 +83,8 @@
       <border_width>1</border_width>
     </widget>
     <widget type="label" version="2.0.0">
-      <name>Label_16</name>
-      <text>Interlocks</text>
-      <y>75</y>
-      <width>105</width>
-      <font>
-        <font family="Liberation Sans" style="BOLD" size="14.0">
-        </font>
-      </font>
-      <horizontal_alignment>2</horizontal_alignment>
-      <vertical_alignment>1</vertical_alignment>
-    </widget>
-    <widget type="textupdate" version="2.0.0">
-      <name>Text Update_12</name>
-      <pv_name>$(htr)$(dev):ET</pv_name>
-      <x>115</x>
-      <y>75</y>
-      <width>60</width>
-      <horizontal_alignment>1</horizontal_alignment>
-      <vertical_alignment>1</vertical_alignment>
-    </widget>
-    <widget type="label" version="2.0.0">
       <name>Label_15</name>
-      <text>PSU Ready</text>
+      <text>PSU Status</text>
       <y>50</y>
       <width>105</width>
       <font>
@@ -117,7 +96,7 @@
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_11</name>
-      <pv_name>$(htr)$(dev):RD</pv_name>
+      <pv_name>$(htr)$(dev):STATUS</pv_name>
       <x>115</x>
       <y>50</y>
       <width>60</width>
@@ -156,7 +135,7 @@
     <transparent>true</transparent>
     <widget type="label" version="2.0.0">
       <name>Label_6</name>
-      <text>Maximum Power</text>
+      <text>Maximum Current</text>
       <y>100</y>
       <width>120</width>
       <font>
@@ -168,7 +147,7 @@
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_4</name>
-      <pv_name>$(htr)$(dev):WMX_r</pv_name>
+      <pv_name>$(htr)$(dev):CURRMAX-RB</pv_name>
       <x>130</x>
       <y>100</y>
       <width>60</width>
@@ -179,7 +158,7 @@
     </widget>
     <widget type="textentry" version="3.0.0">
       <name>Text Entry_3</name>
-      <pv_name>$(htr)$(dev):WMX_s</pv_name>
+      <pv_name>$(htr)$(dev):CURRMAX-SP</pv_name>
       <x>210</x>
       <y>100</y>
       <width>60</width>
@@ -188,7 +167,7 @@
     </widget>
     <widget type="label" version="2.0.0">
       <name>Label_5</name>
-      <text>Minimum Power</text>
+      <text>Maximum Voltage</text>
       <y>75</y>
       <width>120</width>
       <font>
@@ -200,7 +179,7 @@
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_3</name>
-      <pv_name>$(htr)$(dev):WMN_r</pv_name>
+      <pv_name>$(htr)$(dev):VOLTMAX-RB</pv_name>
       <x>130</x>
       <y>75</y>
       <width>60</width>
@@ -211,73 +190,17 @@
     </widget>
     <widget type="textentry" version="3.0.0">
       <name>Text Entry_2</name>
-      <pv_name>$(htr)$(dev):WMN_s</pv_name>
+      <pv_name>$(htr)$(dev):VOLTMAX-SP</pv_name>
       <x>210</x>
       <y>75</y>
       <width>60</width>
       <format>1</format>
       <precision>2</precision>
     </widget>
-    <widget type="label" version="2.0.0">
-      <name>Label_4</name>
-      <text>Set Value</text>
-      <y>50</y>
-      <width>120</width>
-      <font>
-        <font family="Liberation Sans" style="BOLD" size="14.0">
-        </font>
-      </font>
-      <horizontal_alignment>2</horizontal_alignment>
-      <vertical_alignment>1</vertical_alignment>
-    </widget>
-    <widget type="textupdate" version="2.0.0">
-      <name>Text Update_2</name>
-      <pv_name>$(htr)$(dev):WMA_r</pv_name>
-      <x>130</x>
-      <y>50</y>
-      <width>60</width>
-      <format>1</format>
-      <precision>2</precision>
-      <horizontal_alignment>1</horizontal_alignment>
-      <vertical_alignment>1</vertical_alignment>
-    </widget>
     <widget type="textentry" version="3.0.0">
       <name>Text Entry_1</name>
-      <pv_name>$(htr)$(dev):WMA_s</pv_name>
+      <pv_name>$(htr)$(dev):POWER-SP</pv_name>
       <x>210</x>
-      <y>50</y>
-      <width>60</width>
-      <format>1</format>
-      <precision>2</precision>
-    </widget>
-    <widget type="label" version="2.0.0">
-      <name>Label_2</name>
-      <text>Set Point</text>
-      <y>25</y>
-      <width>120</width>
-      <font>
-        <font family="Liberation Sans" style="BOLD" size="14.0">
-        </font>
-      </font>
-      <horizontal_alignment>2</horizontal_alignment>
-      <vertical_alignment>1</vertical_alignment>
-    </widget>
-    <widget type="textupdate" version="2.0.0">
-      <name>Text Update_1</name>
-      <pv_name>$(htr)$(dev):SP_r</pv_name>
-      <x>130</x>
-      <y>25</y>
-      <width>60</width>
-      <format>1</format>
-      <precision>2</precision>
-      <horizontal_alignment>1</horizontal_alignment>
-      <vertical_alignment>1</vertical_alignment>
-    </widget>
-    <widget type="textentry" version="3.0.0">
-      <name>Text Entry</name>
-      <pv_name>$(htr)$(dev):SP_s</pv_name>
-      <x>210</x>
-      <y>25</y>
       <width>60</width>
       <format>1</format>
       <precision>2</precision>
@@ -295,13 +218,82 @@
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update</name>
-      <pv_name>$(htr)$(dev):WATT</pv_name>
+      <pv_name>$(htr)$(dev):POWER-RB</pv_name>
       <x>130</x>
       <width>60</width>
       <format>1</format>
       <precision>2</precision>
       <horizontal_alignment>1</horizontal_alignment>
       <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>Group</name>
+      <y>25</y>
+      <width>270</width>
+      <height>45</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>Label_19</name>
+        <text>Current Setpoint</text>
+        <y>25</y>
+        <width>120</width>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_6</name>
+        <pv_name>$(htr)$(dev):CURRENT-RB</pv_name>
+        <x>130</x>
+        <y>25</y>
+        <width>60</width>
+        <format>1</format>
+        <precision>2</precision>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="textentry" version="3.0.0">
+        <name>Text Entry_4</name>
+        <pv_name>$(htr)$(dev):CURRENT-SP</pv_name>
+        <x>210</x>
+        <y>25</y>
+        <width>60</width>
+        <format>1</format>
+        <precision>2</precision>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_20</name>
+        <text>Voltage Setpoint</text>
+        <width>120</width>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_12</name>
+        <pv_name>$(htr)$(dev):VOLTAGE-RB</pv_name>
+        <x>130</x>
+        <width>60</width>
+        <format>1</format>
+        <precision>2</precision>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="textentry" version="3.0.0">
+        <name>Text Entry_5</name>
+        <pv_name>$(htr)$(dev):VOLTAGE-SP</pv_name>
+        <x>210</x>
+        <width>60</width>
+        <format>1</format>
+        <precision>2</precision>
+      </widget>
     </widget>
   </widget>
   <widget type="label" version="2.0.0">
@@ -319,7 +311,7 @@
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_7</name>
-    <pv_name>$(htr)$(dev):I</pv_name>
+    <pv_name>$(htr)$(dev):CURRENT-RB</pv_name>
     <x>140</x>
     <y>200</y>
     <width>90</width>
@@ -343,7 +335,7 @@
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_9</name>
-    <pv_name>$(htr)$(dev):R</pv_name>
+    <pv_name>$(htr)$(dev):RESISTANCE</pv_name>
     <x>140</x>
     <y>250</y>
     <width>90</width>
@@ -367,7 +359,7 @@
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_8</name>
-    <pv_name>$(htr)$(dev):V</pv_name>
+    <pv_name>$(htr)$(dev):VOLTAGE-RB</pv_name>
     <x>140</x>
     <y>225</y>
     <width>90</width>
@@ -409,5 +401,65 @@
     <width>80</width>
     <height>45</height>
     <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_1</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(pv_name)</pv_name>
+        <value>0</value>
+        <description>WritePV</description>
+      </action>
+    </actions>
+    <pv_name>$(htr)$(dev):SWITCH</pv_name>
+    <text>Off</text>
+    <x>400</x>
+    <y>60</y>
+    <width>55</width>
+    <height>31</height>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_2</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(pv_name)</pv_name>
+        <value>1</value>
+        <description>WritePV</description>
+      </action>
+    </actions>
+    <pv_name>$(htr)$(dev):SWITCH</pv_name>
+    <text>On</text>
+    <x>466</x>
+    <y>60</y>
+    <width>55</width>
+    <height>31</height>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED</name>
+    <pv_name>$(htr)$(dev):STATUS</pv_name>
+    <x>360</x>
+    <y>64</y>
+    <width>24</width>
+    <height>24</height>
+    <off_color>
+      <color name="Major" red="255" green="0" blue="0">
+      </color>
+    </off_color>
+    <foreground_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </foreground_color>
+    <actions>
+    </actions>
   </widget>
 </display>
