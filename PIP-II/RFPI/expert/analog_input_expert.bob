@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2023-08-11 14:27:26 by kacpe-->
 <display version="2.0.0">
   <name>$(CHANNEL_NAME) Expert</name>
   <width>730</width>
-  <height>1190</height>
+  <height>1260</height>
   <widget type="rectangle" version="2.0.0">
     <name>Titlebar</name>
     <class>TITLE-BAR</class>
@@ -42,7 +43,7 @@
     <x>20</x>
     <y>310</y>
     <width>690</width>
-    <height>420</height>
+    <height>490</height>
     <style>3</style>
     <background_color>
       <color name="BACKGROUND" red="220" green="225" blue="221">
@@ -51,7 +52,7 @@
     <widget type="rectangle" version="2.0.0">
       <name>Configuration_rectangle</name>
       <width>690</width>
-      <height>420</height>
+      <height>490</height>
       <line_width>2</line_width>
       <line_color>
         <color name="GROUP-BORDER" red="150" green="155" blue="151">
@@ -69,7 +70,7 @@
       <x>20</x>
       <y>50</y>
       <width>370</width>
-      <height>105</height>
+      <height>100</height>
       <line_width>2</line_width>
       <line_color>
         <color name="GROUP-BORDER" red="150" green="155" blue="151">
@@ -102,7 +103,7 @@
     <widget type="group" version="2.0.0">
       <name>Threshold_group</name>
       <x>20</x>
-      <y>170</y>
+      <y>240</y>
       <width>370</width>
       <height>230</height>
       <style>3</style>
@@ -129,7 +130,7 @@
       <widget type="label" version="2.0.0">
         <name>Low_label</name>
         <text>Low:</text>
-        <x>30</x>
+        <x>20</x>
         <y>80</y>
         <width>40</width>
         <height>30</height>
@@ -138,8 +139,8 @@
       </widget>
       <widget type="textentry" version="3.0.0">
         <name>Low_entry</name>
-        <pv_name>$(P)$(R)$(NAME)ThreshLo_s</pv_name>
-        <x>80</x>
+        <pv_name>$(acc):$(sys)_$(group)_$(num):ThreshLo_s</pv_name>
+        <x>70</x>
         <y>80</y>
         <width>90</width>
         <height>30</height>
@@ -148,7 +149,7 @@
       <widget type="label" version="2.0.0">
         <name>Raw_label</name>
         <text>Raw:</text>
-        <x>180</x>
+        <x>170</x>
         <y>50</y>
         <width>80</width>
         <horizontal_alignment>1</horizontal_alignment>
@@ -156,8 +157,8 @@
       </widget>
       <widget type="textupdate" version="2.0.0">
         <name>LowRaw_update</name>
-        <pv_name>$(P)$(R)$(NAME)ThreshLoRaw_r</pv_name>
-        <x>180</x>
+        <pv_name>$(acc):$(sys)_$(group)_$(num):ThreshLoRaw_r</pv_name>
+        <x>170</x>
         <y>80</y>
         <width>80</width>
         <height>30</height>
@@ -166,10 +167,10 @@
       </widget>
       <widget type="textupdate" version="2.0.0">
         <name>LowScaled_update</name>
-        <pv_name>$(P)$(R)$(NAME)ThreshLoScaled_r</pv_name>
-        <x>270</x>
+        <pv_name>$(acc):$(sys)_$(group)_$(num):ThreshLoScaled_r</pv_name>
+        <x>260</x>
         <y>80</y>
-        <width>80</width>
+        <width>90</width>
         <height>30</height>
         <horizontal_alignment>1</horizontal_alignment>
         <vertical_alignment>1</vertical_alignment>
@@ -177,7 +178,7 @@
       <widget type="label" version="2.0.0">
         <name>Scaled_label</name>
         <text>Scaled:</text>
-        <x>270</x>
+        <x>260</x>
         <y>50</y>
         <width>80</width>
         <horizontal_alignment>1</horizontal_alignment>
@@ -186,7 +187,7 @@
       <widget type="label" version="2.0.0">
         <name>High_label</name>
         <text>High:</text>
-        <x>30</x>
+        <x>20</x>
         <y>130</y>
         <width>40</width>
         <height>30</height>
@@ -195,8 +196,8 @@
       </widget>
       <widget type="textentry" version="3.0.0">
         <name>High_entry</name>
-        <pv_name>$(P)$(R)$(NAME)ThreshHi_s</pv_name>
-        <x>80</x>
+        <pv_name>$(acc):$(sys)_$(group)_$(num):ThreshHi_s</pv_name>
+        <x>70</x>
         <y>130</y>
         <width>90</width>
         <height>30</height>
@@ -204,8 +205,8 @@
       </widget>
       <widget type="textupdate" version="2.0.0">
         <name>HighRaw_update</name>
-        <pv_name>$(P)$(R)$(NAME)ThreshHiRaw_r</pv_name>
-        <x>180</x>
+        <pv_name>$(acc):$(sys)_$(group)_$(num):ThreshHiRaw_r</pv_name>
+        <x>170</x>
         <y>130</y>
         <width>80</width>
         <height>30</height>
@@ -214,11 +215,32 @@
       </widget>
       <widget type="textupdate" version="2.0.0">
         <name>HighScaled_update</name>
-        <pv_name>$(P)$(R)$(NAME)ThreshHiScaled_r</pv_name>
-        <x>270</x>
+        <pv_name>$(acc):$(sys)_$(group)_$(num):ThreshHiScaled_r</pv_name>
+        <x>260</x>
         <y>130</y>
-        <width>80</width>
+        <width>90</width>
         <height>30</height>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Thresholds_title</name>
+        <class>HEADER3</class>
+        <text>Thresholds</text>
+        <width>370</width>
+        <height>40</height>
+        <font use_class="true">
+          <font name="Header 3" family="Source Sans Pro" style="BOLD_ITALIC" size="18.0">
+          </font>
+        </font>
+        <foreground_color use_class="true">
+          <color name="Text" red="25" green="25" blue="25">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="RED-BORDER" red="150" green="8" blue="16">
+          </color>
+        </background_color>
         <horizontal_alignment>1</horizontal_alignment>
         <vertical_alignment>1</vertical_alignment>
       </widget>
@@ -226,7 +248,7 @@
     <widget type="group" version="2.0.0">
       <name>Counters_group</name>
       <x>410</x>
-      <y>170</y>
+      <y>240</y>
       <width>260</width>
       <height>230</height>
       <style>3</style>
@@ -271,7 +293,7 @@
       </widget>
       <widget type="textupdate" version="2.0.0">
         <name>LowCounts_update</name>
-        <pv_name>$(P)$(R)$(NAME)ThreshCntLo_r</pv_name>
+        <pv_name>$(acc):$(sys)_$(group)_$(num):ThreshCntLo_r</pv_name>
         <x>70</x>
         <y>80</y>
         <width>80</width>
@@ -281,7 +303,7 @@
       </widget>
       <widget type="textupdate" version="2.0.0">
         <name>LowTotal_update</name>
-        <pv_name>$(P)$(R)$(NAME)ThreshCntLoTot_r</pv_name>
+        <pv_name>$(acc):$(sys)_$(group)_$(num):ThreshCntLoTot_r</pv_name>
         <x>160</x>
         <y>80</y>
         <width>80</width>
@@ -310,7 +332,7 @@
       </widget>
       <widget type="textupdate" version="2.0.0">
         <name>HighCounts_update</name>
-        <pv_name>$(P)$(R)$(NAME)ThreshCntHi_r</pv_name>
+        <pv_name>$(acc):$(sys)_$(group)_$(num):ThreshCntHi_r</pv_name>
         <x>70</x>
         <y>130</y>
         <width>80</width>
@@ -320,7 +342,7 @@
       </widget>
       <widget type="textupdate" version="2.0.0">
         <name>HighTotal_update</name>
-        <pv_name>$(P)$(R)$(NAME)ThreshCntHiTot_r</pv_name>
+        <pv_name>$(acc):$(sys)_$(group)_$(num):ThreshCntHiTot_r</pv_name>
         <x>160</x>
         <y>130</y>
         <width>80</width>
@@ -337,7 +359,7 @@
             <description>Write PV</description>
           </action>
         </actions>
-        <pv_name>$(P)$(R)$(NAME)ThreshCntRst_s</pv_name>
+        <pv_name>$(acc):$(sys)_$(group)_$(num):ThreshCntRst_s</pv_name>
         <text>Reset</text>
         <x>90</x>
         <y>180</y>
@@ -345,59 +367,34 @@
         <tooltip>$(actions)</tooltip>
         <border_alarm_sensitive>false</border_alarm_sensitive>
       </widget>
-    </widget>
-    <widget type="label" version="2.0.0">
-      <name>Counters_title</name>
-      <class>HEADER3</class>
-      <text>Counters</text>
-      <x>410</x>
-      <y>180</y>
-      <width>260</width>
-      <height>40</height>
-      <font use_class="true">
-        <font name="Header 3" family="Source Sans Pro" style="BOLD_ITALIC" size="18.0">
+      <widget type="label" version="2.0.0">
+        <name>Counters_title</name>
+        <class>HEADER3</class>
+        <text>Counters</text>
+        <width>260</width>
+        <height>40</height>
+        <font use_class="true">
+          <font name="Header 3" family="Source Sans Pro" style="BOLD_ITALIC" size="18.0">
+          </font>
         </font>
-      </font>
-      <foreground_color use_class="true">
-        <color name="Text" red="25" green="25" blue="25">
-        </color>
-      </foreground_color>
-      <background_color>
-        <color name="RED-BORDER" red="150" green="8" blue="16">
-        </color>
-      </background_color>
-      <horizontal_alignment>1</horizontal_alignment>
-      <vertical_alignment>1</vertical_alignment>
-    </widget>
-    <widget type="label" version="2.0.0">
-      <name>Thresholds_title</name>
-      <class>HEADER3</class>
-      <text>Thresholds</text>
-      <x>20</x>
-      <y>180</y>
-      <width>370</width>
-      <height>40</height>
-      <font use_class="true">
-        <font name="Header 3" family="Source Sans Pro" style="BOLD_ITALIC" size="18.0">
-        </font>
-      </font>
-      <foreground_color use_class="true">
-        <color name="Text" red="25" green="25" blue="25">
-        </color>
-      </foreground_color>
-      <background_color>
-        <color name="RED-BORDER" red="150" green="8" blue="16">
-        </color>
-      </background_color>
-      <horizontal_alignment>1</horizontal_alignment>
-      <vertical_alignment>1</vertical_alignment>
+        <foreground_color use_class="true">
+          <color name="Text" red="25" green="25" blue="25">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="RED-BORDER" red="150" green="8" blue="16">
+          </color>
+        </background_color>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
     </widget>
     <widget type="rectangle" version="2.0.0">
       <name>Scaling_rectangle</name>
       <x>410</x>
       <y>50</y>
       <width>260</width>
-      <height>105</height>
+      <height>170</height>
       <line_width>2</line_width>
       <line_color>
         <color name="GROUP-BORDER" red="150" green="155" blue="151">
@@ -413,8 +410,8 @@
     <widget type="label" version="2.0.0">
       <name>Scaling_label</name>
       <text>Coeff:</text>
-      <x>423</x>
-      <y>85</y>
+      <x>420</x>
+      <y>90</y>
       <width>50</width>
       <height>30</height>
       <horizontal_alignment>2</horizontal_alignment>
@@ -422,18 +419,18 @@
     </widget>
     <widget type="textentry" version="3.0.0">
       <name>Scaling_entry</name>
-      <pv_name>$(P)$(R)$(NAME)ThreshScale_s</pv_name>
-      <x>482</x>
-      <y>85</y>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):ThreshScale_s</pv_name>
+      <x>480</x>
+      <y>90</y>
       <width>80</width>
       <height>30</height>
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Scaling_update</name>
-      <pv_name>$(P)$(R)$(NAME)ThreshScale_r</pv_name>
-      <x>573</x>
-      <y>85</y>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):ThreshScale_r</pv_name>
+      <x>570</x>
+      <y>90</y>
       <width>80</width>
       <height>30</height>
       <format>2</format>
@@ -441,29 +438,29 @@
       <vertical_alignment>1</vertical_alignment>
     </widget>
     <widget type="label" version="2.0.0">
-      <name>Offset_label_1</name>
+      <name>Offset_label</name>
       <text>Offset:</text>
-      <x>423</x>
-      <y>119</y>
+      <x>420</x>
+      <y>130</y>
       <width>50</width>
       <height>30</height>
       <horizontal_alignment>2</horizontal_alignment>
       <vertical_alignment>1</vertical_alignment>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>Offset_entry_1</name>
-      <pv_name>$(P)$(R)$(NAME)ThreshOffset_s</pv_name>
-      <x>482</x>
-      <y>119</y>
+      <name>Offset_entry</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):ThreshOffset_s</pv_name>
+      <x>480</x>
+      <y>130</y>
       <width>80</width>
       <height>30</height>
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="textupdate" version="2.0.0">
-      <name>Offset_update_1</name>
-      <pv_name>$(P)$(R)$(NAME)ThreshOffset_r</pv_name>
-      <x>573</x>
-      <y>119</y>
+      <name>Offset_update</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):ThreshOffset_r</pv_name>
+      <x>570</x>
+      <y>130</y>
       <width>80</width>
       <height>30</height>
       <horizontal_alignment>1</horizontal_alignment>
@@ -517,7 +514,7 @@
     </widget>
     <widget type="slide_button" version="2.0.0">
       <name>Slide Button</name>
-      <pv_name>$(P)$(R)$(NAME)Masking_s</pv_name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):Masking_s</pv_name>
       <label></label>
       <x>136</x>
       <y>106</y>
@@ -535,7 +532,7 @@
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Masking_update</name>
-      <pv_name>$(P)$(R)$(NAME)Masking_r</pv_name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):Masking_r</pv_name>
       <x>210</x>
       <y>100</y>
       <height>30</height>
@@ -555,6 +552,42 @@
       <x>180</x>
       <y>103</y>
       <width>30</width>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Unit_entry</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):Unit_s</pv_name>
+      <x>480</x>
+      <y>170</y>
+      <width>80</width>
+      <height>30</height>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Unit_label</name>
+      <text>Unit:</text>
+      <x>430</x>
+      <y>170</y>
+      <width>40</width>
+      <height>30</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Refresh_button</name>
+      <actions>
+        <action type="execute">
+          <script file="EmbeddedPy">
+            <text><![CDATA[from org.csstudio.display.builder.runtime.script import ScriptUtil
+
+ScriptUtil.openDisplay(widget, "analog_input_expert.bob", "REPLACE", None)]]></text>
+          </script>
+          <description>Execute Script</description>
+        </action>
+      </actions>
+      <text>Refresh</text>
+      <x>570</x>
+      <y>170</y>
+      <width>80</width>
+      <tooltip>$(actions)</tooltip>
     </widget>
   </widget>
   <widget type="label" version="2.0.0">
@@ -630,7 +663,7 @@
           <description>WritePV</description>
         </action>
       </actions>
-      <pv_name>$(P)$(R)$(NAME)Rst_s</pv_name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):Rst_s</pv_name>
       <text>Reset</text>
       <x>60</x>
       <y>50</y>
@@ -640,7 +673,7 @@
     </widget>
     <widget type="multi_state_led" version="2.0.0">
       <name>Status_LED</name>
-      <pv_name>$(P)$(R)$(NAME)Status_r</pv_name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):Status_r</pv_name>
       <x>20</x>
       <y>50</y>
       <width>30</width>
@@ -675,7 +708,7 @@
     </widget>
     <widget type="led" version="2.0.0">
       <name>LatchedStatus_LED</name>
-      <pv_name>$(P)$(R)$(NAME)LatchStatus_r</pv_name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):LatchStatus_r</pv_name>
       <x>340</x>
       <y>50</y>
       <width>30</width>
@@ -691,7 +724,7 @@
     </widget>
     <widget type="led" version="2.0.0">
       <name>CurrentStatus_LED</name>
-      <pv_name>$(P)$(R)$(NAME)CurrentStatus_r</pv_name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):CurrentStatus_r</pv_name>
       <x>230</x>
       <y>50</y>
       <width>30</width>
@@ -727,7 +760,7 @@
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Timestamps_update</name>
-      <pv_name>$(P)$(R)$(NAME)Timestamp_r</pv_name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):Timestamp_r</pv_name>
       <x>480</x>
       <y>50</y>
       <width>120</width>
@@ -749,7 +782,7 @@
   <widget type="group" version="2.0.0">
     <name>Plot_group</name>
     <x>20</x>
-    <y>750</y>
+    <y>820</y>
     <width>690</width>
     <height>420</height>
     <style>3</style>
@@ -792,7 +825,7 @@
     </widget>
     <widget type="databrowser" version="2.0.0">
       <name>Data Browser</name>
-      <file>../plots/$(NAME)ValueScaled_r.plt</file>
+      <file>../plots/$(num)ValueScaled_r.plt</file>
       <x>20</x>
       <y>50</y>
       <width>650</width>
@@ -801,7 +834,7 @@
   </widget>
   <widget type="group" version="2.0.0">
     <name>Values_group</name>
-    <x>180</x>
+    <x>170</x>
     <y>190</y>
     <width>370</width>
     <height>100</height>
@@ -845,8 +878,8 @@
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>ValueRaw_update</name>
-      <pv_name>$(P)$(R)$(NAME)ValueRaw_r</pv_name>
-      <x>70</x>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):ValueRaw_r</pv_name>
+      <x>60</x>
       <y>50</y>
       <height>30</height>
       <horizontal_alignment>1</horizontal_alignment>
@@ -854,17 +887,26 @@
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>ValueScal_update</name>
-      <pv_name>$(P)$(R)$(NAME)ValueScaled_r</pv_name>
-      <x>250</x>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):ValueScaled_r</pv_name>
+      <x>240</x>
       <y>50</y>
+      <width>110</width>
       <height>30</height>
       <horizontal_alignment>1</horizontal_alignment>
       <vertical_alignment>1</vertical_alignment>
+      <rules>
+        <rule name="Fix unit" prop_id="show_units" out_exp="false">
+          <exp bool_exp="pv0 != &quot;&quot;">
+            <value>true</value>
+          </exp>
+          <pv_name>$(acc):$(sys)_$(group)_$(num):Unit_s</pv_name>
+        </rule>
+      </rules>
     </widget>
     <widget type="label" version="2.0.0">
       <name>Scal_label</name>
       <text>Scaled:</text>
-      <x>180</x>
+      <x>170</x>
       <y>50</y>
       <width>60</width>
       <height>30</height>
@@ -874,7 +916,7 @@
     <widget type="label" version="2.0.0">
       <name>Raw_label</name>
       <text>Raw:</text>
-      <x>20</x>
+      <x>10</x>
       <y>50</y>
       <width>40</width>
       <height>30</height>
