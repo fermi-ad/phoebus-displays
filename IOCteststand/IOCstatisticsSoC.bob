@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2023-11-10 09:48:03 by epics-->
 <display version="2.0.0">
   <name>IOCstatistics - $(board)</name>
   <x>168</x>
@@ -674,6 +675,7 @@ ScriptUtil.closeDisplay(widget)
           <p>1</p>
         </macros>
         <target>tab</target>
+        <description>Open Display</description>
       </action>
     </actions>
     <text>Release Versions...</text>
@@ -701,6 +703,7 @@ ScriptUtil.closeDisplay(widget)
       <action type="open_display">
         <file>ioc_stats_scanmon.bob</file>
         <target>tab</target>
+        <description>Open Display</description>
       </action>
     </actions>
     <text>Scan Monitor...</text>
@@ -1221,6 +1224,7 @@ since 1990</text>
       <action type="open_display">
         <file>ioc_stats_reloadacf_confirm.bob</file>
         <target>tab</target>
+        <description>Open Display</description>
       </action>
     </actions>
     <text>Reload Access Security Conf File...</text>
@@ -1306,6 +1310,7 @@ since 1990</text>
       <action type="open_display">
         <file>ioc_stats_reboot_confirm.bob</file>
         <target>tab</target>
+        <description>Open Display</description>
       </action>
     </actions>
     <text>Reboot...</text>
@@ -2064,7 +2069,7 @@ RAM Block</text>
       <height>300</height>
       <style>3</style>
       <transparent>true</transparent>
-      <widget type="xyplot" version="2.0.0">
+      <widget type="xyplot" version="3.0.0">
         <name>X/Y Plot_1</name>
         <width>700</width>
         <background_color>
@@ -2120,7 +2125,12 @@ RAM Block</text>
               <font name="Default" family="Liberation Sans" style="REGULAR" size="14.0">
               </font>
             </scale_font>
+            <on_right>false</on_right>
             <visible>true</visible>
+            <color>
+              <color name="Text" red="0" green="0" blue="0">
+              </color>
+            </color>
           </y_axis>
         </y_axes>
         <traces>
@@ -2198,7 +2208,7 @@ RAM Block</text>
     <height>330</height>
     <style>3</style>
     <transparent>true</transparent>
-    <widget type="stripchart" version="2.0.0">
+    <widget type="stripchart" version="2.1.0">
       <name>Strip Chart</name>
       <width>700</width>
       <background_color>
@@ -2212,12 +2222,16 @@ RAM Block</text>
       <y_axes>
         <y_axis>
           <title>Amplitude</title>
-          <autoscale>false</autoscale>
+          <autoscale>true</autoscale>
           <log_scale>false</log_scale>
           <minimum>-50000.0</minimum>
           <maximum>50000.0</maximum>
           <show_grid>true</show_grid>
           <visible>true</visible>
+          <color>
+            <color name="Text" red="0" green="0" blue="0">
+            </color>
+          </color>
         </y_axis>
       </y_axes>
       <traces>
