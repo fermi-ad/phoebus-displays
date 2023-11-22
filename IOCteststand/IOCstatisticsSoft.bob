@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2023-11-22 16:25:55 by epics-->
 <display version="2.0.0">
   <name>IOCstatistics - $(board)</name>
   <x>168</x>
@@ -673,6 +674,7 @@ ScriptUtil.closeDisplay(widget)
           <p>1</p>
         </macros>
         <target>tab</target>
+        <description>Open Display</description>
       </action>
     </actions>
     <text>Release Versions...</text>
@@ -700,6 +702,7 @@ ScriptUtil.closeDisplay(widget)
       <action type="open_display">
         <file>ioc_stats_scanmon.bob</file>
         <target>tab</target>
+        <description>Open Display</description>
       </action>
     </actions>
     <text>Scan Monitor...</text>
@@ -720,35 +723,6 @@ ScriptUtil.closeDisplay(widget)
       </color>
     </background_color>
     <tooltip>$(actions)</tooltip>
-  </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
-    <pv_name>$(dev):COS</pv_name>
-    <x>855</x>
-    <y>245</y>
-    <height>25</height>
-    <foreground_color>
-      <color red="255" green="0" blue="0">
-      </color>
-    </foreground_color>
-    <precision>6</precision>
-    <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-  </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>Text Update_1</name>
-    <pv_name>$(dev):SIN</pv_name>
-    <x>1040</x>
-    <y>245</y>
-    <width>90</width>
-    <height>25</height>
-    <foreground_color>
-      <color red="0" green="0" blue="255">
-      </color>
-    </foreground_color>
-    <precision>6</precision>
-    <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>EDM TextupdateClass</name>
@@ -1220,6 +1194,7 @@ since 1990</text>
       <action type="open_display">
         <file>ioc_stats_reloadacf_confirm.bob</file>
         <target>tab</target>
+        <description>Open Display</description>
       </action>
     </actions>
     <text>Reload Access Security Conf File...</text>
@@ -1305,6 +1280,7 @@ since 1990</text>
       <action type="open_display">
         <file>ioc_stats_reboot_confirm.bob</file>
         <target>tab</target>
+        <description>Open Display</description>
       </action>
     </actions>
     <text>Reboot...</text>
@@ -1611,24 +1587,6 @@ since 1990</text>
       </color>
     </background_color>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-  </widget>
-  <widget type="textentry" version="3.0.0">
-    <name>Text Entry</name>
-    <pv_name>$(dev):AMP</pv_name>
-    <x>940</x>
-    <y>453</y>
-    <width>70</width>
-    <format>1</format>
-    <precision>1</precision>
-    <border_width>2</border_width>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label</name>
-    <text>Set amplitude</text>
-    <x>1020</x>
-    <y>453</y>
-    <width>90</width>
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type="rectangle" version="2.0.0">
@@ -1966,5 +1924,58 @@ RAM Block</text>
     </background_color>
     <horizontal_alignment>2</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group</name>
+    <x>850</x>
+    <y>245</y>
+    <width>485</width>
+    <height>25</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update</name>
+      <pv_name>$(dev):COS</pv_name>
+      <height>25</height>
+      <foreground_color>
+        <color red="255" green="0" blue="0">
+        </color>
+      </foreground_color>
+      <precision>6</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_1</name>
+      <pv_name>$(dev):SIN</pv_name>
+      <x>150</x>
+      <width>90</width>
+      <height>25</height>
+      <foreground_color>
+        <color red="0" green="0" blue="255">
+        </color>
+      </foreground_color>
+      <precision>6</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Text Entry</name>
+      <pv_name>$(dev):AMP</pv_name>
+      <x>315</x>
+      <width>70</width>
+      <height>25</height>
+      <format>1</format>
+      <precision>1</precision>
+      <border_width>2</border_width>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label</name>
+      <text>Set amplitude</text>
+      <x>395</x>
+      <width>90</width>
+      <height>25</height>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
   </widget>
 </display>
