@@ -1,13 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2023-12-02 18:56:11 by epics-->
 <display version="2.0.0">
   <name>PiRM</name>
   <macros>
-    <dev>FNAL:IOC_TEST_PIRM4</dev>
+    <dev>FNAL:TMPL_PIRM</dev>
   </macros>
   <width>1570</width>
   <height>1500</height>
   <grid_step_x>5</grid_step_x>
   <grid_step_y>5</grid_step_y>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_8</name>
+    <x>640</x>
+    <y>40</y>
+    <width>450</width>
+    <height>215</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <transparent>true</transparent>
+  </widget>
   <widget type="label" version="2.0.0">
     <name>Label</name>
     <text>PiRM</text>
@@ -65,7 +79,7 @@
   </widget>
   <widget type="textentry" version="3.0.0">
     <name>Text Entry_9</name>
-    <pv_name>$(dev)_01:setDDR</pv_name>
+    <pv_name>$(dev)_SYS:setDDR</pv_name>
     <x>415</x>
     <y>235</y>
     <width>45</width>
@@ -74,7 +88,7 @@
   </widget>
   <widget type="byte_monitor" version="2.0.0">
     <name>Byte Monitor_3</name>
-    <pv_name>$(dev)_01:getDDR</pv_name>
+    <pv_name>$(dev)_SYS:getDDR</pv_name>
     <x>240</x>
     <y>235</y>
     <width>120</width>
@@ -608,19 +622,6 @@
     <vertical_alignment>1</vertical_alignment>
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
-  <widget type="rectangle" version="2.0.0">
-    <name>Rectangle_8</name>
-    <x>640</x>
-    <y>40</y>
-    <width>450</width>
-    <height>215</height>
-    <line_width>1</line_width>
-    <line_color>
-      <color red="0" green="0" blue="0">
-      </color>
-    </line_color>
-    <transparent>true</transparent>
-  </widget>
   <widget type="label" version="2.0.0">
     <name>Label_34</name>
     <text>Multiplexed Digio</text>
@@ -638,7 +639,7 @@
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_88</name>
-    <pv_name>$(dev)_01:getDDR</pv_name>
+    <pv_name>$(dev)_SYS:getDDR</pv_name>
     <x>365</x>
     <y>235</y>
     <width>40</width>
@@ -904,7 +905,7 @@
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_163</name>
-    <pv_name>$(dev)_01:TrgEvt</pv_name>
+    <pv_name>$(dev)_SYS:TrgEvt</pv_name>
     <x>1380</x>
     <y>865</y>
     <width>105</width>
@@ -916,7 +917,7 @@
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_164</name>
-    <pv_name>$(dev)_01:digioPort</pv_name>
+    <pv_name>$(dev)_SYS:digioPort</pv_name>
     <x>1380</x>
     <y>885</y>
     <width>105</width>
@@ -928,7 +929,7 @@
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_165</name>
-    <pv_name>$(dev)_01:madcPort</pv_name>
+    <pv_name>$(dev)_SYS:madcPort</pv_name>
     <x>1380</x>
     <y>905</y>
     <width>105</width>
@@ -942,7 +943,7 @@
     <name>Action Button</name>
     <actions>
       <action type="write_pv">
-        <pv_name>$(dev)_01:readADCs.PROC</pv_name>
+        <pv_name>$(dev)_SYS:readADCs.PROC</pv_name>
         <value>1</value>
         <description>Update ADCs</description>
       </action>
@@ -968,7 +969,7 @@
   </widget>
   <widget type="led" version="2.0.0">
     <name>LED</name>
-    <pv_name>$(dev)_01:CONNECTbcm</pv_name>
+    <pv_name>$(dev)_SYS:CONNECTbcm</pv_name>
     <x>20</x>
     <y>70</y>
     <width>15</width>
@@ -991,7 +992,7 @@
   </widget>
   <widget type="led" version="2.0.0">
     <name>LED_1</name>
-    <pv_name>$(dev)_01:CONNECTi2c</pv_name>
+    <pv_name>$(dev)_SYS:CONNECTi2c</pv_name>
     <x>20</x>
     <y>90</y>
     <width>15</width>
@@ -999,7 +1000,7 @@
   </widget>
   <widget type="led" version="2.0.0">
     <name>LED_2</name>
-    <pv_name>$(dev)_01:CONNECTusb</pv_name>
+    <pv_name>$(dev)_SYS:CONNECTusb</pv_name>
     <x>20</x>
     <y>110</y>
     <width>15</width>
@@ -1007,7 +1008,7 @@
   </widget>
   <widget type="led" version="2.0.0">
     <name>LED_3</name>
-    <pv_name>$(dev)_01:CONNECTfram</pv_name>
+    <pv_name>$(dev)_SYS:CONNECTfram</pv_name>
     <x>20</x>
     <y>130</y>
     <width>15</width>
@@ -1015,7 +1016,7 @@
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update</name>
-    <pv_name>$(dev)_01:CONNECTbcm.DESC</pv_name>
+    <pv_name>$(dev)_SYS:CONNECTbcm.DESC</pv_name>
     <x>40</x>
     <y>70</y>
     <width>85</width>
@@ -1028,7 +1029,7 @@
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_1</name>
-    <pv_name>$(dev)_01:CONNECTi2c.DESC</pv_name>
+    <pv_name>$(dev)_SYS:CONNECTi2c.DESC</pv_name>
     <x>40</x>
     <y>90</y>
     <width>85</width>
@@ -1041,7 +1042,7 @@
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_2</name>
-    <pv_name>$(dev)_01:CONNECTusb.DESC</pv_name>
+    <pv_name>$(dev)_SYS:CONNECTusb.DESC</pv_name>
     <x>40</x>
     <y>110</y>
     <width>85</width>
@@ -1054,7 +1055,7 @@
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_3</name>
-    <pv_name>$(dev)_01:CONNECTfram.DESC</pv_name>
+    <pv_name>$(dev)_SYS:CONNECTfram.DESC</pv_name>
     <x>40</x>
     <y>130</y>
     <width>85</width>
@@ -1096,7 +1097,7 @@
   </widget>
   <widget type="led" version="2.0.0">
     <name>LED_4</name>
-    <pv_name>$(dev)_01:getRelay0</pv_name>
+    <pv_name>$(dev)_SYS:getRelay0</pv_name>
     <x>20</x>
     <y>200</y>
     <width>15</width>
@@ -1104,7 +1105,7 @@
   </widget>
   <widget type="led" version="2.0.0">
     <name>LED_5</name>
-    <pv_name>$(dev)_01:getRelay1</pv_name>
+    <pv_name>$(dev)_SYS:getRelay1</pv_name>
     <x>20</x>
     <y>220</y>
     <width>15</width>
@@ -1128,7 +1129,7 @@
   </widget>
   <widget type="combo" version="2.0.0">
     <name>Combo Box</name>
-    <pv_name>$(dev)_01:selCombo</pv_name>
+    <pv_name>$(dev)_SYS:selCombo</pv_name>
     <x>15</x>
     <y>255</y>
     <width>110</width>
@@ -1162,6 +1163,17 @@
     <height>205</height>
     <style>3</style>
     <transparent>true</transparent>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle_9</name>
+      <width>330</width>
+      <height>205</height>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <transparent>true</transparent>
+    </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_71</name>
       <pv_name>$(dev)_08:rDAC</pv_name>
@@ -1601,17 +1613,6 @@
       <vertical_alignment>1</vertical_alignment>
       <wrap_words>false</wrap_words>
       <border_alarm_sensitive>false</border_alarm_sensitive>
-    </widget>
-    <widget type="rectangle" version="2.0.0">
-      <name>Rectangle_9</name>
-      <width>330</width>
-      <height>205</height>
-      <line_width>1</line_width>
-      <line_color>
-        <color red="0" green="0" blue="0">
-        </color>
-      </line_color>
-      <transparent>true</transparent>
     </widget>
   </widget>
   <widget type="group" version="2.0.0">
@@ -2886,7 +2887,7 @@
       <tooltip>$(actions)</tooltip>
     </widget>
   </widget>
-  <widget type="stripchart" version="2.0.0">
+  <widget type="stripchart" version="2.1.0">
     <name>Strip Chart</name>
     <x>10</x>
     <y>1075</y>
@@ -2904,6 +2905,10 @@
         <maximum>10.0</maximum>
         <show_grid>true</show_grid>
         <visible>true</visible>
+        <color>
+          <color name="Text" red="0" green="0" blue="0">
+          </color>
+        </color>
       </y_axis>
     </y_axes>
     <traces>
@@ -3052,7 +3057,7 @@
       <name>Action Button_7</name>
       <actions>
         <action type="write_pv">
-          <pv_name>$(dev)_01:readADCs.DISV</pv_name>
+          <pv_name>$(dev)_SYS:readADCs.DISV</pv_name>
           <value>1</value>
           <description>Start ADC Scan</description>
         </action>
@@ -3064,7 +3069,7 @@
           <exp bool_exp="pv0=0">
             <value>true</value>
           </exp>
-          <pv_name>$(dev)_01:readADCs.DISV</pv_name>
+          <pv_name>$(dev)_SYS:readADCs.DISV</pv_name>
         </rule>
       </rules>
       <tooltip>$(actions)</tooltip>
@@ -3073,7 +3078,7 @@
       <name>Action Button_8</name>
       <actions>
         <action type="write_pv">
-          <pv_name>$(dev)_01:readADCs.DISV</pv_name>
+          <pv_name>$(dev)_SYS:readADCs.DISV</pv_name>
           <value>0</value>
           <description>Stop ADC Scan</description>
         </action>
@@ -3085,14 +3090,14 @@
           <exp bool_exp="pv0=1">
             <value>true</value>
           </exp>
-          <pv_name>$(dev)_01:readADCs.DISV</pv_name>
+          <pv_name>$(dev)_SYS:readADCs.DISV</pv_name>
         </rule>
       </rules>
       <tooltip>$(actions)</tooltip>
     </widget>
     <widget type="led" version="2.0.0">
       <name>LED_6</name>
-      <pv_name>$(dev)_01:readADCs.DISV</pv_name>
+      <pv_name>$(dev)_SYS:readADCs.DISV</pv_name>
       <x>135</x>
       <y>5</y>
     </widget>
@@ -3287,7 +3292,7 @@
     <name>Action Button_9</name>
     <actions>
       <action type="write_pv">
-        <pv_name>$(dev)_01:readIP177.PROC</pv_name>
+        <pv_name>$(dev)_SYS:readIP177.PROC</pv_name>
         <value>1</value>
         <description>Read IP177 Block</description>
       </action>
@@ -3380,7 +3385,7 @@
     </widget>
     <widget type="textentry" version="3.0.0">
       <name>Text Entry_26</name>
-      <pv_name>$(dev)_01:tclkEvent</pv_name>
+      <pv_name>$(dev)_SYS:tclkEvent</pv_name>
       <y>40</y>
       <width>90</width>
       <format>4</format>
@@ -3390,7 +3395,7 @@
     </widget>
     <widget type="textentry" version="3.0.0">
       <name>Text Entry_27</name>
-      <pv_name>$(dev)_01:tclkMask</pv_name>
+      <pv_name>$(dev)_SYS:tclkMask</pv_name>
       <x>155</x>
       <y>40</y>
       <width>65</width>
@@ -3401,7 +3406,7 @@
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_73</name>
-      <pv_name>$(dev)_01:tclkMask</pv_name>
+      <pv_name>$(dev)_SYS:tclkMask</pv_name>
       <x>90</x>
       <y>40</y>
       <width>65</width>
@@ -3415,7 +3420,7 @@
     </widget>
     <widget type="combo" version="2.0.0">
       <name>Combo Box_1</name>
-      <pv_name>$(dev)_01:tclkCtrl</pv_name>
+      <pv_name>$(dev)_SYS:tclkCtrl</pv_name>
       <x>220</x>
       <y>40</y>
       <width>110</width>
@@ -3431,7 +3436,7 @@
       <name>Action Button_10</name>
       <actions>
         <action type="write_pv">
-          <pv_name>$(dev)_01:setTCLK.PROC</pv_name>
+          <pv_name>$(dev)_SYS:setTCLK.PROC</pv_name>
           <value>1</value>
           <description>Set TCLK Event</description>
         </action>
