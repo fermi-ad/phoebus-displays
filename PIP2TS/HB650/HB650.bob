@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2023-09-28 12:34:18 by epics-->
+<!--Saved on 2024-01-23 16:29:54 by epics-->
 <display version="2.0.0">
   <name>HB650-$(cm)</name>
   <macros>
@@ -20,6 +20,7 @@
     <state>PIP2IT:pHB650_CTRL_00:STATE</state>
     <temp>$(cry)</temp>
     <vac>PIP2IT:pHB650_VAC_</vac>
+    <view>Overview</view>
   </macros>
   <width>1000</width>
   <height>640</height>
@@ -175,28 +176,6 @@
     <x>660</x>
     <y>55</y>
     <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label</name>
-    <text>HB650-$(cm)</text>
-    <width>1000</width>
-    <height>40</height>
-    <font>
-      <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
-      </font>
-    </font>
-    <foreground_color>
-      <color red="255" green="255" blue="255">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color red="175" green="39" blue="47">
-      </color>
-    </background_color>
-    <transparent>false</transparent>
-    <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <border_width>2</border_width>
   </widget>
   <widget type="polyline" version="2.0.0">
     <name>Polyline_15</name>
@@ -4034,29 +4013,10 @@ Enable</text>
     <tooltip>$(actions)</tooltip>
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
-    <pv_name>$(state)</pv_name>
-    <x>5</x>
-    <y>5</y>
-    <width>150</width>
-    <height>30</height>
-    <font>
-      <font family="Liberation Sans" style="BOLD" size="14.0">
-      </font>
-    </font>
-    <foreground_color>
-      <color red="255" green="212" blue="0">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color red="0" green="149" blue="255">
-      </color>
-    </background_color>
-    <show_units>false</show_units>
-    <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display</name>
+    <file>HB650banner.bob</file>
+    <width>1130</width>
+    <height>40</height>
   </widget>
 </display>
