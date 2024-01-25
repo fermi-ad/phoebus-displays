@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2024-01-24 12:53:42 by epics-->
+<display version="2.0.0">
+  <name>SSA Overview</name>
+  <width>120</width>
+  <height>200</height>
+  <widget type="group" version="2.0.0">
+    <name>Group</name>
+    <width>120</width>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle_11</name>
+      <width>120</width>
+      <height>140</height>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="Grid" red="128" green="128" blue="128">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="bool_button" version="2.0.0">
+      <name>Boolean Button</name>
+      <pv_name>$(hprf)SSA1:sOUT</pv_name>
+      <y>140</y>
+      <width>120</width>
+      <off_label>Set On</off_label>
+      <on_label>Set Off</on_label>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <show_confirm_dialog>1</show_confirm_dialog>
+      <confirm_message>Are your sure you want to set SSA power On/Off?</confirm_message>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Action Button_48</name>
+      <actions>
+        <action type="write_pv">
+          <pv_name>$(hprf)SSA1:sOUT</pv_name>
+          <value>4</value>
+          <description>Amplifier Reset</description>
+        </action>
+      </actions>
+      <pv_name>$(hprf)SSA1:sOUT</pv_name>
+      <y>170</y>
+      <width>120</width>
+      <tooltip>$(actions)</tooltip>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Action Button_42</name>
+      <actions>
+        <action type="open_display">
+          <file>HB650-SSA.bob</file>
+          <macros>
+            <ssa>1</ssa>
+          </macros>
+          <target>tab</target>
+          <description>Open Display</description>
+        </action>
+      </actions>
+      <text></text>
+      <width>120</width>
+      <height>140</height>
+      <transparent>true</transparent>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_79</name>
+      <text>SSA$(cav)</text>
+      <y>65</y>
+      <width>120</width>
+      <height>45</height>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="22.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>Group</name>
+      <x>5</x>
+      <y>5</y>
+      <width>100</width>
+      <height>60</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>Label_63</name>
+        <text>Power</text>
+        <x>20</x>
+        <width>80</width>
+        <height>15</height>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="9.0">
+          </font>
+        </font>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_80</name>
+        <text>RF Enable</text>
+        <x>20</x>
+        <y>15</y>
+        <width>80</width>
+        <height>15</height>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="9.0">
+          </font>
+        </font>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="byte_monitor" version="2.0.0">
+        <name>Byte Monitor_19</name>
+        <pv_name>$(cplr)6_00:CPLR</pv_name>
+        <width>15</width>
+        <height>60</height>
+        <numBits>4</numBits>
+        <bitReverse>true</bitReverse>
+        <horizontal>false</horizontal>
+        <square>true</square>
+        <off_color>
+          <color name="MAJOR" red="255" green="0" blue="0">
+          </color>
+        </off_color>
+        <on_color>
+          <color name="OK" red="0" green="255" blue="0">
+          </color>
+        </on_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_81</name>
+        <text>???</text>
+        <x>20</x>
+        <y>45</y>
+        <width>80</width>
+        <height>15</height>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="9.0">
+          </font>
+        </font>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_83</name>
+        <text>???</text>
+        <x>20</x>
+        <y>30</y>
+        <width>80</width>
+        <height>15</height>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="9.0">
+          </font>
+        </font>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_23</name>
+      <pv_name>$(llrfo)$(cav)0:FWD:PWRMEAN</pv_name>
+      <x>50</x>
+      <y>110</y>
+      <width>65</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <background_color>
+        <color red="255" green="255" blue="0">
+        </color>
+      </background_color>
+      <format>2</format>
+      <precision>2</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_25</name>
+      <pv_name>$(llrfo)$(cav)0:REV:PWRMEAN</pv_name>
+      <x>50</x>
+      <y>125</y>
+      <width>65</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <background_color>
+        <color red="255" green="255" blue="0">
+        </color>
+      </background_color>
+      <format>2</format>
+      <precision>2</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_84</name>
+      <text>FwdPwr</text>
+      <y>110</y>
+      <width>45</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="11.0">
+        </font>
+      </font>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_85</name>
+      <text>RefPwr</text>
+      <y>125</y>
+      <width>45</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="11.0">
+        </font>
+      </font>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+    </widget>
+  </widget>
+</display>
