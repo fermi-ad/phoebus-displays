@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2024-02-05 13:17:07 by epics-->
+<display version="2.0.0">
+  <name>TPG500</name>
+  <macros>
+    <Device_driver>SOFTBCM</Device_driver>
+  </macros>
+  <width>1200</width>
+  <height>860</height>
+  <background_color>
+    <color name="IO Grid" red="215" green="215" blue="215">
+    </color>
+  </background_color>
+  <actions>
+  </actions>
+  <grid_step_x>5</grid_step_x>
+  <grid_step_y>5</grid_step_y>
+  <widget type="label" version="2.0.0">
+    <name>Label_94</name>
+    <text>      TPG300 Pressure Gauge Controller</text>
+    <width>1180</width>
+    <height>45</height>
+    <font>
+      <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="IO InputPV Bg" red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="IO OutputPV Bg" red="121" green="123" blue="126">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="10" green="37" blue="73">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Linking Container Template</name>
+    <file>tpg500Main.bob</file>
+    <y>50</y>
+    <width>1180</width>
+    <height>760</height>
+    <resize>1</resize>
+    <transparent>true</transparent>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="ClearOPIRule" prop_id="opi_file" out_exp="false">
+        <exp bool_exp="false">
+          <value></value>
+        </exp>
+        <exp bool_exp="true">
+          <value></value>
+        </exp>
+        <pv_name>loc://TPG300DeviceName</pv_name>
+      </rule>
+      <rule name="SetOPIRule" prop_id="opi_file" out_exp="false">
+        <exp bool_exp="true">
+          <value>tpg500Main.bob</value>
+        </exp>
+        <pv_name>loc://TPG300DeviceName</pv_name>
+      </rule>
+    </rules>
+    <scripts>
+      <script file="Scripts/TPG2Macro.js">
+        <pv_name>loc://TPG300DeviceName</pv_name>
+      </script>
+    </scripts>
+    <border_color>
+      <color name="IO Border" red="215" green="215" blue="215">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_86</name>
+    <text>Device Prefix</text>
+    <x>641</x>
+    <y>9</y>
+    <width>200</width>
+    <height>25</height>
+    <font>
+      <font name="Header 3" family="Liberation Sans" style="BOLD" size="16.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="IO InputPV Bg" red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="combo" version="2.0.0">
+    <name>Device prefix combo</name>
+    <pv_name>loc://TPG300DeviceName("TPG300")</pv_name>
+    <x>840</x>
+    <y>7</y>
+    <width>160</width>
+    <height>24</height>
+    <font>
+      <font name="IO Input 1" family="arial" style="BOLD" size="9.900990099009901">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="IO OutputPV Fg" red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="IO OutputPV Bg" red="121" green="123" blue="126">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <items>
+      <item>TPG300</item>
+    </items>
+    <items_from_pv>false</items_from_pv>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <pv_name>loc://TPG300DeviceName</pv_name>
+    <x>1013</x>
+    <y>11</y>
+    <width>156</width>
+    <height>21</height>
+    <font>
+      <font name="IO Normal" family="arial" style="REGULAR" size="9.900990099009901">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="IO Foreground" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="IO Grid" red="215" green="215" blue="215">
+      </color>
+    </background_color>
+    <format>6</format>
+    <horizontal_alignment>1</horizontal_alignment>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)</tooltip>
+    <border_width>2</border_width>
+  </widget>
+</display>
