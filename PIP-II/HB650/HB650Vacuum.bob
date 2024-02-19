@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2024-01-31 18:09:46 by epics-->
+<!--Saved on 2024-02-16 15:11:32 by epics-->
 <display version="2.0.0">
   <name>HB650Vacuum</name>
   <macros>
@@ -10,22 +10,6 @@
   <height>830</height>
   <grid_step_x>5</grid_step_x>
   <grid_step_y>5</grid_step_y>
-  <widget type="rectangle" version="2.0.0">
-    <name>Rectangle_7</name>
-    <y>40</y>
-    <width>1300</width>
-    <height>790</height>
-    <line_width>1</line_width>
-    <transparent>true</transparent>
-  </widget>
-  <widget type="picture" version="2.0.0">
-    <name>Picture</name>
-    <file>../../images/HB650Cryostat-new.png</file>
-    <x>150</x>
-    <y>220</y>
-    <width>1060</width>
-    <height>260</height>
-  </widget>
   <widget type="polyline" version="2.0.0">
     <name>Polyline_1</name>
     <x>35</x>
@@ -48,6 +32,22 @@
       </color>
     </line_color>
   </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_7</name>
+    <y>40</y>
+    <width>1300</width>
+    <height>790</height>
+    <line_width>1</line_width>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="picture" version="2.0.0">
+    <name>Picture</name>
+    <file>../../images/HB650Cryostat-new.png</file>
+    <x>150</x>
+    <y>220</y>
+    <width>1060</width>
+    <height>260</height>
+  </widget>
   <widget type="polygon" version="2.0.0">
     <name>Polygon_4</name>
     <x>85</x>
@@ -60,23 +60,6 @@
       <point x="0.0" y="0.0">
       </point>
     </points>
-  </widget>
-  <widget type="symbol" version="2.0.0">
-    <name>Symbol_21</name>
-    <pv_name>$(vac)PI101:OffOn</pv_name>
-    <symbols>
-      <symbol>../../images/IonPumpRed.png</symbol>
-      <symbol>../../images/IonPumpGreen.png</symbol>
-    </symbols>
-    <x>10</x>
-    <y>555</y>
-    <width>50</width>
-    <height>50</height>
-    <background_color>
-      <color name="Grid" red="128" green="128" blue="128">
-      </color>
-    </background_color>
-    <transparent>false</transparent>
   </widget>
   <widget type="symbol" version="2.0.0">
     <name>Symbol_31</name>
@@ -3615,5 +3598,61 @@ Vacuum</text>
     <file>HB650banner.bob</file>
     <width>1300</width>
     <height>40</height>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_320</name>
+    <pv_name>$(vac)PII101:Prs-RB</pv_name>
+    <x>70</x>
+    <y>610</y>
+    <height>15</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="11.0">
+      </font>
+    </font>
+    <format>2</format>
+    <precision>4</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="symbol" version="2.0.0">
+    <name>Symbol_21</name>
+    <pv_name>$(vac)PI101:OffOn</pv_name>
+    <symbols>
+      <symbol>../../images/IonPumpRed.png</symbol>
+      <symbol>../../images/IonPumpGreen.png</symbol>
+    </symbols>
+    <x>10</x>
+    <y>555</y>
+    <width>50</width>
+    <height>50</height>
+    <background_color>
+      <color name="Grid" red="128" green="128" blue="128">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button</name>
+    <actions>
+      <action type="open_display">
+        <file>../Common/vacuum-embedded-displays/Gamma_SPCe.bob</file>
+        <macros>
+          <P>$(vac)</P>
+          <R>PI101</R>
+        </macros>
+        <target>window</target>
+        <description>Open GammaSPCe</description>
+      </action>
+    </actions>
+    <text></text>
+    <x>10</x>
+    <y>555</y>
+    <width>50</width>
+    <height>50</height>
+    <transparent>true</transparent>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
 </display>
