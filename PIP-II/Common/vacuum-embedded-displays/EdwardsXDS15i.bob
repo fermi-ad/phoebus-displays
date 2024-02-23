@@ -1,61 +1,1386 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2024-01-22 15:36:07 by epics-->
+<!--Saved on 2024-02-23 07:22:47 by epics-->
 <display version="2.0.0">
-  <name>Display</name>
+  <name>EdwardsXDS</name>
+  <width>515</width>
   <grid_step_x>5</grid_step_x>
   <grid_step_y>5</grid_step_y>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle</name>
+    <y>30</y>
+    <width>514</width>
+    <height>30</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </background_color>
+  </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
-    <class>TITLE</class>
-    <text>My Display</text>
-    <x use_class="true">0</x>
-    <y use_class="true">0</y>
-    <width>550</width>
-    <height>31</height>
-    <font use_class="true">
+    <name>EdwardsXDS</name>
+    <class>Label</class>
+    <text>Edwards XDS Pump</text>
+    <width>513</width>
+    <height>29</height>
+    <font>
       <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
       </font>
     </font>
-    <foreground_color use_class="true">
-      <color name="Text" red="0" green="0" blue="0">
+    <foreground_color>
+      <color red="255" green="255" blue="255">
       </color>
     </foreground_color>
-    <transparent use_class="true">true</transparent>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label_1</name>
-    <text>Some Value:</text>
-    <y>50</y>
-  </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
-    <pv_name>sim://sine</pv_name>
-    <x>100</x>
-    <y>50</y>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label_2</name>
-    <class>COMMENT</class>
-    <text>Some comment.</text>
-    <x>220</x>
-    <y>50</y>
-    <width>140</width>
-    <font use_class="true">
-      <font name="Comment" family="Liberation Sans" style="ITALIC" size="14.0">
-      </font>
-    </font>
-    <foreground_color use_class="true">
-      <color name="Text" red="0" green="0" blue="0">
+    <background_color>
+      <color name="HB650color" red="175" green="39" blue="47">
       </color>
-    </foreground_color>
-    <transparent use_class="true">true</transparent>
-    <wrap_words use_class="true">true</wrap_words>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_width>2</border_width>
   </widget>
   <widget type="picture" version="2.0.0">
     <name>Picture_2</name>
-    <file>../../images/EdwardsVacuum.png</file>
-    <y>120</y>
-    <width>124</width>
+    <file>../../../images/EdwardsVacuum.png</file>
+    <x>5</x>
+    <y>5</y>
+    <width>80</width>
+    <height>20</height>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_6</name>
+    <text>$(R)</text>
+    <x>265</x>
+    <y>31</y>
+    <width>80</width>
     <height>30</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="18.0">
+      </font>
+    </font>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_7</name>
+    <text>Scroll Pump:</text>
+    <y>31</y>
+    <width>255</width>
+    <height>30</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="18.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group</name>
+    <x>380</x>
+    <y>70</y>
+    <width>125</width>
+    <height>50</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="bool_button" version="2.0.0">
+      <name>Boolean Button_4</name>
+      <pv_name>$(P)$(R):sc_OnOff</pv_name>
+      <y>20</y>
+      <width>125</width>
+      <off_label>Start Pump</off_label>
+      <off_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </off_color>
+      <on_label>Stop Pump</on_label>
+      <on_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </on_color>
+      <show_led>false</show_led>
+      <rules>
+        <rule name="Off Label" prop_id="off_label" out_exp="false">
+          <exp bool_exp="p0=0">
+            <value>Start Pump</value>
+          </exp>
+          <pv_name>$(P)$(R):rv_StatusRegister1.B1</pv_name>
+        </rule>
+        <rule name="On Label" prop_id="on_label" out_exp="false">
+          <exp bool_exp="p0=1">
+            <value>Stop Pump</value>
+          </exp>
+          <pv_name>$(P)$(R):rv_StatusRegister1.B1</pv_name>
+        </rule>
+      </rules>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <show_confirm_dialog>1</show_confirm_dialog>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_10</name>
+      <text>Control</text>
+      <width>125</width>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color red="255" green="255" blue="255">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="HB650color" red="175" green="39" blue="47">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED</name>
+      <pv_name>$(P)$(R):rv_StatusRegister1.B1</pv_name>
+      <x>5</x>
+      <y>25</y>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group_5</name>
+    <x>10</x>
+    <y>210</y>
+    <width>180</width>
+    <height>60</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>Label_57</name>
+      <text>Setpoints</text>
+      <width>180</width>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color red="255" green="255" blue="255">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="HB650color" red="175" green="39" blue="47">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_17</name>
+      <pv_name>$(P)$(R):rv_SPOnP</pv_name>
+      <x>70</x>
+      <y>20</y>
+      <width>110</width>
+      <background_color>
+        <color red="200" green="225" blue="160">
+        </color>
+      </background_color>
+      <format>2</format>
+      <precision>1</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_18</name>
+      <pv_name>$(P)$(R):rv_SPOffP</pv_name>
+      <x>70</x>
+      <y>40</y>
+      <width>110</width>
+      <background_color>
+        <color red="200" green="225" blue="160">
+        </color>
+      </background_color>
+      <format>2</format>
+      <precision>1</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Text Entry</name>
+      <pv_name>$(P)$(R):sv_SPOnP</pv_name>
+      <y>20</y>
+      <width>70</width>
+      <format>2</format>
+      <precision>1</precision>
+      <show_units>false</show_units>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Text Entry_1</name>
+      <pv_name>$(P)$(R):sv_SPOffP</pv_name>
+      <y>40</y>
+      <width>70</width>
+      <format>2</format>
+      <precision>1</precision>
+      <show_units>false</show_units>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_width>1</border_width>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group</name>
+    <x>10</x>
+    <y>320</y>
+    <width>500</width>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="group" version="2.0.0">
+      <name>Group</name>
+      <width>160</width>
+      <height>185</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="byte_monitor" version="2.0.0">
+        <name>Byte Monitor_3</name>
+        <pv_name>$(P)$(R):Status1</pv_name>
+        <y>20</y>
+        <width>15</width>
+        <height>165</height>
+        <numBits>11</numBits>
+        <bitReverse>true</bitReverse>
+        <horizontal>false</horizontal>
+        <square>true</square>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_45</name>
+        <text> Deceleration</text>
+        <x>15</x>
+        <y>20</y>
+        <width>145</width>
+        <height>15</height>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="12.0">
+          </font>
+        </font>
+        <transparent>false</transparent>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <border_width>1</border_width>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_46</name>
+        <text> Acceleration/Running</text>
+        <x>15</x>
+        <y>35</y>
+        <width>145</width>
+        <height>15</height>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="12.0">
+          </font>
+        </font>
+        <transparent>false</transparent>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <border_width>1</border_width>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_47</name>
+        <text> Standby Speed</text>
+        <x>15</x>
+        <y>50</y>
+        <width>145</width>
+        <height>15</height>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="12.0">
+          </font>
+        </font>
+        <transparent>false</transparent>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <border_width>1</border_width>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_48</name>
+        <text> Normal Speed</text>
+        <x>15</x>
+        <y>65</y>
+        <width>145</width>
+        <height>15</height>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="12.0">
+          </font>
+        </font>
+        <transparent>false</transparent>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <border_width>1</border_width>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_49</name>
+        <text> Above Ramp Speed</text>
+        <x>15</x>
+        <y>80</y>
+        <width>145</width>
+        <height>15</height>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="12.0">
+          </font>
+        </font>
+        <transparent>false</transparent>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <border_width>1</border_width>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_50</name>
+        <text> Above Overload Speed</text>
+        <x>15</x>
+        <y>95</y>
+        <width>145</width>
+        <height>15</height>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="12.0">
+          </font>
+        </font>
+        <transparent>false</transparent>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <border_width>1</border_width>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_51</name>
+        <text> Serial Enable</text>
+        <x>15</x>
+        <y>110</y>
+        <width>145</width>
+        <height>15</height>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="12.0">
+          </font>
+        </font>
+        <transparent>false</transparent>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <border_width>1</border_width>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_52</name>
+        <text> Local Control</text>
+        <x>15</x>
+        <y>125</y>
+        <width>145</width>
+        <height>15</height>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="12.0">
+          </font>
+        </font>
+        <transparent>false</transparent>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <border_width>1</border_width>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_53</name>
+        <text> Serial Control</text>
+        <x>15</x>
+        <y>140</y>
+        <width>145</width>
+        <height>15</height>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="12.0">
+          </font>
+        </font>
+        <transparent>false</transparent>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <border_width>1</border_width>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_54</name>
+        <text> Parallel Control</text>
+        <x>15</x>
+        <y>155</y>
+        <width>145</width>
+        <height>15</height>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="12.0">
+          </font>
+        </font>
+        <transparent>false</transparent>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <border_width>1</border_width>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_55</name>
+        <text> Manual Control</text>
+        <x>15</x>
+        <y>170</y>
+        <width>145</width>
+        <height>15</height>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="12.0">
+          </font>
+        </font>
+        <transparent>false</transparent>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <border_width>1</border_width>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_11</name>
+        <text>Status Register 1</text>
+        <width>160</width>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color red="255" green="255" blue="255">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="HB650color" red="175" green="39" blue="47">
+          </color>
+        </background_color>
+        <transparent>false</transparent>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <border_width>1</border_width>
+      </widget>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>Group</name>
+      <x>170</x>
+      <width>160</width>
+      <height>110</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="byte_monitor" version="2.0.0">
+        <name>Byte Monitor_4</name>
+        <pv_name>$(P)$(R):Status2</pv_name>
+        <y>20</y>
+        <width>15</width>
+        <height>90</height>
+        <numBits>6</numBits>
+        <bitReverse>true</bitReverse>
+        <horizontal>false</horizontal>
+        <square>true</square>
+      </widget>
+      <widget type="group" version="2.0.0">
+        <name>Group</name>
+        <x>15</x>
+        <y>20</y>
+        <width>145</width>
+        <height>90</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="label" version="2.0.0">
+          <name>Label_58</name>
+          <text> Upper Power Regulator</text>
+          <width>145</width>
+          <height>15</height>
+          <font>
+            <font family="Liberation Sans" style="BOLD" size="12.0">
+            </font>
+          </font>
+          <transparent>false</transparent>
+          <vertical_alignment>1</vertical_alignment>
+          <wrap_words>false</wrap_words>
+          <border_width>1</border_width>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label_59</name>
+          <text> Lower Power Regulator</text>
+          <y>15</y>
+          <width>145</width>
+          <height>15</height>
+          <font>
+            <font family="Liberation Sans" style="BOLD" size="12.0">
+            </font>
+          </font>
+          <transparent>false</transparent>
+          <vertical_alignment>1</vertical_alignment>
+          <wrap_words>false</wrap_words>
+          <border_width>1</border_width>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label_60</name>
+          <text> Upper Voltage Regulator</text>
+          <y>30</y>
+          <width>145</width>
+          <height>15</height>
+          <font>
+            <font family="Liberation Sans" style="BOLD" size="12.0">
+            </font>
+          </font>
+          <transparent>false</transparent>
+          <vertical_alignment>1</vertical_alignment>
+          <wrap_words>false</wrap_words>
+          <border_width>1</border_width>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label_61</name>
+          <text> Service Due</text>
+          <y>45</y>
+          <width>145</width>
+          <height>15</height>
+          <font>
+            <font family="Liberation Sans" style="BOLD" size="12.0">
+            </font>
+          </font>
+          <transparent>false</transparent>
+          <vertical_alignment>1</vertical_alignment>
+          <wrap_words>false</wrap_words>
+          <border_width>1</border_width>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label_62</name>
+          <text> Warning</text>
+          <y>60</y>
+          <width>145</width>
+          <height>15</height>
+          <font>
+            <font family="Liberation Sans" style="BOLD" size="12.0">
+            </font>
+          </font>
+          <transparent>false</transparent>
+          <vertical_alignment>1</vertical_alignment>
+          <wrap_words>false</wrap_words>
+          <border_width>1</border_width>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label_63</name>
+          <text> Alarm</text>
+          <y>75</y>
+          <width>145</width>
+          <height>15</height>
+          <font>
+            <font family="Liberation Sans" style="BOLD" size="12.0">
+            </font>
+          </font>
+          <transparent>false</transparent>
+          <vertical_alignment>1</vertical_alignment>
+          <wrap_words>false</wrap_words>
+          <border_width>1</border_width>
+        </widget>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_64</name>
+        <text>Status Register 2</text>
+        <width>160</width>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color red="255" green="255" blue="255">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="HB650color" red="175" green="39" blue="47">
+          </color>
+        </background_color>
+        <transparent>false</transparent>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <border_width>1</border_width>
+      </widget>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>Group</name>
+      <x>170</x>
+      <y>120</y>
+      <width>160</width>
+      <height>80</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="byte_monitor" version="2.0.0">
+        <name>Byte Monitor_2</name>
+        <pv_name>$(P)$(R):Warnings</pv_name>
+        <y>20</y>
+        <width>15</width>
+        <height>60</height>
+        <numBits>4</numBits>
+        <bitReverse>true</bitReverse>
+        <horizontal>false</horizontal>
+        <square>true</square>
+        <on_color>
+          <color name="Attention" red="255" green="160" blue="0">
+          </color>
+        </on_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_67</name>
+        <text>Warnings</text>
+        <width>160</width>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color red="255" green="255" blue="255">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="HB650color" red="175" green="39" blue="47">
+          </color>
+        </background_color>
+        <transparent>false</transparent>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <border_width>1</border_width>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_68</name>
+        <text> Low Controller Temp.</text>
+        <x>15</x>
+        <y>20</y>
+        <width>145</width>
+        <height>15</height>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="12.0">
+          </font>
+        </font>
+        <transparent>false</transparent>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <border_width>1</border_width>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_69</name>
+        <text> Current Regulated</text>
+        <x>15</x>
+        <y>35</y>
+        <width>145</width>
+        <height>15</height>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="12.0">
+          </font>
+        </font>
+        <transparent>false</transparent>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <border_width>1</border_width>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_70</name>
+        <text> High Controller Temp.</text>
+        <x>15</x>
+        <y>50</y>
+        <width>145</width>
+        <height>15</height>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="12.0">
+          </font>
+        </font>
+        <transparent>false</transparent>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <border_width>1</border_width>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_71</name>
+        <text> Service Due</text>
+        <x>15</x>
+        <y>65</y>
+        <width>145</width>
+        <height>15</height>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="12.0">
+          </font>
+        </font>
+        <transparent>false</transparent>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <border_width>1</border_width>
+      </widget>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>Group</name>
+      <x>340</x>
+      <width>160</width>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>Label_78</name>
+        <text> H/W Fault Latch</text>
+        <x>15</x>
+        <y>95</y>
+        <width>145</width>
+        <height>15</height>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="12.0">
+          </font>
+        </font>
+        <transparent>false</transparent>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <border_width>1</border_width>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_79</name>
+        <text> EEPROM</text>
+        <x>15</x>
+        <y>110</y>
+        <width>145</width>
+        <height>15</height>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="12.0">
+          </font>
+        </font>
+        <transparent>false</transparent>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <border_width>1</border_width>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_80</name>
+        <text> No Parameter Set</text>
+        <x>15</x>
+        <y>125</y>
+        <width>145</width>
+        <height>15</height>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="12.0">
+          </font>
+        </font>
+        <transparent>false</transparent>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <border_width>1</border_width>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_81</name>
+        <text> Self Test Error</text>
+        <x>15</x>
+        <y>140</y>
+        <width>145</width>
+        <height>15</height>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="12.0">
+          </font>
+        </font>
+        <transparent>false</transparent>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <border_width>1</border_width>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_82</name>
+        <text> Serial Control Error</text>
+        <x>15</x>
+        <y>155</y>
+        <width>145</width>
+        <height>15</height>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="12.0">
+          </font>
+        </font>
+        <transparent>false</transparent>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <border_width>1</border_width>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_83</name>
+        <text> Overload Timeout</text>
+        <x>15</x>
+        <y>170</y>
+        <width>145</width>
+        <height>15</height>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="12.0">
+          </font>
+        </font>
+        <transparent>false</transparent>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <border_width>1</border_width>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_84</name>
+        <text> Acceleration Timeout</text>
+        <x>15</x>
+        <y>185</y>
+        <width>145</width>
+        <height>15</height>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="12.0">
+          </font>
+        </font>
+        <transparent>false</transparent>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <border_width>1</border_width>
+      </widget>
+      <widget type="byte_monitor" version="2.0.0">
+        <name>Byte Monitor_5</name>
+        <pv_name>$(P)$(R):FaultRegister</pv_name>
+        <y>20</y>
+        <width>15</width>
+        <height>180</height>
+        <numBits>12</numBits>
+        <bitReverse>true</bitReverse>
+        <horizontal>false</horizontal>
+        <square>true</square>
+        <on_color>
+          <color name="MAJOR" red="255" green="0" blue="0">
+          </color>
+        </on_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_72</name>
+        <text>Fault</text>
+        <width>160</width>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color red="255" green="255" blue="255">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="HB650color" red="175" green="39" blue="47">
+          </color>
+        </background_color>
+        <transparent>false</transparent>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <border_width>1</border_width>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_73</name>
+        <text> Over Voltage</text>
+        <x>15</x>
+        <y>20</y>
+        <width>145</width>
+        <height>15</height>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="12.0">
+          </font>
+        </font>
+        <transparent>false</transparent>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <border_width>1</border_width>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_74</name>
+        <text> Over Current</text>
+        <x>15</x>
+        <y>35</y>
+        <width>145</width>
+        <height>15</height>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="12.0">
+          </font>
+        </font>
+        <transparent>false</transparent>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <border_width>1</border_width>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_75</name>
+        <text> Over Temperature</text>
+        <x>15</x>
+        <y>50</y>
+        <width>145</width>
+        <height>15</height>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="12.0">
+          </font>
+        </font>
+        <transparent>false</transparent>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <border_width>1</border_width>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_76</name>
+        <text> Under Temperature</text>
+        <x>15</x>
+        <y>65</y>
+        <width>145</width>
+        <height>15</height>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="12.0">
+          </font>
+        </font>
+        <transparent>false</transparent>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <border_width>1</border_width>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_77</name>
+        <text> Power Stage</text>
+        <x>15</x>
+        <y>80</y>
+        <width>145</width>
+        <height>15</height>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="12.0">
+          </font>
+        </font>
+        <transparent>false</transparent>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <border_width>1</border_width>
+      </widget>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group</name>
+    <x>10</x>
+    <y>70</y>
+    <width>230</width>
+    <height>120</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_12</name>
+      <pv_name>$(P)$(R):PumpType</pv_name>
+      <x>100</x>
+      <y>20</y>
+      <width>130</width>
+      <background_color>
+        <color red="200" green="225" blue="160">
+        </color>
+      </background_color>
+      <format>6</format>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_16</name>
+      <text>nXDS Controller</text>
+      <width>230</width>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color red="255" green="255" blue="255">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="HB650color" red="175" green="39" blue="47">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_width>2</border_width>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_13</name>
+      <pv_name>$(P)$(R):SWversion</pv_name>
+      <x>100</x>
+      <y>40</y>
+      <width>130</width>
+      <background_color>
+        <color red="200" green="225" blue="160">
+        </color>
+      </background_color>
+      <format>6</format>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_17</name>
+      <text>Model </text>
+      <y>20</y>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <transparent>false</transparent>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_18</name>
+      <text>Software </text>
+      <y>40</y>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <transparent>false</transparent>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_14</name>
+      <pv_name>$(P)$(R):PumpSpeed</pv_name>
+      <x>100</x>
+      <y>60</y>
+      <width>130</width>
+      <background_color>
+        <color red="200" green="225" blue="160">
+        </color>
+      </background_color>
+      <format>1</format>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_19</name>
+      <text>Pump Speed </text>
+      <y>60</y>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <transparent>false</transparent>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_19</name>
+      <pv_name>$(P)$(R):SN1</pv_name>
+      <x>100</x>
+      <y>80</y>
+      <width>130</width>
+      <background_color>
+        <color red="200" green="225" blue="160">
+        </color>
+      </background_color>
+      <format>1</format>
+      <precision>0</precision>
+      <show_units>false</show_units>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_65</name>
+      <text>Serial Number </text>
+      <y>80</y>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <transparent>false</transparent>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_20</name>
+      <pv_name>$(P)$(R):RunTime</pv_name>
+      <x>100</x>
+      <y>100</y>
+      <width>130</width>
+      <background_color>
+        <color red="200" green="225" blue="160">
+        </color>
+      </background_color>
+      <format>1</format>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_66</name>
+      <text>Run Time </text>
+      <y>100</y>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <transparent>false</transparent>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_width>1</border_width>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group</name>
+    <x>255</x>
+    <y>70</y>
+    <width>110</width>
+    <height>240</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="group" version="2.0.0">
+      <name>Group</name>
+      <width>110</width>
+      <height>240</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="group" version="2.0.0">
+        <name>Group</name>
+        <y>50</y>
+        <width>110</width>
+        <height>40</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="label" version="2.0.0">
+          <name>Label_12</name>
+          <text>Temperature</text>
+          <width>110</width>
+          <font>
+            <font family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <foreground_color>
+            <color red="255" green="255" blue="255">
+            </color>
+          </foreground_color>
+          <background_color>
+            <color name="HB650color" red="175" green="39" blue="47">
+            </color>
+          </background_color>
+          <transparent>false</transparent>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+          <wrap_words>false</wrap_words>
+          <border_width>1</border_width>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>Text Update_8</name>
+          <pv_name>$(P)$(R):TempC</pv_name>
+          <y>20</y>
+          <width>110</width>
+          <background_color>
+            <color red="200" green="225" blue="160">
+            </color>
+          </background_color>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+          <wrap_words>false</wrap_words>
+          <border_width>1</border_width>
+        </widget>
+      </widget>
+      <widget type="group" version="2.0.0">
+        <name>Group_1</name>
+        <y>100</y>
+        <width>110</width>
+        <height>40</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="label" version="2.0.0">
+          <name>Label_13</name>
+          <text>Voltage</text>
+          <width>110</width>
+          <font>
+            <font family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <foreground_color>
+            <color red="255" green="255" blue="255">
+            </color>
+          </foreground_color>
+          <background_color>
+            <color name="HB650color" red="175" green="39" blue="47">
+            </color>
+          </background_color>
+          <transparent>false</transparent>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+          <wrap_words>false</wrap_words>
+          <border_width>1</border_width>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>Text Update_9</name>
+          <pv_name>$(P)$(R):V</pv_name>
+          <y>20</y>
+          <width>110</width>
+          <background_color>
+            <color red="200" green="225" blue="160">
+            </color>
+          </background_color>
+          <format>1</format>
+          <precision>1</precision>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+          <wrap_words>false</wrap_words>
+          <border_width>1</border_width>
+        </widget>
+      </widget>
+      <widget type="group" version="2.0.0">
+        <name>Group_2</name>
+        <y>150</y>
+        <width>110</width>
+        <height>40</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="label" version="2.0.0">
+          <name>Label_14</name>
+          <text>Current</text>
+          <width>110</width>
+          <font>
+            <font family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <foreground_color>
+            <color red="255" green="255" blue="255">
+            </color>
+          </foreground_color>
+          <background_color>
+            <color name="HB650color" red="175" green="39" blue="47">
+            </color>
+          </background_color>
+          <transparent>false</transparent>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+          <wrap_words>false</wrap_words>
+          <border_width>1</border_width>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>Text Update_10</name>
+          <pv_name>$(P)$(R):I</pv_name>
+          <y>20</y>
+          <width>110</width>
+          <background_color>
+            <color red="200" green="225" blue="160">
+            </color>
+          </background_color>
+          <format>1</format>
+          <precision>1</precision>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+          <wrap_words>false</wrap_words>
+          <border_width>1</border_width>
+        </widget>
+      </widget>
+      <widget type="group" version="2.0.0">
+        <name>Group_3</name>
+        <y>200</y>
+        <width>110</width>
+        <height>40</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="label" version="2.0.0">
+          <name>Label_15</name>
+          <text>Power</text>
+          <width>110</width>
+          <font>
+            <font family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <foreground_color>
+            <color red="255" green="255" blue="255">
+            </color>
+          </foreground_color>
+          <background_color>
+            <color name="HB650color" red="175" green="39" blue="47">
+            </color>
+          </background_color>
+          <transparent>false</transparent>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+          <wrap_words>false</wrap_words>
+          <border_width>1</border_width>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>Text Update_11</name>
+          <pv_name>$(P)$(R):W</pv_name>
+          <y>20</y>
+          <width>110</width>
+          <background_color>
+            <color red="200" green="225" blue="160">
+            </color>
+          </background_color>
+          <format>1</format>
+          <precision>1</precision>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+          <wrap_words>false</wrap_words>
+          <border_width>1</border_width>
+        </widget>
+      </widget>
+      <widget type="group" version="2.0.0">
+        <name>Group</name>
+        <width>110</width>
+        <height>40</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="textupdate" version="2.0.0">
+          <name>Text Update_7</name>
+          <pv_name>$(P)$(R):MotorFrequency</pv_name>
+          <y>20</y>
+          <width>110</width>
+          <background_color>
+            <color red="200" green="225" blue="160">
+            </color>
+          </background_color>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+          <wrap_words>false</wrap_words>
+          <border_width>1</border_width>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label_56</name>
+          <text>Frequency</text>
+          <width>110</width>
+          <font>
+            <font family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <foreground_color>
+            <color red="255" green="255" blue="255">
+            </color>
+          </foreground_color>
+          <background_color>
+            <color name="HB650color" red="175" green="39" blue="47">
+            </color>
+          </background_color>
+          <transparent>false</transparent>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+          <wrap_words>false</wrap_words>
+          <border_width>1</border_width>
+        </widget>
+      </widget>
+    </widget>
   </widget>
 </display>
