@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2024-02-23 07:22:47 by epics-->
+<!--Saved on 2024-02-23 16:56:46 by epics-->
 <display version="2.0.0">
   <name>EdwardsXDS</name>
   <width>515</width>
@@ -81,87 +81,16 @@
     <wrap_words>false</wrap_words>
   </widget>
   <widget type="group" version="2.0.0">
-    <name>Group</name>
-    <x>380</x>
-    <y>70</y>
-    <width>125</width>
-    <height>50</height>
-    <style>3</style>
-    <transparent>true</transparent>
-    <widget type="bool_button" version="2.0.0">
-      <name>Boolean Button_4</name>
-      <pv_name>$(P)$(R):sc_OnOff</pv_name>
-      <y>20</y>
-      <width>125</width>
-      <off_label>Start Pump</off_label>
-      <off_color>
-        <color name="Button_Background" red="210" green="210" blue="210">
-        </color>
-      </off_color>
-      <on_label>Stop Pump</on_label>
-      <on_color>
-        <color name="Button_Background" red="210" green="210" blue="210">
-        </color>
-      </on_color>
-      <show_led>false</show_led>
-      <rules>
-        <rule name="Off Label" prop_id="off_label" out_exp="false">
-          <exp bool_exp="p0=0">
-            <value>Start Pump</value>
-          </exp>
-          <pv_name>$(P)$(R):rv_StatusRegister1.B1</pv_name>
-        </rule>
-        <rule name="On Label" prop_id="on_label" out_exp="false">
-          <exp bool_exp="p0=1">
-            <value>Stop Pump</value>
-          </exp>
-          <pv_name>$(P)$(R):rv_StatusRegister1.B1</pv_name>
-        </rule>
-      </rules>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-      <show_confirm_dialog>1</show_confirm_dialog>
-    </widget>
-    <widget type="label" version="2.0.0">
-      <name>Label_10</name>
-      <text>Control</text>
-      <width>125</width>
-      <font>
-        <font family="Liberation Sans" style="BOLD" size="14.0">
-        </font>
-      </font>
-      <foreground_color>
-        <color red="255" green="255" blue="255">
-        </color>
-      </foreground_color>
-      <background_color>
-        <color name="HB650color" red="175" green="39" blue="47">
-        </color>
-      </background_color>
-      <transparent>false</transparent>
-      <horizontal_alignment>1</horizontal_alignment>
-      <vertical_alignment>1</vertical_alignment>
-      <wrap_words>false</wrap_words>
-      <border_width>1</border_width>
-    </widget>
-    <widget type="led" version="2.0.0">
-      <name>LED</name>
-      <pv_name>$(P)$(R):rv_StatusRegister1.B1</pv_name>
-      <x>5</x>
-      <y>25</y>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-    </widget>
-  </widget>
-  <widget type="group" version="2.0.0">
     <name>Group_5</name>
-    <x>10</x>
-    <y>210</y>
+    <x>255</x>
+    <y>230</y>
     <width>180</width>
     <height>60</height>
     <style>3</style>
     <transparent>true</transparent>
     <widget type="label" version="2.0.0">
       <name>Label_57</name>
-      <text>Setpoints</text>
+      <text>Thresholds (% fullscale)</text>
       <width>180</width>
       <font>
         <font family="Liberation Sans" style="BOLD" size="14.0">
@@ -183,16 +112,16 @@
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_17</name>
-      <pv_name>$(P)$(R):rv_SPOnP</pv_name>
-      <x>70</x>
+      <pv_name>$(P)$(R):rc_NrmlSpeed</pv_name>
+      <x>140</x>
       <y>20</y>
-      <width>110</width>
+      <width>40</width>
       <background_color>
         <color red="200" green="225" blue="160">
         </color>
       </background_color>
-      <format>2</format>
-      <precision>1</precision>
+      <format>1</format>
+      <precision>0</precision>
       <horizontal_alignment>1</horizontal_alignment>
       <vertical_alignment>1</vertical_alignment>
       <wrap_words>false</wrap_words>
@@ -201,16 +130,16 @@
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_18</name>
-      <pv_name>$(P)$(R):rv_SPOffP</pv_name>
-      <x>70</x>
+      <pv_name>$(P)$(R):rc_StbySpeed</pv_name>
+      <x>140</x>
       <y>40</y>
-      <width>110</width>
+      <width>40</width>
       <background_color>
         <color red="200" green="225" blue="160">
         </color>
       </background_color>
-      <format>2</format>
-      <precision>1</precision>
+      <format>1</format>
+      <precision>0</precision>
       <horizontal_alignment>1</horizontal_alignment>
       <vertical_alignment>1</vertical_alignment>
       <wrap_words>false</wrap_words>
@@ -219,31 +148,61 @@
     </widget>
     <widget type="textentry" version="3.0.0">
       <name>Text Entry</name>
-      <pv_name>$(P)$(R):sv_SPOnP</pv_name>
+      <pv_name>$(P)$(R):sc_NrmlSpeed</pv_name>
+      <x>100</x>
       <y>20</y>
-      <width>70</width>
-      <format>2</format>
-      <precision>1</precision>
+      <width>40</width>
+      <format>1</format>
+      <precision>0</precision>
       <show_units>false</show_units>
       <border_alarm_sensitive>false</border_alarm_sensitive>
       <border_width>1</border_width>
     </widget>
     <widget type="textentry" version="3.0.0">
       <name>Text Entry_1</name>
-      <pv_name>$(P)$(R):sv_SPOffP</pv_name>
+      <pv_name>$(P)$(R):sc_StbySpeed</pv_name>
+      <x>100</x>
       <y>40</y>
-      <width>70</width>
-      <format>2</format>
-      <precision>1</precision>
+      <width>40</width>
+      <format>1</format>
+      <precision>0</precision>
       <show_units>false</show_units>
       <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_20</name>
+      <text>Normal Speed </text>
+      <y>20</y>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="12.0">
+        </font>
+      </font>
+      <transparent>false</transparent>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_21</name>
+      <text>Standby Speed </text>
+      <y>40</y>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="12.0">
+        </font>
+      </font>
+      <transparent>false</transparent>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
       <border_width>1</border_width>
     </widget>
   </widget>
   <widget type="group" version="2.0.0">
     <name>Group</name>
     <x>10</x>
-    <y>320</y>
+    <y>380</y>
     <width>500</width>
     <style>3</style>
     <transparent>true</transparent>
@@ -1145,64 +1104,299 @@
   <widget type="group" version="2.0.0">
     <name>Group</name>
     <x>255</x>
+    <y>120</y>
+    <width>110</width>
+    <height>40</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>Label_12</name>
+      <text>Pump Temp.</text>
+      <width>110</width>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color red="255" green="255" blue="255">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="HB650color" red="175" green="39" blue="47">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_8</name>
+      <pv_name>$(P)$(R):PumpTempC</pv_name>
+      <y>20</y>
+      <width>110</width>
+      <background_color>
+        <color red="200" green="225" blue="160">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_width>1</border_width>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group</name>
+    <x>255</x>
     <y>70</y>
     <width>110</width>
-    <height>240</height>
+    <height>40</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_7</name>
+      <pv_name>$(P)$(R):MotorFrequency</pv_name>
+      <y>20</y>
+      <width>110</width>
+      <background_color>
+        <color red="200" green="225" blue="160">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_56</name>
+      <text>Frequency</text>
+      <width>110</width>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color red="255" green="255" blue="255">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="HB650color" red="175" green="39" blue="47">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_width>1</border_width>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group_4</name>
+    <x>255</x>
+    <y>170</y>
+    <width>110</width>
+    <height>40</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>Label_22</name>
+      <text>Control Temp.</text>
+      <width>110</width>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color red="255" green="255" blue="255">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="HB650color" red="175" green="39" blue="47">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_15</name>
+      <pv_name>$(P)$(R):CtrlTempC</pv_name>
+      <y>20</y>
+      <width>110</width>
+      <background_color>
+        <color red="200" green="225" blue="160">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_width>1</border_width>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group</name>
+    <x>25</x>
+    <y>230</y>
+    <width>125</width>
+    <height>110</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="bool_button" version="2.0.0">
+      <name>Boolean Button_5</name>
+      <pv_name>$(P)$(R):sc_Speed</pv_name>
+      <x>15</x>
+      <y>80</y>
+      <width>110</width>
+      <off_label>Set Stby. Speed</off_label>
+      <off_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </off_color>
+      <on_label>Set Nrml. Speed</on_label>
+      <on_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </on_color>
+      <show_led>false</show_led>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="bool_button" version="2.0.0">
+      <name>Boolean Button_6</name>
+      <pv_name>$(P)$(R):sc_AutoRun</pv_name>
+      <x>15</x>
+      <y>50</y>
+      <width>110</width>
+      <off_label>Enable AutoRun</off_label>
+      <off_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </off_color>
+      <on_label>Disable AutoRun</on_label>
+      <on_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </on_color>
+      <show_led>false</show_led>
+      <rules>
+        <rule name="Off Label" prop_id="off_label" out_exp="true">
+          <exp bool_exp="p0=0">
+            <expression>off_label value</expression>
+          </exp>
+          <pv_name>$(P)$(R):rc_AutoRun</pv_name>
+        </rule>
+        <rule name="On Label" prop_id="on_label" out_exp="true">
+          <exp bool_exp="p0=1">
+            <expression>on_label value</expression>
+          </exp>
+          <pv_name>$(P)$(R):rc_AutoRun</pv_name>
+        </rule>
+      </rules>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <show_confirm_dialog>1</show_confirm_dialog>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_1</name>
+      <pv_name>$(P)$(R):rc_AutoRun</pv_name>
+      <y>50</y>
+      <width>15</width>
+      <height>30</height>
+      <square>true</square>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="bool_button" version="2.0.0">
+      <name>Boolean Button_4</name>
+      <pv_name>$(P)$(R):sc_OnOff</pv_name>
+      <x>15</x>
+      <y>20</y>
+      <width>110</width>
+      <off_label>Start Pump</off_label>
+      <off_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </off_color>
+      <on_label>Stop Pump</on_label>
+      <on_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </on_color>
+      <show_led>false</show_led>
+      <rules>
+        <rule name="Off Label" prop_id="off_label" out_exp="false">
+          <exp bool_exp="p0=0">
+            <value>Start Pump</value>
+          </exp>
+          <pv_name>$(P)$(R):rv_StatusRegister1.B1</pv_name>
+        </rule>
+        <rule name="On Label" prop_id="on_label" out_exp="false">
+          <exp bool_exp="p0=1">
+            <value>Stop Pump</value>
+          </exp>
+          <pv_name>$(P)$(R):rv_StatusRegister1.B1</pv_name>
+        </rule>
+      </rules>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <show_confirm_dialog>1</show_confirm_dialog>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_10</name>
+      <text>Control</text>
+      <width>125</width>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color red="255" green="255" blue="255">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="HB650color" red="175" green="39" blue="47">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_width>2</border_width>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED</name>
+      <pv_name>$(P)$(R):rv_StatusRegister1.B1</pv_name>
+      <y>20</y>
+      <width>15</width>
+      <height>30</height>
+      <square>true</square>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_3</name>
+      <pv_name>$(P)$(R):rv_StatusRegister1.B3</pv_name>
+      <y>80</y>
+      <width>15</width>
+      <height>30</height>
+      <square>true</square>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group</name>
+    <x>375</x>
+    <y>70</y>
+    <width>110</width>
+    <height>140</height>
     <style>3</style>
     <transparent>true</transparent>
     <widget type="group" version="2.0.0">
       <name>Group</name>
       <width>110</width>
-      <height>240</height>
+      <height>140</height>
       <style>3</style>
       <transparent>true</transparent>
       <widget type="group" version="2.0.0">
-        <name>Group</name>
-        <y>50</y>
-        <width>110</width>
-        <height>40</height>
-        <style>3</style>
-        <transparent>true</transparent>
-        <widget type="label" version="2.0.0">
-          <name>Label_12</name>
-          <text>Temperature</text>
-          <width>110</width>
-          <font>
-            <font family="Liberation Sans" style="BOLD" size="14.0">
-            </font>
-          </font>
-          <foreground_color>
-            <color red="255" green="255" blue="255">
-            </color>
-          </foreground_color>
-          <background_color>
-            <color name="HB650color" red="175" green="39" blue="47">
-            </color>
-          </background_color>
-          <transparent>false</transparent>
-          <horizontal_alignment>1</horizontal_alignment>
-          <vertical_alignment>1</vertical_alignment>
-          <wrap_words>false</wrap_words>
-          <border_width>1</border_width>
-        </widget>
-        <widget type="textupdate" version="2.0.0">
-          <name>Text Update_8</name>
-          <pv_name>$(P)$(R):TempC</pv_name>
-          <y>20</y>
-          <width>110</width>
-          <background_color>
-            <color red="200" green="225" blue="160">
-            </color>
-          </background_color>
-          <horizontal_alignment>1</horizontal_alignment>
-          <vertical_alignment>1</vertical_alignment>
-          <wrap_words>false</wrap_words>
-          <border_width>1</border_width>
-        </widget>
-      </widget>
-      <widget type="group" version="2.0.0">
         <name>Group_1</name>
-        <y>100</y>
         <width>110</width>
         <height>40</height>
         <style>3</style>
@@ -1248,7 +1442,7 @@
       </widget>
       <widget type="group" version="2.0.0">
         <name>Group_2</name>
-        <y>150</y>
+        <y>50</y>
         <width>110</width>
         <height>40</height>
         <style>3</style>
@@ -1294,7 +1488,7 @@
       </widget>
       <widget type="group" version="2.0.0">
         <name>Group_3</name>
-        <y>200</y>
+        <y>100</y>
         <width>110</width>
         <height>40</height>
         <style>3</style>
@@ -1332,49 +1526,6 @@
           </background_color>
           <format>1</format>
           <precision>1</precision>
-          <horizontal_alignment>1</horizontal_alignment>
-          <vertical_alignment>1</vertical_alignment>
-          <wrap_words>false</wrap_words>
-          <border_width>1</border_width>
-        </widget>
-      </widget>
-      <widget type="group" version="2.0.0">
-        <name>Group</name>
-        <width>110</width>
-        <height>40</height>
-        <style>3</style>
-        <transparent>true</transparent>
-        <widget type="textupdate" version="2.0.0">
-          <name>Text Update_7</name>
-          <pv_name>$(P)$(R):MotorFrequency</pv_name>
-          <y>20</y>
-          <width>110</width>
-          <background_color>
-            <color red="200" green="225" blue="160">
-            </color>
-          </background_color>
-          <horizontal_alignment>1</horizontal_alignment>
-          <vertical_alignment>1</vertical_alignment>
-          <wrap_words>false</wrap_words>
-          <border_width>1</border_width>
-        </widget>
-        <widget type="label" version="2.0.0">
-          <name>Label_56</name>
-          <text>Frequency</text>
-          <width>110</width>
-          <font>
-            <font family="Liberation Sans" style="BOLD" size="14.0">
-            </font>
-          </font>
-          <foreground_color>
-            <color red="255" green="255" blue="255">
-            </color>
-          </foreground_color>
-          <background_color>
-            <color name="HB650color" red="175" green="39" blue="47">
-            </color>
-          </background_color>
-          <transparent>false</transparent>
           <horizontal_alignment>1</horizontal_alignment>
           <vertical_alignment>1</vertical_alignment>
           <wrap_words>false</wrap_words>
