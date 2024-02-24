@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2024-02-03 22:28:48 by epics-->
+<!--Saved on 2024-02-24 09:40:36 by epics-->
 <display version="2.0.0">
   <name>Leybold Turbo</name>
   <x>597</x>
@@ -12,6 +12,29 @@
   </background_color>
   <grid_step_x>5</grid_step_x>
   <grid_step_y>5</grid_step_y>
+  <widget type="label" version="2.0.0">
+    <name>Label_8</name>
+    <text>Leybold Turbo Pump</text>
+    <width>450</width>
+    <height>28</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="18.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="255" green="0" blue="0">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_width>2</border_width>
+  </widget>
   <widget type="action_button" version="3.0.0">
     <name>EDM activeMessageButtonClass</name>
     <actions>
@@ -38,71 +61,7 @@
       <color name="GLOBAL canvas" red="200" green="200" blue="200">
       </color>
     </background_color>
-  </widget>
-  <widget type="rectangle" version="2.0.0">
-    <name>EDM activeRectangleClass</name>
-    <width>461</width>
-    <height>41</height>
-    <line_width>1</line_width>
-    <line_color>
-      <color name="RING title" red="174" green="196" blue="195">
-      </color>
-    </line_color>
-    <background_color>
-      <color name="RING title" red="174" green="196" blue="195">
-      </color>
-    </background_color>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>EDM activeExitButtonClass</name>
-    <actions>
-      <action type="execute">
-        <script file="EmbeddedPy">
-          <text><![CDATA[from org.csstudio.display.builder.runtime.script import ScriptUtil
-ScriptUtil.closeDisplay(widget)
-]]></text>
-        </script>
-        <description>close</description>
-      </action>
-    </actions>
-    <text>EXIT</text>
-    <x>370</x>
-    <y>445</y>
-    <width>80</width>
-    <height>25</height>
-    <font>
-      <font family="Liberation Sans" style="REGULAR" size="18.0">
-      </font>
-    </font>
-    <foreground_color>
-      <color name="purple-46" red="192" green="0" blue="192">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color name="GLOBAL canvas" red="200" green="200" blue="200">
-      </color>
-    </background_color>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>EDM activeXTextClass</name>
-    <text>$(P) - Leybold Turbo Pump</text>
-    <x>30</x>
-    <y>10</y>
-    <width>236</width>
-    <height>21</height>
-    <font>
-      <font family="Liberation Sans" style="BOLD" size="18.0">
-      </font>
-    </font>
-    <foreground_color>
-      <color name="black-14" red="0" green="0" blue="0">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color name="GLOBAL canvas" red="200" green="200" blue="200">
-      </color>
-    </background_color>
-    <auto_size>true</auto_size>
+    <tooltip>$(actions)</tooltip>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>EDM activeXTextDspClass_noedit</name>
@@ -164,8 +123,8 @@ ScriptUtil.closeDisplay(widget)
   <widget type="label" version="2.0.0">
     <name>EDM activeXTextClass</name>
     <text>Control</text>
-    <x>10</x>
-    <y>60</y>
+    <x>20</x>
+    <y>70</y>
     <width>60</width>
     <font>
       <font family="Liberation Sans" style="BOLD" size="14.0">
@@ -400,8 +359,8 @@ ScriptUtil.closeDisplay(widget)
   <widget type="textupdate" version="2.0.0">
     <name>EDM activeXTextDspClass_noedit</name>
     <pv_name>$(P)StatorFrequency</pv_name>
-    <x>145</x>
-    <y>85</y>
+    <x>155</x>
+    <y>95</y>
     <font>
       <font family="Liberation Sans" style="BOLD" size="14.0">
       </font>
@@ -497,8 +456,8 @@ ScriptUtil.closeDisplay(widget)
   <widget type="label" version="2.0.0">
     <name>EDM activeXTextClass</name>
     <text>Frequency</text>
-    <x>10</x>
-    <y>85</y>
+    <x>20</x>
+    <y>95</y>
     <width>120</width>
     <font>
       <font family="Liberation Sans" style="BOLD" size="14.0">
@@ -644,8 +603,8 @@ ScriptUtil.closeDisplay(widget)
       </action>
     </actions>
     <text>On</text>
-    <x>70</x>
-    <y>60</y>
+    <x>80</x>
+    <y>70</y>
     <width>35</width>
     <height>20</height>
     <font>
@@ -660,6 +619,7 @@ ScriptUtil.closeDisplay(widget)
       <color name="GLOBAL canvas" red="200" green="200" blue="200">
       </color>
     </background_color>
+    <tooltip>$(actions)</tooltip>
   </widget>
   <widget type="action_button" version="3.0.0">
     <name>EDM activeMessageButtonClass</name>
@@ -671,8 +631,8 @@ ScriptUtil.closeDisplay(widget)
       </action>
     </actions>
     <text>Off</text>
-    <x>105</x>
-    <y>60</y>
+    <x>115</x>
+    <y>70</y>
     <width>35</width>
     <height>20</height>
     <font>
@@ -687,12 +647,13 @@ ScriptUtil.closeDisplay(widget)
       <color name="GLOBAL canvas" red="200" green="200" blue="200">
       </color>
     </background_color>
+    <tooltip>$(actions)</tooltip>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>EDM activeXTextDspClass_noedit</name>
     <pv_name>$(P)StatorRPM</pv_name>
-    <x>145</x>
-    <y>110</y>
+    <x>155</x>
+    <y>120</y>
     <font>
       <font family="Liberation Sans" style="BOLD" size="14.0">
       </font>
@@ -710,8 +671,8 @@ ScriptUtil.closeDisplay(widget)
   <widget type="label" version="2.0.0">
     <name>EDM activeXTextClass</name>
     <text>RPM</text>
-    <x>10</x>
-    <y>110</y>
+    <x>20</x>
+    <y>120</y>
     <width>55</width>
     <font>
       <font family="Liberation Sans" style="BOLD" size="14.0">
@@ -730,8 +691,8 @@ ScriptUtil.closeDisplay(widget)
   <widget type="textupdate" version="2.0.0">
     <name>EDM activeXTextDspClass_noedit</name>
     <pv_name>$(P)Running:RBV</pv_name>
-    <x>145</x>
-    <y>60</y>
+    <x>155</x>
+    <y>70</y>
     <font>
       <font family="Liberation Sans" style="BOLD" size="14.0">
       </font>
@@ -745,5 +706,57 @@ ScriptUtil.closeDisplay(widget)
       </color>
     </background_color>
     <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle</name>
+    <y>30</y>
+    <width>450</width>
+    <height>30</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_6</name>
+    <text>$(R)</text>
+    <x>225</x>
+    <y>30</y>
+    <width>80</width>
+    <height>30</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="18.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_7</name>
+    <text>Ion Pump:</text>
+    <x>115</x>
+    <y>30</y>
+    <height>30</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="18.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="picture" version="2.0.0">
+    <name>Picture</name>
+    <file>../../../images/LeyboldVacuum.png</file>
+    <x>5</x>
+    <y>5</y>
+    <width>40</width>
+    <height>20</height>
   </widget>
 </display>
