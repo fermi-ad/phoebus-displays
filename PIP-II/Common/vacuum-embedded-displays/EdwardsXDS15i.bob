@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2024-02-23 16:56:46 by epics-->
+<!--Saved on 2024-02-24 09:58:47 by epics-->
 <display version="2.0.0">
   <name>EdwardsXDS</name>
   <width>515</width>
@@ -24,7 +24,7 @@
     <name>EdwardsXDS</name>
     <class>Label</class>
     <text>Edwards XDS Pump</text>
-    <width>513</width>
+    <width>512</width>
     <height>29</height>
     <font>
       <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
@@ -1238,7 +1238,7 @@
   </widget>
   <widget type="group" version="2.0.0">
     <name>Group</name>
-    <x>25</x>
+    <x>110</x>
     <y>230</y>
     <width>125</width>
     <height>110</height>
@@ -1533,5 +1533,59 @@
         </widget>
       </widget>
     </widget>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_23</name>
+    <text>Normal
+Speed</text>
+    <x>55</x>
+    <y>310</y>
+    <width>50</width>
+    <height>30</height>
+    <visible>false</visible>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <transparent>false</transparent>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <rules>
+      <rule name="Show Nrml. Speed" prop_id="visible" out_exp="true">
+        <exp bool_exp="p0=1">
+          <expression>visible value</expression>
+        </exp>
+        <pv_name>$(P)$(R):rv_StatusRegister1.B3</pv_name>
+      </rule>
+    </rules>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_24</name>
+    <text>Standby
+Speed</text>
+    <x>295</x>
+    <y>320</y>
+    <width>50</width>
+    <height>30</height>
+    <visible>false</visible>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <transparent>false</transparent>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <rules>
+      <rule name="Show Stby. Speed" prop_id="visible" out_exp="true">
+        <exp bool_exp="p0=0">
+          <expression>visible value</expression>
+        </exp>
+        <pv_name>$(P)$(R):rv_StatusRegister1.B3</pv_name>
+      </rule>
+    </rules>
+    <border_width>1</border_width>
   </widget>
 </display>
