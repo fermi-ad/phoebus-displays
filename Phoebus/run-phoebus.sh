@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # Phoebus build and installation location
-TOP="/usr/local/epics"
+TOP="/usr/local/epics/phoebus-fnal"
+#TOP="/usr/local/epics/phoebus-AL9"
 EPICS_CONFIG="/usr/local/epics/Config"
 
 export JAVA_HOME=/usr/local/jdk-13.0.2
@@ -15,7 +16,7 @@ V="4.7.2-SNAPSHOT"
 
 # figure out the path to the product jar
 if [[ -z "${PHOEBUS_JAR}" ]]; then
-  PHOEBUS_JAR=${TOP}/phoebus-fnal/product-fnal/target/fnal-product-${V}.jar
+  PHOEBUS_JAR=${TOP}/product-fnal/target/fnal-product-${V}.jar
 fi
 
 # figure out the path to the configuration settings
@@ -23,7 +24,7 @@ if [[ -z "${PHOEBUS_CONFIG}" ]]; then
     PHOEBUS_CONFIG=${EPICS_CONFIG}/CSS/Phoebus/settings.ini
 fi
 PIP2IT_LAYOUT=${EPICS_CONFIG}/CSS/Phoebus/pip2it.memento
-
+echo $PHOEBUS_JAR
 
 # To get one instance, use server mode
 ID=$(id -u)
@@ -40,4 +41,4 @@ export JDK_JAVA_OPTIONS
 
 echo $JDK_JAVA_OPTIONS
 
-java -jar $PHOEBUS_JAR -settings $PHOEBUS_CONFIG -layout $PIP2IT_LAYOUT -logging $TOP/phoebus-fnal/config/logging.properties $OPT "$@" &
+java -jar $PHOEBUS_JAR -settings $PHOEBUS_CONFIG -layout $PIP2IT_LAYOUT -logging $TOP/config/logging.properties $OPT "$@" &
