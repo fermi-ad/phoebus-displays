@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2024-03-13 14:02:39 by epics-->
+<!--Saved on 2024-03-28 09:37:46 by epics-->
 <display version="2.0.0">
   <name>HB650Vacuum</name>
   <macros>
+    <plc>PIP2IT:pHB650_PLC_</plc>
     <vac>PIP2IT:pHB650_VAC_</vac>
     <view>Vacuum</view>
   </macros>
@@ -2371,69 +2372,6 @@ IV MKS937</text>
       <horizontal_alignment>1</horizontal_alignment>
       <vertical_alignment>1</vertical_alignment>
     </widget>
-    <widget type="action_button" version="3.0.0">
-      <name>Action Button_2</name>
-      <actions>
-        <action type="write_pv">
-          <pv_name>$(vac)PT052:sStop</pv_name>
-          <value>1</value>
-          <description>Stop Turbo</description>
-        </action>
-      </actions>
-      <pv_name>$(vac)PT052:sStop</pv_name>
-      <x>5</x>
-      <y>75</y>
-      <width>50</width>
-      <height>15</height>
-      <visible>false</visible>
-      <font>
-        <font family="Liberation Sans" style="REGULAR" size="11.0">
-        </font>
-      </font>
-      <rules>
-        <rule name="Make Visible" prop_id="visible" out_exp="false">
-          <exp bool_exp="pv0=1">
-            <value>true</value>
-          </exp>
-          <pv_name>$(vac)PT052:OffOn</pv_name>
-        </rule>
-      </rules>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-      <show_confirm_dialog>true</show_confirm_dialog>
-      <confirm_message>Are your sure you want to Stop IV Turbo Pump?</confirm_message>
-    </widget>
-    <widget type="action_button" version="3.0.0">
-      <name>Action Button_3</name>
-      <actions>
-        <action type="write_pv">
-          <pv_name>$(vac)PT052:sStart</pv_name>
-          <value>1</value>
-          <description>Start Turbo</description>
-        </action>
-      </actions>
-      <pv_name>$(vac)PT052:sStart</pv_name>
-      <x>5</x>
-      <y>75</y>
-      <width>50</width>
-      <height>15</height>
-      <visible>false</visible>
-      <font>
-        <font family="Liberation Sans" style="REGULAR" size="11.0">
-        </font>
-      </font>
-      <rules>
-        <rule name="Make Visible" prop_id="visible" out_exp="false">
-          <exp bool_exp="pv0=0&amp;&amp;pv1&lt;3e-2">
-            <value>true</value>
-          </exp>
-          <pv_name>$(vac)PT052:OffOn</pv_name>
-          <pv_name>$(vac)PPG052:VacP</pv_name>
-        </rule>
-      </rules>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-      <show_confirm_dialog>true</show_confirm_dialog>
-      <confirm_message>Are your sure you want to Start IV Turbo Pump?</confirm_message>
-    </widget>
     <widget type="led" version="2.0.0">
       <name>LED_9</name>
       <pv_name>$(vac)PT052:OffOn</pv_name>
@@ -2467,34 +2405,6 @@ IV MKS937</text>
       <pv_name>$(vac)PT052:STATUS.B4</pv_name>
       <x>5</x>
       <y>50</y>
-      <width>15</width>
-      <height>15</height>
-      <on_color>
-        <color name="OK" red="0" green="255" blue="0">
-        </color>
-      </on_color>
-      <square>true</square>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-    </widget>
-    <widget type="led" version="2.0.0">
-      <name>LED_12</name>
-      <pv_name>$(vac)PT052:STATUS.B5</pv_name>
-      <x>5</x>
-      <y>65</y>
-      <width>15</width>
-      <height>15</height>
-      <on_color>
-        <color name="OK" red="0" green="255" blue="0">
-        </color>
-      </on_color>
-      <square>true</square>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-    </widget>
-    <widget type="led" version="2.0.0">
-      <name>LED_13</name>
-      <pv_name>$(vac)PT052:STATUS.BA</pv_name>
-      <x>5</x>
-      <y>80</y>
       <width>15</width>
       <height>15</height>
       <on_color>
@@ -2682,6 +2592,34 @@ IV MKS937</text>
       <precision>0</precision>
       <vertical_alignment>1</vertical_alignment>
       <wrap_words>false</wrap_words>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_12</name>
+      <pv_name>$(vac)PT052:STATUS.B5</pv_name>
+      <x>5</x>
+      <y>65</y>
+      <width>15</width>
+      <height>15</height>
+      <on_color>
+        <color name="OK" red="0" green="255" blue="0">
+        </color>
+      </on_color>
+      <square>true</square>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_13</name>
+      <pv_name>$(vac)PT052:STATUS.BA</pv_name>
+      <x>5</x>
+      <y>80</y>
+      <width>15</width>
+      <height>15</height>
+      <on_color>
+        <color name="OK" red="0" green="255" blue="0">
+        </color>
+      </on_color>
+      <square>true</square>
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
   </widget>
