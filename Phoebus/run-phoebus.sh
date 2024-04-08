@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Phoebus build and installation location
-TOP="/usr/local/epics/phoebus-fnal"
-#TOP="/usr/local/epics/phoebus-AL9"
+#TOP="/usr/local/epics/phoebus-fnal"
+TOP="/usr/local/epics/phoebus-test"
 EPICS_CONFIG="/usr/local/epics/Config"
 
 export JAVA_HOME=/usr/local/jdk-13.0.2
@@ -12,7 +12,8 @@ export EPICS_CA_ADDR_LIST="${EPICS_CA_ADDR_LIST} 131.225.120.160:6721 131.225.12
 
 echo $TOP
 #V="4.6.6-SNAPSHOT"
-V="4.7.2-SNAPSHOT"
+#V="4.7.2-SNAPSHOT"
+V="4.7.3-SNAPSHOT"
 
 # figure out the path to the product jar
 if [[ -z "${PHOEBUS_JAR}" ]]; then
