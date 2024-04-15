@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Phoebus build and installation location
-#TOP="/usr/local/epics/phoebus-fnal"
-TOP="/usr/local/epics/phoebus-test"
+TOP="/usr/local/epics/phoebus-fnal"
+#TOP="/usr/local/epics/phoebus-test"
 EPICS_CONFIG="/usr/local/epics/Config"
 
 export JAVA_HOME=/usr/local/jdk-13.0.2
