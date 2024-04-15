@@ -4,6 +4,7 @@
 TOP="/usr/local/epics/phoebus-fnal"
 #TOP="/usr/local/epics/phoebus-test"
 EPICS_CONFIG="/usr/local/epics/Config"
+export EPICS_CONFIG
 
 export JAVA_HOME=/usr/local/jdk-13.0.2
 export PATH="$JAVA_HOME/bin:$PATH"
