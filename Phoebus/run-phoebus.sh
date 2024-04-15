@@ -2,11 +2,10 @@
 
 # Phoebus build and installation location
 TOP="/usr/local/epics/phoebus-fnal"
-#TOP="/usr/local/epics/phoebus-test"
 EPICS_CONFIG="/usr/local/epics/Config"
-export EPICS_CONFIG
 
-export JAVA_HOME=/usr/local/jdk-13.0.2
+#export JAVA_HOME=/usr/local/jdk-13.0.2
+export JAVA_HOME=/usr/lib/jvm/jre-openjdk/
 export PATH="$JAVA_HOME/bin:$PATH"
 #export EPICS_CA_ADDR_LIST="${EPICS_CA_ADDR_LIST} 131.225.120.160:6721 131.225.120.160:6722 131.225.120.160:6723" Temporary
 export EPICS_CA_ADDR_LIST="${EPICS_CA_ADDR_LIST} 131.225.120.160:6721 131.225.120.160:6722 131.225.120.160:6723 131.225.120.164"
