@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2024-04-17 12:11:07 by epics-->
+<!--Saved on 2024-04-17 18:11:51 by epics-->
 <display version="2.0.0">
   <name>TPG500sensor</name>
-  <width>580</width>
+  <width>790</width>
   <height>160</height>
   <background_color>
     <color name="IO Grid" red="215" green="215" blue="215">
@@ -17,17 +17,19 @@
     <macros>
       <pv_name></pv_name>
     </macros>
-    <width>580</width>
+    <width>790</width>
     <height>160</height>
-    <line_width>0</line_width>
+    <line_width>1</line_width>
     <line_color>
-      <color name="Button_Background" red="210" green="210" blue="210">
+      <color red="0" green="0" blue="0">
       </color>
     </line_color>
     <background_color>
       <color name="Button_Background" red="210" green="210" blue="210">
       </color>
     </background_color>
+    <corner_width>5</corner_width>
+    <corner_height>5</corner_height>
     <actions>
     </actions>
     <tooltip>$(pv_name)
@@ -37,7 +39,7 @@ $(pv_value)</tooltip>
     <name>Controls Grouping Container_1</name>
     <x>10</x>
     <y>17</y>
-    <width>560</width>
+    <width>770</width>
     <height>1</height>
     <style>3</style>
     <font>
@@ -62,7 +64,7 @@ $(pv_value)</tooltip>
   <widget type="label" version="2.0.0">
     <name>Label_124</name>
     <text>Sensor $(SENSOR)</text>
-    <x>190</x>
+    <x>295</x>
     <y>5</y>
     <width>200</width>
     <height>25</height>
@@ -87,7 +89,7 @@ $(pv_value)</tooltip>
   <widget type="multi_state_led" version="2.0.0">
     <name>LED Template_3</name>
     <pv_name>$(vac)$(SENSOR):getChannelStatus</pv_name>
-    <x>365</x>
+    <x>460</x>
     <y>5</y>
     <width>25</width>
     <height>25</height>
@@ -148,9 +150,9 @@ $(pv_value)</tooltip>
   <widget type="label" version="2.0.0">
     <name>Label_144</name>
     <text>Pressure Readback</text>
-    <x>10</x>
+    <x>30</x>
     <y>41</y>
-    <width>110</width>
+    <width>130</width>
     <height>25</height>
     <font>
       <font family="Liberation Sans" style="REGULAR" size="12.0">
@@ -169,7 +171,7 @@ $(pv_value)</tooltip>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update Template_3</name>
     <pv_name>$(vac)$(SENSOR):VacP</pv_name>
-    <x>135</x>
+    <x>190</x>
     <y>41</y>
     <width>196</width>
     <height>25</height>
@@ -194,38 +196,12 @@ $(pv_value)</tooltip>
       </color>
     </border_color>
   </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>Text Update Template_5</name>
-    <pv_name>$(vac)$(SENSOR):Status</pv_name>
-    <x>345</x>
-    <y>41</y>
-    <width>220</width>
-    <height>25</height>
-    <font>
-      <font family="Liberation Sans" style="BOLD" size="12.0">
-      </font>
-    </font>
-    <background_color>
-      <color name="Background" red="255" green="255" blue="255">
-      </color>
-    </background_color>
-    <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_width>2</border_width>
-    <border_color>
-      <color name="IO Border" red="215" green="215" blue="215">
-      </color>
-    </border_color>
-  </widget>
   <widget type="label" version="2.0.0">
     <name>Label_125</name>
     <text>Sensor Mode</text>
-    <x>10</x>
+    <x>30</x>
     <y>76</y>
-    <width>110</width>
+    <width>130</width>
     <height>25</height>
     <font>
       <font family="Liberation Sans" style="REGULAR" size="12.0">
@@ -241,36 +217,10 @@ $(pv_value)</tooltip>
       </color>
     </border_color>
   </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>Text Update Template_7</name>
-    <pv_name>$(vac)$(SENSOR):getChannelStatus</pv_name>
-    <x>345</x>
-    <y>76</y>
-    <width>220</width>
-    <height>25</height>
-    <font>
-      <font family="Liberation Sans" style="BOLD" size="12.0">
-      </font>
-    </font>
-    <background_color>
-      <color name="Background" red="255" green="255" blue="255">
-      </color>
-    </background_color>
-    <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_width>2</border_width>
-    <border_color>
-      <color name="IO Border" red="215" green="215" blue="215">
-      </color>
-    </border_color>
-  </widget>
   <widget type="combo" version="2.0.0">
     <name>Clock source</name>
     <pv_name>$(vac)$(SENSOR):setChannelStatus</pv_name>
-    <x>135</x>
+    <x>190</x>
     <y>76</y>
     <width>200</width>
     <height>25</height>
@@ -284,9 +234,9 @@ $(pv_value)</tooltip>
   <widget type="label" version="2.0.0">
     <name>Label_126</name>
     <text>Filter Time Constant</text>
-    <x>10</x>
+    <x>30</x>
     <y>101</y>
-    <width>110</width>
+    <width>130</width>
     <height>25</height>
     <font>
       <font family="Liberation Sans" style="REGULAR" size="12.0">
@@ -302,80 +252,21 @@ $(pv_value)</tooltip>
       </color>
     </border_color>
   </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>Text Update Template_8</name>
-    <pv_name>$(vac)$(SENSOR):getFilterTime</pv_name>
-    <x>345</x>
-    <y>101</y>
-    <width>220</width>
-    <height>25</height>
-    <font>
-      <font family="Liberation Sans" style="BOLD" size="12.0">
-      </font>
-    </font>
-    <foreground_color>
-      <color name="IO Foreground" red="0" green="0" blue="0">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color name="IO InputPV Bg" red="255" green="255" blue="255">
-      </color>
-    </background_color>
-    <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_width>2</border_width>
-    <border_color>
-      <color name="IO Border" red="215" green="215" blue="215">
-      </color>
-    </border_color>
-  </widget>
   <widget type="combo" version="2.0.0">
     <pv_name>$(vac)$(SENSOR):setFilterTime</pv_name>
-    <x>135</x>
+    <x>190</x>
     <y>101</y>
     <width>200</width>
     <height>25</height>
     <tooltip> $(pv_name) /  $(pv_value)</tooltip>
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>Text Update Template_9</name>
-    <pv_name>$(prefix):UNITS-RBV</pv_name>
-    <x>388</x>
-    <y>40</y>
-    <width>60</width>
-    <height>21</height>
-    <visible>false</visible>
-    <font>
-      <font name="IO Input 1" family="arial" style="BOLD" size="9.900990099009901">
-      </font>
-    </font>
-    <foreground_color>
-      <color name="IO Foreground" red="0" green="0" blue="0">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color name="IO InputPV Bg" red="255" green="255" blue="255">
-      </color>
-    </background_color>
-    <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <actions>
-    </actions>
-    <border_color>
-      <color name="IO Border" red="215" green="215" blue="215">
-      </color>
-    </border_color>
-  </widget>
   <widget type="label" version="2.0.0">
     <name>Label_127</name>
     <text>Sensor Name</text>
-    <x>10</x>
+    <x>30</x>
     <y>126</y>
-    <width>110</width>
+    <width>130</width>
     <height>25</height>
     <font>
       <font family="Liberation Sans" style="REGULAR" size="12.0">
@@ -394,39 +285,154 @@ $(pv_value)</tooltip>
   <widget type="textentry" version="3.0.0">
     <name>Text Entry</name>
     <pv_name>$(prefix):sG$(NUM)Name</pv_name>
-    <x>135</x>
+    <x>190</x>
     <y>126</y>
     <width>200</width>
     <height>25</height>
   </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>Text Update Template_10</name>
-    <pv_name>$(prefix):sG$(NUM)Name</pv_name>
-    <x>345</x>
-    <y>126</y>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <x>425</x>
+    <y>41</y>
     <width>220</width>
-    <height>25</height>
-    <font>
-      <font family="Liberation Sans" style="BOLD" size="12.0">
+    <height>111</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update Template_5</name>
+      <pv_name>$(vac)$(SENSOR):Status</pv_name>
+      <y>1</y>
+      <width>220</width>
+      <height>25</height>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="12.0">
+        </font>
       </font>
-    </font>
-    <foreground_color>
-      <color name="IO Foreground" red="0" green="0" blue="0">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color name="IO InputPV Bg" red="255" green="255" blue="255">
-      </color>
-    </background_color>
-    <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_width>2</border_width>
-    <border_color>
-      <color name="IO Border" red="215" green="215" blue="215">
-      </color>
-    </border_color>
+      <background_color>
+        <color name="Background" red="255" green="255" blue="255">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_width>2</border_width>
+      <border_color>
+        <color name="IO Border" red="215" green="215" blue="215">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update Template_7</name>
+      <pv_name>$(vac)$(SENSOR):getChannelStatus</pv_name>
+      <y>36</y>
+      <width>220</width>
+      <height>25</height>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="12.0">
+        </font>
+      </font>
+      <background_color>
+        <color name="Background" red="255" green="255" blue="255">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_width>2</border_width>
+      <border_color>
+        <color name="IO Border" red="215" green="215" blue="215">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update Template_8</name>
+      <pv_name>$(vac)$(SENSOR):getFilterTime</pv_name>
+      <y>61</y>
+      <width>220</width>
+      <height>25</height>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="12.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="IO Foreground" red="0" green="0" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="IO InputPV Bg" red="255" green="255" blue="255">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_width>2</border_width>
+      <border_color>
+        <color name="IO Border" red="215" green="215" blue="215">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update Template_9</name>
+      <pv_name>$(prefix):UNITS-RBV</pv_name>
+      <x>43</x>
+      <width>60</width>
+      <height>21</height>
+      <visible>false</visible>
+      <font>
+        <font name="IO Input 1" family="arial" style="BOLD" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="IO Foreground" red="0" green="0" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="IO InputPV Bg" red="255" green="255" blue="255">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_color>
+        <color name="IO Border" red="215" green="215" blue="215">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update Template_10</name>
+      <pv_name>$(prefix):sG$(NUM)Name</pv_name>
+      <y>86</y>
+      <width>220</width>
+      <height>25</height>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="12.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="IO Foreground" red="0" green="0" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="IO InputPV Bg" red="255" green="255" blue="255">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_width>2</border_width>
+      <border_color>
+        <color name="IO Border" red="215" green="215" blue="215">
+        </color>
+      </border_color>
+    </widget>
   </widget>
 </display>
