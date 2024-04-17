@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2024-04-16 18:43:11 by epics-->
+<display version="2.0.0">
+  <name>TPG500</name>
+  <width>1200</width>
+  <height>860</height>
+  <background_color>
+    <color name="IO Grid" red="215" green="215" blue="215">
+    </color>
+  </background_color>
+  <actions>
+  </actions>
+  <grid_step_x>5</grid_step_x>
+  <grid_step_y>5</grid_step_y>
+  <widget type="label" version="2.0.0">
+    <name>Label_94</name>
+    <text>TPG500 Pressure Gauge Controller</text>
+    <width>1180</width>
+    <height>30</height>
+    <font>
+      <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="IO InputPV Bg" red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="255" green="0" blue="0">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="10" green="37" blue="73">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Linking Container Template</name>
+    <file>tpg500Main.bob</file>
+    <y>50</y>
+    <width>1180</width>
+    <height>760</height>
+    <resize>1</resize>
+    <transparent>true</transparent>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="ClearOPIRule" prop_id="opi_file" out_exp="false">
+        <exp bool_exp="false">
+          <value></value>
+        </exp>
+        <exp bool_exp="true">
+          <value></value>
+        </exp>
+        <pv_name>loc://TPG300DeviceName</pv_name>
+      </rule>
+      <rule name="SetOPIRule" prop_id="opi_file" out_exp="false">
+        <exp bool_exp="true">
+          <value>tpg500Main.bob</value>
+        </exp>
+        <pv_name>loc://TPG300DeviceName</pv_name>
+      </rule>
+    </rules>
+    <scripts>
+      <script file="Scripts/TPG2Macro.js">
+        <pv_name>loc://TPG300DeviceName</pv_name>
+      </script>
+    </scripts>
+    <border_color>
+      <color name="IO Border" red="215" green="215" blue="215">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="picture" version="2.0.0">
+    <name>Picture</name>
+    <file>../../../images/PfeifferVacuumLogo.png</file>
+    <x>5</x>
+    <y>5</y>
+    <width>90</width>
+    <height>20</height>
+  </widget>
+</display>
