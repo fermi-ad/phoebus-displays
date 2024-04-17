@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2024-04-16 18:58:37 by epics-->
+<!--Saved on 2024-04-17 16:04:11 by epics-->
 <display version="2.0.0">
   <name>TPG500Main</name>
-  <width>1180</width>
-  <height>670</height>
+  <width>1080</width>
+  <height>760</height>
   <background_color>
     <color name="IO Grid" red="215" green="215" blue="215">
     </color>
@@ -21,11 +21,11 @@
     <height>760</height>
     <line_width>0</line_width>
     <line_color>
-      <color name="IO Border" red="215" green="215" blue="215">
+      <color name="Background" red="255" green="255" blue="255">
       </color>
     </line_color>
     <background_color>
-      <color name="IO Shape Fill" red="188" green="188" blue="188">
+      <color name="Button_Background" red="210" green="210" blue="210">
       </color>
     </background_color>
     <actions>
@@ -41,7 +41,7 @@ $(pv_value)</tooltip>
     <width>255</width>
     <height>25</height>
     <font>
-      <font name="IO SubTitle" family="arial" style="BOLD" size="11.881188118811881">
+      <font family="Liberation Sans" style="BOLD" size="14.0">
       </font>
     </font>
     <foreground_color>
@@ -49,7 +49,7 @@ $(pv_value)</tooltip>
       </color>
     </foreground_color>
     <background_color>
-      <color name="Grid" red="128" green="128" blue="128">
+      <color red="255" green="0" blue="0">
       </color>
     </background_color>
     <transparent>false</transparent>
@@ -67,11 +67,12 @@ $(pv_value)</tooltip>
           <widget type="embedded" version="2.0.0">
             <name>Sensor A1</name>
             <macros>
-              <SENSOR>PCC171a</SENSOR>
+              <SENSOR>$(SENSOR1)</SENSOR>
+              <NUM>1</NUM>
             </macros>
             <file>tpg500Sensor.bob</file>
             <y>90</y>
-            <width>800</width>
+            <width>580</width>
             <height>160</height>
             <resize>1</resize>
             <transparent>true</transparent>
@@ -85,11 +86,12 @@ $(pv_value)</tooltip>
           <widget type="embedded" version="2.0.0">
             <name>Sensor A2</name>
             <macros>
-              <SENSOR>A2</SENSOR>
+              <SENSOR>$(SENSOR2)</SENSOR>
+              <NUM>2</NUM>
             </macros>
             <file>tpg500Sensor.bob</file>
             <y>250</y>
-            <width>800</width>
+            <width>580</width>
             <height>160</height>
             <resize>1</resize>
             <transparent>true</transparent>
@@ -103,11 +105,12 @@ $(pv_value)</tooltip>
           <widget type="embedded" version="2.0.0">
             <name>Sensor B1</name>
             <macros>
-              <SENSOR>B1</SENSOR>
+              <SENSOR>$(SENSOR3)</SENSOR>
+              <NUM>3</NUM>
             </macros>
             <file>tpg500Sensor.bob</file>
             <y>410</y>
-            <width>800</width>
+            <width>580</width>
             <height>160</height>
             <resize>1</resize>
             <transparent>true</transparent>
@@ -121,11 +124,12 @@ $(pv_value)</tooltip>
           <widget type="embedded" version="2.0.0">
             <name>Sensor B2</name>
             <macros>
-              <SENSOR>B2</SENSOR>
+              <SENSOR>$(SENSOR4)</SENSOR>
+              <NUM>4</NUM>
             </macros>
             <file>tpg500Sensor.bob</file>
             <y>570</y>
-            <width>800</width>
+            <width>580</width>
             <height>160</height>
             <resize>1</resize>
             <transparent>true</transparent>
@@ -143,7 +147,7 @@ $(pv_value)</tooltip>
             <y>10</y>
             <width>130</width>
             <font>
-              <font name="IO Normal" family="arial" style="REGULAR" size="9.900990099009901">
+              <font family="Liberation Sans" style="REGULAR" size="12.0">
               </font>
             </font>
             <foreground_color>
@@ -166,7 +170,7 @@ $(pv_value)</tooltip>
             <width>118</width>
             <height>23</height>
             <font>
-              <font name="IO Input 1" family="arial" style="BOLD" size="9.900990099009901">
+              <font family="Liberation Sans" style="BOLD" size="14.0">
               </font>
             </font>
             <foreground_color>
@@ -195,7 +199,7 @@ $(pv_value)</tooltip>
             <width>120</width>
             <height>25</height>
             <font>
-              <font name="IO Normal" family="arial" style="REGULAR" size="9.900990099009901">
+              <font family="Liberation Sans" style="REGULAR" size="12.0">
               </font>
             </font>
             <foreground_color>
@@ -217,42 +221,13 @@ $(pv_value)</tooltip>
                 <description>WritePV</description>
               </action>
             </actions>
-            <pv_name>$(prefix):FILT.PROC</pv_name>
-            <text>Set Filter Time Constants</text>
-            <x>220</x>
-            <y>50</y>
-            <width>200</width>
-            <font>
-              <font name="IO Normal" family="arial" style="REGULAR" size="9.900990099009901">
-              </font>
-            </font>
-            <foreground_color>
-              <color name="IO Foreground" red="0" green="0" blue="0">
-              </color>
-            </foreground_color>
-            <background_color>
-              <color name="IO Button" red="178" green="178" blue="178">
-              </color>
-            </background_color>
-            <tooltip></tooltip>
-            <border_alarm_sensitive>false</border_alarm_sensitive>
-          </widget>
-          <widget type="action_button" version="3.0.0">
-            <name>Trigger Button</name>
-            <actions execute_as_one="true">
-              <action type="write_pv">
-                <pv_name>$(pv_name)</pv_name>
-                <value>0</value>
-                <description>WritePV</description>
-              </action>
-            </actions>
             <pv_name>$(prefix):MODE.PROC</pv_name>
             <text>Set Sensor Modes</text>
             <x>10</x>
             <y>50</y>
             <width>200</width>
             <font>
-              <font name="IO Normal" family="arial" style="REGULAR" size="9.900990099009901">
+              <font family="Liberation Sans" style="REGULAR" size="12.0">
               </font>
             </font>
             <foreground_color>
@@ -399,19 +374,20 @@ $(pv_value)</tooltip>
               </color>
             </background_color>
             <title_font>
-              <font name="IO SubTitle" family="arial" style="BOLD" size="11.881188118811881">
+              <font family="Liberation Sans" style="BOLD" size="14.0">
               </font>
             </title_font>
             <show_legend>true</show_legend>
             <actions>
             </actions>
+            <start>60 minutes</start>
             <y_axes>
               <y_axis>
                 <title>Pressure</title>
-                <autoscale>true</autoscale>
-                <log_scale>false</log_scale>
-                <minimum>0.0</minimum>
-                <maximum>0.0</maximum>
+                <autoscale>false</autoscale>
+                <log_scale>true</log_scale>
+                <minimum>1.0E-10</minimum>
+                <maximum>100.0</maximum>
                 <show_grid>true</show_grid>
                 <visible>true</visible>
                 <color>
@@ -423,7 +399,7 @@ $(pv_value)</tooltip>
             <traces>
               <trace>
                 <name>$(traces[0].y_pv)</name>
-                <y_pv>$(prefix):A1-PRES-RBV</y_pv>
+                <y_pv>$(vac)$(SENSOR1):VacP</y_pv>
                 <axis>0</axis>
                 <trace_type>1</trace_type>
                 <color>
@@ -437,7 +413,7 @@ $(pv_value)</tooltip>
               </trace>
               <trace>
                 <name>$(traces[1].y_pv)</name>
-                <y_pv>$(prefix):A2-PRES-RBV</y_pv>
+                <y_pv>$(vac)$(SENSOR2):VacP</y_pv>
                 <axis>0</axis>
                 <trace_type>1</trace_type>
                 <color>
@@ -451,7 +427,7 @@ $(pv_value)</tooltip>
               </trace>
               <trace>
                 <name>$(traces[2].y_pv)</name>
-                <y_pv>$(prefix):B1-PRES-RBV</y_pv>
+                <y_pv>$(vac)$(SENSOR3):VacP</y_pv>
                 <axis>0</axis>
                 <trace_type>1</trace_type>
                 <color>
@@ -465,7 +441,7 @@ $(pv_value)</tooltip>
               </trace>
               <trace>
                 <name>$(traces[3].y_pv)</name>
-                <y_pv>$(prefix):B2-PRES-RBV</y_pv>
+                <y_pv>$(vac)$(SENSOR4):VacP</y_pv>
                 <axis>0</axis>
                 <trace_type>1</trace_type>
                 <color>
@@ -481,13 +457,13 @@ $(pv_value)</tooltip>
           </widget>
           <widget type="textupdate" version="2.0.0">
             <name>Text Update Template_9</name>
-            <pv_name>$(prefix):UNITS-RBV</pv_name>
+            <pv_name>$(prefix):getUnits</pv_name>
             <x>700</x>
             <y>30</y>
             <width>60</width>
             <height>21</height>
             <font>
-              <font name="IO Input 1" family="arial" style="BOLD" size="9.900990099009901">
+              <font family="Liberation Sans" style="BOLD" size="14.0">
               </font>
             </font>
             <foreground_color>
@@ -514,7 +490,7 @@ $(pv_value)</tooltip>
             <y>31</y>
             <width>130</width>
             <font>
-              <font name="IO Normal" family="arial" style="REGULAR" size="9.900990099009901">
+              <font family="Liberation Sans" style="REGULAR" size="12.0">
               </font>
             </font>
             <foreground_color>
@@ -532,60 +508,35 @@ $(pv_value)</tooltip>
         </children>
       </tab>
     </tabs>
-    <x>375</x>
-    <width>805</width>
-    <height>760</height>
+    <x>280</x>
+    <width>790</width>
+    <height>750</height>
     <background_color>
-      <color name="IO Foreground" red="0" green="0" blue="0">
+      <color name="Grid" red="128" green="128" blue="128">
       </color>
     </background_color>
+    <active_tab>2</active_tab>
     <tab_height>10</tab_height>
-    <actions>
-    </actions>
-  </widget>
-  <widget type="group" version="3.0.0">
-    <name>Controls Grouping Container_1</name>
-    <x>15</x>
-    <y>523</y>
-    <width>345</width>
-    <height>1</height>
-    <style>3</style>
-    <font>
-      <font name="IO Normal" family="arial" style="REGULAR" size="9.900990099009901">
-      </font>
-    </font>
-    <foreground_color>
-      <color name="IO Border" red="215" green="215" blue="215">
-      </color>
-    </foreground_color>
-    <line_color>
-      <color name="IO Border" red="215" green="215" blue="215">
-      </color>
-    </line_color>
-    <background_color>
-      <color name="IO OutputPV Bg" red="121" green="123" blue="126">
-      </color>
-    </background_color>
     <actions>
     </actions>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_146</name>
     <text>Command Status</text>
-    <x>90</x>
-    <y>511</y>
-    <width>196</width>
+    <x>16</x>
+    <y>515</y>
+    <width>255</width>
     <height>25</height>
     <font>
-      <font name="IO SubTitle" family="arial" style="BOLD" size="11.881188118811881">
+      <font family="Liberation Sans" style="BOLD" size="14.0">
       </font>
     </font>
     <foreground_color>
-      <color name="IO Label" red="0" green="0" blue="0">
+      <color red="255" green="255" blue="255">
       </color>
     </foreground_color>
     <background_color>
-      <color name="IO Shape Fill" red="188" green="188" blue="188">
+      <color red="255" green="0" blue="0">
       </color>
     </background_color>
     <transparent>false</transparent>
@@ -598,16 +549,12 @@ $(pv_value)</tooltip>
     <name>Label_147</name>
     <text>Sensor Mode Last Status</text>
     <x>15</x>
-    <y>540</y>
+    <y>545</y>
     <width>200</width>
     <font>
-      <font name="IO Normal" family="arial" style="REGULAR" size="9.900990099009901">
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
       </font>
     </font>
-    <foreground_color>
-      <color name="IO Label" red="0" green="0" blue="0">
-      </color>
-    </foreground_color>
     <vertical_alignment>1</vertical_alignment>
     <actions>
     </actions>
@@ -620,125 +567,46 @@ $(pv_value)</tooltip>
     <name>Text Update Template_5</name>
     <pv_name>$(prefix):MODE-STAT</pv_name>
     <x>16</x>
-    <y>566</y>
-    <width>343</width>
-    <height>23</height>
+    <y>565</y>
+    <width>255</width>
+    <height>25</height>
     <font>
-      <font name="IO Input 1" family="arial" style="BOLD" size="9.900990099009901">
+      <font family="Liberation Sans" style="BOLD" size="12.0">
       </font>
     </font>
-    <foreground_color>
-      <color name="IO Foreground" red="0" green="0" blue="0">
-      </color>
-    </foreground_color>
     <background_color>
-      <color name="IO InputPV Bg" red="255" green="255" blue="255">
+      <color name="Background" red="255" green="255" blue="255">
       </color>
     </background_color>
     <horizontal_alignment>1</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
     <actions>
     </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
     <border_width>1</border_width>
     <border_color>
       <color name="IO Border" red="215" green="215" blue="215">
       </color>
     </border_color>
-  </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>Text Update Template_6</name>
-    <pv_name>$(prefix):FILT-STAT</pv_name>
-    <x>16</x>
-    <y>631</y>
-    <width>343</width>
-    <height>23</height>
-    <font>
-      <font name="IO Input 1" family="arial" style="BOLD" size="9.900990099009901">
-      </font>
-    </font>
-    <foreground_color>
-      <color name="IO Foreground" red="0" green="0" blue="0">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color name="IO InputPV Bg" red="255" green="255" blue="255">
-      </color>
-    </background_color>
-    <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <actions>
-    </actions>
-    <border_width>1</border_width>
-    <border_color>
-      <color name="IO Border" red="215" green="215" blue="215">
-      </color>
-    </border_color>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label_148</name>
-    <text>Filter Time Constant Last Status</text>
-    <x>15</x>
-    <y>605</y>
-    <width>200</width>
-    <font>
-      <font name="IO Normal" family="arial" style="REGULAR" size="9.900990099009901">
-      </font>
-    </font>
-    <foreground_color>
-      <color name="IO Label" red="0" green="0" blue="0">
-      </color>
-    </foreground_color>
-    <vertical_alignment>1</vertical_alignment>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
-  </widget>
-  <widget type="group" version="3.0.0">
-    <name>Controls Grouping Container_3</name>
-    <x>15</x>
-    <y>678</y>
-    <width>345</width>
-    <height>1</height>
-    <style>3</style>
-    <font>
-      <font name="IO Normal" family="arial" style="REGULAR" size="9.900990099009901">
-      </font>
-    </font>
-    <foreground_color>
-      <color name="IO Border" red="215" green="215" blue="215">
-      </color>
-    </foreground_color>
-    <line_color>
-      <color name="IO Border" red="215" green="215" blue="215">
-      </color>
-    </line_color>
-    <background_color>
-      <color name="IO OutputPV Bg" red="121" green="123" blue="126">
-      </color>
-    </background_color>
-    <actions>
-    </actions>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_152</name>
     <text>Saved Parametes</text>
-    <x>90</x>
+    <x>16</x>
     <y>666</y>
-    <width>196</width>
+    <width>255</width>
     <height>25</height>
     <font>
-      <font name="IO SubTitle" family="arial" style="BOLD" size="11.881188118811881">
+      <font family="Liberation Sans" style="BOLD" size="14.0">
       </font>
     </font>
     <foreground_color>
-      <color name="IO Label" red="0" green="0" blue="0">
+      <color red="255" green="255" blue="255">
       </color>
     </foreground_color>
     <background_color>
-      <color name="IO Shape Fill" red="188" green="188" blue="188">
+      <color red="255" green="0" blue="0">
       </color>
     </background_color>
     <transparent>false</transparent>
@@ -751,17 +619,15 @@ $(pv_value)</tooltip>
     <name>Label_153</name>
     <text>Save set</text>
     <x>15</x>
-    <y>703</y>
-    <width>130</width>
+    <y>700</y>
+    <width>101</width>
     <font>
-      <font name="IO Normal" family="arial" style="REGULAR" size="9.900990099009901">
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
       </font>
     </font>
-    <foreground_color>
-      <color name="IO Label" red="0" green="0" blue="0">
-      </color>
-    </foreground_color>
+    <horizontal_alignment>2</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
     <actions>
     </actions>
     <border_color>
@@ -771,27 +637,25 @@ $(pv_value)</tooltip>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update Template_9</name>
-    <pv_name>$(prefix):SAVE-PARAMS-RBV</pv_name>
-    <x>241</x>
-    <y>701</y>
-    <width>118</width>
+    <pv_name>$(prefix):getSaveParams</pv_name>
+    <x>131</x>
+    <y>700</y>
+    <width>140</width>
     <height>23</height>
     <font>
-      <font name="IO Input 1" family="arial" style="BOLD" size="9.900990099009901">
+      <font family="Liberation Sans" style="BOLD" size="12.0">
       </font>
     </font>
-    <foreground_color>
-      <color name="IO Foreground" red="0" green="0" blue="0">
-      </color>
-    </foreground_color>
     <background_color>
-      <color name="IO InputPV Bg" red="255" green="255" blue="255">
+      <color name="Background" red="255" green="255" blue="255">
       </color>
     </background_color>
     <horizontal_alignment>1</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
     <actions>
     </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
     <border_width>1</border_width>
     <border_color>
       <color name="IO Border" red="215" green="215" blue="215">
@@ -800,13 +664,13 @@ $(pv_value)</tooltip>
   </widget>
   <widget type="combo" version="2.0.0">
     <name>Save set</name>
-    <pv_name>$(prefix):SAVE-PARAMS</pv_name>
-    <x>110</x>
-    <y>700</y>
-    <width>120</width>
+    <pv_name>$(prefix):setSaveParams</pv_name>
+    <x>131</x>
+    <y>723</y>
+    <width>140</width>
     <height>25</height>
     <font>
-      <font name="IO Normal" family="arial" style="REGULAR" size="9.900990099009901">
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
       </font>
     </font>
     <foreground_color>
@@ -827,7 +691,7 @@ $(pv_value)</tooltip>
     <width>255</width>
     <height>25</height>
     <font>
-      <font name="IO SubTitle" family="arial" style="BOLD" size="11.881188118811881">
+      <font family="Liberation Sans" style="BOLD" size="14.0">
       </font>
     </font>
     <foreground_color>
@@ -835,7 +699,7 @@ $(pv_value)</tooltip>
       </color>
     </foreground_color>
     <background_color>
-      <color name="Grid" red="128" green="128" blue="128">
+      <color red="255" green="0" blue="0">
       </color>
     </background_color>
     <transparent>false</transparent>
@@ -846,25 +710,21 @@ $(pv_value)</tooltip>
   </widget>
   <widget type="group" version="3.0.0">
     <name>Group</name>
-    <x>16</x>
-    <y>435</y>
+    <x>15</x>
+    <y>430</y>
     <width>255</width>
-    <height>61</height>
+    <height>60</height>
     <style>3</style>
     <transparent>true</transparent>
     <widget type="label" version="2.0.0">
       <name>Label_149</name>
       <text>Units</text>
-      <width>60</width>
+      <width>65</width>
       <height>25</height>
       <font>
-        <font name="IO Normal" family="arial" style="REGULAR" size="9.900990099009901">
+        <font family="Liberation Sans" style="REGULAR" size="12.0">
         </font>
       </font>
-      <foreground_color>
-        <color name="IO Label" red="0" green="0" blue="0">
-        </color>
-      </foreground_color>
       <horizontal_alignment>2</horizontal_alignment>
       <vertical_alignment>1</vertical_alignment>
       <wrap_words>false</wrap_words>
@@ -882,21 +742,19 @@ $(pv_value)</tooltip>
       <width>90</width>
       <height>25</height>
       <font>
-        <font name="IO Input 1" family="arial" style="BOLD" size="9.900990099009901">
+        <font family="Liberation Sans" style="BOLD" size="12.0">
         </font>
       </font>
-      <foreground_color>
-        <color name="IO Foreground" red="0" green="0" blue="0">
-        </color>
-      </foreground_color>
       <background_color>
-        <color name="IO InputPV Bg" red="255" green="255" blue="255">
+        <color name="Background" red="255" green="255" blue="255">
         </color>
       </background_color>
       <horizontal_alignment>1</horizontal_alignment>
       <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
       <actions>
       </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
       <border_width>1</border_width>
       <border_color>
         <color name="IO Border" red="215" green="215" blue="215">
@@ -910,13 +768,9 @@ $(pv_value)</tooltip>
       <width>80</width>
       <height>25</height>
       <font>
-        <font name="IO Normal" family="arial" style="REGULAR" size="9.900990099009901">
+        <font family="Liberation Sans" style="REGULAR" size="12.0">
         </font>
       </font>
-      <foreground_color>
-        <color name="IO Foreground" red="0" green="0" blue="0">
-        </color>
-      </foreground_color>
       <background_color>
         <color name="IO Grid" red="215" green="215" blue="215">
         </color>
@@ -927,17 +781,13 @@ $(pv_value)</tooltip>
     <widget type="label" version="2.0.0">
       <name>Label_151</name>
       <text>Underrange</text>
-      <y>36</y>
-      <width>60</width>
+      <y>30</y>
+      <width>65</width>
       <height>25</height>
       <font>
-        <font name="IO Normal" family="arial" style="REGULAR" size="9.900990099009901">
+        <font family="Liberation Sans" style="REGULAR" size="12.0">
         </font>
       </font>
-      <foreground_color>
-        <color name="IO Label" red="0" green="0" blue="0">
-        </color>
-      </foreground_color>
       <horizontal_alignment>2</horizontal_alignment>
       <vertical_alignment>1</vertical_alignment>
       <wrap_words>false</wrap_words>
@@ -950,27 +800,25 @@ $(pv_value)</tooltip>
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update Template_8</name>
-      <pv_name>$(prefix):PUC-RBV</pv_name>
+      <pv_name>$(prefix):isUnderRange</pv_name>
       <x>165</x>
-      <y>35</y>
+      <y>30</y>
       <width>90</width>
       <height>25</height>
       <font>
-        <font name="IO Input 1" family="arial" style="BOLD" size="9.900990099009901">
+        <font family="Liberation Sans" style="BOLD" size="12.0">
         </font>
       </font>
-      <foreground_color>
-        <color name="IO Foreground" red="0" green="0" blue="0">
-        </color>
-      </foreground_color>
       <background_color>
-        <color name="IO InputPV Bg" red="255" green="255" blue="255">
+        <color name="Background" red="255" green="255" blue="255">
         </color>
       </background_color>
       <horizontal_alignment>1</horizontal_alignment>
       <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
       <actions>
       </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
       <border_width>1</border_width>
       <border_color>
         <color name="IO Border" red="215" green="215" blue="215">
@@ -981,11 +829,11 @@ $(pv_value)</tooltip>
       <name>Units_1</name>
       <pv_name>$(prefix):setUnderRange</pv_name>
       <x>75</x>
-      <y>36</y>
+      <y>30</y>
       <width>80</width>
       <height>25</height>
       <font>
-        <font name="IO Normal" family="arial" style="REGULAR" size="9.900990099009901">
+        <font family="Liberation Sans" style="REGULAR" size="12.0">
         </font>
       </font>
       <foreground_color>
@@ -997,787 +845,706 @@ $(pv_value)</tooltip>
         </color>
       </background_color>
       <tooltip> $(pv_name) /  $(pv_value)</tooltip>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
   </widget>
   <widget type="group" version="3.0.0">
     <name>Group</name>
     <x>15</x>
-    <y>250</y>
-    <width>255</width>
-    <height>60</height>
+    <y>45</y>
+    <width>256</width>
+    <height>330</height>
     <style>3</style>
     <transparent>true</transparent>
-    <widget type="label" version="2.0.0">
-      <name>Label_83</name>
-      <text>Slot A Board</text>
-      <font>
-        <font name="IO Normal" family="arial" style="REGULAR" size="9.900990099009901">
+    <widget type="group" version="3.0.0">
+      <name>Group</name>
+      <y>200</y>
+      <width>255</width>
+      <height>60</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>Label_83</name>
+        <text>Slot A Board</text>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
         </font>
-      </font>
-      <foreground_color>
-        <color name="IO Label" red="0" green="0" blue="0">
-        </color>
-      </foreground_color>
-      <horizontal_alignment>2</horizontal_alignment>
-      <vertical_alignment>1</vertical_alignment>
-      <wrap_words>false</wrap_words>
-      <actions>
-      </actions>
-      <border_color>
-        <color red="0" green="128" blue="255">
-        </color>
-      </border_color>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update Template</name>
+        <pv_name>$(prefix):Board1</pv_name>
+        <x>115</x>
+        <width>140</width>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="12.0">
+          </font>
+        </font>
+        <background_color>
+          <color name="Background" red="255" green="255" blue="255">
+          </color>
+        </background_color>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <actions>
+        </actions>
+        <border_width>1</border_width>
+        <border_color>
+          <color name="IO Border" red="215" green="215" blue="215">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_142</name>
+        <text>Slot B Board</text>
+        <y>20</y>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </font>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update Template_1</name>
+        <pv_name>$(prefix):Board2</pv_name>
+        <x>115</x>
+        <y>20</y>
+        <width>140</width>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="12.0">
+          </font>
+        </font>
+        <background_color>
+          <color name="Background" red="255" green="255" blue="255">
+          </color>
+        </background_color>
+        <show_units>false</show_units>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <actions>
+        </actions>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <border_width>1</border_width>
+        <border_color>
+          <color name="IO Border" red="215" green="215" blue="215">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_143</name>
+        <text>Slot C Board</text>
+        <y>40</y>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </font>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update Template_2</name>
+        <pv_name>$(prefix):Board3</pv_name>
+        <x>115</x>
+        <y>40</y>
+        <width>140</width>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="12.0">
+          </font>
+        </font>
+        <background_color>
+          <color name="Background" red="255" green="255" blue="255">
+          </color>
+        </background_color>
+        <show_units>false</show_units>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <actions>
+        </actions>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <border_width>1</border_width>
+        <border_color>
+          <color name="IO Border" red="215" green="215" blue="215">
+          </color>
+        </border_color>
+      </widget>
     </widget>
-    <widget type="textupdate" version="2.0.0">
-      <name>Text Update Template</name>
-      <pv_name>$(prefix):Board1</pv_name>
-      <x>115</x>
-      <width>140</width>
-      <font>
-        <font name="IO Input 1" family="arial" style="BOLD" size="9.900990099009901">
+    <widget type="group" version="3.0.0">
+      <name>Group</name>
+      <width>255</width>
+      <height>100</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>Label_154</name>
+        <text>Controller</text>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
         </font>
-      </font>
-      <foreground_color>
-        <color name="IO Foreground" red="0" green="0" blue="0">
-        </color>
-      </foreground_color>
-      <background_color>
-        <color name="IO InputPV Bg" red="255" green="255" blue="255">
-        </color>
-      </background_color>
-      <horizontal_alignment>1</horizontal_alignment>
-      <vertical_alignment>1</vertical_alignment>
-      <actions>
-      </actions>
-      <border_width>1</border_width>
-      <border_color>
-        <color name="IO Border" red="215" green="215" blue="215">
-        </color>
-      </border_color>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update Template_10</name>
+        <pv_name>$(prefix):CtrlType</pv_name>
+        <x>115</x>
+        <width>140</width>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="12.0">
+          </font>
+        </font>
+        <background_color>
+          <color name="Background" red="255" green="255" blue="255">
+          </color>
+        </background_color>
+        <show_units>false</show_units>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <actions>
+        </actions>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <border_width>1</border_width>
+        <border_color>
+          <color name="IO Border" red="215" green="215" blue="215">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update Template_11</name>
+        <pv_name>$(prefix):Model</pv_name>
+        <x>115</x>
+        <y>20</y>
+        <width>140</width>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="12.0">
+          </font>
+        </font>
+        <background_color>
+          <color name="Background" red="255" green="255" blue="255">
+          </color>
+        </background_color>
+        <show_units>false</show_units>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <actions>
+        </actions>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <border_width>1</border_width>
+        <border_color>
+          <color name="IO Border" red="215" green="215" blue="215">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update Template_12</name>
+        <pv_name>$(prefix):SerNum</pv_name>
+        <x>115</x>
+        <y>40</y>
+        <width>140</width>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="12.0">
+          </font>
+        </font>
+        <background_color>
+          <color name="Background" red="255" green="255" blue="255">
+          </color>
+        </background_color>
+        <show_units>false</show_units>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <actions>
+        </actions>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <border_width>1</border_width>
+        <border_color>
+          <color name="IO Border" red="215" green="215" blue="215">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_155</name>
+        <text>Model</text>
+        <y>20</y>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </font>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_156</name>
+        <text>Serial Number</text>
+        <y>40</y>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </font>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_144</name>
+        <text>Firmware Version</text>
+        <y>60</y>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </font>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update Template_3</name>
+        <pv_name>$(prefix):FWver</pv_name>
+        <x>115</x>
+        <y>60</y>
+        <width>140</width>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="12.0">
+          </font>
+        </font>
+        <background_color>
+          <color name="Background" red="255" green="255" blue="255">
+          </color>
+        </background_color>
+        <show_units>false</show_units>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <actions>
+        </actions>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <border_width>1</border_width>
+        <border_color>
+          <color name="IO Border" red="215" green="215" blue="215">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update Template_4</name>
+        <pv_name>$(prefix):HWver</pv_name>
+        <x>115</x>
+        <y>80</y>
+        <width>140</width>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="12.0">
+          </font>
+        </font>
+        <background_color>
+          <color name="Background" red="255" green="255" blue="255">
+          </color>
+        </background_color>
+        <show_units>false</show_units>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <actions>
+        </actions>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <border_width>1</border_width>
+        <border_color>
+          <color name="IO Border" red="215" green="215" blue="215">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_145</name>
+        <text>Hardware Version</text>
+        <y>80</y>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </font>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
     </widget>
-    <widget type="label" version="2.0.0">
-      <name>Label_142</name>
-      <text>Slot B Board</text>
-      <y>20</y>
-      <font>
-        <font name="IO Normal" family="arial" style="REGULAR" size="9.900990099009901">
+    <widget type="group" version="3.0.0">
+      <name>Group</name>
+      <y>110</y>
+      <width>255</width>
+      <height>80</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update Template_13</name>
+        <pv_name>$(prefix):IPaddr</pv_name>
+        <x>115</x>
+        <width>140</width>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="12.0">
+          </font>
         </font>
-      </font>
-      <foreground_color>
-        <color name="IO Label" red="0" green="0" blue="0">
-        </color>
-      </foreground_color>
-      <horizontal_alignment>2</horizontal_alignment>
-      <vertical_alignment>1</vertical_alignment>
-      <wrap_words>false</wrap_words>
-      <actions>
-      </actions>
-      <border_color>
-        <color red="0" green="128" blue="255">
-        </color>
-      </border_color>
+        <background_color>
+          <color name="Background" red="255" green="255" blue="255">
+          </color>
+        </background_color>
+        <show_units>false</show_units>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <actions>
+        </actions>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <border_width>1</border_width>
+        <border_color>
+          <color name="IO Border" red="215" green="215" blue="215">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_157</name>
+        <text>IP address</text>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </font>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_158</name>
+        <text>Subnet mask</text>
+        <y>20</y>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </font>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update Template_14</name>
+        <pv_name>$(prefix):SNmask</pv_name>
+        <x>115</x>
+        <y>20</y>
+        <width>140</width>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="12.0">
+          </font>
+        </font>
+        <background_color>
+          <color name="Background" red="255" green="255" blue="255">
+          </color>
+        </background_color>
+        <show_units>false</show_units>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <actions>
+        </actions>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <border_width>1</border_width>
+        <border_color>
+          <color name="IO Border" red="215" green="215" blue="215">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update Template_15</name>
+        <pv_name>$(prefix):GWaddr</pv_name>
+        <x>115</x>
+        <y>40</y>
+        <width>140</width>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="12.0">
+          </font>
+        </font>
+        <background_color>
+          <color name="Background" red="255" green="255" blue="255">
+          </color>
+        </background_color>
+        <show_units>false</show_units>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <actions>
+        </actions>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <border_width>1</border_width>
+        <border_color>
+          <color name="IO Border" red="215" green="215" blue="215">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_159</name>
+        <text>Gateway address</text>
+        <y>40</y>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </font>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update Template_16</name>
+        <pv_name>$(prefix):MACaddr</pv_name>
+        <x>115</x>
+        <y>60</y>
+        <width>140</width>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="12.0">
+          </font>
+        </font>
+        <background_color>
+          <color name="Background" red="255" green="255" blue="255">
+          </color>
+        </background_color>
+        <show_units>false</show_units>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <actions>
+        </actions>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <border_width>1</border_width>
+        <border_color>
+          <color name="IO Border" red="215" green="215" blue="215">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_160</name>
+        <text>MAC address</text>
+        <y>60</y>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </font>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
     </widget>
-    <widget type="textupdate" version="2.0.0">
-      <name>Text Update Template_1</name>
-      <pv_name>$(prefix):Board2</pv_name>
-      <x>115</x>
-      <y>20</y>
-      <width>140</width>
-      <font>
-        <font name="IO Input 1" family="arial" style="BOLD" size="9.900990099009901">
+    <widget type="group" version="3.0.0">
+      <name>Group_1</name>
+      <x>1</x>
+      <y>270</y>
+      <width>255</width>
+      <height>60</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>Label_161</name>
+        <text>Controller Temperature</text>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
         </font>
-      </font>
-      <foreground_color>
-        <color name="IO Foreground" red="0" green="0" blue="0">
-        </color>
-      </foreground_color>
-      <background_color>
-        <color name="IO InputPV Bg" red="255" green="255" blue="255">
-        </color>
-      </background_color>
-      <horizontal_alignment>1</horizontal_alignment>
-      <vertical_alignment>1</vertical_alignment>
-      <actions>
-      </actions>
-      <border_width>1</border_width>
-      <border_color>
-        <color name="IO Border" red="215" green="215" blue="215">
-        </color>
-      </border_color>
-    </widget>
-    <widget type="label" version="2.0.0">
-      <name>Label_143</name>
-      <text>Slot C Board</text>
-      <y>40</y>
-      <font>
-        <font name="IO Normal" family="arial" style="REGULAR" size="9.900990099009901">
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update Template_17</name>
+        <pv_name>$(prefix):getTemperature</pv_name>
+        <x>115</x>
+        <width>140</width>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="12.0">
+          </font>
         </font>
-      </font>
-      <foreground_color>
-        <color name="IO Label" red="0" green="0" blue="0">
-        </color>
-      </foreground_color>
-      <horizontal_alignment>2</horizontal_alignment>
-      <vertical_alignment>1</vertical_alignment>
-      <wrap_words>false</wrap_words>
-      <actions>
-      </actions>
-      <border_color>
-        <color red="0" green="128" blue="255">
-        </color>
-      </border_color>
-    </widget>
-    <widget type="textupdate" version="2.0.0">
-      <name>Text Update Template_2</name>
-      <pv_name>$(prefix):Board3</pv_name>
-      <x>115</x>
-      <y>40</y>
-      <width>140</width>
-      <font>
-        <font name="IO Input 1" family="arial" style="BOLD" size="9.900990099009901">
+        <background_color>
+          <color name="Background" red="255" green="255" blue="255">
+          </color>
+        </background_color>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <actions>
+        </actions>
+        <border_width>1</border_width>
+        <border_color>
+          <color name="IO Border" red="215" green="215" blue="215">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_162</name>
+        <text>Battery Voltage</text>
+        <y>20</y>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
         </font>
-      </font>
-      <foreground_color>
-        <color name="IO Foreground" red="0" green="0" blue="0">
-        </color>
-      </foreground_color>
-      <background_color>
-        <color name="IO InputPV Bg" red="255" green="255" blue="255">
-        </color>
-      </background_color>
-      <horizontal_alignment>1</horizontal_alignment>
-      <vertical_alignment>1</vertical_alignment>
-      <actions>
-      </actions>
-      <border_width>1</border_width>
-      <border_color>
-        <color name="IO Border" red="215" green="215" blue="215">
-        </color>
-      </border_color>
-    </widget>
-  </widget>
-  <widget type="group" version="3.0.0">
-    <name>Group</name>
-    <x>15</x>
-    <y>50</y>
-    <width>255</width>
-    <height>100</height>
-    <style>3</style>
-    <transparent>true</transparent>
-    <widget type="label" version="2.0.0">
-      <name>Label_154</name>
-      <text>Controller</text>
-      <font>
-        <font name="IO Normal" family="arial" style="REGULAR" size="9.900990099009901">
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update Template_18</name>
+        <pv_name>$(prefix):getBatteryVoltage</pv_name>
+        <x>115</x>
+        <y>20</y>
+        <width>140</width>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="12.0">
+          </font>
         </font>
-      </font>
-      <foreground_color>
-        <color name="IO Label" red="0" green="0" blue="0">
-        </color>
-      </foreground_color>
-      <horizontal_alignment>2</horizontal_alignment>
-      <vertical_alignment>1</vertical_alignment>
-      <wrap_words>false</wrap_words>
-      <actions>
-      </actions>
-      <border_color>
-        <color red="0" green="128" blue="255">
-        </color>
-      </border_color>
-    </widget>
-    <widget type="textupdate" version="2.0.0">
-      <name>Text Update Template_10</name>
-      <pv_name>$(prefix):CtrlType</pv_name>
-      <x>115</x>
-      <width>140</width>
-      <font>
-        <font name="IO Input 1" family="arial" style="BOLD" size="9.900990099009901">
+        <background_color>
+          <color name="Background" red="255" green="255" blue="255">
+          </color>
+        </background_color>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <actions>
+        </actions>
+        <border_width>1</border_width>
+        <border_color>
+          <color name="IO Border" red="215" green="215" blue="215">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_163</name>
+        <text>Operating Hours</text>
+        <y>40</y>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
         </font>
-      </font>
-      <foreground_color>
-        <color name="IO Foreground" red="0" green="0" blue="0">
-        </color>
-      </foreground_color>
-      <background_color>
-        <color name="IO InputPV Bg" red="255" green="255" blue="255">
-        </color>
-      </background_color>
-      <horizontal_alignment>1</horizontal_alignment>
-      <vertical_alignment>1</vertical_alignment>
-      <actions>
-      </actions>
-      <border_width>1</border_width>
-      <border_color>
-        <color name="IO Border" red="215" green="215" blue="215">
-        </color>
-      </border_color>
-    </widget>
-    <widget type="textupdate" version="2.0.0">
-      <name>Text Update Template_11</name>
-      <pv_name>$(prefix):Model</pv_name>
-      <x>115</x>
-      <y>20</y>
-      <width>140</width>
-      <font>
-        <font name="IO Input 1" family="arial" style="BOLD" size="9.900990099009901">
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update Template_19</name>
+        <pv_name>$(prefix):getOperatingHours</pv_name>
+        <x>115</x>
+        <y>40</y>
+        <width>140</width>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="12.0">
+          </font>
         </font>
-      </font>
-      <foreground_color>
-        <color name="IO Foreground" red="0" green="0" blue="0">
-        </color>
-      </foreground_color>
-      <background_color>
-        <color name="IO InputPV Bg" red="255" green="255" blue="255">
-        </color>
-      </background_color>
-      <horizontal_alignment>1</horizontal_alignment>
-      <vertical_alignment>1</vertical_alignment>
-      <actions>
-      </actions>
-      <border_width>1</border_width>
-      <border_color>
-        <color name="IO Border" red="215" green="215" blue="215">
-        </color>
-      </border_color>
-    </widget>
-    <widget type="textupdate" version="2.0.0">
-      <name>Text Update Template_12</name>
-      <pv_name>$(prefix):SerNum</pv_name>
-      <x>115</x>
-      <y>40</y>
-      <width>140</width>
-      <font>
-        <font name="IO Input 1" family="arial" style="BOLD" size="9.900990099009901">
-        </font>
-      </font>
-      <foreground_color>
-        <color name="IO Foreground" red="0" green="0" blue="0">
-        </color>
-      </foreground_color>
-      <background_color>
-        <color name="IO InputPV Bg" red="255" green="255" blue="255">
-        </color>
-      </background_color>
-      <horizontal_alignment>1</horizontal_alignment>
-      <vertical_alignment>1</vertical_alignment>
-      <actions>
-      </actions>
-      <border_width>1</border_width>
-      <border_color>
-        <color name="IO Border" red="215" green="215" blue="215">
-        </color>
-      </border_color>
-    </widget>
-    <widget type="label" version="2.0.0">
-      <name>Label_155</name>
-      <text>Model</text>
-      <y>20</y>
-      <font>
-        <font name="IO Normal" family="arial" style="REGULAR" size="9.900990099009901">
-        </font>
-      </font>
-      <foreground_color>
-        <color name="IO Label" red="0" green="0" blue="0">
-        </color>
-      </foreground_color>
-      <horizontal_alignment>2</horizontal_alignment>
-      <vertical_alignment>1</vertical_alignment>
-      <wrap_words>false</wrap_words>
-      <actions>
-      </actions>
-      <border_color>
-        <color red="0" green="128" blue="255">
-        </color>
-      </border_color>
-    </widget>
-    <widget type="label" version="2.0.0">
-      <name>Label_156</name>
-      <text>Serial Number</text>
-      <y>40</y>
-      <font>
-        <font name="IO Normal" family="arial" style="REGULAR" size="9.900990099009901">
-        </font>
-      </font>
-      <foreground_color>
-        <color name="IO Label" red="0" green="0" blue="0">
-        </color>
-      </foreground_color>
-      <horizontal_alignment>2</horizontal_alignment>
-      <vertical_alignment>1</vertical_alignment>
-      <wrap_words>false</wrap_words>
-      <actions>
-      </actions>
-      <border_color>
-        <color red="0" green="128" blue="255">
-        </color>
-      </border_color>
-    </widget>
-    <widget type="label" version="2.0.0">
-      <name>Label_144</name>
-      <text>Firmware Version</text>
-      <y>60</y>
-      <font>
-        <font name="IO Normal" family="arial" style="REGULAR" size="9.900990099009901">
-        </font>
-      </font>
-      <foreground_color>
-        <color name="IO Label" red="0" green="0" blue="0">
-        </color>
-      </foreground_color>
-      <horizontal_alignment>2</horizontal_alignment>
-      <vertical_alignment>1</vertical_alignment>
-      <wrap_words>false</wrap_words>
-      <actions>
-      </actions>
-      <border_color>
-        <color red="0" green="128" blue="255">
-        </color>
-      </border_color>
-    </widget>
-    <widget type="textupdate" version="2.0.0">
-      <name>Text Update Template_3</name>
-      <pv_name>$(prefix):FWver</pv_name>
-      <x>115</x>
-      <y>60</y>
-      <width>140</width>
-      <font>
-        <font name="IO Input 1" family="arial" style="BOLD" size="9.900990099009901">
-        </font>
-      </font>
-      <foreground_color>
-        <color name="IO Foreground" red="0" green="0" blue="0">
-        </color>
-      </foreground_color>
-      <background_color>
-        <color name="IO InputPV Bg" red="255" green="255" blue="255">
-        </color>
-      </background_color>
-      <horizontal_alignment>1</horizontal_alignment>
-      <vertical_alignment>1</vertical_alignment>
-      <actions>
-      </actions>
-      <border_width>1</border_width>
-      <border_color>
-        <color name="IO Border" red="215" green="215" blue="215">
-        </color>
-      </border_color>
-    </widget>
-    <widget type="textupdate" version="2.0.0">
-      <name>Text Update Template_4</name>
-      <pv_name>$(prefix):HWver</pv_name>
-      <x>115</x>
-      <y>80</y>
-      <width>140</width>
-      <font>
-        <font name="IO Input 1" family="arial" style="BOLD" size="9.900990099009901">
-        </font>
-      </font>
-      <foreground_color>
-        <color name="IO Foreground" red="0" green="0" blue="0">
-        </color>
-      </foreground_color>
-      <background_color>
-        <color name="IO InputPV Bg" red="255" green="255" blue="255">
-        </color>
-      </background_color>
-      <horizontal_alignment>1</horizontal_alignment>
-      <vertical_alignment>1</vertical_alignment>
-      <actions>
-      </actions>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-      <border_width>1</border_width>
-      <border_color>
-        <color name="IO Border" red="215" green="215" blue="215">
-        </color>
-      </border_color>
-    </widget>
-    <widget type="label" version="2.0.0">
-      <name>Label_145</name>
-      <text>Hardware Version</text>
-      <y>80</y>
-      <font>
-        <font name="IO Normal" family="arial" style="REGULAR" size="9.900990099009901">
-        </font>
-      </font>
-      <foreground_color>
-        <color name="IO Label" red="0" green="0" blue="0">
-        </color>
-      </foreground_color>
-      <horizontal_alignment>2</horizontal_alignment>
-      <vertical_alignment>1</vertical_alignment>
-      <wrap_words>false</wrap_words>
-      <actions>
-      </actions>
-      <border_color>
-        <color red="0" green="128" blue="255">
-        </color>
-      </border_color>
-    </widget>
-  </widget>
-  <widget type="group" version="3.0.0">
-    <name>Group</name>
-    <x>15</x>
-    <y>160</y>
-    <width>255</width>
-    <height>80</height>
-    <style>3</style>
-    <transparent>true</transparent>
-    <widget type="textupdate" version="2.0.0">
-      <name>Text Update Template_13</name>
-      <pv_name>$(prefix):IPaddr</pv_name>
-      <x>115</x>
-      <width>140</width>
-      <font>
-        <font name="IO Input 1" family="arial" style="BOLD" size="9.900990099009901">
-        </font>
-      </font>
-      <foreground_color>
-        <color name="IO Foreground" red="0" green="0" blue="0">
-        </color>
-      </foreground_color>
-      <background_color>
-        <color name="IO InputPV Bg" red="255" green="255" blue="255">
-        </color>
-      </background_color>
-      <horizontal_alignment>1</horizontal_alignment>
-      <vertical_alignment>1</vertical_alignment>
-      <actions>
-      </actions>
-      <border_width>1</border_width>
-      <border_color>
-        <color name="IO Border" red="215" green="215" blue="215">
-        </color>
-      </border_color>
-    </widget>
-    <widget type="label" version="2.0.0">
-      <name>Label_157</name>
-      <text>IP address</text>
-      <font>
-        <font name="IO Normal" family="arial" style="REGULAR" size="9.900990099009901">
-        </font>
-      </font>
-      <foreground_color>
-        <color name="IO Label" red="0" green="0" blue="0">
-        </color>
-      </foreground_color>
-      <horizontal_alignment>2</horizontal_alignment>
-      <vertical_alignment>1</vertical_alignment>
-      <wrap_words>false</wrap_words>
-      <actions>
-      </actions>
-      <border_color>
-        <color red="0" green="128" blue="255">
-        </color>
-      </border_color>
-    </widget>
-    <widget type="label" version="2.0.0">
-      <name>Label_158</name>
-      <text>Subnet mask</text>
-      <y>20</y>
-      <font>
-        <font name="IO Normal" family="arial" style="REGULAR" size="9.900990099009901">
-        </font>
-      </font>
-      <foreground_color>
-        <color name="IO Label" red="0" green="0" blue="0">
-        </color>
-      </foreground_color>
-      <horizontal_alignment>2</horizontal_alignment>
-      <vertical_alignment>1</vertical_alignment>
-      <wrap_words>false</wrap_words>
-      <actions>
-      </actions>
-      <border_color>
-        <color red="0" green="128" blue="255">
-        </color>
-      </border_color>
-    </widget>
-    <widget type="textupdate" version="2.0.0">
-      <name>Text Update Template_14</name>
-      <pv_name>$(prefix):SNmask</pv_name>
-      <x>115</x>
-      <y>20</y>
-      <width>140</width>
-      <font>
-        <font name="IO Input 1" family="arial" style="BOLD" size="9.900990099009901">
-        </font>
-      </font>
-      <foreground_color>
-        <color name="IO Foreground" red="0" green="0" blue="0">
-        </color>
-      </foreground_color>
-      <background_color>
-        <color name="IO InputPV Bg" red="255" green="255" blue="255">
-        </color>
-      </background_color>
-      <horizontal_alignment>1</horizontal_alignment>
-      <vertical_alignment>1</vertical_alignment>
-      <actions>
-      </actions>
-      <border_width>1</border_width>
-      <border_color>
-        <color name="IO Border" red="215" green="215" blue="215">
-        </color>
-      </border_color>
-    </widget>
-    <widget type="textupdate" version="2.0.0">
-      <name>Text Update Template_15</name>
-      <pv_name>$(prefix):GWaddr</pv_name>
-      <x>115</x>
-      <y>40</y>
-      <width>140</width>
-      <font>
-        <font name="IO Input 1" family="arial" style="BOLD" size="9.900990099009901">
-        </font>
-      </font>
-      <foreground_color>
-        <color name="IO Foreground" red="0" green="0" blue="0">
-        </color>
-      </foreground_color>
-      <background_color>
-        <color name="IO InputPV Bg" red="255" green="255" blue="255">
-        </color>
-      </background_color>
-      <horizontal_alignment>1</horizontal_alignment>
-      <vertical_alignment>1</vertical_alignment>
-      <actions>
-      </actions>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-      <border_width>1</border_width>
-      <border_color>
-        <color name="IO Border" red="215" green="215" blue="215">
-        </color>
-      </border_color>
-    </widget>
-    <widget type="label" version="2.0.0">
-      <name>Label_159</name>
-      <text>Gateway address</text>
-      <y>40</y>
-      <font>
-        <font name="IO Normal" family="arial" style="REGULAR" size="9.900990099009901">
-        </font>
-      </font>
-      <foreground_color>
-        <color name="IO Label" red="0" green="0" blue="0">
-        </color>
-      </foreground_color>
-      <horizontal_alignment>2</horizontal_alignment>
-      <vertical_alignment>1</vertical_alignment>
-      <wrap_words>false</wrap_words>
-      <actions>
-      </actions>
-      <border_color>
-        <color red="0" green="128" blue="255">
-        </color>
-      </border_color>
-    </widget>
-    <widget type="textupdate" version="2.0.0">
-      <name>Text Update Template_16</name>
-      <pv_name>$(prefix):MACaddr</pv_name>
-      <x>115</x>
-      <y>60</y>
-      <width>140</width>
-      <font>
-        <font name="IO Input 1" family="arial" style="BOLD" size="9.900990099009901">
-        </font>
-      </font>
-      <foreground_color>
-        <color name="IO Foreground" red="0" green="0" blue="0">
-        </color>
-      </foreground_color>
-      <background_color>
-        <color name="IO InputPV Bg" red="255" green="255" blue="255">
-        </color>
-      </background_color>
-      <horizontal_alignment>1</horizontal_alignment>
-      <vertical_alignment>1</vertical_alignment>
-      <actions>
-      </actions>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-      <border_width>1</border_width>
-      <border_color>
-        <color name="IO Border" red="215" green="215" blue="215">
-        </color>
-      </border_color>
-    </widget>
-    <widget type="label" version="2.0.0">
-      <name>Label_160</name>
-      <text>MAC address</text>
-      <y>60</y>
-      <font>
-        <font name="IO Normal" family="arial" style="REGULAR" size="9.900990099009901">
-        </font>
-      </font>
-      <foreground_color>
-        <color name="IO Label" red="0" green="0" blue="0">
-        </color>
-      </foreground_color>
-      <horizontal_alignment>2</horizontal_alignment>
-      <vertical_alignment>1</vertical_alignment>
-      <wrap_words>false</wrap_words>
-      <actions>
-      </actions>
-      <border_color>
-        <color red="0" green="128" blue="255">
-        </color>
-      </border_color>
-    </widget>
-  </widget>
-  <widget type="group" version="3.0.0">
-    <name>Group_1</name>
-    <x>16</x>
-    <y>320</y>
-    <width>255</width>
-    <height>60</height>
-    <style>3</style>
-    <transparent>true</transparent>
-    <widget type="label" version="2.0.0">
-      <name>Label_161</name>
-      <text>Controller Temperature</text>
-      <font>
-        <font name="IO Normal" family="arial" style="REGULAR" size="9.900990099009901">
-        </font>
-      </font>
-      <foreground_color>
-        <color name="IO Label" red="0" green="0" blue="0">
-        </color>
-      </foreground_color>
-      <horizontal_alignment>2</horizontal_alignment>
-      <vertical_alignment>1</vertical_alignment>
-      <wrap_words>false</wrap_words>
-      <actions>
-      </actions>
-      <border_color>
-        <color red="0" green="128" blue="255">
-        </color>
-      </border_color>
-    </widget>
-    <widget type="textupdate" version="2.0.0">
-      <name>Text Update Template_17</name>
-      <pv_name>$(prefix):getTemperature</pv_name>
-      <x>115</x>
-      <width>140</width>
-      <font>
-        <font name="IO Input 1" family="arial" style="BOLD" size="9.900990099009901">
-        </font>
-      </font>
-      <foreground_color>
-        <color name="IO Foreground" red="0" green="0" blue="0">
-        </color>
-      </foreground_color>
-      <background_color>
-        <color name="IO InputPV Bg" red="255" green="255" blue="255">
-        </color>
-      </background_color>
-      <horizontal_alignment>1</horizontal_alignment>
-      <vertical_alignment>1</vertical_alignment>
-      <actions>
-      </actions>
-      <border_width>1</border_width>
-      <border_color>
-        <color name="IO Border" red="215" green="215" blue="215">
-        </color>
-      </border_color>
-    </widget>
-    <widget type="label" version="2.0.0">
-      <name>Label_162</name>
-      <text>Battery Voltage</text>
-      <y>20</y>
-      <font>
-        <font name="IO Normal" family="arial" style="REGULAR" size="9.900990099009901">
-        </font>
-      </font>
-      <foreground_color>
-        <color name="IO Label" red="0" green="0" blue="0">
-        </color>
-      </foreground_color>
-      <horizontal_alignment>2</horizontal_alignment>
-      <vertical_alignment>1</vertical_alignment>
-      <wrap_words>false</wrap_words>
-      <actions>
-      </actions>
-      <border_color>
-        <color red="0" green="128" blue="255">
-        </color>
-      </border_color>
-    </widget>
-    <widget type="textupdate" version="2.0.0">
-      <name>Text Update Template_18</name>
-      <pv_name>$(prefix):getBatteryVoltage</pv_name>
-      <x>115</x>
-      <y>20</y>
-      <width>140</width>
-      <font>
-        <font name="IO Input 1" family="arial" style="BOLD" size="9.900990099009901">
-        </font>
-      </font>
-      <foreground_color>
-        <color name="IO Foreground" red="0" green="0" blue="0">
-        </color>
-      </foreground_color>
-      <background_color>
-        <color name="IO InputPV Bg" red="255" green="255" blue="255">
-        </color>
-      </background_color>
-      <horizontal_alignment>1</horizontal_alignment>
-      <vertical_alignment>1</vertical_alignment>
-      <actions>
-      </actions>
-      <border_width>1</border_width>
-      <border_color>
-        <color name="IO Border" red="215" green="215" blue="215">
-        </color>
-      </border_color>
-    </widget>
-    <widget type="label" version="2.0.0">
-      <name>Label_163</name>
-      <text>Operating Hours</text>
-      <y>40</y>
-      <font>
-        <font name="IO Normal" family="arial" style="REGULAR" size="9.900990099009901">
-        </font>
-      </font>
-      <foreground_color>
-        <color name="IO Label" red="0" green="0" blue="0">
-        </color>
-      </foreground_color>
-      <horizontal_alignment>2</horizontal_alignment>
-      <vertical_alignment>1</vertical_alignment>
-      <wrap_words>false</wrap_words>
-      <actions>
-      </actions>
-      <border_color>
-        <color red="0" green="128" blue="255">
-        </color>
-      </border_color>
-    </widget>
-    <widget type="textupdate" version="2.0.0">
-      <name>Text Update Template_19</name>
-      <pv_name>$(prefix):getOperatingHours</pv_name>
-      <x>115</x>
-      <y>40</y>
-      <width>140</width>
-      <font>
-        <font name="IO Input 1" family="arial" style="BOLD" size="9.900990099009901">
-        </font>
-      </font>
-      <foreground_color>
-        <color name="IO Foreground" red="0" green="0" blue="0">
-        </color>
-      </foreground_color>
-      <background_color>
-        <color name="IO InputPV Bg" red="255" green="255" blue="255">
-        </color>
-      </background_color>
-      <horizontal_alignment>1</horizontal_alignment>
-      <vertical_alignment>1</vertical_alignment>
-      <actions>
-      </actions>
-      <border_width>1</border_width>
-      <border_color>
-        <color name="IO Border" red="215" green="215" blue="215">
-        </color>
-      </border_color>
+        <background_color>
+          <color name="Background" red="255" green="255" blue="255">
+          </color>
+        </background_color>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <actions>
+        </actions>
+        <border_width>1</border_width>
+        <border_color>
+          <color name="IO Border" red="215" green="215" blue="215">
+          </color>
+        </border_color>
+      </widget>
     </widget>
   </widget>
 </display>
