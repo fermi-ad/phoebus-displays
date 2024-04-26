@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2024-04-25 15:55:16 by epics-->
+<!--Saved on 2024-04-25 17:27:39 by epics-->
 <display version="2.0.0">
   <name>HB650-$(cm) Cryogenics Control</name>
   <width>2110</width>
   <height>940</height>
   <grid_step_x>5</grid_step_x>
   <grid_step_y>5</grid_step_y>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_3</name>
+    <y>40</y>
+    <width>1400</width>
+    <height>900</height>
+    <line_width>1</line_width>
+    <transparent>true</transparent>
+  </widget>
   <widget type="group" version="3.0.0">
     <name>Group</name>
     <x>851</x>
@@ -4600,18 +4608,10 @@ Stack</text>
     <arrows>2</arrows>
     <arrow_length>7</arrow_length>
   </widget>
-  <widget type="rectangle" version="2.0.0">
-    <name>Rectangle_3</name>
-    <y>40</y>
-    <width>1400</width>
-    <height>900</height>
-    <line_width>1</line_width>
-    <transparent>true</transparent>
-  </widget>
   <widget type="label" version="2.0.0">
     <name>Label_97</name>
-    <text>HTTS heat load: </text>
-    <x>1195</x>
+    <text>HTTS heat load:</text>
+    <x>1200</x>
     <y>775</y>
     <width>110</width>
     <background_color>
@@ -4624,7 +4624,7 @@ Stack</text>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_301</name>
-    <pv_name>PIP2IT:pHB650_CRYO_HTTS:HeatLoad</pv_name>
+    <pv_name>$(lhe)HTTS:HeatLoad</pv_name>
     <x>1310</x>
     <y>775</y>
     <width>80</width>
@@ -4638,7 +4638,7 @@ Stack</text>
   <widget type="label" version="2.0.0">
     <name>Label_98</name>
     <text>LTTS heat load:</text>
-    <x>1195</x>
+    <x>1200</x>
     <y>805</y>
     <width>110</width>
     <background_color>
@@ -4651,7 +4651,7 @@ Stack</text>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_302</name>
-    <pv_name>PIP2IT:pHB650_CRYO_LTTS:HeatLoad</pv_name>
+    <pv_name>$(lhe)LTTS:HeatLoad</pv_name>
     <x>1310</x>
     <y>805</y>
     <width>80</width>
@@ -4664,8 +4664,8 @@ Stack</text>
   </widget>
   <widget type="led" version="2.0.0">
     <name>LED_8</name>
-    <pv_name>PIP2IT:pHB650_HTTS:HeatLoadOn</pv_name>
-    <x>1165</x>
+    <pv_name>$(lhe)HTTS:HeatLoadOn</pv_name>
+    <x>1180</x>
     <y>775</y>
     <rules>
       <rule name="Pumping" prop_id="on_color" out_exp="false">
@@ -4691,8 +4691,8 @@ Stack</text>
   </widget>
   <widget type="led" version="2.0.0">
     <name>LED_9</name>
-    <pv_name>PIP2IT:pHB650_CRYO_LTTS:HeatLoadOn</pv_name>
-    <x>1165</x>
+    <pv_name>$(lhe)LTTS:HeatLoadOn</pv_name>
+    <x>1180</x>
     <y>805</y>
     <rules>
       <rule name="Pumping" prop_id="on_color" out_exp="false">
@@ -5646,5 +5646,161 @@ Stack</text>
       <arrows>2</arrows>
       <arrow_length>7</arrow_length>
     </widget>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_303</name>
+    <pv_name>$(lhe)PT607H:Press</pv_name>
+    <x>1199</x>
+    <y>965</y>
+    <width>80</width>
+    <transparent>true</transparent>
+    <format>1</format>
+    <precision>2</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_304</name>
+    <pv_name>$(lhe)PT608H:Press</pv_name>
+    <x>1292</x>
+    <y>965</y>
+    <width>80</width>
+    <transparent>true</transparent>
+    <format>1</format>
+    <precision>2</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_305</name>
+    <pv_name>$(lhe)PT605H:Press</pv_name>
+    <x>1445</x>
+    <y>965</y>
+    <width>80</width>
+    <transparent>true</transparent>
+    <format>1</format>
+    <precision>2</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_306</name>
+    <pv_name>$(lhe)PT606H:Press</pv_name>
+    <x>1535</x>
+    <y>965</y>
+    <width>80</width>
+    <transparent>true</transparent>
+    <format>1</format>
+    <precision>2</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_307</name>
+    <pv_name>$(lhe)h607H:Enthalpy</pv_name>
+    <x>1199</x>
+    <y>1010</y>
+    <width>80</width>
+    <transparent>true</transparent>
+    <format>1</format>
+    <precision>2</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_314</name>
+    <pv_name>$(lhe)h608H:Enthalpy</pv_name>
+    <x>1292</x>
+    <y>1010</y>
+    <width>80</width>
+    <transparent>true</transparent>
+    <format>1</format>
+    <precision>2</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_315</name>
+    <pv_name>$(lhe)h605H:Enthalpy</pv_name>
+    <x>1445</x>
+    <y>1010</y>
+    <width>80</width>
+    <transparent>true</transparent>
+    <format>1</format>
+    <precision>2</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_316</name>
+    <pv_name>$(lhe)h606H:Enthalpy</pv_name>
+    <x>1535</x>
+    <y>1010</y>
+    <width>80</width>
+    <transparent>true</transparent>
+    <format>1</format>
+    <precision>2</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_317</name>
+    <pv_name>$(lhe)PT607H:GHePP</pv_name>
+    <x>1199</x>
+    <y>985</y>
+    <width>80</width>
+    <transparent>true</transparent>
+    <format>1</format>
+    <precision>2</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_319</name>
+    <pv_name>$(lhe)PT608H:GHePP</pv_name>
+    <x>1292</x>
+    <y>985</y>
+    <width>80</width>
+    <transparent>true</transparent>
+    <format>1</format>
+    <precision>2</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_320</name>
+    <pv_name>$(lhe)PT605H:GHePP</pv_name>
+    <x>1445</x>
+    <y>985</y>
+    <width>80</width>
+    <transparent>true</transparent>
+    <format>1</format>
+    <precision>2</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_330</name>
+    <pv_name>$(lhe)PT606H:GHePP</pv_name>
+    <x>1535</x>
+    <y>985</y>
+    <width>80</width>
+    <transparent>true</transparent>
+    <format>1</format>
+    <precision>2</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
   </widget>
 </display>
