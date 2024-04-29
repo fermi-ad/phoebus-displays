@@ -98,7 +98,7 @@
     </pv>
     <pv>
       <display_name>TX030</display_name>
-      <visible>true</visible>
+      <visible>false</visible>
       <name>PIP2IT:pHB650_CRYO_TX030:TempK</name>
       <axis>0</axis>
       <color>
@@ -123,7 +123,7 @@
     </pv>
     <pv>
       <display_name>TX031A</display_name>
-      <visible>true</visible>
+      <visible>false</visible>
       <name>PIP2IT:pHB650_CRYO_TX031A:TempK</name>
       <axis>0</axis>
       <color>
@@ -148,7 +148,7 @@
     </pv>
     <pv>
       <display_name>TX032A</display_name>
-      <visible>true</visible>
+      <visible>false</visible>
       <name>PIP2IT:pHB650_CRYO_TX032A:TempK</name>
       <axis>0</axis>
       <color>
@@ -173,7 +173,7 @@
     </pv>
     <pv>
       <display_name>TX033A</display_name>
-      <visible>true</visible>
+      <visible>false</visible>
       <name>PIP2IT:pHB650_CRYO_TX033A:TempK</name>
       <axis>0</axis>
       <color>
@@ -198,7 +198,7 @@
     </pv>
     <pv>
       <display_name>TX034</display_name>
-      <visible>true</visible>
+      <visible>false</visible>
       <name>PIP2IT:pHB650_CRYO_TX034:TempK</name>
       <axis>0</axis>
       <color>
@@ -273,7 +273,7 @@
     </pv>
     <pv>
       <display_name>TX041A</display_name>
-      <visible>true</visible>
+      <visible>false</visible>
       <name>PIP2IT:pHB650_CRYO_TX041A:TempK</name>
       <axis>0</axis>
       <color>
@@ -298,7 +298,7 @@
     </pv>
     <pv>
       <display_name>TX042A</display_name>
-      <visible>true</visible>
+      <visible>false</visible>
       <name>PIP2IT:pHB650_CRYO_TX042A:TempK</name>
       <axis>0</axis>
       <color>
@@ -323,7 +323,7 @@
     </pv>
     <pv>
       <display_name>TX045</display_name>
-      <visible>true</visible>
+      <visible>false</visible>
       <name>PIP2IT:pHB650_CRYO_TX045:TempK</name>
       <axis>0</axis>
       <color>
@@ -348,7 +348,7 @@
     </pv>
     <pv>
       <display_name>TX046</display_name>
-      <visible>true</visible>
+      <visible>false</visible>
       <name>PIP2IT:pHB650_CRYO_TX046:TempK</name>
       <axis>0</axis>
       <color>
@@ -373,7 +373,7 @@
     </pv>
     <pv>
       <display_name>TX047</display_name>
-      <visible>true</visible>
+      <visible>false</visible>
       <name>PIP2IT:pHB650_CRYO_TX047:TempK</name>
       <axis>0</axis>
       <color>
