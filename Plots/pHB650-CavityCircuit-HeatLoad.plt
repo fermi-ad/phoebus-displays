@@ -1,30 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <databrowser>
-  <title>pHB650 Shield Cooling</title>
+  <title>Cavity Heat Load</title>
   <show_legend>true</show_legend>
   <show_toolbar>true</show_toolbar>
   <grid>true</grid>
   <update_period>3.0</update_period>
   <scroll_step>1</scroll_step>
   <scroll>false</scroll>
-  <start>2024-04-29 14:00:00.000</start>
-  <end>2024-05-03 08:32:57.580</end>
+  <start>2024-05-02 14:50:00.000</start>
+  <end>2024-05-02 15:10:00.000</end>
   <archive_rescale>NONE</archive_rescale>
   <foreground>
-    <red>204</red>
-    <green>204</green>
-    <blue>204</blue>
+    <red>0</red>
+    <green>0</green>
+    <blue>0</blue>
   </foreground>
   <background>
-    <red>51</red>
-    <green>51</green>
-    <blue>51</blue>
+    <red>179</red>
+    <green>179</green>
+    <blue>179</blue>
   </background>
-  <title_font>Liberation Sans|24|1</title_font>
+  <title_font>Liberation Sans|20|1</title_font>
   <label_font>Liberation Sans|14|1</label_font>
   <scale_font>Liberation Sans|12|0</scale_font>
   <legend_font>Liberation Sans|14|0</legend_font>
   <axes>
+    <axis>
+      <visible>true</visible>
+      <name>Calculation Window</name>
+      <use_axis_name>true</use_axis_name>
+      <use_trace_names>false</use_trace_names>
+      <right>false</right>
+      <color>
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+      </color>
+      <min>-4.0</min>
+      <max>1.5</max>
+      <grid>false</grid>
+      <autoscale>false</autoscale>
+      <log_scale>false</log_scale>
+    </axis>
     <axis>
       <visible>true</visible>
       <name>Temperature (K)</name>
@@ -32,13 +49,64 @@
       <use_trace_names>false</use_trace_names>
       <right>false</right>
       <color>
-        <red>204</red>
-        <green>204</green>
-        <blue>204</blue>
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
       </color>
       <min>0.0</min>
-      <max>310.0</max>
-      <grid>true</grid>
+      <max>100.0</max>
+      <grid>false</grid>
+      <autoscale>false</autoscale>
+      <log_scale>false</log_scale>
+    </axis>
+    <axis>
+      <visible>true</visible>
+      <name>GHe Pressure kPaa</name>
+      <use_axis_name>true</use_axis_name>
+      <use_trace_names>false</use_trace_names>
+      <right>false</right>
+      <color>
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+      </color>
+      <min>133.0</min>
+      <max>276.0</max>
+      <grid>false</grid>
+      <autoscale>false</autoscale>
+      <log_scale>false</log_scale>
+    </axis>
+    <axis>
+      <visible>true</visible>
+      <name>Enthalpy (J/g)</name>
+      <use_axis_name>true</use_axis_name>
+      <use_trace_names>false</use_trace_names>
+      <right>true</right>
+      <color>
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+      </color>
+      <min>0.0</min>
+      <max>800.0</max>
+      <grid>false</grid>
+      <autoscale>false</autoscale>
+      <log_scale>false</log_scale>
+    </axis>
+    <axis>
+      <visible>true</visible>
+      <name>Heaat Load (W)</name>
+      <use_axis_name>true</use_axis_name>
+      <use_trace_names>false</use_trace_names>
+      <right>true</right>
+      <color>
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+      </color>
+      <min>-120.0</min>
+      <max>2000.0</max>
+      <grid>false</grid>
       <autoscale>false</autoscale>
       <log_scale>false</log_scale>
     </axis>
@@ -47,10 +115,35 @@
   </annotations>
   <pvlist>
     <pv>
-      <display_name>TX060</display_name>
+      <display_name>HeatLoadOn</display_name>
       <visible>true</visible>
-      <name>PIP2IT:pHB650_CRYO_TX060:TempK</name>
+      <name>PIP2IT:pHB650_CRYO_LTTS:HeatLoadOn</name>
       <axis>0</axis>
+      <color>
+        <red>255</red>
+        <green>0</green>
+        <blue>0</blue>
+      </color>
+      <trace_type>AREA</trace_type>
+      <linewidth>2</linewidth>
+      <line_style>SOLID</line_style>
+      <point_type>NONE</point_type>
+      <point_size>1</point_size>
+      <waveform_index>0</waveform_index>
+      <period>0.0</period>
+      <ring_size>5000</ring_size>
+      <request>OPTIMIZED</request>
+      <archive>
+        <name>archiver1</name>
+        <url>pbraw://archiver1.fnal.gov:17668/retrieval</url>
+        <key>1</key>
+      </archive>
+    </pv>
+    <pv>
+      <display_name>TO605H</display_name>
+      <visible>true</visible>
+      <name>PIP2IT:pHB650_CRYO_TO605H:TempK</name>
+      <axis>1</axis>
       <color>
         <red>0</red>
         <green>0</green>
@@ -72,13 +165,13 @@
       </archive>
     </pv>
     <pv>
-      <display_name>TX061</display_name>
+      <display_name>TO606H</display_name>
       <visible>true</visible>
-      <name>PIP2IT:pHB650_CRYO_TX061:TempK</name>
-      <axis>0</axis>
+      <name>PIP2IT:pHB650_CRYO_TO606H:TempK</name>
+      <axis>1</axis>
       <color>
         <red>255</red>
-        <green>0</green>
+        <green>127</green>
         <blue>0</blue>
       </color>
       <trace_type>AREA</trace_type>
@@ -97,10 +190,10 @@
       </archive>
     </pv>
     <pv>
-      <display_name>TX063</display_name>
+      <display_name>PT605H</display_name>
       <visible>true</visible>
-      <name>PIP2IT:pHB650_CRYO_TX063:TempK</name>
-      <axis>0</axis>
+      <name>PIP2IT:pHB650_CRYO_PT605H:GHePP</name>
+      <axis>2</axis>
       <color>
         <red>0</red>
         <green>255</green>
@@ -122,10 +215,10 @@
       </archive>
     </pv>
     <pv>
-      <display_name>TX064</display_name>
+      <display_name>PT606H</display_name>
       <visible>true</visible>
-      <name>PIP2IT:pHB650_CRYO_TX064:TempK</name>
-      <axis>0</axis>
+      <name>PIP2IT:pHB650_CRYO_PT606H:GHePP</name>
+      <axis>2</axis>
       <color>
         <red>127</red>
         <green>0</green>
@@ -147,14 +240,14 @@
       </archive>
     </pv>
     <pv>
-      <display_name>TX065</display_name>
+      <display_name>h605H</display_name>
       <visible>true</visible>
-      <name>PIP2IT:pHB650_CRYO_TX065:TempK</name>
-      <axis>0</axis>
+      <name>PIP2IT:pHB650_CRYO_h605H:Enthalpy</name>
+      <axis>3</axis>
       <color>
-        <red>255</red>
-        <green>255</green>
-        <blue>0</blue>
+        <red>102</red>
+        <green>153</green>
+        <blue>102</blue>
       </color>
       <trace_type>AREA</trace_type>
       <linewidth>1</linewidth>
@@ -172,10 +265,10 @@
       </archive>
     </pv>
     <pv>
-      <display_name>TX066</display_name>
+      <display_name>h606H</display_name>
       <visible>true</visible>
-      <name>PIP2IT:pHB650_CRYO_TX066:TempK</name>
-      <axis>0</axis>
+      <name>PIP2IT:pHB650_CRYO_h606H:Enthalpy</name>
+      <axis>3</axis>
       <color>
         <red>0</red>
         <green>255</green>
@@ -197,67 +290,17 @@
       </archive>
     </pv>
     <pv>
-      <display_name>TX067</display_name>
+      <display_name>Cavity Heat Load</display_name>
       <visible>true</visible>
-      <name>PIP2IT:pHB650_CRYO_TX067:TempK</name>
-      <axis>0</axis>
+      <name>PIP2IT:pHB650_CRYO_LTTS:HeatLoad</name>
+      <axis>4</axis>
       <color>
         <red>255</red>
         <green>0</green>
         <blue>255</blue>
       </color>
       <trace_type>AREA</trace_type>
-      <linewidth>1</linewidth>
-      <line_style>SOLID</line_style>
-      <point_type>NONE</point_type>
-      <point_size>1</point_size>
-      <waveform_index>0</waveform_index>
-      <period>0.0</period>
-      <ring_size>5000</ring_size>
-      <request>OPTIMIZED</request>
-      <archive>
-        <name>archiver1</name>
-        <url>pbraw://archiver1.fnal.gov:17668/retrieval</url>
-        <key>1</key>
-      </archive>
-    </pv>
-    <pv>
-      <display_name>TX068</display_name>
-      <visible>true</visible>
-      <name>PIP2IT:pHB650_CRYO_TX068:TempK</name>
-      <axis>0</axis>
-      <color>
-        <red>127</red>
-        <green>255</green>
-        <blue>0</blue>
-      </color>
-      <trace_type>AREA</trace_type>
-      <linewidth>1</linewidth>
-      <line_style>SOLID</line_style>
-      <point_type>NONE</point_type>
-      <point_size>1</point_size>
-      <waveform_index>0</waveform_index>
-      <period>0.0</period>
-      <ring_size>5000</ring_size>
-      <request>OPTIMIZED</request>
-      <archive>
-        <name>archiver1</name>
-        <url>pbraw://archiver1.fnal.gov:17668/retrieval</url>
-        <key>1</key>
-      </archive>
-    </pv>
-    <pv>
-      <display_name>TX069</display_name>
-      <visible>true</visible>
-      <name>PIP2IT:pHB650_CRYO_TX069:TempK</name>
-      <axis>0</axis>
-      <color>
-        <red>0</red>
-        <green>127</green>
-        <blue>255</blue>
-      </color>
-      <trace_type>AREA</trace_type>
-      <linewidth>1</linewidth>
+      <linewidth>2</linewidth>
       <line_style>SOLID</line_style>
       <point_type>NONE</point_type>
       <point_size>1</point_size>
