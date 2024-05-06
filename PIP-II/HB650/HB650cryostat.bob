@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2024-05-01 17:49:12 by epics-->
+<!--Saved on 2024-05-06 06:52:38 by epics-->
 <display version="2.0.0">
   <name>HB650-$(cm) Cryostat</name>
   <macros>
@@ -1893,6 +1893,9 @@
     <height>30</height>
     <initial_index>1</initial_index>
     <show_index>true</show_index>
+    <tooltip>$(pv_name)
+$(pv_value)
+$(actions)</tooltip>
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="label" version="2.0.0">
@@ -4050,6 +4053,9 @@ Suction</text>
     <height>30</height>
     <initial_index>1</initial_index>
     <show_index>true</show_index>
+    <tooltip>$(pv_name)
+$(pv_value)
+$(actions)</tooltip>
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="group" version="3.0.0">
@@ -6079,33 +6085,6 @@ Pressure</text>
     <vertical_alignment>1</vertical_alignment>
     <border_width>1</border_width>
   </widget>
-  <widget type="led" version="2.0.0">
-    <name>LED_6</name>
-    <pv_name>$(ghe)PT042:GHeP</pv_name>
-    <x>820</x>
-    <y>375</y>
-    <rules>
-      <rule name="Pumping" prop_id="on_color" out_exp="false">
-        <exp bool_exp="pv0&lt;=14.0">
-          <value>
-            <color name="On" red="0" green="255" blue="0">
-            </color>
-          </value>
-        </exp>
-        <pv_name>$(ghe)PT042:GHeP</pv_name>
-      </rule>
-      <rule name="Not Pumping" prop_id="off_color" out_exp="false">
-        <exp bool_exp="pv0&gt;14.0">
-          <value>
-            <color name="Off" red="60" green="100" blue="60">
-            </color>
-          </value>
-        </exp>
-        <pv_name>$(ghe)PT042:GHeP</pv_name>
-      </rule>
-    </rules>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
   <widget type="group" version="3.0.0">
     <name>Group_4</name>
     <x>860</x>
@@ -6227,5 +6206,43 @@ Pressure</text>
     <width>160</width>
     <tooltip>$(actions)</tooltip>
     <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>Ellipse</name>
+    <x>825</x>
+    <y>375</y>
+    <width>20</width>
+    <height>20</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="Off" red="60" green="100" blue="60">
+      </color>
+    </background_color>
+    <rules>
+      <rule name="Pump On" prop_id="background_color" out_exp="false">
+        <exp bool_exp="pv0&lt;14.5 &amp; pv1=1">
+          <value>
+            <color name="On" red="0" green="255" blue="0">
+            </color>
+          </value>
+        </exp>
+        <pv_name>$(ghe)PT042:GHeP</pv_name>
+        <pv_name>$(ghe)PV604H:VLVstat</pv_name>
+      </rule>
+      <rule name="Pump Off" prop_id="background_color" out_exp="false">
+        <exp bool_exp="pv0&gt;=14.5 &amp; pv1=0">
+          <value>
+            <color name="Off" red="60" green="100" blue="60">
+            </color>
+          </value>
+        </exp>
+        <pv_name>$(ghe)PT042:GHeP</pv_name>
+        <pv_name>$(ghe)PV604H:VLVstat</pv_name>
+      </rule>
+    </rules>
   </widget>
 </display>

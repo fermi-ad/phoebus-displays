@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2024-05-03 09:17:07 by epics-->
+<!--Saved on 2024-05-06 06:55:19 by epics-->
 <display version="2.0.0">
   <name>HB650-$(cm) Cryogenics Control</name>
   <width>2110</width>
@@ -2854,33 +2854,6 @@ Pressure</text>
     <width>160</width>
     <tooltip>$(actions)</tooltip>
   </widget>
-  <widget type="led" version="2.0.0">
-    <name>LED</name>
-    <pv_name>$(ghe)PT042:GHeP</pv_name>
-    <x>1307</x>
-    <y>740</y>
-    <rules>
-      <rule name="Pumping" prop_id="on_color" out_exp="false">
-        <exp bool_exp="pv0&lt;=14.0">
-          <value>
-            <color name="On" red="0" green="255" blue="0">
-            </color>
-          </value>
-        </exp>
-        <pv_name>$(ghe)PT042:GHeP</pv_name>
-      </rule>
-      <rule name="Not Pumping" prop_id="off_color" out_exp="false">
-        <exp bool_exp="pv0&gt;14.0">
-          <value>
-            <color name="Off" red="60" green="100" blue="60">
-            </color>
-          </value>
-        </exp>
-        <pv_name>$(ghe)PT042:GHeP</pv_name>
-      </rule>
-    </rules>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
   <widget type="label" version="2.0.0">
     <name>Label_66</name>
     <text>Pumping</text>
@@ -5553,5 +5526,43 @@ Stack</text>
     <file>HB650banner.bob</file>
     <width>1300</width>
     <height>40</height>
+  </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>Ellipse</name>
+    <x>1305</x>
+    <y>740</y>
+    <width>20</width>
+    <height>20</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="Off" red="60" green="100" blue="60">
+      </color>
+    </background_color>
+    <rules>
+      <rule name="Pump On" prop_id="background_color" out_exp="false">
+        <exp bool_exp="pv0&lt;14.5 &amp; pv1=1">
+          <value>
+            <color name="On" red="0" green="255" blue="0">
+            </color>
+          </value>
+        </exp>
+        <pv_name>$(ghe)PT042:GHeP</pv_name>
+        <pv_name>$(ghe)PV604H:VLVstat</pv_name>
+      </rule>
+      <rule name="Pump Off" prop_id="background_color" out_exp="false">
+        <exp bool_exp="pv0&gt;=14.5 &amp; pv1=0">
+          <value>
+            <color name="Off" red="60" green="100" blue="60">
+            </color>
+          </value>
+        </exp>
+        <pv_name>$(ghe)PT042:GHeP</pv_name>
+        <pv_name>$(ghe)PV604H:VLVstat</pv_name>
+      </rule>
+    </rules>
   </widget>
 </display>
