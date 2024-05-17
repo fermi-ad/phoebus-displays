@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2024-05-06 16:10:24 by epics-->
+<!--Saved on 2024-05-17 10:50:07 by epics-->
 <display version="2.0.0">
   <name>CMTF-Layout</name>
   <width>1100</width>
-  <height>590</height>
+  <height>900</height>
   <grid_step_x>5</grid_step_x>
   <grid_step_y>5</grid_step_y>
   <widget type="picture" version="2.0.0">
@@ -415,7 +415,6 @@
   </widget>
   <widget type="polyline" version="2.0.0">
     <name>Polyline</name>
-    <x>-5</x>
     <y>130</y>
     <width>85</width>
     <height>170</height>
@@ -427,5 +426,510 @@
     </points>
     <arrows>2</arrows>
     <arrow_length>15</arrow_length>
+  </widget>
+  <widget type="stripchart" version="2.1.0">
+    <name>Strip Chart_1</name>
+    <y>590</y>
+    <width>985</width>
+    <foreground_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <show_grid>true</show_grid>
+    <title>Radiation Levels</title>
+    <scale_font>
+      <font family="Liberation Sans" style="REGULAR" size="11.0">
+      </font>
+    </scale_font>
+    <show_legend>true</show_legend>
+    <rules>
+      <rule name="Show Trace rd3115" prop_id="traces[0].visible" out_exp="false">
+        <exp bool_exp="pv0">
+          <value>true</value>
+        </exp>
+        <pv_name>loc://rd3115</pv_name>
+      </rule>
+      <rule name="Show Trace rd3116" prop_id="traces[1].visible" out_exp="false">
+        <exp bool_exp="pv0">
+          <value>true</value>
+        </exp>
+        <pv_name>loc://rd3116</pv_name>
+      </rule>
+      <rule name="Show Trace rd3117" prop_id="traces[2].visible" out_exp="false">
+        <exp bool_exp="pv0">
+          <value>true</value>
+        </exp>
+        <pv_name>loc://rd3117</pv_name>
+      </rule>
+      <rule name="Show Trace rd3118" prop_id="traces[3].visible" out_exp="false">
+        <exp bool_exp="pv0">
+          <value>true</value>
+        </exp>
+        <pv_name>loc://rd3118</pv_name>
+      </rule>
+      <rule name="Show Trace rd3119" prop_id="traces[4].visible" out_exp="false">
+        <exp bool_exp="pv0">
+          <value>true</value>
+        </exp>
+        <pv_name>loc://rd3119</pv_name>
+      </rule>
+      <rule name="Show Trace rd3120" prop_id="traces[4].visible" out_exp="false">
+      </rule>
+    </rules>
+    <start>30 minutes</start>
+    <end>now</end>
+    <y_axes>
+      <y_axis>
+        <title>Radiation (mrem)</title>
+        <autoscale>true</autoscale>
+        <log_scale>true</log_scale>
+        <minimum>0.0</minimum>
+        <maximum>250.0</maximum>
+        <show_grid>true</show_grid>
+        <visible>true</visible>
+        <color>
+          <color red="255" green="255" blue="255">
+          </color>
+        </color>
+      </y_axis>
+    </y_axes>
+    <traces>
+      <trace>
+        <name>RD3115</name>
+        <y_pv>$(rfpi)RD3115:Rad</y_pv>
+        <axis>0</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color red="0" green="0" blue="255">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>false</visible>
+      </trace>
+      <trace>
+        <name>RD3116</name>
+        <y_pv>$(rfpi)RD3116:Rad</y_pv>
+        <axis>0</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color red="255" green="0" blue="0">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>false</visible>
+      </trace>
+      <trace>
+        <name>RD3117</name>
+        <y_pv>$(rfpi)RD3117:Rad</y_pv>
+        <axis>0</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color red="0" green="255" blue="0">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>false</visible>
+      </trace>
+      <trace>
+        <name>RD3118</name>
+        <y_pv>$(rfpi)RD3118:Rad</y_pv>
+        <axis>0</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color red="170" green="0" blue="255">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>false</visible>
+      </trace>
+      <trace>
+        <name>RD3119</name>
+        <y_pv>$(rfpi)RD3119:Rad</y_pv>
+        <axis>0</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color red="255" green="255" blue="0">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>false</visible>
+      </trace>
+      <trace>
+        <name>RD3120</name>
+        <y_pv>$(rfpi)RD3120:Rad</y_pv>
+        <axis>0</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color red="0" green="234" blue="255">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>false</visible>
+      </trace>
+      <trace>
+        <name>RD3176</name>
+        <y_pv>$(rfpi)RD3176:Rad</y_pv>
+        <axis>0</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color red="255" green="127" blue="0">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>false</visible>
+      </trace>
+      <trace>
+        <name>RD3177</name>
+        <y_pv>$(rfpi)RD3177:Rad</y_pv>
+        <axis>0</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color red="191" green="255" blue="0">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>false</visible>
+      </trace>
+      <trace>
+        <name>RD3178</name>
+        <y_pv>$(rfpi)RD3178:Rad</y_pv>
+        <axis>0</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color red="0" green="149" blue="255">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>false</visible>
+      </trace>
+      <trace>
+        <name>RD3179</name>
+        <y_pv>$(rfpi)RD3179:Rad</y_pv>
+        <axis>0</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color red="255" green="0" blue="170">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>false</visible>
+      </trace>
+      <trace>
+        <name>RD3180</name>
+        <y_pv>$(rfpi)RD3180:Rad</y_pv>
+        <axis>0</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color red="255" green="212" blue="0">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>false</visible>
+      </trace>
+      <trace>
+        <name>RD3181</name>
+        <y_pv>$(rfpi)RD3181:Rad</y_pv>
+        <axis>0</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color red="237" green="185" blue="185">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>false</visible>
+      </trace>
+      <trace>
+        <name>RD3182</name>
+        <y_pv>$(rfpi)RD3182:Rad</y_pv>
+        <axis>0</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color red="185" green="215" blue="237">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>false</visible>
+      </trace>
+      <trace>
+        <name>RD3183</name>
+        <y_pv>$(rfpi)RD3183:Rad</y_pv>
+        <axis>0</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color red="231" green="233" blue="185">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>false</visible>
+      </trace>
+    </traces>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <x>990</x>
+    <y>630</y>
+    <width>100</width>
+    <height>245</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle_1</name>
+      <y>20</y>
+      <height>225</height>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <background_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="checkbox" version="2.0.0">
+      <name>Check Box_19</name>
+      <pv_name>loc://rd3120</pv_name>
+      <label>RD3120</label>
+      <x>5</x>
+      <y>100</y>
+      <width>95</width>
+      <height>15</height>
+      <foreground_color>
+        <color red="0" green="234" blue="255">
+        </color>
+      </foreground_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="checkbox" version="2.0.0">
+      <name>Check Box_9</name>
+      <pv_name>loc://rd3115</pv_name>
+      <label>RD3115</label>
+      <x>5</x>
+      <y>25</y>
+      <width>95</width>
+      <height>15</height>
+      <foreground_color>
+        <color red="0" green="0" blue="255">
+        </color>
+      </foreground_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="checkbox" version="2.0.0">
+      <name>Check Box_10</name>
+      <pv_name>loc://rd3116</pv_name>
+      <label>RD3116</label>
+      <x>5</x>
+      <y>40</y>
+      <width>95</width>
+      <height>15</height>
+      <foreground_color>
+        <color red="255" green="0" blue="0">
+        </color>
+      </foreground_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="checkbox" version="2.0.0">
+      <name>Check Box_11</name>
+      <pv_name>loc://rd3117</pv_name>
+      <label>RD3117</label>
+      <x>5</x>
+      <y>55</y>
+      <width>95</width>
+      <height>15</height>
+      <foreground_color>
+        <color red="0" green="255" blue="0">
+        </color>
+      </foreground_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="checkbox" version="2.0.0">
+      <name>Check Box_12</name>
+      <pv_name>loc://rd3118</pv_name>
+      <label>RD3118</label>
+      <x>5</x>
+      <y>70</y>
+      <width>95</width>
+      <height>15</height>
+      <foreground_color>
+        <color red="170" green="0" blue="255">
+        </color>
+      </foreground_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="checkbox" version="2.0.0">
+      <name>Check Box_13</name>
+      <pv_name>loc://rd3119</pv_name>
+      <label>RD3119</label>
+      <x>5</x>
+      <y>85</y>
+      <width>95</width>
+      <height>15</height>
+      <foreground_color>
+        <color red="255" green="255" blue="0">
+        </color>
+      </foreground_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_1</name>
+      <text>Select Traces</text>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <background_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="checkbox" version="2.0.0">
+      <name>Check Box_20</name>
+      <pv_name>loc://rd3176</pv_name>
+      <label>RD3176</label>
+      <x>5</x>
+      <y>115</y>
+      <width>95</width>
+      <height>15</height>
+      <foreground_color>
+        <color red="255" green="127" blue="0">
+        </color>
+      </foreground_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="checkbox" version="2.0.0">
+      <name>Check Box_21</name>
+      <pv_name>loc://rd3177</pv_name>
+      <label>RD3177</label>
+      <x>5</x>
+      <y>130</y>
+      <width>95</width>
+      <height>15</height>
+      <foreground_color>
+        <color red="191" green="255" blue="0">
+        </color>
+      </foreground_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="checkbox" version="2.0.0">
+      <name>Check Box_22</name>
+      <pv_name>loc://rd3178</pv_name>
+      <label>RD3178</label>
+      <x>5</x>
+      <y>145</y>
+      <width>95</width>
+      <height>15</height>
+      <foreground_color>
+        <color red="0" green="149" blue="255">
+        </color>
+      </foreground_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="checkbox" version="2.0.0">
+      <name>Check Box_23</name>
+      <pv_name>loc://rd3179</pv_name>
+      <label>RD3179</label>
+      <x>5</x>
+      <y>160</y>
+      <width>95</width>
+      <height>15</height>
+      <foreground_color>
+        <color red="255" green="0" blue="170">
+        </color>
+      </foreground_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="checkbox" version="2.0.0">
+      <name>Check Box_24</name>
+      <pv_name>loc://rd3180</pv_name>
+      <label>RD3180</label>
+      <x>5</x>
+      <y>175</y>
+      <width>95</width>
+      <height>15</height>
+      <foreground_color>
+        <color red="255" green="212" blue="0">
+        </color>
+      </foreground_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="checkbox" version="2.0.0">
+      <name>Check Box_25</name>
+      <pv_name>loc://rd3181</pv_name>
+      <label>RD3181</label>
+      <x>5</x>
+      <y>190</y>
+      <width>95</width>
+      <height>15</height>
+      <foreground_color>
+        <color red="237" green="185" blue="185">
+        </color>
+      </foreground_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="checkbox" version="2.0.0">
+      <name>Check Box_26</name>
+      <pv_name>loc://rd3182</pv_name>
+      <label>RD3182</label>
+      <x>5</x>
+      <y>205</y>
+      <width>95</width>
+      <height>15</height>
+      <foreground_color>
+        <color red="185" green="215" blue="237">
+        </color>
+      </foreground_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="checkbox" version="2.0.0">
+      <name>Check Box_27</name>
+      <pv_name>loc://rd3183</pv_name>
+      <label>RD3183</label>
+      <x>5</x>
+      <y>220</y>
+      <width>95</width>
+      <height>15</height>
+      <foreground_color>
+        <color red="231" green="233" blue="185">
+        </color>
+      </foreground_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
   </widget>
 </display>
