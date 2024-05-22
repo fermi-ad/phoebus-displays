@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2024-05-10 12:41:45 by epics-->
+<!--Saved on 2024-05-22 17:57:58 by epics-->
 <display version="2.0.0">
   <name>HB650-$(cm) Cryostat</name>
   <macros>
@@ -6119,7 +6119,7 @@ Pressure</text>
     </background_color>
     <rules>
       <rule name="Pump On" prop_id="background_color" out_exp="false">
-        <exp bool_exp="pv0&lt;24.0 &amp;&amp; pv1=1">
+        <exp bool_exp="(pv0&lt;24.0) &amp;&amp; (pv1==1)">
           <value>
             <color name="On" red="0" green="255" blue="0">
             </color>
@@ -6129,7 +6129,7 @@ Pressure</text>
         <pv_name>$(ghe)PV604H:VLVstat</pv_name>
       </rule>
       <rule name="Pump Off" prop_id="background_color" out_exp="false">
-        <exp bool_exp="pv0&gt;=14.5 &amp; pv1=0">
+        <exp bool_exp="(pv0&gt;=14.5) &amp;&amp; (pv1==0)">
           <value>
             <color name="Off" red="60" green="100" blue="60">
             </color>

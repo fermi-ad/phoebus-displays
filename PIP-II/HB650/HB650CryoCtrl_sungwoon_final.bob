@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2024-05-06 06:55:19 by epics-->
+<!--Saved on 2024-05-22 17:59:24 by epics-->
 <display version="2.0.0">
   <name>HB650-$(cm) Cryogenics Control</name>
   <width>2110</width>
@@ -2857,7 +2857,7 @@ Pressure</text>
   <widget type="label" version="2.0.0">
     <name>Label_66</name>
     <text>Pumping</text>
-    <x>1329</x>
+    <x>1330</x>
     <y>740</y>
     <width>60</width>
     <background_color>
@@ -5527,6 +5527,22 @@ Stack</text>
     <width>1300</width>
     <height>40</height>
   </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_31</name>
+    <actions>
+      <action type="open_display">
+        <file>HB650Cryo_HeatLoadCalcs.bob</file>
+        <target>window</target>
+        <description>Heat Load Calculations</description>
+      </action>
+    </actions>
+    <text>HeatLoad Calculations</text>
+    <x>1040</x>
+    <y>900</y>
+    <width>160</width>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
   <widget type="ellipse" version="2.0.0">
     <name>Ellipse</name>
     <x>1305</x>
@@ -5544,17 +5560,17 @@ Stack</text>
     </background_color>
     <rules>
       <rule name="Pump On" prop_id="background_color" out_exp="false">
-        <exp bool_exp="pv0&lt;14.5 &amp; pv1=1">
+        <exp bool_exp="(pv0&lt;24.0) &amp;&amp; (pv1==1)">
           <value>
             <color name="On" red="0" green="255" blue="0">
             </color>
           </value>
         </exp>
-        <pv_name>$(ghe)PT042:GHeP</pv_name>
+        <pv_name>$(ghe)PT041:GHeP</pv_name>
         <pv_name>$(ghe)PV604H:VLVstat</pv_name>
       </rule>
       <rule name="Pump Off" prop_id="background_color" out_exp="false">
-        <exp bool_exp="pv0&gt;=14.5 &amp; pv1=0">
+        <exp bool_exp="(pv0&lt;24.0) &amp;&amp; (pv1==1)">
           <value>
             <color name="Off" red="60" green="100" blue="60">
             </color>
