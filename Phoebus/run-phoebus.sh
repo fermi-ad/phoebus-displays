@@ -4,8 +4,7 @@
 TOP="/usr/local/epics/phoebus-fnal"
 EPICS_CONFIG="/usr/local/epics/Config"
 
-#export JAVA_HOME=/usr/local/jdk-13.0.2
-export JAVA_HOME=/usr/lib/jvm/jre-openjdk/
+export JAVA_HOME=/usr/lib/jvm/jre-21-openjdk
 export PATH="$JAVA_HOME/bin:$PATH"
 #export EPICS_CA_ADDR_LIST="${EPICS_CA_ADDR_LIST} 131.225.120.160:6721 131.225.120.160:6722 131.225.120.160:6723" Temporary
 export EPICS_CA_ADDR_LIST="${EPICS_CA_ADDR_LIST} 131.225.120.160:6721 131.225.120.160:6722 131.225.120.160:6723 131.225.120.164"
@@ -34,8 +33,9 @@ OPT=""
 
 JDK_JAVA_OPTIONS=" -DCA_DISABLE_REPEATER=true"
 JDK_JAVA_OPTIONS="$JDK_JAVA_OPTIONS -Dnashorn.args=--no-deprecation-warning"
-JDK_JAVA_OPTIONS="$JDK_JAVA_OPTIONS -Djdk.gtk.verbose=false -Djdk.gtk.version=2 -Dprism.forceGPU=true"
-JDK_JAVA_OPTIONS="$JDK_JAVA_OPTIONS -Dlogback.configurationFile=/home/train/epics-tools/setup/settings/logback.xml"
+JDK_JAVA_OPTIONS="$JDK_JAVA_OPTIONS -Darch=`uname -i`"
+JDK_JAVA_OPTIONS="$JDK_JAVA_OPTIONS -Djdk.gtk.verbose=true -Djdk.gtk.version=2 -Dprism.forceGPU=false"
+JDK_JAVA_OPTIONS="$JDK_JAVA_OPTIONS -Dlogback.configurationFile=${TOP}/config/logback.xml"
 JDK_JAVA_OPTIONS="$JDK_JAVA_OPTIONS -Dorg.csstudio.javafx.rtplot.update_counter=false"
 JDK_JAVA_OPTIONS="$JDK_JAVA_OPTIONS -Dfile.encoding=UTF-8"
 export JDK_JAVA_OPTIONS
