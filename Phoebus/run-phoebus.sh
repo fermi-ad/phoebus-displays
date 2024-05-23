@@ -12,11 +12,11 @@ export EPICS_CA_ADDR_LIST="${EPICS_CA_ADDR_LIST} 131.225.120.160:6721 131.225.12
 echo $TOP
 #V="4.6.6-SNAPSHOT"
 #V="4.7.2-SNAPSHOT"
-V="4.7.3-SNAPSHOT"
+#V="4.7.3-SNAPSHOT"
 
 # figure out the path to the product jar
 if [[ -z "${PHOEBUS_JAR}" ]]; then
-  PHOEBUS_JAR=${TOP}/product-fnal/target/fnal-product-${V}.jar
+  PHOEBUS_JAR=${TOP}/product-fnal/target/fnal-product-*.jar
 fi
 
 # figure out the path to the configuration settings
