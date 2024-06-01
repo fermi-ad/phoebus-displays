@@ -1,0 +1,69 @@
+#!/bin/bash
+# example create plot files for 2 x ACQ435-32:
+
+usage() {
+	hn=${1:-acq1001_041}
+	site=${2:-1}
+
+cat - <<EOF
+# usage ./scripts/make-ch-plot HOST SITE CH01
+# examples
+./scripts/make-ch-plt $hn $site 1
+./scripts/make-ch-plt $hn $site 9
+./scripts/make-ch-plt $hn $site 17
+./scripts/make-ch-plt $hn $site 25
+
+# hint: to get rapid plot commands, try something like this
+# ./scripts/make-ch-plt acq1001_042 2 -h
+# then paste the examples into the shell
+EOF
+	exit 1
+}
+
+TP=./opi/acq1001_041_1_AI_CH_template.plt
+
+HN0=acq1001_041
+S0=1
+C01=1
+
+if [ "x$1" = "x-h" -o "x$1" = "x--help" ]; then
+	usage	
+fi
+HN1=${1:-acq1001_041}
+
+if [ "x$2" = "x-h" -o "x$2" = "x--help" ]; then
+	usage $HN1
+fi
+S1=${2:-2}
+
+if [ "x$3" = "x-h" -o "x$3" = "x--help" ]; then
+	usage $HN1 $S1
+fi
+
+C11=${3:-1}
+C12=$4
+
+[ "x$C12" = "x" ] && let C12=$C11+7
+
+l0() {
+	printf "%02d" $1
+}
+
+mkdir -p PLOTS
+OP=PLOTS/${HN1}_${S1}_$(l0 $C11)_$(l0 $C12).plt
+echo creating $OP
+
+sed -e s/$HN0/$HN1/g -e s/:${S0}:AI/:${S1}:AI/g <$TP >$OP.tmp
+
+let ic=0
+while [ $ic -lt 8 ]; do
+	let c0x=$C01+$ic
+	let c1x=$C11+$ic
+	sed -e s/CH:$(l0 $c0x)/CH:$(l0 $c1x)/g <$OP.tmp > $OP.tmp2
+	mv $OP.tmp2 $OP.tmp
+	let ic=$ic+1
+done
+
+mv $OP.tmp $OP
+
+

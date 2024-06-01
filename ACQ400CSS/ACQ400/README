@@ -1,0 +1,49 @@
+CSS GUI control for ACQ400 series
+
+CSS opens by default in edit mode. 
+You can set it to open in run mode every time:
+
+Edit|Preferences..
+CSS Applications|Display|BOY
+set Top OPIs "/ACQ400_LAUNCHER.opi"
+
+
+PLEASE: ALWAYS USE THE LAUNCHER!
+DO NOT RUN OPI's direct!
+
+- ACQ400_LAUNCHER.opi : is the generic launcher with ALL available OPI's.
+
+- Simplified, application-specific launchers are available, eg
+
+acq1014_launcher.opi
+acq480_launcher.opi
+lia5_launcher.opi
+lia_complex_launcher_acq420.opi
+lia_complex_launcher.opi
+LPSC_LAUNCHER.opi
+pbn_launcher.opi
+QEN_launcher.opi
+tricontrol.opi
+zc706_test_launcher.opi
+
+
+Creating Custom Strip Chart Plots:
+To plot AI PV's on a strip chart:
+
+Simplest Way:
+- pick a plot from ./PLOTS/*.plt that's close to what you want.
+eg ./PLOTS/acq1001_131.plt is a good general purpose plot CH01-CH08,
+create for acq1001_135:
+- run ./scripts/sub-host-plot ./PLOTS/acq1001_131.plt ./PLOTS/acq1001_135.plt
+- now use ./PLOTS/acq1001_135.plt
+
+More general way:
+- run ./scripts/make-ch-plot -h, pick from options ..
+
+Open ./PLOTS/*.plt from the CSS Data Browser Navigator
+NB: you can drag the plot window into "open space" on the desktop for a free-standing plot.
+
+
+
+
+
