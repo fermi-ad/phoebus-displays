@@ -1,0 +1,13 @@
+#!/bin/sh
+# sub-host-plt : change the host name from $1 to $2
+
+if [ ! -e $1 ]; then
+	echo usage sub-host-plt FROMFILE TOFILE
+fi
+
+from=$(basename $1)
+hn1=${from%.*}
+to=$(basename $2)
+hn2=${to%.*}
+
+sed -e "s/$hn1/$hn2/g" <$1 >$2

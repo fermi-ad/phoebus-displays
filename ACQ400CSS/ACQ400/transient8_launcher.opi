@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display typeId="org.csstudio.opibuilder.Display" version="1.0.0">
+  <actions hook="false" hook_all="false" />
+  <auto_scale_widgets>
+    <auto_scale_widgets>false</auto_scale_widgets>
+    <min_width>-1</min_width>
+    <min_height>-1</min_height>
+  </auto_scale_widgets>
+  <auto_zoom_to_fit_all>false</auto_zoom_to_fit_all>
+  <background_color>
+    <color red="240" green="240" blue="240" />
+  </background_color>
+  <boy_version>5.1.0</boy_version>
+  <foreground_color>
+    <color red="192" green="192" blue="192" />
+  </foreground_color>
+  <grid_space>6</grid_space>
+  <height>600</height>
+  <macros>
+    <include_parent_macros>true</include_parent_macros>
+  </macros>
+  <name></name>
+  <rules />
+  <scripts />
+  <show_close_button>true</show_close_button>
+  <show_edit_range>true</show_edit_range>
+  <show_grid>true</show_grid>
+  <show_ruler>true</show_ruler>
+  <snap_to_geometry>true</snap_to_geometry>
+  <widget_type>Display</widget_type>
+  <width>800</width>
+  <wuid>-519a9143:166f2f294de:1072</wuid>
+  <x>-1</x>
+  <y>-1</y>
+  <widget typeId="org.csstudio.opibuilder.widgets.ActionButton" version="2.0.0">
+    <actions hook="false" hook_all="true">
+      <action type="WRITE_PV">
+        <pv_name>$(pv_name)</pv_name>
+        <value>1</value>
+        <timeout>10</timeout>
+        <confirm_message></confirm_message>
+        <description></description>
+      </action>
+      <action type="EXECUTE_JAVASCRIPT">
+        <path>scripts/closeOpi.js</path>
+        <scriptText><![CDATA[importPackage(Packages.org.csstudio.opibuilder.scriptUtil);
+]]></scriptText>
+        <embedded>false</embedded>
+        <description></description>
+      </action>
+    </actions>
+    <alarm_pulsing>false</alarm_pulsing>
+    <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+    <background_color>
+      <color red="240" green="240" blue="240" />
+    </background_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <border_style>0</border_style>
+    <border_width>1</border_width>
+    <enabled>true</enabled>
+    <font>
+      <opifont.name fontName="Noto Sans" height="11" style="1" pixels="false">Header 3</opifont.name>
+    </font>
+    <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <height>73</height>
+    <image></image>
+    <name>transient_state_8</name>
+    <push_action_index>0</push_action_index>
+    <pv_name>loc://ss8(0)</pv_name>
+    <pv_value />
+    <rules />
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <scripts>
+      <path pathString="scripts/LaunchOpi.js" checkConnect="true" sfe="false" seoe="false">
+        <pv trig="false">loc://UUT("${UUT}")</pv>
+        <pv trig="false">loc://SITE(1)</pv>
+        <pv trig="true">loc://ss8</pv>
+      </path>
+    </scripts>
+    <style>0</style>
+    <text>Launch..</text>
+    <toggle_button>false</toggle_button>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    <visible>true</visible>
+    <widget_type>Action Button</widget_type>
+    <width>175</width>
+    <wuid>-519a9143:166f2f294de:1187</wuid>
+    <x>606</x>
+    <y>90</y>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <actions hook="false" hook_all="false" />
+    <auto_size>false</auto_size>
+    <background_color>
+      <color red="255" green="255" blue="255" />
+    </background_color>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <border_style>0</border_style>
+    <border_width>1</border_width>
+    <enabled>true</enabled>
+    <font>
+      <opifont.name fontName="Noto Sans" height="9" style="0" pixels="false">Default</opifont.name>
+    </font>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <height>91</height>
+    <horizontal_alignment>1</horizontal_alignment>
+    <name>Label</name>
+    <rules />
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <scripts />
+    <text>MACROS: 
+Check the list below to see that all macros are defined.
+If a macro is NOT defined, please define it from 
+Edit!Preferences!CSS Applications!Display!BOY!OPI Runtime</text>
+    <tooltip></tooltip>
+    <transparent>true</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <visible>true</visible>
+    <widget_type>Label</widget_type>
+    <width>571</width>
+    <wrap_words>false</wrap_words>
+    <wuid>-519a9143:166f2f294de:1631</wuid>
+    <x>6</x>
+    <y>72</y>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.table" version="1.0.0">
+    <actions hook="false" hook_all="false" />
+    <background_color>
+      <color red="240" green="240" blue="240" />
+    </background_color>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <border_style>0</border_style>
+    <border_width>1</border_width>
+    <column_header_visible>true</column_header_visible>
+    <column_headers />
+    <columns_count>2</columns_count>
+    <default_content>
+      <row>
+        <col>UUT1</col>
+        <col>${UUT1}</col>
+      </row>
+      <row>
+        <col>UUT2</col>
+        <col>${UUT2}</col>
+      </row>
+      <row>
+        <col>UUT3</col>
+        <col>${UUT3}</col>
+      </row>
+      <row>
+        <col>UUT4</col>
+        <col>${UUT4}</col>
+      </row>
+      <row>
+        <col>UUT5</col>
+        <col>${UUT5}</col>
+      </row>
+      <row>
+        <col>UUT6</col>
+        <col>${UUT6}</col>
+      </row>
+      <row>
+        <col>UUT7</col>
+        <col>${UUT7}</col>
+      </row>
+      <row>
+        <col>UUT8</col>
+        <col>${UUT8}</col>
+      </row>
+      <row>
+        <col>SUDO</col>
+        <col>${SUDO}</col>
+      </row>
+      <row>
+        <col>SECS</col>
+        <col>${SECS}</col>
+      </row>
+      <row>
+        <col>HAPIDIR</col>
+        <col>${HAPIDIR}</col>
+      </row>
+      <row>
+        <col>ETRG</col>
+        <col>${ETRG}</col>
+      </row>
+      <row>
+        <col>FCLK</col>
+        <col>${FCLK}</col>
+      </row>
+      <row>
+        <col>STORE</col>
+        <col>${STORE}</col>
+      </row>
+      <row>
+        <col>RUNCMD_ACQ1014</col>
+        <col>user_apps/acq1014/acq1014_caploop.py --shots=1</col>
+      </row>
+      <row>
+        <col>RUNCMD_GENERAL</col>
+        <col>user_apps/acq400/acq400_capture.py</col>
+      </row>
+      <row>
+        <col>RUNCMD</col>
+        <col>${RUNCMD}</col>
+      </row>
+      <row>
+        <col>TRANSCMD_ACQ1014</col>
+        <col>user_apps/acq1014/acq1014_configure_transient.py</col>
+      </row>
+      <row>
+        <col>TRANSCMD_GENERAL</col>
+        <col>user_apps/acq400/acq400_configure_transient.py</col>
+      </row>
+      <row>
+        <col>TRANSCMD</col>
+        <col>${TRANSCMD}</col>
+      </row>
+      <row>
+        <col>DATADIR</col>
+        <col>${DATADIR}</col>
+      </row>
+      <row>
+        <col>CAPOPI_GENERAL</col>
+        <col>capture</col>
+      </row>
+      <row>
+        <col>CAPOPI_ACQ1014</col>
+        <col>acq1014_capture</col>
+      </row>
+      <row>
+        <col>CAPOPI</col>
+        <col>${CAPOPI}</col>
+      </row>
+      <row>
+        <col>LAUNCHOPI</col>
+        <col>${LAUNCHOPI}</col>
+      </row>
+      <row>
+        <col>TRG</col>
+        <col>${TRG}</col>
+      </row>
+      <row>
+        <col>AI</col>
+        <col>${AI}</col>
+      </row>
+    </default_content>
+    <editable>false</editable>
+    <enabled>true</enabled>
+    <font>
+      <opifont.name fontName="Noto Sans" height="9" style="0" pixels="false">Default</opifont.name>
+    </font>
+    <foreground_color>
+      <color red="192" green="192" blue="192" />
+    </foreground_color>
+    <height>685</height>
+    <name>Table</name>
+    <rules />
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <scripts />
+    <tooltip></tooltip>
+    <visible>true</visible>
+    <widget_type>Table</widget_type>
+    <width>466</width>
+    <wuid>-519a9143:166f2f294de:16b6</wuid>
+    <x>81</x>
+    <y>162</y>
+  </widget>
+</display>
