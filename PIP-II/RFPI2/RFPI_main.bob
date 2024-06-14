@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2024-06-14 08:35:10 by epics-->
+<display version="2.0.0">
+  <name>RFPI Management Main</name>
+  <macros>
+    <acc>PIP2IT</acc>
+    <group>RFPI</group>
+    <num>MAIN</num>
+    <num_gen>ina</num_gen>
+    <sys>pHB650</sys>
+  </macros>
+  <width>980</width>
+  <height>1380</height>
+  <widget type="rectangle" version="2.0.0">
+    <name>Titlebar</name>
+    <class>TITLE-BAR</class>
+    <width>980</width>
+    <height>50</height>
+    <line_width>0</line_width>
+    <background_color>
+      <color name="PRIMARY-HEADER-BACKGROUND" red="151" green="188" blue="202">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Title</name>
+    <class>TITLE</class>
+    <text>RFPI Management</text>
+    <x use_class="true">0</x>
+    <y use_class="true">0</y>
+    <width>280</width>
+    <height>50</height>
+    <font use_class="true">
+      <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <foreground_color use_class="true">
+      <color name="Text" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <transparent use_class="true">true</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>PowerSupply_group</name>
+    <x>150</x>
+    <y>70</y>
+    <width>660</width>
+    <height>170</height>
+    <style>3</style>
+    <background_color>
+      <color name="BACKGROUND" red="220" green="225" blue="221">
+      </color>
+    </background_color>
+    <widget type="rectangle" version="2.0.0">
+      <name>PowerSupply_background</name>
+      <width>660</width>
+      <height>170</height>
+      <line_width>2</line_width>
+      <line_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="GROUP-BACKGROUND" red="200" green="205" blue="201">
+        </color>
+      </background_color>
+      <corner_width>10</corner_width>
+      <corner_height>10</corner_height>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>PowerSupply_title</name>
+      <class>HEADER2</class>
+      <text>Power Supply</text>
+      <width>660</width>
+      <height>40</height>
+      <font>
+        <font name="Header 2" family="Liberation Sans" style="BOLD" size="18.0">
+        </font>
+      </font>
+      <background_color>
+        <color name="RED-BORDER" red="150" green="8" blue="16">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="rectangle" version="2.0.0">
+      <name>Management_background</name>
+      <x>30</x>
+      <y>50</y>
+      <width>600</width>
+      <height>100</height>
+      <line_width>2</line_width>
+      <line_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="BACKGROUND" red="220" green="225" blue="221">
+        </color>
+      </background_color>
+      <corner_width>5</corner_width>
+      <corner_height>5</corner_height>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>Status_LED</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num_gen):PowerSeq_r</pv_name>
+      <x>100</x>
+      <y>100</y>
+      <width>30</width>
+      <height>30</height>
+      <states>
+        <state>
+          <value>0</value>
+          <label></label>
+          <color>
+            <color name="ON" red="70" green="255" blue="70">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>1</value>
+          <label></label>
+          <color>
+            <color name="MINOR" red="255" green="128" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>2</value>
+          <label></label>
+          <color>
+            <color name="ERROR" red="252" green="13" blue="27">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label></fallback_label>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>On_button</name>
+      <actions>
+        <action type="write_pv">
+          <pv_name>$(pv_name)</pv_name>
+          <value>1</value>
+          <description>WritePV</description>
+        </action>
+      </actions>
+      <pv_name>$(acc):$(sys)_$(group)_$(num_gen):Power_s</pv_name>
+      <text>ON</text>
+      <x>440</x>
+      <y>100</y>
+      <width>80</width>
+      <font>
+        <font family="Source Sans Pro" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <tooltip>$(actions)</tooltip>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Off_button</name>
+      <actions>
+        <action type="write_pv">
+          <pv_name>$(pv_name)</pv_name>
+          <value>0</value>
+          <description>WritePV</description>
+        </action>
+      </actions>
+      <pv_name>$(acc):$(sys)_$(group)_$(num_gen):Power_s</pv_name>
+      <text>OFF</text>
+      <x>530</x>
+      <y>100</y>
+      <width>80</width>
+      <font>
+        <font family="Source Sans Pro" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <tooltip>$(actions)</tooltip>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Status_update</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num_gen):PowerSeq_r</pv_name>
+      <x>150</x>
+      <y>100</y>
+      <width>200</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Status_label</name>
+      <text>Status:</text>
+      <x>40</x>
+      <y>100</y>
+      <width>50</width>
+      <height>30</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Management_title</name>
+      <class>HEADER3</class>
+      <text>Management</text>
+      <x>30</x>
+      <y>50</y>
+      <width>600</width>
+      <height>40</height>
+      <font>
+        <font name="Header 3" family="Liberation Sans" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <background_color>
+        <color name="RED-BORDER" red="150" green="8" blue="16">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Power_label</name>
+      <text>Power:</text>
+      <x>380</x>
+      <y>100</y>
+      <width>50</width>
+      <height>30</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>INTER_display</name>
+    <macros>
+      <SLOT>INTER</SLOT>
+    </macros>
+    <file>templates/board.bob</file>
+    <x>20</x>
+    <y>260</y>
+    <width>220</width>
+    <height>510</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>TOP0_display</name>
+    <macros>
+      <SLOT>TOP0</SLOT>
+    </macros>
+    <file>templates/board.bob</file>
+    <x>260</x>
+    <y>260</y>
+    <width>220</width>
+    <height>510</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>TOP1_display</name>
+    <macros>
+      <SLOT>TOP1</SLOT>
+    </macros>
+    <file>templates/board.bob</file>
+    <x>500</x>
+    <y>260</y>
+    <width>220</width>
+    <height>510</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>BOT0_display</name>
+    <macros>
+      <SLOT>BOT0</SLOT>
+    </macros>
+    <file>templates/board.bob</file>
+    <x>260</x>
+    <y>790</y>
+    <width>220</width>
+    <height>510</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>BOT1_display</name>
+    <macros>
+      <SLOT>BOT1</SLOT>
+    </macros>
+    <file>templates/board.bob</file>
+    <x>500</x>
+    <y>790</y>
+    <width>220</width>
+    <height>510</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>BOT2_display</name>
+    <macros>
+      <SLOT>BOT2</SLOT>
+    </macros>
+    <file>templates/board.bob</file>
+    <x>740</x>
+    <y>790</y>
+    <width>220</width>
+    <height>510</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button</name>
+    <actions>
+      <action type="open_display">
+        <file>circuit/circuit.bob</file>
+        <target>tab</target>
+        <description>Open Display</description>
+      </action>
+    </actions>
+    <text>CS Circuits</text>
+    <x>860</x>
+    <y>1320</y>
+    <height>40</height>
+    <font>
+      <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Other_button</name>
+    <actions>
+      <action type="open_display">
+        <file>other/other.bob</file>
+        <target>tab</target>
+        <description>Open Display</description>
+      </action>
+    </actions>
+    <text>Other</text>
+    <x>740</x>
+    <y>1320</y>
+    <height>40</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>TOP2_display</name>
+    <macros>
+      <SLOT>TOP2</SLOT>
+    </macros>
+    <file>templates/board.bob</file>
+    <x>740</x>
+    <y>260</y>
+    <width>220</width>
+    <height>510</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>MAIN_display</name>
+    <macros>
+      <SLOT>MAIN</SLOT>
+    </macros>
+    <file>templates/board.bob</file>
+    <x>20</x>
+    <y>790</y>
+    <width>220</width>
+    <height>510</height>
+    <resize>2</resize>
+  </widget>
+</display>
