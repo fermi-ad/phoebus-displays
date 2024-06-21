@@ -1,0 +1,286 @@
+##### Board template #####
+
+record(stringin, "$(acc):$(sys)_$(group)_$(num):CurrentBoardName_r") {
+    field(DESC, "Name read from device")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT=1))$(num)_CURRENT_BOARD_NAME_R")
+    field(DTYP, "asynOctetRead")
+    field(SCAN, "I/O Intr")
+}
+
+record(stringin, "$(acc):$(sys)_$(group)_$(num):ExpBoardName_r") {
+    field(DESC, "Expected board name")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT=1))$(num)_EXPECTED_BOARD_NAME_R")
+    field(DTYP, "asynOctetRead")
+    field(SCAN, "I/O Intr")
+}
+
+record(ai, "$(acc):$(sys)_$(group)_$(num):Temperature_r") {
+    field(DESC, "Board temperature")
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT=1))$(num)_TEMPERATURE_R")
+    field(SCAN, "I/O Intr")
+    field(EGU,  "C")
+    field(PREC, "2")
+}
+
+record(ai, "$(acc):$(sys)_$(group)_$(num):VoltageCh1_r") {
+    field(DESC, "Board voltage chan1")
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT=1))$(num)_VOLTAGE_CH1_R")
+    field(SCAN, "I/O Intr")
+    field(EGU,  "V")
+    field(PREC, "2")
+    field(HHSV, "MAJOR")
+    field(HSV,  "MINOR")
+}
+
+record(ai, "$(acc):$(sys)_$(group)_$(num):VoltageCh2_r") {
+    field(DESC, "Board voltage chan2")
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT=1))$(num)_VOLTAGE_CH2_R")
+    field(SCAN, "I/O Intr")
+    field(EGU,  "V")
+    field(PREC, "2")
+    field(HHSV, "MAJOR")
+    field(HSV,  "MINOR")
+}
+
+record(ai, "$(acc):$(sys)_$(group)_$(num):VoltageCh3_r") {
+    field(DESC, "Board voltage chan3")
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT=1))$(num)_VOLTAGE_CH3_R")
+    field(SCAN, "I/O Intr")
+    field(EGU,  "V")
+    field(PREC, "2")
+    field(HHSV, "MAJOR")
+    field(HSV,  "MINOR")
+}
+
+record(ai, "$(acc):$(sys)_$(group)_$(num):CurrentCh1_r") {
+    field(DESC, "Board current chan1")
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT=1))$(num)_CURRENT_CH1_R")
+    field(SCAN, "I/O Intr")
+    field(EGU,  "A")
+    field(PREC, "2")
+    field(HHSV, "MAJOR")
+    field(HSV,  "MINOR")
+}
+
+record(ai, "$(acc):$(sys)_$(group)_$(num):CurrentCh2_r") {
+    field(DESC, "Board current chan2")
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT=1))$(num)_CURRENT_CH2_R")
+    field(SCAN, "I/O Intr")
+    field(EGU,  "A")
+    field(PREC, "2")
+    field(HHSV, "MAJOR")
+    field(HSV,  "MINOR")
+}
+
+record(ai, "$(acc):$(sys)_$(group)_$(num):CurrentCh3_r") {
+    field(DESC, "Board current chan3")
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT=1))$(num)_CURRENT_CH3_R")
+    field(SCAN, "I/O Intr")
+    field(EGU,  "A")
+    field(PREC, "2")
+    field(HHSV, "MAJOR")
+    field(HSV,  "MINOR")
+}
+
+record(bi, "$(acc):$(sys)_$(group)_$(num):Presence_r") {
+    field(DESC, "Board presence")
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT=1))$(num)_PRESENCE_R")
+    field(ZNAM, "Not detected")
+    field(ONAM, "Present")
+    field(SCAN, "I/O Intr")
+}
+
+record(bi, "$(acc):$(sys)_$(group)_$(num):Status_r") {
+    field(DESC, "Board status")
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT=1))$(num)_STATUS_R")
+    field(ZNAM, "Not OK")
+    field(ONAM, "OK")
+    field(SCAN, "I/O Intr")
+}
+
+record(mbbiDirect, "$(acc):$(sys)_$(group)_$(num):DetailedStatus_r") {
+    field(DESC, "Detailed status")
+    field(DTYP, "asynUInt32Digital")
+    field(INP,  "@asynMask($(PORT),$(ADDR),$(MASK=255),$(TIMEOUT=1))$(num)_DETAILED_STATUS_R")
+    field(NOBT, "8")
+    field(SCAN, "I/O Intr")
+}
+
+record(bi, "$(acc):$(sys)_$(group)_$(num):TypeOK_r") {
+    field(DESC, "If type board is ok")
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT=1))$(num)_TYPE_OK_R")
+    field(ZNAM, "Not OK")
+    field(ONAM, "OK")
+    field(SCAN, "I/O Intr")
+}
+
+record(bi, "$(acc):$(sys)_$(group)_$(num):VoltageOK_r") {
+    field(DESC, "If voltage is ok")
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT=1))$(num)_VOLTAGE_OK_R")
+    field(ZNAM, "Not OK")
+    field(ONAM, "OK")
+    field(SCAN, "I/O Intr")
+}
+
+record(bi, "$(acc):$(sys)_$(group)_$(num):CurrentOK_r") {
+    field(DESC, "If current is ok")
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT=1))$(num)_CURRENT_OK_R")
+    field(ZNAM, "Not OK")
+    field(ONAM, "OK")
+    field(SCAN, "I/O Intr")
+}
+
+# current, voltage and temp is ok or not
+record(bi, "$(acc):$(sys)_$(group)_$(num):Health_r") {
+    field(DESC, "If health is ok")
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT=1))$(num)_HEALTH_R")
+    field(ZNAM, "Not OK")
+    field(ONAM, "OK")
+    field(SCAN, "I/O Intr")
+}
+
+# current setpoints
+record(ao, "$(acc):$(sys)_$(group)_$(num):CurrentWarnCh1_s") {
+    field(DESC, "Set ch1 current warn level")
+    field(DTYP, "asynFloat64")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT=1))$(num)_CURRENT_WARN_CH1_S")
+    field(EGU,  "A")
+    field(PREC, "2")
+} 
+
+record(ao, "$(acc):$(sys)_$(group)_$(num):CurrentWarnCh2_s") {
+    field(DESC, "Set ch2 current warn level")
+    field(DTYP, "asynFloat64")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT=1))$(num)_CURRENT_WARN_CH2_S")
+    field(EGU,  "A")
+    field(PREC, "2")
+} 
+
+record(ao, "$(acc):$(sys)_$(group)_$(num):CurrentWarnCh3_s") {
+    field(DESC, "Set ch3 current warn level")
+    field(DTYP, "asynFloat64")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT=1))$(num)_CURRENT_WARN_CH3_S")
+    field(EGU,  "A")
+    field(PREC, "2")
+} 
+
+record(ao, "$(acc):$(sys)_$(group)_$(num):CurrentCritCh1_s") {
+    field(DESC, "Set ch1 current crit level")
+    field(DTYP, "asynFloat64")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT=1))$(num)_CURRENT_CRIT_CH1_S")
+    field(EGU,  "A")
+    field(PREC, "2")
+} 
+
+record(ao, "$(acc):$(sys)_$(group)_$(num):CurrentCritCh2_s") {
+    field(DESC, "Set ch2 current crit level")
+    field(DTYP, "asynFloat64")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT=1))$(num)_CURRENT_CRIT_CH2_S")
+    field(EGU,  "A")
+    field(PREC, "2")
+} 
+
+record(ao, "$(acc):$(sys)_$(group)_$(num):CurrentCritCh3_s") {
+    field(DESC, "Set ch3 current crit level")
+    field(DTYP, "asynFloat64")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT=1))$(num)_CURRENT_CRIT_CH3_S")
+    field(EGU,  "A")
+    field(PREC, "2")
+} 
+
+record(ao, "$(acc):$(sys)_$(group)_$(num):iPassHighLimitCurrCh1") {
+    field(DESC, "Pass warn value to high field")
+    field(DOL,  "$(acc):$(sys)_$(group)_$(num):CurrentWarnCh1_s CP")
+    field(OMSL, "closed_loop")
+    field(OUT,  "$(acc):$(sys)_$(group)_$(num):CurrentCh1_r.HIGH PP")
+}
+
+record(ao, "$(acc):$(sys)_$(group)_$(num):iPassHighLimitCurrCh2") {
+    field(DESC, "Pass warn value to high field")
+    field(DOL,  "$(acc):$(sys)_$(group)_$(num):CurrentWarnCh2_s CP")
+    field(OMSL, "closed_loop")
+    field(OUT,  "$(acc):$(sys)_$(group)_$(num):CurrentCh2_r.HIGH PP")
+}
+
+record(ao, "$(acc):$(sys)_$(group)_$(num):iPassHighLimitCurrCh3") {
+    field(DESC, "Pass warn value to high field")
+    field(DOL,  "$(acc):$(sys)_$(group)_$(num):CurrentWarnCh3_s CP")
+    field(OMSL, "closed_loop")
+    field(OUT,  "$(acc):$(sys)_$(group)_$(num):CurrentCh3_r.HIGH PP")
+}
+
+record(ao, "$(acc):$(sys)_$(group)_$(num):iPassHiHiLimitCurrCh1") {
+    field(DESC, "Pass crit value to hihi field")
+    field(DOL,  "$(acc):$(sys)_$(group)_$(num):CurrentCritCh1_s CP")
+    field(OMSL, "closed_loop")
+    field(OUT,  "$(acc):$(sys)_$(group)_$(num):CurrentCh1_r.HIHI PP")
+}
+
+record(ao, "$(acc):$(sys)_$(group)_$(num):iPassHiHiLimitCurrCh2") {
+    field(DESC, "Pass crit value to hihi field")
+    field(DOL,  "$(acc):$(sys)_$(group)_$(num):CurrentCritCh2_s CP")
+    field(OMSL, "closed_loop")
+    field(OUT,  "$(acc):$(sys)_$(group)_$(num):CurrentCh2_r.HIHI PP")
+}
+
+record(ao, "$(acc):$(sys)_$(group)_$(num):iPassHiHiLimitCurrCh3") {
+    field(DESC, "Pass crit value to hihi field")
+    field(DOL,  "$(acc):$(sys)_$(group)_$(num):CurrentCritCh3_s CP")
+    field(OMSL, "closed_loop")
+    field(OUT,  "$(acc):$(sys)_$(group)_$(num):CurrentCh3_r.HIHI PP")
+}
+
+# voltage setpoints
+record(ao, "$(acc):$(sys)_$(group)_$(num):VoltageLow_s") {
+    field(DESC, "Set voltage low level")
+    field(DTYP, "asynFloat64")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT=1))$(num)_VOLTAGE_LOW_S")
+    field(EGU,  "V")
+    field(PREC, "2")
+} 
+
+record(ao, "$(acc):$(sys)_$(group)_$(num):VoltageHigh_s") {
+    field(DESC, "Set voltage high level")
+    field(DTYP, "asynFloat64")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT=1))$(num)_VOLTAGE_HIGH_S")
+    field(EGU,  "V")
+    field(PREC, "2")
+}
+
+# slot alarms
+record(bi, "$(acc):$(sys)_$(group)_$(num):InaEvent_r") {
+    field(DESC, "Slot ina event")
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT=1))$(num)_INA_EVENT_R")
+    field(ZNAM, "No event")
+    field(ONAM, "Triggered")
+    field(SCAN, "I/O Intr")
+}
+
+record(bi, "$(acc):$(sys)_$(group)_$(num):PowerEvent_r") {
+    field(DESC, "Slot power event")
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT=1))$(num)_POWER_EVENT_R")
+    field(ZNAM, "No event")
+    field(ONAM, "Triggered")
+    field(SCAN, "I/O Intr")
+}
+
+record(bo, "$(acc):$(sys)_$(group)_$(num):AckEvent_s") {
+    field(DESC, "Clear events")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT=1))$(num)_ACK_EVENT_S")
+} 

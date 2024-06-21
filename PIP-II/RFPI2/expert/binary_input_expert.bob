@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2023-08-10 11:22:31 by kacpe-->
+<display version="2.0.0">
+  <name>$(CHANNEL_NAME) Expert</name>
+  <width>980</width>
+  <height>630</height>
+  <widget type="rectangle" version="2.0.0">
+    <name>Titlebar</name>
+    <class>TITLE-BAR</class>
+    <x use_class="true">0</x>
+    <y use_class="true">0</y>
+    <width>980</width>
+    <height use_class="true">50</height>
+    <line_width use_class="true">0</line_width>
+    <background_color use_class="true">
+      <color name="PRIMARY-HEADER-BACKGROUND" red="151" green="188" blue="202">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Title</name>
+    <class>TITLE</class>
+    <text>RFPI PoC</text>
+    <x use_class="true">20</x>
+    <y use_class="true">0</y>
+    <width>150</width>
+    <height use_class="true">50</height>
+    <font use_class="true">
+      <font name="Header 1" family="Source Sans Pro" style="BOLD_ITALIC" size="36.0">
+      </font>
+    </font>
+    <foreground_color use_class="true">
+      <color name="HEADER-TEXT" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <transparent use_class="true">true</transparent>
+    <horizontal_alignment use_class="true">0</horizontal_alignment>
+    <vertical_alignment use_class="true">1</vertical_alignment>
+    <wrap_words use_class="true">false</wrap_words>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Subtitle</name>
+    <class>SUBTITLE</class>
+    <text>$(CHANNEL_NAME) Expert</text>
+    <x>630</x>
+    <y use_class="true">20</y>
+    <width>330</width>
+    <height use_class="true">30</height>
+    <font use_class="true">
+      <font name="Header 2" family="Source Sans Pro" style="BOLD_ITALIC" size="21.0">
+      </font>
+    </font>
+    <foreground_color use_class="true">
+      <color name="HEADER-TEXT" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <horizontal_alignment use_class="true">2</horizontal_alignment>
+    <vertical_alignment use_class="true">2</vertical_alignment>
+    <wrap_words use_class="true">false</wrap_words>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Status_group</name>
+    <x>20</x>
+    <y>70</y>
+    <width>680</width>
+    <height>100</height>
+    <style>3</style>
+    <background_color>
+      <color name="BACKGROUND" red="220" green="225" blue="221">
+      </color>
+    </background_color>
+    <widget type="rectangle" version="2.0.0">
+      <name>Status_rectangle</name>
+      <width>680</width>
+      <height>100</height>
+      <line_width>2</line_width>
+      <line_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="GROUP-BACKGROUND" red="200" green="205" blue="201">
+        </color>
+      </background_color>
+      <corner_width>10</corner_width>
+      <corner_height>10</corner_height>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Status_title</name>
+      <class>HEADER2</class>
+      <text>Status</text>
+      <width>690</width>
+      <height>40</height>
+      <font use_class="true">
+        <font name="Header 2" family="Source Sans Pro" style="BOLD_ITALIC" size="21.0">
+        </font>
+      </font>
+      <background_color>
+        <color name="RED-BORDER" red="150" green="8" blue="16">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Reset_button</name>
+      <actions>
+        <action type="write_pv">
+          <pv_name>$(pv_name)</pv_name>
+          <value>1</value>
+          <description>WritePV</description>
+        </action>
+      </actions>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):Reset_s</pv_name>
+      <text>Reset</text>
+      <x>70</x>
+      <y>50</y>
+      <width>110</width>
+      <tooltip>$(actions)</tooltip>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>Status_LED</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):Status_r</pv_name>
+      <x>20</x>
+      <y>50</y>
+      <width>30</width>
+      <height>30</height>
+      <states>
+        <state>
+          <value>0</value>
+          <label></label>
+          <color>
+            <color name="ON" red="70" green="255" blue="70">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>1</value>
+          <label></label>
+          <color>
+            <color name="MAJOR" red="252" green="13" blue="27">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>2</value>
+          <label></label>
+          <color>
+            <color name="WARNING" red="252" green="242" blue="17">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label></fallback_label>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LatchedStatus_LED</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):LatchStatus_r</pv_name>
+      <x>400</x>
+      <y>50</y>
+      <width>30</width>
+      <height>30</height>
+      <off_color>
+        <color name="ON" red="70" green="255" blue="70">
+        </color>
+      </off_color>
+      <on_color>
+        <color name="MAJOR" red="252" green="13" blue="27">
+        </color>
+      </on_color>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>CurrentStatus_LED</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):CurrentStatus_r</pv_name>
+      <x>280</x>
+      <y>50</y>
+      <width>30</width>
+      <height>30</height>
+      <off_color>
+        <color name="ON" red="70" green="255" blue="70">
+        </color>
+      </off_color>
+      <on_color>
+        <color name="MAJOR" red="252" green="13" blue="27">
+        </color>
+      </on_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>CurrentStatus_label</name>
+      <text>Current:</text>
+      <x>210</x>
+      <y>50</y>
+      <width>60</width>
+      <height>30</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>LatchedStatus_label</name>
+      <text>Latched:</text>
+      <x>330</x>
+      <y>50</y>
+      <width>60</width>
+      <height>30</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label</name>
+      <text>Timestamp:</text>
+      <x>440</x>
+      <y>50</y>
+      <width>90</width>
+      <height>30</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Timestamps_update</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):Timestamp_r</pv_name>
+      <x>540</x>
+      <y>50</y>
+      <width>120</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Plot_group</name>
+    <x>20</x>
+    <y>190</y>
+    <width>940</width>
+    <height>420</height>
+    <style>3</style>
+    <background_color>
+      <color name="BACKGROUND" red="220" green="225" blue="221">
+      </color>
+    </background_color>
+    <widget type="rectangle" version="2.0.0">
+      <name>Plot_rectangle</name>
+      <width>940</width>
+      <height>420</height>
+      <line_width>2</line_width>
+      <line_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="BACKGROUND" red="220" green="225" blue="221">
+        </color>
+      </background_color>
+      <corner_width>10</corner_width>
+      <corner_height>10</corner_height>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Plot_title</name>
+      <class>HEADER2</class>
+      <text>Plot</text>
+      <width>940</width>
+      <height>40</height>
+      <font use_class="true">
+        <font name="Header 2" family="Source Sans Pro" style="BOLD_ITALIC" size="21.0">
+        </font>
+      </font>
+      <background_color>
+        <color name="RED-BORDER" red="150" green="8" blue="16">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="databrowser" version="2.0.0">
+      <name>Data Browser</name>
+      <file>../plots/$(NAME)Status_r.plt</file>
+      <x>20</x>
+      <y>50</y>
+      <width>900</width>
+      <height>350</height>
+      <selection_value_pv>$(P)$(R)$(NAME)Status_r</selection_value_pv>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Masking_group</name>
+    <x>720</x>
+    <y>70</y>
+    <width>240</width>
+    <height>100</height>
+    <style>3</style>
+    <background_color>
+      <color name="BACKGROUND" red="220" green="225" blue="221">
+      </color>
+    </background_color>
+    <widget type="rectangle" version="2.0.0">
+      <name>Masking_rectangle</name>
+      <width>240</width>
+      <height>100</height>
+      <line_width>2</line_width>
+      <line_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="GROUP-BACKGROUND" red="200" green="205" blue="201">
+        </color>
+      </background_color>
+      <corner_width>10</corner_width>
+      <corner_height>10</corner_height>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Masking_title</name>
+      <class>HEADER3</class>
+      <text>Masking</text>
+      <width>240</width>
+      <height>40</height>
+      <font use_class="true">
+        <font name="Header 3" family="Source Sans Pro" style="BOLD_ITALIC" size="18.0">
+        </font>
+      </font>
+      <foreground_color use_class="true">
+        <color name="Text" red="25" green="25" blue="25">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="RED-BORDER" red="150" green="8" blue="16">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="slide_button" version="2.0.0">
+      <name>Slide Button</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):Masking_s</pv_name>
+      <label></label>
+      <x>46</x>
+      <y>56</y>
+      <width>50</width>
+      <height>20</height>
+      <off_color>
+        <color name="WARNING" red="252" green="242" blue="17">
+        </color>
+      </off_color>
+      <on_color>
+        <color name="Button_Background" red="236" green="236" blue="236">
+        </color>
+      </on_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Masking_update</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):Masking_r</pv_name>
+      <x>120</x>
+      <y>50</y>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Off_label</name>
+      <text>On</text>
+      <x>20</x>
+      <y>53</y>
+      <width>30</width>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>On_label</name>
+      <text>Off</text>
+      <x>90</x>
+      <y>53</y>
+      <width>30</width>
+    </widget>
+  </widget>
+</display>

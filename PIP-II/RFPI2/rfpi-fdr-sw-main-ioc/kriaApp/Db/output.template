@@ -1,0 +1,69 @@
+##### Binary output template #####
+
+# Status parameters
+record(bi, "$(acc):$(sys)_$(group)_$(num):Status_r") {
+    field(DESC, "Status")
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT=1))$(num)_STATUS_R")
+    field(ZNAM, "OK")
+    field(ONAM, "NOT OK")
+    field(SCAN, "I/O Intr")
+}
+
+record(stringin, "$(acc):$(sys)_$(group)_$(num):ErrorMsg_r") {
+    field(DESC, "Error message")
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT=1))$(num)_ERROR_MSG_R")
+    field(SCAN, "I/O Intr")
+}
+
+record(bo, "$(acc):$(sys)_$(group)_$(num):Reset_s") {
+    field(DESC, "Reset error and clear error msg")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT=1))$(num)_RESET_S")
+    field(SCAN, "Passive")
+}
+
+record(bo, "$(acc):$(sys)_$(group)_$(num):ForceMode_s") {
+    field(DESC, "Turn on force state mode")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT=1))$(num)_FORCE_MODE_S")
+    field(ZNAM, "Normal")
+    field(ONAM, "Forcing")
+    field(SCAN, "Passive")
+}
+
+record(bo, "$(acc):$(sys)_$(group)_$(num):ForcedValue_s") {
+    field(DESC, "Value to be forced")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT=1))$(num)_FORCED_VALUE_S")
+    field(ZNAM, "OK")
+    field(ONAM, "NOT OK")
+    field(SCAN, "Passive")
+}
+
+# Status parameters
+record(bi, "$(acc):$(sys)_$(group)_$(num):FuseStatus_r") {
+    field(DESC, "Fuse status")
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT=1))$(num)_FUSE_STATUS_R")
+    field(ZNAM, "OK")
+    field(ONAM, "NOT OK")
+    field(SCAN, "I/O Intr")
+}
+
+record(bo, "$(acc):$(sys)_$(group)_$(num):FuseStatus_s") {
+    field(DESC, "Change fuse status")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT=1))$(num)_FUSE_STATUS_S")
+    field(ZNAM, "Normal")
+    field(ONAM, "Off")
+}
+
+record(bo, "$(acc):$(sys)_$(group)_$(num):ResetPermit_s") {
+    field(DESC, "Reset permits per cavity")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT=1))$(num)_RESET_PERMIT_S")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+}

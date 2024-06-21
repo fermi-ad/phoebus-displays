@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>Slot $(SLOT)</name>
+  <width>220</width>
+  <height>510</height>
+  <widget type="group" version="2.0.0">
+    <name>MGGrey03</name>
+    <width>220</width>
+    <height>510</height>
+    <style>3</style>
+    <background_color>
+      <color name="BACKGROUND" red="220" green="225" blue="221">
+      </color>
+    </background_color>
+    <widget type="rectangle" version="2.0.0">
+      <name>Background</name>
+      <width>220</width>
+      <height>510</height>
+      <line_width>2</line_width>
+      <line_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="GROUP-BACKGROUND" red="200" green="205" blue="201">
+        </color>
+      </background_color>
+      <corner_width>10</corner_width>
+      <corner_height>10</corner_height>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Title</name>
+      <text>SLOT $(SLOT)</text>
+      <width>220</width>
+      <height>30</height>
+      <font>
+        <font name="SUBSUB-GROUP-HEADER" family="Source Sans Pro" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <background_color>
+        <color name="RED-BORDER" red="150" green="8" blue="16">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Occupied_label</name>
+      <text>Occupied:</text>
+      <x>20</x>
+      <y>250</y>
+      <width>70</width>
+      <height>30</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>Occupied_LED</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(SLOT):Presence_r</pv_name>
+      <x>135</x>
+      <y>250</y>
+      <width>30</width>
+      <height>30</height>
+      <off_color>
+        <color name="MAJOR" red="255" green="0" blue="0">
+        </color>
+      </off_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Type_label</name>
+      <text>Type:</text>
+      <x>50</x>
+      <y>290</y>
+      <width>40</width>
+      <height>30</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>Type_LED</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(SLOT):TypeOK_r</pv_name>
+      <x>135</x>
+      <y>290</y>
+      <width>30</width>
+      <height>30</height>
+      <off_color>
+        <color name="MAJOR" red="255" green="0" blue="0">
+        </color>
+      </off_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Status_label</name>
+      <text>Status:</text>
+      <x>20</x>
+      <y>330</y>
+      <width>70</width>
+      <height>30</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Health_label</name>
+      <text>Health:</text>
+      <x>30</x>
+      <y>370</y>
+      <width>60</width>
+      <height>30</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>Status_LED</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(SLOT):Status_r</pv_name>
+      <x>135</x>
+      <y>330</y>
+      <width>30</width>
+      <height>30</height>
+      <off_color>
+        <color name="MAJOR" red="255" green="0" blue="0">
+        </color>
+      </off_color>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>Health_LED</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(SLOT):Health_r</pv_name>
+      <x>135</x>
+      <y>370</y>
+      <width>30</width>
+      <height>30</height>
+      <off_color>
+        <color name="MAJOR" red="255" green="0" blue="0">
+        </color>
+      </off_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Name_label</name>
+      <text>Name:</text>
+      <x>30</x>
+      <y>410</y>
+      <width>60</width>
+      <height>30</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Name_update</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(SLOT):CurrentBoardName_r</pv_name>
+      <x>100</x>
+      <y>410</y>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Expert_button</name>
+      <actions>
+        <action type="open_display">
+          <file>../expert/board_expert.bob</file>
+          <target>tab</target>
+          <description>Open Display</description>
+        </action>
+      </actions>
+      <text>Expert</text>
+      <x>100</x>
+      <y>460</y>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>ACK_button</name>
+      <actions>
+        <action type="write_pv">
+          <pv_name>$(pv_name)</pv_name>
+          <value>1</value>
+          <description>Write PV</description>
+        </action>
+      </actions>
+      <pv_name>$(acc):$(sys)_$(group)_$(SLOT):AckEvent_s</pv_name>
+      <text>ACK</text>
+      <x>100</x>
+      <y>170</y>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>INA_LED</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(SLOT):InaEvent_r</pv_name>
+      <x>140</x>
+      <y>80</y>
+      <width>30</width>
+      <height>30</height>
+      <off_color>
+        <color name="OK" red="0" green="255" blue="0">
+        </color>
+      </off_color>
+      <on_color>
+        <color name="MAJOR" red="255" green="0" blue="0">
+        </color>
+      </on_color>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>POWER_LED</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(SLOT):PowerEvent_r</pv_name>
+      <x>140</x>
+      <y>120</y>
+      <width>30</width>
+      <height>30</height>
+      <off_color>
+        <color name="OK" red="0" green="255" blue="0">
+        </color>
+      </off_color>
+      <on_color>
+        <color name="MAJOR" red="255" green="0" blue="0">
+        </color>
+      </on_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>InaAlarm_label</name>
+      <text>INA Alarm:</text>
+      <x>30</x>
+      <y>80</y>
+      <width>70</width>
+      <height>30</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>PowerAlarm_label</name>
+      <text>Power Alarm:</text>
+      <x>10</x>
+      <y>120</y>
+      <width>90</width>
+      <height>30</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Alarms_label</name>
+      <text>Alarms</text>
+      <y>50</y>
+      <width>220</width>
+      <height>30</height>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <background_color>
+        <color name="RED-BORDER" red="150" green="8" blue="16">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>StatusMain_label</name>
+      <text>Status</text>
+      <y>220</y>
+      <width>220</width>
+      <height>30</height>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <background_color>
+        <color name="RED-BORDER" red="150" green="8" blue="16">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+  </widget>
+</display>

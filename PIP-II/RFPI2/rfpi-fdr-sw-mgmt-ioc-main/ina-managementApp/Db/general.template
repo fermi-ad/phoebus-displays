@@ -1,0 +1,81 @@
+##### General parameters #####
+
+record(stringin, "$(acc):$(sys)_$(group)_$(num):LibVersion_r") {
+    field(DESC, "Library version")
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT=1))VERSION_R")
+    field(SCAN, "I/O Intr")
+}
+
+##### Power cycle parameters #####
+#record(bo, "$(acc):$(sys)_$(group)_$(num):StartupSeq_s") {
+#    field(DESC, "Perform startup seq")
+#    field(DTYP, "asynInt32")
+#    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT=1))STARTUP_S")
+#    field(SCAN, "Passive")
+#} 
+
+record(mbbi, "$(acc):$(sys)_$(group)_$(num):PowerSeq_r") {
+    field(DESC, "Power cycle seq status")
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT=1))POWER_SEQ_R")
+    field(ZRVL, "0")
+    field(ZRST, "OK")
+    field(ONVL, "1")
+    field(ONST, "In Progress")
+    field(TWVL, "2")
+    field(TWST, "Error")
+    field(SCAN, "I/O Intr")
+}
+
+record(bo, "$(acc):$(sys)_$(group)_$(num):Power_s") {
+    field(DESC, "Power on/off all boards")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT=1))POWER_S")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+}
+
+##### Vadj #####
+record(bi, "$(acc):$(sys)_$(group)_$(num):Vadj_r") {
+    field(DESC, "Vadj voltage")
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT=1))VADJ_R")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+    field(SCAN, "I/O Intr")
+}
+
+record(bo, "$(acc):$(sys)_$(group)_$(num):Vadj_s") {
+    field(DESC, "Vadj voltage")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT=1))VADJ_S")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+    field(SCAN, "I/O Intr")
+}
+
+##### TLC #####
+record(bo, "$(acc):$(sys)_$(group)_$(num):DisableTC_s") {
+    field(DESC, "Disable TLC")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT=1))TC_S")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+    field(SCAN, "I/O Intr")
+}
+
+##### Ack all alarms #####
+record(dfanout, "$(acc):$(sys)_$(group)_$(num):AckAll_s") { 
+    field(DESC, "Ack all alarms")
+    field(DOL,  "1")
+    field(OMSL, "closed_loop")
+    field(OUTA, "$(acc):$(sys)_$(group)_TOP0:AckEvent_s PP")
+    field(OUTB, "$(acc):$(sys)_$(group)_TOP1:AckEvent_s PP")
+    field(OUTC, "$(acc):$(sys)_$(group)_TOP2:AckEvent_s PP")
+    field(OUTD, "$(acc):$(sys)_$(group)_BOT0:AckEvent_s PP")
+    field(OUTE, "$(acc):$(sys)_$(group)_BOT1:AckEvent_s PP")
+    field(OUTF, "$(acc):$(sys)_$(group)_BOT2:AckEvent_s PP")
+    field(OUTG, "$(acc):$(sys)_$(group)_INTER:AckEvent_s PP")
+    field(OUTH, "$(acc):$(sys)_$(group)_MAIN:AckEvent_s PP")
+}
