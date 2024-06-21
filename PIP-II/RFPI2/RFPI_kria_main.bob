@@ -1,0 +1,3433 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2024-06-21 09:35:54 by epics-->
+<display version="2.0.0">
+  <name>RFPI Logic</name>
+  <macros>
+    <acc>PIP2IT</acc>
+    <group>RFPI</group>
+    <sys>pHB650</sys>
+    <num>kria</num>
+    <ina_num>ina</ina_num>
+  </macros>
+  <width>1530</width>
+  <height>1260</height>
+  <widget type="rectangle" version="2.0.0">
+    <name>Binary_rectangle_1</name>
+    <x>20</x>
+    <y>200</y>
+    <width>1490</width>
+    <height>1030</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color name="GROUP-TEXT" red="25" green="25" blue="25">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="BACKGROUND" red="220" green="225" blue="221">
+      </color>
+    </background_color>
+    <corner_width>10</corner_width>
+    <corner_height>10</corner_height>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Permits_group</name>
+    <x>210</x>
+    <y>880</y>
+    <width>1130</width>
+    <height>250</height>
+    <style>3</style>
+    <background_color>
+      <color name="BACKGROUND" red="220" green="225" blue="221">
+      </color>
+    </background_color>
+    <widget type="rectangle" version="2.0.0">
+      <name>Permits_rectangle</name>
+      <width>1130</width>
+      <height>250</height>
+      <line_width>2</line_width>
+      <line_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="GROUP-BACKGROUND" red="200" green="205" blue="201">
+        </color>
+      </background_color>
+      <corner_width>10</corner_width>
+      <corner_height>10</corner_height>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Permits_title</name>
+      <class>HEADER2</class>
+      <text>Permits</text>
+      <width>1130</width>
+      <height>40</height>
+      <font>
+        <font name="Header 2" family="Liberation Sans" style="BOLD" size="18.0">
+        </font>
+      </font>
+      <background_color>
+        <color name="RED-BORDER" red="150" green="8" blue="16">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>LLRFPermitC1_button</name>
+      <actions>
+        <action type="open_display">
+          <file>expert/output_expert.bob</file>
+          <macros>
+            <CHANNEL_NAME>LLRF Permit C1</CHANNEL_NAME>
+            <P>$(Pzynq)</P>
+            <R>$(Rzynq)</R>
+            <num>LLRF_PERM_C1</num>
+          </macros>
+          <target>tab</target>
+          <description>Open Display</description>
+        </action>
+      </actions>
+      <text>LLRF Permit C1</text>
+      <x>90</x>
+      <y>80</y>
+      <width>170</width>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>SSAPermitC1_button</name>
+      <actions>
+        <action type="open_display">
+          <file>expert/output_expert.bob</file>
+          <macros>
+            <CHANNEL_NAME>SSA Permit C1</CHANNEL_NAME>
+            <P>$(Pzynq)</P>
+            <R>$(Rzynq)</R>
+            <num>SSA_PERM_C1</num>
+          </macros>
+          <target>tab</target>
+          <description>Open Display</description>
+        </action>
+      </actions>
+      <text>SSA Permit C1</text>
+      <x>90</x>
+      <y>120</y>
+      <width>170</width>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>SSADCPermitC1_button</name>
+      <actions>
+        <action type="open_display">
+          <file>expert/output_expert.bob</file>
+          <macros>
+            <CHANNEL_NAME>SSA DC Permit C1</CHANNEL_NAME>
+            <P>$(Pzynq)</P>
+            <R>$(Rzynq)</R>
+            <num>SSADC_PERM_C1</num>
+          </macros>
+          <target>tab</target>
+          <description>Open Display</description>
+        </action>
+      </actions>
+      <text>SSA DC Permit C1</text>
+      <x>90</x>
+      <y>160</y>
+      <width>170</width>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LLRFPermitC1_LED</name>
+      <pv_name>$(acc):$(sys)_$(group)_LLRF_PERM_C1:Status_r</pv_name>
+      <x>280</x>
+      <y>80</y>
+      <width>30</width>
+      <height>30</height>
+      <off_color>
+        <color name="MAJOR" red="255" green="0" blue="0">
+        </color>
+      </off_color>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>SSAPermitC1_LED</name>
+      <pv_name>$(acc):$(sys)_$(group)_SSA_PERM_C1:Status_r</pv_name>
+      <x>280</x>
+      <y>122</y>
+      <width>30</width>
+      <height>30</height>
+      <off_color>
+        <color name="MAJOR" red="255" green="0" blue="0">
+        </color>
+      </off_color>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>SSADCPermitC1_LED</name>
+      <pv_name>$(acc):$(sys)_$(group)_SSADC_PERM_C1:Status_r</pv_name>
+      <x>280</x>
+      <y>160</y>
+      <width>30</width>
+      <height>30</height>
+      <off_color>
+        <color name="MAJOR" red="255" green="0" blue="0">
+        </color>
+      </off_color>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>MPSPermitC1_button</name>
+      <actions>
+        <action type="open_display">
+          <file>expert/output_expert.bob</file>
+          <macros>
+            <CHANNEL_NAME>MPS Permit</CHANNEL_NAME>
+            <P>$(Pzynq)</P>
+            <R>$(Rzynq)</R>
+            <num>MPS_PERM_C1</num>
+          </macros>
+          <target>tab</target>
+          <description>Open Display</description>
+        </action>
+      </actions>
+      <text>MPS Permit C1</text>
+      <x>90</x>
+      <y>200</y>
+      <width>170</width>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>MPSPermitC1_LED</name>
+      <pv_name>$(acc):$(sys)_$(group)_MPS_PERM_C1:Status_r</pv_name>
+      <x>280</x>
+      <y>200</y>
+      <width>30</width>
+      <height>30</height>
+      <off_color>
+        <color name="MAJOR" red="255" green="0" blue="0">
+        </color>
+      </off_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Cavity1_label_3</name>
+      <text>Cavity 1</text>
+      <x>90</x>
+      <y>40</y>
+      <width>170</width>
+      <height>30</height>
+      <font>
+        <font name="Header 3" family="Liberation Sans" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>LLRFPermitC2_button</name>
+      <actions>
+        <action type="open_display">
+          <file>expert/output_expert.bob</file>
+          <macros>
+            <CHANNEL_NAME>LLRF Permit C2</CHANNEL_NAME>
+            <P>$(Pzynq)</P>
+            <R>$(Rzynq)</R>
+            <num>LLRF_PERM_C2</num>
+          </macros>
+          <target>tab</target>
+          <description>Open Display</description>
+        </action>
+      </actions>
+      <text>LLRF Permit C2</text>
+      <x>330</x>
+      <y>80</y>
+      <width>170</width>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>SSAPermitC2_button</name>
+      <actions>
+        <action type="open_display">
+          <file>expert/output_expert.bob</file>
+          <macros>
+            <CHANNEL_NAME>SSA Permit C2</CHANNEL_NAME>
+            <P>$(Pzynq)</P>
+            <R>$(Rzynq)</R>
+            <num>SSA_PERM_C2</num>
+          </macros>
+          <target>tab</target>
+          <description>Open Display</description>
+        </action>
+      </actions>
+      <text>SSA Permit C2</text>
+      <x>330</x>
+      <y>120</y>
+      <width>170</width>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>SSADCPermitC2_button</name>
+      <actions>
+        <action type="open_display">
+          <file>expert/output_expert.bob</file>
+          <macros>
+            <CHANNEL_NAME>SSA DC Permit C2</CHANNEL_NAME>
+            <P>$(Pzynq)</P>
+            <R>$(Rzynq)</R>
+            <num>SSADC_PERM_C2</num>
+          </macros>
+          <target>tab</target>
+          <description>Open Display</description>
+        </action>
+      </actions>
+      <text>SSA DC Permit C2</text>
+      <x>330</x>
+      <y>160</y>
+      <width>170</width>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LLRFPermitC2_LED</name>
+      <pv_name>$(acc):$(sys)_$(group)_LLRF_PERM_C2:Status_r</pv_name>
+      <x>520</x>
+      <y>80</y>
+      <width>30</width>
+      <height>30</height>
+      <off_color>
+        <color name="MAJOR" red="255" green="0" blue="0">
+        </color>
+      </off_color>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>SSAPermitC2_LED</name>
+      <pv_name>$(acc):$(sys)_$(group)_SSA_PERM_C2:Status_r</pv_name>
+      <x>520</x>
+      <y>122</y>
+      <width>30</width>
+      <height>30</height>
+      <off_color>
+        <color name="MAJOR" red="255" green="0" blue="0">
+        </color>
+      </off_color>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>SSADCPermitC2_LED</name>
+      <pv_name>$(acc):$(sys)_$(group)_SSADC_PERM_C2:Status_r</pv_name>
+      <x>520</x>
+      <y>160</y>
+      <width>30</width>
+      <height>30</height>
+      <off_color>
+        <color name="MAJOR" red="255" green="0" blue="0">
+        </color>
+      </off_color>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>MPSPermitC2_button</name>
+      <actions>
+        <action type="open_display">
+          <file>expert/output_expert.bob</file>
+          <macros>
+            <CHANNEL_NAME>MPS Permit C2</CHANNEL_NAME>
+            <P>$(Pzynq)</P>
+            <R>$(Rzynq)</R>
+            <num>MPS_PERM_C2</num>
+          </macros>
+          <target>tab</target>
+          <description>Open Display</description>
+        </action>
+      </actions>
+      <text>MPS Permit C2</text>
+      <x>330</x>
+      <y>200</y>
+      <width>170</width>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>MPSPermitC2_LED</name>
+      <pv_name>$(acc):$(sys)_$(group)_MPS_PERM_C2:Status_r</pv_name>
+      <x>520</x>
+      <y>200</y>
+      <width>30</width>
+      <height>30</height>
+      <off_color>
+        <color name="MAJOR" red="255" green="0" blue="0">
+        </color>
+      </off_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Cavity1_label_4</name>
+      <text>Cavity 2</text>
+      <x>330</x>
+      <y>40</y>
+      <width>170</width>
+      <height>30</height>
+      <font>
+        <font name="Header 3" family="Liberation Sans" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>LLRFPermitC3_button</name>
+      <actions>
+        <action type="open_display">
+          <file>expert/output_expert.bob</file>
+          <macros>
+            <CHANNEL_NAME>LLRF Permit C3</CHANNEL_NAME>
+            <P>$(Pzynq)</P>
+            <R>$(Rzynq)</R>
+            <num>LLRF_PERM_C3</num>
+          </macros>
+          <target>tab</target>
+          <description>Open Display</description>
+        </action>
+      </actions>
+      <text>LLRF Permit C3</text>
+      <x>570</x>
+      <y>80</y>
+      <width>170</width>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>SSAPermitC3_button</name>
+      <actions>
+        <action type="open_display">
+          <file>expert/output_expert.bob</file>
+          <macros>
+            <CHANNEL_NAME>SSA Permit C3</CHANNEL_NAME>
+            <P>$(Pzynq)</P>
+            <R>$(Rzynq)</R>
+            <num>SSA_PERM_C3</num>
+          </macros>
+          <target>tab</target>
+          <description>Open Display</description>
+        </action>
+      </actions>
+      <text>SSA Permit C3</text>
+      <x>570</x>
+      <y>120</y>
+      <width>170</width>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>SSADCPermitC3_button</name>
+      <actions>
+        <action type="open_display">
+          <file>expert/output_expert.bob</file>
+          <macros>
+            <CHANNEL_NAME>SSA DC Permit C3</CHANNEL_NAME>
+            <P>$(Pzynq)</P>
+            <R>$(Rzynq)</R>
+            <num>SSADC_PERM_C3</num>
+          </macros>
+          <target>tab</target>
+          <description>Open Display</description>
+        </action>
+      </actions>
+      <text>SSA DC Permit C3</text>
+      <x>570</x>
+      <y>160</y>
+      <width>170</width>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LLRFPermitC3_LED</name>
+      <pv_name>$(acc):$(sys)_$(group)_LLRF_PERM_C3:Status_r</pv_name>
+      <x>760</x>
+      <y>80</y>
+      <width>30</width>
+      <height>30</height>
+      <off_color>
+        <color name="MAJOR" red="255" green="0" blue="0">
+        </color>
+      </off_color>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>SSAPermitC3_LED</name>
+      <pv_name>$(acc):$(sys)_$(group)_SSA_PERM_C3:Status_r</pv_name>
+      <x>760</x>
+      <y>122</y>
+      <width>30</width>
+      <height>30</height>
+      <off_color>
+        <color name="MAJOR" red="255" green="0" blue="0">
+        </color>
+      </off_color>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>SSADCPermitC3_LED</name>
+      <pv_name>$(acc):$(sys)_$(group)_SSADC_PERM_C3:Status_r</pv_name>
+      <x>760</x>
+      <y>160</y>
+      <width>30</width>
+      <height>30</height>
+      <off_color>
+        <color name="MAJOR" red="255" green="0" blue="0">
+        </color>
+      </off_color>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>MPSPermitC3_button</name>
+      <actions>
+        <action type="open_display">
+          <file>expert/output_expert.bob</file>
+          <macros>
+            <CHANNEL_NAME>MPS Permit C3</CHANNEL_NAME>
+            <P>$(Pzynq)</P>
+            <R>$(Rzynq)</R>
+            <num>MPS_PERM_C3</num>
+          </macros>
+          <target>tab</target>
+          <description>Open Display</description>
+        </action>
+      </actions>
+      <text>MPS Permit C3</text>
+      <x>570</x>
+      <y>200</y>
+      <width>170</width>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>MPSPermitC3_LED</name>
+      <pv_name>$(acc):$(sys)_$(group)_MPS_PERM_C3:Status_r</pv_name>
+      <x>760</x>
+      <y>200</y>
+      <width>30</width>
+      <height>30</height>
+      <off_color>
+        <color name="MAJOR" red="255" green="0" blue="0">
+        </color>
+      </off_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Cavity3_label</name>
+      <text>Cavity 3</text>
+      <x>570</x>
+      <y>40</y>
+      <width>170</width>
+      <height>30</height>
+      <font>
+        <font name="Header 3" family="Liberation Sans" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>LLRFPermitC4_button</name>
+      <actions>
+        <action type="open_display">
+          <file>expert/output_expert.bob</file>
+          <macros>
+            <CHANNEL_NAME>LLRF Permit C4</CHANNEL_NAME>
+            <P>$(Pzynq)</P>
+            <R>$(Rzynq)</R>
+            <num>LLRF_PERM_C4</num>
+          </macros>
+          <target>tab</target>
+          <description>Open Display</description>
+        </action>
+      </actions>
+      <text>LLRF Permit C4</text>
+      <x>810</x>
+      <y>80</y>
+      <width>170</width>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>SSAPermitC4_button</name>
+      <actions>
+        <action type="open_display">
+          <file>expert/output_expert.bob</file>
+          <macros>
+            <CHANNEL_NAME>SSA Permit C4</CHANNEL_NAME>
+            <P>$(Pzynq)</P>
+            <R>$(Rzynq)</R>
+            <num>SSA_PERM_C4</num>
+          </macros>
+          <target>tab</target>
+          <description>Open Display</description>
+        </action>
+      </actions>
+      <text>SSA Permit C4</text>
+      <x>810</x>
+      <y>120</y>
+      <width>170</width>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>SSADCPermitC4_button</name>
+      <actions>
+        <action type="open_display">
+          <file>expert/output_expert.bob</file>
+          <macros>
+            <CHANNEL_NAME>SSA DC Permit C4</CHANNEL_NAME>
+            <P>$(Pzynq)</P>
+            <R>$(Rzynq)</R>
+            <num>SSADC_PERM_C4</num>
+          </macros>
+          <target>tab</target>
+          <description>Open Display</description>
+        </action>
+      </actions>
+      <text>SSA DC Permit C4</text>
+      <x>810</x>
+      <y>160</y>
+      <width>170</width>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LLRFPermitC1_LED_2</name>
+      <pv_name>$(acc):$(sys)_$(group)_LLRF_PERM_C4:Status_r</pv_name>
+      <x>1000</x>
+      <y>80</y>
+      <width>30</width>
+      <height>30</height>
+      <off_color>
+        <color name="MAJOR" red="255" green="0" blue="0">
+        </color>
+      </off_color>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>SSAPermitC1_LED_2</name>
+      <pv_name>$(acc):$(sys)_$(group)_SSA_PERM_C4:Status_r</pv_name>
+      <x>1000</x>
+      <y>122</y>
+      <width>30</width>
+      <height>30</height>
+      <off_color>
+        <color name="MAJOR" red="255" green="0" blue="0">
+        </color>
+      </off_color>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>SSADCPermitC4_LED</name>
+      <pv_name>$(acc):$(sys)_$(group)_SSADC_PERM_C4:Status_r</pv_name>
+      <x>1000</x>
+      <y>160</y>
+      <width>30</width>
+      <height>30</height>
+      <off_color>
+        <color name="MAJOR" red="255" green="0" blue="0">
+        </color>
+      </off_color>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>MPSPermitC4_button</name>
+      <actions>
+        <action type="open_display">
+          <file>expert/output_expert.bob</file>
+          <macros>
+            <CHANNEL_NAME>MPS Permit C4</CHANNEL_NAME>
+            <P>$(Pzynq)</P>
+            <R>$(Rzynq)</R>
+            <num>MPS_PERM_C4</num>
+          </macros>
+          <target>tab</target>
+          <description>Open Display</description>
+        </action>
+      </actions>
+      <text>MPS Permit C4</text>
+      <x>810</x>
+      <y>200</y>
+      <width>170</width>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>MPSPermitC4_LED</name>
+      <pv_name>$(acc):$(sys)_$(group)_MPS_PERM_C4:Status_r</pv_name>
+      <x>1000</x>
+      <y>200</y>
+      <width>30</width>
+      <height>30</height>
+      <off_color>
+        <color name="MAJOR" red="255" green="0" blue="0">
+        </color>
+      </off_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Cavity4_label</name>
+      <text>Cavity 4</text>
+      <x>810</x>
+      <y>40</y>
+      <width>170</width>
+      <height>30</height>
+      <font>
+        <font name="Header 3" family="Liberation Sans" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Titlebar</name>
+    <class>TITLE-BAR</class>
+    <width>1530</width>
+    <height>50</height>
+    <line_width>0</line_width>
+    <background_color>
+      <color name="PRIMARY-HEADER-BACKGROUND" red="151" green="188" blue="202">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Title</name>
+    <class>TITLE</class>
+    <text>RFPI Kria</text>
+    <x use_class="true">0</x>
+    <y use_class="true">0</y>
+    <width>280</width>
+    <height>50</height>
+    <font use_class="true">
+      <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <foreground_color use_class="true">
+      <color name="Text" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <transparent use_class="true">true</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Inputs_group</name>
+    <x>40</x>
+    <y>220</y>
+    <width>1450</width>
+    <height>640</height>
+    <style>3</style>
+    <background_color>
+      <color name="BACKGROUND" red="220" green="225" blue="221">
+      </color>
+    </background_color>
+    <widget type="rectangle" version="2.0.0">
+      <name>Inputs_rectangle</name>
+      <width>1450</width>
+      <height>640</height>
+      <line_width>2</line_width>
+      <line_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="BACKGROUND" red="220" green="225" blue="221">
+        </color>
+      </background_color>
+      <corner_width>10</corner_width>
+      <corner_height>10</corner_height>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Inputs_title</name>
+      <class>HEADER2</class>
+      <text>Inputs</text>
+      <width>1450</width>
+      <height>40</height>
+      <font>
+        <font name="Header 2" family="Liberation Sans" style="BOLD" size="18.0">
+        </font>
+      </font>
+      <background_color>
+        <color name="RED-BORDER" red="150" green="8" blue="16">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Action Button</name>
+      <actions>
+        <action type="open_display">
+          <file>expert/error_tracking.bob</file>
+          <target>tab</target>
+          <description>Open Display</description>
+        </action>
+      </actions>
+      <text>Errors Tracking</text>
+      <x>20</x>
+      <y>580</y>
+      <width>140</width>
+      <height>40</height>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>Binary_group</name>
+      <x>20</x>
+      <y>50</y>
+      <width>560</width>
+      <height>510</height>
+      <style>3</style>
+      <background_color>
+        <color name="BACKGROUND" red="220" green="225" blue="221">
+        </color>
+      </background_color>
+      <widget type="rectangle" version="2.0.0">
+        <name>Binary_rectangle</name>
+        <width>560</width>
+        <height>510</height>
+        <line_width>2</line_width>
+        <line_color>
+          <color name="GROUP-BORDER" red="150" green="155" blue="151">
+          </color>
+        </line_color>
+        <background_color>
+          <color name="GROUP-BACKGROUND" red="200" green="205" blue="201">
+          </color>
+        </background_color>
+        <corner_width>10</corner_width>
+        <corner_height>10</corner_height>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Binary_title</name>
+        <class>HEADER3</class>
+        <text>Binary (PLC Based)</text>
+        <width>560</width>
+        <height>40</height>
+        <font>
+          <font name="Header 3" family="Liberation Sans" style="BOLD" size="16.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="action_button" version="3.0.0">
+        <name>PersonnelSafetyC1_button</name>
+        <actions>
+          <action type="open_display">
+            <file>expert/binary_input_expert.bob</file>
+            <macros>
+              <CHANNEL_NAME>Personnel Safety Permit C1</CHANNEL_NAME>
+              <P>$(Pzynq)</P>
+              <R>$(Rzynq)</R>
+              <num>PSP_C1</num>
+            </macros>
+            <target>tab</target>
+            <description>Open Display</description>
+          </action>
+        </actions>
+        <text>Personnel Safety Permit C1</text>
+        <x>60</x>
+        <y>80</y>
+        <width>210</width>
+        <tooltip>$(actions)</tooltip>
+      </widget>
+      <widget type="action_button" version="3.0.0">
+        <name>VacuumStatus_button</name>
+        <actions>
+          <action type="open_display">
+            <file>expert/binary_input_expert.bob</file>
+            <macros>
+              <CHANNEL_NAME>Vacuum Status</CHANNEL_NAME>
+              <P>$(Pzynq)</P>
+              <R>$(Rzynq)</R>
+              <num>VS</num>
+            </macros>
+            <target>tab</target>
+            <description>Open Display</description>
+          </action>
+        </actions>
+        <text>Vacuum Status</text>
+        <x>330</x>
+        <y>460</y>
+        <width>210</width>
+        <tooltip>$(actions)</tooltip>
+      </widget>
+      <widget type="action_button" version="3.0.0">
+        <name>CouplerVacuumC1_button</name>
+        <actions>
+          <action type="open_display">
+            <file>expert/binary_input_expert.bob</file>
+            <macros>
+              <CHANNEL_NAME>Coupler Vacuum Permit C1</CHANNEL_NAME>
+              <P>$(Pzynq)</P>
+              <R>$(Rzynq)</R>
+              <num>CVP_C1</num>
+            </macros>
+            <target>tab</target>
+            <description>Open Display</description>
+          </action>
+        </actions>
+        <text>Coupler Vacuum Permit C1</text>
+        <x>60</x>
+        <y>200</y>
+        <width>210</width>
+        <tooltip>$(actions)</tooltip>
+      </widget>
+      <widget type="action_button" version="3.0.0">
+        <name>HeLevel_button</name>
+        <actions>
+          <action type="open_display">
+            <file>expert/binary_input_expert.bob</file>
+            <macros>
+              <CHANNEL_NAME>He Level and Pressure (Cryo)</CHANNEL_NAME>
+              <P>$(Pzynq)</P>
+              <R>$(Rzynq)</R>
+              <num>HE_LEVEL</num>
+            </macros>
+            <target>tab</target>
+            <description>Open Display</description>
+          </action>
+        </actions>
+        <text>He Level&amp;Pressure (CRYO)</text>
+        <x>60</x>
+        <y>460</y>
+        <width>210</width>
+        <tooltip>$(actions)</tooltip>
+      </widget>
+      <widget type="multi_state_led" version="2.0.0">
+        <name>PersonelSafetyC1_LED</name>
+        <pv_name>$(acc):$(sys)_$(group)_PSP_C1:CurrentStatus_r</pv_name>
+        <x>20</x>
+        <y>80</y>
+        <width>30</width>
+        <height>30</height>
+        <states>
+          <state>
+            <value>0</value>
+            <label></label>
+            <color>
+              <color name="ON" red="70" green="255" blue="70">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>1</value>
+            <label></label>
+            <color>
+              <color name="MAJOR" red="255" green="0" blue="0">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>2</value>
+            <label></label>
+            <color>
+              <color name="WARNING" red="252" green="242" blue="17">
+              </color>
+            </color>
+          </state>
+        </states>
+        <fallback_label></fallback_label>
+      </widget>
+      <widget type="multi_state_led" version="2.0.0">
+        <name>VacuumStatus_LED</name>
+        <pv_name>$(acc):$(sys)_$(group)_VS:CurrentStatus_r</pv_name>
+        <x>290</x>
+        <y>460</y>
+        <width>30</width>
+        <height>30</height>
+        <states>
+          <state>
+            <value>0</value>
+            <label></label>
+            <color>
+              <color name="ON" red="70" green="255" blue="70">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>1</value>
+            <label></label>
+            <color>
+              <color name="MAJOR" red="255" green="0" blue="0">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>2</value>
+            <label></label>
+            <color>
+              <color name="WARNING" red="252" green="242" blue="17">
+              </color>
+            </color>
+          </state>
+        </states>
+        <fallback_label></fallback_label>
+      </widget>
+      <widget type="multi_state_led" version="2.0.0">
+        <name>CouplerVacuum_LED</name>
+        <pv_name>$(acc):$(sys)_$(group)_CVP_C1:CurrentStatus_r</pv_name>
+        <x>20</x>
+        <y>200</y>
+        <width>30</width>
+        <height>30</height>
+        <states>
+          <state>
+            <value>0</value>
+            <label></label>
+            <color>
+              <color name="ON" red="70" green="255" blue="70">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>1</value>
+            <label></label>
+            <color>
+              <color name="MAJOR" red="255" green="0" blue="0">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>2</value>
+            <label></label>
+            <color>
+              <color name="WARNING" red="252" green="242" blue="17">
+              </color>
+            </color>
+          </state>
+        </states>
+        <fallback_label></fallback_label>
+      </widget>
+      <widget type="multi_state_led" version="2.0.0">
+        <name>HeLevel_LED</name>
+        <pv_name>$(acc):$(sys)_$(group)_HE_LEVEL:CurrentStatus_r</pv_name>
+        <x>20</x>
+        <y>460</y>
+        <width>30</width>
+        <height>30</height>
+        <states>
+          <state>
+            <value>0</value>
+            <label></label>
+            <color>
+              <color name="ON" red="70" green="255" blue="70">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>1</value>
+            <label></label>
+            <color>
+              <color name="MAJOR" red="255" green="0" blue="0">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>2</value>
+            <label></label>
+            <color>
+              <color name="WARNING" red="252" green="242" blue="17">
+              </color>
+            </color>
+          </state>
+        </states>
+        <fallback_label></fallback_label>
+      </widget>
+      <widget type="multi_state_led" version="2.0.0">
+        <name>CouplerAirflowC1_LED</name>
+        <pv_name>$(acc):$(sys)_$(group)_CAS_C1:CurrentStatus_r</pv_name>
+        <x>20</x>
+        <y>120</y>
+        <width>30</width>
+        <height>30</height>
+        <states>
+          <state>
+            <value>0</value>
+            <label></label>
+            <color>
+              <color name="ON" red="70" green="255" blue="70">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>1</value>
+            <label></label>
+            <color>
+              <color name="MAJOR" red="255" green="0" blue="0">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>2</value>
+            <label></label>
+            <color>
+              <color name="WARNING" red="252" green="242" blue="17">
+              </color>
+            </color>
+          </state>
+        </states>
+        <fallback_label></fallback_label>
+      </widget>
+      <widget type="action_button" version="3.0.0">
+        <name>CouplerAirflowC1_button</name>
+        <actions>
+          <action type="open_display">
+            <file>expert/binary_input_expert.bob</file>
+            <macros>
+              <CHANNEL_NAME>Cupler Airflow Sensor C1</CHANNEL_NAME>
+              <P>$(Pzynq)</P>
+              <R>$(Rzynq)</R>
+              <num>CAS_C1</num>
+            </macros>
+            <target>tab</target>
+            <description>Open Display</description>
+          </action>
+        </actions>
+        <text>Coupler Airflow sens C1</text>
+        <x>60</x>
+        <y>120</y>
+        <width>210</width>
+        <tooltip>$(actions)</tooltip>
+      </widget>
+      <widget type="multi_state_led" version="2.0.0">
+        <name>SSAReadyC1_LED</name>
+        <pv_name>$(acc):$(sys)_$(group)_SSA_C1:CurrentStatus_r</pv_name>
+        <x>20</x>
+        <y>160</y>
+        <width>30</width>
+        <height>30</height>
+        <states>
+          <state>
+            <value>1</value>
+            <label></label>
+            <color>
+              <color name="ON" red="70" green="255" blue="70">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>0</value>
+            <label></label>
+            <color>
+              <color name="MAJOR" red="255" green="0" blue="0">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>2</value>
+            <label></label>
+            <color>
+              <color name="WARNING" red="252" green="242" blue="17">
+              </color>
+            </color>
+          </state>
+        </states>
+        <fallback_label></fallback_label>
+      </widget>
+      <widget type="action_button" version="3.0.0">
+        <name>SSAReadyC1_button</name>
+        <actions>
+          <action type="open_display">
+            <file>expert/ssa_ready_binary_input.bob</file>
+            <macros>
+              <CHANNEL_NAME>SSA ready C1</CHANNEL_NAME>
+              <num>SSA_C1</num>
+            </macros>
+            <target>tab</target>
+            <description>Open Display</description>
+          </action>
+        </actions>
+        <text>SSA Ready C1</text>
+        <x>60</x>
+        <y>160</y>
+        <width>210</width>
+        <tooltip>$(actions)</tooltip>
+      </widget>
+      <widget type="multi_state_led" version="2.0.0">
+        <name>PersonelSafetyC2_LED</name>
+        <pv_name>$(acc):$(sys)_$(group)_PSP_C2:CurrentStatus_r</pv_name>
+        <x>290</x>
+        <y>80</y>
+        <width>30</width>
+        <height>30</height>
+        <states>
+          <state>
+            <value>0</value>
+            <label></label>
+            <color>
+              <color name="ON" red="70" green="255" blue="70">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>1</value>
+            <label></label>
+            <color>
+              <color name="MAJOR" red="255" green="0" blue="0">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>2</value>
+            <label></label>
+            <color>
+              <color name="WARNING" red="252" green="242" blue="17">
+              </color>
+            </color>
+          </state>
+        </states>
+        <fallback_label></fallback_label>
+      </widget>
+      <widget type="action_button" version="3.0.0">
+        <name>PersonnelSafetyC2_button</name>
+        <actions>
+          <action type="open_display">
+            <file>expert/binary_input_expert.bob</file>
+            <macros>
+              <CHANNEL_NAME>Personnel Safety Permit C2</CHANNEL_NAME>
+              <P>$(Pzynq)</P>
+              <R>$(Rzynq)</R>
+              <num>PSP_C2</num>
+            </macros>
+            <target>tab</target>
+            <description>Open Display</description>
+          </action>
+        </actions>
+        <text>Personnel Safety Permit C2</text>
+        <x>330</x>
+        <y>80</y>
+        <width>210</width>
+        <tooltip>$(actions)</tooltip>
+      </widget>
+      <widget type="multi_state_led" version="2.0.0">
+        <name>CouplerVacuumC2_LED</name>
+        <pv_name>$(acc):$(sys)_$(group)_CVP_C2:CurrentStatus_r</pv_name>
+        <x>290</x>
+        <y>200</y>
+        <width>30</width>
+        <height>30</height>
+        <states>
+          <state>
+            <value>0</value>
+            <label></label>
+            <color>
+              <color name="ON" red="70" green="255" blue="70">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>1</value>
+            <label></label>
+            <color>
+              <color name="MAJOR" red="255" green="0" blue="0">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>2</value>
+            <label></label>
+            <color>
+              <color name="WARNING" red="252" green="242" blue="17">
+              </color>
+            </color>
+          </state>
+        </states>
+        <fallback_label></fallback_label>
+      </widget>
+      <widget type="action_button" version="3.0.0">
+        <name>CouplerVacuumC2_button</name>
+        <actions>
+          <action type="open_display">
+            <file>expert/binary_input_expert.bob</file>
+            <macros>
+              <CHANNEL_NAME>Coupler Vacuum Permit C2</CHANNEL_NAME>
+              <P>$(Pzynq)</P>
+              <R>$(Rzynq)</R>
+              <num>CVP_C2</num>
+            </macros>
+            <target>tab</target>
+            <description>Open Display</description>
+          </action>
+        </actions>
+        <text>Coupler Vacuum Permit C2</text>
+        <x>330</x>
+        <y>200</y>
+        <width>210</width>
+        <tooltip>$(actions)</tooltip>
+      </widget>
+      <widget type="multi_state_led" version="2.0.0">
+        <name>SSAReadyC2_LED</name>
+        <pv_name>$(acc):$(sys)_$(group)_SSA_C2:CurrentStatus_r</pv_name>
+        <x>290</x>
+        <y>160</y>
+        <width>30</width>
+        <height>30</height>
+        <states>
+          <state>
+            <value>1</value>
+            <label></label>
+            <color>
+              <color name="ON" red="70" green="255" blue="70">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>0</value>
+            <label></label>
+            <color>
+              <color name="MAJOR" red="255" green="0" blue="0">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>2</value>
+            <label></label>
+            <color>
+              <color name="WARNING" red="252" green="242" blue="17">
+              </color>
+            </color>
+          </state>
+        </states>
+        <fallback_label></fallback_label>
+      </widget>
+      <widget type="action_button" version="3.0.0">
+        <name>SSAReadyC2_button</name>
+        <actions>
+          <action type="open_display">
+            <file>expert/ssa_ready_binary_input.bob</file>
+            <macros>
+              <CHANNEL_NAME>SSA ready C2</CHANNEL_NAME>
+              <num>SSA_C2</num>
+            </macros>
+            <target>tab</target>
+            <description>Open Display</description>
+          </action>
+        </actions>
+        <text>SSA Ready C2</text>
+        <x>330</x>
+        <y>160</y>
+        <width>210</width>
+        <tooltip>$(actions)</tooltip>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Cavity1_label</name>
+        <text>Cavity 1</text>
+        <x>60</x>
+        <y>40</y>
+        <width>210</width>
+        <height>30</height>
+        <font>
+          <font name="Header 3" family="Liberation Sans" style="BOLD" size="16.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Cavity2_label</name>
+        <text>Cavity 2</text>
+        <x>330</x>
+        <y>40</y>
+        <width>210</width>
+        <height>30</height>
+        <font>
+          <font name="Header 3" family="Liberation Sans" style="BOLD" size="16.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Cavity3_label</name>
+        <text>Cavity 3</text>
+        <x>70</x>
+        <y>240</y>
+        <width>200</width>
+        <height>30</height>
+        <font>
+          <font name="Header 3" family="Liberation Sans" style="BOLD" size="16.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Cavity4_label</name>
+        <text>Cavity 4</text>
+        <x>330</x>
+        <y>240</y>
+        <width>210</width>
+        <height>30</height>
+        <font>
+          <font name="Header 3" family="Liberation Sans" style="BOLD" size="16.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="multi_state_led" version="2.0.0">
+        <name>PersonelSafetyC3_LED</name>
+        <pv_name>$(acc):$(sys)_$(group)_PSP_C3:CurrentStatus_r</pv_name>
+        <x>20</x>
+        <y>280</y>
+        <width>30</width>
+        <height>30</height>
+        <states>
+          <state>
+            <value>0</value>
+            <label></label>
+            <color>
+              <color name="ON" red="70" green="255" blue="70">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>1</value>
+            <label></label>
+            <color>
+              <color name="MAJOR" red="255" green="0" blue="0">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>2</value>
+            <label></label>
+            <color>
+              <color name="WARNING" red="252" green="242" blue="17">
+              </color>
+            </color>
+          </state>
+        </states>
+        <fallback_label></fallback_label>
+      </widget>
+      <widget type="action_button" version="3.0.0">
+        <name>PersonnelSafetyC3_button</name>
+        <actions>
+          <action type="open_display">
+            <file>expert/binary_input_expert.bob</file>
+            <macros>
+              <CHANNEL_NAME>Personnel Safety Permit C3</CHANNEL_NAME>
+              <P>$(Pzynq)</P>
+              <R>$(Rzynq)</R>
+              <num>PSP_C3</num>
+            </macros>
+            <target>tab</target>
+            <description>Open Display</description>
+          </action>
+        </actions>
+        <text>Personnel Safety Permit C3</text>
+        <x>60</x>
+        <y>280</y>
+        <width>210</width>
+        <tooltip>$(actions)</tooltip>
+      </widget>
+      <widget type="multi_state_led" version="2.0.0">
+        <name>PersonelSafetyC4_LED</name>
+        <pv_name>$(acc):$(sys)_$(group)_PSP_C4:CurrentStatus_r</pv_name>
+        <x>290</x>
+        <y>280</y>
+        <width>30</width>
+        <height>30</height>
+        <states>
+          <state>
+            <value>0</value>
+            <label></label>
+            <color>
+              <color name="ON" red="70" green="255" blue="70">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>1</value>
+            <label></label>
+            <color>
+              <color name="MAJOR" red="255" green="0" blue="0">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>2</value>
+            <label></label>
+            <color>
+              <color name="WARNING" red="252" green="242" blue="17">
+              </color>
+            </color>
+          </state>
+        </states>
+        <fallback_label></fallback_label>
+      </widget>
+      <widget type="action_button" version="3.0.0">
+        <name>PersonnelSafetyC4_button</name>
+        <actions>
+          <action type="open_display">
+            <file>expert/binary_input_expert.bob</file>
+            <macros>
+              <CHANNEL_NAME>Personnel Safety Permit C4</CHANNEL_NAME>
+              <P>$(Pzynq)</P>
+              <R>$(Rzynq)</R>
+              <num>PSP_C4</num>
+            </macros>
+            <target>tab</target>
+            <description>Open Display</description>
+          </action>
+        </actions>
+        <text>Personnel Safety Permit C4</text>
+        <x>330</x>
+        <y>280</y>
+        <width>210</width>
+        <tooltip>$(actions)</tooltip>
+      </widget>
+      <widget type="multi_state_led" version="2.0.0">
+        <name>CouplerAirflowC3_LED</name>
+        <pv_name>$(acc):$(sys)_$(group)_CAS_C3:CurrentStatus_r</pv_name>
+        <x>20</x>
+        <y>320</y>
+        <width>30</width>
+        <height>30</height>
+        <states>
+          <state>
+            <value>0</value>
+            <label></label>
+            <color>
+              <color name="ON" red="70" green="255" blue="70">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>1</value>
+            <label></label>
+            <color>
+              <color name="MAJOR" red="255" green="0" blue="0">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>2</value>
+            <label></label>
+            <color>
+              <color name="WARNING" red="252" green="242" blue="17">
+              </color>
+            </color>
+          </state>
+        </states>
+        <fallback_label></fallback_label>
+      </widget>
+      <widget type="action_button" version="3.0.0">
+        <name>CouplerAirflowC3_button</name>
+        <actions>
+          <action type="open_display">
+            <file>expert/binary_input_expert.bob</file>
+            <macros>
+              <CHANNEL_NAME>Cupler Airflow Sensor C3</CHANNEL_NAME>
+              <P>$(Pzynq)</P>
+              <R>$(Rzynq)</R>
+              <num>CAS_C3</num>
+            </macros>
+            <target>tab</target>
+            <description>Open Display</description>
+          </action>
+        </actions>
+        <text>Coupler Airflow sens C3</text>
+        <x>60</x>
+        <y>320</y>
+        <width>210</width>
+        <tooltip>$(actions)</tooltip>
+      </widget>
+      <widget type="multi_state_led" version="2.0.0">
+        <name>CouplerAirflowC4_LED</name>
+        <pv_name>$(acc):$(sys)_$(group)_CAS_C4:CurrentStatus_r</pv_name>
+        <x>290</x>
+        <y>320</y>
+        <width>30</width>
+        <height>30</height>
+        <states>
+          <state>
+            <value>0</value>
+            <label></label>
+            <color>
+              <color name="ON" red="70" green="255" blue="70">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>1</value>
+            <label></label>
+            <color>
+              <color name="MAJOR" red="255" green="0" blue="0">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>2</value>
+            <label></label>
+            <color>
+              <color name="WARNING" red="252" green="242" blue="17">
+              </color>
+            </color>
+          </state>
+        </states>
+        <fallback_label></fallback_label>
+      </widget>
+      <widget type="action_button" version="3.0.0">
+        <name>CouplerAirflowC4_button</name>
+        <actions>
+          <action type="open_display">
+            <file>expert/binary_input_expert.bob</file>
+            <macros>
+              <CHANNEL_NAME>Cupler Airflow Sensor C4</CHANNEL_NAME>
+              <P>$(Pzynq)</P>
+              <R>$(Rzynq)</R>
+              <num>CAS_C4</num>
+            </macros>
+            <target>tab</target>
+            <description>Open Display</description>
+          </action>
+        </actions>
+        <text>Coupler Airflow sens C4</text>
+        <x>330</x>
+        <y>320</y>
+        <width>210</width>
+        <tooltip>$(actions)</tooltip>
+      </widget>
+      <widget type="multi_state_led" version="2.0.0">
+        <name>SSAReadyC3_LED</name>
+        <pv_name>$(acc):$(sys)_$(group)_SSA_C3:CurrentStatus_r</pv_name>
+        <x>20</x>
+        <y>360</y>
+        <width>30</width>
+        <height>30</height>
+        <states>
+          <state>
+            <value>1</value>
+            <label></label>
+            <color>
+              <color name="ON" red="70" green="255" blue="70">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>0</value>
+            <label></label>
+            <color>
+              <color name="MAJOR" red="255" green="0" blue="0">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>2</value>
+            <label></label>
+            <color>
+              <color name="WARNING" red="252" green="242" blue="17">
+              </color>
+            </color>
+          </state>
+        </states>
+        <fallback_label></fallback_label>
+      </widget>
+      <widget type="action_button" version="3.0.0">
+        <name>SSAReadyC3_button</name>
+        <actions>
+          <action type="open_display">
+            <file>expert/ssa_ready_binary_input.bob</file>
+            <macros>
+              <CHANNEL_NAME>SSA ready C3</CHANNEL_NAME>
+              <num>SSA_C3</num>
+            </macros>
+            <target>tab</target>
+            <description>Open Display</description>
+          </action>
+        </actions>
+        <text>SSA Ready C3</text>
+        <x>60</x>
+        <y>360</y>
+        <width>210</width>
+        <tooltip>$(actions)</tooltip>
+      </widget>
+      <widget type="multi_state_led" version="2.0.0">
+        <name>SSAReadyC4_LED</name>
+        <pv_name>$(acc):$(sys)_$(group)_SSA_C4:CurrentStatus_r</pv_name>
+        <x>290</x>
+        <y>360</y>
+        <width>30</width>
+        <height>30</height>
+        <states>
+          <state>
+            <value>1</value>
+            <label></label>
+            <color>
+              <color name="ON" red="70" green="255" blue="70">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>0</value>
+            <label></label>
+            <color>
+              <color name="MAJOR" red="255" green="0" blue="0">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>2</value>
+            <label></label>
+            <color>
+              <color name="WARNING" red="252" green="242" blue="17">
+              </color>
+            </color>
+          </state>
+        </states>
+        <fallback_label></fallback_label>
+      </widget>
+      <widget type="action_button" version="3.0.0">
+        <name>SSAReadyC4_button</name>
+        <actions>
+          <action type="open_display">
+            <file>expert/ssa_ready_binary_input.bob</file>
+            <macros>
+              <CHANNEL_NAME>SSA ready C4</CHANNEL_NAME>
+              <num>SSA_C4</num>
+            </macros>
+            <target>tab</target>
+            <description>Open Display</description>
+          </action>
+        </actions>
+        <text>SSA Ready C4</text>
+        <x>330</x>
+        <y>360</y>
+        <width>210</width>
+        <tooltip>$(actions)</tooltip>
+      </widget>
+      <widget type="multi_state_led" version="2.0.0">
+        <name>CouplerVacuumC3_LED</name>
+        <pv_name>$(acc):$(sys)_$(group)_CVP_C3:CurrentStatus_r</pv_name>
+        <x>20</x>
+        <y>400</y>
+        <width>30</width>
+        <height>30</height>
+        <states>
+          <state>
+            <value>0</value>
+            <label></label>
+            <color>
+              <color name="ON" red="70" green="255" blue="70">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>1</value>
+            <label></label>
+            <color>
+              <color name="MAJOR" red="255" green="0" blue="0">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>2</value>
+            <label></label>
+            <color>
+              <color name="WARNING" red="252" green="242" blue="17">
+              </color>
+            </color>
+          </state>
+        </states>
+        <fallback_label></fallback_label>
+      </widget>
+      <widget type="action_button" version="3.0.0">
+        <name>CouplerVacuumC3_button</name>
+        <actions>
+          <action type="open_display">
+            <file>expert/binary_input_expert.bob</file>
+            <macros>
+              <CHANNEL_NAME>Coupler Vacuum Permit C3</CHANNEL_NAME>
+              <P>$(Pzynq)</P>
+              <R>$(Rzynq)</R>
+              <num>CVP_C3</num>
+            </macros>
+            <target>tab</target>
+            <description>Open Display</description>
+          </action>
+        </actions>
+        <text>Coupler Vacuum Permit C3</text>
+        <x>60</x>
+        <y>400</y>
+        <width>210</width>
+        <tooltip>$(actions)</tooltip>
+      </widget>
+      <widget type="multi_state_led" version="2.0.0">
+        <name>CouplerVacuumC4_LED</name>
+        <pv_name>$(acc):$(sys)_$(group)_CVP_C4:CurrentStatus_r</pv_name>
+        <x>290</x>
+        <y>400</y>
+        <width>30</width>
+        <height>30</height>
+        <states>
+          <state>
+            <value>0</value>
+            <label></label>
+            <color>
+              <color name="ON" red="70" green="255" blue="70">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>1</value>
+            <label></label>
+            <color>
+              <color name="MAJOR" red="255" green="0" blue="0">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>2</value>
+            <label></label>
+            <color>
+              <color name="WARNING" red="252" green="242" blue="17">
+              </color>
+            </color>
+          </state>
+        </states>
+        <fallback_label></fallback_label>
+      </widget>
+      <widget type="action_button" version="3.0.0">
+        <name>CouplerVacuumC4_button</name>
+        <actions>
+          <action type="open_display">
+            <file>expert/binary_input_expert.bob</file>
+            <macros>
+              <CHANNEL_NAME>Coupler Vacuum Permit C4</CHANNEL_NAME>
+              <P>$(Pzynq)</P>
+              <R>$(Rzynq)</R>
+              <num>CVP_C4</num>
+            </macros>
+            <target>tab</target>
+            <description>Open Display</description>
+          </action>
+        </actions>
+        <text>Coupler Vacuum Permit C4</text>
+        <x>330</x>
+        <y>400</y>
+        <width>210</width>
+        <tooltip>$(actions)</tooltip>
+      </widget>
+      <widget type="multi_state_led" version="2.0.0">
+        <name>CouplerAirflowC2_LED</name>
+        <pv_name>$(acc):$(sys)_$(group)_CAS_C2:CurrentStatus_r</pv_name>
+        <x>290</x>
+        <y>120</y>
+        <width>30</width>
+        <height>30</height>
+        <states>
+          <state>
+            <value>0</value>
+            <label></label>
+            <color>
+              <color name="ON" red="70" green="255" blue="70">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>1</value>
+            <label></label>
+            <color>
+              <color name="MAJOR" red="255" green="0" blue="0">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>2</value>
+            <label></label>
+            <color>
+              <color name="WARNING" red="252" green="242" blue="17">
+              </color>
+            </color>
+          </state>
+        </states>
+        <fallback_label></fallback_label>
+      </widget>
+      <widget type="action_button" version="3.0.0">
+        <name>CouplerAirflowC2_button</name>
+        <actions>
+          <action type="open_display">
+            <file>expert/binary_input_expert.bob</file>
+            <macros>
+              <CHANNEL_NAME>Cupler Airflow Sensor</CHANNEL_NAME>
+              <P>$(Pzynq)</P>
+              <R>$(Rzynq)</R>
+              <num>CAS_C2</num>
+            </macros>
+            <target>tab</target>
+            <description>Open Display</description>
+          </action>
+        </actions>
+        <text>Coupler Airflow sens C2</text>
+        <x>330</x>
+        <y>120</y>
+        <width>210</width>
+        <tooltip>$(actions)</tooltip>
+      </widget>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>Analog_group</name>
+      <x>600</x>
+      <y>50</y>
+      <width>830</width>
+      <height>510</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="rectangle" version="2.0.0">
+        <name>Analog_rectangle</name>
+        <width>830</width>
+        <height>510</height>
+        <line_width>2</line_width>
+        <line_color>
+          <color name="GROUP-BORDER" red="150" green="155" blue="151">
+          </color>
+        </line_color>
+        <background_color>
+          <color name="GROUP-BACKGROUND" red="200" green="205" blue="201">
+          </color>
+        </background_color>
+        <corner_width>10</corner_width>
+        <corner_height>10</corner_height>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Analog_title</name>
+        <class>HEADER3</class>
+        <text>Analog</text>
+        <width>830</width>
+        <height>40</height>
+        <font>
+          <font name="Header 3" family="Liberation Sans" style="BOLD" size="16.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="multi_state_led" version="2.0.0">
+        <name>FieldEmissionC1_LED</name>
+        <pv_name>$(acc):$(sys)_$(group)_FEP1_C1:CurrentStatus_r</pv_name>
+        <x>20</x>
+        <y>80</y>
+        <width>30</width>
+        <height>30</height>
+        <states>
+          <state>
+            <value>0</value>
+            <label></label>
+            <color>
+              <color name="ON" red="70" green="255" blue="70">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>1</value>
+            <label></label>
+            <color>
+              <color name="MAJOR" red="255" green="0" blue="0">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>2</value>
+            <label></label>
+            <color>
+              <color name="WARNING" red="252" green="242" blue="17">
+              </color>
+            </color>
+          </state>
+        </states>
+        <fallback_label></fallback_label>
+      </widget>
+      <widget type="action_button" version="3.0.0">
+        <name>FieldEmissionC1_button</name>
+        <actions>
+          <action type="open_display">
+            <file>expert/analog_input_expert.bob</file>
+            <macros>
+              <CHANNEL_NAME>Field Emission Probe C1</CHANNEL_NAME>
+              <P>$(Pzynq)</P>
+              <R>$(Rzynq)</R>
+              <num>FEP1_C1</num>
+            </macros>
+            <target>tab</target>
+            <description>Open Display</description>
+          </action>
+        </actions>
+        <text>Field Emission Probe C1</text>
+        <x>60</x>
+        <y>80</y>
+        <width>210</width>
+        <tooltip>$(actions)</tooltip>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Cavity1_label</name>
+        <text>Cavity 1</text>
+        <x>60</x>
+        <y>40</y>
+        <width>190</width>
+        <height>30</height>
+        <font>
+          <font name="Header 3" family="Liberation Sans" style="BOLD" size="16.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="multi_state_led" version="2.0.0">
+        <name>FieldEmissionC2_LED</name>
+        <pv_name>$(acc):$(sys)_$(group)_FEP1_C2:CurrentStatus_r</pv_name>
+        <x>290</x>
+        <y>80</y>
+        <width>30</width>
+        <height>30</height>
+        <states>
+          <state>
+            <value>0</value>
+            <label></label>
+            <color>
+              <color name="ON" red="70" green="255" blue="70">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>1</value>
+            <label></label>
+            <color>
+              <color name="MAJOR" red="255" green="0" blue="0">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>2</value>
+            <label></label>
+            <color>
+              <color name="WARNING" red="252" green="242" blue="17">
+              </color>
+            </color>
+          </state>
+        </states>
+        <fallback_label></fallback_label>
+      </widget>
+      <widget type="action_button" version="3.0.0">
+        <name>FieldEmissionC2_button</name>
+        <actions>
+          <action type="open_display">
+            <file>expert/analog_input_expert.bob</file>
+            <macros>
+              <CHANNEL_NAME>Field Emission Probe C2</CHANNEL_NAME>
+              <P>$(Pzynq)</P>
+              <R>$(Rzynq)</R>
+              <num>FEP1_C2</num>
+            </macros>
+            <target>tab</target>
+            <description>Open Display</description>
+          </action>
+        </actions>
+        <text>Field Emission Probe C2</text>
+        <x>330</x>
+        <y>80</y>
+        <width>210</width>
+        <tooltip>$(actions)</tooltip>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Cavity2_label</name>
+        <text>Cavity 2</text>
+        <x>330</x>
+        <y>40</y>
+        <width>190</width>
+        <height>30</height>
+        <font>
+          <font name="Header 3" family="Liberation Sans" style="BOLD" size="16.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="multi_state_led" version="2.0.0">
+        <name>FieldEmissionC3_LED</name>
+        <pv_name>$(acc):$(sys)_$(group)_FEP1_C3:CurrentStatus_r</pv_name>
+        <x>20</x>
+        <y>280</y>
+        <width>30</width>
+        <height>30</height>
+        <states>
+          <state>
+            <value>0</value>
+            <label></label>
+            <color>
+              <color name="ON" red="70" green="255" blue="70">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>1</value>
+            <label></label>
+            <color>
+              <color name="MAJOR" red="255" green="0" blue="0">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>2</value>
+            <label></label>
+            <color>
+              <color name="WARNING" red="252" green="242" blue="17">
+              </color>
+            </color>
+          </state>
+        </states>
+        <fallback_label></fallback_label>
+      </widget>
+      <widget type="action_button" version="3.0.0">
+        <name>FieldEmissionC3_button</name>
+        <actions>
+          <action type="open_display">
+            <file>expert/analog_input_expert.bob</file>
+            <macros>
+              <CHANNEL_NAME>Field Emission Probe C3</CHANNEL_NAME>
+              <P>$(Pzynq)</P>
+              <R>$(Rzynq)</R>
+              <num>FEP1_C3</num>
+            </macros>
+            <target>tab</target>
+            <description>Open Display</description>
+          </action>
+        </actions>
+        <text>Field Emission Probe C3</text>
+        <x>60</x>
+        <y>280</y>
+        <width>210</width>
+        <tooltip>$(actions)</tooltip>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Cavity3_label</name>
+        <text>Cavity 3</text>
+        <x>60</x>
+        <y>240</y>
+        <width>190</width>
+        <height>30</height>
+        <font>
+          <font name="Header 3" family="Liberation Sans" style="BOLD" size="16.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="multi_state_led" version="2.0.0">
+        <name>FieldEmissionC4_LED</name>
+        <pv_name>$(acc):$(sys)_$(group)_FEP1_C4:CurrentStatus_r</pv_name>
+        <x>290</x>
+        <y>280</y>
+        <width>30</width>
+        <height>30</height>
+        <states>
+          <state>
+            <value>0</value>
+            <label></label>
+            <color>
+              <color name="ON" red="70" green="255" blue="70">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>1</value>
+            <label></label>
+            <color>
+              <color name="MAJOR" red="255" green="0" blue="0">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>2</value>
+            <label></label>
+            <color>
+              <color name="WARNING" red="252" green="242" blue="17">
+              </color>
+            </color>
+          </state>
+        </states>
+        <fallback_label></fallback_label>
+      </widget>
+      <widget type="action_button" version="3.0.0">
+        <name>FieldEmissionC4_button</name>
+        <actions>
+          <action type="open_display">
+            <file>expert/analog_input_expert.bob</file>
+            <macros>
+              <CHANNEL_NAME>Field Emission Probe C4</CHANNEL_NAME>
+              <P>$(Pzynq)</P>
+              <R>$(Rzynq)</R>
+              <num>FEP1_C4</num>
+            </macros>
+            <target>tab</target>
+            <description>Open Display</description>
+          </action>
+        </actions>
+        <text>Field Emission Probe C4</text>
+        <x>330</x>
+        <y>280</y>
+        <width>210</width>
+        <tooltip>$(actions)</tooltip>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Cavity4_label</name>
+        <text>Cavity 4</text>
+        <x>330</x>
+        <y>240</y>
+        <width>190</width>
+        <height>30</height>
+        <font>
+          <font name="Header 3" family="Liberation Sans" style="BOLD" size="16.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="multi_state_led" version="2.0.0">
+        <name>Temperature1C1_LED</name>
+        <pv_name>$(acc):$(sys)_$(group)_RTD1_C1:CurrentStatus_r</pv_name>
+        <x>20</x>
+        <y>120</y>
+        <width>30</width>
+        <height>30</height>
+        <states>
+          <state>
+            <value>0</value>
+            <label></label>
+            <color>
+              <color name="ON" red="70" green="255" blue="70">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>1</value>
+            <label></label>
+            <color>
+              <color name="MAJOR" red="255" green="0" blue="0">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>2</value>
+            <label></label>
+            <color>
+              <color name="WARNING" red="252" green="242" blue="17">
+              </color>
+            </color>
+          </state>
+        </states>
+        <fallback_label></fallback_label>
+      </widget>
+      <widget type="action_button" version="3.0.0">
+        <name>Temperature1C1_button</name>
+        <actions>
+          <action type="open_display">
+            <file>expert/analog_input_expert.bob</file>
+            <macros>
+              <CHANNEL_NAME>Temperature Sensor RTD1 C1</CHANNEL_NAME>
+              <P>$(Pzynq)</P>
+              <R>$(Rzynq)</R>
+              <num>RTD1_C1</num>
+            </macros>
+            <target>tab</target>
+            <description>Open Display</description>
+          </action>
+        </actions>
+        <text>Temperature Sensor RTD1 C1</text>
+        <x>60</x>
+        <y>120</y>
+        <width>210</width>
+        <tooltip>$(actions)</tooltip>
+      </widget>
+      <widget type="multi_state_led" version="2.0.0">
+        <name>Temperature1C2_LED</name>
+        <pv_name>$(acc):$(sys)_$(group)_RTD1_C2:CurrentStatus_r</pv_name>
+        <x>290</x>
+        <y>120</y>
+        <width>30</width>
+        <height>30</height>
+        <states>
+          <state>
+            <value>0</value>
+            <label></label>
+            <color>
+              <color name="ON" red="70" green="255" blue="70">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>1</value>
+            <label></label>
+            <color>
+              <color name="MAJOR" red="255" green="0" blue="0">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>2</value>
+            <label></label>
+            <color>
+              <color name="WARNING" red="252" green="242" blue="17">
+              </color>
+            </color>
+          </state>
+        </states>
+        <fallback_label></fallback_label>
+      </widget>
+      <widget type="action_button" version="3.0.0">
+        <name>Temperature1C2_button</name>
+        <actions>
+          <action type="open_display">
+            <file>expert/analog_input_expert.bob</file>
+            <macros>
+              <CHANNEL_NAME>Temperature Sensor RTD1 C2</CHANNEL_NAME>
+              <P>$(Pzynq)</P>
+              <R>$(Rzynq)</R>
+              <num>RTD1_C2</num>
+            </macros>
+            <target>tab</target>
+            <description>Open Display</description>
+          </action>
+        </actions>
+        <text>Temperature Sensor RTD1 C2</text>
+        <x>330</x>
+        <y>120</y>
+        <width>210</width>
+        <tooltip>$(actions)</tooltip>
+      </widget>
+      <widget type="multi_state_led" version="2.0.0">
+        <name>Temperature1C3_LED</name>
+        <pv_name>$(acc):$(sys)_$(group)_RTD1_C3:CurrentStatus_r</pv_name>
+        <x>20</x>
+        <y>320</y>
+        <width>30</width>
+        <height>30</height>
+        <states>
+          <state>
+            <value>0</value>
+            <label></label>
+            <color>
+              <color name="ON" red="70" green="255" blue="70">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>1</value>
+            <label></label>
+            <color>
+              <color name="MAJOR" red="255" green="0" blue="0">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>2</value>
+            <label></label>
+            <color>
+              <color name="WARNING" red="252" green="242" blue="17">
+              </color>
+            </color>
+          </state>
+        </states>
+        <fallback_label></fallback_label>
+      </widget>
+      <widget type="action_button" version="3.0.0">
+        <name>Temperature1C3_button</name>
+        <actions>
+          <action type="open_display">
+            <file>expert/analog_input_expert.bob</file>
+            <macros>
+              <CHANNEL_NAME>Temperature Sensor RTD1 C3</CHANNEL_NAME>
+              <P>$(Pzynq)</P>
+              <R>$(Rzynq)</R>
+              <num>RTD1_C3</num>
+            </macros>
+            <target>tab</target>
+            <description>Open Display</description>
+          </action>
+        </actions>
+        <text>Temperature Sensor RTD1 C3</text>
+        <x>60</x>
+        <y>320</y>
+        <width>210</width>
+        <tooltip>$(actions)</tooltip>
+      </widget>
+      <widget type="multi_state_led" version="2.0.0">
+        <name>Temperature1C4_LED</name>
+        <pv_name>$(acc):$(sys)_$(group)_RTD1_C4:CurrentStatus_r</pv_name>
+        <x>290</x>
+        <y>320</y>
+        <width>30</width>
+        <height>30</height>
+        <states>
+          <state>
+            <value>0</value>
+            <label></label>
+            <color>
+              <color name="ON" red="70" green="255" blue="70">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>1</value>
+            <label></label>
+            <color>
+              <color name="MAJOR" red="255" green="0" blue="0">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>2</value>
+            <label></label>
+            <color>
+              <color name="WARNING" red="252" green="242" blue="17">
+              </color>
+            </color>
+          </state>
+        </states>
+        <fallback_label></fallback_label>
+      </widget>
+      <widget type="action_button" version="3.0.0">
+        <name>Temperature1C4_button</name>
+        <actions>
+          <action type="open_display">
+            <file>expert/analog_input_expert.bob</file>
+            <macros>
+              <CHANNEL_NAME>Temperature Sensor RTD1 C4</CHANNEL_NAME>
+              <P>$(Pzynq)</P>
+              <R>$(Rzynq)</R>
+              <num>RTD1_C4</num>
+            </macros>
+            <target>tab</target>
+            <description>Open Display</description>
+          </action>
+        </actions>
+        <text>Temperature Sensor RTD1 C4</text>
+        <x>330</x>
+        <y>320</y>
+        <width>210</width>
+        <tooltip>$(actions)</tooltip>
+      </widget>
+      <widget type="action_button" version="3.0.0">
+        <name>HVCouplerBiasVoltC1_button</name>
+        <actions>
+          <action type="open_display">
+            <file>expert/analog_input_expert.bob</file>
+            <macros>
+              <CHANNEL_NAME>HV Coupler Bias Voltage C1</CHANNEL_NAME>
+              <P>$(Pzynq)</P>
+              <R>$(Rzynq)</R>
+              <num>HVVOLT_C1</num>
+            </macros>
+            <target>tab</target>
+            <description>Open Display</description>
+          </action>
+        </actions>
+        <text>HV Coupler Bias Voltage C1</text>
+        <x>60</x>
+        <y>160</y>
+        <width>210</width>
+        <tooltip>$(actions)</tooltip>
+      </widget>
+      <widget type="multi_state_led" version="2.0.0">
+        <name>HVCouplerBiasVoltC1_LED</name>
+        <pv_name>$(acc):$(sys)_$(group)_HVVOLT_C1:CurrentStatus_r</pv_name>
+        <x>20</x>
+        <y>160</y>
+        <width>30</width>
+        <height>30</height>
+        <states>
+          <state>
+            <value>0</value>
+            <label></label>
+            <color>
+              <color name="ON" red="70" green="255" blue="70">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>1</value>
+            <label></label>
+            <color>
+              <color name="MAJOR" red="255" green="0" blue="0">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>2</value>
+            <label></label>
+            <color>
+              <color name="WARNING" red="252" green="242" blue="17">
+              </color>
+            </color>
+          </state>
+        </states>
+        <fallback_label></fallback_label>
+      </widget>
+      <widget type="action_button" version="3.0.0">
+        <name>HVCouplerBiasCurrentC1_button</name>
+        <actions>
+          <action type="open_display">
+            <file>expert/analog_input_expert.bob</file>
+            <macros>
+              <CHANNEL_NAME>HV Coupler Bias Current C1</CHANNEL_NAME>
+              <P>$(Pzynq)</P>
+              <R>$(Rzynq)</R>
+              <num>HVCURR_C1</num>
+            </macros>
+            <target>tab</target>
+            <description>Open Display</description>
+          </action>
+        </actions>
+        <text>HV Coupler Bias Curr C1</text>
+        <x>60</x>
+        <y>198</y>
+        <width>210</width>
+        <tooltip>$(actions)</tooltip>
+      </widget>
+      <widget type="multi_state_led" version="2.0.0">
+        <name>HVCouplerBiasCurrC1_LED</name>
+        <pv_name>$(acc):$(sys)_$(group)_HVCURR_C1:CurrentStatus_r</pv_name>
+        <x>20</x>
+        <y>197</y>
+        <width>30</width>
+        <height>30</height>
+        <states>
+          <state>
+            <value>0</value>
+            <label></label>
+            <color>
+              <color name="ON" red="70" green="255" blue="70">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>1</value>
+            <label></label>
+            <color>
+              <color name="MAJOR" red="255" green="0" blue="0">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>2</value>
+            <label></label>
+            <color>
+              <color name="WARNING" red="252" green="242" blue="17">
+              </color>
+            </color>
+          </state>
+        </states>
+        <fallback_label></fallback_label>
+      </widget>
+      <widget type="action_button" version="3.0.0">
+        <name>HVCouplerBiasVoltC2_button</name>
+        <actions>
+          <action type="open_display">
+            <file>expert/analog_input_expert.bob</file>
+            <macros>
+              <CHANNEL_NAME>HV Coupler Bias Voltage C2</CHANNEL_NAME>
+              <P>$(Pzynq)</P>
+              <R>$(Rzynq)</R>
+              <num>HVVOLT_C2</num>
+            </macros>
+            <target>tab</target>
+            <description>Open Display</description>
+          </action>
+        </actions>
+        <text>HV Coupler Bias Voltage C2</text>
+        <x>330</x>
+        <y>160</y>
+        <width>210</width>
+        <tooltip>$(actions)</tooltip>
+      </widget>
+      <widget type="multi_state_led" version="2.0.0">
+        <name>HVCouplerBiasVoltC2_LED</name>
+        <pv_name>$(acc):$(sys)_$(group)_HVVOLT_C2:CurrentStatus_r</pv_name>
+        <x>290</x>
+        <y>160</y>
+        <width>30</width>
+        <height>30</height>
+        <states>
+          <state>
+            <value>0</value>
+            <label></label>
+            <color>
+              <color name="ON" red="70" green="255" blue="70">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>1</value>
+            <label></label>
+            <color>
+              <color name="MAJOR" red="255" green="0" blue="0">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>2</value>
+            <label></label>
+            <color>
+              <color name="WARNING" red="252" green="242" blue="17">
+              </color>
+            </color>
+          </state>
+        </states>
+        <fallback_label></fallback_label>
+      </widget>
+      <widget type="action_button" version="3.0.0">
+        <name>HVCouplerBiasCurrentC2_button</name>
+        <actions>
+          <action type="open_display">
+            <file>expert/analog_input_expert.bob</file>
+            <macros>
+              <CHANNEL_NAME>HV Coupler Bias Current C2</CHANNEL_NAME>
+              <P>$(Pzynq)</P>
+              <R>$(Rzynq)</R>
+              <num>HVCURR_C2</num>
+            </macros>
+            <target>tab</target>
+            <description>Open Display</description>
+          </action>
+        </actions>
+        <text>HV Coupler Bias Curr C2</text>
+        <x>330</x>
+        <y>198</y>
+        <width>210</width>
+        <tooltip>$(actions)</tooltip>
+      </widget>
+      <widget type="multi_state_led" version="2.0.0">
+        <name>HVCouplerBiasCurrC2_LED</name>
+        <pv_name>$(acc):$(sys)_$(group)_HVCURR_C2:CurrentStatus_r</pv_name>
+        <x>290</x>
+        <y>197</y>
+        <width>30</width>
+        <height>30</height>
+        <states>
+          <state>
+            <value>0</value>
+            <label></label>
+            <color>
+              <color name="ON" red="70" green="255" blue="70">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>1</value>
+            <label></label>
+            <color>
+              <color name="MAJOR" red="255" green="0" blue="0">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>2</value>
+            <label></label>
+            <color>
+              <color name="WARNING" red="252" green="242" blue="17">
+              </color>
+            </color>
+          </state>
+        </states>
+        <fallback_label></fallback_label>
+      </widget>
+      <widget type="action_button" version="3.0.0">
+        <name>HVCouplerBiasVoltC3_button</name>
+        <actions>
+          <action type="open_display">
+            <file>expert/analog_input_expert.bob</file>
+            <macros>
+              <CHANNEL_NAME>HV Coupler Bias Voltage C3</CHANNEL_NAME>
+              <P>$(Pzynq)</P>
+              <R>$(Rzynq)</R>
+              <num>HVVOLT_C3</num>
+            </macros>
+            <target>tab</target>
+            <description>Open Display</description>
+          </action>
+        </actions>
+        <text>HV Coupler Bias Voltage C3</text>
+        <x>60</x>
+        <y>360</y>
+        <width>210</width>
+        <tooltip>$(actions)</tooltip>
+      </widget>
+      <widget type="multi_state_led" version="2.0.0">
+        <name>HVCouplerBiasVoltC3_LED</name>
+        <pv_name>$(acc):$(sys)_$(group)_HVVOLT_C3:CurrentStatus_r</pv_name>
+        <x>20</x>
+        <y>360</y>
+        <width>30</width>
+        <height>30</height>
+        <states>
+          <state>
+            <value>0</value>
+            <label></label>
+            <color>
+              <color name="ON" red="70" green="255" blue="70">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>1</value>
+            <label></label>
+            <color>
+              <color name="MAJOR" red="255" green="0" blue="0">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>2</value>
+            <label></label>
+            <color>
+              <color name="WARNING" red="252" green="242" blue="17">
+              </color>
+            </color>
+          </state>
+        </states>
+        <fallback_label></fallback_label>
+      </widget>
+      <widget type="action_button" version="3.0.0">
+        <name>HVCouplerBiasCurrentC3_button</name>
+        <actions>
+          <action type="open_display">
+            <file>expert/analog_input_expert.bob</file>
+            <macros>
+              <CHANNEL_NAME>HV Coupler Bias Current C3</CHANNEL_NAME>
+              <P>$(Pzynq)</P>
+              <R>$(Rzynq)</R>
+              <num>HVCURR_C3</num>
+            </macros>
+            <target>tab</target>
+            <description>Open Display</description>
+          </action>
+        </actions>
+        <text>HV Coupler Bias Curr C3</text>
+        <x>60</x>
+        <y>398</y>
+        <width>210</width>
+        <tooltip>$(actions)</tooltip>
+      </widget>
+      <widget type="multi_state_led" version="2.0.0">
+        <name>HVCouplerBiasCurrC3_LED</name>
+        <pv_name>$(acc):$(sys)_$(group)_HVCURR_C3:CurrentStatus_r</pv_name>
+        <x>20</x>
+        <y>397</y>
+        <width>30</width>
+        <height>30</height>
+        <states>
+          <state>
+            <value>0</value>
+            <label></label>
+            <color>
+              <color name="ON" red="70" green="255" blue="70">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>1</value>
+            <label></label>
+            <color>
+              <color name="MAJOR" red="255" green="0" blue="0">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>2</value>
+            <label></label>
+            <color>
+              <color name="WARNING" red="252" green="242" blue="17">
+              </color>
+            </color>
+          </state>
+        </states>
+        <fallback_label></fallback_label>
+      </widget>
+      <widget type="action_button" version="3.0.0">
+        <name>HVCouplerBiasVoltC4_button</name>
+        <actions>
+          <action type="open_display">
+            <file>expert/analog_input_expert.bob</file>
+            <macros>
+              <CHANNEL_NAME>HV Coupler Bias Voltage C4</CHANNEL_NAME>
+              <P>$(Pzynq)</P>
+              <R>$(Rzynq)</R>
+              <num>HVVOLT_C4</num>
+            </macros>
+            <target>tab</target>
+            <description>Open Display</description>
+          </action>
+        </actions>
+        <text>HV Coupler Bias Voltage C4</text>
+        <x>330</x>
+        <y>360</y>
+        <width>210</width>
+        <tooltip>$(actions)</tooltip>
+      </widget>
+      <widget type="multi_state_led" version="2.0.0">
+        <name>HVCouplerBiasVoltC4_LED</name>
+        <pv_name>$(acc):$(sys)_$(group)_HVVOLT_C4:CurrentStatus_r</pv_name>
+        <x>290</x>
+        <y>360</y>
+        <width>30</width>
+        <height>30</height>
+        <states>
+          <state>
+            <value>0</value>
+            <label></label>
+            <color>
+              <color name="ON" red="70" green="255" blue="70">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>1</value>
+            <label></label>
+            <color>
+              <color name="MAJOR" red="255" green="0" blue="0">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>2</value>
+            <label></label>
+            <color>
+              <color name="WARNING" red="252" green="242" blue="17">
+              </color>
+            </color>
+          </state>
+        </states>
+        <fallback_label></fallback_label>
+      </widget>
+      <widget type="action_button" version="3.0.0">
+        <name>HVCouplerBiasCurrentC4_button</name>
+        <actions>
+          <action type="open_display">
+            <file>expert/analog_input_expert.bob</file>
+            <macros>
+              <CHANNEL_NAME>HV Coupler Bias Current C4</CHANNEL_NAME>
+              <P>$(Pzynq)</P>
+              <R>$(Rzynq)</R>
+              <num>HVCURR_C4</num>
+            </macros>
+            <target>tab</target>
+            <description>Open Display</description>
+          </action>
+        </actions>
+        <text>HV Coupler Bias Curr C4</text>
+        <x>330</x>
+        <y>398</y>
+        <width>210</width>
+        <tooltip>$(actions)</tooltip>
+      </widget>
+      <widget type="multi_state_led" version="2.0.0">
+        <name>HVCouplerBiasCurrC4_LED</name>
+        <pv_name>$(acc):$(sys)_$(group)_HVCURR_C4:CurrentStatus_r</pv_name>
+        <x>290</x>
+        <y>397</y>
+        <width>30</width>
+        <height>30</height>
+        <states>
+          <state>
+            <value>0</value>
+            <label></label>
+            <color>
+              <color name="ON" red="70" green="255" blue="70">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>1</value>
+            <label></label>
+            <color>
+              <color name="MAJOR" red="255" green="0" blue="0">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>2</value>
+            <label></label>
+            <color>
+              <color name="WARNING" red="252" green="242" blue="17">
+              </color>
+            </color>
+          </state>
+        </states>
+        <fallback_label></fallback_label>
+      </widget>
+      <widget type="multi_state_led" version="2.0.0">
+        <name>RFAntenna1_LED</name>
+        <pv_name>$(acc):$(sys)_$(group)_NIRP1:CurrentStatus_r</pv_name>
+        <x>580</x>
+        <y>140</y>
+        <width>30</width>
+        <height>30</height>
+        <states>
+          <state>
+            <value>0</value>
+            <label></label>
+            <color>
+              <color name="ON" red="70" green="255" blue="70">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>1</value>
+            <label></label>
+            <color>
+              <color name="MAJOR" red="255" green="0" blue="0">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>2</value>
+            <label></label>
+            <color>
+              <color name="WARNING" red="252" green="242" blue="17">
+              </color>
+            </color>
+          </state>
+        </states>
+        <fallback_label></fallback_label>
+      </widget>
+      <widget type="action_button" version="3.0.0">
+        <name>RFAntenna2_button</name>
+        <actions>
+          <action type="open_display">
+            <file>expert/analog_input_expert.bob</file>
+            <macros>
+              <CHANNEL_NAME>RF Antenna 2</CHANNEL_NAME>
+              <P>$(Pzynq)</P>
+              <R>$(Rzynq)</R>
+              <num>NIRP2</num>
+            </macros>
+            <target>tab</target>
+            <description>Open Display</description>
+          </action>
+        </actions>
+        <text>RF Antenna 2 (NIRP2)</text>
+        <x>620</x>
+        <y>180</y>
+        <width>190</width>
+        <tooltip>$(actions)</tooltip>
+      </widget>
+      <widget type="multi_state_led" version="2.0.0">
+        <name>RFAntenna2_LED</name>
+        <pv_name>$(acc):$(sys)_$(group)_NIRP2:CurrentStatus_r</pv_name>
+        <x>580</x>
+        <y>180</y>
+        <width>30</width>
+        <height>30</height>
+        <states>
+          <state>
+            <value>0</value>
+            <label></label>
+            <color>
+              <color name="ON" red="70" green="255" blue="70">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>1</value>
+            <label></label>
+            <color>
+              <color name="MAJOR" red="255" green="0" blue="0">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>2</value>
+            <label></label>
+            <color>
+              <color name="WARNING" red="252" green="242" blue="17">
+              </color>
+            </color>
+          </state>
+        </states>
+        <fallback_label></fallback_label>
+      </widget>
+      <widget type="action_button" version="3.0.0">
+        <name>RFAntenna1_button</name>
+        <actions>
+          <action type="open_display">
+            <file>expert/analog_input_expert.bob</file>
+            <macros>
+              <CHANNEL_NAME>RF Antenna 1</CHANNEL_NAME>
+              <P>$(Pzynq)</P>
+              <R>$(Rzynq)</R>
+              <num>NIRP1</num>
+            </macros>
+            <target>tab</target>
+            <description>Open Display</description>
+          </action>
+        </actions>
+        <text>RF Antenna 1 (NIRP1)</text>
+        <x>620</x>
+        <y>140</y>
+        <width>190</width>
+        <tooltip>$(actions)</tooltip>
+      </widget>
+      <widget type="action_button" version="3.0.0">
+        <name>RFAntenna3_button</name>
+        <actions>
+          <action type="open_display">
+            <file>expert/analog_input_expert.bob</file>
+            <macros>
+              <CHANNEL_NAME>RF Antenna 3</CHANNEL_NAME>
+              <P>$(Pzynq)</P>
+              <R>$(Rzynq)</R>
+              <num>NIRP3</num>
+            </macros>
+            <target>tab</target>
+            <description>Open Display</description>
+          </action>
+        </actions>
+        <text>RF Antenna 3 (NIRP3)</text>
+        <x>620</x>
+        <y>220</y>
+        <width>190</width>
+        <tooltip>$(actions)</tooltip>
+      </widget>
+      <widget type="multi_state_led" version="2.0.0">
+        <name>RFAntenna3_LED</name>
+        <pv_name>$(acc):$(sys)_$(group)_NIRP3:CurrentStatus_r</pv_name>
+        <x>580</x>
+        <y>220</y>
+        <width>30</width>
+        <height>30</height>
+        <states>
+          <state>
+            <value>0</value>
+            <label></label>
+            <color>
+              <color name="ON" red="70" green="255" blue="70">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>1</value>
+            <label></label>
+            <color>
+              <color name="MAJOR" red="255" green="0" blue="0">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>2</value>
+            <label></label>
+            <color>
+              <color name="WARNING" red="252" green="242" blue="17">
+              </color>
+            </color>
+          </state>
+        </states>
+        <fallback_label></fallback_label>
+      </widget>
+      <widget type="multi_state_led" version="2.0.0">
+        <name>RFAntenna4_LED</name>
+        <pv_name>$(acc):$(sys)_$(group)_NIRP4:CurrentStatus_r</pv_name>
+        <x>580</x>
+        <y>260</y>
+        <width>30</width>
+        <height>30</height>
+        <states>
+          <state>
+            <value>0</value>
+            <label></label>
+            <color>
+              <color name="ON" red="70" green="255" blue="70">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>1</value>
+            <label></label>
+            <color>
+              <color name="MAJOR" red="255" green="0" blue="0">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>2</value>
+            <label></label>
+            <color>
+              <color name="WARNING" red="252" green="242" blue="17">
+              </color>
+            </color>
+          </state>
+        </states>
+        <fallback_label></fallback_label>
+      </widget>
+      <widget type="action_button" version="3.0.0">
+        <name>RFAntenna5_button</name>
+        <actions>
+          <action type="open_display">
+            <file>expert/analog_input_expert.bob</file>
+            <macros>
+              <CHANNEL_NAME>RF Antenna 5</CHANNEL_NAME>
+              <P>$(Pzynq)</P>
+              <R>$(Rzynq)</R>
+              <num>NIRP5</num>
+            </macros>
+            <target>tab</target>
+            <description>Open Display</description>
+          </action>
+        </actions>
+        <text>RF Antenna 5 (NIRP2)</text>
+        <x>620</x>
+        <y>300</y>
+        <width>190</width>
+        <tooltip>$(actions)</tooltip>
+      </widget>
+      <widget type="multi_state_led" version="2.0.0">
+        <name>RFAntenna5_LED</name>
+        <pv_name>$(acc):$(sys)_$(group)_NIRP5:CurrentStatus_r</pv_name>
+        <x>580</x>
+        <y>300</y>
+        <width>30</width>
+        <height>30</height>
+        <states>
+          <state>
+            <value>0</value>
+            <label></label>
+            <color>
+              <color name="ON" red="70" green="255" blue="70">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>1</value>
+            <label></label>
+            <color>
+              <color name="MAJOR" red="255" green="0" blue="0">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>2</value>
+            <label></label>
+            <color>
+              <color name="WARNING" red="252" green="242" blue="17">
+              </color>
+            </color>
+          </state>
+        </states>
+        <fallback_label></fallback_label>
+      </widget>
+      <widget type="action_button" version="3.0.0">
+        <name>RFAntenna4_button</name>
+        <actions>
+          <action type="open_display">
+            <file>expert/analog_input_expert.bob</file>
+            <macros>
+              <CHANNEL_NAME>RF Antenna 4</CHANNEL_NAME>
+              <P>$(Pzynq)</P>
+              <R>$(Rzynq)</R>
+              <num>NIRP4</num>
+            </macros>
+            <target>tab</target>
+            <description>Open Display</description>
+          </action>
+        </actions>
+        <text>RF Antenna 4 (NIRP4)</text>
+        <x>620</x>
+        <y>260</y>
+        <width>190</width>
+        <tooltip>$(actions)</tooltip>
+      </widget>
+      <widget type="action_button" version="3.0.0">
+        <name>RFAntenna6_button</name>
+        <actions>
+          <action type="open_display">
+            <file>expert/analog_input_expert.bob</file>
+            <macros>
+              <CHANNEL_NAME>RF Antenna 6</CHANNEL_NAME>
+              <P>$(Pzynq)</P>
+              <R>$(Rzynq)</R>
+              <num>NIRP6</num>
+            </macros>
+            <target>tab</target>
+            <description>Open Display</description>
+          </action>
+        </actions>
+        <text>RF Antenna 6 (NIRP6)</text>
+        <x>620</x>
+        <y>340</y>
+        <width>190</width>
+        <tooltip>$(actions)</tooltip>
+      </widget>
+      <widget type="multi_state_led" version="2.0.0">
+        <name>RFAntenna6_LED</name>
+        <pv_name>$(acc):$(sys)_$(group)_NIRP6:CurrentStatus_r</pv_name>
+        <x>580</x>
+        <y>340</y>
+        <width>30</width>
+        <height>30</height>
+        <states>
+          <state>
+            <value>0</value>
+            <label></label>
+            <color>
+              <color name="ON" red="70" green="255" blue="70">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>1</value>
+            <label></label>
+            <color>
+              <color name="MAJOR" red="255" green="0" blue="0">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>2</value>
+            <label></label>
+            <color>
+              <color name="WARNING" red="252" green="242" blue="17">
+              </color>
+            </color>
+          </state>
+        </states>
+        <fallback_label></fallback_label>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>RFAntennas_label</name>
+        <text>RF Antennas</text>
+        <x>620</x>
+        <y>100</y>
+        <width>190</width>
+        <height>30</height>
+        <font>
+          <font name="Header 3" family="Liberation Sans" style="BOLD" size="16.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Diagnostics_group</name>
+    <x>820</x>
+    <y>70</y>
+    <width>320</width>
+    <height>110</height>
+    <style>3</style>
+    <background_color>
+      <color name="BACKGROUND" red="220" green="225" blue="221">
+      </color>
+    </background_color>
+    <widget type="rectangle" version="2.0.0">
+      <name>Diagnostics_rectangle</name>
+      <width>320</width>
+      <height>110</height>
+      <line_width>2</line_width>
+      <line_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="GROUP-BACKGROUND" red="200" green="205" blue="201">
+        </color>
+      </background_color>
+      <corner_width>10</corner_width>
+      <corner_height>10</corner_height>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Diagnostic_label</name>
+      <class>HEADER2</class>
+      <text>Diagnostics and Management</text>
+      <width>320</width>
+      <height>40</height>
+      <font>
+        <font name="Header 2" family="Liberation Sans" style="BOLD" size="18.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>Diagnostic_LED</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(ina_num):SystemHealth</pv_name>
+      <x>30</x>
+      <y>50</y>
+      <width>40</width>
+      <height>40</height>
+      <off_color>
+        <color name="MAJOR" red="255" green="0" blue="0">
+        </color>
+      </off_color>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Diagnostic_button</name>
+      <actions>
+        <action type="open_display">
+          <file>/RFPI_main.bob</file>
+          <macros>
+            <P>$(Pina)</P>
+            <R>$(Rina)</R>
+            <num>$(ina_num)</num>
+          </macros>
+          <target>tab</target>
+          <description>Open Display</description>
+        </action>
+      </actions>
+      <text>Diagnostics/Management</text>
+      <x>90</x>
+      <y>50</y>
+      <width>200</width>
+      <height>40</height>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Status_subtitle</name>
+    <class>SUBTITLE</class>
+    <text>Status</text>
+    <x>1350</x>
+    <y>20</y>
+    <width>160</width>
+    <height>30</height>
+    <font>
+      <font name="Header 2" family="Liberation Sans" style="BOLD" size="18.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="HEADER-TEXT" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>2</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Expert_button</name>
+    <actions>
+      <action type="open_display">
+        <file>expert/expert.bob</file>
+        <macros>
+          <P>$(Pzynq)</P>
+          <R>$(Rzynq)</R>
+        </macros>
+        <target>tab</target>
+        <description>Open Display</description>
+      </action>
+    </actions>
+    <text>Settings</text>
+    <x>1160</x>
+    <y>70</y>
+    <width>140</width>
+    <height>40</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Reset_button</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(pv_name).PROC</pv_name>
+        <value>1</value>
+        <description>WritePV</description>
+      </action>
+    </actions>
+    <pv_name>$(acc):$(sys)_$(group)_$(num):ResetAll1_s</pv_name>
+    <text>Reset</text>
+    <x>680</x>
+    <y>1150</y>
+    <width>170</width>
+    <height>60</height>
+    <font>
+      <font family="Source Sans Pro" style="BOLD" size="28.0">
+      </font>
+    </font>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Alarms_group</name>
+    <x>210</x>
+    <y>70</y>
+    <width>590</width>
+    <height>110</height>
+    <style>3</style>
+    <background_color>
+      <color name="BACKGROUND" red="220" green="225" blue="221">
+      </color>
+    </background_color>
+    <widget type="rectangle" version="2.0.0">
+      <name>Alarms_rectangle</name>
+      <width>590</width>
+      <height>110</height>
+      <line_width>2</line_width>
+      <line_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="GROUP-BACKGROUND" red="200" green="205" blue="201">
+        </color>
+      </background_color>
+      <corner_width>10</corner_width>
+      <corner_height>10</corner_height>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Alarms_label</name>
+      <class>HEADER2</class>
+      <text>Alarms</text>
+      <width>590</width>
+      <height>40</height>
+      <font>
+        <font name="Header 2" family="Liberation Sans" style="BOLD" size="18.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>AlarmsMsg_update</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):AlarmMsg_r</pv_name>
+      <x>70</x>
+      <y>50</y>
+      <width>390</width>
+      <height>40</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>Alarms_LED</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):Alarm_r</pv_name>
+      <x>10</x>
+      <y>50</y>
+      <width>40</width>
+      <height>40</height>
+      <off_color>
+        <color name="ON" red="70" green="255" blue="70">
+        </color>
+      </off_color>
+      <on_color>
+        <color name="MAJOR" red="255" green="0" blue="0">
+        </color>
+      </on_color>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Ack_Button</name>
+      <actions>
+        <action type="write_pv">
+          <pv_name>$(pv_name)</pv_name>
+          <value>1</value>
+          <description>WritePV</description>
+        </action>
+      </actions>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):AlarmAck_s</pv_name>
+      <text>ACK</text>
+      <x>480</x>
+      <y>50</y>
+      <width>90</width>
+      <height>40</height>
+      <font>
+        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>ADC_button</name>
+    <actions>
+      <action type="open_display">
+        <file>expert/adc.bob</file>
+        <macros>
+          <P>$(Pzynq)</P>
+          <R>$(Rzynq)</R>
+        </macros>
+        <target>tab</target>
+        <description>Open Display</description>
+      </action>
+    </actions>
+    <text>ADC Readouts</text>
+    <x>1320</x>
+    <y>70</y>
+    <width>140</width>
+    <height>40</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+</display>

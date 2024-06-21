@@ -1,0 +1,948 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>Expert Slot $(SLOT)</name>
+  <macros>
+    <num>$(SLOT)</num>
+  </macros>
+  <width>720</width>
+  <height>790</height>
+  <widget type="rectangle" version="2.0.0">
+    <name>Titlebar</name>
+    <class>TITLE-BAR</class>
+    <width>720</width>
+    <height>50</height>
+    <line_width>0</line_width>
+    <background_color>
+      <color name="PRIMARY-HEADER-BACKGROUND" red="151" green="188" blue="202">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Title</name>
+    <class>TITLE</class>
+    <text>RFPI Management Slot $(SLOT)</text>
+    <x use_class="true">0</x>
+    <y use_class="true">0</y>
+    <width>310</width>
+    <height>50</height>
+    <font use_class="true">
+      <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <foreground_color use_class="true">
+      <color name="Text" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <transparent use_class="true">true</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Readouts_group</name>
+    <x>20</x>
+    <y>350</y>
+    <width>330</width>
+    <height>420</height>
+    <style>3</style>
+    <background_color>
+      <color name="BACKGROUND" red="220" green="225" blue="221">
+      </color>
+    </background_color>
+    <widget type="rectangle" version="2.0.0">
+      <name>Readouts_background</name>
+      <width>330</width>
+      <height>420</height>
+      <line_width>2</line_width>
+      <line_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="GROUP-BACKGROUND" red="200" green="205" blue="201">
+        </color>
+      </background_color>
+      <corner_width>10</corner_width>
+      <corner_height>10</corner_height>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Readouts_title</name>
+      <class>HEADER2</class>
+      <text>Readouts</text>
+      <width>330</width>
+      <height>40</height>
+      <font>
+        <font name="Header 2" family="Liberation Sans" style="BOLD" size="18.0">
+        </font>
+      </font>
+      <background_color>
+        <color name="RED-BORDER" red="150" green="8" blue="16">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="rectangle" version="2.0.0">
+      <name>VoltageCurrent_background</name>
+      <x>20</x>
+      <y>40</y>
+      <width>290</width>
+      <height>220</height>
+      <line_width>2</line_width>
+      <line_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="BACKGROUND" red="220" green="225" blue="221">
+        </color>
+      </background_color>
+      <corner_width>5</corner_width>
+      <corner_height>5</corner_height>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>OK_label</name>
+      <text>OK:</text>
+      <x>30</x>
+      <y>90</y>
+      <width>40</width>
+      <height>30</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Ch1_label</name>
+      <text>Ch1:</text>
+      <x>30</x>
+      <y>130</y>
+      <width>40</width>
+      <height>30</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Ch2_label</name>
+      <text>Ch2:</text>
+      <x>30</x>
+      <y>170</y>
+      <width>40</width>
+      <height>30</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>VoltageCh1_update</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):VoltageCh1_r</pv_name>
+      <x>80</x>
+      <y>130</y>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>VotlageCh2_update</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):VoltageCh2_r</pv_name>
+      <x>80</x>
+      <y>170</y>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>VoltageCh3_update</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):VoltageCh3_r</pv_name>
+      <x>80</x>
+      <y>210</y>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>CurrentCh1_update</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):CurrentCh1_r</pv_name>
+      <x>190</x>
+      <y>130</y>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>CurrentCh2_update</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):CurrentCh2_r</pv_name>
+      <x>190</x>
+      <y>170</y>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>CurrentCh3_update</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):CurrentCh3_r</pv_name>
+      <x>190</x>
+      <y>210</y>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Voltage_label</name>
+      <text>Voltage</text>
+      <x>80</x>
+      <y>50</y>
+      <height>30</height>
+      <font>
+        <font family="Source Sans Pro" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Current_label</name>
+      <text>Current</text>
+      <x>190</x>
+      <y>50</y>
+      <height>30</height>
+      <font>
+        <font family="Source Sans Pro" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Ch3_label</name>
+      <text>Ch3:</text>
+      <x>30</x>
+      <y>210</y>
+      <width>40</width>
+      <height>30</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>VoltageOK_LED</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):VoltageOK_r</pv_name>
+      <x>115</x>
+      <y>85</y>
+      <width>30</width>
+      <height>30</height>
+      <off_color>
+        <color name="MAJOR" red="255" green="0" blue="0">
+        </color>
+      </off_color>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>CurrentOK_LED</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):CurrentOK_r</pv_name>
+      <x>225</x>
+      <y>85</y>
+      <width>30</width>
+      <height>30</height>
+      <off_color>
+        <color name="On" red="0" green="255" blue="0">
+        </color>
+      </off_color>
+      <on_color>
+        <color name="MAJOR" red="255" green="0" blue="0">
+        </color>
+      </on_color>
+    </widget>
+    <widget type="rectangle" version="2.0.0">
+      <name>Temperature_background</name>
+      <x>20</x>
+      <y>280</y>
+      <width>290</width>
+      <height>70</height>
+      <line_width>2</line_width>
+      <line_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="BACKGROUND" red="220" green="225" blue="221">
+        </color>
+      </background_color>
+      <corner_width>5</corner_width>
+      <corner_height>5</corner_height>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Temperature_label</name>
+      <text>Temperature:</text>
+      <x>30</x>
+      <y>300</y>
+      <height>30</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Temperature_update</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):Temperature_r</pv_name>
+      <x>140</x>
+      <y>300</y>
+      <width>150</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Limit_group</name>
+    <x>370</x>
+    <y>350</y>
+    <width>330</width>
+    <height>420</height>
+    <style>3</style>
+    <background_color>
+      <color name="BACKGROUND" red="220" green="225" blue="221">
+      </color>
+    </background_color>
+    <widget type="rectangle" version="2.0.0">
+      <name>Limits_background</name>
+      <width>330</width>
+      <height>420</height>
+      <line_width>2</line_width>
+      <line_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="GROUP-BACKGROUND" red="200" green="205" blue="201">
+        </color>
+      </background_color>
+      <corner_width>10</corner_width>
+      <corner_height>10</corner_height>
+    </widget>
+    <widget type="rectangle" version="2.0.0">
+      <name>Current_background</name>
+      <x>20</x>
+      <y>40</y>
+      <width>290</width>
+      <height>220</height>
+      <line_width>2</line_width>
+      <line_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="BACKGROUND" red="220" green="225" blue="221">
+        </color>
+      </background_color>
+      <corner_width>5</corner_width>
+      <corner_height>5</corner_height>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Limits_title</name>
+      <class>HEADER2</class>
+      <text>Limits</text>
+      <width>330</width>
+      <height>40</height>
+      <font>
+        <font name="Header 2" family="Liberation Sans" style="BOLD" size="18.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>WarningCh1_entry</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):CurrentWarnCh1_s</pv_name>
+      <x>80</x>
+      <y>130</y>
+      <height>30</height>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>CriticalCh1_entry</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):CurrentCritCh1_s</pv_name>
+      <x>190</x>
+      <y>130</y>
+      <height>30</height>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Warning_label</name>
+      <text>Warning</text>
+      <x>80</x>
+      <y>90</y>
+      <height>30</height>
+      <font>
+        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Critical_label</name>
+      <text>Critical</text>
+      <x>190</x>
+      <y>90</y>
+      <height>30</height>
+      <font>
+        <font family="Source Sans Pro" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>WarningCh3_entry</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):CurrentWarnCh2_s</pv_name>
+      <x>80</x>
+      <y>170</y>
+      <height>30</height>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>CriticalCh2_entry</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):CurrentCritCh2_s</pv_name>
+      <x>190</x>
+      <y>170</y>
+      <height>30</height>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>WarningCh3_entry</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):CurrentWarnCh3_s</pv_name>
+      <x>80</x>
+      <y>210</y>
+      <height>30</height>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>CriticalCh3_entry</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):CurrentCritCh3_s</pv_name>
+      <x>190</x>
+      <y>210</y>
+      <height>30</height>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Ch1_label</name>
+      <text>Ch1:</text>
+      <x>30</x>
+      <y>130</y>
+      <width>40</width>
+      <height>30</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Ch2_label</name>
+      <text>Ch2:</text>
+      <x>30</x>
+      <y>170</y>
+      <width>40</width>
+      <height>30</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Ch3_label</name>
+      <text>Ch3:</text>
+      <x>30</x>
+      <y>210</y>
+      <width>40</width>
+      <height>30</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Current_title</name>
+      <class>HEADER3</class>
+      <text>Current</text>
+      <x>20</x>
+      <y>40</y>
+      <width>290</width>
+      <height>30</height>
+      <font>
+        <font name="Header 3" family="Liberation Sans" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="rectangle" version="2.0.0">
+      <name>Voltage_background</name>
+      <x>20</x>
+      <y>280</y>
+      <width>290</width>
+      <height>120</height>
+      <line_width>2</line_width>
+      <line_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="BACKGROUND" red="220" green="225" blue="221">
+        </color>
+      </background_color>
+      <corner_width>5</corner_width>
+      <corner_height>5</corner_height>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Voltage_title</name>
+      <class>HEADER3</class>
+      <text>Voltage</text>
+      <x>20</x>
+      <y>280</y>
+      <width>290</width>
+      <height>30</height>
+      <font>
+        <font name="Header 3" family="Liberation Sans" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>LevelLow_entry</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):VoltageLow_s</pv_name>
+      <x>80</x>
+      <y>350</y>
+      <height>30</height>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>LevelHigh_entry</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):VoltageHigh_s</pv_name>
+      <x>190</x>
+      <y>350</y>
+      <height>30</height>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Low_label</name>
+      <text>Low</text>
+      <x>80</x>
+      <y>310</y>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>High_label</name>
+      <text>High</text>
+      <x>190</x>
+      <y>310</y>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Level_label</name>
+      <text>Level:</text>
+      <x>30</x>
+      <y>350</y>
+      <width>40</width>
+      <height>30</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Expert_subtitle</name>
+    <class>SUBTITLE</class>
+    <text>Expert</text>
+    <x>600</x>
+    <y>20</y>
+    <height>30</height>
+    <font>
+      <font name="Header 2" family="Liberation Sans" style="BOLD" size="18.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="HEADER-TEXT" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>2</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Board_group</name>
+    <x>260</x>
+    <y>190</y>
+    <width>440</width>
+    <height>140</height>
+    <style>3</style>
+    <background_color>
+      <color name="BACKGROUND" red="220" green="225" blue="221">
+      </color>
+    </background_color>
+    <widget type="rectangle" version="2.0.0">
+      <name>Board_background</name>
+      <width>440</width>
+      <height>140</height>
+      <line_width>2</line_width>
+      <line_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="GROUP-BACKGROUND" red="200" green="205" blue="201">
+        </color>
+      </background_color>
+      <corner_width>10</corner_width>
+      <corner_height>10</corner_height>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Board_title</name>
+      <class>HEADER2</class>
+      <text>Board</text>
+      <width>440</width>
+      <height>40</height>
+      <font>
+        <font name="Header 2" family="Liberation Sans" style="BOLD" size="18.0">
+        </font>
+      </font>
+      <background_color>
+        <color name="RED-BORDER" red="150" green="8" blue="16">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>CurrBoard_update</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):CurrentBoardName_r</pv_name>
+      <x>220</x>
+      <y>50</y>
+      <width>190</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>CurrBoard_label</name>
+      <text>Current:</text>
+      <x>140</x>
+      <y>50</y>
+      <width>70</width>
+      <height>30</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>Type_LED</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):TypeOK_r</pv_name>
+      <x>90</x>
+      <y>50</y>
+      <width>30</width>
+      <height>30</height>
+      <off_color>
+        <color name="MAJOR" red="255" green="0" blue="0">
+        </color>
+      </off_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Type_label</name>
+      <text>Type:</text>
+      <x>20</x>
+      <y>50</y>
+      <width>50</width>
+      <height>30</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Errors_group</name>
+    <x>20</x>
+    <y>70</y>
+    <width>220</width>
+    <height>260</height>
+    <style>3</style>
+    <background_color>
+      <color name="BACKGROUND" red="220" green="225" blue="221">
+      </color>
+    </background_color>
+    <widget type="rectangle" version="2.0.0">
+      <name>Errors_background</name>
+      <width>220</width>
+      <height>260</height>
+      <line_width>2</line_width>
+      <line_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="GROUP-BACKGROUND" red="200" green="205" blue="201">
+        </color>
+      </background_color>
+      <corner_width>10</corner_width>
+      <corner_height>10</corner_height>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Errors_title</name>
+      <class>HEADER2</class>
+      <text>Errors</text>
+      <width>220</width>
+      <height>40</height>
+      <font>
+        <font name="Header 2" family="Liberation Sans" style="BOLD" size="18.0">
+        </font>
+      </font>
+      <background_color>
+        <color name="RED-BORDER" red="150" green="8" blue="16">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>MissingBoard_LED</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):DetailedStatus_r</pv_name>
+      <bit>0</bit>
+      <x>170</x>
+      <y>50</y>
+      <width>30</width>
+      <height>30</height>
+      <off_color>
+        <color name="ON" red="70" green="255" blue="70">
+        </color>
+      </off_color>
+      <on_color>
+        <color name="MAJOR" red="255" green="0" blue="0">
+        </color>
+      </on_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>WrongBoard_LED</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):DetailedStatus_r</pv_name>
+      <bit>1</bit>
+      <x>170</x>
+      <y>90</y>
+      <width>30</width>
+      <height>30</height>
+      <off_color>
+        <color name="ON" red="70" green="255" blue="70">
+        </color>
+      </off_color>
+      <on_color>
+        <color name="MAJOR" red="255" green="0" blue="0">
+        </color>
+      </on_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>NoPower_LED</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):DetailedStatus_r</pv_name>
+      <bit>2</bit>
+      <x>170</x>
+      <y>130</y>
+      <width>30</width>
+      <height>30</height>
+      <off_color>
+        <color name="ON" red="70" green="255" blue="70">
+        </color>
+      </off_color>
+      <on_color>
+        <color name="MAJOR" red="255" green="0" blue="0">
+        </color>
+      </on_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>PowerAck_LED</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):DetailedStatus_r</pv_name>
+      <bit>3</bit>
+      <x>170</x>
+      <y>170</y>
+      <width>30</width>
+      <height>30</height>
+      <off_color>
+        <color name="ON" red="70" green="255" blue="70">
+        </color>
+      </off_color>
+      <on_color>
+        <color name="MAJOR" red="255" green="0" blue="0">
+        </color>
+      </on_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>Ovvercurrent_LED</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):DetailedStatus_r</pv_name>
+      <bit>4</bit>
+      <x>170</x>
+      <y>210</y>
+      <width>30</width>
+      <height>30</height>
+      <off_color>
+        <color name="ON" red="70" green="255" blue="70">
+        </color>
+      </off_color>
+      <on_color>
+        <color name="MAJOR" red="255" green="0" blue="0">
+        </color>
+      </on_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>MissingBoard_label</name>
+      <text>Missing Board:</text>
+      <x>50</x>
+      <y>50</y>
+      <height>30</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>WrongBoard_label</name>
+      <text>Wrong Board Type:</text>
+      <x>20</x>
+      <y>90</y>
+      <width>130</width>
+      <height>30</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>NoPower_label</name>
+      <text>No Power:</text>
+      <x>20</x>
+      <y>130</y>
+      <width>130</width>
+      <height>30</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>PowerAck_label</name>
+      <text>Power Not Ack:</text>
+      <x>20</x>
+      <y>170</y>
+      <width>130</width>
+      <height>30</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Overcurrent_label</name>
+      <text>Overcurrent:</text>
+      <x>20</x>
+      <y>210</y>
+      <width>130</width>
+      <height>30</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Status_group</name>
+    <x>260</x>
+    <y>70</y>
+    <width>440</width>
+    <height>100</height>
+    <style>3</style>
+    <background_color>
+      <color name="BACKGROUND" red="220" green="225" blue="221">
+      </color>
+    </background_color>
+    <widget type="rectangle" version="2.0.0">
+      <name>Status_background</name>
+      <width>440</width>
+      <height>100</height>
+      <line_width>2</line_width>
+      <line_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="GROUP-BACKGROUND" red="200" green="205" blue="201">
+        </color>
+      </background_color>
+      <corner_width>10</corner_width>
+      <corner_height>10</corner_height>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Status_title</name>
+      <class>HEADER2</class>
+      <text>Status</text>
+      <width>440</width>
+      <height>40</height>
+      <font>
+        <font name="Header 2" family="Liberation Sans" style="BOLD" size="18.0">
+        </font>
+      </font>
+      <background_color>
+        <color name="RED-BORDER" red="150" green="8" blue="16">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>Status_LED</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):Status_r</pv_name>
+      <x>90</x>
+      <y>50</y>
+      <width>30</width>
+      <height>30</height>
+      <off_color>
+        <color name="MAJOR" red="255" green="0" blue="0">
+        </color>
+      </off_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Status_label</name>
+      <text>Status:</text>
+      <x>20</x>
+      <y>50</y>
+      <width>60</width>
+      <height>30</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>Occupied_LED</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):Presence_r</pv_name>
+      <x>230</x>
+      <y>50</y>
+      <width>30</width>
+      <height>30</height>
+      <off_color>
+        <color name="MAJOR" red="255" green="0" blue="0">
+        </color>
+      </off_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Occupied_label</name>
+      <text>Occupied:</text>
+      <x>140</x>
+      <y>50</y>
+      <width>80</width>
+      <height>30</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Health_label</name>
+      <text>Health:</text>
+      <x>280</x>
+      <y>50</y>
+      <width>60</width>
+      <height>30</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>Health_LED</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):Health_r</pv_name>
+      <x>350</x>
+      <y>50</y>
+      <width>30</width>
+      <height>30</height>
+      <off_color>
+        <color name="MAJOR" red="255" green="0" blue="0">
+        </color>
+      </off_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+  </widget>
+</display>

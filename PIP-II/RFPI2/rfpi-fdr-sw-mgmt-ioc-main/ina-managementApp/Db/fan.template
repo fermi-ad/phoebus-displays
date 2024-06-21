@@ -1,0 +1,26 @@
+##### Fan template #####
+
+record(bi, "$(acc):$(sys)_$(group)_$(num):Fan$(fan_idx)Status_r") {
+    field(DESC, "Fan $(fan_idx) status")
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT=1))FAN_$(fan_idx)_STATUS_R")
+    field(ZNAM, "Not OK")
+    field(ONAM, "OK")
+    field(SCAN, "I/O Intr")
+} 
+
+record(ai, "$(acc):$(sys)_$(group)_$(num):Fan$(fan_idx)Speed_r") {
+    field(DESC, "Fan $(fan_idx) speed readout")
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT=1))FAN_$(fan_idx)_SPEED_R")
+    field(EGU,  "")
+    field(SCAN, "I/O Intr")
+}
+
+record(ao, "$(acc):$(sys)_$(group)_$(num):Fan$(fan_idx)Speed_s") {
+    field(DESC, "Fan $(fan_idx) speed readout")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT=1))FAN_$(fan_idx)_SPEED_S")
+    field(EGU,  "")
+    field(DRVL, "0")
+}

@@ -1,0 +1,29 @@
+##### Short open template #####
+
+record(bi, "$(acc):$(sys)_$(group)_$(num):Open_r") {
+    field(DESC, "open circuit detection")
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT=1))$(num)_OPEN_R")
+    field(ZNAM, "OK")
+    field(ONAM, "Open")
+    field(SCAN, "I/O Intr")
+}
+
+record(bi, "$(acc):$(sys)_$(group)_$(num):Short_r") {
+    field(DESC, "short circuit detection")
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT=1))$(num)_SHORT_R")
+    field(ZNAM, "OK")
+    field(ONAM, "Short")
+    field(SCAN, "I/O Intr")
+}
+
+##### Fuse template #####
+record(bi, "$(acc):$(sys)_$(group)_$(num):FuseOK_r") {
+    field(DESC, "Is fuse OK?")
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT=1))$(num)_FUSE_OK_R")
+    field(ZNAM, "OK")
+    field(ONAM, "Not OK")
+    field(SCAN, "I/O Intr")
+}

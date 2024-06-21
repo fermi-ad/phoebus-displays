@@ -1,0 +1,87 @@
+##### Binary input template #####
+
+# Status parameters
+record(bi, "$(acc):$(sys)_$(group)_$(num):LatchStatus_r") {
+    field(DESC, "Latched status")
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT=1))$(num)_LATCH_STATUS_R")
+    field(ZNAM, "OK")
+    field(ONAM, "NOT OK")
+    field(SCAN, "I/O Intr")
+}
+
+record(bi, "$(acc):$(sys)_$(group)_$(num):CurrentStatus_r") {
+    field(DESC, "Current status")
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT=1))$(num)_CURRENT_STATUS_R")
+    field(ZNAM, "OK")
+    field(ONAM, "NOT OK")
+    field(SCAN, "I/O Intr")
+}
+
+record(calcout, "$(acc):$(sys)_$(group)_$(num):iStatusMask") {
+    field(INPA, "$(acc):$(sys)_$(group)_$(num):LatchStatus_r CP")
+    field(INPB, "$(acc):$(sys)_$(group)_$(num):Masking_r CP")
+    field(INPC, "$(acc):$(sys)_$(group)_$(num):CurrentStatus_r CP")
+    field(CALC, "(A=0&B=0&C=1)?2:A")
+    field(OUT,  "$(acc):$(sys)_$(group)_$(num):Status_r PP")
+}
+
+record(mbbi, "$(acc):$(sys)_$(group)_$(num):Status_r") {
+    field(DESC, "Status including masking")
+    field(SCAN, "Passive")
+    field(ZRVL, "0")
+    field(ZRST, "OK")
+    field(ONVL, "1")
+    field(ONST, "NOT OK")
+    field(TWVL, "2")
+    field(TWST, "Masked")
+}
+
+record(ai, "$(acc):$(sys)_$(group)_$(num):Timestamp_r") {
+    field(DESC, "Latch status timestamp")
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT=1))$(num)_TIMESTAMP_R")
+    field(SCAN, "I/O Intr")
+}
+
+record(longin, "$(acc):$(sys)_$(group)_$(num):TimestampSeq_r") {
+    field(DESC, "Timestamp sequence")
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT=1))$(num)_TIMESTAMP_SEQ_R")
+    field(SCAN, "I/O Intr")
+}
+
+record(stringin, "$(acc):$(sys)_$(group)_$(num):ErrorMsg_r") {
+    field(DESC, "Error message")
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT=1))$(num)_ERROR_MSG_R")
+    field(SCAN, "I/O Intr")
+}
+
+record(bo, "$(acc):$(sys)_$(group)_$(num):Reset_s") {
+    field(DESC, "Reset error and clear error msg")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT=1))$(num)_RESET_S")
+    field(SCAN, "Passive")
+}
+
+# Configuration parameters
+## Masking
+record(bo, "$(acc):$(sys)_$(group)_$(num):Masking_s") {
+    field(DESC, "Signal masking")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT=1))$(num)_MASKING_S")
+    field(SCAN, "Passive")
+    field(ONAM, "OFF")
+    field(ZNAM, "ON")
+}
+
+record(bi, "$(acc):$(sys)_$(group)_$(num):Masking_r") {
+    field(DESC, "Signal masking")
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT=1))$(num)_MASKING_R")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "OFF")
+    field(ZNAM, "ON")
+}
