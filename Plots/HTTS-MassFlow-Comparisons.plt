@@ -133,7 +133,7 @@
       <request>OPTIMIZED</request>
     </pv>
     <pv>
-      <display_name>PIP2IT:pHB650_CRYO_PV607H:Open_r</display_name>
+      <display_name>Valve PV607H</display_name>
       <visible>true</visible>
       <name>PIP2IT:pHB650_CRYO_PV607H:Open_r</name>
       <axis>1</axis>
@@ -158,7 +158,7 @@
       </archive>
     </pv>
     <pv>
-      <display_name>PIP2IT:pHB650_CRYO_DSPV628:Open_r</display_name>
+      <display_name>Valve DSPV628</display_name>
       <visible>true</visible>
       <name>PIP2IT:pHB650_CRYO_DSPV628:Open_r</name>
       <axis>1</axis>
@@ -183,7 +183,7 @@
       </archive>
     </pv>
     <pv>
-      <display_name>PIP2IT:pHB650_CRYO_PV614H:Open_r</display_name>
+      <display_name>Valve PV614H</display_name>
       <visible>true</visible>
       <name>PIP2IT:pHB650_CRYO_PV614H:Open_r</name>
       <axis>1</axis>
