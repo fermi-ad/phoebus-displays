@@ -8,7 +8,7 @@
   <scroll>true</scroll>
   <start>-1 hours</start>
   <end>now</end>
-  <archive_rescale>STAGGER</archive_rescale>
+  <archive_rescale>NONE</archive_rescale>
   <foreground>
     <red>0</red>
     <green>0</green>
@@ -35,8 +35,25 @@
         <green>0</green>
         <blue>0</blue>
       </color>
-      <min>-4.3</min>
-      <max>58.2</max>
+      <min>0.0</min>
+      <max>59.0</max>
+      <grid>true</grid>
+      <autoscale>false</autoscale>
+      <log_scale>false</log_scale>
+    </axis>
+    <axis>
+      <visible>true</visible>
+      <name>Valve Positions (%)</name>
+      <use_axis_name>true</use_axis_name>
+      <use_trace_names>false</use_trace_names>
+      <right>true</right>
+      <color>
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+      </color>
+      <min>0.0</min>
+      <max>100.0</max>
       <grid>false</grid>
       <autoscale>false</autoscale>
       <log_scale>false</log_scale>
@@ -56,7 +73,7 @@
         <blue>0</blue>
       </color>
       <trace_type>AREA</trace_type>
-      <linewidth>1</linewidth>
+      <linewidth>2</linewidth>
       <line_style>SOLID</line_style>
       <point_type>NONE</point_type>
       <point_size>1</point_size>
@@ -81,7 +98,7 @@
         <blue>0</blue>
       </color>
       <trace_type>AREA</trace_type>
-      <linewidth>1</linewidth>
+      <linewidth>2</linewidth>
       <line_style>SOLID</line_style>
       <point_type>NONE</point_type>
       <point_size>1</point_size>
@@ -106,6 +123,26 @@
         <blue>255</blue>
       </color>
       <trace_type>AREA</trace_type>
+      <linewidth>2</linewidth>
+      <line_style>SOLID</line_style>
+      <point_type>NONE</point_type>
+      <point_size>1</point_size>
+      <waveform_index>0</waveform_index>
+      <period>0.0</period>
+      <ring_size>5000</ring_size>
+      <request>OPTIMIZED</request>
+    </pv>
+    <pv>
+      <display_name>PIP2IT:pHB650_CRYO_PV607H:Open_r</display_name>
+      <visible>true</visible>
+      <name>PIP2IT:pHB650_CRYO_PV607H:Open_r</name>
+      <axis>1</axis>
+      <color>
+        <red>255</red>
+        <green>127</green>
+        <blue>0</blue>
+      </color>
+      <trace_type>AREA</trace_type>
       <linewidth>1</linewidth>
       <line_style>SOLID</line_style>
       <point_type>NONE</point_type>
@@ -114,6 +151,61 @@
       <period>0.0</period>
       <ring_size>5000</ring_size>
       <request>OPTIMIZED</request>
+      <archive>
+        <name>archiver1</name>
+        <url>pbraw://archiver1.fnal.gov:17668/retrieval</url>
+        <key>1</key>
+      </archive>
+    </pv>
+    <pv>
+      <display_name>PIP2IT:pHB650_CRYO_DSPV628:Open_r</display_name>
+      <visible>true</visible>
+      <name>PIP2IT:pHB650_CRYO_DSPV628:Open_r</name>
+      <axis>1</axis>
+      <color>
+        <red>0</red>
+        <green>255</green>
+        <blue>127</blue>
+      </color>
+      <trace_type>AREA</trace_type>
+      <linewidth>1</linewidth>
+      <line_style>SOLID</line_style>
+      <point_type>NONE</point_type>
+      <point_size>1</point_size>
+      <waveform_index>0</waveform_index>
+      <period>0.0</period>
+      <ring_size>5000</ring_size>
+      <request>OPTIMIZED</request>
+      <archive>
+        <name>archiver1</name>
+        <url>pbraw://archiver1.fnal.gov:17668/retrieval</url>
+        <key>1</key>
+      </archive>
+    </pv>
+    <pv>
+      <display_name>PIP2IT:pHB650_CRYO_PV614H:Open_r</display_name>
+      <visible>true</visible>
+      <name>PIP2IT:pHB650_CRYO_PV614H:Open_r</name>
+      <axis>1</axis>
+      <color>
+        <red>127</red>
+        <green>0</green>
+        <blue>255</blue>
+      </color>
+      <trace_type>AREA</trace_type>
+      <linewidth>1</linewidth>
+      <line_style>SOLID</line_style>
+      <point_type>NONE</point_type>
+      <point_size>1</point_size>
+      <waveform_index>0</waveform_index>
+      <period>0.0</period>
+      <ring_size>5000</ring_size>
+      <request>OPTIMIZED</request>
+      <archive>
+        <name>archiver1</name>
+        <url>pbraw://archiver1.fnal.gov:17668/retrieval</url>
+        <key>1</key>
+      </archive>
     </pv>
   </pvlist>
 </databrowser>
