@@ -42,6 +42,7 @@ JDK_JAVA_OPTIONS="$JDK_JAVA_OPTIONS -Djdk.gtk.verbose=true -Djdk.gtk.version=2 -
 JDK_JAVA_OPTIONS="$JDK_JAVA_OPTIONS -Dlogback.configurationFile=${TOP}/config/logback.xml"
 JDK_JAVA_OPTIONS="$JDK_JAVA_OPTIONS -Dorg.csstudio.javafx.rtplot.update_counter=false"
 JDK_JAVA_OPTIONS="$JDK_JAVA_OPTIONS -Dfile.encoding=UTF-8"
+JDK_JAVA_OPTIONS="$JDK_JAVA_OPTIONS -Djca.use_env=true"
 export JDK_JAVA_OPTIONS
 
 echo $JDK_JAVA_OPTIONS
