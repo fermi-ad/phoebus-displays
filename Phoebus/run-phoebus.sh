@@ -2,21 +2,14 @@
 
 # Phoebus build and installation location
 TOP="/usr/local/epics/phoebus-fnal"
-EPICS_CONFIG="/usr/local/epics/Config"
+echo $TOP
 
+# Define JAVA_HOME
 export JAVA_HOME=/usr/lib/jvm/jre-21-openjdk
 export PATH="$JAVA_HOME/bin:$PATH"
 
-# Define EPICS_PVA_ADDR_LIST
+# Define EPICS environment variables, especially: EPICS_PVA_ADDR_LIST and EPICS_CONFIG
 source /usr/local/epics/epicsENV
-
-#export EPICS_CA_ADDR_LIST="${EPICS_CA_ADDR_LIST} 131.225.120.160:6721 131.225.120.160:6722 131.225.120.160:6723" Temporary
-#export EPICS_CA_ADDR_LIST="${EPICS_CA_ADDR_LIST} 131.225.120.160:6721 131.225.120.160:6722 131.225.120.160:6723 131.225.120.164"
-
-echo $TOP
-#V="4.6.6-SNAPSHOT"
-#V="4.7.2-SNAPSHOT"
-#V="4.7.3-SNAPSHOT"
 
 # figure out the path to the product jar
 if [[ -z "${PHOEBUS_JAR}" ]]; then
