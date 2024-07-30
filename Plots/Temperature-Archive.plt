@@ -8,8 +8,8 @@
   <scroll_step>5</scroll_step>
   <scroll>false</scroll>
   <start>2019-05-28 00:00:00.000</start>
-  <end>2023-04-11 16:01:37.106</end>
-  <archive_rescale>STAGGER</archive_rescale>
+  <end>2024-07-23 08:29:09.703</end>
+  <archive_rescale>NONE</archive_rescale>
   <foreground>
     <red>0</red>
     <green>0</green>
@@ -36,8 +36,8 @@
         <green>0</green>
         <blue>0</blue>
       </color>
-      <min>10.0</min>
-      <max>35.1</max>
+      <min>-45.0</min>
+      <max>45.0</max>
       <grid>true</grid>
       <autoscale>false</autoscale>
       <log_scale>false</log_scale>
@@ -47,7 +47,7 @@
   </annotations>
   <pvlist>
     <pv>
-      <display_name>BTE-225</display_name>
+      <display_name>BTE-223</display_name>
       <visible>true</visible>
       <name>FNAL-AD-HALLTMP-01:RT</name>
       <axis>0</axis>
@@ -66,13 +66,13 @@
       <ring_size>5000</ring_size>
       <request>OPTIMIZED</request>
       <archive>
-        <name>archiver2</name>
-        <url>pbraw://archiver2.fnal.gov:17668/retrieval</url>
+        <name>archiver1</name>
+        <url>pbraw://archiver1.fnal.gov:17668/retrieval</url>
         <key>1</key>
       </archive>
     </pv>
     <pv>
-      <display_name>BTE 2nd Floor</display_name>
+      <display_name>BTE Hallway</display_name>
       <visible>true</visible>
       <name>FNAL-AD-HALLTMP-02:RT</name>
       <axis>0</axis>
@@ -91,40 +91,15 @@
       <ring_size>5000</ring_size>
       <request>OPTIMIZED</request>
       <archive>
-        <name>archiver2</name>
-        <url>pbraw://archiver2.fnal.gov:17668/retrieval</url>
+        <name>archiver1</name>
+        <url>pbraw://archiver1.fnal.gov:17668/retrieval</url>
         <key>1</key>
       </archive>
     </pv>
     <pv>
       <display_name>Heat Index</display_name>
-      <visible>false</visible>
+      <visible>true</visible>
       <name>FNAL-AD-ENV-01:HEATIX</name>
-      <axis>0</axis>
-      <color>
-        <red>51</red>
-        <green>102</green>
-        <blue>51</blue>
-      </color>
-      <trace_type>AREA</trace_type>
-      <linewidth>1</linewidth>
-      <line_style>SOLID</line_style>
-      <point_type>NONE</point_type>
-      <point_size>1</point_size>
-      <waveform_index>0</waveform_index>
-      <period>0.0</period>
-      <ring_size>5000</ring_size>
-      <request>OPTIMIZED</request>
-      <archive>
-        <name>archiver2</name>
-        <url>pbraw://archiver2.fnal.gov:17668/retrieval</url>
-        <key>1</key>
-      </archive>
-    </pv>
-    <pv>
-      <display_name>Wind Chill</display_name>
-      <visible>false</visible>
-      <name>FNAL-AD-ENV-01:WCHILL</name>
       <axis>0</axis>
       <color>
         <red>128</red>
@@ -141,14 +116,39 @@
       <ring_size>5000</ring_size>
       <request>OPTIMIZED</request>
       <archive>
-        <name>archiver2</name>
-        <url>pbraw://archiver2.fnal.gov:17668/retrieval</url>
+        <name>archiver1</name>
+        <url>pbraw://archiver1.fnal.gov:17668/retrieval</url>
+        <key>1</key>
+      </archive>
+    </pv>
+    <pv>
+      <display_name>Wind Chill</display_name>
+      <visible>true</visible>
+      <name>FNAL-AD-ENV-01:WCHILL</name>
+      <axis>0</axis>
+      <color>
+        <red>0</red>
+        <green>128</green>
+        <blue>0</blue>
+      </color>
+      <trace_type>AREA</trace_type>
+      <linewidth>1</linewidth>
+      <line_style>SOLID</line_style>
+      <point_type>NONE</point_type>
+      <point_size>1</point_size>
+      <waveform_index>0</waveform_index>
+      <period>0.0</period>
+      <ring_size>5000</ring_size>
+      <request>OPTIMIZED</request>
+      <archive>
+        <name>archiver1</name>
+        <url>pbraw://archiver1.fnal.gov:17668/retrieval</url>
         <key>1</key>
       </archive>
     </pv>
     <pv>
       <display_name>Outdoor Temperature</display_name>
-      <visible>false</visible>
+      <visible>true</visible>
       <name>FNAL-AD-ENV-01:OUTTMP</name>
       <axis>0</axis>
       <color>
@@ -166,8 +166,8 @@
       <ring_size>5000</ring_size>
       <request>OPTIMIZED</request>
       <archive>
-        <name>archiver2</name>
-        <url>pbraw://archiver2.fnal.gov:17668/retrieval</url>
+        <name>archiver1</name>
+        <url>pbraw://archiver1.fnal.gov:17668/retrieval</url>
         <key>1</key>
       </archive>
     </pv>
