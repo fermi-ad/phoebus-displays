@@ -1,0 +1,2868 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2024-06-01 16:54:56 by epics-->
+<display version="2.0.0">
+  <background_color>
+    <color red="240" green="240" blue="240">
+    </color>
+  </background_color>
+  <actions>
+  </actions>
+  <grid_step_x>6</grid_step_x>
+  <grid_step_y>6</grid_step_y>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rounded Rectangle_1</name>
+    <macros>
+      <pv_name></pv_name>
+    </macros>
+    <y>6</y>
+    <width>793</width>
+    <height>613</height>
+    <line_width>0</line_width>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="153" green="255" blue="191">
+      </color>
+    </background_color>
+    <corner_width>16</corner_width>
+    <corner_height>16</corner_height>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rounded Rectangle_5</name>
+    <macros>
+      <pv_name></pv_name>
+    </macros>
+    <x>6</x>
+    <y>15</y>
+    <width>193</width>
+    <height>100</height>
+    <line_width>0</line_width>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <transparent>true</transparent>
+    <corner_width>16</corner_width>
+    <corner_height>16</corner_height>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rounded Rectangle_2</name>
+    <macros>
+      <pv_name></pv_name>
+    </macros>
+    <x>204</x>
+    <y>12</y>
+    <width>565</width>
+    <height>595</height>
+    <line_width>0</line_width>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="89" green="255" blue="102">
+      </color>
+    </background_color>
+    <corner_width>16</corner_width>
+    <corner_height>16</corner_height>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <text>UUT</text>
+    <x>42</x>
+    <y>18</y>
+    <width>115</width>
+    <height>37</height>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_1</name>
+    <text>SITE</text>
+    <x>236</x>
+    <y>23</y>
+    <width>63</width>
+    <height>27</height>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>sys</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>loc://sys</pv_name>
+        <value>1</value>
+        <description>WritePV</description>
+      </action>
+    </actions>
+    <pv_name>loc://sys(0)</pv_name>
+    <text>System</text>
+    <x>6</x>
+    <y>277</y>
+    <width>151</width>
+    <height>31</height>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="scripts/LaunchOpiTyp.js">
+        <pv_name trigger="false">loc://UUT</pv_name>
+        <pv_name>loc://sys</pv_name>
+      </script>
+    </scripts>
+    <tooltip>System Health Monitoring - temperature and voltage</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>ctr</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>loc://ctr</pv_name>
+        <value>1</value>
+        <description>WritePV</description>
+      </action>
+    </actions>
+    <pv_name>loc://ctr(0)</pv_name>
+    <text>Counters</text>
+    <x>9</x>
+    <y>138</y>
+    <width>145</width>
+    <height>31</height>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="scripts/LaunchOpiTyp.js" check_connections="false">
+        <pv_name trigger="false">loc://UUT</pv_name>
+        <pv_name>loc://ctr</pv_name>
+      </script>
+    </scripts>
+    <tooltip>Clock and Trigger Counters</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>clktree</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>loc://clktree</pv_name>
+        <value>1</value>
+        <description>WritePV</description>
+      </action>
+    </actions>
+    <pv_name>loc://clktree(0)</pv_name>
+    <text>Clocktree</text>
+    <x>9</x>
+    <y>180</y>
+    <width>145</width>
+    <height>31</height>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="scripts/LaunchOpiTyp.js">
+        <pv_name trigger="false">loc://UUT</pv_name>
+        <pv_name>loc://clktree</pv_name>
+      </script>
+    </scripts>
+    <tooltip>Shows UUT Clock Routing</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>capture</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>loc://capture</pv_name>
+        <value>1</value>
+        <description>WritePV</description>
+      </action>
+    </actions>
+    <pv_name>loc://capture(0)</pv_name>
+    <text>Capture</text>
+    <x>6</x>
+    <y>324</y>
+    <width>151</width>
+    <height>31</height>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="scripts/LaunchOpi.js">
+        <pv_name trigger="false">loc://UUT</pv_name>
+        <pv_name trigger="false">${UUT}:0:AGGREGATOR:S1</pv_name>
+        <pv_name>loc://capture</pv_name>
+      </script>
+    </scripts>
+    <tooltip>Control Capture: Transient or Continuous</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>acq400sync</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>loc://sync</pv_name>
+        <value>1</value>
+        <description>WritePV</description>
+      </action>
+    </actions>
+    <pv_name>loc://sync(0)</pv_name>
+    <text>Sync</text>
+    <x>6</x>
+    <y>228</y>
+    <width>61</width>
+    <height>31</height>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="scripts/LaunchOpi.js">
+        <pv_name trigger="false">loc://UUT</pv_name>
+        <pv_name>loc://sync</pv_name>
+      </script>
+    </scripts>
+    <tooltip>Controls signals to inter-box synchronization (HDMI cable)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>mgt</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>loc://mgt</pv_name>
+        <value>1</value>
+        <description>WritePV</description>
+      </action>
+    </actions>
+    <pv_name>loc://mgt(0)</pv_name>
+    <text>MGT SFP</text>
+    <x>6</x>
+    <y>450</y>
+    <width>151</width>
+    <height>31</height>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="scripts/LaunchOpiTyp.js">
+        <pv_name trigger="false">loc://UUT</pv_name>
+        <pv_name>loc://mgt</pv_name>
+      </script>
+    </scripts>
+    <tooltip>ACQ2106 ONLY: Multi Gigabit Transceiver Status</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>firmware</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>loc://fw</pv_name>
+        <value>1</value>
+        <description>WritePV</description>
+      </action>
+    </actions>
+    <pv_name>loc://fw(0)</pv_name>
+    <text>Firmware</text>
+    <x>6</x>
+    <y>411</y>
+    <width>151</width>
+    <height>31</height>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="scripts/LaunchOpi.js">
+        <pv_name trigger="false">loc://UUT</pv_name>
+        <pv_name>loc://fw</pv_name>
+      </script>
+    </scripts>
+    <tooltip>Show UUT configuration</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>acq400gpg</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>loc://gpg</pv_name>
+        <value>1</value>
+        <description>WritePV</description>
+      </action>
+    </actions>
+    <pv_name>loc://gpg(0)</pv_name>
+    <text>GPG</text>
+    <x>93</x>
+    <y>228</y>
+    <width>61</width>
+    <height>31</height>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="scripts/LaunchOpi.js">
+        <pv_name trigger="false">loc://UUT</pv_name>
+        <pv_name>loc://gpg</pv_name>
+      </script>
+    </scripts>
+    <tooltip>Gate Pulse Generator - programmed pulse output</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>mgtA</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>loc://mgtdram</pv_name>
+        <value>1</value>
+        <description>WritePV</description>
+      </action>
+    </actions>
+    <pv_name>loc://mgtdram(0)</pv_name>
+    <text>MGT DRAM</text>
+    <x>6</x>
+    <y>492</y>
+    <width>151</width>
+    <height>31</height>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="scripts/LaunchOpi.js">
+        <pv_name trigger="false">loc://UUT</pv_name>
+        <pv_name>loc://mgtdram</pv_name>
+      </script>
+    </scripts>
+    <tooltip>ACQ2106 ONLY: Multi Gigabit Transceiver Status</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>wr</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>loc://wr</pv_name>
+        <value>1</value>
+        <description>WritePV</description>
+      </action>
+    </actions>
+    <pv_name>loc://wr(0)</pv_name>
+    <text>White Rabbit</text>
+    <x>6</x>
+    <y>369</y>
+    <width>151</width>
+    <height>31</height>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="scripts/LaunchOpiTyp.js">
+        <pv_name trigger="false">loc://UUT</pv_name>
+        <pv_name>loc://wr</pv_name>
+      </script>
+    </scripts>
+    <tooltip>Show UUT configuration</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="tabs" version="2.0.0">
+    <name>Tabbed Container</name>
+    <tabs>
+      <tab>
+        <name>ADC</name>
+        <children>
+          <widget type="action_button" version="3.0.0">
+            <name>acq425</name>
+            <actions>
+              <action type="write_pv">
+                <pv_name>loc://acq425</pv_name>
+                <value>1</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <pv_name>loc://acq425(0)</pv_name>
+            <text>acq425</text>
+            <x>144</x>
+            <y>12</y>
+            <width>103</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <scripts>
+              <script file="scripts/LaunchOpi.js">
+                <pv_name trigger="false">loc://UUT</pv_name>
+                <pv_name trigger="false">loc://SITE</pv_name>
+                <pv_name>loc://acq425</pv_name>
+              </script>
+            </scripts>
+            <tooltip>ACQ425 ONLY: basic capture configuration</tooltip>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>acq425_gains</name>
+            <actions>
+              <action type="write_pv">
+                <pv_name>loc://acq425gains</pv_name>
+                <value>1</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <pv_name>loc://acq425gains(0)</pv_name>
+            <text>acq425 gains</text>
+            <x>264</x>
+            <y>12</y>
+            <width>139</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <scripts>
+              <script file="scripts/LaunchOpi.js">
+                <pv_name trigger="false">loc://UUT</pv_name>
+                <pv_name trigger="false">loc://SITE</pv_name>
+                <pv_name>loc://acq425gains</pv_name>
+              </script>
+            </scripts>
+            <tooltip>ACQ425 ONLY: per channel gain control</tooltip>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>offset8</name>
+            <actions>
+              <action type="write_pv">
+                <pv_name>loc://offsets</pv_name>
+                <value>1</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <pv_name>loc://offsets(0)</pv_name>
+            <text>offsets</text>
+            <x>18</x>
+            <y>96</y>
+            <width>103</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <scripts>
+              <script file="scripts/LaunchOpi.js">
+                <pv_name trigger="false">loc://UUT</pv_name>
+                <pv_name trigger="false">loc://SITE</pv_name>
+                <pv_name>loc://offsets</pv_name>
+              </script>
+            </scripts>
+            <tooltip>AI offset control</tooltip>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>stats32</name>
+            <actions>
+              <action type="write_pv">
+                <pv_name>loc://stats32</pv_name>
+                <value>1</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <pv_name>loc://stats32(0)</pv_name>
+            <text>STATS</text>
+            <x>18</x>
+            <y>138</y>
+            <width>103</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <scripts>
+              <script file="scripts/LaunchOpi.js">
+                <pv_name trigger="false">loc://UUT</pv_name>
+                <pv_name trigger="false">loc://SITE</pv_name>
+                <pv_name>loc://stats32</pv_name>
+              </script>
+            </scripts>
+            <tooltip>Capture Signal Statistics</tooltip>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>monitor32</name>
+            <actions>
+              <action type="write_pv">
+                <pv_name>loc://aimon</pv_name>
+                <value>1</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <pv_name>loc://aimon(0)</pv_name>
+            <text>MONITOR</text>
+            <x>18</x>
+            <y>180</y>
+            <width>121</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <scripts>
+              <script file="scripts/LaunchOpi.js">
+                <pv_name trigger="false">loc://UUT</pv_name>
+                <pv_name trigger="false">loc://SITE</pv_name>
+                <pv_name>loc://aimon</pv_name>
+              </script>
+            </scripts>
+            <tooltip>AI Channel Activity Monitor</tooltip>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>text_monitor32</name>
+            <actions>
+              <action type="write_pv">
+                <pv_name>loc://aimon_text</pv_name>
+                <value>1</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <pv_name>loc://aimon_text(0)</pv_name>
+            <text>AI VALUES</text>
+            <x>18</x>
+            <y>222</y>
+            <width>127</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <scripts>
+              <script file="scripts/LaunchOpi.js">
+                <pv_name trigger="false">loc://UUT</pv_name>
+                <pv_name trigger="false">loc://SITE</pv_name>
+                <pv_name>loc://aimon_text</pv_name>
+              </script>
+            </scripts>
+            <tooltip>AI Values</tooltip>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>acq435</name>
+            <actions>
+              <action type="write_pv">
+                <pv_name>loc://acq435</pv_name>
+                <value>1</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <pv_name>loc://acq435(0)</pv_name>
+            <text>acq435</text>
+            <x>144</x>
+            <y>54</y>
+            <width>103</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <scripts>
+              <script file="scripts/LaunchOpi.js">
+                <pv_name trigger="false">loc://UUT</pv_name>
+                <pv_name trigger="false">loc://SITE</pv_name>
+                <pv_name>loc://acq435</pv_name>
+              </script>
+            </scripts>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>acq480</name>
+            <actions>
+              <action type="write_pv">
+                <pv_name>loc://acq480</pv_name>
+                <value>1</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <pv_name>loc://acq480(0)</pv_name>
+            <text>acq480</text>
+            <x>144</x>
+            <y>138</y>
+            <width>103</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <scripts>
+              <script file="scripts/LaunchOpi.js">
+                <pv_name trigger="false">loc://UUT</pv_name>
+                <pv_name trigger="false">loc://SITE</pv_name>
+                <pv_name>loc://acq480</pv_name>
+              </script>
+            </scripts>
+            <tooltip>ACQ480 parameter control
+(ACQ480 only)</tooltip>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>judgement</name>
+            <actions>
+              <action type="write_pv">
+                <pv_name>loc://jdg</pv_name>
+                <value>1</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <pv_name>loc://jdg(0)</pv_name>
+            <text>Judgement</text>
+            <x>18</x>
+            <y>54</y>
+            <width>121</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <scripts>
+              <script file="scripts/LaunchOpi.js">
+                <pv_name trigger="false">loc://UUT</pv_name>
+                <pv_name trigger="false">loc://SITE</pv_name>
+                <pv_name>loc://jdg</pv_name>
+              </script>
+            </scripts>
+            <tooltip>Show UUT configuration</tooltip>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>sc32</name>
+            <actions>
+              <action type="write_pv">
+                <pv_name>loc://sc32</pv_name>
+                <value>1</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <pv_name>loc://sc32(0)</pv_name>
+            <text>SC32</text>
+            <x>262</x>
+            <y>96</y>
+            <width>71</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <scripts>
+              <script file="scripts/LaunchOpi.js">
+                <pv_name trigger="false">loc://UUT</pv_name>
+                <pv_name trigger="false">loc://SITE</pv_name>
+                <pv_name>loc://sc32</pv_name>
+              </script>
+            </scripts>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>anatrg</name>
+            <actions>
+              <action type="write_pv">
+                <pv_name>loc://anatrg</pv_name>
+                <value>1</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <pv_name>loc://anatrg(0)</pv_name>
+            <text>anatrg</text>
+            <x>390</x>
+            <y>222</y>
+            <width>97</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <scripts>
+              <script file="scripts/LaunchOpi.js">
+                <pv_name trigger="false">loc://UUT</pv_name>
+                <pv_name trigger="false">loc://SITE</pv_name>
+                <pv_name>loc://anatrg</pv_name>
+              </script>
+            </scripts>
+            <tooltip>Analog Threshold Trigger
+(if fitted)</tooltip>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>anatrg32_status</name>
+            <actions>
+              <action type="write_pv">
+                <pv_name>${pv_name}</pv_name>
+                <value>1</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <pv_name>loc://anatrg_st(0)</pv_name>
+            <text>st</text>
+            <x>492</x>
+            <y>222</y>
+            <width>31</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <scripts>
+              <script file="scripts/LaunchOpi.js">
+                <pv_name trigger="false">loc://UUT</pv_name>
+                <pv_name trigger="false">loc://SITE</pv_name>
+                <pv_name>loc://anatrg_st</pv_name>
+              </script>
+            </scripts>
+            <tooltip>Analog Threshold Trigger
+(if fitted)</tooltip>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>v2f</name>
+            <actions>
+              <action type="write_pv">
+                <pv_name>loc://v2f</pv_name>
+                <value>1</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <pv_name>loc://v2f(0)</pv_name>
+            <text>v2f</text>
+            <x>300</x>
+            <y>222</y>
+            <width>91</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <scripts>
+              <script file="scripts/LaunchOpi.js">
+                <pv_name trigger="false">loc://UUT</pv_name>
+                <pv_name trigger="false">loc://SITE</pv_name>
+                <pv_name>loc://v2f</pv_name>
+              </script>
+            </scripts>
+            <tooltip>Voltage to Frequency
+(where fitted)</tooltip>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>active96</name>
+            <actions>
+              <action type="write_pv">
+                <pv_name>loc://active96</pv_name>
+                <value>1</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <pv_name>loc://active96(0)</pv_name>
+            <text>ACTIVE96</text>
+            <x>144</x>
+            <y>222</y>
+            <width>151</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <scripts>
+              <script file="scripts/LaunchOpi.js">
+                <pv_name trigger="false">loc://UUT</pv_name>
+                <pv_name>loc://active96</pv_name>
+              </script>
+            </scripts>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>acq420</name>
+            <actions>
+              <action type="write_pv">
+                <pv_name>loc://LAUNCH</pv_name>
+                <value>1</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <pv_name>loc://LAUNCH(0)</pv_name>
+            <text>acq420</text>
+            <x>18</x>
+            <y>12</y>
+            <width>103</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <scripts>
+              <script file="scripts/LaunchOpi.js">
+                <pv_name trigger="false">loc://UUT</pv_name>
+                <pv_name trigger="false">loc://SITE</pv_name>
+                <pv_name>loc://LAUNCH</pv_name>
+              </script>
+            </scripts>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>acq465</name>
+            <actions>
+              <action type="write_pv">
+                <pv_name>loc://acq465</pv_name>
+                <value>1</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <pv_name>loc://acq465(0)</pv_name>
+            <text>acq465</text>
+            <x>144</x>
+            <y>96</y>
+            <width>103</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <scripts>
+              <script file="scripts/LaunchOpi.js">
+                <pv_name trigger="false">loc://UUT</pv_name>
+                <pv_name trigger="false">${UUT}:0:AGGREGATOR:S1</pv_name>
+                <pv_name>loc://acq465</pv_name>
+              </script>
+            </scripts>
+            <tooltip>ACQ465 ultra low noise 24bit ADC</tooltip>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>acq423_gains</name>
+            <actions>
+              <action type="write_pv">
+                <pv_name>loc://acq423gains</pv_name>
+                <value>1</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <pv_name>loc://acq423gains(0)</pv_name>
+            <text>acq423 gains</text>
+            <x>258</x>
+            <y>54</y>
+            <width>133</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <scripts>
+              <script file="scripts/LaunchOpi.js">
+                <pv_name trigger="false">loc://UUT</pv_name>
+                <pv_name trigger="false">loc://SITE</pv_name>
+                <pv_name>loc://acq423gains</pv_name>
+              </script>
+            </scripts>
+            <tooltip>ACQ423 ONLY: per channel gain control</tooltip>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>acq435_plot8</name>
+            <actions>
+              <action type="write_pv">
+                <pv_name>loc://PLOT8Q</pv_name>
+                <value>1</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <pv_name>loc://PLOT8Q(0)</pv_name>
+            <text>1,5,9,</text>
+            <x>408</x>
+            <y>12</y>
+            <width>67</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <scripts>
+              <script file="scripts/LaunchOpi8Q.js" check_connections="false">
+                <pv_name trigger="false">loc://UUT</pv_name>
+                <pv_name trigger="false">loc://SITE</pv_name>
+                <pv_name>loc://PLOT8Q</pv_name>
+                <pv_name trigger="false">loc://plot_time</pv_name>
+              </script>
+            </scripts>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>acq420_plot</name>
+            <actions>
+              <action type="write_pv">
+                <pv_name>loc://PLOT</pv_name>
+                <value>1</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <pv_name>loc://PLOT(0)</pv_name>
+            <text>acq420 plot</text>
+            <x>402</x>
+            <y>54</y>
+            <width>115</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <scripts>
+              <script file="scripts/LaunchOpi.js">
+                <pv_name trigger="false">loc://UUT</pv_name>
+                <pv_name trigger="false">loc://SITE</pv_name>
+                <pv_name>loc://PLOT</pv_name>
+              </script>
+            </scripts>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+        </children>
+      </tab>
+      <tab>
+        <name>AO</name>
+        <children>
+          <widget type="action_button" version="3.0.0">
+            <name>ao420dc</name>
+            <actions>
+              <action type="write_pv">
+                <pv_name>loc://ao420dc</pv_name>
+                <value>1</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <pv_name>loc://ao420dc(0)</pv_name>
+            <text>AO420FMC DC</text>
+            <x>24</x>
+            <y>12</y>
+            <width>133</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <scripts>
+              <script file="scripts/LaunchOpi.js">
+                <pv_name trigger="false">loc://UUT</pv_name>
+                <pv_name trigger="false">loc://SITE</pv_name>
+                <pv_name>loc://ao420dc</pv_name>
+              </script>
+            </scripts>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>ao424dc</name>
+            <actions>
+              <action type="write_pv">
+                <pv_name>loc://ao424dc</pv_name>
+                <value>1</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <pv_name>loc://ao424dc(0)</pv_name>
+            <text>AO424ELF DC</text>
+            <x>24</x>
+            <y>60</y>
+            <width>141</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <scripts>
+              <script file="scripts/LaunchOpi.js">
+                <pv_name trigger="false">loc://UUT</pv_name>
+                <pv_name trigger="false">loc://SITE</pv_name>
+                <pv_name>loc://ao424dc</pv_name>
+              </script>
+            </scripts>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>ao428dc</name>
+            <actions>
+              <action type="write_pv">
+                <pv_name>loc://ao428dc</pv_name>
+                <value>1</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <pv_name>loc://ao428dc(0)</pv_name>
+            <text>DAC20 DC</text>
+            <x>30</x>
+            <y>108</y>
+            <width>135</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <scripts>
+              <script file="scripts/LaunchOpi.js">
+                <pv_name trigger="false">loc://UUT</pv_name>
+                <pv_name trigger="false">loc://SITE</pv_name>
+                <pv_name>loc://ao428dc</pv_name>
+              </script>
+            </scripts>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>awg</name>
+            <actions>
+              <action type="write_pv">
+                <pv_name>loc://awg</pv_name>
+                <value>1</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <pv_name>loc://awg(0)</pv_name>
+            <text>AWG/DPG</text>
+            <x>21</x>
+            <y>156</y>
+            <width>122</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <scripts>
+              <script file="scripts/LaunchOpi.js">
+                <pv_name trigger="false">loc://UUT</pv_name>
+                <pv_name trigger="false">loc://SITE</pv_name>
+                <pv_name>loc://awg</pv_name>
+              </script>
+            </scripts>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>ao420awg</name>
+            <actions>
+              <action type="write_pv">
+                <pv_name>loc://ao420awg</pv_name>
+                <value>1</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <pv_name>loc://ao420awg(0)</pv_name>
+            <text>AO420</text>
+            <x>24</x>
+            <y>204</y>
+            <width>71</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <scripts>
+              <script file="scripts/LaunchOpi.js">
+                <pv_name trigger="false">loc://UUT</pv_name>
+                <pv_name trigger="false">loc://SITE</pv_name>
+                <pv_name>loc://ao420awg</pv_name>
+              </script>
+            </scripts>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>ao421</name>
+            <actions>
+              <action type="write_pv">
+                <pv_name>loc://ao421</pv_name>
+                <value>1</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <pv_name>loc://ao421(0)</pv_name>
+            <text>AO421</text>
+            <x>94</x>
+            <y>204</y>
+            <width>71</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <scripts>
+              <script file="scripts/LaunchOpi.js">
+                <pv_name trigger="false">loc://UUT</pv_name>
+                <pv_name trigger="false">loc://SITE</pv_name>
+                <pv_name>loc://ao421</pv_name>
+              </script>
+            </scripts>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+        </children>
+      </tab>
+      <tab>
+        <name>DIO</name>
+        <children>
+          <widget type="action_button" version="3.0.0">
+            <name>dio32</name>
+            <actions>
+              <action type="write_pv">
+                <pv_name>loc://dio32</pv_name>
+                <value>1</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <pv_name>loc://dio32(0)</pv_name>
+            <text>DIO32</text>
+            <x>18</x>
+            <y>24</y>
+            <width>85</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <scripts>
+              <script file="scripts/LaunchOpi.js">
+                <pv_name trigger="false">loc://UUT</pv_name>
+                <pv_name trigger="false">loc://SITE</pv_name>
+                <pv_name>loc://dio32</pv_name>
+              </script>
+            </scripts>
+            <tooltip>DIO32 OPI</tooltip>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>di482</name>
+            <actions>
+              <action type="write_pv">
+                <pv_name>loc://di482</pv_name>
+                <value>1</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <pv_name>loc://di482(0)</pv_name>
+            <text>DI32</text>
+            <x>130</x>
+            <y>24</y>
+            <width>61</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <scripts>
+              <script file="scripts/LaunchOpi.js">
+                <pv_name trigger="false">loc://UUT</pv_name>
+                <pv_name trigger="false">loc://SITE</pv_name>
+                <pv_name>loc://di482</pv_name>
+              </script>
+            </scripts>
+            <tooltip>DI32 OPI</tooltip>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>dio482pg5</name>
+            <actions>
+              <action type="write_pv">
+                <pv_name>loc://dio482pg5</pv_name>
+                <value>1</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <pv_name>loc://dio482pg5(0)</pv_name>
+            <text>5</text>
+            <x>97</x>
+            <y>78</y>
+            <width>34</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <scripts>
+              <script file="scripts/LaunchOpi.js">
+                <pv_name trigger="false">loc://UUT</pv_name>
+                <pv_name trigger="false">loc://SITE</pv_name>
+                <pv_name>loc://dio482pg5</pv_name>
+              </script>
+            </scripts>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>dio482pg32</name>
+            <actions>
+              <action type="write_pv">
+                <pv_name>loc://dio482pg32</pv_name>
+                <value>1</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <pv_name>loc://dio482pg32(0)</pv_name>
+            <text>32</text>
+            <x>130</x>
+            <y>78</y>
+            <width>34</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <scripts>
+              <script file="scripts/LaunchOpi.js">
+                <pv_name trigger="false">loc://UUT</pv_name>
+                <pv_name trigger="false">loc://SITE</pv_name>
+                <pv_name>loc://dio482pg32</pv_name>
+              </script>
+            </scripts>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>dio482td_DI6</name>
+            <actions>
+              <action type="write_pv">
+                <pv_name>loc://dio482td_DI6</pv_name>
+                <value>1</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <pv_name>loc://dio482td_DI6(0)</pv_name>
+            <text>DI6</text>
+            <x>214</x>
+            <y>24</y>
+            <width>47</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <scripts>
+              <script file="scripts/LaunchOpi.js">
+                <pv_name trigger="false">loc://UUT</pv_name>
+                <pv_name trigger="false">loc://SITE</pv_name>
+                <pv_name>loc://dio482td_DI6</pv_name>
+              </script>
+            </scripts>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>dio482pg</name>
+            <actions>
+              <action type="write_pv">
+                <pv_name>loc://dio482pg</pv_name>
+                <value>1</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <pv_name>loc://dio482pg(0)</pv_name>
+            <text>PG4</text>
+            <x>18</x>
+            <y>78</y>
+            <width>80</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <scripts>
+              <script file="scripts/LaunchOpi.js">
+                <pv_name trigger="false">loc://UUT</pv_name>
+                <pv_name trigger="false">loc://SITE</pv_name>
+                <pv_name>loc://dio482pg</pv_name>
+              </script>
+            </scripts>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>dio482ppw</name>
+            <actions>
+              <action type="write_pv">
+                <pv_name>loc://dio482ppw</pv_name>
+                <value>1</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <pv_name>loc://dio482ppw(0)</pv_name>
+            <text>PPW</text>
+            <x>240</x>
+            <y>78</y>
+            <width>73</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <scripts>
+              <script file="scripts/LaunchOpi.js">
+                <pv_name trigger="false">loc://UUT</pv_name>
+                <pv_name trigger="false">loc://SITE</pv_name>
+                <pv_name>loc://dio482ppw</pv_name>
+              </script>
+            </scripts>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>awg</name>
+            <actions>
+              <action type="write_pv">
+                <pv_name>loc://awg</pv_name>
+                <value>1</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <pv_name>loc://awg(0)</pv_name>
+            <text>AWG/DPG</text>
+            <x>18</x>
+            <y>126</y>
+            <width>122</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <scripts>
+              <script file="scripts/LaunchOpi.js">
+                <pv_name trigger="false">loc://UUT</pv_name>
+                <pv_name trigger="false">loc://SITE</pv_name>
+                <pv_name>loc://awg</pv_name>
+              </script>
+            </scripts>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>scaler</name>
+            <actions>
+              <action type="write_pv">
+                <pv_name>loc://scaler</pv_name>
+                <value>1</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <pv_name>loc://scaler(0)</pv_name>
+            <text>Scaler</text>
+            <x>18</x>
+            <y>180</y>
+            <width>85</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <scripts>
+              <script file="scripts/LaunchOpi.js">
+                <pv_name trigger="false">loc://UUT</pv_name>
+                <pv_name trigger="false">loc://SITE</pv_name>
+                <pv_name>loc://scaler</pv_name>
+              </script>
+            </scripts>
+            <tooltip>Scaler: time series of counts.</tooltip>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>scaler5ch</name>
+            <actions>
+              <action type="write_pv">
+                <pv_name>loc://scaler5ch</pv_name>
+                <value>1</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <pv_name>loc://scaler5ch(0)</pv_name>
+            <text>Scaler5ch</text>
+            <x>130</x>
+            <y>180</y>
+            <width>135</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <scripts>
+              <script file="scripts/LaunchOpi.js">
+                <pv_name trigger="false">loc://UUT</pv_name>
+                <pv_name trigger="false">loc://SITE</pv_name>
+                <pv_name>loc://scaler5ch</pv_name>
+              </script>
+            </scripts>
+            <tooltip>BOLO8 : 8 channel Bolometer module
+(where fitted)</tooltip>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>acq435_plot8raw</name>
+            <actions>
+              <action type="write_pv">
+                <pv_name>loc://PLOT5r</pv_name>
+                <value>-5</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <pv_name>loc://PLOT5r(0)</pv_name>
+            <text>01..05</text>
+            <x>276</x>
+            <y>180</y>
+            <width>99</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <scripts>
+              <script file="scripts/LaunchOpi8.js">
+                <pv_name trigger="false">loc://UUT</pv_name>
+                <pv_name trigger="false">loc://SITE</pv_name>
+                <pv_name>loc://PLOT5r</pv_name>
+                <pv_name trigger="false">loc://plot_time</pv_name>
+              </script>
+            </scripts>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+        </children>
+      </tab>
+      <tab>
+        <name>Special</name>
+        <children>
+          <widget type="action_button" version="3.0.0">
+            <name>bolo8</name>
+            <actions>
+              <action type="write_pv">
+                <pv_name>loc://bolo8</pv_name>
+                <value>1</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <pv_name>loc://bolo8(0)</pv_name>
+            <text>bolo8</text>
+            <x>252</x>
+            <y>12</y>
+            <width>85</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <scripts>
+              <script file="scripts/LaunchOpi.js">
+                <pv_name trigger="false">loc://UUT</pv_name>
+                <pv_name trigger="false">loc://SITE</pv_name>
+                <pv_name>loc://bolo8</pv_name>
+              </script>
+            </scripts>
+            <tooltip>BOLO8 : 8 channel Bolometer module
+(where fitted)</tooltip>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>lia</name>
+            <actions>
+              <action type="write_pv">
+                <pv_name>loc://lia</pv_name>
+                <value>1</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <pv_name>loc://lia(0)</pv_name>
+            <text>lia</text>
+            <x>145</x>
+            <y>150</y>
+            <width>60</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <scripts>
+              <script file="scripts/LaunchOpi.js">
+                <pv_name trigger="false">loc://UUT</pv_name>
+                <pv_name trigger="false">loc://SITE</pv_name>
+                <pv_name>loc://lia</pv_name>
+              </script>
+            </scripts>
+            <tooltip>Lock-In Amplifier control
+(where fitted)</tooltip>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>radcelfctr</name>
+            <actions>
+              <action type="write_pv">
+                <pv_name>loc://radcelfctr</pv_name>
+                <value>1</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <pv_name>loc://radcelfctr(0)</pv_name>
+            <text>radcelf</text>
+            <x>132</x>
+            <y>12</y>
+            <width>85</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <scripts>
+              <script file="scripts/LaunchOpi.js">
+                <pv_name trigger="false">loc://UUT</pv_name>
+                <pv_name trigger="false">loc://SITE</pv_name>
+                <pv_name>loc://radcelfctr</pv_name>
+              </script>
+            </scripts>
+            <tooltip>RAD-CELF : HF Radar Accessory
+(where fitted)</tooltip>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>dds</name>
+            <actions>
+              <action type="write_pv">
+                <pv_name>loc://dds(0)</pv_name>
+                <value>1</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <pv_name>loc://v2f(0)</pv_name>
+            <text>dds</text>
+            <x>132</x>
+            <y>54</y>
+            <width>103</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <scripts>
+              <script file="scripts/LaunchOpi.js">
+                <pv_name trigger="false">loc://UUT</pv_name>
+                <pv_name trigger="false">loc://SITE</pv_name>
+                <pv_name>loc://dds(0)</pv_name>
+              </script>
+            </scripts>
+            <tooltip>DDS (frequency) control
+(where fitted)</tooltip>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>deltrg</name>
+            <actions>
+              <action type="write_pv">
+                <pv_name>loc://deltrg</pv_name>
+                <value>1</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <pv_name>loc://deltrg(0)</pv_name>
+            <text>deltrg</text>
+            <x>18</x>
+            <y>54</y>
+            <width>103</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <scripts>
+              <script file="scripts/LaunchOpi.js">
+                <pv_name trigger="false">loc://UUT</pv_name>
+                <pv_name trigger="false">loc://SITE</pv_name>
+                <pv_name>loc://deltrg</pv_name>
+              </script>
+            </scripts>
+            <tooltip>Analog Threshold DELTA Trigger
+(if fitted)</tooltip>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>QEN</name>
+            <actions>
+              <action type="write_pv">
+                <pv_name>loc://qen</pv_name>
+                <value>1</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <pv_name>loc://qen(0)</pv_name>
+            <text>QEN</text>
+            <x>18</x>
+            <y>102</y>
+            <width>60</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <scripts>
+              <script file="scripts/LaunchOpi.js">
+                <pv_name trigger="false">loc://UUT</pv_name>
+                <pv_name trigger="false">loc://SITE</pv_name>
+                <pv_name>loc://qen</pv_name>
+              </script>
+            </scripts>
+            <tooltip>Quadrature Encoder (shaft encoder) 
+(where fitted)</tooltip>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>QDS</name>
+            <actions>
+              <action type="write_pv">
+                <pv_name>loc://qds</pv_name>
+                <value>1</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <pv_name>loc://qds(0)</pv_name>
+            <text>QDS</text>
+            <x>24</x>
+            <y>150</y>
+            <width>60</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <scripts>
+              <script file="scripts/LaunchOpi.js">
+                <pv_name trigger="false">loc://UUT</pv_name>
+                <pv_name trigger="false">loc://SITE</pv_name>
+                <pv_name>loc://qds</pv_name>
+              </script>
+            </scripts>
+            <tooltip>Quench Detector System
+(where fitted)</tooltip>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>sc32d</name>
+            <actions>
+              <action type="write_pv">
+                <pv_name>loc://sc32d</pv_name>
+                <value>1</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <pv_name>loc://sc32d(0)</pv_name>
+            <text>DBG</text>
+            <x>36</x>
+            <y>204</y>
+            <width>55</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <scripts>
+              <script file="scripts/LaunchOpi.js">
+                <pv_name trigger="false">loc://UUT</pv_name>
+                <pv_name trigger="false">loc://SITE</pv_name>
+                <pv_name>loc://sc32d</pv_name>
+              </script>
+            </scripts>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>fifo_histo</name>
+            <actions>
+              <action type="write_pv">
+                <pv_name>loc://HISTO</pv_name>
+                <value>1</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <pv_name>loc://HISTO(0)</pv_name>
+            <text>FIFO Histogram</text>
+            <x>150</x>
+            <y>102</y>
+            <width>103</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <scripts>
+              <script file="scripts/LaunchOpi.js">
+                <pv_name trigger="false">loc://UUT</pv_name>
+                <pv_name trigger="false">loc://SITE</pv_name>
+                <pv_name>loc://HISTO</pv_name>
+              </script>
+            </scripts>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>tdc</name>
+            <actions>
+              <action type="write_pv">
+                <pv_name>loc://tdc</pv_name>
+                <value>1</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <pv_name>loc://tdc(0)</pv_name>
+            <text>TDC</text>
+            <x>12</x>
+            <y>12</y>
+            <width>71</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <scripts>
+              <script file="scripts/LaunchOpi.js">
+                <pv_name trigger="false">loc://UUT</pv_name>
+                <pv_name trigger="false">loc://SITE</pv_name>
+                <pv_name>loc://tdc</pv_name>
+              </script>
+            </scripts>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>WGM201</name>
+            <actions>
+              <action type="write_pv">
+                <pv_name>loc://WGM201</pv_name>
+                <value>1</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <pv_name>loc://WGM201(0)</pv_name>
+            <text>WGM201</text>
+            <x>150</x>
+            <y>198</y>
+            <width>82</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <scripts>
+              <script file="scripts/LaunchOpi.js">
+                <pv_name trigger="false">loc://UUT</pv_name>
+                <pv_name>loc://WGM201</pv_name>
+              </script>
+            </scripts>
+            <tooltip>External Function Generator (if connected)</tooltip>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>acq400sod_timeout</name>
+            <actions>
+              <action type="write_pv">
+                <pv_name>loc://sodt</pv_name>
+                <value>1</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <pv_name>loc://sodt(0)</pv_name>
+            <text>SOD TO</text>
+            <x>384</x>
+            <y>12</y>
+            <width>99</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <scripts>
+              <script file="scripts/LaunchOpi.js">
+                <pv_name trigger="false">loc://UUT</pv_name>
+                <pv_name>loc://sodt</pv_name>
+              </script>
+            </scripts>
+            <tooltip>Gate Pulse Generator - programmed pulse output</tooltip>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+        </children>
+      </tab>
+    </tabs>
+    <x>218</x>
+    <y>285</y>
+    <width>529</width>
+    <height>310</height>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <tab_height>10</tab_height>
+    <actions>
+    </actions>
+  </widget>
+  <widget type="tabs" version="2.0.0">
+    <name>Tabbed Container_1</name>
+    <tabs>
+      <tab>
+        <name>Live plot</name>
+        <children>
+          <widget type="action_button" version="3.0.0">
+            <name>acq435_plot8</name>
+            <actions>
+              <action type="write_pv">
+                <pv_name>loc://PLOT82</pv_name>
+                <value>17</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <pv_name>loc://PLOT82(0)</pv_name>
+            <text>17..24</text>
+            <x>198</x>
+            <y>141</y>
+            <width>79</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <scripts>
+              <script file="scripts/LaunchOpi8.js">
+                <pv_name trigger="false">loc://UUT</pv_name>
+                <pv_name trigger="false">loc://SITE</pv_name>
+                <pv_name>loc://PLOT82</pv_name>
+                <pv_name trigger="false">loc://plot_time</pv_name>
+              </script>
+            </scripts>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>acq435_chart8raw</name>
+            <actions>
+              <action type="write_pv">
+                <pv_name>loc://CHART81r</pv_name>
+                <value>9</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <pv_name>loc://CHART81r(0)</pv_name>
+            <text>09..16</text>
+            <x>12</x>
+            <y>101</y>
+            <width>79</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <scripts>
+              <script file="scripts/LaunchOpi8.js">
+                <pv_name trigger="false">loc://UUT</pv_name>
+                <pv_name trigger="false">loc://SITE</pv_name>
+                <pv_name>loc://CHART81r</pv_name>
+                <pv_name trigger="false">loc://plot_time</pv_name>
+              </script>
+            </scripts>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>acq435_chart8raw</name>
+            <actions>
+              <action type="write_pv">
+                <pv_name>loc://CHART83r</pv_name>
+                <value>25</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <pv_name>loc://CHART83r(0)</pv_name>
+            <text>25..32</text>
+            <x>12</x>
+            <y>180</y>
+            <width>79</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <scripts>
+              <script file="scripts/LaunchOpi8.js">
+                <pv_name trigger="false">loc://UUT</pv_name>
+                <pv_name trigger="false">loc://SITE</pv_name>
+                <pv_name>loc://CHART83r</pv_name>
+                <pv_name trigger="false">loc://plot_time</pv_name>
+              </script>
+            </scripts>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>acq435_plot8raw</name>
+            <actions>
+              <action type="write_pv">
+                <pv_name>loc://PLOT81r</pv_name>
+                <value>9</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <pv_name>loc://PLOT81r(0)</pv_name>
+            <text>09..16</text>
+            <x>276</x>
+            <y>101</y>
+            <width>79</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <scripts>
+              <script file="scripts/LaunchOpi8.js">
+                <pv_name trigger="false">loc://UUT</pv_name>
+                <pv_name trigger="false">loc://SITE</pv_name>
+                <pv_name>loc://PLOT81r</pv_name>
+                <pv_name trigger="false">loc://plot_time</pv_name>
+              </script>
+            </scripts>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>acq435_plot8raw</name>
+            <actions>
+              <action type="write_pv">
+                <pv_name>loc://PLOT83r</pv_name>
+                <value>25</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <pv_name>loc://PLOT83r(0)</pv_name>
+            <text>25..32</text>
+            <x>276</x>
+            <y>180</y>
+            <width>79</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <scripts>
+              <script file="scripts/LaunchOpi8.js">
+                <pv_name trigger="false">loc://UUT</pv_name>
+                <pv_name trigger="false">loc://SITE</pv_name>
+                <pv_name>loc://PLOT83r</pv_name>
+                <pv_name trigger="false">loc://plot_time</pv_name>
+              </script>
+            </scripts>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>acq435_plot8spec</name>
+            <actions execute_as_one="true">
+              <action type="write_pv">
+                <pv_name>loc://PLOT8s</pv_name>
+                <value>17</value>
+                <description>WritePV</description>
+              </action>
+              <action type="write_pv">
+                <pv_name>loc://xaxishz</pv_name>
+                <value>2</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <text>17..24</text>
+            <x>120</x>
+            <y>141</y>
+            <width>79</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <scripts>
+              <script file="scripts/LaunchOpi8.js">
+                <pv_name trigger="false">loc://UUT</pv_name>
+                <pv_name trigger="false">loc://SITE</pv_name>
+                <pv_name>loc://PLOT8s</pv_name>
+                <pv_name trigger="false">loc://xaxishz</pv_name>
+              </script>
+            </scripts>
+            <tooltip>$(actions)</tooltip>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_3</name>
+            <text>Raw</text>
+            <x>280</x>
+            <y>31</y>
+            <width>67</width>
+            <height>37</height>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>acq435_plot8spec</name>
+            <actions execute_as_one="true">
+              <action type="write_pv">
+                <pv_name>loc://PLOT8s</pv_name>
+                <value>25</value>
+                <description>WritePV</description>
+              </action>
+              <action type="write_pv">
+                <pv_name>loc://xaxishz</pv_name>
+                <value>2</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <text>25..32</text>
+            <x>120</x>
+            <y>180</y>
+            <width>79</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <scripts>
+              <script file="scripts/LaunchOpi8.js">
+                <pv_name trigger="false">loc://UUT</pv_name>
+                <pv_name trigger="false">loc://SITE</pv_name>
+                <pv_name>loc://PLOT8s</pv_name>
+                <pv_name trigger="false">loc://xaxishz</pv_name>
+              </script>
+            </scripts>
+            <tooltip>$(actions)</tooltip>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_2</name>
+            <text>Live Scope Plot</text>
+            <x>150</x>
+            <y>13</y>
+            <width>175</width>
+            <height>25</height>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>acq435_plot8</name>
+            <actions>
+              <action type="write_pv">
+                <pv_name>loc://PLOT81</pv_name>
+                <value>9</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <pv_name>loc://PLOT81(0)</pv_name>
+            <text>09..16</text>
+            <x>198</x>
+            <y>101</y>
+            <width>79</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <scripts>
+              <script file="scripts/LaunchOpi8.js">
+                <pv_name trigger="false">loc://UUT</pv_name>
+                <pv_name trigger="false">loc://SITE</pv_name>
+                <pv_name>loc://PLOT81</pv_name>
+                <pv_name trigger="false">loc://plot_time</pv_name>
+              </script>
+            </scripts>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>acq435_chart8raw</name>
+            <actions>
+              <action type="write_pv">
+                <pv_name>loc://CHART82r</pv_name>
+                <value>17</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <pv_name>loc://CHART82r(0)</pv_name>
+            <text>17..24</text>
+            <x>12</x>
+            <y>141</y>
+            <width>79</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <scripts>
+              <script file="scripts/LaunchOpi8.js">
+                <pv_name trigger="false">loc://UUT</pv_name>
+                <pv_name trigger="false">loc://SITE</pv_name>
+                <pv_name>loc://CHART82r</pv_name>
+                <pv_name trigger="false">loc://plot_time</pv_name>
+              </script>
+            </scripts>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>acq435_plot8spec</name>
+            <actions execute_as_one="true">
+              <action type="write_pv">
+                <pv_name>loc://PLOT8s(0)</pv_name>
+                <value>1</value>
+                <description>WritePV</description>
+              </action>
+              <action type="write_pv">
+                <pv_name>loc://xaxishz(0)</pv_name>
+                <value>2</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <pv_name>loc://PLOT8s(0)</pv_name>
+            <text>01..08</text>
+            <x>120</x>
+            <y>61</y>
+            <width>79</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <scripts>
+              <script file="scripts/LaunchOpi8.js">
+                <pv_name trigger="false">loc://UUT</pv_name>
+                <pv_name trigger="false">loc://SITE</pv_name>
+                <pv_name>loc://PLOT8s</pv_name>
+                <pv_name trigger="false">loc://xaxishz</pv_name>
+              </script>
+            </scripts>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>acq435_chart8raw</name>
+            <actions>
+              <action type="write_pv">
+                <pv_name>loc://CHART8r</pv_name>
+                <value>1</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <pv_name>loc://CHART8r(0)</pv_name>
+            <text>01..08</text>
+            <x>12</x>
+            <y>60</y>
+            <width>79</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <scripts>
+              <script file="scripts/LaunchOpi8.js">
+                <pv_name trigger="false">loc://UUT</pv_name>
+                <pv_name trigger="false">loc://SITE</pv_name>
+                <pv_name>loc://CHART8r</pv_name>
+                <pv_name trigger="false">loc://plot_time</pv_name>
+              </script>
+            </scripts>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_4</name>
+            <text>Volts</text>
+            <x>198</x>
+            <y>31</y>
+            <width>67</width>
+            <height>37</height>
+            <font>
+              <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+              </font>
+            </font>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>acq435_plot8</name>
+            <actions>
+              <action type="write_pv">
+                <pv_name>loc://PLOT83</pv_name>
+                <value>25</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <pv_name>loc://PLOT83(0)</pv_name>
+            <text>25..32</text>
+            <x>198</x>
+            <y>180</y>
+            <width>79</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <scripts>
+              <script file="scripts/LaunchOpi8.js">
+                <pv_name trigger="false">loc://UUT</pv_name>
+                <pv_name trigger="false">loc://SITE</pv_name>
+                <pv_name>loc://PLOT83</pv_name>
+                <pv_name trigger="false">loc://plot_time</pv_name>
+              </script>
+            </scripts>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_9</name>
+            <text>Spectrum</text>
+            <x>114</x>
+            <y>31</y>
+            <width>85</width>
+            <height>37</height>
+            <font>
+              <font name="Fine Print" family="Liberation Sans" style="REGULAR" size="12.0">
+              </font>
+            </font>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>acq435_plot8spec</name>
+            <actions execute_as_one="true">
+              <action type="write_pv">
+                <pv_name>loc://PLOT8s</pv_name>
+                <value>9</value>
+                <description>WritePV</description>
+              </action>
+              <action type="write_pv">
+                <pv_name>loc://xaxishz</pv_name>
+                <value>2</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <text>09..16</text>
+            <x>120</x>
+            <y>101</y>
+            <width>79</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <scripts>
+              <script file="scripts/LaunchOpi8.js">
+                <pv_name trigger="false">loc://UUT</pv_name>
+                <pv_name trigger="false">loc://SITE</pv_name>
+                <pv_name>loc://PLOT8s</pv_name>
+                <pv_name trigger="false">loc://xaxishz</pv_name>
+              </script>
+            </scripts>
+            <tooltip>$(actions)</tooltip>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>acq435_plot8raw</name>
+            <actions>
+              <action type="write_pv">
+                <pv_name>loc://PLOT82r</pv_name>
+                <value>17</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <pv_name>loc://PLOT82r(0)</pv_name>
+            <text>17..24</text>
+            <x>276</x>
+            <y>141</y>
+            <width>79</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <scripts>
+              <script file="scripts/LaunchOpi8.js">
+                <pv_name trigger="false">loc://UUT</pv_name>
+                <pv_name trigger="false">loc://SITE</pv_name>
+                <pv_name>loc://PLOT82r</pv_name>
+                <pv_name trigger="false">loc://plot_time</pv_name>
+              </script>
+            </scripts>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>acq435_plot8</name>
+            <actions>
+              <action type="write_pv">
+                <pv_name>loc://PLOT8</pv_name>
+                <value>1</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <pv_name>loc://PLOT8(0)</pv_name>
+            <text>01..08</text>
+            <x>198</x>
+            <y>61</y>
+            <width>79</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <scripts>
+              <script file="scripts/LaunchOpi8.js" check_connections="false">
+                <pv_name trigger="false">loc://UUT</pv_name>
+                <pv_name trigger="false">loc://SITE</pv_name>
+                <pv_name>loc://PLOT8</pv_name>
+                <pv_name trigger="false">loc://plot_time</pv_name>
+              </script>
+            </scripts>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>acq435_plot8raw</name>
+            <actions>
+              <action type="write_pv">
+                <pv_name>loc://PLOT8r</pv_name>
+                <value>1</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <pv_name>loc://PLOT8r(0)</pv_name>
+            <text>01..08</text>
+            <x>274</x>
+            <y>61</y>
+            <width>79</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <scripts>
+              <script file="scripts/LaunchOpi8.js">
+                <pv_name trigger="false">loc://UUT</pv_name>
+                <pv_name trigger="false">loc://SITE</pv_name>
+                <pv_name>loc://PLOT8r</pv_name>
+                <pv_name trigger="false">loc://plot_time</pv_name>
+              </script>
+            </scripts>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_11</name>
+            <text>Subrate
+Chart</text>
+            <x>15</x>
+            <y>19</y>
+            <width>67</width>
+            <height>37</height>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+        </children>
+      </tab>
+      <tab>
+        <name>Post Shot Plot</name>
+        <children>
+          <widget type="action_button" version="3.0.0">
+            <name>acq435_plot8volts_transient</name>
+            <actions>
+              <action type="write_pv">
+                <pv_name>loc://PLOT81t</pv_name>
+                <value>9</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <pv_name>loc://PLOT81t(0)</pv_name>
+            <text>09..16</text>
+            <x>42</x>
+            <y>96</y>
+            <width>82</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <scripts>
+              <script file="scripts/LaunchOpi8.js">
+                <pv_name trigger="false">loc://UUT</pv_name>
+                <pv_name trigger="false">loc://SITE</pv_name>
+                <pv_name>loc://PLOT81t</pv_name>
+                <pv_name trigger="false">loc://plot_time</pv_name>
+              </script>
+            </scripts>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>acq435_plot8volts_transient</name>
+            <actions>
+              <action type="write_pv">
+                <pv_name>loc://PLOT82t</pv_name>
+                <value>17</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <pv_name>loc://PLOT82t(0)</pv_name>
+            <text>17..24</text>
+            <x>42</x>
+            <y>136</y>
+            <width>82</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <scripts>
+              <script file="scripts/LaunchOpi8.js">
+                <pv_name trigger="false">loc://UUT</pv_name>
+                <pv_name trigger="false">loc://SITE</pv_name>
+                <pv_name>loc://PLOT82t</pv_name>
+                <pv_name trigger="false">loc://plot_time</pv_name>
+              </script>
+            </scripts>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_6</name>
+            <text>Raw</text>
+            <x>135</x>
+            <y>26</y>
+            <width>67</width>
+            <height>37</height>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="checkbox" version="2.0.0">
+            <name>Check Box</name>
+            <pv_name>loc://plot_time(0)</pv_name>
+            <label>Plot Time</label>
+            <x>228</x>
+            <y>6</y>
+            <width>127</width>
+            <height>28</height>
+            <actions>
+            </actions>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>acq435_plot8raw_transient</name>
+            <actions>
+              <action type="write_pv">
+                <pv_name>loc://PLOT81rt</pv_name>
+                <value>9</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <pv_name>loc://PLOT81rt(0)</pv_name>
+            <text>09..16</text>
+            <x>128</x>
+            <y>96</y>
+            <width>82</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <scripts>
+              <script file="scripts/LaunchOpi8.js">
+                <pv_name trigger="false">loc://UUT</pv_name>
+                <pv_name trigger="false">loc://SITE</pv_name>
+                <pv_name>loc://PLOT81rt</pv_name>
+                <pv_name trigger="false">loc://plot_time</pv_name>
+              </script>
+            </scripts>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>acq435_plot8volts_transient</name>
+            <actions>
+              <action type="write_pv">
+                <pv_name>loc://PLOT8t</pv_name>
+                <value>1</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <pv_name>loc://PLOT8t(0)</pv_name>
+            <text>01..08</text>
+            <x>42</x>
+            <y>56</y>
+            <width>82</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <scripts>
+              <script file="scripts/LaunchOpi8.js" check_connections="false">
+                <pv_name trigger="false">loc://UUT</pv_name>
+                <pv_name trigger="false">loc://SITE</pv_name>
+                <pv_name>loc://PLOT8t</pv_name>
+                <pv_name trigger="false">loc://plot_time</pv_name>
+              </script>
+            </scripts>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>acq435_plot8raw_transient</name>
+            <actions>
+              <action type="write_pv">
+                <pv_name>loc://PLOT82rt</pv_name>
+                <value>17</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <pv_name>loc://PLOT82rt(0)</pv_name>
+            <text>17..24</text>
+            <x>128</x>
+            <y>136</y>
+            <width>82</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <scripts>
+              <script file="scripts/LaunchOpi8.js">
+                <pv_name trigger="false">loc://UUT</pv_name>
+                <pv_name trigger="false">loc://SITE</pv_name>
+                <pv_name>loc://PLOT82rt</pv_name>
+                <pv_name trigger="false">loc://plot_time</pv_name>
+              </script>
+            </scripts>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>acq435_plot8raw_transient</name>
+            <actions>
+              <action type="write_pv">
+                <pv_name>loc://PLOT8rt</pv_name>
+                <value>1</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <pv_name>loc://PLOT8rt(0)</pv_name>
+            <text>01..08</text>
+            <x>128</x>
+            <y>56</y>
+            <width>82</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <scripts>
+              <script file="scripts/LaunchOpi8.js">
+                <pv_name trigger="false">loc://UUT</pv_name>
+                <pv_name trigger="false">loc://SITE</pv_name>
+                <pv_name>loc://PLOT8rt</pv_name>
+                <pv_name trigger="false">loc://plot_time</pv_name>
+              </script>
+            </scripts>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>acq435_plot8raw_transient</name>
+            <actions>
+              <action type="write_pv">
+                <pv_name>loc://PLOT83rt</pv_name>
+                <value>25</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <pv_name>loc://PLOT83rt(0)</pv_name>
+            <text>25..32</text>
+            <x>128</x>
+            <y>175</y>
+            <width>82</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <scripts>
+              <script file="scripts/LaunchOpi8.js">
+                <pv_name trigger="false">loc://UUT</pv_name>
+                <pv_name trigger="false">loc://SITE</pv_name>
+                <pv_name>loc://PLOT83rt</pv_name>
+                <pv_name trigger="false">loc://plot_time</pv_name>
+              </script>
+            </scripts>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_7</name>
+            <text>Volts</text>
+            <x>48</x>
+            <y>26</y>
+            <width>67</width>
+            <height>37</height>
+            <font>
+              <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+              </font>
+            </font>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>acq435_plot8volts_transient</name>
+            <actions>
+              <action type="write_pv">
+                <pv_name>loc://PLOT83t</pv_name>
+                <value>25</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <pv_name>loc://PLOT83t(0)</pv_name>
+            <text>25..32</text>
+            <x>42</x>
+            <y>175</y>
+            <width>82</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <scripts>
+              <script file="scripts/LaunchOpi8.js">
+                <pv_name trigger="false">loc://UUT</pv_name>
+                <pv_name trigger="false">loc://SITE</pv_name>
+                <pv_name>loc://PLOT83t</pv_name>
+                <pv_name trigger="false">loc://plot_time</pv_name>
+              </script>
+            </scripts>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_5</name>
+            <text>Post Shot Plot</text>
+            <x>30</x>
+            <y>11</y>
+            <width>163</width>
+            <height>25</height>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+        </children>
+      </tab>
+      <tab>
+        <name>Plot 1</name>
+        <children>
+          <widget type="rectangle" version="2.0.0">
+            <name>Rounded Rectangle_4</name>
+            <macros>
+              <pv_name></pv_name>
+            </macros>
+            <x>30</x>
+            <y>24</y>
+            <height>147</height>
+            <line_width>0</line_width>
+            <line_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </line_color>
+            <background_color>
+              <color red="0" green="191" blue="0">
+              </color>
+            </background_color>
+            <corner_width>16</corner_width>
+            <corner_height>16</corner_height>
+            <actions>
+            </actions>
+            <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_10</name>
+            <text>Chan</text>
+            <x>40</x>
+            <y>27</y>
+            <width>79</width>
+            <height>32</height>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="thumbwheel" version="2.0.0">
+            <name>Thumb Wheel</name>
+            <pv_name>loc://plot1ch(1)</pv_name>
+            <x>47</x>
+            <y>66</y>
+            <width>60</width>
+            <height>59</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <decimal_digits>0</decimal_digits>
+            <integer_digits>2</integer_digits>
+            <actions>
+            </actions>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>plot1raw</name>
+            <actions>
+              <action type="write_pv">
+                <pv_name>$(pv_name)</pv_name>
+                <value>1</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <pv_name>loc://plot1b(0)</pv_name>
+            <text>Plot 1</text>
+            <x>48</x>
+            <y>139</y>
+            <width>59</width>
+            <height>25</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <scripts>
+              <script file="scripts/LaunchOpi1.js">
+                <pv_name trigger="false">loc://UUT</pv_name>
+                <pv_name trigger="false">loc://SITE</pv_name>
+                <pv_name trigger="false">loc://plot1ch</pv_name>
+                <pv_name>loc://plot1b</pv_name>
+              </script>
+            </scripts>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+        </children>
+      </tab>
+    </tabs>
+    <x>333</x>
+    <y>15</y>
+    <width>382</width>
+    <height>263</height>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <tab_height>10</tab_height>
+    <actions>
+    </actions>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Input</name>
+    <pv_name>loc://UUT("${UUT}")</pv_name>
+    <x>30</x>
+    <y>66</y>
+    <width>151</width>
+    <height>33</height>
+    <background_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rounded Rectangle_11</name>
+    <macros>
+      <pv_name></pv_name>
+    </macros>
+    <x>218</x>
+    <y>17</y>
+    <width>107</width>
+    <height>98</height>
+    <line_width>0</line_width>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <transparent>true</transparent>
+    <corner_width>16</corner_width>
+    <corner_height>16</corner_height>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="spinner" version="2.0.0">
+    <name>Spinner</name>
+    <pv_name>loc://SITE(1)</pv_name>
+    <x>231</x>
+    <y>66</y>
+    <width>82</width>
+    <height>33</height>
+    <format>0</format>
+    <precision>3</precision>
+    <background_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </background_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <minimum>1.0</minimum>
+    <maximum>6.0</maximum>
+    <limits_from_pv>false</limits_from_pv>
+  </widget>
+</display>
