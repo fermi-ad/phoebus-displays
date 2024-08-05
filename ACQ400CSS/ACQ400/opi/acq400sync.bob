@@ -1,0 +1,2971 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2024-08-05 15:23:27 by epics-->
+<display version="2.0.0">
+  <name>acq400syn</name>
+  <macros>
+    <UUT>acq1001_653</UUT>
+  </macros>
+  <width>825</width>
+  <height>775</height>
+  <background_color>
+    <color red="240" green="240" blue="240">
+    </color>
+  </background_color>
+  <actions>
+  </actions>
+  <grid_step_x>6</grid_step_x>
+  <grid_step_y>6</grid_step_y>
+  <widget type="group" version="3.0.0">
+    <name>Grouping Container_13</name>
+    <x>383</x>
+    <y>378</y>
+    <width>238</width>
+    <height>97</height>
+    <style>3</style>
+    <foreground_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </foreground_color>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="202" green="131" blue="131">
+      </color>
+    </background_color>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(pv_name)</pv_name>
+        <value></value>
+        <description>WritePV</description>
+      </action>
+    </actions>
+    <rules>
+      <rule name="VisibleRule" prop_id="visible" out_exp="true">
+        <exp bool_exp="true">
+          <expression>(pvStr0.startsWith("ACQ1014"))&amp;&amp;(pv1==true)</expression>
+        </exp>
+        <pv_name>${UUT}:SYS:VERSION:FPGA</pv_name>
+        <pv_name>${UUT}:0:SIG:SYNC_BUS:OUT:CABLE_DET</pv_name>
+      </rule>
+    </rules>
+    <widget type="combo" version="2.0.0">
+      <name>Menu Button_97</name>
+      <pv_name>${UUT}:0:SIG:FP:CLK_SRC</pv_name>
+      <x>108</x>
+      <y>54</y>
+      <width>55</width>
+      <height>31</height>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_231</name>
+      <text>CLK</text>
+      <x>24</x>
+      <y>54</y>
+      <width>67</width>
+      <height>31</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_232</name>
+      <text>ACQ1014 MASTER</text>
+      <x>24</x>
+      <y>12</y>
+      <width>151</width>
+      <height>31</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rounded Rectangle_29</name>
+    <macros>
+      <pv_name></pv_name>
+    </macros>
+    <x>10</x>
+    <y>372</y>
+    <width>356</width>
+    <height>205</height>
+    <line_width>0</line_width>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="255" green="165" blue="0">
+      </color>
+    </background_color>
+    <corner_width>16</corner_width>
+    <corner_height>16</corner_height>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group_3</name>
+    <x>15</x>
+    <y>260</y>
+    <width>600</width>
+    <height>80</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rounded Rectangle_32</name>
+      <macros>
+        <pv_name></pv_name>
+      </macros>
+      <width>600</width>
+      <height>80</height>
+      <line_width>0</line_width>
+      <line_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </line_color>
+      <background_color>
+        <color red="225" green="92" blue="254">
+        </color>
+      </background_color>
+      <corner_width>16</corner_width>
+      <corner_height>16</corner_height>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_251</name>
+      <text>d3</text>
+      <x>220</x>
+      <y>20</y>
+      <width>70</width>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="combo" version="2.0.0">
+      <name>Menu Button_105</name>
+      <pv_name>${UUT}:0:SIG:EVENT_SRC:4</pv_name>
+      <x>290</x>
+      <y>45</y>
+      <width>70</width>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_252</name>
+      <text>d4</text>
+      <x>290</x>
+      <y>20</y>
+      <width>70</width>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="combo" version="2.0.0">
+      <name>Menu Button_106</name>
+      <pv_name>${UUT}:0:SIG:EVENT_SRC:5</pv_name>
+      <x>360</x>
+      <y>45</y>
+      <width>70</width>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_253</name>
+      <text>d5</text>
+      <x>360</x>
+      <y>20</y>
+      <width>70</width>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="combo" version="2.0.0">
+      <name>Menu Button_107</name>
+      <pv_name>${UUT}:0:SIG:EVENT_SRC:6</pv_name>
+      <x>430</x>
+      <y>45</y>
+      <width>70</width>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_254</name>
+      <text>d6</text>
+      <x>430</x>
+      <y>20</y>
+      <width>70</width>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="combo" version="2.0.0">
+      <name>Menu Button_108</name>
+      <pv_name>${UUT}:0:SIG:EVENT_SRC:7</pv_name>
+      <x>500</x>
+      <y>45</y>
+      <width>70</width>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_255</name>
+      <text>d7</text>
+      <x>500</x>
+      <y>20</y>
+      <width>70</width>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="combo" version="2.0.0">
+      <name>Menu Button_109</name>
+      <pv_name>${UUT}:0:SIG:EVENT_SRC:0</pv_name>
+      <x>10</x>
+      <y>45</y>
+      <width>70</width>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_256</name>
+      <text>d0</text>
+      <x>10</x>
+      <y>20</y>
+      <width>70</width>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_257</name>
+      <text>Event Bus Source</text>
+      <width>600</width>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="combo" version="2.0.0">
+      <name>Menu Button_110</name>
+      <pv_name>${UUT}:0:SIG:EVENT_SRC:1</pv_name>
+      <x>80</x>
+      <y>45</y>
+      <width>70</width>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_258</name>
+      <text>d1</text>
+      <x>80</x>
+      <y>20</y>
+      <width>70</width>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="combo" version="2.0.0">
+      <name>Menu Button_111</name>
+      <pv_name>${UUT}:0:SIG:EVENT_SRC:2</pv_name>
+      <x>150</x>
+      <y>45</y>
+      <width>70</width>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_259</name>
+      <text>d2</text>
+      <x>150</x>
+      <y>20</y>
+      <width>70</width>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="combo" version="2.0.0">
+      <name>Menu Button_112</name>
+      <pv_name>${UUT}:0:SIG:EVENT_SRC:3</pv_name>
+      <x>220</x>
+      <y>45</y>
+      <width>70</width>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group_4</name>
+    <x>155</x>
+    <y>50</y>
+    <width>250</width>
+    <height>195</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rounded Rectangle_33</name>
+      <macros>
+        <pv_name></pv_name>
+      </macros>
+      <width>250</width>
+      <height>195</height>
+      <line_width>0</line_width>
+      <line_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </line_color>
+      <corner_width>16</corner_width>
+      <corner_height>16</corner_height>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget type="combo" version="2.0.0">
+      <name>Menu Button_113</name>
+      <pv_name>${UUT}:0:SIG:SRC:CLK:0</pv_name>
+      <x>55</x>
+      <y>97</y>
+      <width>85</width>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="combo" version="2.0.0">
+      <name>Menu Button_114</name>
+      <pv_name>${UUT}:0:SIG:SRC:CLK:1</pv_name>
+      <x>155</x>
+      <y>97</y>
+      <width>85</width>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="combo" version="2.0.0">
+      <name>Menu Button_115</name>
+      <pv_name>${UUT}:0:SIG:SRC:TRG:1</pv_name>
+      <x>155</x>
+      <y>127</y>
+      <width>85</width>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="combo" version="2.0.0">
+      <name>Menu Button_116</name>
+      <pv_name>${UUT}:0:SIG:SRC:SYNC:1</pv_name>
+      <x>155</x>
+      <y>157</y>
+      <width>85</width>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="combo" version="2.0.0">
+      <name>Menu Button_117</name>
+      <pv_name>${UUT}:0:SIG:SRC:TRG:0</pv_name>
+      <x>55</x>
+      <y>127</y>
+      <width>85</width>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="combo" version="2.0.0">
+      <name>Menu Button_118</name>
+      <pv_name>${UUT}:0:SIG:SRC:SYNC:0</pv_name>
+      <x>55</x>
+      <y>157</y>
+      <width>85</width>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_260</name>
+      <text>d1</text>
+      <x>155</x>
+      <y>70</y>
+      <width>80</width>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_261</name>
+      <text>d0</text>
+      <x>57</x>
+      <y>70</y>
+      <width>80</width>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_262</name>
+      <text>CLK</text>
+      <y>97</y>
+      <width>50</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_263</name>
+      <text>TRG</text>
+      <y>127</y>
+      <width>50</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_264</name>
+      <text>SYNC</text>
+      <y>157</y>
+      <width>50</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_265</name>
+      <text>Main Timing Highway 
+Source Routing</text>
+      <width>250</width>
+      <height>60</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_266</name>
+    <text></text>
+    <x>398</x>
+    <y>218</y>
+    <width>223</width>
+    <height>43</height>
+    <background_color>
+      <color red="225" green="92" blue="254">
+      </color>
+    </background_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="EventColorMatch" prop_id="transparent" out_exp="true">
+        <exp bool_exp="true">
+          <expression>pv0!=2</expression>
+        </exp>
+        <pv_name>${UUT}:0:SIG:SYNC_OUT:GPIO</pv_name>
+      </rule>
+    </rules>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group_5</name>
+    <x>425</x>
+    <y>50</y>
+    <width>190</width>
+    <height>195</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rounded Rectangle_34</name>
+      <macros>
+        <pv_name></pv_name>
+      </macros>
+      <width>190</width>
+      <height>195</height>
+      <line_width>0</line_width>
+      <line_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </line_color>
+      <corner_width>16</corner_width>
+      <corner_height>16</corner_height>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_267</name>
+      <text>CLK</text>
+      <y>60</y>
+      <width>45</width>
+      <height>30</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_268</name>
+      <text>TRG</text>
+      <y>90</y>
+      <width>45</width>
+      <height>30</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_269</name>
+      <text>SYNC</text>
+      <y>120</y>
+      <width>45</width>
+      <height>30</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="combo" version="2.0.0">
+      <name>Menu Button_119</name>
+      <pv_name>${UUT}:0:SIG:SYNC_OUT:GPIO</pv_name>
+      <x>55</x>
+      <y>150</y>
+      <width>75</width>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="combo" version="2.0.0">
+      <name>Menu Button_120</name>
+      <pv_name>${UUT}:0:SIG:SYNC_OUT:GPIO:DX</pv_name>
+      <x>130</x>
+      <y>150</y>
+      <width>50</width>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <rules>
+        <rule name="EnableWhenSrcNotDO" prop_id="enabled" out_exp="true">
+          <exp bool_exp="true">
+            <expression>pv0!=0&amp;&amp;pv0!=1</expression>
+          </exp>
+          <pv_name>${UUT}:0:SIG:SYNC_OUT:GPIO</pv_name>
+        </rule>
+      </rules>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_270</name>
+      <text>GPIO</text>
+      <y>150</y>
+      <width>45</width>
+      <height>30</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="combo" version="2.0.0">
+      <name>Menu Button_121</name>
+      <pv_name>${UUT}:0:SIG:SYNC_OUT:CLK</pv_name>
+      <x>55</x>
+      <y>60</y>
+      <width>75</width>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="combo" version="2.0.0">
+      <name>Menu Button_122</name>
+      <pv_name>${UUT}:0:SIG:SYNC_OUT:CLK:DX</pv_name>
+      <x>130</x>
+      <y>60</y>
+      <width>50</width>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <rules>
+        <rule name="EnableWhenSRC_NOT_DO" prop_id="enabled" out_exp="true">
+          <exp bool_exp="true">
+            <expression>pv0!=0&amp;&amp;pv0!=1</expression>
+          </exp>
+          <pv_name>${UUT}:0:SIG:SYNC_OUT:CLK</pv_name>
+        </rule>
+      </rules>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="combo" version="2.0.0">
+      <name>Menu Button_123</name>
+      <pv_name>${UUT}:0:SIG:SYNC_OUT:TRG</pv_name>
+      <x>55</x>
+      <y>90</y>
+      <width>75</width>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="combo" version="2.0.0">
+      <name>Menu Button_124</name>
+      <pv_name>${UUT}:0:SIG:SYNC_OUT:TRG:DX</pv_name>
+      <x>130</x>
+      <y>90</y>
+      <width>50</width>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <rules>
+        <rule name="EnableWhenSRC_NOT_DO" prop_id="enabled" out_exp="true">
+          <exp bool_exp="true">
+            <expression>pv0!=0&amp;&amp;pv0!=1</expression>
+          </exp>
+          <pv_name>${UUT}:0:SIG:SYNC_OUT:TRG</pv_name>
+        </rule>
+      </rules>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="combo" version="2.0.0">
+      <name>Menu Button_125</name>
+      <pv_name>${UUT}:0:SIG:SYNC_OUT:SYNC</pv_name>
+      <x>55</x>
+      <y>120</y>
+      <width>75</width>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="combo" version="2.0.0">
+      <name>Menu Button_126</name>
+      <pv_name>${UUT}:0:SIG:SYNC_OUT:SYNC:DX</pv_name>
+      <x>130</x>
+      <y>120</y>
+      <width>50</width>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <rules>
+        <rule name="EnableWhenSrcNotDO" prop_id="enabled" out_exp="true">
+          <exp bool_exp="true">
+            <expression>pv0!=0&amp;&amp;pv0!=1</expression>
+          </exp>
+          <pv_name>${UUT}:0:SIG:SYNC_OUT:SYNC</pv_name>
+        </rule>
+      </rules>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_271</name>
+      <text>HDMISync Out Select</text>
+      <width>190</width>
+      <height>35</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group_6</name>
+    <x>15</x>
+    <y>50</y>
+    <width>120</width>
+    <height>195</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rounded Rectangle_35</name>
+      <macros>
+        <pv_name></pv_name>
+      </macros>
+      <width>120</width>
+      <height>195</height>
+      <line_width>0</line_width>
+      <line_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </line_color>
+      <background_color>
+        <color red="151" green="244" blue="122">
+        </color>
+      </background_color>
+      <corner_width>16</corner_width>
+      <corner_height>16</corner_height>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_272</name>
+      <text>EXT SYNC BUS
+IN  [HDMI]</text>
+      <width>120</width>
+      <height>48</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_273</name>
+      <text>CLK</text>
+      <y>50</y>
+      <width>50</width>
+      <height>25</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_274</name>
+      <text>TRG</text>
+      <y>85</y>
+      <width>50</width>
+      <height>25</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_275</name>
+      <text>SYNC</text>
+      <y>120</y>
+      <width>50</width>
+      <height>25</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_276</name>
+      <text>GPIO</text>
+      <y>155</y>
+      <width>50</width>
+      <height>25</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_277</name>
+      <text>--&gt;</text>
+      <x>80</x>
+      <y>120</y>
+      <width>35</width>
+      <height>25</height>
+      <visible>false</visible>
+      <font>
+        <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+        </font>
+      </font>
+      <background_color>
+        <color red="151" green="244" blue="122">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <rules>
+        <rule name="Connected" prop_id="visible" out_exp="true">
+          <exp bool_exp="pv0==1">
+            <expression>true</expression>
+          </exp>
+          <exp bool_exp="pv1==1">
+            <expression>true</expression>
+          </exp>
+          <pv_name>${UUT}:0:SIG:SRC:SYNC:0</pv_name>
+          <pv_name>${UUT}:0:SIG:SRC:SYNC:1</pv_name>
+        </rule>
+      </rules>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_278</name>
+      <text>--&gt;</text>
+      <x>80</x>
+      <y>85</y>
+      <width>35</width>
+      <height>25</height>
+      <visible>false</visible>
+      <font>
+        <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+        </font>
+      </font>
+      <background_color>
+        <color red="151" green="244" blue="122">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <rules>
+        <rule name="Connected" prop_id="visible" out_exp="true">
+          <exp bool_exp="pv0==1">
+            <expression>true</expression>
+          </exp>
+          <exp bool_exp="pv1==1">
+            <expression>true</expression>
+          </exp>
+          <pv_name>${UUT}:0:SIG:SRC:TRG:0</pv_name>
+          <pv_name>${UUT}:0:SIG:SRC:TRG:1</pv_name>
+        </rule>
+      </rules>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_279</name>
+      <text>--&gt;</text>
+      <x>80</x>
+      <y>50</y>
+      <width>35</width>
+      <height>25</height>
+      <visible>false</visible>
+      <font>
+        <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+        </font>
+      </font>
+      <background_color>
+        <color red="151" green="244" blue="122">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <rules>
+        <rule name="Connected" prop_id="visible" out_exp="true">
+          <exp bool_exp="pv0==1">
+            <expression>true</expression>
+          </exp>
+          <exp bool_exp="pv1==1">
+            <expression>true</expression>
+          </exp>
+          <pv_name>${UUT}:0:SIG:SRC:CLK:0</pv_name>
+          <pv_name>${UUT}:0:SIG:SRC:CLK:1</pv_name>
+        </rule>
+      </rules>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_102</name>
+      <pv_name>${UUT}:0:SIG:SYNC_BUS:IN:CLK</pv_name>
+      <x>55</x>
+      <y>50</y>
+      <width>25</width>
+      <height>25</height>
+      <off_color>
+        <color red="0" green="100" blue="0">
+        </color>
+      </off_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <line_color>
+        <color red="150" green="150" blue="150">
+        </color>
+      </line_color>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_103</name>
+      <pv_name>${UUT}:0:SIG:SYNC_BUS:IN:TRG</pv_name>
+      <x>55</x>
+      <y>85</y>
+      <width>25</width>
+      <height>25</height>
+      <off_color>
+        <color red="0" green="100" blue="0">
+        </color>
+      </off_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <line_color>
+        <color red="150" green="150" blue="150">
+        </color>
+      </line_color>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_104</name>
+      <pv_name>${UUT}:0:SIG:SYNC_BUS:IN:SYNC</pv_name>
+      <x>55</x>
+      <y>120</y>
+      <width>25</width>
+      <height>25</height>
+      <off_color>
+        <color red="0" green="100" blue="0">
+        </color>
+      </off_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <line_color>
+        <color red="150" green="150" blue="150">
+        </color>
+      </line_color>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_105</name>
+      <pv_name>${UUT}:0:SIG:SYNC_BUS:IN:GPIO</pv_name>
+      <x>55</x>
+      <y>155</y>
+      <width>25</width>
+      <height>25</height>
+      <off_color>
+        <color red="0" green="100" blue="0">
+        </color>
+      </off_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <line_color>
+        <color red="150" green="150" blue="150">
+        </color>
+      </line_color>
+      <actions>
+      </actions>
+    </widget>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_1</name>
+    <width>820</width>
+    <height>770</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_280</name>
+    <text>Soft Trigger</text>
+    <x>640</x>
+    <y>497</y>
+    <width>141</width>
+    <height>34</height>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_281</name>
+    <text>Front Panel</text>
+    <x>10</x>
+    <y>378</y>
+    <width>118</width>
+    <height>25</height>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="combo" version="2.0.0">
+    <name>Menu Button_127</name>
+    <pv_name>${UUT}:0:SIG:FP:TRG</pv_name>
+    <x>82</x>
+    <y>432</y>
+    <width>86</width>
+    <height>25</height>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="combo" version="2.0.0">
+    <name>Menu Button_128</name>
+    <pv_name>${UUT}:0:SIG:FP:SYNC</pv_name>
+    <x>82</x>
+    <y>501</y>
+    <width>86</width>
+    <height>25</height>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <rules>
+      <rule name="EnabledRule" prop_id="enabled" out_exp="true">
+        <exp bool_exp="true">
+          <expression>!pv0</expression>
+        </exp>
+        <pv_name>${UUT}:0:SIG:FP:SYNC.DISA</pv_name>
+      </rule>
+    </rules>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_282</name>
+    <text>AUX1</text>
+    <x>19</x>
+    <y>501</y>
+    <width>56</width>
+    <height>25</height>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_283</name>
+    <text>TRG</text>
+    <x>13</x>
+    <y>432</y>
+    <width>56</width>
+    <height>25</height>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="combo" version="2.0.0">
+    <name>Menu Button_129</name>
+    <pv_name>${UUT}:0:SIG:FP:GPIO</pv_name>
+    <x>82</x>
+    <y>534</y>
+    <width>86</width>
+    <height>25</height>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <rules>
+      <rule name="EnabledRule" prop_id="enabled" out_exp="true">
+        <exp bool_exp="true">
+          <expression>!pv0</expression>
+        </exp>
+        <pv_name>${UUT}:0:SIG:FP:GPIO.DISA</pv_name>
+      </rule>
+    </rules>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rounded Rectangle_36</name>
+    <macros>
+      <pv_name></pv_name>
+    </macros>
+    <x>629</x>
+    <y>48</y>
+    <width>181</width>
+    <height>252</height>
+    <line_width>0</line_width>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="151" green="244" blue="122">
+      </color>
+    </background_color>
+    <corner_width>16</corner_width>
+    <corner_height>16</corner_height>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_284</name>
+    <text> ${UUT} SYNC</text>
+    <x>60</x>
+    <y>10</y>
+    <width>200</width>
+    <height>30</height>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_width>1</border_width>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_106</name>
+    <pv_name>${UUT}:0:SIG:SYNC_BUS:OUT:CABLE_DET</pv_name>
+    <x>770</x>
+    <y>105</y>
+    <width>22</width>
+    <height>22</height>
+    <off_color>
+      <color red="0" green="100" blue="0">
+      </color>
+    </off_color>
+    <foreground_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </foreground_color>
+    <line_color>
+      <color red="150" green="150" blue="150">
+      </color>
+    </line_color>
+    <actions>
+    </actions>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_285</name>
+    <text>EXT SYNC BUS 
+OUT  [HDMI]</text>
+    <x>637</x>
+    <y>56</y>
+    <width>167</width>
+    <height>43</height>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>Boolean Button_15</name>
+    <pv_name>${UUT}:0:SIG:SYNC_BUS_OUT:CLK</pv_name>
+    <bit>-1</bit>
+    <x>731</x>
+    <y>141</y>
+    <width>63</width>
+    <height>25</height>
+    <off_label></off_label>
+    <off_color>
+      <color red="0" green="100" blue="0">
+      </color>
+    </off_color>
+    <on_label></on_label>
+    <on_color>
+      <color red="0" green="255" blue="0">
+      </color>
+    </on_color>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="EnableWhenDOisSRC" prop_id="enabled" out_exp="true">
+        <exp bool_exp="true">
+          <expression>pv0==0||pv0==1</expression>
+        </exp>
+        <pv_name>${UUT}:0:SIG:SYNC_OUT:CLK</pv_name>
+      </rule>
+    </rules>
+    <enabled>false</enabled>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_286</name>
+    <text>CLK</text>
+    <x>637</x>
+    <y>141</y>
+    <width>79</width>
+    <height>25</height>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_287</name>
+    <text>CABLE PRESENT</text>
+    <x>637</x>
+    <y>106</y>
+    <width>129</width>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>Boolean Button_16</name>
+    <pv_name>${UUT}:0:SIG:SYNC_BUS_OUT:TRG</pv_name>
+    <bit>-1</bit>
+    <x>731</x>
+    <y>174</y>
+    <width>63</width>
+    <height>25</height>
+    <off_label></off_label>
+    <off_color>
+      <color red="0" green="100" blue="0">
+      </color>
+    </off_color>
+    <on_label></on_label>
+    <on_color>
+      <color red="0" green="255" blue="0">
+      </color>
+    </on_color>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="EnableWhenSrcDO" prop_id="enabled" out_exp="true">
+        <exp bool_exp="true">
+          <expression>pv0==0||pv0==1</expression>
+        </exp>
+        <pv_name>${UUT}:0:SIG:SYNC_OUT:TRG</pv_name>
+      </rule>
+    </rules>
+    <enabled>false</enabled>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_288</name>
+    <text>TRG</text>
+    <x>637</x>
+    <y>174</y>
+    <width>79</width>
+    <height>25</height>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>Boolean Button_17</name>
+    <pv_name>${UUT}:0:SIG:SYNC_BUS_OUT:SYNC</pv_name>
+    <bit>-1</bit>
+    <x>731</x>
+    <y>204</y>
+    <width>63</width>
+    <height>25</height>
+    <off_label></off_label>
+    <off_color>
+      <color red="0" green="100" blue="0">
+      </color>
+    </off_color>
+    <on_label></on_label>
+    <on_color>
+      <color red="0" green="255" blue="0">
+      </color>
+    </on_color>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="EnableWhenSrcDO" prop_id="enabled" out_exp="true">
+        <exp bool_exp="true">
+          <expression>pv0==0||pv0==1</expression>
+        </exp>
+        <pv_name>${UUT}:0:SIG:SYNC_OUT:SYNC</pv_name>
+      </rule>
+    </rules>
+    <enabled>false</enabled>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_289</name>
+    <text>SYNC</text>
+    <x>637</x>
+    <y>204</y>
+    <width>79</width>
+    <height>25</height>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>Boolean Button_18</name>
+    <pv_name>${UUT}:0:SIG:SYNC_BUS_OUT:GPIO</pv_name>
+    <bit>-1</bit>
+    <x>731</x>
+    <y>240</y>
+    <width>63</width>
+    <height>25</height>
+    <off_label></off_label>
+    <off_color>
+      <color red="0" green="100" blue="0">
+      </color>
+    </off_color>
+    <on_label></on_label>
+    <on_color>
+      <color red="0" green="255" blue="0">
+      </color>
+    </on_color>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="EnableWhenSrcDO" prop_id="enabled" out_exp="true">
+        <exp bool_exp="true">
+          <expression>pv0==0||pv0==1</expression>
+        </exp>
+        <pv_name>${UUT}:0:SIG:SYNC_OUT:GPIO</pv_name>
+      </rule>
+    </rules>
+    <enabled>false</enabled>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_290</name>
+    <text>GPIO</text>
+    <x>637</x>
+    <y>240</y>
+    <width>79</width>
+    <height>25</height>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_215</name>
+    <text>SYNC</text>
+    <x>183</x>
+    <y>501</y>
+    <width>56</width>
+    <height>25</height>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_216</name>
+    <text>GPIO</text>
+    <x>183</x>
+    <y>534</y>
+    <width>56</width>
+    <height>25</height>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_217</name>
+    <text>CLK</text>
+    <x>13</x>
+    <y>462</y>
+    <width>56</width>
+    <height>25</height>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Grouping Container_11</name>
+    <x>265</x>
+    <y>492</y>
+    <width>43</width>
+    <height>79</height>
+    <style>3</style>
+    <foreground_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </foreground_color>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="VizRule" prop_id="visible" out_exp="true">
+        <exp bool_exp="1">
+          <expression>pvStr0 != "acq1001" </expression>
+        </exp>
+        <pv_name>${UUT}:0:MTYPE</pv_name>
+      </rule>
+    </rules>
+    <widget type="led" version="2.0.0">
+      <name>LED_79</name>
+      <pv_name>${UUT}:0:SIG:FP:SYNC:OE</pv_name>
+      <x>8</x>
+      <y>8</y>
+      <width>22</width>
+      <height>22</height>
+      <off_color>
+        <color red="0" green="100" blue="0">
+        </color>
+      </off_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <line_color>
+        <color red="150" green="150" blue="150">
+        </color>
+      </line_color>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_80</name>
+      <pv_name>${UUT}:0:SIG:FP:GPIO:OE</pv_name>
+      <x>8</x>
+      <y>44</y>
+      <width>22</width>
+      <height>22</height>
+      <off_color>
+        <color red="0" green="100" blue="0">
+        </color>
+      </off_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <line_color>
+        <color red="150" green="150" blue="150">
+        </color>
+      </line_color>
+      <actions>
+      </actions>
+    </widget>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_218</name>
+    <text>SYNC_ROLE</text>
+    <x>320</x>
+    <y>10</y>
+    <width>200</width>
+    <height>30</height>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_width>1</border_width>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_2</name>
+    <pv_name>$(UUT):SYS:SYNC_ROLE</pv_name>
+    <x>575</x>
+    <y>10</y>
+    <width>200</width>
+    <height>30</height>
+    <background_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </background_color>
+    <show_units>false</show_units>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <tooltip></tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <border_width>1</border_width>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_219</name>
+    <text>DRVEN</text>
+    <x>637</x>
+    <y>272</y>
+    <width>129</width>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_81</name>
+    <pv_name>${UUT}:0:SIG:SYNC_BUS:OUT:DRVEN</pv_name>
+    <x>770</x>
+    <y>271</y>
+    <width>22</width>
+    <height>22</height>
+    <off_color>
+      <color red="0" green="100" blue="0">
+      </color>
+    </off_color>
+    <foreground_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </foreground_color>
+    <line_color>
+      <color red="150" green="150" blue="150">
+      </color>
+    </line_color>
+    <actions>
+    </actions>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Grouping Container_12</name>
+    <x>653</x>
+    <y>306</y>
+    <width>151</width>
+    <height>187</height>
+    <style>3</style>
+    <foreground_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </foreground_color>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="151" green="244" blue="122">
+      </color>
+    </background_color>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(pv_name)</pv_name>
+        <value></value>
+        <description>WritePV</description>
+      </action>
+    </actions>
+    <rules>
+      <rule name="VisibleRule" prop_id="visible" out_exp="true">
+        <exp bool_exp="true">
+          <expression>(pvStr0.startsWith("226"))</expression>
+        </exp>
+        <pv_name>${UUT}:SYS:VERSION:FPGA</pv_name>
+      </rule>
+    </rules>
+    <widget type="label" version="2.0.0">
+      <name>Label_220</name>
+      <text>CABLE PRESENT</text>
+      <y>4</y>
+      <width>151</width>
+      <height>26</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_221</name>
+      <text>2</text>
+      <x>51</x>
+      <y>73</y>
+      <width>33</width>
+      <height>31</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_222</name>
+      <text>3</text>
+      <x>51</x>
+      <y>104</y>
+      <width>33</width>
+      <height>31</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_82</name>
+      <pv_name>${UUT}:0:SIG:SYNC_BUS:OUT:CABLE_DET:3</pv_name>
+      <x>103</x>
+      <y>110</y>
+      <off_color>
+        <color red="0" green="100" blue="0">
+        </color>
+      </off_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <line_color>
+        <color red="150" green="150" blue="150">
+        </color>
+      </line_color>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_83</name>
+      <pv_name>${UUT}:0:SIG:SYNC_BUS:OUT:CABLE_DET:2</pv_name>
+      <x>104</x>
+      <y>79</y>
+      <off_color>
+        <color red="0" green="100" blue="0">
+        </color>
+      </off_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <line_color>
+        <color red="150" green="150" blue="150">
+        </color>
+      </line_color>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_223</name>
+      <text>1</text>
+      <x>51</x>
+      <y>42</y>
+      <width>33</width>
+      <height>31</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_84</name>
+      <pv_name>${UUT}:0:SIG:SYNC_BUS:OUT:CABLE_DET:4</pv_name>
+      <x>104</x>
+      <y>141</y>
+      <off_color>
+        <color red="0" green="100" blue="0">
+        </color>
+      </off_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <line_color>
+        <color red="150" green="150" blue="150">
+        </color>
+      </line_color>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_85</name>
+      <pv_name>${UUT}:0:SIG:SYNC_BUS:OUT:CABLE_DET:1</pv_name>
+      <x>103</x>
+      <y>48</y>
+      <off_color>
+        <color red="0" green="100" blue="0">
+        </color>
+      </off_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <line_color>
+        <color red="150" green="150" blue="150">
+        </color>
+      </line_color>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_224</name>
+      <text>4</text>
+      <x>51</x>
+      <y>135</y>
+      <width>33</width>
+      <height>31</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rounded Rectangle_28</name>
+    <macros>
+      <pv_name></pv_name>
+    </macros>
+    <x>383</x>
+    <y>497</y>
+    <width>419</width>
+    <height>80</height>
+    <line_width>0</line_width>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="87" green="227" blue="137">
+      </color>
+    </background_color>
+    <corner_width>16</corner_width>
+    <corner_height>16</corner_height>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_225</name>
+    <text>Soft Trigger Pattern</text>
+    <x>384</x>
+    <y>497</y>
+    <width>235</width>
+    <height>34</height>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="combo" version="2.0.0">
+    <name>Menu Button_94</name>
+    <pv_name>${UUT}:SIG:SOFT_TRIGGER:REPEAT</pv_name>
+    <x>389</x>
+    <y>530</y>
+    <width>85</width>
+    <height>37</height>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="spinner" version="2.0.0">
+    <name>Spinner_2</name>
+    <pv_name>${UUT}:SIG:SOFT_TRIGGER:REPEAT:COUNT</pv_name>
+    <x>491</x>
+    <y>530</y>
+    <width>133</width>
+    <height>38</height>
+    <format>0</format>
+    <precision>3</precision>
+    <background_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </background_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <minimum>-1.7976931348623157E308</minimum>
+    <maximum>1.7976931348623157E308</maximum>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>Boolean Button_14</name>
+    <pv_name>${UUT}:SIG:SOFT_TRIGGER</pv_name>
+    <bit>-1</bit>
+    <x>629</x>
+    <y>530</y>
+    <width>163</width>
+    <height>42</height>
+    <off_label>PULSE</off_label>
+    <off_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </off_color>
+    <on_label></on_label>
+    <on_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </on_color>
+    <show_led>false</show_led>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(pv_name)</pv_name>
+        <value>1</value>
+        <description>WritePV</description>
+      </action>
+    </actions>
+    <mode>1</mode>
+    <confirm_message></confirm_message>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_226</name>
+    <text>AUX2</text>
+    <x>19</x>
+    <y>534</y>
+    <width>56</width>
+    <height>25</height>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_227</name>
+    <text>IN</text>
+    <x>97</x>
+    <y>402</y>
+    <width>56</width>
+    <height>25</height>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_228</name>
+    <text>OUT</text>
+    <x>223</x>
+    <y>402</y>
+    <width>56</width>
+    <height>25</height>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_229</name>
+    <text>TRG</text>
+    <x>183</x>
+    <y>432</y>
+    <width>56</width>
+    <height>25</height>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_230</name>
+    <text>CLK</text>
+    <x>183</x>
+    <y>462</y>
+    <width>56</width>
+    <height>25</height>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="combo" version="2.0.0">
+    <name>Menu Button_95</name>
+    <pv_name>${UUT}:0:SIG:FP:CLKOUT</pv_name>
+    <x>244</x>
+    <y>462</y>
+    <width>86</width>
+    <height>25</height>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <rules>
+      <rule name="EnabledRule" prop_id="enabled" out_exp="true">
+        <exp bool_exp="true">
+          <expression>!pv0</expression>
+        </exp>
+        <pv_name>${UUT}:0:SIG:FP:CLKOUT.DISA</pv_name>
+      </rule>
+    </rules>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="combo" version="2.0.0">
+    <name>Menu Button_96</name>
+    <pv_name>${UUT}:0:SIG:FP:TRGOUT</pv_name>
+    <x>244</x>
+    <y>432</y>
+    <width>86</width>
+    <height>25</height>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <rules>
+      <rule name="EnabledRule" prop_id="enabled" out_exp="true">
+        <exp bool_exp="true">
+          <expression>!pv0</expression>
+        </exp>
+        <pv_name>${UUT}:0:SIG:FP:TRGOUT.DISA</pv_name>
+      </rule>
+    </rules>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group_1</name>
+    <x>15</x>
+    <y>590</y>
+    <width>600</width>
+    <height>80</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rounded Rectangle_30</name>
+      <macros>
+        <pv_name></pv_name>
+      </macros>
+      <width>600</width>
+      <height>80</height>
+      <line_width>0</line_width>
+      <line_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </line_color>
+      <background_color>
+        <color red="114" green="159" blue="207">
+        </color>
+      </background_color>
+      <corner_width>16</corner_width>
+      <corner_height>16</corner_height>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_86</name>
+      <pv_name>${UUT}:SIG:SYNC_BUS:TRG:D7</pv_name>
+      <x>535</x>
+      <y>40</y>
+      <width>32</width>
+      <height>32</height>
+      <off_color>
+        <color red="0" green="100" blue="0">
+        </color>
+      </off_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <line_color>
+        <color red="150" green="150" blue="150">
+        </color>
+      </line_color>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_233</name>
+      <text>Trigger Bus State</text>
+      <width>600</width>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_87</name>
+      <pv_name>${UUT}:SIG:SYNC_BUS:TRG:D0</pv_name>
+      <x>45</x>
+      <y>40</y>
+      <width>30</width>
+      <height>30</height>
+      <off_color>
+        <color red="0" green="100" blue="0">
+        </color>
+      </off_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <line_color>
+        <color red="150" green="150" blue="150">
+        </color>
+      </line_color>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_88</name>
+      <pv_name>${UUT}:SIG:SYNC_BUS:TRG:D1</pv_name>
+      <x>115</x>
+      <y>40</y>
+      <width>30</width>
+      <height>30</height>
+      <off_color>
+        <color red="0" green="100" blue="0">
+        </color>
+      </off_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <line_color>
+        <color red="150" green="150" blue="150">
+        </color>
+      </line_color>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_234</name>
+      <text>d0</text>
+      <x>45</x>
+      <y>20</y>
+      <width>30</width>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_235</name>
+      <text>d1</text>
+      <x>115</x>
+      <y>20</y>
+      <width>30</width>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_236</name>
+      <text>d2</text>
+      <x>185</x>
+      <y>20</y>
+      <width>30</width>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_237</name>
+      <text>d3</text>
+      <x>255</x>
+      <y>20</y>
+      <width>30</width>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_238</name>
+      <text>d4</text>
+      <x>325</x>
+      <y>20</y>
+      <width>30</width>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_239</name>
+      <text>d5</text>
+      <x>395</x>
+      <y>20</y>
+      <width>30</width>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_240</name>
+      <text>d6</text>
+      <x>465</x>
+      <y>20</y>
+      <width>30</width>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_241</name>
+      <text>d7</text>
+      <x>535</x>
+      <y>20</y>
+      <width>30</width>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_89</name>
+      <pv_name>${UUT}:SIG:SYNC_BUS:TRG:D2</pv_name>
+      <x>185</x>
+      <y>40</y>
+      <width>30</width>
+      <height>30</height>
+      <off_color>
+        <color red="0" green="100" blue="0">
+        </color>
+      </off_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <line_color>
+        <color red="150" green="150" blue="150">
+        </color>
+      </line_color>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_90</name>
+      <pv_name>${UUT}:SIG:SYNC_BUS:TRG:D4</pv_name>
+      <x>325</x>
+      <y>40</y>
+      <width>30</width>
+      <height>30</height>
+      <off_color>
+        <color red="0" green="100" blue="0">
+        </color>
+      </off_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <line_color>
+        <color red="150" green="150" blue="150">
+        </color>
+      </line_color>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_91</name>
+      <pv_name>${UUT}:SIG:SYNC_BUS:TRG:D5</pv_name>
+      <x>395</x>
+      <y>40</y>
+      <width>30</width>
+      <height>30</height>
+      <off_color>
+        <color red="0" green="100" blue="0">
+        </color>
+      </off_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <line_color>
+        <color red="150" green="150" blue="150">
+        </color>
+      </line_color>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_92</name>
+      <pv_name>${UUT}:SIG:SYNC_BUS:TRG:D6</pv_name>
+      <x>465</x>
+      <y>40</y>
+      <width>30</width>
+      <height>30</height>
+      <off_color>
+        <color red="0" green="100" blue="0">
+        </color>
+      </off_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <line_color>
+        <color red="150" green="150" blue="150">
+        </color>
+      </line_color>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_93</name>
+      <pv_name>${UUT}:SIG:SYNC_BUS:TRG:D3</pv_name>
+      <x>255</x>
+      <y>40</y>
+      <width>30</width>
+      <height>30</height>
+      <off_color>
+        <color red="0" green="100" blue="0">
+        </color>
+      </off_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <line_color>
+        <color red="150" green="150" blue="150">
+        </color>
+      </line_color>
+      <actions>
+      </actions>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group_2</name>
+    <x>15</x>
+    <y>680</y>
+    <width>600</width>
+    <height>80</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rounded Rectangle_31</name>
+      <macros>
+        <pv_name></pv_name>
+      </macros>
+      <width>600</width>
+      <height>80</height>
+      <line_width>0</line_width>
+      <line_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </line_color>
+      <background_color>
+        <color red="225" green="92" blue="254">
+        </color>
+      </background_color>
+      <corner_width>16</corner_width>
+      <corner_height>16</corner_height>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_242</name>
+      <text>Event Bus State</text>
+      <width>600</width>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_94</name>
+      <pv_name>${UUT}:SIG:SYNC_BUS:EVT:D0</pv_name>
+      <x>45</x>
+      <y>40</y>
+      <width>30</width>
+      <height>30</height>
+      <off_color>
+        <color red="0" green="100" blue="0">
+        </color>
+      </off_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <line_color>
+        <color red="150" green="150" blue="150">
+        </color>
+      </line_color>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_95</name>
+      <pv_name>${UUT}:SIG:SYNC_BUS:EVT:D1</pv_name>
+      <x>115</x>
+      <y>40</y>
+      <width>30</width>
+      <height>30</height>
+      <off_color>
+        <color red="0" green="100" blue="0">
+        </color>
+      </off_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <line_color>
+        <color red="150" green="150" blue="150">
+        </color>
+      </line_color>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_243</name>
+      <text>d0</text>
+      <x>45</x>
+      <y>20</y>
+      <width>30</width>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_244</name>
+      <text>d1</text>
+      <x>115</x>
+      <y>20</y>
+      <width>30</width>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_245</name>
+      <text>d2</text>
+      <x>185</x>
+      <y>20</y>
+      <width>30</width>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_246</name>
+      <text>d3</text>
+      <x>255</x>
+      <y>20</y>
+      <width>30</width>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_247</name>
+      <text>d4</text>
+      <x>325</x>
+      <y>20</y>
+      <width>30</width>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_248</name>
+      <text>d5</text>
+      <x>395</x>
+      <y>20</y>
+      <width>30</width>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_249</name>
+      <text>d6</text>
+      <x>465</x>
+      <y>20</y>
+      <width>30</width>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_250</name>
+      <text>d7</text>
+      <x>535</x>
+      <y>20</y>
+      <width>30</width>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_96</name>
+      <pv_name>${UUT}:SIG:SYNC_BUS:EVT:D2</pv_name>
+      <x>185</x>
+      <y>40</y>
+      <width>30</width>
+      <height>30</height>
+      <off_color>
+        <color red="0" green="100" blue="0">
+        </color>
+      </off_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <line_color>
+        <color red="150" green="150" blue="150">
+        </color>
+      </line_color>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_97</name>
+      <pv_name>${UUT}:SIG:SYNC_BUS:EVT:D3</pv_name>
+      <x>255</x>
+      <y>40</y>
+      <width>30</width>
+      <height>30</height>
+      <off_color>
+        <color red="0" green="100" blue="0">
+        </color>
+      </off_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <line_color>
+        <color red="150" green="150" blue="150">
+        </color>
+      </line_color>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_98</name>
+      <pv_name>${UUT}:SIG:SYNC_BUS:EVT:D4</pv_name>
+      <x>325</x>
+      <y>40</y>
+      <width>30</width>
+      <height>30</height>
+      <off_color>
+        <color red="0" green="100" blue="0">
+        </color>
+      </off_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <line_color>
+        <color red="150" green="150" blue="150">
+        </color>
+      </line_color>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_99</name>
+      <pv_name>${UUT}:SIG:SYNC_BUS:EVT:D5</pv_name>
+      <x>395</x>
+      <y>40</y>
+      <width>30</width>
+      <height>30</height>
+      <off_color>
+        <color red="0" green="100" blue="0">
+        </color>
+      </off_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <line_color>
+        <color red="150" green="150" blue="150">
+        </color>
+      </line_color>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_100</name>
+      <pv_name>${UUT}:SIG:SYNC_BUS:EVT:D6</pv_name>
+      <x>465</x>
+      <y>40</y>
+      <width>30</width>
+      <height>30</height>
+      <off_color>
+        <color red="0" green="100" blue="0">
+        </color>
+      </off_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <line_color>
+        <color red="150" green="150" blue="150">
+        </color>
+      </line_color>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_101</name>
+      <pv_name>${UUT}:SIG:SYNC_BUS:EVT:D7</pv_name>
+      <x>535</x>
+      <y>40</y>
+      <width>30</width>
+      <height>30</height>
+      <off_color>
+        <color red="0" green="100" blue="0">
+        </color>
+      </off_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <line_color>
+        <color red="150" green="150" blue="150">
+        </color>
+      </line_color>
+      <actions>
+      </actions>
+    </widget>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button</name>
+    <actions>
+      <action type="open_display">
+        <file>capture.bob</file>
+        <target>window</target>
+        <description>Open Capture</description>
+      </action>
+    </actions>
+    <x>710</x>
+    <y>720</y>
+    <height>40</height>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_1</name>
+    <actions>
+      <action type="open_display">
+        <file>judgement.bob</file>
+        <target>window</target>
+        <description>Open Judgement</description>
+      </action>
+    </actions>
+    <x>710</x>
+    <y>680</y>
+    <height>40</height>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+</display>

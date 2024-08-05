@@ -1,0 +1,1633 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2024-08-05 14:49:10 by epics-->
+<display version="2.0.0">
+  <name>judgement</name>
+  <macros>
+    <CH01>13</CH01>
+  </macros>
+  <width>950</width>
+  <height>1550</height>
+  <background_color>
+    <color red="240" green="240" blue="240">
+    </color>
+  </background_color>
+  <actions>
+  </actions>
+  <grid_step_x>6</grid_step_x>
+  <grid_step_y>6</grid_step_y>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update</name>
+    <pv_name>${UUT}:JDG:BN</pv_name>
+    <x>18</x>
+    <y>12</y>
+    <width>73</width>
+    <height>31</height>
+    <background_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <text>${UUT} JUDGEMENT ${SITE}</text>
+    <x>108</x>
+    <y>6</y>
+    <width>265</width>
+    <height>43</height>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED</name>
+    <pv_name>${UUT}:JDG:OK</pv_name>
+    <x>842</x>
+    <y>20</y>
+    <width>45</width>
+    <height>45</height>
+    <off_color>
+      <color red="0" green="100" blue="0">
+      </color>
+    </off_color>
+    <foreground_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </foreground_color>
+    <line_color>
+      <color red="150" green="150" blue="150">
+      </color>
+    </line_color>
+    <actions>
+    </actions>
+  </widget>
+  <widget type="byte_monitor" version="2.0.0">
+    <name>Byte Monitor</name>
+    <pv_name>${UUT}:JDG:CHX:FAIL:${SITE}</pv_name>
+    <x>90</x>
+    <y>90</y>
+    <width>757</width>
+    <height>43</height>
+    <numBits>32</numBits>
+    <off_color>
+      <color red="73" green="0" blue="0">
+      </color>
+    </off_color>
+    <on_color>
+      <color name="Major" red="255" green="0" blue="0">
+      </color>
+    </on_color>
+    <foreground_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </foreground_color>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="numbitsRule" prop_id="numBits" out_exp="true">
+        <exp bool_exp="1">
+          <expression>pv0</expression>
+        </exp>
+        <pv_name>${UUT}:${SITE}:NCHAN</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="tabs" version="2.0.0">
+    <name>Tabbed Container</name>
+    <tabs>
+      <tab>
+        <name>01</name>
+        <children>
+          <widget type="embedded" version="2.0.0">
+            <name>Linking Container</name>
+            <macros>
+              <CH01>01</CH01>
+            </macros>
+            <file>mask_plot.opi</file>
+            <width>781</width>
+            <height>529</height>
+            <resize>1</resize>
+            <transparent>true</transparent>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+        </children>
+      </tab>
+      <tab>
+        <name>02</name>
+        <children>
+          <widget type="embedded" version="2.0.0">
+            <name>Linking Container_1</name>
+            <macros>
+              <CH01>02</CH01>
+            </macros>
+            <file>mask_plot.opi</file>
+            <width>923</width>
+            <height>525</height>
+            <resize>1</resize>
+            <transparent>true</transparent>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+        </children>
+      </tab>
+      <tab>
+        <name>03</name>
+        <children>
+          <widget type="embedded" version="2.0.0">
+            <name>Linking Container</name>
+            <macros>
+              <CH01>03</CH01>
+            </macros>
+            <file>mask_plot.opi</file>
+            <width>923</width>
+            <height>525</height>
+            <resize>1</resize>
+            <transparent>true</transparent>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+        </children>
+      </tab>
+      <tab>
+        <name>04</name>
+        <children>
+          <widget type="embedded" version="2.0.0">
+            <name>Linking Container</name>
+            <macros>
+              <CH01>04</CH01>
+            </macros>
+            <file>mask_plot.opi</file>
+            <width>923</width>
+            <height>525</height>
+            <resize>1</resize>
+            <transparent>true</transparent>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+        </children>
+      </tab>
+      <tab>
+        <name>05</name>
+        <children>
+          <widget type="embedded" version="2.0.0">
+            <name>Linking Container</name>
+            <macros>
+              <CH01>05</CH01>
+            </macros>
+            <file>mask_plot.opi</file>
+            <width>923</width>
+            <height>525</height>
+            <resize>1</resize>
+            <transparent>true</transparent>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+        </children>
+      </tab>
+      <tab>
+        <name>06</name>
+        <children>
+          <widget type="embedded" version="2.0.0">
+            <name>Linking Container</name>
+            <macros>
+              <CH01>06</CH01>
+            </macros>
+            <file>mask_plot.opi</file>
+            <width>923</width>
+            <height>525</height>
+            <resize>1</resize>
+            <transparent>true</transparent>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+        </children>
+      </tab>
+      <tab>
+        <name>07</name>
+        <children>
+          <widget type="embedded" version="2.0.0">
+            <name>Linking Container</name>
+            <macros>
+              <CH01>07</CH01>
+            </macros>
+            <file>mask_plot.opi</file>
+            <width>923</width>
+            <height>525</height>
+            <resize>1</resize>
+            <transparent>true</transparent>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+        </children>
+      </tab>
+      <tab>
+        <name>08</name>
+        <children>
+          <widget type="embedded" version="2.0.0">
+            <name>Linking Container</name>
+            <macros>
+              <CH01>08</CH01>
+            </macros>
+            <file>mask_plot.opi</file>
+            <width>923</width>
+            <height>525</height>
+            <resize>1</resize>
+            <transparent>true</transparent>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+        </children>
+      </tab>
+      <tab>
+        <name>09</name>
+        <children>
+          <widget type="embedded" version="2.0.0">
+            <name>Linking Container</name>
+            <macros>
+              <CH01>09</CH01>
+            </macros>
+            <file>mask_plot.opi</file>
+            <width>923</width>
+            <height>525</height>
+            <resize>1</resize>
+            <transparent>true</transparent>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+        </children>
+      </tab>
+      <tab>
+        <name>10</name>
+        <children>
+          <widget type="embedded" version="2.0.0">
+            <name>Linking Container</name>
+            <macros>
+              <CH01>10</CH01>
+            </macros>
+            <file>mask_plot.opi</file>
+            <width>923</width>
+            <height>525</height>
+            <resize>1</resize>
+            <transparent>true</transparent>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+        </children>
+      </tab>
+      <tab>
+        <name>11</name>
+        <children>
+          <widget type="embedded" version="2.0.0">
+            <name>Linking Container</name>
+            <macros>
+              <CH01>11</CH01>
+            </macros>
+            <file>mask_plot.opi</file>
+            <width>923</width>
+            <height>525</height>
+            <resize>1</resize>
+            <transparent>true</transparent>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+        </children>
+      </tab>
+      <tab>
+        <name>12</name>
+        <children>
+          <widget type="embedded" version="2.0.0">
+            <name>Linking Container</name>
+            <macros>
+              <CH01>12</CH01>
+            </macros>
+            <file>mask_plot.opi</file>
+            <width>923</width>
+            <height>525</height>
+            <resize>1</resize>
+            <transparent>true</transparent>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+        </children>
+      </tab>
+      <tab>
+        <name>13</name>
+        <children>
+          <widget type="embedded" version="2.0.0">
+            <name>Linking Container</name>
+            <macros>
+              <CH01>13</CH01>
+            </macros>
+            <file>mask_plot.opi</file>
+            <width>923</width>
+            <height>525</height>
+            <resize>1</resize>
+            <transparent>true</transparent>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+        </children>
+      </tab>
+      <tab>
+        <name>14</name>
+        <children>
+          <widget type="embedded" version="2.0.0">
+            <name>Linking Container</name>
+            <macros>
+              <CH01>14</CH01>
+            </macros>
+            <file>mask_plot.opi</file>
+            <width>923</width>
+            <height>525</height>
+            <resize>1</resize>
+            <transparent>true</transparent>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+        </children>
+      </tab>
+      <tab>
+        <name>15</name>
+        <children>
+          <widget type="embedded" version="2.0.0">
+            <name>Linking Container</name>
+            <macros>
+              <CH01>15</CH01>
+            </macros>
+            <file>mask_plot.opi</file>
+            <width>923</width>
+            <height>525</height>
+            <resize>1</resize>
+            <transparent>true</transparent>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+        </children>
+      </tab>
+      <tab>
+        <name>16</name>
+        <children>
+          <widget type="embedded" version="2.0.0">
+            <name>Linking Container</name>
+            <macros>
+              <CH01>16</CH01>
+            </macros>
+            <file>mask_plot.opi</file>
+            <width>923</width>
+            <height>525</height>
+            <resize>1</resize>
+            <transparent>true</transparent>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+        </children>
+      </tab>
+    </tabs>
+    <x>17</x>
+    <y>202</y>
+    <width>836</width>
+    <height>587</height>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <tab_height>10</tab_height>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="CHO1_FAIL_Rule" prop_id="tab_0_background_color" out_exp="true">
+        <exp bool_exp="pv0&amp;(1&lt;&lt;0)">
+          <expression>ColorFontUtil.getColorFromRGB(255,0,0)</expression>
+        </exp>
+        <pv_name>${UUT}:JDG:CHX:FAIL:${SITE}</pv_name>
+      </rule>
+      <rule name="CHO2_FAIL_Rule" prop_id="tab_1_background_color" out_exp="true">
+        <exp bool_exp="pv0&amp;(1&lt;&lt;1)">
+          <expression>ColorFontUtil.getColorFromRGB(255,0,0)</expression>
+        </exp>
+        <pv_name>${UUT}:JDG:CHX:FAIL:${SITE}</pv_name>
+      </rule>
+      <rule name="CHO3_FAIL_Rule" prop_id="tab_2_background_color" out_exp="true">
+        <exp bool_exp="pv0&amp;(1&lt;&lt;2)">
+          <expression>ColorFontUtil.getColorFromRGB(255,0,0)</expression>
+        </exp>
+        <pv_name>${UUT}:JDG:CHX:FAIL:${SITE}</pv_name>
+      </rule>
+      <rule name="CHO4_FAIL_Rule" prop_id="tab_3_background_color" out_exp="true">
+        <exp bool_exp="pv0&amp;(1&lt;&lt;3)">
+          <expression>ColorFontUtil.getColorFromRGB(255,0,0)</expression>
+        </exp>
+        <pv_name>${UUT}:JDG:CHX:FAIL:${SITE}</pv_name>
+      </rule>
+      <rule name="CHO5_FAIL_Rule" prop_id="tab_4_background_color" out_exp="true">
+        <exp bool_exp="pv0&amp;(1&lt;&lt;4)">
+          <expression>ColorFontUtil.getColorFromRGB(255,0,0)</expression>
+        </exp>
+        <pv_name>${UUT}:JDG:CHX:FAIL:${SITE}</pv_name>
+      </rule>
+      <rule name="CHO6_FAIL_Rule" prop_id="tab_5_background_color" out_exp="true">
+        <exp bool_exp="pv0&amp;(1&lt;&lt;5)">
+          <expression>ColorFontUtil.getColorFromRGB(255,0,0)</expression>
+        </exp>
+        <pv_name>${UUT}:JDG:CHX:FAIL:${SITE}</pv_name>
+      </rule>
+      <rule name="CHO7_FAIL_Rule" prop_id="tab_6_background_color" out_exp="true">
+        <exp bool_exp="pv0&amp;(1&lt;&lt;6)">
+          <expression>ColorFontUtil.getColorFromRGB(255,0,0)</expression>
+        </exp>
+        <pv_name>${UUT}:JDG:CHX:FAIL:${SITE}</pv_name>
+      </rule>
+      <rule name="CHO8_FAIL_Rule" prop_id="tab_7_background_color" out_exp="true">
+        <exp bool_exp="pv0&amp;(1&lt;&lt;7)">
+          <expression>ColorFontUtil.getColorFromRGB(255,0,0)</expression>
+        </exp>
+        <pv_name>${UUT}:JDG:CHX:FAIL:${SITE}</pv_name>
+      </rule>
+      <rule name="CHO9_FAIL_Rule" prop_id="tab_8_background_color" out_exp="true">
+        <exp bool_exp="pv0&amp;(1&lt;&lt;8)">
+          <expression>ColorFontUtil.getColorFromRGB(255,0,0)</expression>
+        </exp>
+        <pv_name>${UUT}:JDG:CHX:FAIL:${SITE}</pv_name>
+      </rule>
+      <rule name="CH10_FAIL_Rule" prop_id="tab_9_background_color" out_exp="true">
+        <exp bool_exp="pv0&amp;(1&lt;&lt;9)">
+          <expression>ColorFontUtil.getColorFromRGB(255,0,0)</expression>
+        </exp>
+        <pv_name>${UUT}:JDG:CHX:FAIL:${SITE}</pv_name>
+      </rule>
+      <rule name="CH11_FAIL_Rule" prop_id="tab_10_background_color" out_exp="true">
+        <exp bool_exp="pv0&amp;(1&lt;&lt;10)">
+          <expression>ColorFontUtil.getColorFromRGB(255,0,0)</expression>
+        </exp>
+        <pv_name>${UUT}:JDG:CHX:FAIL:${SITE}</pv_name>
+      </rule>
+      <rule name="CH12_FAIL_Rule" prop_id="tab_11_background_color" out_exp="true">
+        <exp bool_exp="pv0&amp;(1&lt;&lt;11)">
+          <expression>ColorFontUtil.getColorFromRGB(255,0,0)</expression>
+        </exp>
+        <pv_name>${UUT}:JDG:CHX:FAIL:${SITE}</pv_name>
+      </rule>
+      <rule name="CH13_FAIL_Rule" prop_id="tab_12_background_color" out_exp="true">
+        <exp bool_exp="pv0&amp;(1&lt;&lt;12)">
+          <expression>ColorFontUtil.getColorFromRGB(255,0,0)</expression>
+        </exp>
+        <pv_name>${UUT}:JDG:CHX:FAIL:${SITE}</pv_name>
+      </rule>
+      <rule name="CH14_FAIL_Rule" prop_id="tab_13_background_color" out_exp="true">
+        <exp bool_exp="pv0&amp;(1&lt;&lt;13)">
+          <expression>ColorFontUtil.getColorFromRGB(255,0,0)</expression>
+        </exp>
+        <pv_name>${UUT}:JDG:CHX:FAIL:${SITE}</pv_name>
+      </rule>
+      <rule name="CH15_FAIL_Rule" prop_id="tab_14_background_color" out_exp="true">
+        <exp bool_exp="pv0&amp;(1&lt;&lt;14)">
+          <expression>ColorFontUtil.getColorFromRGB(255,0,0)</expression>
+        </exp>
+        <pv_name>${UUT}:JDG:CHX:FAIL:${SITE}</pv_name>
+      </rule>
+      <rule name="CH16_FAIL_Rule" prop_id="tab_15_background_color" out_exp="true">
+        <exp bool_exp="pv0&amp;(1&lt;&lt;15)">
+          <expression>ColorFontUtil.getColorFromRGB(255,0,0)</expression>
+        </exp>
+        <pv_name>${UUT}:JDG:CHX:FAIL:${SITE}</pv_name>
+      </rule>
+      <rule name="NumTabsRule" prop_id="tab_count" out_exp="true">
+        <exp bool_exp="1">
+          <expression>pv0&lt;16? pv0: 16</expression>
+        </exp>
+        <pv_name>${UUT}:${SITE}:NCHAN</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_1</name>
+    <text>CH32</text>
+    <x>36</x>
+    <y>90</y>
+    <width>55</width>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="textRule" prop_id="text" out_exp="true">
+        <exp bool_exp="1">
+          <expression>"CH"+pvStr0</expression>
+        </exp>
+        <pv_name>${UUT}:${SITE}:NCHAN</pv_name>
+      </rule>
+    </rules>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_2</name>
+    <text>CH1</text>
+    <x>834</x>
+    <y>90</y>
+    <width>43</width>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_3</name>
+    <text>OK</text>
+    <x>870</x>
+    <y>16</y>
+    <width>78</width>
+    <height>54</height>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_4</name>
+    <text>CH FAIL</text>
+    <x>192</x>
+    <y>59</y>
+    <width>114</width>
+    <height>36</height>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_5</name>
+    <text>SITE ${SITE} </text>
+    <x>552</x>
+    <y>192</y>
+    <width>229</width>
+    <height>43</height>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="tabs" version="2.0.0">
+    <name>Tabbed Container_1</name>
+    <tabs>
+      <tab>
+        <name>17</name>
+        <children>
+          <widget type="embedded" version="2.0.0">
+            <name>Linking Container</name>
+            <macros>
+              <CH01>17</CH01>
+            </macros>
+            <file>mask_plot.opi</file>
+            <width>835</width>
+            <height>589</height>
+            <resize>1</resize>
+            <transparent>true</transparent>
+            <actions>
+            </actions>
+            <rules>
+              <rule name="VizRule" prop_id="visible" out_exp="true">
+                <exp bool_exp="true">
+                  <expression>pv0 &gt; 16</expression>
+                </exp>
+                <pv_name>${UUT}:${SITE}:NCHAN</pv_name>
+              </rule>
+            </rules>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+        </children>
+      </tab>
+      <tab>
+        <name>18</name>
+        <children>
+          <widget type="embedded" version="2.0.0">
+            <name>Linking Container_1</name>
+            <macros>
+              <CH01>18</CH01>
+            </macros>
+            <file>mask_plot.opi</file>
+            <width>923</width>
+            <height>525</height>
+            <resize>1</resize>
+            <transparent>true</transparent>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+        </children>
+      </tab>
+      <tab>
+        <name>19</name>
+        <children>
+          <widget type="embedded" version="2.0.0">
+            <name>Linking Container</name>
+            <macros>
+              <CH01>19</CH01>
+            </macros>
+            <file>mask_plot.opi</file>
+            <width>923</width>
+            <height>525</height>
+            <resize>1</resize>
+            <transparent>true</transparent>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+        </children>
+      </tab>
+      <tab>
+        <name>20</name>
+        <children>
+          <widget type="embedded" version="2.0.0">
+            <name>Linking Container</name>
+            <macros>
+              <CH01>20</CH01>
+            </macros>
+            <file>mask_plot.opi</file>
+            <width>923</width>
+            <height>525</height>
+            <resize>1</resize>
+            <transparent>true</transparent>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+        </children>
+      </tab>
+      <tab>
+        <name>21</name>
+        <children>
+          <widget type="embedded" version="2.0.0">
+            <name>Linking Container</name>
+            <macros>
+              <CH01>21</CH01>
+            </macros>
+            <file>mask_plot.opi</file>
+            <width>923</width>
+            <height>525</height>
+            <resize>1</resize>
+            <transparent>true</transparent>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+        </children>
+      </tab>
+      <tab>
+        <name>22</name>
+        <children>
+          <widget type="embedded" version="2.0.0">
+            <name>Linking Container</name>
+            <macros>
+              <CH01>22</CH01>
+            </macros>
+            <file>mask_plot.opi</file>
+            <width>923</width>
+            <height>525</height>
+            <resize>1</resize>
+            <transparent>true</transparent>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+        </children>
+      </tab>
+      <tab>
+        <name>23</name>
+        <children>
+          <widget type="embedded" version="2.0.0">
+            <name>Linking Container</name>
+            <macros>
+              <CH01>23</CH01>
+            </macros>
+            <file>mask_plot.opi</file>
+            <width>923</width>
+            <height>525</height>
+            <resize>1</resize>
+            <transparent>true</transparent>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+        </children>
+      </tab>
+      <tab>
+        <name>24</name>
+        <children>
+          <widget type="embedded" version="2.0.0">
+            <name>Linking Container</name>
+            <macros>
+              <CH01>24</CH01>
+            </macros>
+            <file>mask_plot.opi</file>
+            <width>923</width>
+            <height>525</height>
+            <resize>1</resize>
+            <transparent>true</transparent>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+        </children>
+      </tab>
+      <tab>
+        <name>25</name>
+        <children>
+          <widget type="embedded" version="2.0.0">
+            <name>Linking Container</name>
+            <macros>
+              <CH01>25</CH01>
+            </macros>
+            <file>mask_plot.opi</file>
+            <width>923</width>
+            <height>525</height>
+            <resize>1</resize>
+            <transparent>true</transparent>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+        </children>
+      </tab>
+      <tab>
+        <name>26</name>
+        <children>
+          <widget type="embedded" version="2.0.0">
+            <name>Linking Container</name>
+            <macros>
+              <CH01>26</CH01>
+            </macros>
+            <file>mask_plot.opi</file>
+            <width>923</width>
+            <height>525</height>
+            <resize>1</resize>
+            <transparent>true</transparent>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+        </children>
+      </tab>
+      <tab>
+        <name>27</name>
+        <children>
+          <widget type="embedded" version="2.0.0">
+            <name>Linking Container</name>
+            <macros>
+              <CH01>27</CH01>
+            </macros>
+            <file>mask_plot.opi</file>
+            <width>923</width>
+            <height>525</height>
+            <resize>1</resize>
+            <transparent>true</transparent>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+        </children>
+      </tab>
+      <tab>
+        <name>28</name>
+        <children>
+          <widget type="embedded" version="2.0.0">
+            <name>Linking Container</name>
+            <macros>
+              <CH01>28</CH01>
+            </macros>
+            <file>mask_plot.opi</file>
+            <width>923</width>
+            <height>525</height>
+            <resize>1</resize>
+            <transparent>true</transparent>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+        </children>
+      </tab>
+      <tab>
+        <name>29</name>
+        <children>
+          <widget type="embedded" version="2.0.0">
+            <name>Linking Container</name>
+            <macros>
+              <CH01>29</CH01>
+            </macros>
+            <file>mask_plot.opi</file>
+            <width>923</width>
+            <height>525</height>
+            <resize>1</resize>
+            <transparent>true</transparent>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+        </children>
+      </tab>
+      <tab>
+        <name>30</name>
+        <children>
+          <widget type="embedded" version="2.0.0">
+            <name>Linking Container</name>
+            <macros>
+              <CH01>30</CH01>
+            </macros>
+            <file>mask_plot.opi</file>
+            <width>923</width>
+            <height>525</height>
+            <resize>1</resize>
+            <transparent>true</transparent>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+        </children>
+      </tab>
+      <tab>
+        <name>31</name>
+        <children>
+          <widget type="embedded" version="2.0.0">
+            <name>Linking Container</name>
+            <macros>
+              <CH01>31</CH01>
+            </macros>
+            <file>mask_plot.opi</file>
+            <width>923</width>
+            <height>525</height>
+            <resize>1</resize>
+            <transparent>true</transparent>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+        </children>
+      </tab>
+      <tab>
+        <name>32</name>
+        <children>
+          <widget type="embedded" version="2.0.0">
+            <name>Linking Container</name>
+            <macros>
+              <CH01>32</CH01>
+            </macros>
+            <file>mask_plot.opi</file>
+            <width>923</width>
+            <height>525</height>
+            <resize>1</resize>
+            <transparent>true</transparent>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+        </children>
+      </tab>
+    </tabs>
+    <y>878</y>
+    <width>860</width>
+    <height>653</height>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <tab_height>10</tab_height>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="VizRule" prop_id="visible" out_exp="true">
+        <exp bool_exp="true">
+          <expression>pv0 &gt; 16</expression>
+        </exp>
+        <pv_name>${UUT}:${SITE}:NCHAN</pv_name>
+      </rule>
+      <rule name="CHO1_FAIL_Rule" prop_id="tab_0_background_color" out_exp="true">
+        <exp bool_exp="pv0&amp;(1&lt;&lt;16)">
+          <expression>ColorFontUtil.getColorFromRGB(255,0,0)</expression>
+        </exp>
+        <pv_name>${UUT}:JDG:CHX:FAIL:${SITE}</pv_name>
+      </rule>
+      <rule name="CHO2_FAIL_Rule" prop_id="tab_1_background_color" out_exp="true">
+        <exp bool_exp="pv0&amp;(1&lt;&lt;17)">
+          <expression>ColorFontUtil.getColorFromRGB(255,0,0)</expression>
+        </exp>
+        <pv_name>${UUT}:JDG:CHX:FAIL:${SITE}</pv_name>
+      </rule>
+      <rule name="CHO3_FAIL_Rule" prop_id="tab_2_background_color" out_exp="true">
+        <exp bool_exp="pv0&amp;(1&lt;&lt;18)">
+          <expression>ColorFontUtil.getColorFromRGB(255,0,0)</expression>
+        </exp>
+        <pv_name>${UUT}:JDG:CHX:FAIL:${SITE}</pv_name>
+      </rule>
+      <rule name="CHO4_FAIL_Rule" prop_id="tab_3_background_color" out_exp="true">
+        <exp bool_exp="pv0&amp;(1&lt;&lt;19)">
+          <expression>ColorFontUtil.getColorFromRGB(255,0,0)</expression>
+        </exp>
+        <pv_name>${UUT}:JDG:CHX:FAIL:${SITE}</pv_name>
+      </rule>
+      <rule name="CHO5_FAIL_Rule" prop_id="tab_4_background_color" out_exp="true">
+        <exp bool_exp="pv0&amp;(1&lt;&lt;20)">
+          <expression>ColorFontUtil.getColorFromRGB(255,0,0)</expression>
+        </exp>
+        <pv_name>${UUT}:JDG:CHX:FAIL:${SITE}</pv_name>
+      </rule>
+      <rule name="CHO6_FAIL_Rule" prop_id="tab_5_background_color" out_exp="true">
+        <exp bool_exp="pv0&amp;(1&lt;&lt;21)">
+          <expression>ColorFontUtil.getColorFromRGB(255,0,0)</expression>
+        </exp>
+        <pv_name>${UUT}:JDG:CHX:FAIL:${SITE}</pv_name>
+      </rule>
+      <rule name="CHO7_FAIL_Rule" prop_id="tab_6_background_color" out_exp="true">
+        <exp bool_exp="pv0&amp;(1&lt;&lt;22)">
+          <expression>ColorFontUtil.getColorFromRGB(255,0,0)</expression>
+        </exp>
+        <pv_name>${UUT}:JDG:CHX:FAIL:${SITE}</pv_name>
+      </rule>
+      <rule name="CHO8_FAIL_Rule" prop_id="tab_7_background_color" out_exp="true">
+        <exp bool_exp="pv0&amp;(1&lt;&lt;23)">
+          <expression>ColorFontUtil.getColorFromRGB(255,0,0)</expression>
+        </exp>
+        <pv_name>${UUT}:JDG:CHX:FAIL:${SITE}</pv_name>
+      </rule>
+      <rule name="CHO9_FAIL_Rule" prop_id="tab_8_background_color" out_exp="true">
+        <exp bool_exp="pv0&amp;(1&lt;&lt;24)">
+          <expression>ColorFontUtil.getColorFromRGB(255,0,0)</expression>
+        </exp>
+        <pv_name>${UUT}:JDG:CHX:FAIL:${SITE}</pv_name>
+      </rule>
+      <rule name="CH10_FAIL_Rule" prop_id="tab_9_background_color" out_exp="true">
+        <exp bool_exp="pv0&amp;(1&lt;&lt;25)">
+          <expression>ColorFontUtil.getColorFromRGB(255,0,0)</expression>
+        </exp>
+        <pv_name>${UUT}:JDG:CHX:FAIL:${SITE}</pv_name>
+      </rule>
+      <rule name="CH11_FAIL_Rule" prop_id="tab_10_background_color" out_exp="true">
+        <exp bool_exp="pv0&amp;(1&lt;&lt;26)">
+          <expression>ColorFontUtil.getColorFromRGB(255,0,0)</expression>
+        </exp>
+        <pv_name>${UUT}:JDG:CHX:FAIL:${SITE}</pv_name>
+      </rule>
+      <rule name="CH12_FAIL_Rule" prop_id="tab_11_background_color" out_exp="true">
+        <exp bool_exp="pv0&amp;(1&lt;&lt;27)">
+          <expression>ColorFontUtil.getColorFromRGB(255,0,0)</expression>
+        </exp>
+        <pv_name>${UUT}:JDG:CHX:FAIL:${SITE}</pv_name>
+      </rule>
+      <rule name="CH13_FAIL_Rule" prop_id="tab_12_background_color" out_exp="true">
+        <exp bool_exp="pv0&amp;(1&lt;&lt;28)">
+          <expression>ColorFontUtil.getColorFromRGB(255,0,0)</expression>
+        </exp>
+        <pv_name>${UUT}:JDG:CHX:FAIL:${SITE}</pv_name>
+      </rule>
+      <rule name="CH14_FAIL_Rule" prop_id="tab_13_background_color" out_exp="true">
+        <exp bool_exp="pv0&amp;(1&lt;&lt;29)">
+          <expression>ColorFontUtil.getColorFromRGB(255,0,0)</expression>
+        </exp>
+        <pv_name>${UUT}:JDG:CHX:FAIL:${SITE}</pv_name>
+      </rule>
+      <rule name="CH15_FAIL_Rule" prop_id="tab_14_background_color" out_exp="true">
+        <exp bool_exp="pv0&amp;(1&lt;&lt;30)">
+          <expression>ColorFontUtil.getColorFromRGB(255,0,0)</expression>
+        </exp>
+        <pv_name>${UUT}:JDG:CHX:FAIL:${SITE}</pv_name>
+      </rule>
+      <rule name="CH16_FAIL_Rule" prop_id="tab_15_background_color" out_exp="true">
+        <exp bool_exp="pv0&amp;(1&lt;&lt;31)">
+          <expression>ColorFontUtil.getColorFromRGB(255,0,0)</expression>
+        </exp>
+        <pv_name>${UUT}:JDG:CHX:FAIL:${SITE}</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_1</name>
+    <pv_name>${UUT}:JDG:CHX:SAMPLE_COUNT</pv_name>
+    <x>180</x>
+    <y>156</y>
+    <width>121</width>
+    <height>31</height>
+    <background_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_2</name>
+    <pv_name>${UUT}:JDG:CHX:CLOCK_COUNT</pv_name>
+    <x>24</x>
+    <y>156</y>
+    <width>122</width>
+    <height>31</height>
+    <background_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_7</name>
+    <text>Samples</text>
+    <x>174</x>
+    <y>126</y>
+    <width>79</width>
+    <height>31</height>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_8</name>
+    <text>Clocks</text>
+    <x>9</x>
+    <y>126</y>
+    <width>92</width>
+    <height>31</height>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_3</name>
+    <pv_name>${UUT}:JDG:CHX:BURST_COUNT</pv_name>
+    <x>354</x>
+    <y>156</y>
+    <width>106</width>
+    <height>31</height>
+    <background_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_9</name>
+    <text>Bursts</text>
+    <x>330</x>
+    <y>120</y>
+    <width>109</width>
+    <height>31</height>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="combo" version="2.0.0">
+    <name>Menu Button</name>
+    <pv_name>${UUT}:JDG:UPDATE</pv_name>
+    <x>726</x>
+    <y>156</y>
+    <width>216</width>
+    <height>31</height>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_4</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(pv_name)</pv_name>
+        <value>1</value>
+        <description>WritePV</description>
+      </action>
+    </actions>
+    <pv_name>${UUT}:${SITE}:JDG:RESET:WIN</pv_name>
+    <text>WINDOW RESET</text>
+    <x>755</x>
+    <y>197</y>
+    <width>187</width>
+    <height>33</height>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Grouping Container</name>
+    <x>497</x>
+    <y>3</y>
+    <width>338</width>
+    <height>79</height>
+    <style>2</style>
+    <foreground_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </foreground_color>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_4</name>
+      <pv_name>${UUT}:JDG:MASK_BOXCAR</pv_name>
+      <x>216</x>
+      <y>39</y>
+      <width>43</width>
+      <height>31</height>
+      <background_color>
+        <color red="255" green="255" blue="255">
+        </color>
+      </background_color>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_4</name>
+      <pv_name>${UUT}:JDG:MASK_SQUARE</pv_name>
+      <x>270</x>
+      <y>39</y>
+      <width>43</width>
+      <height>31</height>
+      <background_color>
+        <color red="255" green="255" blue="255">
+        </color>
+      </background_color>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_11</name>
+      <text>SQ</text>
+      <x>264</x>
+      <width>55</width>
+      <height>31</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_10</name>
+      <text>BOX</text>
+      <x>210</x>
+      <width>55</width>
+      <height>31</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="combo" version="2.0.0">
+      <name>Menu Button_1</name>
+      <pv_name>${UUT}:JDG:MASK_PCT</pv_name>
+      <x>24</x>
+      <y>18</y>
+      <width>109</width>
+      <height>43</height>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+  </widget>
+  <widget type="scaledslider" version="2.0.0">
+    <name>Scaled Slider</name>
+    <pv_name>${UUT}:${SITE}:JDG:ALL:WIN:L</pv_name>
+    <x>126</x>
+    <y>799</y>
+    <width>319</width>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <show_scale>false</show_scale>
+    <show_minor_ticks>false</show_minor_ticks>
+    <major_tick_step_hint>50</major_tick_step_hint>
+    <scale_format></scale_format>
+    <show_hihi>false</show_hihi>
+    <show_high>false</show_high>
+    <show_low>false</show_low>
+    <show_lolo>false</show_lolo>
+    <actions>
+    </actions>
+  </widget>
+  <widget type="scaledslider" version="2.0.0">
+    <name>Scaled Slider_1</name>
+    <pv_name>${UUT}:${SITE}:JDG:ALL:WIN:R</pv_name>
+    <x>456</x>
+    <y>798</y>
+    <width>355</width>
+    <height>58</height>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <show_scale>false</show_scale>
+    <show_minor_ticks>false</show_minor_ticks>
+    <major_tick_step_hint>50</major_tick_step_hint>
+    <scale_format></scale_format>
+    <show_hihi>false</show_hihi>
+    <show_high>false</show_high>
+    <show_low>false</show_low>
+    <show_lolo>false</show_lolo>
+    <actions>
+    </actions>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_10</name>
+    <text>&lt;&lt; Window Left</text>
+    <x>144</x>
+    <y>834</y>
+    <width>181</width>
+    <height>37</height>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_11</name>
+    <text>Window Right &gt;&gt;</text>
+    <x>612</x>
+    <y>834</y>
+    <width>199</width>
+    <height>37</height>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_4</name>
+    <pv_name>${UUT}:${SITE}:JDG:ALL:WIN:L</pv_name>
+    <x>324</x>
+    <y>834</y>
+    <width>109</width>
+    <height>37</height>
+    <background_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_5</name>
+    <pv_name>${UUT}:${SITE}:JDG:ALL:WIN:R</pv_name>
+    <x>486</x>
+    <y>834</y>
+    <width>109</width>
+    <height>37</height>
+    <background_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="spinner" version="2.0.0">
+    <name>Spinner</name>
+    <pv_name>${UUT}:${SITE}:JDG:ALL:WIN:L</pv_name>
+    <x>19</x>
+    <y>812</y>
+    <width>108</width>
+    <height>29</height>
+    <format>0</format>
+    <precision>3</precision>
+    <background_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </background_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <minimum>-1.7976931348623157E308</minimum>
+    <maximum>1.7976931348623157E308</maximum>
+  </widget>
+  <widget type="spinner" version="2.0.0">
+    <name>Spinner_1</name>
+    <pv_name>${UUT}:${SITE}:JDG:ALL:WIN:R</pv_name>
+    <x>810</x>
+    <y>812</y>
+    <width>108</width>
+    <height>29</height>
+    <format>0</format>
+    <precision>3</precision>
+    <background_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </background_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <minimum>-1.7976931348623157E308</minimum>
+    <maximum>1.7976931348623157E308</maximum>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_6</name>
+    <pv_name>${UUT}:JDG:CHX:BURST:FREQ</pv_name>
+    <x>497</x>
+    <y>156</y>
+    <width>106</width>
+    <height>31</height>
+    <background_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_12</name>
+    <text>Bursts per s</text>
+    <x>495</x>
+    <y>120</y>
+    <width>109</width>
+    <height>31</height>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_7</name>
+    <pv_name>${UUT}:0:BPB</pv_name>
+    <x>630</x>
+    <y>156</y>
+    <width>36</width>
+    <height>31</height>
+    <background_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_13</name>
+    <text>BPB</text>
+    <x>625</x>
+    <y>120</y>
+    <width>45</width>
+    <height>31</height>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+</display>

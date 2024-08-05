@@ -1,0 +1,4315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2024-08-05 12:30:26 by epics-->
+<display version="2.0.0">
+  <name>capture.opi</name>
+  <macros>
+    <IS_ACQ1014>0</IS_ACQ1014>
+    <DEFAULT_SOFT_TRIGGER>1</DEFAULT_SOFT_TRIGGER>
+  </macros>
+  <width>880</width>
+  <height>770</height>
+  <background_color>
+    <color red="240" green="240" blue="240">
+    </color>
+  </background_color>
+  <actions>
+    <action type="write_pv">
+      <pv_name>${UUT}:MODE:TRANSIENT:PRE</pv_name>
+      <value>8192</value>
+      <description>WritePV</description>
+    </action>
+    <action type="write_pv">
+      <pv_name>${UUT}:MODE:TRANSIENT:POST</pv_name>
+      <value>8192</value>
+      <description>WritePV</description>
+    </action>
+    <action type="write_pv">
+      <pv_name>${UUT}:MODE:TRANSIENT:OSAM</pv_name>
+      <value>1</value>
+      <description>WritePV</description>
+    </action>
+    <action type="write_pv">
+      <pv_name>${UUT}:MODE:TRANSIENT:SOFT_TRIGGER</pv_name>
+      <value>1</value>
+      <description>WritePV</description>
+    </action>
+  </actions>
+  <grid_step_x>6</grid_step_x>
+  <grid_step_y>6</grid_step_y>
+  <widget type="tabs" version="2.0.0">
+    <name>Tabbed Container</name>
+    <tabs>
+      <tab>
+        <name>Transient</name>
+        <children>
+          <widget type="rectangle" version="2.0.0">
+            <name>Rounded Rectangle</name>
+            <macros>
+              <pv_name></pv_name>
+            </macros>
+            <x>153</x>
+            <y>78</y>
+            <width>586</width>
+            <height>79</height>
+            <line_width>0</line_width>
+            <line_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </line_color>
+            <background_color>
+              <color red="127" green="184" blue="240">
+              </color>
+            </background_color>
+            <corner_width>16</corner_width>
+            <corner_height>16</corner_height>
+            <actions>
+            </actions>
+            <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label</name>
+            <text>Capture ${UUT} Transient  Control</text>
+            <x>42</x>
+            <y>36</y>
+            <width>655</width>
+            <height>43</height>
+            <font>
+              <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+              </font>
+            </font>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="spinner" version="2.0.0">
+            <name>Spinner</name>
+            <pv_name>${UUT}:MODE:TRANSIENT:PRE</pv_name>
+            <x>162</x>
+            <y>123</y>
+            <width>85</width>
+            <height>25</height>
+            <format>0</format>
+            <precision>3</precision>
+            <background_color>
+              <color red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <actions execute_as_one="true">
+              <action type="write_pv">
+                <pv_name>loc://set_mode_pressed(0)(0)</pv_name>
+                <value>0</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <minimum>-1.7976931348623157E308</minimum>
+            <maximum>1.7976931348623157E308</maximum>
+          </widget>
+          <widget type="spinner" version="2.0.0">
+            <name>Spinner_1</name>
+            <pv_name>${UUT}:MODE:TRANSIENT:POST</pv_name>
+            <x>266</x>
+            <y>123</y>
+            <width>85</width>
+            <height>25</height>
+            <format>0</format>
+            <precision>3</precision>
+            <background_color>
+              <color red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <actions execute_as_one="true">
+              <action type="write_pv">
+                <pv_name>loc://set_mode_pressed(0)(0)</pv_name>
+                <value>0</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <minimum>-1.7976931348623157E308</minimum>
+            <maximum>1.7976931348623157E308</maximum>
+          </widget>
+          <widget type="spinner" version="2.0.0">
+            <name>Spinner_2</name>
+            <pv_name>${UUT}:MODE:TRANSIENT:OSAM</pv_name>
+            <x>393</x>
+            <y>123</y>
+            <width>85</width>
+            <height>25</height>
+            <format>0</format>
+            <precision>3</precision>
+            <background_color>
+              <color red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <actions execute_as_one="true">
+              <action type="write_pv">
+                <pv_name>loc://set_mode_pressed(0)</pv_name>
+                <value>0</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <minimum>-1.7976931348623157E308</minimum>
+            <maximum>1.7976931348623157E308</maximum>
+          </widget>
+          <widget type="spinner" version="2.0.0">
+            <name>Spinner_3</name>
+            <pv_name>${UUT}:MODE:TRANSIENT:SOFT_TRIGGER</pv_name>
+            <x>489</x>
+            <y>123</y>
+            <width>85</width>
+            <height>25</height>
+            <format>0</format>
+            <precision>3</precision>
+            <background_color>
+              <color red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <actions execute_as_one="true">
+              <action type="write_pv">
+                <pv_name>loc://set_mode_pressed(0)</pv_name>
+                <value>0</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <minimum>-1.7976931348623157E308</minimum>
+            <maximum>1.7976931348623157E308</maximum>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_1</name>
+            <text>PRE</text>
+            <x>165</x>
+            <y>89</y>
+            <width>80</width>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_2</name>
+            <text>POST</text>
+            <x>268</x>
+            <y>89</y>
+            <width>80</width>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_3</name>
+            <text>OSAM</text>
+            <x>396</x>
+            <y>89</y>
+            <width>80</width>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_4</name>
+            <text>OUTPUT SOFT_TRG</text>
+            <x>462</x>
+            <y>89</y>
+            <width>145</width>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>Action Button</name>
+            <actions>
+              <action type="write_pv">
+                <pv_name>${UUT}:MODE:TRANSIENT:SET_ARM</pv_name>
+                <value>1</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <text>ARM</text>
+            <x>269</x>
+            <y>221</y>
+            <width>305</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <rules>
+              <rule name="EnableOnIdleAndModeSet" prop_id="enabled" out_exp="true">
+                <exp bool_exp="pv0==0 &amp;&amp; pv1==1">
+                  <expression>true</expression>
+                </exp>
+                <exp bool_exp="true">
+                  <expression>false</expression>
+                </exp>
+                <pv_name>${UUT}:MODE:TRANS_ACT:STATE</pv_name>
+                <pv_name>loc://set_mode_pressed(0)</pv_name>
+              </rule>
+            </rules>
+            <tooltip>$(actions)</tooltip>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>Action Button_1</name>
+            <actions execute_as_one="true">
+              <action type="write_pv">
+                <pv_name>${UUT}:MODE:TRANSIENT</pv_name>
+                <value>1</value>
+                <description>WritePV</description>
+              </action>
+              <action type="write_pv">
+                <pv_name>loc://set_mode_pressed(0)</pv_name>
+                <value>1</value>
+                <description>WritePV</description>
+              </action>
+              <action type="write_pv">
+                <pv_name>${UUT}:1:TRG:DX</pv_name>
+                <value>${UUT}:MODE:TRANSIENT:SOFT_TRIGGER</value>
+                <description>luckily, d1 IS SOFT TRIGGER.</description>
+              </action>
+            </actions>
+            <text>setMode</text>
+            <x>153</x>
+            <y>221</y>
+            <width>92</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <rules>
+              <rule name="EnableOnIDLE" prop_id="enabled" out_exp="true">
+                <exp bool_exp="pvStr0!=&quot;IDLE&quot;">
+                  <expression>false</expression>
+                </exp>
+                <pv_name>${UUT}:MODE:TRANS_ACT:STATE</pv_name>
+              </rule>
+            </rules>
+            <tooltip>$(actions)</tooltip>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>Action Button_2</name>
+            <actions execute_as_one="true">
+              <action type="write_pv">
+                <pv_name>loc://set_mode_pressed(0)</pv_name>
+                <value>0</value>
+                <description>WritePV</description>
+              </action>
+              <action type="write_pv">
+                <pv_name>${UUT}:MODE:TRANSIENT:PRE</pv_name>
+                <value>0</value>
+                <description>WritePV</description>
+              </action>
+              <action type="write_pv">
+                <pv_name>${UUT}:MODE:TRANSIENT:POST</pv_name>
+                <value>100000</value>
+                <description>WritePV</description>
+              </action>
+              <action type="write_pv">
+                <pv_name>${UUT}:MODE:TRANSIENT:OSAM</pv_name>
+                <value>1</value>
+                <description>WritePV</description>
+              </action>
+              <action type="write_pv">
+                <pv_name>${UUT}:MODE:TRANSIENT:SOFT_TRIGGER</pv_name>
+                <value>${DEFAULT_SOFT_TRIGGER}</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <text>Default POST</text>
+            <x>615</x>
+            <y>87</y>
+            <width>112</width>
+            <height>25</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <tooltip>$(actions)</tooltip>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>Action Button_3</name>
+            <actions>
+              <action type="write_pv">
+                <pv_name>${UUT}:MODE:TRANSIENT:SET_ABORT</pv_name>
+                <value>1</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <text>STOP</text>
+            <x>597</x>
+            <y>221</y>
+            <width>80</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <rules>
+              <rule name="EnableNotContinuous" prop_id="enabled" out_exp="false">
+                <exp bool_exp="pv0">
+                  <value>false</value>
+                </exp>
+                <pv_name>${UUT}:MODE:CONTINUOUS</pv_name>
+              </rule>
+            </rules>
+            <tooltip>$(actions)</tooltip>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>Text Update</name>
+            <pv_name>${UUT}:MODE:TRANS_ACT:STATE</pv_name>
+            <x>18</x>
+            <y>165</y>
+            <width>109</width>
+            <height>25</height>
+            <background_color>
+              <color red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <rules>
+              <rule name="Rule" prop_id="background_color" out_exp="false">
+                <exp bool_exp="pv0==0">
+                  <value>
+                    <color red="255" green="0" blue="0">
+                    </color>
+                  </value>
+                </exp>
+                <exp bool_exp="pv0==1">
+                  <value>
+                    <color name="Minor" red="255" green="128" blue="0">
+                    </color>
+                  </value>
+                </exp>
+                <exp bool_exp="pv0==2 || pv0 ==3">
+                  <value>
+                    <color red="37" green="248" blue="32">
+                    </color>
+                  </value>
+                </exp>
+                <exp bool_exp="pv0==4">
+                  <value>
+                    <color red="139" green="105" blue="20">
+                    </color>
+                  </value>
+                </exp>
+                <pv_name>${UUT}:MODE:TRANS_ACT:STATE</pv_name>
+              </rule>
+            </rules>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>Text Update_1</name>
+            <pv_name>${UUT}:MODE:TRANS_ACT:PRE</pv_name>
+            <x>165</x>
+            <y>165</y>
+            <width>79</width>
+            <height>25</height>
+            <background_color>
+              <color red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>Text Update_2</name>
+            <pv_name>${UUT}:MODE:TRANS_ACT:POST</pv_name>
+            <x>269</x>
+            <y>165</y>
+            <width>79</width>
+            <height>25</height>
+            <background_color>
+              <color red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>Text Update_3</name>
+            <pv_name>${UUT}:MODE:TRANS_ACT:TOTSAM</pv_name>
+            <x>420</x>
+            <y>165</y>
+            <width>87</width>
+            <height>25</height>
+            <background_color>
+              <color red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_5</name>
+            <text>TOTAL:</text>
+            <x>357</x>
+            <y>167</y>
+            <width>49</width>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_6</name>
+            <text>SHOT</text>
+            <x>33</x>
+            <y>89</y>
+            <width>80</width>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>Text Update_4</name>
+            <pv_name>${UUT}:${SITE}:SHOT</pv_name>
+            <x>18</x>
+            <y>123</y>
+            <width>109</width>
+            <height>25</height>
+            <background_color>
+              <color red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <rules>
+              <rule name="Rule" prop_id="background_color" out_exp="false">
+                <exp bool_exp="pv0==0">
+                  <value>
+                    <color red="255" green="0" blue="0">
+                    </color>
+                  </value>
+                </exp>
+                <exp bool_exp="pv0==1">
+                  <value>
+                    <color name="Minor" red="255" green="128" blue="0">
+                    </color>
+                  </value>
+                </exp>
+                <exp bool_exp="pv0==2 || pv0 ==3">
+                  <value>
+                    <color red="37" green="248" blue="32">
+                    </color>
+                  </value>
+                </exp>
+                <exp bool_exp="pv0==4">
+                  <value>
+                    <color red="139" green="105" blue="20">
+                    </color>
+                  </value>
+                </exp>
+                <pv_name>${UUT}:MODE:TRANS_ACT:STATE</pv_name>
+              </rule>
+            </rules>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_7</name>
+            <text>REPEAT</text>
+            <x>30</x>
+            <y>198</y>
+            <width>82</width>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="spinner" version="2.0.0">
+            <name>Spinner_4</name>
+            <pv_name>${UUT}:MODE:TRANSIENT:REPEAT</pv_name>
+            <x>30</x>
+            <y>224</y>
+            <width>85</width>
+            <height>25</height>
+            <format>0</format>
+            <precision>3</precision>
+            <background_color>
+              <color red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <actions>
+            </actions>
+            <minimum>-1.7976931348623157E308</minimum>
+            <maximum>1.7976931348623157E308</maximum>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>Text Update_5</name>
+            <pv_name>${UUT}:TRANSIENT:ACT:DEMUX</pv_name>
+            <x>585</x>
+            <y>164</y>
+            <width>58</width>
+            <height>25</height>
+            <background_color>
+              <color red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <rules>
+              <rule name="BusyRule" prop_id="background_color" out_exp="false">
+                <exp bool_exp="pv0 != 0">
+                  <value>
+                    <color name="Minor" red="255" green="128" blue="0">
+                    </color>
+                  </value>
+                </exp>
+                <pv_name>${UUT}:TRANSIENT:ACT:DEMUX</pv_name>
+              </rule>
+            </rules>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>Action Button_4</name>
+            <actions execute_as_one="true">
+              <action type="write_pv">
+                <pv_name>loc://set_mode_pressed(0)</pv_name>
+                <value>0</value>
+                <description>WritePV</description>
+              </action>
+              <action type="write_pv">
+                <pv_name>${UUT}:MODE:TRANSIENT:PRE</pv_name>
+                <value>50000</value>
+                <description>WritePV</description>
+              </action>
+              <action type="write_pv">
+                <pv_name>${UUT}:MODE:TRANSIENT:POST</pv_name>
+                <value>50000</value>
+                <description>WritePV</description>
+              </action>
+              <action type="write_pv">
+                <pv_name>${UUT}:MODE:TRANSIENT:OSAM</pv_name>
+                <value>1</value>
+                <description>WritePV</description>
+              </action>
+              <action type="write_pv">
+                <pv_name>${UUT}:MODE:TRANSIENT:SOFT_TRIGGER</pv_name>
+                <value>1</value>
+                <description>PRE/POST always soft triggers</description>
+              </action>
+            </actions>
+            <text>Default PRE/POST</text>
+            <x>585</x>
+            <y>123</y>
+            <width>142</width>
+            <height>25</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <tooltip>$(actions)</tooltip>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_9</name>
+            <text>Post
+Process</text>
+            <x>506</x>
+            <y>167</y>
+            <width>80</width>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>Text Update_5</name>
+            <pv_name>${UUT}:MODE:TRANS_ACT:POST:MDSPUTCH</pv_name>
+            <x>672</x>
+            <y>164</y>
+            <width>51</width>
+            <height>25</height>
+            <background_color>
+              <color red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <rules>
+              <rule name="BusyRule" prop_id="background_color" out_exp="false">
+                <exp bool_exp="pv0 != 0">
+                  <value>
+                    <color name="Minor" red="255" green="128" blue="0">
+                    </color>
+                  </value>
+                </exp>
+                <pv_name>${UUT}:TRANSIENT:ACT:DEMUX</pv_name>
+              </rule>
+            </rules>
+            <tooltip>$(pv_name) 
+Post Processing -
+MDSPUTCH CHANNEL
+if appropriate</tooltip>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="led" version="2.0.0">
+            <name>LED_1</name>
+            <pv_name>${UUT}:MODE:TRANSIENT:SET_ARM</pv_name>
+            <x>416</x>
+            <y>305</y>
+            <width>39</width>
+            <height>39</height>
+            <off_color>
+              <color red="66" green="33" blue="0">
+              </color>
+            </off_color>
+            <on_color>
+              <color name="Minor" red="255" green="128" blue="0">
+              </color>
+            </on_color>
+            <foreground_color>
+              <color red="192" green="192" blue="192">
+              </color>
+            </foreground_color>
+            <line_color>
+              <color red="150" green="150" blue="150">
+              </color>
+            </line_color>
+            <actions>
+            </actions>
+          </widget>
+          <widget type="led" version="2.0.0">
+            <name>LED_1</name>
+            <pv_name>${UUT}:MODE:TRANSIENT:SET_ABORT</pv_name>
+            <x>617</x>
+            <y>305</y>
+            <width>39</width>
+            <height>39</height>
+            <off_color>
+              <color red="66" green="33" blue="0">
+              </color>
+            </off_color>
+            <on_color>
+              <color name="Major" red="255" green="0" blue="0">
+              </color>
+            </on_color>
+            <foreground_color>
+              <color red="192" green="192" blue="192">
+              </color>
+            </foreground_color>
+            <line_color>
+              <color red="150" green="150" blue="150">
+              </color>
+            </line_color>
+            <actions>
+            </actions>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label</name>
+            <text>DEMUX</text>
+            <x>48</x>
+            <y>289</y>
+            <width>85</width>
+            <height>25</height>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="combo" version="2.0.0">
+            <name>Menu Button</name>
+            <pv_name>${UUT}:MODE:TRANSIENT:DEMUX</pv_name>
+            <x>162</x>
+            <y>285</y>
+            <width>82</width>
+            <height>34</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="group" version="3.0.0">
+            <name>Group</name>
+            <x>724</x>
+            <y>294</y>
+            <width>110</width>
+            <height>73</height>
+            <style>3</style>
+            <transparent>true</transparent>
+            <widget type="led" version="2.0.0">
+              <name>LED_2</name>
+              <pv_name>${UUT}:MODE:TRANS_ACT:CH:DATA_VALID</pv_name>
+              <x>70</x>
+              <y>43</y>
+              <width>30</width>
+              <height>30</height>
+              <off_color>
+                <color red="0" green="100" blue="0">
+                </color>
+              </off_color>
+              <foreground_color>
+                <color red="192" green="192" blue="192">
+                </color>
+              </foreground_color>
+              <line_color>
+                <color red="150" green="150" blue="150">
+                </color>
+              </line_color>
+              <actions>
+              </actions>
+            </widget>
+            <widget type="led" version="2.0.0">
+              <name>LED_1</name>
+              <pv_name>${UUT}:MODE:TRANS_ACT:RAW:DATA_VALID</pv_name>
+              <x>10</x>
+              <y>43</y>
+              <width>30</width>
+              <height>30</height>
+              <off_color>
+                <color red="0" green="100" blue="0">
+                </color>
+              </off_color>
+              <foreground_color>
+                <color red="192" green="192" blue="192">
+                </color>
+              </foreground_color>
+              <line_color>
+                <color red="150" green="150" blue="150">
+                </color>
+              </line_color>
+              <actions>
+              </actions>
+            </widget>
+            <widget type="label" version="2.0.0">
+              <name>Label_2</name>
+              <text>Raw</text>
+              <y>20</y>
+              <width>50</width>
+              <background_color>
+                <color name="Button_Background" red="210" green="210" blue="210">
+                </color>
+              </background_color>
+              <transparent>false</transparent>
+              <horizontal_alignment>1</horizontal_alignment>
+              <vertical_alignment>1</vertical_alignment>
+              <wrap_words>false</wrap_words>
+              <actions>
+              </actions>
+              <border_color>
+                <color red="0" green="128" blue="255">
+                </color>
+              </border_color>
+            </widget>
+            <widget type="label" version="2.0.0">
+              <name>Label_10</name>
+              <text>Chan</text>
+              <x>60</x>
+              <y>20</y>
+              <width>50</width>
+              <background_color>
+                <color name="Button_Background" red="210" green="210" blue="210">
+                </color>
+              </background_color>
+              <transparent>false</transparent>
+              <horizontal_alignment>1</horizontal_alignment>
+              <vertical_alignment>1</vertical_alignment>
+              <wrap_words>false</wrap_words>
+              <actions>
+              </actions>
+              <border_color>
+                <color red="0" green="128" blue="255">
+                </color>
+              </border_color>
+            </widget>
+            <widget type="label" version="2.0.0">
+              <name>Label</name>
+              <text>Data Valid</text>
+              <width>110</width>
+              <background_color>
+                <color name="Button_Background" red="210" green="210" blue="210">
+                </color>
+              </background_color>
+              <transparent>false</transparent>
+              <horizontal_alignment>1</horizontal_alignment>
+              <vertical_alignment>1</vertical_alignment>
+              <wrap_words>false</wrap_words>
+              <actions>
+              </actions>
+              <border_color>
+                <color red="0" green="128" blue="255">
+                </color>
+              </border_color>
+            </widget>
+          </widget>
+        </children>
+      </tab>
+      <tab>
+        <name>Stream</name>
+        <children>
+          <widget type="bool_button" version="2.0.0">
+            <name>Boolean Button</name>
+            <pv_name>${UUT}:MODE:CONTINUOUS</pv_name>
+            <bit>-1</bit>
+            <x>38</x>
+            <y>51</y>
+            <width>112</width>
+            <height>37</height>
+            <off_label>START</off_label>
+            <off_color>
+              <color red="0" green="100" blue="0">
+              </color>
+            </off_color>
+            <on_label>STOP</on_label>
+            <on_color>
+              <color red="0" green="255" blue="0">
+              </color>
+            </on_color>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <actions>
+            </actions>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>Text Update_6</name>
+            <pv_name>${UUT}:MODE:CONTINUOUS:STATUS</pv_name>
+            <x>156</x>
+            <y>48</y>
+            <width>484</width>
+            <height>40</height>
+            <background_color>
+              <color red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_8</name>
+            <text>Capture ${UUT} Stream  Control</text>
+            <x>92</x>
+            <y>6</y>
+            <width>601</width>
+            <height>43</height>
+            <font>
+              <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+              </font>
+            </font>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="embedded" version="2.0.0">
+            <name>Linking Container_2</name>
+            <macros>
+              <FUN>sample_count</FUN>
+            </macros>
+            <file>counter1.opi</file>
+            <x>54</x>
+            <y>144</y>
+            <width>609</width>
+            <height>49</height>
+            <resize>1</resize>
+            <transparent>true</transparent>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>Text Update</name>
+            <pv_name>${UUT}:LIVE:MODE</pv_name>
+            <x>42</x>
+            <y>225</y>
+            <width>103</width>
+            <height>31</height>
+            <background_color>
+              <color red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label</name>
+            <text>Scope Mode</text>
+            <x>38</x>
+            <y>198</y>
+            <width>103</width>
+            <height>31</height>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>Text Update_2</name>
+            <pv_name>${UUT}:0:STAT:GETS:MBPS</pv_name>
+            <x>539</x>
+            <y>225</y>
+            <width>124</width>
+            <height>31</height>
+            <background_color>
+              <color red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_2</name>
+            <text>Rate</text>
+            <x>528</x>
+            <y>204</y>
+            <width>73</width>
+            <height>25</height>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_2</name>
+            <text>MB/s</text>
+            <x>594</x>
+            <y>204</y>
+            <width>55</width>
+            <height>25</height>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>Text Update_2</name>
+            <pv_name>${UUT}:1:SIG:sample_count:nzcount</pv_name>
+            <x>199</x>
+            <y>225</y>
+            <width>78</width>
+            <height>31</height>
+            <background_color>
+              <color red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_2</name>
+            <text>RunTime</text>
+            <x>204</x>
+            <y>201</y>
+            <width>73</width>
+            <height>25</height>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>Text Update_4</name>
+            <pv_name>${UUT}:MODE:CONTINUOUS:STATE</pv_name>
+            <x>159</x>
+            <y>104</y>
+            <width>470</width>
+            <height>21</height>
+            <background_color>
+              <color red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <rules>
+              <rule name="Rule" prop_id="background_color" out_exp="false">
+                <exp bool_exp="pv0==0">
+                  <value>
+                    <color red="255" green="0" blue="0">
+                    </color>
+                  </value>
+                </exp>
+                <exp bool_exp="pv0==1">
+                  <value>
+                    <color name="Minor" red="255" green="128" blue="0">
+                    </color>
+                  </value>
+                </exp>
+                <exp bool_exp="pv0==2 || pv0 ==3">
+                  <value>
+                    <color red="37" green="248" blue="32">
+                    </color>
+                  </value>
+                </exp>
+                <exp bool_exp="pv0==4">
+                  <value>
+                    <color red="139" green="105" blue="20">
+                    </color>
+                  </value>
+                </exp>
+                <pv_name>${UUT}:MODE:CONTINUOUS:STATE</pv_name>
+              </rule>
+            </rules>
+            <border_width>2</border_width>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>Text Update_5</name>
+            <pv_name>${UUT}:1:SHOT</pv_name>
+            <x>39</x>
+            <y>102</y>
+            <width>109</width>
+            <height>25</height>
+            <background_color>
+              <color red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <rules>
+              <rule name="Rule" prop_id="background_color" out_exp="false">
+                <exp bool_exp="pv0==0">
+                  <value>
+                    <color red="255" green="0" blue="0">
+                    </color>
+                  </value>
+                </exp>
+                <exp bool_exp="pv0==1">
+                  <value>
+                    <color name="Minor" red="255" green="128" blue="0">
+                    </color>
+                  </value>
+                </exp>
+                <exp bool_exp="pv0==2 || pv0 ==3">
+                  <value>
+                    <color red="37" green="248" blue="32">
+                    </color>
+                  </value>
+                </exp>
+                <exp bool_exp="pv0==4">
+                  <value>
+                    <color red="139" green="105" blue="20">
+                    </color>
+                  </value>
+                </exp>
+                <pv_name>${UUT}:MODE:CONTINUOUS:STATE</pv_name>
+              </rule>
+            </rules>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_2</name>
+            <text>Samples</text>
+            <x>356</x>
+            <y>201</y>
+            <width>73</width>
+            <height>25</height>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>Text Update_2</name>
+            <pv_name>${UUT}:MODE:CONTINUOUS:SC</pv_name>
+            <x>336</x>
+            <y>225</y>
+            <width>124</width>
+            <height>31</height>
+            <background_color>
+              <color red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="group" version="3.0.0">
+            <name>Grouping Container</name>
+            <x>685</x>
+            <y>204</y>
+            <width>157</width>
+            <height>73</height>
+            <style>3</style>
+            <foreground_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </foreground_color>
+            <line_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </line_color>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <actions>
+            </actions>
+            <rules>
+              <rule name="VizRule" prop_id="visible" out_exp="true">
+                <exp bool_exp="1">
+                  <expression>pv0 == 1</expression>
+                </exp>
+                <pv_name>${UUT}:1:IS_ADC</pv_name>
+              </rule>
+            </rules>
+            <widget type="textupdate" version="2.0.0">
+              <name>Text Update_2</name>
+              <pv_name>${UUT}:1:AI:WF:FREQ</pv_name>
+              <x>12</x>
+              <y>36</y>
+              <width>124</width>
+              <height>31</height>
+              <background_color>
+                <color red="255" green="255" blue="255">
+                </color>
+              </background_color>
+              <vertical_alignment>1</vertical_alignment>
+              <wrap_words>false</wrap_words>
+              <actions>
+              </actions>
+              <border_color>
+                <color red="0" green="128" blue="255">
+                </color>
+              </border_color>
+            </widget>
+            <widget type="label" version="2.0.0">
+              <name>Label_2</name>
+              <text>Live Wf Rate</text>
+              <x>11</x>
+              <y>6</y>
+              <width>125</width>
+              <height>25</height>
+              <horizontal_alignment>1</horizontal_alignment>
+              <vertical_alignment>1</vertical_alignment>
+              <wrap_words>false</wrap_words>
+              <actions>
+              </actions>
+              <border_color>
+                <color red="0" green="128" blue="255">
+                </color>
+              </border_color>
+            </widget>
+          </widget>
+        </children>
+      </tab>
+      <tab>
+        <name>BLT</name>
+        <children>
+          <widget type="rectangle" version="2.0.0">
+            <name>Rounded Rectangle_2</name>
+            <macros>
+              <pv_name></pv_name>
+            </macros>
+            <width>863</width>
+            <height>363</height>
+            <line_width>0</line_width>
+            <line_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </line_color>
+            <background_color>
+              <color red="239" green="181" blue="181">
+              </color>
+            </background_color>
+            <corner_width>16</corner_width>
+            <corner_height>16</corner_height>
+            <actions>
+            </actions>
+            <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_8</name>
+            <text>Capture ${UUT} 8GB Transient</text>
+            <x>72</x>
+            <width>601</width>
+            <height>43</height>
+            <font>
+              <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+              </font>
+            </font>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="bool_button" version="2.0.0">
+            <name>Boolean Button_2</name>
+            <pv_name>${UUT}:MODE:BLT:SET_ARM</pv_name>
+            <bit>-1</bit>
+            <x>24</x>
+            <y>60</y>
+            <width>112</width>
+            <height>37</height>
+            <off_label>START</off_label>
+            <off_color>
+              <color red="0" green="100" blue="0">
+              </color>
+            </off_color>
+            <on_label>STOP</on_label>
+            <on_color>
+              <color red="0" green="255" blue="0">
+              </color>
+            </on_color>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <actions>
+              <action type="write_pv">
+                <pv_name>$(pv_name)</pv_name>
+                <value>1</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <mode>1</mode>
+          </widget>
+          <widget type="embedded" version="2.0.0">
+            <name>Linking Container_2</name>
+            <macros>
+              <FUN>sample_count</FUN>
+            </macros>
+            <file>counter1.opi</file>
+            <x>36</x>
+            <y>168</y>
+            <width>609</width>
+            <height>49</height>
+            <resize>1</resize>
+            <transparent>true</transparent>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>Text Update_1</name>
+            <pv_name>${UUT}:1:SHOT</pv_name>
+            <x>28</x>
+            <y>132</y>
+            <width>109</width>
+            <height>25</height>
+            <background_color>
+              <color red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <rules>
+              <rule name="ColourRule" prop_id="background_color" out_exp="false">
+                <exp bool_exp="pv0==0">
+                  <value>
+                    <color red="255" green="0" blue="0">
+                    </color>
+                  </value>
+                </exp>
+                <exp bool_exp="pv0==1">
+                  <value>
+                    <color name="Minor" red="255" green="128" blue="0">
+                    </color>
+                  </value>
+                </exp>
+                <exp bool_exp="pv0==2 || pv0 ==3">
+                  <value>
+                    <color red="37" green="248" blue="32">
+                    </color>
+                  </value>
+                </exp>
+                <exp bool_exp="pv0==4">
+                  <value>
+                    <color red="139" green="105" blue="20">
+                    </color>
+                  </value>
+                </exp>
+                <pv_name>${UUT}:MODE:BLT:ACT:STATE</pv_name>
+              </rule>
+            </rules>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>Text Update_4</name>
+            <pv_name>${UUT}:MODE:BLT:ACT:STATE</pv_name>
+            <x>173</x>
+            <y>134</y>
+            <width>546</width>
+            <height>21</height>
+            <background_color>
+              <color red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <rules>
+              <rule name="ColourRule" prop_id="background_color" out_exp="false">
+                <exp bool_exp="pv0==0">
+                  <value>
+                    <color red="255" green="0" blue="0">
+                    </color>
+                  </value>
+                </exp>
+                <exp bool_exp="pv0==1">
+                  <value>
+                    <color name="Minor" red="255" green="128" blue="0">
+                    </color>
+                  </value>
+                </exp>
+                <exp bool_exp="pv0==2 || pv0 ==3">
+                  <value>
+                    <color red="37" green="248" blue="32">
+                    </color>
+                  </value>
+                </exp>
+                <exp bool_exp="pv0==4">
+                  <value>
+                    <color red="139" green="105" blue="20">
+                    </color>
+                  </value>
+                </exp>
+                <pv_name>${UUT}:MODE:BLT:ACT:STATE</pv_name>
+              </rule>
+            </rules>
+            <border_width>2</border_width>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="spinner" version="2.0.0">
+            <name>Spinner_1</name>
+            <pv_name>${UUT}:MODE:BLT:POST</pv_name>
+            <x>235</x>
+            <y>66</y>
+            <width>115</width>
+            <height>25</height>
+            <format>0</format>
+            <precision>3</precision>
+            <background_color>
+              <color red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <actions execute_as_one="true">
+              <action type="write_pv">
+                <pv_name>loc://set_mode_pressed(0)(0)</pv_name>
+                <value>0</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <minimum>-1.7976931348623157E308</minimum>
+            <maximum>1.7976931348623157E308</maximum>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_2</name>
+            <text>Push Buffers</text>
+            <x>25</x>
+            <y>240</y>
+            <width>126</width>
+            <height>25</height>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>Text Update_3</name>
+            <pv_name>${UUT}:A:SIG:MGT:PUSH:BUFS:FREQ</pv_name>
+            <x>288</x>
+            <y>239</y>
+            <width>91</width>
+            <height>28</height>
+            <background_color>
+              <color red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>Text Update_1</name>
+            <pv_name>${UUT}:A:SIG:MGT:PUSH:BUFS:COUNT</pv_name>
+            <x>174</x>
+            <y>239</y>
+            <width>91</width>
+            <height>25</height>
+            <background_color>
+              <color red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_11</name>
+            <text>Push Bytes</text>
+            <x>21</x>
+            <y>276</y>
+            <width>124</width>
+            <height>25</height>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>Text Update_11</name>
+            <pv_name>${UUT}:A:SIG:MGT:PUSH:BYTES:COUNT</pv_name>
+            <x>174</x>
+            <y>276</y>
+            <width>91</width>
+            <height>25</height>
+            <background_color>
+              <color red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <format>3</format>
+            <precision>0</precision>
+            <show_units>false</show_units>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>Text Update_12</name>
+            <pv_name>${UUT}:A:SIG:MGT:PUSH:BYTES:FREQ</pv_name>
+            <x>288</x>
+            <y>275</y>
+            <width>91</width>
+            <height>28</height>
+            <background_color>
+              <color red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <format>3</format>
+            <precision>2</precision>
+            <show_units>false</show_units>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_2</name>
+            <text>POST  SAMPLES</text>
+            <x>217</x>
+            <y>42</y>
+            <width>113</width>
+            <height>16</height>
+            <horizontal_alignment>2</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <auto_size>true</auto_size>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_2</name>
+            <text>BUFFERS</text>
+            <x>368</x>
+            <y>69</y>
+            <width>80</width>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="textentry" version="3.0.0">
+            <name>Text Input</name>
+            <pv_name>${UUT}:MODE:BLT:BUFFERS</pv_name>
+            <x>456</x>
+            <y>63</y>
+            <width>127</width>
+            <height>31</height>
+            <background_color>
+              <color red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <actions>
+            </actions>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>Action Button</name>
+            <actions>
+              <action type="write_pv">
+                <pv_name>$(pv_name)</pv_name>
+                <value>1</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <pv_name>${UUT}:MODE:BLT:SET_ABORT</pv_name>
+            <text>ABORT</text>
+            <x>599</x>
+            <y>282</y>
+            <width>103</width>
+            <height>31</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_2</name>
+            <text>Pull Buffers</text>
+            <x>384</x>
+            <y>240</y>
+            <width>126</width>
+            <height>25</height>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>Text Update_3</name>
+            <pv_name>${UUT}:A:SIG:MGT:PULL:BUFS:FREQ</pv_name>
+            <x>618</x>
+            <y>238</y>
+            <width>91</width>
+            <height>28</height>
+            <background_color>
+              <color red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>Text Update_1</name>
+            <pv_name>${UUT}:A:SIG:MGT:PULL:BUFS:COUNT</pv_name>
+            <x>509</x>
+            <y>239</y>
+            <width>91</width>
+            <height>25</height>
+            <background_color>
+              <color red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>Text Update</name>
+            <pv_name>${UUT}:MODE:BLT:BUFFERS:M</pv_name>
+            <x>606</x>
+            <y>63</y>
+            <width>115</width>
+            <height>31</height>
+            <background_color>
+              <color red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>Action Button</name>
+            <actions>
+              <action type="write_pv">
+                <pv_name>$(pv_name)</pv_name>
+                <value>1</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <pv_name>${UUT}:A:SIG:MGT:PULL:BUFS:RESET</pv_name>
+            <text>C</text>
+            <x>509</x>
+            <y>285</y>
+            <width>43</width>
+            <height>26</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>Text Update</name>
+            <pv_name>${UUT}:MODE:BLT:ACT:SAMPLES</pv_name>
+            <x>235</x>
+            <y>96</y>
+            <width>115</width>
+            <height>31</height>
+            <background_color>
+              <color red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+        </children>
+      </tab>
+      <tab>
+        <name>Stats</name>
+        <children>
+          <widget type="rectangle" version="2.0.0">
+            <name>Rounded Rectangle_2</name>
+            <macros>
+              <pv_name></pv_name>
+            </macros>
+            <width>863</width>
+            <height>363</height>
+            <line_width>0</line_width>
+            <line_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </line_color>
+            <background_color>
+              <color red="201" green="201" blue="34">
+              </color>
+            </background_color>
+            <corner_width>16</corner_width>
+            <corner_height>16</corner_height>
+            <actions>
+            </actions>
+            <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>Text Update</name>
+            <pv_name>${UUT}:0:STAT:GETS:COUNT</pv_name>
+            <x>156</x>
+            <y>54</y>
+            <width>97</width>
+            <height>31</height>
+            <background_color>
+              <color red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label</name>
+            <text>Gets</text>
+            <x>36</x>
+            <y>54</y>
+            <width>97</width>
+            <height>31</height>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_1</name>
+            <text>Count</text>
+            <x>156</x>
+            <y>12</y>
+            <width>91</width>
+            <height>25</height>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_2</name>
+            <text>Rate</text>
+            <x>264</x>
+            <y>12</y>
+            <width>97</width>
+            <height>25</height>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>Text Update</name>
+            <pv_name>${UUT}:0:STAT:GETS:FREQ</pv_name>
+            <x>276</x>
+            <y>54</y>
+            <width>97</width>
+            <height>31</height>
+            <background_color>
+              <color red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>Text Update</name>
+            <pv_name>${UUT}:0:STAT:GETS:COUNT</pv_name>
+            <x>156</x>
+            <y>96</y>
+            <width>97</width>
+            <height>31</height>
+            <background_color>
+              <color red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label</name>
+            <text>Puts</text>
+            <x>36</x>
+            <y>96</y>
+            <width>97</width>
+            <height>31</height>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>Text Update_1</name>
+            <pv_name>${UUT}:0:STAT:PUTS:FREQ</pv_name>
+            <x>276</x>
+            <y>96</y>
+            <width>97</width>
+            <height>31</height>
+            <background_color>
+              <color red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>Text Update</name>
+            <pv_name>${UUT}:0:STAT:AXI64:W:COUNT</pv_name>
+            <x>156</x>
+            <y>138</y>
+            <width>97</width>
+            <height>31</height>
+            <background_color>
+              <color red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label</name>
+            <text>Axi Wakeups</text>
+            <x>36</x>
+            <y>138</y>
+            <width>97</width>
+            <height>31</height>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>Text Update_1</name>
+            <pv_name>${UUT}:0:STAT:AXI64:W:FREQ</pv_name>
+            <x>276</x>
+            <y>138</y>
+            <width>97</width>
+            <height>31</height>
+            <background_color>
+              <color red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>Text Update</name>
+            <pv_name>${UUT}:0:STAT:AXI64:F:COUNT</pv_name>
+            <x>156</x>
+            <y>180</y>
+            <width>97</width>
+            <height>31</height>
+            <background_color>
+              <color red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label</name>
+            <text>Axi Fetch</text>
+            <x>36</x>
+            <y>180</y>
+            <width>97</width>
+            <height>31</height>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>Text Update_1</name>
+            <pv_name>${UUT}:0:STAT:AXI64:F:FREQ</pv_name>
+            <x>276</x>
+            <y>180</y>
+            <width>97</width>
+            <height>31</height>
+            <background_color>
+              <color red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>Text Update</name>
+            <pv_name>${UUT}:0:STAT:AXI64:C:COUNT</pv_name>
+            <x>156</x>
+            <y>216</y>
+            <width>97</width>
+            <height>31</height>
+            <background_color>
+              <color red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label</name>
+            <text>Axi Catchup</text>
+            <x>36</x>
+            <y>216</y>
+            <width>97</width>
+            <height>31</height>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>Text Update_1</name>
+            <pv_name>${UUT}:0:STAT:AXI64:C:FREQ</pv_name>
+            <x>276</x>
+            <y>216</y>
+            <width>97</width>
+            <height>31</height>
+            <background_color>
+              <color red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_2</name>
+            <text>Buffer Len</text>
+            <x>414</x>
+            <y>12</y>
+            <width>97</width>
+            <height>25</height>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>Text Update</name>
+            <pv_name>${UUT}:0:STAT:BLEN</pv_name>
+            <x>414</x>
+            <y>54</y>
+            <width>97</width>
+            <height>31</height>
+            <background_color>
+              <color red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_2</name>
+            <text>MB/s</text>
+            <x>564</x>
+            <y>12</y>
+            <width>55</width>
+            <height>25</height>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>Text Update_2</name>
+            <pv_name>${UUT}:0:STAT:GETS:MBPS</pv_name>
+            <x>552</x>
+            <y>54</y>
+            <width>85</width>
+            <height>31</height>
+            <background_color>
+              <color red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>Text Update_4</name>
+            <pv_name>${UUT}:1:SHOT</pv_name>
+            <x>414</x>
+            <y>141</y>
+            <width>109</width>
+            <height>25</height>
+            <background_color>
+              <color red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <rules>
+              <rule name="Rule" prop_id="background_color" out_exp="false">
+                <exp bool_exp="pv0==0">
+                  <value>
+                    <color red="255" green="0" blue="0">
+                    </color>
+                  </value>
+                </exp>
+                <exp bool_exp="pv0==1">
+                  <value>
+                    <color name="Minor" red="255" green="128" blue="0">
+                    </color>
+                  </value>
+                </exp>
+                <exp bool_exp="pv0==2 || pv0 ==3">
+                  <value>
+                    <color red="37" green="248" blue="32">
+                    </color>
+                  </value>
+                </exp>
+                <exp bool_exp="pv0==4">
+                  <value>
+                    <color red="139" green="105" blue="20">
+                    </color>
+                  </value>
+                </exp>
+                <pv_name>${UUT}:MODE:TRANS_ACT:STATE</pv_name>
+              </rule>
+            </rules>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_6</name>
+            <text>Shot</text>
+            <x>408</x>
+            <y>107</y>
+            <width>103</width>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="led" version="2.0.0">
+            <name>LED</name>
+            <pv_name>${UUT}:${SITE}:SIG:sample_count:ACTIVE</pv_name>
+            <x>578</x>
+            <y>140</y>
+            <width>27</width>
+            <height>27</height>
+            <off_color>
+              <color red="0" green="100" blue="0">
+              </color>
+            </off_color>
+            <foreground_color>
+              <color red="192" green="192" blue="192">
+              </color>
+            </foreground_color>
+            <line_color>
+              <color red="150" green="150" blue="150">
+              </color>
+            </line_color>
+            <actions>
+            </actions>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_6</name>
+            <text>Active</text>
+            <x>540</x>
+            <y>107</y>
+            <width>103</width>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+        </children>
+      </tab>
+      <tab>
+        <name>DataFlow</name>
+        <children>
+          <widget type="label" version="2.0.0">
+            <name>Label_20</name>
+            <text>Aggregators</text>
+            <x>48</x>
+            <y>33</y>
+            <width>163</width>
+            <height>44</height>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_20</name>
+            <text>Distributor</text>
+            <x>48</x>
+            <y>264</y>
+            <width>133</width>
+            <height>29</height>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>Text Update_10</name>
+            <pv_name>${UUT}:0:DISTRIBUTOR:COMMS</pv_name>
+            <x>36</x>
+            <y>292</y>
+            <width>127</width>
+            <height>49</height>
+            <background_color>
+              <color red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>Text Update_10</name>
+            <pv_name>${UUT}:0:DISTRIBUTOR:SITES</pv_name>
+            <x>336</x>
+            <y>289</y>
+            <width>193</width>
+            <height>49</height>
+            <background_color>
+              <color red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>Text Update_10</name>
+            <pv_name>${UUT}:0:DISTRIBUTOR:PAD</pv_name>
+            <x>570</x>
+            <y>289</y>
+            <width>79</width>
+            <height>49</height>
+            <background_color>
+              <color red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>Text Update_10</name>
+            <pv_name>${UUT}:0:DSSB</pv_name>
+            <x>702</x>
+            <y>289</y>
+            <width>79</width>
+            <height>49</height>
+            <background_color>
+              <color red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="polyline" version="2.0.0">
+            <name>Polyline</name>
+            <macros>
+              <pv_name></pv_name>
+            </macros>
+            <x>192</x>
+            <y>316</y>
+            <width>121</width>
+            <height>1</height>
+            <points>
+              <point x="120.0" y="0.0">
+              </point>
+              <point x="0.0" y="0.0">
+              </point>
+              <point x="36.0" y="0.0">
+              </point>
+              <point x="108.0" y="0.0">
+              </point>
+            </points>
+            <line_width>6</line_width>
+            <line_color>
+              <color red="0" green="0" blue="0">
+              </color>
+            </line_color>
+            <arrows>1</arrows>
+            <arrow_length>30</arrow_length>
+            <actions>
+            </actions>
+            <rules>
+              <rule name="EnaRule" prop_id="enabled" out_exp="false">
+                <exp bool_exp="pv0">
+                  <value>true</value>
+                </exp>
+                <pv_name>${UUT}:0:DISTRIBUTOR:ON</pv_name>
+              </rule>
+            </rules>
+            <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_20</name>
+            <text>Z7 CPU</text>
+            <x>48</x>
+            <y>94</y>
+            <width>85</width>
+            <height>43</height>
+            <transparent>false</transparent>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="polyline" version="2.0.0">
+            <name>Polyline</name>
+            <macros>
+              <pv_name></pv_name>
+            </macros>
+            <x>150</x>
+            <y>115</y>
+            <width>121</width>
+            <height>1</height>
+            <points>
+              <point x="0.0" y="0.0">
+              </point>
+              <point x="120.0" y="0.0">
+              </point>
+              <point x="84.0" y="0.0">
+              </point>
+              <point x="12.0" y="0.0">
+              </point>
+            </points>
+            <line_width>6</line_width>
+            <line_color>
+              <color red="0" green="0" blue="0">
+              </color>
+            </line_color>
+            <arrows>1</arrows>
+            <arrow_length>30</arrow_length>
+            <actions>
+            </actions>
+            <rules>
+              <rule name="EnaRule" prop_id="enabled" out_exp="false">
+                <exp bool_exp="pv0">
+                  <value>true</value>
+                </exp>
+                <pv_name>${UUT}:0:AGGREGATOR:ON</pv_name>
+              </rule>
+            </rules>
+            <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>Text Update_11</name>
+            <pv_name>${UUT}:0:AGGREGATOR:SITES</pv_name>
+            <x>327</x>
+            <y>88</y>
+            <width>193</width>
+            <height>49</height>
+            <background_color>
+              <color red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>Text Update_11</name>
+            <pv_name>${UUT}:0:SPAD:LEN:r</pv_name>
+            <x>564</x>
+            <y>88</y>
+            <width>79</width>
+            <height>49</height>
+            <background_color>
+              <color red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>Text Update_12</name>
+            <pv_name>${UUT}:0:SSB</pv_name>
+            <x>702</x>
+            <y>88</y>
+            <width>79</width>
+            <height>49</height>
+            <background_color>
+              <color red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_20</name>
+            <text>Sites</text>
+            <x>324</x>
+            <y>39</y>
+            <width>199</width>
+            <height>44</height>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_20</name>
+            <text>[S]PAD</text>
+            <x>562</x>
+            <y>39</y>
+            <width>84</width>
+            <height>44</height>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_20</name>
+            <text>LEN B</text>
+            <x>700</x>
+            <y>39</y>
+            <width>84</width>
+            <height>44</height>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_21</name>
+            <text>VO</text>
+            <x>10</x>
+            <y>249</y>
+            <width>39</width>
+            <height>44</height>
+            <font>
+              <font name="Header 2" family="Liberation Sans" style="BOLD" size="18.0">
+              </font>
+            </font>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_20</name>
+            <text>VI</text>
+            <x>10</x>
+            <y>39</y>
+            <width>39</width>
+            <height>44</height>
+            <font>
+              <font name="Header 2" family="Liberation Sans" style="BOLD" size="18.0">
+              </font>
+            </font>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="led" version="2.0.0">
+            <name>LED_1</name>
+            <pv_name>${UUT}:0:AGGREGATOR:ON</pv_name>
+            <x>800</x>
+            <y>90</y>
+            <width>26</width>
+            <height>26</height>
+            <off_color>
+              <color red="0" green="100" blue="0">
+              </color>
+            </off_color>
+            <foreground_color>
+              <color red="192" green="192" blue="192">
+              </color>
+            </foreground_color>
+            <line_color>
+              <color red="150" green="150" blue="150">
+              </color>
+            </line_color>
+            <actions>
+            </actions>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_8</name>
+            <text> ${UUT} Data Flow</text>
+            <x>282</x>
+            <width>259</width>
+            <height>43</height>
+            <font>
+              <font name="Header 3" family="Liberation Sans" style="BOLD" size="16.0">
+              </font>
+            </font>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="led" version="2.0.0">
+            <name>LED_3</name>
+            <pv_name>${UUT}:0:DISTRIBUTOR:ON</pv_name>
+            <x>800</x>
+            <y>304</y>
+            <width>26</width>
+            <height>26</height>
+            <off_color>
+              <color red="0" green="100" blue="0">
+              </color>
+            </off_color>
+            <foreground_color>
+              <color red="192" green="192" blue="192">
+              </color>
+            </foreground_color>
+            <line_color>
+              <color red="150" green="150" blue="150">
+              </color>
+            </line_color>
+            <actions>
+            </actions>
+          </widget>
+          <widget type="embedded" version="2.0.0">
+            <name>Linking Container_3</name>
+            <macros>
+              <MC>A</MC>
+            </macros>
+            <file>agflow.opi</file>
+            <x>77</x>
+            <y>141</y>
+            <width>751</width>
+            <height>40</height>
+            <resize>1</resize>
+            <transparent>true</transparent>
+            <actions>
+            </actions>
+            <rules>
+              <rule name="VizRule" prop_id="visible" out_exp="true">
+                <exp bool_exp="true">
+                  <expression>pvStr0.indexOf('A') &gt; -1</expression>
+                </exp>
+                <pv_name>${UUT}:MGTLIST</pv_name>
+              </rule>
+            </rules>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="embedded" version="2.0.0">
+            <name>Linking Container_2</name>
+            <macros>
+              <MC>B</MC>
+            </macros>
+            <file>agflow.opi</file>
+            <x>77</x>
+            <y>180</y>
+            <width>751</width>
+            <height>43</height>
+            <resize>1</resize>
+            <transparent>true</transparent>
+            <actions>
+            </actions>
+            <rules>
+              <rule name="VizRule" prop_id="visible" out_exp="true">
+                <exp bool_exp="true">
+                  <expression>pvStr0.indexOf('B') &gt; -1</expression>
+                </exp>
+                <pv_name>${UUT}:MGTLIST</pv_name>
+              </rule>
+            </rules>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="embedded" version="2.0.0">
+            <name>Linking Container_1</name>
+            <macros>
+              <MC>C</MC>
+            </macros>
+            <file>agflow.opi</file>
+            <x>77</x>
+            <y>222</y>
+            <width>751</width>
+            <height>43</height>
+            <resize>1</resize>
+            <transparent>true</transparent>
+            <actions>
+            </actions>
+            <rules>
+              <rule name="VizRule" prop_id="visible" out_exp="true">
+                <exp bool_exp="true">
+                  <expression>pvStr0.indexOf('C') &gt; -1</expression>
+                </exp>
+                <pv_name>${UUT}:MGTLIST</pv_name>
+              </rule>
+            </rules>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+        </children>
+      </tab>
+      <tab>
+        <name>Slowmon</name>
+        <children>
+          <widget type="rectangle" version="2.0.0">
+            <name>Rounded Rectangle</name>
+            <macros>
+              <pv_name></pv_name>
+            </macros>
+            <x>18</x>
+            <y>270</y>
+            <width>811</width>
+            <height>75</height>
+            <line_width>0</line_width>
+            <line_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </line_color>
+            <corner_width>16</corner_width>
+            <corner_height>16</corner_height>
+            <actions>
+            </actions>
+            <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>Text Update</name>
+            <pv_name>${UUT}:SYS:SYNC_ROLE</pv_name>
+            <x>162</x>
+            <y>30</y>
+            <width>295</width>
+            <height>43</height>
+            <background_color>
+              <color red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>Text Update_10</name>
+            <pv_name>${UUT}:0:SLOWMON:FIN</pv_name>
+            <x>207</x>
+            <y>295</y>
+            <width>85</width>
+            <height>40</height>
+            <background_color>
+              <color red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>Text Update_10</name>
+            <pv_name>${UUT}:0:SLOWMON:FS</pv_name>
+            <x>600</x>
+            <y>295</y>
+            <width>88</width>
+            <height>40</height>
+            <background_color>
+              <color red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>Text Update_10</name>
+            <pv_name>${UUT}:0:NACC:NACC</pv_name>
+            <x>192</x>
+            <y>138</y>
+            <width>115</width>
+            <height>40</height>
+            <background_color>
+              <color red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="led" version="2.0.0">
+            <name>LED</name>
+            <pv_name>${UUT}:NACC:DNA</pv_name>
+            <x>728</x>
+            <y>38</y>
+            <width>43</width>
+            <height>43</height>
+            <off_color>
+              <color red="0" green="100" blue="0">
+              </color>
+            </off_color>
+            <foreground_color>
+              <color red="192" green="192" blue="192">
+              </color>
+            </foreground_color>
+            <line_color>
+              <color red="150" green="150" blue="150">
+              </color>
+            </line_color>
+            <actions>
+            </actions>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>Text Update_10</name>
+            <pv_name>${UUT}:0:NACC:START</pv_name>
+            <x>318</x>
+            <y>138</y>
+            <width>79</width>
+            <height>40</height>
+            <background_color>
+              <color red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>Text Update_10</name>
+            <pv_name>${UUT}:0:NACC:SHR</pv_name>
+            <x>408</x>
+            <y>138</y>
+            <width>85</width>
+            <height>40</height>
+            <background_color>
+              <color red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>Text Update_10</name>
+            <pv_name>${UUT}:0:NACC:PRES</pv_name>
+            <x>162</x>
+            <y>90</y>
+            <width>115</width>
+            <height>40</height>
+            <background_color>
+              <color red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_20</name>
+            <text>CLK</text>
+            <x>30</x>
+            <y>36</y>
+            <width>97</width>
+            <height>31</height>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_20</name>
+            <text>PRESCALE</text>
+            <x>24</x>
+            <y>94</y>
+            <width>97</width>
+            <height>31</height>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_20</name>
+            <text>NACC</text>
+            <x>30</x>
+            <y>142</y>
+            <width>97</width>
+            <height>31</height>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>Text Update_10</name>
+            <pv_name>${UUT}:0:SLOWMON:NACC</pv_name>
+            <x>438</x>
+            <y>300</y>
+            <width>67</width>
+            <height>30</height>
+            <background_color>
+              <color red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <show_units>false</show_units>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_20</name>
+            <text>FIN</text>
+            <x>132</x>
+            <y>290</y>
+            <width>49</width>
+            <height>31</height>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_20</name>
+            <text>SLOW FS</text>
+            <x>701</x>
+            <y>294</y>
+            <width>97</width>
+            <height>31</height>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="spinner" version="2.0.0">
+            <name>Spinner</name>
+            <pv_name>${UUT}:0:SLOWMON:FS</pv_name>
+            <x>600</x>
+            <y>212</y>
+            <width>91</width>
+            <height>37</height>
+            <format>0</format>
+            <precision>3</precision>
+            <background_color>
+              <color red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <actions>
+            </actions>
+            <minimum>-1.7976931348623157E308</minimum>
+            <maximum>1.7976931348623157E308</maximum>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_20</name>
+            <text>SW NACC</text>
+            <x>438</x>
+            <y>270</y>
+            <width>92</width>
+            <height>31</height>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>Text Update_10</name>
+            <pv_name>${UUT}:0:SLOWMON:FIN:ACT</pv_name>
+            <x>192</x>
+            <y>211</y>
+            <width>115</width>
+            <height>40</height>
+            <background_color>
+              <color red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_20</name>
+            <text>FIN Actual</text>
+            <x>30</x>
+            <y>215</y>
+            <width>97</width>
+            <height>31</height>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_20</name>
+            <text>FS Demand</text>
+            <x>714</x>
+            <y>215</y>
+            <width>97</width>
+            <height>31</height>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_20</name>
+            <text>SHR</text>
+            <x>402</x>
+            <y>99</y>
+            <width>97</width>
+            <height>31</height>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_20</name>
+            <text>START</text>
+            <x>309</x>
+            <y>99</y>
+            <width>97</width>
+            <height>31</height>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_20</name>
+            <text>SLOWMON
+PROCESS</text>
+            <x>36</x>
+            <y>282</y>
+            <width>97</width>
+            <height>48</height>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>Text Update_11</name>
+            <pv_name>${UUT}:0:SLOWMON:NACC:DUTY</pv_name>
+            <x>428</x>
+            <y>211</y>
+            <width>88</width>
+            <height>40</height>
+            <background_color>
+              <color red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_21</name>
+            <text>DUTY</text>
+            <x>517</x>
+            <y>215</y>
+            <width>62</width>
+            <height>31</height>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="group" version="3.0.0">
+            <name>Grouping Container_5</name>
+            <x>387</x>
+            <y>210</y>
+            <width>42</width>
+            <height>42</height>
+            <style>3</style>
+            <foreground_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </foreground_color>
+            <line_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </line_color>
+            <background_color>
+              <color red="205" green="147" blue="143">
+              </color>
+            </background_color>
+            <actions>
+            </actions>
+            <widget type="ellipse" version="2.0.0">
+              <name>Ellipse</name>
+              <macros>
+                <pv_name></pv_name>
+              </macros>
+              <width>42</width>
+              <height>42</height>
+              <line_width>0</line_width>
+              <line_color>
+                <color red="128" green="0" blue="255">
+                </color>
+              </line_color>
+              <actions>
+              </actions>
+              <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+            </widget>
+            <widget type="label" version="2.0.0">
+              <name>Label_21</name>
+              <text>*</text>
+              <x>6</x>
+              <y>9</y>
+              <width>30</width>
+              <height>24</height>
+              <horizontal_alignment>1</horizontal_alignment>
+              <vertical_alignment>1</vertical_alignment>
+              <wrap_words>false</wrap_words>
+              <actions>
+              </actions>
+              <border_color>
+                <color red="0" green="128" blue="255">
+                </color>
+              </border_color>
+            </widget>
+          </widget>
+          <widget type="group" version="3.0.0">
+            <name>Grouping Container_2</name>
+            <x>346</x>
+            <y>210</y>
+            <width>42</width>
+            <height>42</height>
+            <style>3</style>
+            <foreground_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </foreground_color>
+            <line_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </line_color>
+            <background_color>
+              <color red="205" green="147" blue="143">
+              </color>
+            </background_color>
+            <actions>
+            </actions>
+            <widget type="ellipse" version="2.0.0">
+              <name>Ellipse</name>
+              <macros>
+                <pv_name></pv_name>
+              </macros>
+              <width>42</width>
+              <height>42</height>
+              <line_width>0</line_width>
+              <line_color>
+                <color red="128" green="0" blue="255">
+                </color>
+              </line_color>
+              <actions>
+              </actions>
+              <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+            </widget>
+            <widget type="label" version="2.0.0">
+              <name>Label_21</name>
+              <text>1/x</text>
+              <x>6</x>
+              <y>9</y>
+              <width>30</width>
+              <height>24</height>
+              <horizontal_alignment>1</horizontal_alignment>
+              <vertical_alignment>1</vertical_alignment>
+              <wrap_words>false</wrap_words>
+              <actions>
+              </actions>
+              <border_color>
+                <color red="0" green="128" blue="255">
+                </color>
+              </border_color>
+            </widget>
+          </widget>
+          <widget type="group" version="3.0.0">
+            <name>Grouping Container</name>
+            <x>306</x>
+            <y>211</y>
+            <width>273</width>
+            <height>135</height>
+            <style>3</style>
+            <foreground_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </foreground_color>
+            <line_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </line_color>
+            <background_color>
+              <color red="30" green="144" blue="255">
+              </color>
+            </background_color>
+            <actions>
+            </actions>
+            <rules>
+              <rule name="VizRule" prop_id="visible" out_exp="true">
+                <exp bool_exp="true">
+                  <expression>!pv0</expression>
+                </exp>
+                <pv_name>${UUT}:NACC:HW</pv_name>
+              </rule>
+            </rules>
+            <widget type="textupdate" version="2.0.0">
+              <name>Text Update</name>
+              <pv_name>${UUT}:0:SLOWMON:NACC</pv_name>
+              <x>144</x>
+              <y>78</y>
+              <height>47</height>
+              <background_color>
+                <color red="255" green="255" blue="255">
+                </color>
+              </background_color>
+              <vertical_alignment>1</vertical_alignment>
+              <wrap_words>false</wrap_words>
+              <actions>
+              </actions>
+              <border_color>
+                <color red="0" green="128" blue="255">
+                </color>
+              </border_color>
+            </widget>
+            <widget type="label" version="2.0.0">
+              <name>Label</name>
+              <text>NACC: Samples per update</text>
+              <x>18</x>
+              <y>24</y>
+              <width>241</width>
+              <height>36</height>
+              <horizontal_alignment>1</horizontal_alignment>
+              <vertical_alignment>1</vertical_alignment>
+              <wrap_words>false</wrap_words>
+              <actions>
+              </actions>
+              <border_color>
+                <color red="0" green="128" blue="255">
+                </color>
+              </border_color>
+            </widget>
+          </widget>
+        </children>
+      </tab>
+      <tab>
+        <name>Multi-Event</name>
+        <children>
+          <widget type="spinner" version="2.0.0">
+            <name>Spinner</name>
+            <pv_name>${UUT}:1:MEV:PRE</pv_name>
+            <x>84</x>
+            <y>60</y>
+            <width>121</width>
+            <height>31</height>
+            <format>0</format>
+            <precision>3</precision>
+            <background_color>
+              <color red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <actions>
+            </actions>
+            <minimum>-1.7976931348623157E308</minimum>
+            <maximum>1.7976931348623157E308</maximum>
+          </widget>
+          <widget type="spinner" version="2.0.0">
+            <name>Spinner</name>
+            <pv_name>${UUT}:1:MEV:POST</pv_name>
+            <x>252</x>
+            <y>60</y>
+            <width>121</width>
+            <height>31</height>
+            <format>0</format>
+            <precision>3</precision>
+            <background_color>
+              <color red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <actions>
+            </actions>
+            <minimum>-1.7976931348623157E308</minimum>
+            <maximum>1.7976931348623157E308</maximum>
+          </widget>
+          <widget type="spinner" version="2.0.0">
+            <name>Spinner</name>
+            <pv_name>${UUT}:1:MEV:MAX</pv_name>
+            <x>414</x>
+            <y>60</y>
+            <width>121</width>
+            <height>31</height>
+            <format>0</format>
+            <precision>3</precision>
+            <background_color>
+              <color red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <actions>
+            </actions>
+            <minimum>-1.7976931348623157E308</minimum>
+            <maximum>1.7976931348623157E308</maximum>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>Text Update_11</name>
+            <pv_name>${UUT}:1:MEV:c</pv_name>
+            <x>576</x>
+            <y>57</y>
+            <width>79</width>
+            <height>37</height>
+            <background_color>
+              <color red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>Text Update_11</name>
+            <pv_name>${UUT}:1:MEV:r</pv_name>
+            <x>252</x>
+            <y>108</y>
+            <width>313</width>
+            <height>31</height>
+            <background_color>
+              <color red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_21</name>
+            <text>PRE</text>
+            <x>96</x>
+            <y>12</y>
+            <width>85</width>
+            <height>31</height>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_21</name>
+            <text>POST</text>
+            <x>264</x>
+            <y>12</y>
+            <width>85</width>
+            <height>31</height>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_21</name>
+            <text>MAX</text>
+            <x>420</x>
+            <y>12</y>
+            <width>85</width>
+            <height>31</height>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_21</name>
+            <text>SEQ</text>
+            <x>573</x>
+            <y>12</y>
+            <width>85</width>
+            <height>31</height>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_21</name>
+            <text>multi_event</text>
+            <x>96</x>
+            <y>108</y>
+            <width>181</width>
+            <height>31</height>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>Text Update_11</name>
+            <pv_name>${UUT}:1:MEV:LATEST</pv_name>
+            <x>72</x>
+            <y>300</y>
+            <width>655</width>
+            <height>31</height>
+            <background_color>
+              <color red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_21</name>
+            <text>Latest</text>
+            <x>72</x>
+            <y>258</y>
+            <width>181</width>
+            <height>31</height>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>Text Update_5</name>
+            <pv_name>${UUT}:1:SHOT</pv_name>
+            <x>90</x>
+            <y>156</y>
+            <width>109</width>
+            <height>25</height>
+            <background_color>
+              <color red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <rules>
+              <rule name="Rule" prop_id="background_color" out_exp="false">
+                <exp bool_exp="pv0==0">
+                  <value>
+                    <color red="255" green="0" blue="0">
+                    </color>
+                  </value>
+                </exp>
+                <exp bool_exp="pv0==1">
+                  <value>
+                    <color name="Minor" red="255" green="128" blue="0">
+                    </color>
+                  </value>
+                </exp>
+                <exp bool_exp="pv0==2 || pv0 ==3">
+                  <value>
+                    <color red="37" green="248" blue="32">
+                    </color>
+                  </value>
+                </exp>
+                <exp bool_exp="pv0==4">
+                  <value>
+                    <color red="139" green="105" blue="20">
+                    </color>
+                  </value>
+                </exp>
+                <pv_name>${UUT}:MODE:CONTINUOUS:STATE</pv_name>
+              </rule>
+            </rules>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>Text Update_4</name>
+            <pv_name>${UUT}:MODE:CONTINUOUS:STATE</pv_name>
+            <x>224</x>
+            <y>158</y>
+            <width>470</width>
+            <height>21</height>
+            <background_color>
+              <color red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <rules>
+              <rule name="Rule" prop_id="background_color" out_exp="false">
+                <exp bool_exp="pv0==0">
+                  <value>
+                    <color red="255" green="0" blue="0">
+                    </color>
+                  </value>
+                </exp>
+                <exp bool_exp="pv0==1">
+                  <value>
+                    <color name="Minor" red="255" green="128" blue="0">
+                    </color>
+                  </value>
+                </exp>
+                <exp bool_exp="pv0==2 || pv0 ==3">
+                  <value>
+                    <color red="37" green="248" blue="32">
+                    </color>
+                  </value>
+                </exp>
+                <exp bool_exp="pv0==4">
+                  <value>
+                    <color red="139" green="105" blue="20">
+                    </color>
+                  </value>
+                </exp>
+                <pv_name>${UUT}:MODE:CONTINUOUS:STATE</pv_name>
+              </rule>
+            </rules>
+            <border_width>2</border_width>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="embedded" version="2.0.0">
+            <name>Linking Container_2</name>
+            <macros>
+              <FUN>sample_count</FUN>
+            </macros>
+            <file>counter1.opi</file>
+            <x>72</x>
+            <y>192</y>
+            <width>609</width>
+            <height>49</height>
+            <resize>1</resize>
+            <transparent>true</transparent>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+        </children>
+      </tab>
+      <tab>
+        <name>Sync Role</name>
+        <children>
+          <widget type="textentry" version="3.0.0">
+            <name>Text Input</name>
+            <pv_name>${UUT}:SYS:SYNC_ROLE</pv_name>
+            <x>54</x>
+            <y>42</y>
+            <width>739</width>
+            <height>43</height>
+            <background_color>
+              <color red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <actions>
+            </actions>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="combo" version="2.0.0">
+            <name>Menu Button_1</name>
+            <pv_name>${UUT}:SYS:SYNC_ROLE:SET:ROLE</pv_name>
+            <x>54</x>
+            <y>156</y>
+            <height>40</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="combo" version="2.0.0">
+            <name>Menu Button_2</name>
+            <pv_name>${UUT}:SYS:SYNC_ROLE:SET:FS</pv_name>
+            <x>216</x>
+            <y>156</y>
+            <height>40</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="combo" version="2.0.0">
+            <name>Menu Button_3</name>
+            <pv_name>${UUT}:SYS:SYNC_ROLE:SET:FS:M</pv_name>
+            <x>315</x>
+            <y>156</y>
+            <width>37</width>
+            <height>40</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="combo" version="2.0.0">
+            <name>Menu Button_4</name>
+            <pv_name>${UUT}:SYS:SYNC_ROLE:SET:FIN</pv_name>
+            <x>390</x>
+            <y>156</y>
+            <height>40</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="combo" version="2.0.0">
+            <name>Menu Button_5</name>
+            <pv_name>${UUT}:SYS:SYNC_ROLE:SET:MODIFIER</pv_name>
+            <x>576</x>
+            <y>156</y>
+            <width>217</width>
+            <height>40</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>Action Button</name>
+            <actions>
+              <action type="write_pv">
+                <pv_name>$(pv_name)</pv_name>
+                <value>1</value>
+                <description>WritePV</description>
+              </action>
+            </actions>
+            <pv_name>${UUT}:SYS:SYNC_ROLE:SET</pv_name>
+            <text>COMMIT</text>
+            <x>54</x>
+            <y>234</y>
+            <width>739</width>
+            <height>42</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <tooltip>Experimental: set sync_role from a form. 
+Currently has no action, enter string 
+in box at top</tooltip>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="combo" version="2.0.0">
+            <name>Menu Button_6</name>
+            <pv_name>${UUT}:SYS:SYNC_ROLE:SET:FIN:M</pv_name>
+            <x>489</x>
+            <y>156</y>
+            <width>37</width>
+            <height>40</height>
+            <background_color>
+              <color red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_21</name>
+            <text>FS</text>
+            <x>214</x>
+            <y>96</y>
+            <width>103</width>
+            <height>43</height>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_22</name>
+            <text>FIN</text>
+            <x>402</x>
+            <y>96</y>
+            <width>103</width>
+            <height>43</height>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_23</name>
+            <text>MODIFIER</text>
+            <x>612</x>
+            <y>102</y>
+            <width>103</width>
+            <height>43</height>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_24</name>
+            <text>ROLE</text>
+            <x>52</x>
+            <y>102</y>
+            <width>103</width>
+            <height>43</height>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+        </children>
+      </tab>
+      <tab>
+        <name>HUDP A</name>
+        <children>
+          <widget type="embedded" version="2.0.0">
+            <name>Linking Container_1</name>
+            <macros>
+              <SITE>13</SITE>
+              <SFP>A</SFP>
+            </macros>
+            <file>hudp.opi</file>
+            <width>871</width>
+            <height>391</height>
+            <resize>1</resize>
+            <transparent>true</transparent>
+            <actions>
+            </actions>
+            <rules>
+              <rule name="VizRule" prop_id="visible" out_exp="true">
+                <exp bool_exp="true">
+                  <expression>pvStr0.contains("13")</expression>
+                </exp>
+                <pv_name>${UUT}:0:HAS_HUDP</pv_name>
+              </rule>
+            </rules>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+        </children>
+      </tab>
+      <tab>
+        <name>B</name>
+        <children>
+          <widget type="embedded" version="2.0.0">
+            <name>Linking Container_1</name>
+            <macros>
+              <SITE>12</SITE>
+              <SFP>B</SFP>
+            </macros>
+            <file>hudp.opi</file>
+            <width>871</width>
+            <height>391</height>
+            <resize>1</resize>
+            <transparent>true</transparent>
+            <actions>
+            </actions>
+            <rules>
+              <rule name="VizRule" prop_id="visible" out_exp="true">
+                <exp bool_exp="true">
+                  <expression>pvStr0.contains("12")</expression>
+                </exp>
+                <pv_name>${UUT}:0:HAS_HUDP</pv_name>
+              </rule>
+            </rules>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+        </children>
+      </tab>
+      <tab>
+        <name>D</name>
+        <children>
+          <widget type="embedded" version="2.0.0">
+            <name>Linking Container_1</name>
+            <macros>
+              <SITE>10</SITE>
+              <SFP>D</SFP>
+            </macros>
+            <file>hudp.opi</file>
+            <width>871</width>
+            <height>391</height>
+            <resize>1</resize>
+            <transparent>true</transparent>
+            <actions>
+            </actions>
+            <rules>
+              <rule name="VizRule" prop_id="visible" out_exp="true">
+                <exp bool_exp="true">
+                  <expression>pvStr0.contains("10")</expression>
+                </exp>
+                <pv_name>${UUT}:0:HAS_HUDP</pv_name>
+              </rule>
+            </rules>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+        </children>
+      </tab>
+    </tabs>
+    <y>30</y>
+    <width>870</width>
+    <height>430</height>
+    <background_color>
+      <color red="165" green="206" blue="246">
+      </color>
+    </background_color>
+    <active_tab>8</active_tab>
+    <tab_height>20</tab_height>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="TransientTabEnable" prop_id="tab_0_enabled" out_exp="false">
+        <exp bool_exp="pv0&amp;&amp;pv1">
+          <value>false</value>
+        </exp>
+        <pv_name>${UUT}:MODE:CONTINUOUS</pv_name>
+        <pv_name>${UUT}:IOC_READY</pv_name>
+      </rule>
+      <rule name="ContinuousTabEnable" prop_id="tab_1_enabled" out_exp="false">
+        <exp bool_exp="pv0">
+          <value>false</value>
+        </exp>
+        <pv_name>${UUT}:MODE:TRANS_ACT:STATE</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Linking Container</name>
+    <file>capture_lower.opi</file>
+    <x>6</x>
+    <y>470</y>
+    <width>865</width>
+    <height>289</height>
+    <resize>1</resize>
+    <transparent>true</transparent>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="VizRule" prop_id="visible" out_exp="false">
+        <exp bool_exp="pvStr0 == &quot;none&quot;">
+          <value>false</value>
+        </exp>
+        <pv_name>${UUT}:0:AGGREGATOR:SITES</pv_name>
+      </rule>
+    </rules>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <x>785</x>
+    <y>5</y>
+    <width>85</width>
+    <height>40</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="led" version="2.0.0">
+      <name>LED</name>
+      <pv_name>${UUT}:IOC_READY</pv_name>
+      <x>55</x>
+      <y>6</y>
+      <width>30</width>
+      <height>30</height>
+      <off_color>
+        <color red="0" green="100" blue="0">
+        </color>
+      </off_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <line_color>
+        <color red="150" green="150" blue="150">
+        </color>
+      </line_color>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_12</name>
+      <text>IOC
+Ready</text>
+      <width>50</width>
+      <height>40</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+  </widget>
+</display>
