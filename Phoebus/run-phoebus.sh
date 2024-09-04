@@ -39,5 +39,5 @@ JDK_JAVA_OPTIONS="$JDK_JAVA_OPTIONS -Djca.use_env=true"
 export JDK_JAVA_OPTIONS
 
 echo $JDK_JAVA_OPTIONS
-
-java -jar $PHOEBUS_JAR -settings $PHOEBUS_CONFIG -layout $PIP2IT_LAYOUT -logging $TOP/config/logging.properties $OPT "$@" &
+# -layout $PIP2IT_LAYOUT
+java -jar $PHOEBUS_JAR -settings $PHOEBUS_CONFIG -logging $TOP/config/logging.properties $OPT "$@" &
