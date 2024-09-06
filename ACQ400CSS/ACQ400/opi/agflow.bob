@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2024-08-30 11:15:00 by epics-->
+<display version="2.0.0">
+  <name>agflow</name>
+  <height>40</height>
+  <background_color>
+    <color red="240" green="240" blue="240">
+    </color>
+  </background_color>
+  <actions>
+  </actions>
+  <grid_step_x>6</grid_step_x>
+  <grid_step_y>6</grid_step_y>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_12</name>
+    <pv_name>${UUT}:${MC}:AGGREGATOR:SSB</pv_name>
+    <x>650</x>
+    <y>5</y>
+    <width>80</width>
+    <height>30</height>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_20</name>
+    <text>COMMS${MC}</text>
+    <x>20</x>
+    <y>5</y>
+    <width>90</width>
+    <height>30</height>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_3</name>
+    <pv_name>${UUT}:${MC}:AGGREGATOR:SPAD:EN:r</pv_name>
+    <x>600</x>
+    <y>5</y>
+    <width>30</width>
+    <height>30</height>
+    <off_color>
+      <color red="0" green="100" blue="0">
+      </color>
+    </off_color>
+    <line_color>
+      <color red="150" green="150" blue="150">
+      </color>
+    </line_color>
+    <actions>
+    </actions>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_11</name>
+    <pv_name>${UUT}:${MC}:AGGREGATOR:SITES</pv_name>
+    <x>270</x>
+    <y>5</y>
+    <width>190</width>
+    <height>30</height>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_1</name>
+    <pv_name>${UUT}:${MC}:AGGREGATOR:ON</pv_name>
+    <x>750</x>
+    <y>5</y>
+    <width>30</width>
+    <height>30</height>
+    <off_color>
+      <color red="0" green="100" blue="0">
+      </color>
+    </off_color>
+    <line_color>
+      <color red="150" green="150" blue="150">
+      </color>
+    </line_color>
+    <actions>
+    </actions>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_12</name>
+    <pv_name>${UUT}:${MC}:AGGREGATOR:SPAD:LEN</pv_name>
+    <x>500</x>
+    <y>5</y>
+    <width>80</width>
+    <height>30</height>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_1</name>
+    <macros>
+      <pv_name></pv_name>
+    </macros>
+    <x>150</x>
+    <y>20</y>
+    <width>80</width>
+    <height>0</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="80.0" y="0.0">
+      </point>
+    </points>
+    <line_width>4</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <arrows>1</arrows>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="EnaRule" prop_id="enabled" out_exp="false">
+        <exp bool_exp="pv0">
+          <value>true</value>
+        </exp>
+        <pv_name>${UUT}:${SITE}:HUDP:TX:ENABLED</pv_name>
+      </rule>
+    </rules>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+</display>
