@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2024-08-30 10:11:01 by epics-->
+<display version="2.0.0">
+  <name>findEvent</name>
+  <width>300</width>
+  <height>40</height>
+  <background_color>
+    <color red="240" green="240" blue="240">
+    </color>
+  </background_color>
+  <actions>
+  </actions>
+  <grid_step_x>5</grid_step_x>
+  <grid_step_y>5</grid_step_y>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update</name>
+    <pv_name>${UUT}:MODE:TRANS_ACT:FIND_EV:STA</pv_name>
+    <x>90</x>
+    <y>5</y>
+    <width>75</width>
+    <height>30</height>
+    <background_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="BackgroundColorRule" prop_id="background_color" out_exp="true">
+        <exp bool_exp="pv0==4">
+          <expression>ColorFontUtil.getColorFromRGB(255,0,0)</expression>
+        </exp>
+        <exp bool_exp="pv0==2">
+          <expression>ColorFontUtil.getColorFromRGB(0,255,0)</expression>
+        </exp>
+        <exp bool_exp="pv0!=0">
+          <expression>ColorFontUtil.getColorFromRGB(220,120,0)</expression>
+        </exp>
+        <pv_name>${UUT}:MODE:TRANS_ACT:FIND_EV:STA</pv_name>
+      </rule>
+    </rules>
+    <tooltip>STATUS</tooltip>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <text>Find Event 0</text>
+    <x>5</x>
+    <y>5</y>
+    <width>85</width>
+    <height>30</height>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_1</name>
+    <pv_name>${UUT}:MODE:TRANS_ACT:FIND_EV:CUR</pv_name>
+    <x>170</x>
+    <y>5</y>
+    <width>50</width>
+    <height>30</height>
+    <background_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <tooltip>CURSOR</tooltip>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_2</name>
+    <pv_name>${UUT}:MODE:TRANS_ACT:FIND_EV:NBU</pv_name>
+    <x>225</x>
+    <y>5</y>
+    <width>40</width>
+    <height>30</height>
+    <background_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <tooltip>Search buffer count</tooltip>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+</display>
