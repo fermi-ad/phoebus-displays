@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2024-09-09 11:13:56 by epics-->
+<!--Saved on 2024-09-09 17:57:48 by epics-->
 <display version="2.0.0">
   <name>MI8ColStatus</name>
   <macros>
-    <dev>MI:MI8COL_CTRL_</dev>
+    <dev>MI:MI8COL_BLE_</dev>
   </macros>
   <width>1780</width>
   <height>900</height>
@@ -51,7 +51,7 @@
   <widget type="label" version="2.0.0">
     <name>Label_2</name>
     <text>Positions</text>
-    <x>10</x>
+    <x>5</x>
     <y>300</y>
     <width>1770</width>
     <height>30</height>
@@ -227,18 +227,21 @@
       <pv_name>$(dev)TEMPPMT:Permit</pv_name>
       <x>5</x>
       <y>40</y>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="led" version="2.0.0">
       <name>LED_6</name>
       <pv_name>$(dev)POSPMT:Permit</pv_name>
       <x>5</x>
       <y>70</y>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="led" version="2.0.0">
       <name>LED_7</name>
       <pv_name>$(dev)IOCPMT:Permit</pv_name>
       <x>5</x>
       <y>100</y>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="label" version="2.0.0">
       <name>Label_79</name>
@@ -639,89 +642,106 @@
     <width>150</width>
     <tooltip>$(actions)</tooltip>
   </widget>
-  <widget type="embedded" version="2.0.0">
-    <name>Embedded Display_10</name>
-    <macros>
-      <c>C827</c>
-      <or>V</or>
-      <jp>U</jp>
-      <enum>$(c)$(or)$(jp)</enum>
-      <title>Jaw $(c)$(or)$(jp) Position</title>
-    </macros>
-    <file>../Common/JawPositionV.bob</file>
-    <x>910</x>
-    <y>340</y>
-    <width>150</width>
-    <height>540</height>
-  </widget>
-  <widget type="embedded" version="2.0.0">
-    <name>Embedded Display_12</name>
-    <macros>
-      <c>C827</c>
-      <or>V</or>
-      <jp>D</jp>
-      <enum>$(c)$(or)$(jp)</enum>
-      <title>Jaw $(c)$(or)$(jp) Position</title>
-    </macros>
-    <file>../Common/JawPositionV.bob</file>
-    <x>1620</x>
-    <y>340</y>
-    <width>150</width>
-    <height>540</height>
-  </widget>
-  <widget type="embedded" version="2.0.0">
-    <name>Embedded Display_11</name>
-    <macros>
-      <c>C827</c>
-      <or>H</or>
-      <jp>U</jp>
-      <enum>$(c)$(or)$(jp)</enum>
-      <title>Jaw $(c)$(or)$(jp) Position</title>
-    </macros>
-    <file>../Common/JawPositionH.bob</file>
-    <x>1070</x>
-    <y>430</y>
-    <width>540</width>
-    <height>125</height>
-  </widget>
-  <widget type="embedded" version="2.0.0">
-    <name>Embedded Display_13</name>
-    <macros>
-      <c>C827</c>
-      <or>H</or>
-      <jp>D</jp>
-      <enum>$(c)$(or)$(jp)</enum>
-      <title>Jaw $(c)$(or)$(jp) Position</title>
-    </macros>
-    <file>../Common/JawPositionH.bob</file>
-    <x>1070</x>
-    <y>645</y>
-    <width>540</width>
-    <height>125</height>
-  </widget>
-  <widget type="rectangle" version="2.0.0">
-    <name>Rectangle_1</name>
-    <x>900</x>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <x>5</x>
     <y>330</y>
     <width>880</width>
     <height>560</height>
-    <line_color>
-      <color red="0" green="0" blue="0">
-      </color>
-    </line_color>
+    <style>3</style>
     <transparent>true</transparent>
+    <widget type="group" version="3.0.0">
+      <name>Group</name>
+      <width>880</width>
+      <height>560</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="rectangle" version="2.0.0">
+        <name>Rectangle</name>
+        <width>880</width>
+        <height>560</height>
+        <line_color>
+          <color red="0" green="0" blue="0">
+          </color>
+        </line_color>
+        <transparent>true</transparent>
+      </widget>
+      <widget type="embedded" version="2.0.0">
+        <name>Embedded Display_7</name>
+        <macros>
+          <c>C825</c>
+          <or>H</or>
+          <jp>U</jp>
+          <enum>$(c)$(or)$(jp)</enum>
+          <title>Jaw $(c)$(or)$(jp) Position</title>
+        </macros>
+        <file>../Common/JawPositionH.bob</file>
+        <x>170</x>
+        <y>100</y>
+        <width>540</width>
+        <height>125</height>
+      </widget>
+      <widget type="embedded" version="2.0.0">
+        <name>Embedded Display_8</name>
+        <macros>
+          <c>C825</c>
+          <or>V</or>
+          <jp>D</jp>
+          <enum>$(c)$(or)$(jp)</enum>
+          <title>Jaw $(c)$(or)$(jp) Position</title>
+        </macros>
+        <file>../Common/JawPositionV.bob</file>
+        <x>720</x>
+        <y>5</y>
+        <width>150</width>
+        <height>540</height>
+        <resize>4</resize>
+      </widget>
+      <widget type="embedded" version="2.0.0">
+        <name>Embedded Display_9</name>
+        <macros>
+          <c>C825</c>
+          <or>H</or>
+          <jp>D</jp>
+          <enum>$(c)$(or)$(jp)</enum>
+          <title>Jaw $(c)$(or)$(jp) Position</title>
+        </macros>
+        <file>../Common/JawPositionH.bob</file>
+        <x>170</x>
+        <y>315</y>
+        <width>540</width>
+        <height>125</height>
+      </widget>
+      <widget type="embedded" version="2.0.0">
+        <name>Embedded Display_6</name>
+        <macros>
+          <c>C825</c>
+          <or>V</or>
+          <jp>U</jp>
+          <enum>$(c)$(or)$(jp)</enum>
+          <title>Jaw $(c)$(or)$(jp) Position</title>
+        </macros>
+        <file>../Common/JawPositionV.bob</file>
+        <x>10</x>
+        <y>5</y>
+        <width>155</width>
+        <height>545</height>
+        <resize>4</resize>
+      </widget>
+    </widget>
   </widget>
   <widget type="group" version="3.0.0">
     <name>Group</name>
+    <x>895</x>
     <y>330</y>
     <width>880</width>
     <height>560</height>
     <style>3</style>
     <transparent>true</transparent>
     <widget type="embedded" version="2.0.0">
-      <name>Embedded Display_6</name>
+      <name>Embedded Display_10</name>
       <macros>
-        <c>C825</c>
+        <c>C827</c>
         <or>V</or>
         <jp>U</jp>
         <enum>$(c)$(or)$(jp)</enum>
@@ -732,11 +752,28 @@
       <y>10</y>
       <width>150</width>
       <height>540</height>
+      <resize>4</resize>
     </widget>
     <widget type="embedded" version="2.0.0">
-      <name>Embedded Display_7</name>
+      <name>Embedded Display_12</name>
       <macros>
-        <c>C825</c>
+        <c>C827</c>
+        <or>V</or>
+        <jp>D</jp>
+        <enum>$(c)$(or)$(jp)</enum>
+        <title>Jaw $(c)$(or)$(jp) Position</title>
+      </macros>
+      <file>../Common/JawPositionV.bob</file>
+      <x>720</x>
+      <y>10</y>
+      <width>150</width>
+      <height>540</height>
+      <resize>4</resize>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Embedded Display_11</name>
+      <macros>
+        <c>C827</c>
         <or>H</or>
         <jp>U</jp>
         <enum>$(c)$(or)$(jp)</enum>
@@ -749,24 +786,9 @@
       <height>125</height>
     </widget>
     <widget type="embedded" version="2.0.0">
-      <name>Embedded Display_8</name>
+      <name>Embedded Display_13</name>
       <macros>
-        <c>C825</c>
-        <or>V</or>
-        <jp>D</jp>
-        <enum>$(c)$(or)$(jp)</enum>
-        <title>Jaw $(c)$(or)$(jp) Position</title>
-      </macros>
-      <file>../Common/JawPositionV.bob</file>
-      <x>720</x>
-      <y>5</y>
-      <width>150</width>
-      <height>540</height>
-    </widget>
-    <widget type="embedded" version="2.0.0">
-      <name>Embedded Display_9</name>
-      <macros>
-        <c>C825</c>
+        <c>C827</c>
         <or>H</or>
         <jp>D</jp>
         <enum>$(c)$(or)$(jp)</enum>
@@ -779,7 +801,7 @@
       <height>125</height>
     </widget>
     <widget type="rectangle" version="2.0.0">
-      <name>Rectangle</name>
+      <name>Rectangle_1</name>
       <width>880</width>
       <height>560</height>
       <line_color>

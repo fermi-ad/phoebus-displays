@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2024-09-08 23:18:39 by epics-->
+<!--Saved on 2024-09-09 16:41:55 by epics-->
 <display version="2.0.0">
   <name>WriteLimit</name>
   <x>5</x>
-  <width>230</width>
+  <width>280</width>
   <height>25</height>
   <grid_step_x>5</grid_step_x>
   <grid_step_y>5</grid_step_y>
@@ -11,7 +11,10 @@
     <name>Text Entry</name>
     <pv_name>$(dev)$(enum):w$(lim)</pv_name>
     <x>100</x>
+    <width>70</width>
     <height>25</height>
+    <format>1</format>
+    <precision>1</precision>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
     <border_alarm_sensitive>false</border_alarm_sensitive>
@@ -33,11 +36,11 @@
   <widget type="label" version="2.0.0">
     <name>Label_2</name>
     <text>$(egu)</text>
-    <x>200</x>
+    <x>170</x>
     <width>30</width>
     <height>25</height>
     <background_color>
-      <color name="Button_Background" red="210" green="210" blue="210">
+      <color name="Write_Background" red="128" green="255" blue="255">
       </color>
     </background_color>
     <transparent>false</transparent>
@@ -45,5 +48,15 @@
     <vertical_alignment>1</vertical_alignment>
     <wrap_words>false</wrap_words>
     <border_width>1</border_width>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update</name>
+    <pv_name>$(dev)PLCR$(offset):rRAW</pv_name>
+    <x>210</x>
+    <width>70</width>
+    <height>25</height>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
   </widget>
 </display>
