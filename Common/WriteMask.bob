@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2024-09-12 13:52:32 by epics-->
+<!--Saved on 2024-09-13 16:47:33 by epics-->
 <display version="2.0.0">
-  <name>Set Mask</name>
+  <name>WriteMask</name>
   <x>5</x>
   <width>205</width>
-  <height>430</height>
+  <height>460</height>
   <grid_step_x>5</grid_step_x>
   <grid_step_y>5</grid_step_y>
   <widget type="group" version="3.0.0">
@@ -531,5 +531,53 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
       <border_width>1</border_width>
     </widget>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(pv_name)</pv_name>
+        <value>0</value>
+        <description>Toggle All Off</description>
+      </action>
+    </actions>
+    <pv_name>$(dev)$(c):Mask$(sig)</pv_name>
+    <y>435</y>
+    <width>205</width>
+    <height>25</height>
+    <visible>false</visible>
+    <rules>
+      <rule name="Show button" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0&gt;0">
+          <value>true</value>
+        </exp>
+        <pv_name>$(pv_name)</pv_name>
+      </rule>
+    </rules>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_1</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(pv_name)</pv_name>
+        <value>65535</value>
+        <description>Toggle All On</description>
+      </action>
+    </actions>
+    <pv_name>$(dev)$(c):Mask$(sig)</pv_name>
+    <y>435</y>
+    <width>205</width>
+    <height>25</height>
+    <visible>false</visible>
+    <rules>
+      <rule name="Show Button" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0=0">
+          <value>true</value>
+        </exp>
+        <pv_name>$(pv_name)</pv_name>
+      </rule>
+    </rules>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
 </display>
