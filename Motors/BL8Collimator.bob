@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2024-09-26 21:27:20 by epics-->
+<!--Saved on 2024-10-02 06:25:55 by epics-->
 <display version="2.0.0">
   <name>BL8ColOverView</name>
   <macros>
     <dev>B:BL8COL_BLE_</dev>
   </macros>
   <width>1780</width>
-  <height>900</height>
+  <height>950</height>
   <grid_step_x>5</grid_step_x>
   <grid_step_y>5</grid_step_y>
   <widget type="rectangle" version="2.0.0">
@@ -42,8 +42,8 @@
   </widget>
   <widget type="group" version="3.0.0">
     <name>Group_5</name>
-    <x>1075</x>
-    <y>675</y>
+    <x>1510</x>
+    <y>800</y>
     <width>70</width>
     <height>65</height>
     <style>3</style>
@@ -82,8 +82,8 @@
   </widget>
   <widget type="group" version="3.0.0">
     <name>Group_7</name>
-    <x>1155</x>
-    <y>675</y>
+    <x>1590</x>
+    <y>800</y>
     <width>70</width>
     <height>65</height>
     <style>3</style>
@@ -220,8 +220,6 @@
       <c>BL8S</c>
       <or>H</or>
       <jp1>A</jp1>
-      <enum>$(c)$(or)$(jp)</enum>
-      <title>Jaw $(c)$(or)$(jp) Position</title>
       <jp2>A</jp2>
       <mp1>U</mp1>
       <mp2>D</mp2>
@@ -234,6 +232,7 @@
     <y>375</y>
     <width>540</width>
     <height>125</height>
+    <resize>4</resize>
   </widget>
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display_13</name>
@@ -253,6 +252,7 @@
     <y>165</y>
     <width>540</width>
     <height>125</height>
+    <resize>4</resize>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_4</name>
@@ -419,6 +419,7 @@
       <y>30</y>
       <width>540</width>
       <height>125</height>
+      <resize>4</resize>
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update</name>
@@ -471,26 +472,44 @@
     <name>Action Button_9</name>
     <actions execute_as_one="true">
       <action type="open_display">
-        <file>motorTestMCR8.bob</file>
+        <file>Jaw2MotorCtrl.bob</file>
         <macros>
-          <P>B:BL8COL_BLE_M3H:</P>
-          <M>mSHAU</M>
+          <ENUM>SHW</ENUM>
+          <M1>M3H</M1>
+          <M2>M6H</M2>
+          <P1>B:BL8COL_BLE_$(M1):</P1>
+          <P2>B:BL8COL_BLE_$(M2):</P2>
+          <jaw>BL8$(ENUM)</jaw>
         </macros>
         <target>window</target>
-        <description>M3H - mSHAU</description>
-      </action>
-      <action type="open_display">
-        <file>motorTestMCR8.bob</file>
-        <macros>
-          <P>B:BL8COL_BLE_M6H:</P>
-          <M>mSHAD</M>
-        </macros>
-        <target>window</target>
-        <description>M6H - mSHAD</description>
+        <description>Open Jaw2MotorCtrl</description>
       </action>
     </actions>
-    <text>M3H &amp; M6H - mSHA</text>
+    <text>M3H &amp; M6H - mSHW</text>
     <x>1220</x>
+    <y>532</y>
+    <width>150</width>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_10</name>
+    <actions execute_as_one="true">
+      <action type="open_display">
+        <file>Jaw2MotorCtrl.bob</file>
+        <macros>
+          <ENUM>SHA</ENUM>
+          <M1>M4H</M1>
+          <M2>M5H</M2>
+          <P1>B:BL8COL_BLE_$(M1):</P1>
+          <P2>B:BL8COL_BLE_$(M2):</P2>
+          <jaw>BL8$(ENUM)</jaw>
+        </macros>
+        <target>window</target>
+        <description>Open Jaw2MotorCtrl</description>
+      </action>
+    </actions>
+    <text>M4H &amp; M5H - mSHA</text>
+    <x>1380</x>
     <y>532</y>
     <width>150</width>
     <tooltip>$(actions)</tooltip>
@@ -499,27 +518,22 @@
     <name>Action Button_11</name>
     <actions execute_as_one="true">
       <action type="open_display">
-        <file>motorTestMCR8.bob</file>
+        <file>Jaw2MotorCtrl.bob</file>
         <macros>
-          <P>B:BL8COL_BLE_M4H:</P>
-          <M>mSHWU</M>
+          <ENUM>SVT</ENUM>
+          <M1>M3V</M1>
+          <M2>M6V</M2>
+          <P1>B:BL8COL_BLE_$(M1):</P1>
+          <P2>B:BL8COL_BLE_$(M2):</P2>
+          <jaw>BL8$(ENUM)</jaw>
         </macros>
         <target>window</target>
-        <description>M4H - mSHWU</description>
-      </action>
-      <action type="open_display">
-        <file>motorTestMCR8.bob</file>
-        <macros>
-          <P>B:BL8COL_BLE_M5H:</P>
-          <M>mSHWD</M>
-        </macros>
-        <target>window</target>
-        <description>M5H - mSHWD</description>
+        <description>Open Jaw2MotorCtrl</description>
       </action>
     </actions>
-    <text>M4H &amp; M5H - mSHW</text>
+    <text>M3V &amp; M6V - mSVT</text>
     <x>1380</x>
-    <y>532</y>
+    <y>567</y>
     <width>150</width>
     <tooltip>$(actions)</tooltip>
   </widget>
@@ -527,56 +541,103 @@
     <name>Action Button_12</name>
     <actions execute_as_one="true">
       <action type="open_display">
-        <file>motorTestMCR8.bob</file>
+        <file>Jaw2MotorCtrl.bob</file>
         <macros>
-          <P>B:BL8COL_BLE_M3V:</P>
-          <M>mSHBU</M>
+          <ENUM>SVB</ENUM>
+          <M1>M4V</M1>
+          <M2>M5V</M2>
+          <P1>B:BL8COL_BLE_$(M1):</P1>
+          <P2>B:BL8COL_BLE_$(M2):</P2>
+          <jaw>BL8$(ENUM)</jaw>
         </macros>
         <target>window</target>
-        <description>M3V - mSHBU</description>
-      </action>
-      <action type="open_display">
-        <file>motorTestMCR8.bob</file>
-        <macros>
-          <P>B:BL8COL_BLE_M6V:</P>
-          <M>mSHBD</M>
-        </macros>
-        <target>window</target>
-        <description>M6V - mSHBD</description>
+        <description>Open Jaw2MotorCtrl</description>
       </action>
     </actions>
-    <text>M3V &amp; M6V - mSVB</text>
+    <text>M4V &amp; M5V - mSVB</text>
     <x>1220</x>
     <y>567</y>
     <width>150</width>
     <tooltip>$(actions)</tooltip>
   </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Action Button_13</name>
-    <actions execute_as_one="true">
-      <action type="open_display">
-        <file>motorTestMCR8.bob</file>
-        <macros>
-          <P>B:BL8COL_BLE_M4V:</P>
-          <M>mSHTU</M>
-        </macros>
-        <target>window</target>
-        <description>M4V - mSHTU</description>
-      </action>
-      <action type="open_display">
-        <file>motorTestMCR8.bob</file>
-        <macros>
-          <P>B:BL8COL_BLE_M5V:</P>
-          <M>mSHTD</M>
-        </macros>
-        <target>window</target>
-        <description>M5V - mSHTD</description>
-      </action>
-    </actions>
-    <text>M4V &amp; M4V - mSVT</text>
-    <x>1380</x>
-    <y>567</y>
-    <width>150</width>
-    <tooltip>$(actions)</tooltip>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_8</name>
+    <pv_name>$(dev)BL8SHA:TempC</pv_name>
+    <x>1330</x>
+    <y>345</y>
+    <width>50</width>
+    <format>1</format>
+    <precision>1</precision>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_9</name>
+    <pv_name>$(dev)BL8SHW:TempC</pv_name>
+    <x>1330</x>
+    <y>135</y>
+    <width>50</width>
+    <format>1</format>
+    <precision>1</precision>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_10</name>
+    <pv_name>$(dev)BL8SVB:TempC</pv_name>
+    <x>1065</x>
+    <y>315</y>
+    <width>50</width>
+    <format>1</format>
+    <precision>1</precision>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_11</name>
+    <pv_name>$(dev)BL8SVT:TempC</pv_name>
+    <x>1555</x>
+    <y>315</y>
+    <width>50</width>
+    <format>1</format>
+    <precision>1</precision>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_14</name>
+    <macros>
+      <c>BL8S</c>
+      <or>V</or>
+      <jp1>B</jp1>
+      <jp2>T</jp2>
+      <mp1>U</mp1>
+      <mp2>D</mp2>
+      <enum1>$(c)$(or)$(jp1)</enum1>
+      <enum2>$(c)$(or)$(jp2)</enum2>
+      <title>Jaw Pair $(c)$(or) Positions</title>
+    </macros>
+    <file>../Common/JawPair.bob</file>
+    <x>210</x>
+    <y>675</y>
+    <width>455</width>
+    <height>260</height>
+    <resize>4</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_15</name>
+    <macros>
+      <c>BL8S</c>
+      <or>H</or>
+      <jp1>W</jp1>
+      <jp2>A</jp2>
+      <mp1>U</mp1>
+      <mp2>D</mp2>
+      <enum1>$(c)$(or)$(jp1)</enum1>
+      <enum2>$(c)$(or)$(jp2)</enum2>
+      <title>Jaw Pair $(c)$(or) Positions</title>
+    </macros>
+    <file>../Common/JawPair.bob</file>
+    <x>690</x>
+    <y>675</y>
+    <width>455</width>
+    <height>260</height>
+    <resize>4</resize>
   </widget>
 </display>
