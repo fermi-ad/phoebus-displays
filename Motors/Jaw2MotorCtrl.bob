@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2024-10-02 06:29:07 by epics-->
+<display version="2.0.0">
+  <name>Jaw2MotorCtrl</name>
+  <width>475</width>
+  <height>130</height>
+  <grid_step_x>5</grid_step_x>
+  <grid_step_y>5</grid_step_y>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle</name>
+    <x>5</x>
+    <y>30</y>
+    <width>465</width>
+    <height>95</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="Grid" red="128" green="128" blue="128">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry</name>
+    <pv_name>$(dev)$(M1)-$(M2):s$(ENUM)</pv_name>
+    <x>120</x>
+    <y>65</y>
+    <width>85</width>
+    <height>30</height>
+    <format>1</format>
+    <precision>2</precision>
+    <show_units>false</show_units>
+    <horizontal_alignment>1</horizontal_alignment>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_8</name>
+    <text>Move Jaw $(jaw)</text>
+    <x>5</x>
+    <width>465</width>
+    <height>30</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="18.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_11</name>
+    <actions execute_as_one="true">
+      <action type="open_display">
+        <file>motorTestMCR8.bob</file>
+        <macros>
+          <P>B:BL8COL_BLE_$(M1):</P>
+          <M>m$(ENUM)U</M>
+        </macros>
+        <target>window</target>
+        <description>$(M1) - m$(ENUM)U</description>
+      </action>
+      <action type="open_display">
+        <file>motorTestMCR8.bob</file>
+        <macros>
+          <P>B:BL8COL_BLE_$(M2):</P>
+          <M>m$(ENUM)D</M>
+        </macros>
+        <target>window</target>
+        <description>$(M2) - m$(ENUM)D</description>
+      </action>
+    </actions>
+    <text>$(M1) &amp; $(M2) - m$(ENUM)</text>
+    <x>305</x>
+    <y>65</y>
+    <width>150</width>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <text>Set Point (mm)</text>
+    <x>10</x>
+    <y>65</y>
+    <height>30</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="choice" version="2.0.0">
+    <name>Choice Button</name>
+    <pv_name>$(dev)$(M1)-$(M2):c$(ENUM)</pv_name>
+    <x>225</x>
+    <y>40</y>
+    <width>60</width>
+    <height>80</height>
+    <horizontal>false</horizontal>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <items>
+      <item>Item 1</item>
+      <item>Item 2</item>
+    </items>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_1</name>
+    <text>Expert Controls</text>
+    <x>305</x>
+    <y>40</y>
+    <width>150</width>
+    <height>30</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+</display>
