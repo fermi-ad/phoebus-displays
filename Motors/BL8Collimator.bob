@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2024-10-17 14:51:20 by epics-->
+<!--Saved on 2024-10-22 11:25:21 by epics-->
 <display version="2.0.0">
   <name>BL8ColOverView</name>
   <macros>
     <dev>B:BL8COL_BLE_</dev>
   </macros>
-  <width>2120</width>
-  <height>850</height>
+  <width>2150</width>
+  <height>890</height>
   <grid_step_x>5</grid_step_x>
   <grid_step_y>5</grid_step_y>
   <widget type="label" version="2.0.0">
     <name>Label</name>
     <text>BL8 Collimator</text>
-    <width>2115</width>
+    <width>2135</width>
     <height>30</height>
     <font>
       <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
@@ -37,8 +37,8 @@
         <description>Set Calibrations</description>
       </action>
     </actions>
-    <x>990</x>
-    <y>780</y>
+    <x>995</x>
+    <y>815</y>
     <width>170</width>
     <tooltip>$(actions)</tooltip>
   </widget>
@@ -51,8 +51,8 @@
         <description>Compare Motors &amp; LVDTs</description>
       </action>
     </actions>
-    <x>990</x>
-    <y>750</y>
+    <x>995</x>
+    <y>785</y>
     <width>170</width>
     <tooltip>$(actions)</tooltip>
   </widget>
@@ -79,58 +79,19 @@
     <wrap_words>false</wrap_words>
     <border_width>2</border_width>
   </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label_12</name>
-    <text>Secondary Jaws</text>
-    <x>1180</x>
-    <y>40</y>
-    <width>935</width>
-    <font>
-      <font name="Header 3" family="Liberation Sans" style="BOLD" size="16.0">
-      </font>
-    </font>
-    <foreground_color>
-      <color red="230" green="230" blue="77">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color red="0" green="0" blue="0">
-      </color>
-    </background_color>
-    <transparent>false</transparent>
-    <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <border_width>2</border_width>
-  </widget>
   <widget type="action_button" version="3.0.0">
     <name>Action Button_3</name>
     <actions>
       <action type="open_display">
         <file>SetBL8Limits.bob</file>
         <target>window</target>
-        <description>Set Limit Switch Alarms</description>
+        <description>Set Position Limits</description>
       </action>
     </actions>
-    <x>990</x>
-    <y>810</y>
+    <x>995</x>
+    <y>845</y>
     <width>170</width>
     <tooltip>$(actions)</tooltip>
-  </widget>
-  <widget type="led" version="2.0.0">
-    <name>LED_7</name>
-    <pv_name>$(dev)PLCHB:HeartBeat</pv_name>
-    <x>1985</x>
-    <y>5</y>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label_24</name>
-    <text>PLC HeartBeat</text>
-    <x>2010</x>
-    <y>5</y>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
   </widget>
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display</name>
@@ -142,7 +103,7 @@
     <x>105</x>
     <y>685</y>
     <width>110</width>
-    <height>155</height>
+    <height>185</height>
   </widget>
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display_1</name>
@@ -154,7 +115,7 @@
     <x>280</x>
     <y>685</y>
     <width>110</width>
-    <height>155</height>
+    <height>185</height>
   </widget>
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display_2</name>
@@ -166,7 +127,7 @@
     <x>685</x>
     <y>685</y>
     <width>110</width>
-    <height>155</height>
+    <height>185</height>
   </widget>
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display_3</name>
@@ -178,1557 +139,13 @@
     <x>860</x>
     <y>685</y>
     <width>110</width>
-    <height>155</height>
-  </widget>
-  <widget type="group" version="3.0.0">
-    <name>Group</name>
-    <y>60</y>
-    <width>1170</width>
-    <height>620</height>
-    <style>3</style>
-    <transparent>true</transparent>
-    <widget type="rectangle" version="2.0.0">
-      <name>Rectangle</name>
-      <width>1170</width>
-      <height>620</height>
-      <line_color>
-        <color red="0" green="0" blue="0">
-        </color>
-      </line_color>
-      <transparent>true</transparent>
-    </widget>
-    <widget type="embedded" version="2.0.0">
-      <name>Embedded Display_18</name>
-      <macros>
-        <c>P</c>
-        <or>V</or>
-        <jp1>U</jp1>
-        <jp2>D</jp2>
-        <enum1>$(c)$(or)$(jp1)</enum1>
-        <enum2>$(c)$(or)$(jp2)</enum2>
-        <title>Vertical Primary Jaw Positions</title>
-        <pos1>Lower</pos1>
-        <pos2>Upper</pos2>
-      </macros>
-      <file>../Common/JawSingleV.bob</file>
-      <x>590</x>
-      <y>30</y>
-      <width>570</width>
-      <height>415</height>
-      <resize>4</resize>
-    </widget>
-    <widget type="textupdate" version="2.0.0">
-      <name>Text Update_5</name>
-      <pv_name>$(dev)PVTD:TempC</pv_name>
-      <x>1020</x>
-      <y>10</y>
-      <width>50</width>
-      <format>1</format>
-      <precision>1</precision>
-      <wrap_words>false</wrap_words>
-    </widget>
-    <widget type="textupdate" version="2.0.0">
-      <name>Text Update_4</name>
-      <pv_name>$(dev)PVTU:TempC</pv_name>
-      <x>635</x>
-      <y>10</y>
-      <width>50</width>
-      <format>1</format>
-      <precision>1</precision>
-      <wrap_words>false</wrap_words>
-    </widget>
-    <widget type="group" version="3.0.0">
-      <name>Group</name>
-      <x>635</x>
-      <y>440</y>
-      <width>435</width>
-      <height>165</height>
-      <style>3</style>
-      <transparent>true</transparent>
-      <widget type="group" version="3.0.0">
-        <name>Group</name>
-        <x>50</x>
-        <y>5</y>
-        <width>150</width>
-        <height>160</height>
-        <style>3</style>
-        <transparent>true</transparent>
-        <widget type="rectangle" version="2.0.0">
-          <name>Rectangle_11</name>
-          <width>150</width>
-          <height>160</height>
-          <line_width>1</line_width>
-          <line_color>
-            <color red="0" green="0" blue="0">
-            </color>
-          </line_color>
-          <line_style>1</line_style>
-          <transparent>true</transparent>
-        </widget>
-        <widget type="textentry" version="3.0.0">
-          <name>Text Entry_9</name>
-          <pv_name>$(dev)M1V:mPVU</pv_name>
-          <x>5</x>
-          <y>5</y>
-          <width>70</width>
-          <height>30</height>
-          <format>1</format>
-          <precision>2</precision>
-          <show_units>false</show_units>
-          <horizontal_alignment>1</horizontal_alignment>
-          <border_alarm_sensitive>false</border_alarm_sensitive>
-        </widget>
-        <widget type="label" version="2.0.0">
-          <name>Label_22</name>
-          <text>Set Point
-(mm)</text>
-          <x>5</x>
-          <y>45</y>
-          <width>70</width>
-          <height>30</height>
-          <font>
-            <font family="Liberation Sans" style="BOLD" size="14.0">
-            </font>
-          </font>
-          <horizontal_alignment>1</horizontal_alignment>
-          <vertical_alignment>1</vertical_alignment>
-          <wrap_words>false</wrap_words>
-        </widget>
-        <widget type="choice" version="2.0.0">
-          <name>Choice Button_9</name>
-          <pv_name>$(dev)M1V:mPVU.SPMG</pv_name>
-          <x>85</x>
-          <y>5</y>
-          <width>60</width>
-          <height>80</height>
-          <horizontal>false</horizontal>
-          <border_alarm_sensitive>false</border_alarm_sensitive>
-          <items>
-            <item>Item 1</item>
-            <item>Item 2</item>
-          </items>
-        </widget>
-        <widget type="label" version="2.0.0">
-          <name>Label_23</name>
-          <text>Expert Controls</text>
-          <x>20</x>
-          <y>106</y>
-          <width>110</width>
-          <font>
-            <font family="Liberation Sans" style="BOLD" size="14.0">
-            </font>
-          </font>
-          <horizontal_alignment>1</horizontal_alignment>
-          <vertical_alignment>1</vertical_alignment>
-          <wrap_words>false</wrap_words>
-        </widget>
-        <widget type="action_button" version="3.0.0">
-          <name>Action Button_8</name>
-          <actions>
-            <action type="open_display">
-              <file>motorTestMCR8.bob</file>
-              <macros>
-                <P>B:BL8COL_BLE_M1V:</P>
-                <M>mPVU</M>
-              </macros>
-              <target>window</target>
-              <description>M1V - mPVU</description>
-            </action>
-          </actions>
-          <x>20</x>
-          <y>126</y>
-          <width>110</width>
-          <tooltip>$(actions)</tooltip>
-        </widget>
-      </widget>
-      <widget type="group" version="3.0.0">
-        <name>Group</name>
-        <x>225</x>
-        <y>5</y>
-        <width>150</width>
-        <height>160</height>
-        <style>3</style>
-        <transparent>true</transparent>
-        <widget type="rectangle" version="2.0.0">
-          <name>Rectangle_12</name>
-          <width>150</width>
-          <height>160</height>
-          <line_width>1</line_width>
-          <line_color>
-            <color red="0" green="0" blue="0">
-            </color>
-          </line_color>
-          <line_style>1</line_style>
-          <transparent>true</transparent>
-        </widget>
-        <widget type="textentry" version="3.0.0">
-          <name>Text Entry_6</name>
-          <pv_name>$(dev)M2V:mPVD</pv_name>
-          <x>5</x>
-          <y>5</y>
-          <width>70</width>
-          <height>30</height>
-          <format>1</format>
-          <precision>2</precision>
-          <show_units>false</show_units>
-          <horizontal_alignment>1</horizontal_alignment>
-          <border_alarm_sensitive>false</border_alarm_sensitive>
-        </widget>
-        <widget type="label" version="2.0.0">
-          <name>Label_13</name>
-          <text>Set Point
-(mm)</text>
-          <x>5</x>
-          <y>45</y>
-          <width>70</width>
-          <height>30</height>
-          <font>
-            <font family="Liberation Sans" style="BOLD" size="14.0">
-            </font>
-          </font>
-          <horizontal_alignment>1</horizontal_alignment>
-          <vertical_alignment>1</vertical_alignment>
-          <wrap_words>false</wrap_words>
-        </widget>
-        <widget type="choice" version="2.0.0">
-          <name>Choice Button_6</name>
-          <pv_name>$(dev)M2V:mPVD.SPMG</pv_name>
-          <x>85</x>
-          <y>5</y>
-          <width>60</width>
-          <height>80</height>
-          <horizontal>false</horizontal>
-          <border_alarm_sensitive>false</border_alarm_sensitive>
-          <items>
-            <item>Item 1</item>
-            <item>Item 2</item>
-          </items>
-        </widget>
-        <widget type="label" version="2.0.0">
-          <name>Label_14</name>
-          <text>Expert Controls</text>
-          <x>20</x>
-          <y>101</y>
-          <width>110</width>
-          <font>
-            <font family="Liberation Sans" style="BOLD" size="14.0">
-            </font>
-          </font>
-          <horizontal_alignment>1</horizontal_alignment>
-          <vertical_alignment>1</vertical_alignment>
-          <wrap_words>false</wrap_words>
-        </widget>
-        <widget type="action_button" version="3.0.0">
-          <name>Action Button_9</name>
-          <actions>
-            <action type="open_display">
-              <file>motorTestMCR8.bob</file>
-              <macros>
-                <P>B:BL8COL_BLE_M2V:</P>
-                <M>mPVD</M>
-              </macros>
-              <target>window</target>
-              <description>M2V - mPVD</description>
-            </action>
-          </actions>
-          <x>20</x>
-          <y>121</y>
-          <width>110</width>
-          <tooltip>$(actions)</tooltip>
-        </widget>
-      </widget>
-      <widget type="textupdate" version="2.0.0">
-        <name>Text Update_6</name>
-        <pv_name>$(dev)PVBU:TempC</pv_name>
-        <width>50</width>
-        <format>1</format>
-        <precision>1</precision>
-        <wrap_words>false</wrap_words>
-      </widget>
-      <widget type="textupdate" version="2.0.0">
-        <name>Text Update_7</name>
-        <pv_name>$(dev)PVBD:TempC</pv_name>
-        <x>385</x>
-        <width>50</width>
-        <format>1</format>
-        <precision>1</precision>
-        <wrap_words>false</wrap_words>
-      </widget>
-    </widget>
-    <widget type="textupdate" version="2.0.0">
-      <name>Text Update_1</name>
-      <pv_name>$(dev)PHAD:TempC</pv_name>
-      <x>440</x>
-      <y>10</y>
-      <width>50</width>
-      <format>1</format>
-      <precision>1</precision>
-      <wrap_words>false</wrap_words>
-    </widget>
-    <widget type="embedded" version="2.0.0">
-      <name>Embedded Display_19</name>
-      <macros>
-        <c>P</c>
-        <or>H</or>
-        <jp1>U</jp1>
-        <jp2>D</jp2>
-        <enum1>$(c)$(or)$(jp1)</enum1>
-        <enum2>$(c)$(or)$(jp2)</enum2>
-        <title>Horizontal Primary Jaw Positions</title>
-        <pos1>Wall</pos1>
-        <pos2>Aisle</pos2>
-      </macros>
-      <file>../Common/JawSingleH.bob</file>
-      <x>10</x>
-      <y>30</y>
-      <width>570</width>
-      <height>415</height>
-      <resize>4</resize>
-    </widget>
-    <widget type="textupdate" version="2.0.0">
-      <name>Text Update</name>
-      <pv_name>$(dev)PHAU:TempC</pv_name>
-      <x>50</x>
-      <y>10</y>
-      <width>50</width>
-      <format>1</format>
-      <precision>1</precision>
-      <wrap_words>false</wrap_words>
-    </widget>
-    <widget type="group" version="3.0.0">
-      <name>Group</name>
-      <x>50</x>
-      <y>440</y>
-      <width>440</width>
-      <height>165</height>
-      <style>3</style>
-      <transparent>true</transparent>
-      <widget type="group" version="3.0.0">
-        <name>Group</name>
-        <x>55</x>
-        <y>5</y>
-        <width>150</width>
-        <height>160</height>
-        <style>3</style>
-        <transparent>true</transparent>
-        <widget type="rectangle" version="2.0.0">
-          <name>Rectangle_13</name>
-          <width>150</width>
-          <height>160</height>
-          <line_width>1</line_width>
-          <line_color>
-            <color red="0" green="0" blue="0">
-            </color>
-          </line_color>
-          <line_style>1</line_style>
-          <transparent>true</transparent>
-        </widget>
-        <widget type="textentry" version="3.0.0">
-          <name>Text Entry_7</name>
-          <pv_name>$(dev)M1H:mPHU</pv_name>
-          <x>5</x>
-          <y>5</y>
-          <width>70</width>
-          <height>30</height>
-          <format>1</format>
-          <precision>2</precision>
-          <show_units>false</show_units>
-          <horizontal_alignment>1</horizontal_alignment>
-          <border_alarm_sensitive>false</border_alarm_sensitive>
-        </widget>
-        <widget type="label" version="2.0.0">
-          <name>Label_15</name>
-          <text>Set Point
-(mm)</text>
-          <x>5</x>
-          <y>45</y>
-          <width>70</width>
-          <height>30</height>
-          <font>
-            <font family="Liberation Sans" style="BOLD" size="14.0">
-            </font>
-          </font>
-          <horizontal_alignment>1</horizontal_alignment>
-          <vertical_alignment>1</vertical_alignment>
-          <wrap_words>false</wrap_words>
-        </widget>
-        <widget type="choice" version="2.0.0">
-          <name>Choice Button_7</name>
-          <pv_name>$(dev)M1H:mPHU.SPMG</pv_name>
-          <x>85</x>
-          <y>6</y>
-          <width>60</width>
-          <height>80</height>
-          <horizontal>false</horizontal>
-          <border_alarm_sensitive>false</border_alarm_sensitive>
-          <items>
-            <item>Item 1</item>
-            <item>Item 2</item>
-          </items>
-        </widget>
-        <widget type="label" version="2.0.0">
-          <name>Label_16</name>
-          <text>Expert Controls</text>
-          <x>20</x>
-          <y>101</y>
-          <width>110</width>
-          <font>
-            <font family="Liberation Sans" style="BOLD" size="14.0">
-            </font>
-          </font>
-          <horizontal_alignment>1</horizontal_alignment>
-          <vertical_alignment>1</vertical_alignment>
-          <wrap_words>false</wrap_words>
-        </widget>
-        <widget type="action_button" version="3.0.0">
-          <name>Action Button_10</name>
-          <actions>
-            <action type="open_display">
-              <file>motorTestMCR8.bob</file>
-              <macros>
-                <P>B:BL8COL_BLE_M1H:</P>
-                <M>mPHU</M>
-              </macros>
-              <target>window</target>
-              <description>M1H - mPHU</description>
-            </action>
-          </actions>
-          <x>20</x>
-          <y>121</y>
-          <width>110</width>
-          <tooltip>$(actions)</tooltip>
-        </widget>
-      </widget>
-      <widget type="group" version="3.0.0">
-        <name>Group</name>
-        <x>230</x>
-        <y>5</y>
-        <width>150</width>
-        <height>160</height>
-        <style>3</style>
-        <transparent>true</transparent>
-        <widget type="rectangle" version="2.0.0">
-          <name>Rectangle_14</name>
-          <width>150</width>
-          <height>160</height>
-          <line_width>1</line_width>
-          <line_color>
-            <color red="0" green="0" blue="0">
-            </color>
-          </line_color>
-          <line_style>1</line_style>
-          <transparent>true</transparent>
-        </widget>
-        <widget type="textentry" version="3.0.0">
-          <name>Text Entry_8</name>
-          <pv_name>$(dev)M2H:mPHD</pv_name>
-          <x>5</x>
-          <y>5</y>
-          <width>70</width>
-          <height>30</height>
-          <format>1</format>
-          <precision>2</precision>
-          <show_units>false</show_units>
-          <horizontal_alignment>1</horizontal_alignment>
-          <border_alarm_sensitive>false</border_alarm_sensitive>
-        </widget>
-        <widget type="label" version="2.0.0">
-          <name>Label_17</name>
-          <text>Set Point
-(mm)</text>
-          <x>5</x>
-          <y>45</y>
-          <width>70</width>
-          <height>30</height>
-          <font>
-            <font family="Liberation Sans" style="BOLD" size="14.0">
-            </font>
-          </font>
-          <horizontal_alignment>1</horizontal_alignment>
-          <vertical_alignment>1</vertical_alignment>
-          <wrap_words>false</wrap_words>
-        </widget>
-        <widget type="choice" version="2.0.0">
-          <name>Choice Button_8</name>
-          <pv_name>$(dev)M2H:mPHD.SPMG</pv_name>
-          <x>85</x>
-          <y>5</y>
-          <width>60</width>
-          <height>80</height>
-          <horizontal>false</horizontal>
-          <border_alarm_sensitive>false</border_alarm_sensitive>
-          <items>
-            <item>Item 1</item>
-            <item>Item 2</item>
-          </items>
-        </widget>
-        <widget type="label" version="2.0.0">
-          <name>Label_18</name>
-          <text>Expert Controls</text>
-          <x>20</x>
-          <y>101</y>
-          <width>110</width>
-          <font>
-            <font family="Liberation Sans" style="BOLD" size="14.0">
-            </font>
-          </font>
-          <horizontal_alignment>1</horizontal_alignment>
-          <vertical_alignment>1</vertical_alignment>
-          <wrap_words>false</wrap_words>
-        </widget>
-        <widget type="action_button" version="3.0.0">
-          <name>Action Button_11</name>
-          <actions>
-            <action type="open_display">
-              <file>motorTestMCR8.bob</file>
-              <macros>
-                <P>B:BL8COL_BLE_M2H:</P>
-                <M>mPHD</M>
-              </macros>
-              <target>window</target>
-              <description>M2H - mPHD</description>
-            </action>
-          </actions>
-          <x>20</x>
-          <y>121</y>
-          <width>110</width>
-          <tooltip>$(actions)</tooltip>
-        </widget>
-      </widget>
-      <widget type="textupdate" version="2.0.0">
-        <name>Text Update_3</name>
-        <pv_name>$(dev)PHWD:TempC</pv_name>
-        <x>390</x>
-        <width>50</width>
-        <format>1</format>
-        <precision>1</precision>
-        <wrap_words>false</wrap_words>
-      </widget>
-      <widget type="textupdate" version="2.0.0">
-        <name>Text Update_2</name>
-        <pv_name>$(dev)PHWU:TempC</pv_name>
-        <width>50</width>
-        <format>1</format>
-        <precision>1</precision>
-        <wrap_words>false</wrap_words>
-      </widget>
-    </widget>
-  </widget>
-  <widget type="group" version="3.0.0">
-    <name>Group</name>
-    <x>1180</x>
-    <y>60</y>
-    <width>935</width>
-    <height>620</height>
-    <style>3</style>
-    <transparent>true</transparent>
-    <widget type="rectangle" version="2.0.0">
-      <name>Rectangle_1</name>
-      <width>935</width>
-      <height>620</height>
-      <line_color>
-        <color red="0" green="0" blue="0">
-        </color>
-      </line_color>
-      <transparent>true</transparent>
-    </widget>
-    <widget type="group" version="3.0.0">
-      <name>Group</name>
-      <x>110</x>
-      <y>75</y>
-      <width>265</width>
-      <height>70</height>
-      <style>3</style>
-      <transparent>true</transparent>
-      <widget type="rectangle" version="2.0.0">
-        <name>Rectangle_10</name>
-        <width>265</width>
-        <height>70</height>
-        <line_width>1</line_width>
-        <line_color>
-          <color red="0" green="0" blue="0">
-          </color>
-        </line_color>
-        <line_style>1</line_style>
-        <transparent>true</transparent>
-      </widget>
-    </widget>
-    <widget type="textupdate" version="2.0.0">
-      <name>Text Update_10</name>
-      <pv_name>$(dev)SHW:TempC</pv_name>
-      <x>205</x>
-      <y>290</y>
-      <width>50</width>
-      <format>1</format>
-      <precision>1</precision>
-      <wrap_words>false</wrap_words>
-    </widget>
-    <widget type="textupdate" version="2.0.0">
-      <name>Text Update_11</name>
-      <pv_name>$(dev)SHA:TempC</pv_name>
-      <x>205</x>
-      <y>10</y>
-      <width>50</width>
-      <format>1</format>
-      <precision>1</precision>
-      <wrap_words>false</wrap_words>
-    </widget>
-    <widget type="embedded" version="2.0.0">
-      <name>Embedded Display_15</name>
-      <macros>
-        <c>S</c>
-        <or>H</or>
-        <jp1>W</jp1>
-        <jp2>A</jp2>
-        <enum1>$(c)$(or)$(jp1)</enum1>
-        <enum2>$(c)$(or)$(jp2)</enum2>
-        <title>Horizontal Jaw Pair Positions</title>
-        <dir>-1</dir>
-        <pos1>Wall</pos1>
-        <pos2>Aisle</pos2>
-      </macros>
-      <file>../Common/JawPairH.bob</file>
-      <x>5</x>
-      <y>30</y>
-      <width>455</width>
-      <height>260</height>
-      <resize>4</resize>
-    </widget>
-    <widget type="group" version="3.0.0">
-      <name>Group</name>
-      <x>50</x>
-      <y>435</y>
-      <width>365</width>
-      <height>100</height>
-      <style>3</style>
-      <transparent>true</transparent>
-      <widget type="label" version="2.0.0">
-        <name>Label_10</name>
-        <text>Wall</text>
-        <x>205</x>
-        <y>10</y>
-        <width>150</width>
-        <font>
-          <font family="Liberation Sans" style="BOLD" size="18.0">
-          </font>
-        </font>
-        <foreground_color>
-          <color red="255" green="255" blue="255">
-          </color>
-        </foreground_color>
-        <background_color>
-          <color name="Grid" red="128" green="128" blue="128">
-          </color>
-        </background_color>
-        <transparent>false</transparent>
-        <horizontal_alignment>1</horizontal_alignment>
-        <vertical_alignment>1</vertical_alignment>
-        <wrap_words>false</wrap_words>
-        <border_width>2</border_width>
-      </widget>
-      <widget type="textentry" version="3.0.0">
-        <name>Text Entry_3</name>
-        <pv_name>$(dev)M3H-M6H:sSHW</pv_name>
-        <x>10</x>
-        <y>10</y>
-        <height>30</height>
-        <format>1</format>
-        <precision>2</precision>
-        <show_units>false</show_units>
-        <horizontal_alignment>1</horizontal_alignment>
-        <border_alarm_sensitive>false</border_alarm_sensitive>
-      </widget>
-      <widget type="label" version="2.0.0">
-        <name>Label_8</name>
-        <text>Set Point (mm)</text>
-        <x>10</x>
-        <y>40</y>
-        <font>
-          <font family="Liberation Sans" style="BOLD" size="14.0">
-          </font>
-        </font>
-        <horizontal_alignment>2</horizontal_alignment>
-        <vertical_alignment>1</vertical_alignment>
-        <wrap_words>false</wrap_words>
-      </widget>
-      <widget type="choice" version="2.0.0">
-        <name>Choice Button_3</name>
-        <pv_name>$(dev)M3H-M6H:cSHW</pv_name>
-        <x>115</x>
-        <y>10</y>
-        <width>60</width>
-        <height>80</height>
-        <horizontal>false</horizontal>
-        <border_alarm_sensitive>false</border_alarm_sensitive>
-        <items>
-          <item>Item 1</item>
-          <item>Item 2</item>
-        </items>
-      </widget>
-      <widget type="action_button" version="3.0.0">
-        <name>Action Button_17</name>
-        <actions execute_as_one="true">
-          <action type="open_display">
-            <file>motorTestMCR8.bob</file>
-            <macros>
-              <P>B:BL8COL_BLE_M3H:</P>
-              <M>mSHWU</M>
-            </macros>
-            <target>window</target>
-            <description>M3H - mSHW</description>
-          </action>
-          <action type="open_display">
-            <file>motorTestMCR8.bob</file>
-            <macros>
-              <P>B:BL8COL_BLE_M6H:</P>
-              <M>mSHWD</M>
-            </macros>
-            <target>window</target>
-            <description>M6H - mSHW</description>
-          </action>
-        </actions>
-        <text>M3H &amp; M6H - mSHW</text>
-        <x>205</x>
-        <y>60</y>
-        <width>150</width>
-        <tooltip>$(actions)</tooltip>
-      </widget>
-      <widget type="label" version="2.0.0">
-        <name>Label_9</name>
-        <text>Expert Controls</text>
-        <x>205</x>
-        <y>40</y>
-        <width>150</width>
-        <font>
-          <font family="Liberation Sans" style="BOLD" size="14.0">
-          </font>
-        </font>
-        <horizontal_alignment>1</horizontal_alignment>
-        <vertical_alignment>1</vertical_alignment>
-        <wrap_words>false</wrap_words>
-      </widget>
-      <widget type="rectangle" version="2.0.0">
-        <name>Rectangle_4</name>
-        <width>365</width>
-        <height>100</height>
-        <line_width>1</line_width>
-        <line_color>
-          <color red="0" green="0" blue="0">
-          </color>
-        </line_color>
-        <line_style>1</line_style>
-        <transparent>true</transparent>
-      </widget>
-      <widget type="group" version="3.0.0">
-        <name>Group_1</name>
-        <x>10</x>
-        <y>60</y>
-        <width>100</width>
-        <height>35</height>
-        <style>3</style>
-        <transparent>true</transparent>
-        <widget type="action_button" version="3.0.0">
-          <name>Action Button_18</name>
-          <actions>
-            <action type="write_pv">
-              <pv_name>$(pv_name).PROC</pv_name>
-              <value>1</value>
-              <description>Enable Jaw</description>
-            </action>
-          </actions>
-          <pv_name>$(dev)M3H-M6H:enableJaw</pv_name>
-          <height>15</height>
-          <visible>false</visible>
-          <rules>
-            <rule name="Show Reset" prop_id="visible" out_exp="false">
-              <exp bool_exp="!pv0">
-                <value>true</value>
-              </exp>
-              <pv_name>$(dev)M3H-M6H:enableDisableJawMovement</pv_name>
-            </rule>
-          </rules>
-          <border_alarm_sensitive>false</border_alarm_sensitive>
-        </widget>
-        <widget type="led" version="2.0.0">
-          <name>LED_5</name>
-          <pv_name>$(dev)M3H-M6H:enableDisableJawMovement</pv_name>
-          <y>15</y>
-          <border_alarm_sensitive>false</border_alarm_sensitive>
-        </widget>
-        <widget type="textupdate" version="2.0.0">
-          <name>Text Update_17</name>
-          <pv_name>$(dev)M3H-M6H:enableDisableJawMovement</pv_name>
-          <x>45</x>
-          <y>15</y>
-          <width>55</width>
-          <font>
-            <font family="Liberation Sans" style="REGULAR" size="12.0">
-            </font>
-          </font>
-          <show_units>false</show_units>
-          <horizontal_alignment>1</horizontal_alignment>
-          <vertical_alignment>1</vertical_alignment>
-          <wrap_words>false</wrap_words>
-          <border_alarm_sensitive>false</border_alarm_sensitive>
-        </widget>
-        <widget type="label" version="2.0.0">
-          <name>Label_26</name>
-          <text>Jaw</text>
-          <x>20</x>
-          <y>15</y>
-          <width>25</width>
-          <font>
-            <font family="Liberation Sans" style="REGULAR" size="12.0">
-            </font>
-          </font>
-          <background_color>
-            <color name="Read_Background" red="240" green="240" blue="240">
-            </color>
-          </background_color>
-          <transparent>false</transparent>
-          <horizontal_alignment>1</horizontal_alignment>
-          <vertical_alignment>1</vertical_alignment>
-          <wrap_words>false</wrap_words>
-        </widget>
-      </widget>
-    </widget>
-    <widget type="group" version="3.0.0">
-      <name>Group</name>
-      <x>50</x>
-      <y>325</y>
-      <width>365</width>
-      <height>100</height>
-      <style>3</style>
-      <transparent>true</transparent>
-      <widget type="label" version="2.0.0">
-        <name>Label_19</name>
-        <text>Aisle</text>
-        <x>205</x>
-        <y>10</y>
-        <width>150</width>
-        <font>
-          <font family="Liberation Sans" style="BOLD" size="18.0">
-          </font>
-        </font>
-        <foreground_color>
-          <color red="255" green="255" blue="255">
-          </color>
-        </foreground_color>
-        <background_color>
-          <color name="Grid" red="128" green="128" blue="128">
-          </color>
-        </background_color>
-        <transparent>false</transparent>
-        <horizontal_alignment>1</horizontal_alignment>
-        <vertical_alignment>1</vertical_alignment>
-        <wrap_words>false</wrap_words>
-        <border_width>2</border_width>
-      </widget>
-      <widget type="choice" version="2.0.0">
-        <name>Choice Button_2</name>
-        <pv_name>$(dev)M4H-M5H:cSHA</pv_name>
-        <x>115</x>
-        <y>10</y>
-        <width>60</width>
-        <height>80</height>
-        <horizontal>false</horizontal>
-        <border_alarm_sensitive>false</border_alarm_sensitive>
-        <items>
-          <item>Item 1</item>
-          <item>Item 2</item>
-        </items>
-      </widget>
-      <widget type="action_button" version="3.0.0">
-        <name>Action Button_16</name>
-        <actions execute_as_one="true">
-          <action type="open_display">
-            <file>motorTestMCR8.bob</file>
-            <macros>
-              <P>B:BL8COL_BLE_M4H:</P>
-              <M>mSHAU</M>
-            </macros>
-            <target>window</target>
-            <description>M4H- mSHA</description>
-          </action>
-          <action type="open_display">
-            <file>motorTestMCR8.bob</file>
-            <macros>
-              <P>B:BL8COL_BLE_M5H:</P>
-              <M>mSHAD</M>
-            </macros>
-            <target>window</target>
-            <description>M5H - mSHA</description>
-          </action>
-        </actions>
-        <text>M4H &amp; M5H - mSHA</text>
-        <x>205</x>
-        <y>60</y>
-        <width>150</width>
-        <tooltip>$(actions)</tooltip>
-      </widget>
-      <widget type="label" version="2.0.0">
-        <name>Label_7</name>
-        <text>Expert Controls</text>
-        <x>205</x>
-        <y>41</y>
-        <width>150</width>
-        <font>
-          <font family="Liberation Sans" style="BOLD" size="14.0">
-          </font>
-        </font>
-        <horizontal_alignment>1</horizontal_alignment>
-        <vertical_alignment>1</vertical_alignment>
-        <wrap_words>false</wrap_words>
-      </widget>
-      <widget type="rectangle" version="2.0.0">
-        <name>Rectangle_5</name>
-        <width>365</width>
-        <height>100</height>
-        <line_width>1</line_width>
-        <line_color>
-          <color red="0" green="0" blue="0">
-          </color>
-        </line_color>
-        <line_style>1</line_style>
-        <transparent>true</transparent>
-      </widget>
-      <widget type="textentry" version="3.0.0">
-        <name>Text Entry_2</name>
-        <pv_name>$(dev)M4H-M5H:sSHA</pv_name>
-        <x>10</x>
-        <y>11</y>
-        <height>30</height>
-        <format>1</format>
-        <precision>2</precision>
-        <show_units>false</show_units>
-        <horizontal_alignment>1</horizontal_alignment>
-        <border_alarm_sensitive>false</border_alarm_sensitive>
-      </widget>
-      <widget type="label" version="2.0.0">
-        <name>Label_6</name>
-        <text>Set Point (mm)</text>
-        <x>10</x>
-        <y>41</y>
-        <font>
-          <font family="Liberation Sans" style="BOLD" size="14.0">
-          </font>
-        </font>
-        <horizontal_alignment>2</horizontal_alignment>
-        <vertical_alignment>1</vertical_alignment>
-        <wrap_words>false</wrap_words>
-      </widget>
-      <widget type="group" version="3.0.0">
-        <name>Group_2</name>
-        <x>10</x>
-        <y>61</y>
-        <width>100</width>
-        <height>35</height>
-        <style>3</style>
-        <transparent>true</transparent>
-        <widget type="action_button" version="3.0.0">
-          <name>Action Button_19</name>
-          <actions>
-            <action type="write_pv">
-              <pv_name>$(pv_name).PROC</pv_name>
-              <value>1</value>
-              <description>Enable Jaw</description>
-            </action>
-          </actions>
-          <pv_name>$(dev)M4H-M5H:enableJaw</pv_name>
-          <height>15</height>
-          <visible>false</visible>
-          <rules>
-            <rule name="Show Reset" prop_id="visible" out_exp="false">
-              <exp bool_exp="!pv0">
-                <value>true</value>
-              </exp>
-              <pv_name>$(dev)M4H-M5H:enableDisableJawMovement</pv_name>
-            </rule>
-          </rules>
-          <border_alarm_sensitive>false</border_alarm_sensitive>
-        </widget>
-        <widget type="led" version="2.0.0">
-          <name>LED_6</name>
-          <pv_name>$(dev)M4H-M5H:enableDisableJawMovement</pv_name>
-          <y>15</y>
-          <border_alarm_sensitive>false</border_alarm_sensitive>
-        </widget>
-        <widget type="textupdate" version="2.0.0">
-          <name>Text Update_18</name>
-          <pv_name>$(dev)M4H-M5H:enableDisableJawMovement</pv_name>
-          <x>45</x>
-          <y>15</y>
-          <width>55</width>
-          <font>
-            <font family="Liberation Sans" style="REGULAR" size="12.0">
-            </font>
-          </font>
-          <show_units>false</show_units>
-          <horizontal_alignment>1</horizontal_alignment>
-          <vertical_alignment>1</vertical_alignment>
-          <wrap_words>false</wrap_words>
-          <border_alarm_sensitive>false</border_alarm_sensitive>
-        </widget>
-        <widget type="label" version="2.0.0">
-          <name>Label_28</name>
-          <text>Jaw</text>
-          <x>20</x>
-          <y>15</y>
-          <width>25</width>
-          <font>
-            <font family="Liberation Sans" style="REGULAR" size="12.0">
-            </font>
-          </font>
-          <background_color>
-            <color name="Read_Background" red="240" green="240" blue="240">
-            </color>
-          </background_color>
-          <transparent>false</transparent>
-          <horizontal_alignment>1</horizontal_alignment>
-          <vertical_alignment>1</vertical_alignment>
-          <wrap_words>false</wrap_words>
-        </widget>
-      </widget>
-    </widget>
-    <widget type="group" version="3.0.0">
-      <name>Group</name>
-      <x>515</x>
-      <y>435</y>
-      <width>365</width>
-      <height>100</height>
-      <style>3</style>
-      <transparent>true</transparent>
-      <widget type="label" version="2.0.0">
-        <name>Label_21</name>
-        <text>Bottom</text>
-        <x>205</x>
-        <y>10</y>
-        <width>150</width>
-        <font>
-          <font family="Liberation Sans" style="BOLD" size="18.0">
-          </font>
-        </font>
-        <foreground_color>
-          <color red="255" green="255" blue="255">
-          </color>
-        </foreground_color>
-        <background_color>
-          <color name="Grid" red="128" green="128" blue="128">
-          </color>
-        </background_color>
-        <transparent>false</transparent>
-        <horizontal_alignment>1</horizontal_alignment>
-        <vertical_alignment>1</vertical_alignment>
-        <wrap_words>false</wrap_words>
-        <border_width>2</border_width>
-      </widget>
-      <widget type="textentry" version="3.0.0">
-        <name>Text Entry_1</name>
-        <pv_name>$(dev)M4V-M5V:sSVB</pv_name>
-        <x>10</x>
-        <y>10</y>
-        <height>30</height>
-        <format>1</format>
-        <precision>2</precision>
-        <show_units>false</show_units>
-        <horizontal_alignment>1</horizontal_alignment>
-        <border_alarm_sensitive>false</border_alarm_sensitive>
-      </widget>
-      <widget type="label" version="2.0.0">
-        <name>Label_4</name>
-        <text>Set Point (mm)</text>
-        <x>10</x>
-        <y>40</y>
-        <font>
-          <font family="Liberation Sans" style="BOLD" size="14.0">
-          </font>
-        </font>
-        <horizontal_alignment>2</horizontal_alignment>
-        <vertical_alignment>1</vertical_alignment>
-        <wrap_words>false</wrap_words>
-      </widget>
-      <widget type="choice" version="2.0.0">
-        <name>Choice Button_1</name>
-        <pv_name>$(dev)M4V-M5V:cSVB</pv_name>
-        <x>115</x>
-        <y>10</y>
-        <width>60</width>
-        <height>80</height>
-        <horizontal>false</horizontal>
-        <border_alarm_sensitive>false</border_alarm_sensitive>
-        <items>
-          <item>Item 1</item>
-          <item>Item 2</item>
-        </items>
-      </widget>
-      <widget type="action_button" version="3.0.0">
-        <name>Action Button_15</name>
-        <actions execute_as_one="true">
-          <action type="open_display">
-            <file>motorTestMCR8.bob</file>
-            <macros>
-              <P>B:BL8COL_BLE_M4V:</P>
-              <M>mSVBU</M>
-            </macros>
-            <target>window</target>
-            <description>M4V - mSVB</description>
-          </action>
-          <action type="open_display">
-            <file>motorTestMCR8.bob</file>
-            <macros>
-              <P>B:BL8COL_BLE_M5V:</P>
-              <M>mSVBD</M>
-            </macros>
-            <target>window</target>
-            <description>M5V - mSVB</description>
-          </action>
-        </actions>
-        <text>M4V &amp; M5V - mSVB</text>
-        <x>205</x>
-        <y>60</y>
-        <width>150</width>
-        <tooltip>$(actions)</tooltip>
-      </widget>
-      <widget type="label" version="2.0.0">
-        <name>Label_5</name>
-        <text>Expert Controls</text>
-        <x>205</x>
-        <y>40</y>
-        <width>150</width>
-        <font>
-          <font family="Liberation Sans" style="BOLD" size="14.0">
-          </font>
-        </font>
-        <horizontal_alignment>1</horizontal_alignment>
-        <vertical_alignment>1</vertical_alignment>
-        <wrap_words>false</wrap_words>
-      </widget>
-      <widget type="rectangle" version="2.0.0">
-        <name>Rectangle_2</name>
-        <width>365</width>
-        <height>100</height>
-        <line_width>1</line_width>
-        <line_color>
-          <color red="0" green="0" blue="0">
-          </color>
-        </line_color>
-        <line_style>1</line_style>
-        <transparent>true</transparent>
-      </widget>
-      <widget type="group" version="3.0.0">
-        <name>Group</name>
-        <x>10</x>
-        <y>60</y>
-        <width>100</width>
-        <height>35</height>
-        <style>3</style>
-        <transparent>true</transparent>
-        <widget type="action_button" version="3.0.0">
-          <name>Action Button_14</name>
-          <actions>
-            <action type="write_pv">
-              <pv_name>$(pv_name).PROC</pv_name>
-              <value>1</value>
-              <description>Enable Jaw</description>
-            </action>
-          </actions>
-          <pv_name>$(dev)M4V-M5V:enableJaw</pv_name>
-          <height>15</height>
-          <visible>false</visible>
-          <rules>
-            <rule name="Show Reset" prop_id="visible" out_exp="false">
-              <exp bool_exp="!pv0">
-                <value>true</value>
-              </exp>
-              <pv_name>$(dev)M4V-M5V:enableDisableJawMovement</pv_name>
-            </rule>
-          </rules>
-          <border_alarm_sensitive>false</border_alarm_sensitive>
-        </widget>
-        <widget type="led" version="2.0.0">
-          <name>LED_4</name>
-          <pv_name>$(dev)M4V-M5V:enableDisableJawMovement</pv_name>
-          <y>15</y>
-          <border_alarm_sensitive>false</border_alarm_sensitive>
-        </widget>
-        <widget type="textupdate" version="2.0.0">
-          <name>Text Update_16</name>
-          <pv_name>$(dev)M4V-M5V:enableDisableJawMovement</pv_name>
-          <x>45</x>
-          <y>15</y>
-          <width>55</width>
-          <font>
-            <font family="Liberation Sans" style="REGULAR" size="12.0">
-            </font>
-          </font>
-          <show_units>false</show_units>
-          <horizontal_alignment>1</horizontal_alignment>
-          <vertical_alignment>1</vertical_alignment>
-          <wrap_words>false</wrap_words>
-          <border_alarm_sensitive>false</border_alarm_sensitive>
-        </widget>
-        <widget type="label" version="2.0.0">
-          <name>Label_25</name>
-          <text>Jaw</text>
-          <x>20</x>
-          <y>15</y>
-          <width>25</width>
-          <font>
-            <font family="Liberation Sans" style="REGULAR" size="12.0">
-            </font>
-          </font>
-          <background_color>
-            <color name="Read_Background" red="240" green="240" blue="240">
-            </color>
-          </background_color>
-          <transparent>false</transparent>
-          <horizontal_alignment>1</horizontal_alignment>
-          <vertical_alignment>1</vertical_alignment>
-          <wrap_words>false</wrap_words>
-        </widget>
-      </widget>
-    </widget>
-    <widget type="group" version="3.0.0">
-      <name>Group</name>
-      <x>515</x>
-      <y>325</y>
-      <width>365</width>
-      <height>100</height>
-      <style>3</style>
-      <transparent>true</transparent>
-      <widget type="label" version="2.0.0">
-        <name>Label_20</name>
-        <text>Top</text>
-        <x>205</x>
-        <y>10</y>
-        <width>150</width>
-        <font>
-          <font family="Liberation Sans" style="BOLD" size="18.0">
-          </font>
-        </font>
-        <foreground_color>
-          <color red="255" green="255" blue="255">
-          </color>
-        </foreground_color>
-        <background_color>
-          <color name="Grid" red="128" green="128" blue="128">
-          </color>
-        </background_color>
-        <transparent>false</transparent>
-        <horizontal_alignment>1</horizontal_alignment>
-        <vertical_alignment>1</vertical_alignment>
-        <wrap_words>false</wrap_words>
-        <border_width>2</border_width>
-      </widget>
-      <widget type="textentry" version="3.0.0">
-        <name>Text Entry</name>
-        <pv_name>$(dev)M3V-M6V:sSVT</pv_name>
-        <x>10</x>
-        <y>10</y>
-        <height>30</height>
-        <format>1</format>
-        <precision>2</precision>
-        <show_units>false</show_units>
-        <horizontal_alignment>1</horizontal_alignment>
-        <border_alarm_sensitive>false</border_alarm_sensitive>
-      </widget>
-      <widget type="label" version="2.0.0">
-        <name>Label_1</name>
-        <text>Set Point (mm)</text>
-        <x>10</x>
-        <y>40</y>
-        <font>
-          <font family="Liberation Sans" style="BOLD" size="14.0">
-          </font>
-        </font>
-        <horizontal_alignment>2</horizontal_alignment>
-        <vertical_alignment>1</vertical_alignment>
-        <wrap_words>false</wrap_words>
-      </widget>
-      <widget type="choice" version="2.0.0">
-        <name>Choice Button</name>
-        <pv_name>$(dev)M3V-M6V:cSVT</pv_name>
-        <x>115</x>
-        <y>10</y>
-        <width>60</width>
-        <height>80</height>
-        <horizontal>false</horizontal>
-        <border_alarm_sensitive>false</border_alarm_sensitive>
-        <items>
-          <item>Item 1</item>
-          <item>Item 2</item>
-        </items>
-      </widget>
-      <widget type="action_button" version="3.0.0">
-        <name>Action Button_13</name>
-        <actions execute_as_one="true">
-          <action type="open_display">
-            <file>motorTestMCR8.bob</file>
-            <macros>
-              <P>B:BL8COL_BLE_M3V:</P>
-              <M>mSVTU</M>
-            </macros>
-            <target>window</target>
-            <description>M3V - mSVT</description>
-          </action>
-          <action type="open_display">
-            <file>motorTestMCR8.bob</file>
-            <macros>
-              <P>B:BL8COL_BLE_M6V:</P>
-              <M>mSVTD</M>
-            </macros>
-            <target>window</target>
-            <description>M6V - mSVT</description>
-          </action>
-        </actions>
-        <text>M3V &amp; M6V - mSVT</text>
-        <x>205</x>
-        <y>60</y>
-        <width>150</width>
-        <tooltip>$(actions)</tooltip>
-      </widget>
-      <widget type="label" version="2.0.0">
-        <name>Label_2</name>
-        <text>Expert Controls</text>
-        <x>205</x>
-        <y>40</y>
-        <width>150</width>
-        <font>
-          <font family="Liberation Sans" style="BOLD" size="14.0">
-          </font>
-        </font>
-        <horizontal_alignment>1</horizontal_alignment>
-        <vertical_alignment>1</vertical_alignment>
-        <wrap_words>false</wrap_words>
-      </widget>
-      <widget type="rectangle" version="2.0.0">
-        <name>Rectangle_3</name>
-        <width>365</width>
-        <height>100</height>
-        <line_width>1</line_width>
-        <line_color>
-          <color red="0" green="0" blue="0">
-          </color>
-        </line_color>
-        <line_style>1</line_style>
-        <transparent>true</transparent>
-      </widget>
-      <widget type="group" version="3.0.0">
-        <name>Group</name>
-        <x>10</x>
-        <y>60</y>
-        <width>100</width>
-        <height>35</height>
-        <style>3</style>
-        <transparent>true</transparent>
-        <widget type="action_button" version="3.0.0">
-          <name>Action Button</name>
-          <actions>
-            <action type="write_pv">
-              <pv_name>$(pv_name).PROC</pv_name>
-              <value>1</value>
-              <description>Enable Jaw</description>
-            </action>
-          </actions>
-          <pv_name>$(dev)M3V-M6V:enableJaw</pv_name>
-          <height>15</height>
-          <visible>false</visible>
-          <rules>
-            <rule name="Show Reset" prop_id="visible" out_exp="false">
-              <exp bool_exp="!pv0">
-                <value>true</value>
-              </exp>
-              <pv_name>$(dev)M3V-M6V:enableDisableJawMovement</pv_name>
-            </rule>
-          </rules>
-          <border_alarm_sensitive>false</border_alarm_sensitive>
-        </widget>
-        <widget type="led" version="2.0.0">
-          <name>LED</name>
-          <pv_name>$(dev)M3V-M6V:enableDisableJawMovement</pv_name>
-          <y>15</y>
-          <border_alarm_sensitive>false</border_alarm_sensitive>
-        </widget>
-        <widget type="textupdate" version="2.0.0">
-          <name>Text Update_12</name>
-          <pv_name>$(dev)M3V-M6V:enableDisableJawMovement</pv_name>
-          <x>45</x>
-          <y>15</y>
-          <width>55</width>
-          <font>
-            <font family="Liberation Sans" style="REGULAR" size="12.0">
-            </font>
-          </font>
-          <show_units>false</show_units>
-          <horizontal_alignment>1</horizontal_alignment>
-          <vertical_alignment>1</vertical_alignment>
-          <wrap_words>false</wrap_words>
-          <border_alarm_sensitive>false</border_alarm_sensitive>
-        </widget>
-        <widget type="label" version="2.0.0">
-          <name>Label_3</name>
-          <text>Jaw</text>
-          <x>20</x>
-          <y>15</y>
-          <width>25</width>
-          <font>
-            <font family="Liberation Sans" style="REGULAR" size="12.0">
-            </font>
-          </font>
-          <background_color>
-            <color name="Read_Background" red="240" green="240" blue="240">
-            </color>
-          </background_color>
-          <transparent>false</transparent>
-          <horizontal_alignment>1</horizontal_alignment>
-          <vertical_alignment>1</vertical_alignment>
-          <wrap_words>false</wrap_words>
-        </widget>
-      </widget>
-    </widget>
-    <widget type="textupdate" version="2.0.0">
-      <name>Text Update_8</name>
-      <pv_name>$(dev)SVB:TempC</pv_name>
-      <x>670</x>
-      <y>290</y>
-      <width>50</width>
-      <format>1</format>
-      <precision>1</precision>
-      <wrap_words>false</wrap_words>
-    </widget>
-    <widget type="textupdate" version="2.0.0">
-      <name>Text Update_9</name>
-      <pv_name>$(dev)SVT:TempC</pv_name>
-      <x>670</x>
-      <y>10</y>
-      <width>50</width>
-      <format>1</format>
-      <precision>1</precision>
-      <wrap_words>false</wrap_words>
-    </widget>
-    <widget type="embedded" version="2.0.0">
-      <name>Embedded Display_14</name>
-      <macros>
-        <c>S</c>
-        <or>V</or>
-        <jp1>B</jp1>
-        <jp2>T</jp2>
-        <enum1>$(c)$(or)$(jp1)</enum1>
-        <enum2>$(c)$(or)$(jp2)</enum2>
-        <title>Vertical Jaw Pair Positions</title>
-        <dir>1</dir>
-        <pos1>Lower</pos1>
-        <pos2>Upper</pos2>
-      </macros>
-      <file>../Common/JawPairV.bob</file>
-      <x>470</x>
-      <y>30</y>
-      <width>455</width>
-      <height>260</height>
-      <resize>4</resize>
-    </widget>
-  </widget>
-  <widget type="embedded" version="2.0.0">
-    <name>Embedded Display_4</name>
-    <macros>
-      <mot>M3H</mot>
-      <enum>SHWU</enum>
-    </macros>
-    <file>../Common/MotorStatus.bob</file>
-    <x>1185</x>
-    <y>685</y>
-    <width>110</width>
-    <height>155</height>
-  </widget>
-  <widget type="embedded" version="2.0.0">
-    <name>Embedded Display_5</name>
-    <macros>
-      <mot>M6H</mot>
-      <enum>SHWD</enum>
-    </macros>
-    <file>../Common/MotorStatus.bob</file>
-    <x>1300</x>
-    <y>685</y>
-    <width>110</width>
-    <height>155</height>
-  </widget>
-  <widget type="embedded" version="2.0.0">
-    <name>Embedded Display_6</name>
-    <macros>
-      <mot>M4H</mot>
-      <enum>SHAU</enum>
-    </macros>
-    <file>../Common/MotorStatus.bob</file>
-    <x>1420</x>
-    <y>685</y>
-    <width>110</width>
-    <height>155</height>
-  </widget>
-  <widget type="embedded" version="2.0.0">
-    <name>Embedded Display_7</name>
-    <macros>
-      <mot>M5H</mot>
-      <enum>SHAD</enum>
-    </macros>
-    <file>../Common/MotorStatus.bob</file>
-    <x>1535</x>
-    <y>685</y>
-    <width>110</width>
-    <height>155</height>
-  </widget>
-  <widget type="embedded" version="2.0.0">
-    <name>Embedded Display_8</name>
-    <macros>
-      <mot>M3V</mot>
-      <enum>SVTU</enum>
-    </macros>
-    <file>../Common/MotorStatus.bob</file>
-    <x>1655</x>
-    <y>685</y>
-    <width>110</width>
-    <height>155</height>
-  </widget>
-  <widget type="embedded" version="2.0.0">
-    <name>Embedded Display_9</name>
-    <macros>
-      <mot>M6V</mot>
-      <enum>SVTD</enum>
-    </macros>
-    <file>../Common/MotorStatus.bob</file>
-    <x>1770</x>
-    <y>685</y>
-    <width>110</width>
-    <height>155</height>
-  </widget>
-  <widget type="embedded" version="2.0.0">
-    <name>Embedded Display_10</name>
-    <macros>
-      <mot>M4V</mot>
-      <enum>SVBU</enum>
-    </macros>
-    <file>../Common/MotorStatus.bob</file>
-    <x>1890</x>
-    <y>685</y>
-    <width>110</width>
-    <height>155</height>
-  </widget>
-  <widget type="embedded" version="2.0.0">
-    <name>Embedded Display_11</name>
-    <macros>
-      <mot>M5V</mot>
-      <enum>SVBD</enum>
-    </macros>
-    <file>../Common/MotorStatus.bob</file>
-    <x>2005</x>
-    <y>685</y>
-    <width>110</width>
-    <height>155</height>
+    <height>185</height>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_27</name>
     <text>Set Parameters</text>
-    <x>990</x>
-    <y>725</y>
+    <x>995</x>
+    <y>765</y>
     <width>170</width>
     <font>
       <font name="Header 3" family="Liberation Sans" style="BOLD" size="16.0">
@@ -1747,5 +164,1726 @@
     <vertical_alignment>1</vertical_alignment>
     <wrap_words>false</wrap_words>
     <border_width>2</border_width>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_7</name>
+    <pv_name>$(dev)PLCHB:HeartBeat</pv_name>
+    <x>2000</x>
+    <y>5</y>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_24</name>
+    <text>PLC HeartBeat</text>
+    <x>2025</x>
+    <y>5</y>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_1</name>
+    <y>60</y>
+    <width>1170</width>
+    <height>820</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="1170.0" y="0.0">
+      </point>
+      <point x="1170.0" y="690.0">
+      </point>
+      <point x="980.0" y="690.0">
+      </point>
+      <point x="980.0" y="820.0">
+      </point>
+      <point x="0.0" y="820.0">
+      </point>
+      <point x="0.0" y="0.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_12</name>
+    <text>Secondary Jaws</text>
+    <x>1180</x>
+    <y>40</y>
+    <width>955</width>
+    <font>
+      <font name="Header 3" family="Liberation Sans" style="BOLD" size="16.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="230" green="230" blue="77">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_width>2</border_width>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_4</name>
+    <macros>
+      <mot>M3H</mot>
+      <enum>SHWU</enum>
+    </macros>
+    <file>../Common/MotorStatus.bob</file>
+    <x>1195</x>
+    <y>685</y>
+    <width>110</width>
+    <height>185</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_5</name>
+    <macros>
+      <mot>M6H</mot>
+      <enum>SHWD</enum>
+    </macros>
+    <file>../Common/MotorStatus.bob</file>
+    <x>1310</x>
+    <y>685</y>
+    <width>110</width>
+    <height>185</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_6</name>
+    <macros>
+      <mot>M4H</mot>
+      <enum>SHAU</enum>
+    </macros>
+    <file>../Common/MotorStatus.bob</file>
+    <x>1430</x>
+    <y>685</y>
+    <width>110</width>
+    <height>185</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_7</name>
+    <macros>
+      <mot>M5H</mot>
+      <enum>SHAD</enum>
+    </macros>
+    <file>../Common/MotorStatus.bob</file>
+    <x>1545</x>
+    <y>685</y>
+    <width>110</width>
+    <height>185</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_8</name>
+    <macros>
+      <mot>M3V</mot>
+      <enum>SVTU</enum>
+    </macros>
+    <file>../Common/MotorStatus.bob</file>
+    <x>1665</x>
+    <y>685</y>
+    <width>110</width>
+    <height>185</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_9</name>
+    <macros>
+      <mot>M6V</mot>
+      <enum>SVTD</enum>
+    </macros>
+    <file>../Common/MotorStatus.bob</file>
+    <x>1780</x>
+    <y>685</y>
+    <width>110</width>
+    <height>185</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_10</name>
+    <macros>
+      <mot>M4V</mot>
+      <enum>SVBU</enum>
+    </macros>
+    <file>../Common/MotorStatus.bob</file>
+    <x>1900</x>
+    <y>685</y>
+    <width>110</width>
+    <height>185</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_11</name>
+    <macros>
+      <mot>M5V</mot>
+      <enum>SVBD</enum>
+    </macros>
+    <file>../Common/MotorStatus.bob</file>
+    <x>2015</x>
+    <y>685</y>
+    <width>110</width>
+    <height>185</height>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_1</name>
+    <x>1180</x>
+    <y>60</y>
+    <width>955</width>
+    <height>820</height>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <x>1300</x>
+    <y>135</y>
+    <width>265</width>
+    <height>70</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle_10</name>
+      <width>265</width>
+      <height>70</height>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <line_style>1</line_style>
+      <transparent>true</transparent>
+    </widget>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_10</name>
+    <pv_name>$(dev)SHW:TempC</pv_name>
+    <x>1395</x>
+    <y>350</y>
+    <width>50</width>
+    <format>1</format>
+    <precision>1</precision>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_11</name>
+    <pv_name>$(dev)SHA:TempC</pv_name>
+    <x>1395</x>
+    <y>70</y>
+    <width>50</width>
+    <format>1</format>
+    <precision>1</precision>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_15</name>
+    <macros>
+      <c>S</c>
+      <or>H</or>
+      <jp1>W</jp1>
+      <jp2>A</jp2>
+      <enum1>$(c)$(or)$(jp1)</enum1>
+      <enum2>$(c)$(or)$(jp2)</enum2>
+      <title>Horizontal Jaw Pair Positions</title>
+      <dir>-1</dir>
+      <pos1>Wall</pos1>
+      <pos2>Aisle</pos2>
+    </macros>
+    <file>../Common/JawPairH.bob</file>
+    <x>1195</x>
+    <y>90</y>
+    <width>455</width>
+    <height>260</height>
+    <resize>4</resize>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_8</name>
+    <pv_name>$(dev)SVB:TempC</pv_name>
+    <x>1860</x>
+    <y>350</y>
+    <width>50</width>
+    <format>1</format>
+    <precision>1</precision>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_9</name>
+    <pv_name>$(dev)SVT:TempC</pv_name>
+    <x>1860</x>
+    <y>70</y>
+    <width>50</width>
+    <format>1</format>
+    <precision>1</precision>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_14</name>
+    <macros>
+      <c>S</c>
+      <or>V</or>
+      <jp1>B</jp1>
+      <jp2>T</jp2>
+      <enum1>$(c)$(or)$(jp1)</enum1>
+      <enum2>$(c)$(or)$(jp2)</enum2>
+      <title>Vertical Jaw Pair Positions</title>
+      <dir>1</dir>
+      <pos1>Lower</pos1>
+      <pos2>Upper</pos2>
+    </macros>
+    <file>../Common/JawPairV.bob</file>
+    <x>1660</x>
+    <y>90</y>
+    <width>455</width>
+    <height>260</height>
+    <resize>4</resize>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <x>1240</x>
+    <y>530</y>
+    <width>365</width>
+    <height>135</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="led" version="2.0.0">
+      <name>LED_8</name>
+      <pv_name>$(dev)M3H-M6H:skewL8SH36W</pv_name>
+      <x>185</x>
+      <y>105</y>
+      <on_color>
+        <color name="MAJOR" red="255" green="0" blue="0">
+        </color>
+      </on_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_13</name>
+      <pv_name>$(dev)M3H-M6H:skewL8SH36W</pv_name>
+      <x>215</x>
+      <y>105</y>
+      <format>6</format>
+      <show_units>false</show_units>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_10</name>
+      <text>Wall</text>
+      <x>205</x>
+      <y>10</y>
+      <width>150</width>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="18.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color red="255" green="255" blue="255">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="Grid" red="128" green="128" blue="128">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_width>2</border_width>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Text Entry_3</name>
+      <pv_name>$(dev)M3H-M6H:sSHW</pv_name>
+      <x>10</x>
+      <y>10</y>
+      <height>30</height>
+      <format>1</format>
+      <precision>2</precision>
+      <show_units>false</show_units>
+      <horizontal_alignment>1</horizontal_alignment>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_8</name>
+      <text>Set Point (mm)</text>
+      <x>10</x>
+      <y>40</y>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+    </widget>
+    <widget type="choice" version="2.0.0">
+      <name>Choice Button_3</name>
+      <pv_name>$(dev)M3H-M6H:cSHW</pv_name>
+      <x>115</x>
+      <y>10</y>
+      <width>60</width>
+      <height>80</height>
+      <horizontal>false</horizontal>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <items>
+        <item>Item 1</item>
+        <item>Item 2</item>
+      </items>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Action Button_17</name>
+      <actions execute_as_one="true">
+        <action type="open_display">
+          <file>motorTestMCR8.bob</file>
+          <macros>
+            <P>B:BL8COL_BLE_M3H:</P>
+            <M>mSHWU</M>
+          </macros>
+          <target>window</target>
+          <description>M3H - mSHW</description>
+        </action>
+        <action type="open_display">
+          <file>motorTestMCR8.bob</file>
+          <macros>
+            <P>B:BL8COL_BLE_M6H:</P>
+            <M>mSHWD</M>
+          </macros>
+          <target>window</target>
+          <description>M6H - mSHW</description>
+        </action>
+      </actions>
+      <text>M3H &amp; M6H - mSHW</text>
+      <x>205</x>
+      <y>60</y>
+      <width>150</width>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_9</name>
+      <text>Expert Controls</text>
+      <x>205</x>
+      <y>40</y>
+      <width>150</width>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>Group_1</name>
+      <x>10</x>
+      <y>60</y>
+      <width>100</width>
+      <height>35</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="action_button" version="3.0.0">
+        <name>Action Button_18</name>
+        <actions>
+          <action type="write_pv">
+            <pv_name>$(pv_name).PROC</pv_name>
+            <value>1</value>
+            <description>Enable Jaw</description>
+          </action>
+        </actions>
+        <pv_name>$(dev)M3H-M6H:enableJaw</pv_name>
+        <height>15</height>
+        <visible>false</visible>
+        <rules>
+          <rule name="Show Reset" prop_id="visible" out_exp="false">
+            <exp bool_exp="!pv0">
+              <value>true</value>
+            </exp>
+            <pv_name>$(dev)M3H-M6H:enableDisableJawMovement</pv_name>
+          </rule>
+        </rules>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="led" version="2.0.0">
+        <name>LED_5</name>
+        <pv_name>$(dev)M3H-M6H:enableDisableJawMovement</pv_name>
+        <y>15</y>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_17</name>
+        <pv_name>$(dev)M3H-M6H:enableDisableJawMovement</pv_name>
+        <x>45</x>
+        <y>15</y>
+        <width>55</width>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </font>
+        <show_units>false</show_units>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_26</name>
+        <text>Jaw</text>
+        <x>20</x>
+        <y>15</y>
+        <width>25</width>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </font>
+        <background_color>
+          <color name="Read_Background" red="240" green="240" blue="240">
+          </color>
+        </background_color>
+        <transparent>false</transparent>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+      </widget>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_31</name>
+      <text>Jaw Skew Detection: </text>
+      <x>10</x>
+      <y>105</y>
+      <width>165</width>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+    </widget>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle_4</name>
+      <width>365</width>
+      <height>135</height>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <transparent>true</transparent>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <x>1240</x>
+    <y>385</y>
+    <width>365</width>
+    <height>135</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="led" version="2.0.0">
+      <name>LED_9</name>
+      <pv_name>$(dev)M4H-M5H:skewL8SH45A</pv_name>
+      <x>185</x>
+      <y>105</y>
+      <on_color>
+        <color name="MAJOR" red="255" green="0" blue="0">
+        </color>
+      </on_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_14</name>
+      <pv_name>$(dev)M4H-M5H:skewL8SH45A</pv_name>
+      <x>215</x>
+      <y>105</y>
+      <format>6</format>
+      <show_units>false</show_units>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle_5</name>
+      <width>365</width>
+      <height>135</height>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_19</name>
+      <text>Aisle</text>
+      <x>205</x>
+      <y>10</y>
+      <width>150</width>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="18.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color red="255" green="255" blue="255">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="Grid" red="128" green="128" blue="128">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_width>2</border_width>
+    </widget>
+    <widget type="choice" version="2.0.0">
+      <name>Choice Button_2</name>
+      <pv_name>$(dev)M4H-M5H:cSHA</pv_name>
+      <x>115</x>
+      <y>10</y>
+      <width>60</width>
+      <height>80</height>
+      <horizontal>false</horizontal>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <items>
+        <item>Item 1</item>
+        <item>Item 2</item>
+      </items>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Action Button_16</name>
+      <actions execute_as_one="true">
+        <action type="open_display">
+          <file>motorTestMCR8.bob</file>
+          <macros>
+            <P>B:BL8COL_BLE_M4H:</P>
+            <M>mSHAU</M>
+          </macros>
+          <target>window</target>
+          <description>M4H- mSHA</description>
+        </action>
+        <action type="open_display">
+          <file>motorTestMCR8.bob</file>
+          <macros>
+            <P>B:BL8COL_BLE_M5H:</P>
+            <M>mSHAD</M>
+          </macros>
+          <target>window</target>
+          <description>M5H - mSHA</description>
+        </action>
+      </actions>
+      <text>M4H &amp; M5H - mSHA</text>
+      <x>205</x>
+      <y>60</y>
+      <width>150</width>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_7</name>
+      <text>Expert Controls</text>
+      <x>205</x>
+      <y>41</y>
+      <width>150</width>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Text Entry_2</name>
+      <pv_name>$(dev)M4H-M5H:sSHA</pv_name>
+      <x>10</x>
+      <y>11</y>
+      <height>30</height>
+      <format>1</format>
+      <precision>2</precision>
+      <show_units>false</show_units>
+      <horizontal_alignment>1</horizontal_alignment>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_6</name>
+      <text>Set Point (mm)</text>
+      <x>10</x>
+      <y>41</y>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>Group_2</name>
+      <x>10</x>
+      <y>61</y>
+      <width>100</width>
+      <height>35</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="action_button" version="3.0.0">
+        <name>Action Button_19</name>
+        <actions>
+          <action type="write_pv">
+            <pv_name>$(pv_name).PROC</pv_name>
+            <value>1</value>
+            <description>Enable Jaw</description>
+          </action>
+        </actions>
+        <pv_name>$(dev)M4H-M5H:enableJaw</pv_name>
+        <height>15</height>
+        <visible>false</visible>
+        <rules>
+          <rule name="Show Reset" prop_id="visible" out_exp="false">
+            <exp bool_exp="!pv0">
+              <value>true</value>
+            </exp>
+            <pv_name>$(dev)M4H-M5H:enableDisableJawMovement</pv_name>
+          </rule>
+        </rules>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="led" version="2.0.0">
+        <name>LED_6</name>
+        <pv_name>$(dev)M4H-M5H:enableDisableJawMovement</pv_name>
+        <y>15</y>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_18</name>
+        <pv_name>$(dev)M4H-M5H:enableDisableJawMovement</pv_name>
+        <x>45</x>
+        <y>15</y>
+        <width>55</width>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </font>
+        <show_units>false</show_units>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_28</name>
+        <text>Jaw</text>
+        <x>20</x>
+        <y>15</y>
+        <width>25</width>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </font>
+        <background_color>
+          <color name="Read_Background" red="240" green="240" blue="240">
+          </color>
+        </background_color>
+        <transparent>false</transparent>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+      </widget>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_32</name>
+      <text>Jaw Skew Detection: </text>
+      <x>10</x>
+      <y>105</y>
+      <width>165</width>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <x>1705</x>
+    <y>530</y>
+    <width>365</width>
+    <height>135</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="led" version="2.0.0">
+      <name>LED_11</name>
+      <pv_name>$(dev)M4V-M5V:skewL8SV45B</pv_name>
+      <x>185</x>
+      <y>104</y>
+      <on_color>
+        <color name="MAJOR" red="255" green="0" blue="0">
+        </color>
+      </on_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_19</name>
+      <pv_name>$(dev)M4V-M5V:skewL8SV45B</pv_name>
+      <x>215</x>
+      <y>104</y>
+      <width>110</width>
+      <format>6</format>
+      <show_units>false</show_units>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle_6</name>
+      <width>365</width>
+      <height>135</height>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_34</name>
+      <text>Jaw Skew Detection: </text>
+      <x>10</x>
+      <y>104</y>
+      <width>165</width>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_21</name>
+      <text>Bottom</text>
+      <x>205</x>
+      <y>10</y>
+      <width>150</width>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="18.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color red="255" green="255" blue="255">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="Grid" red="128" green="128" blue="128">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_width>2</border_width>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Text Entry_1</name>
+      <pv_name>$(dev)M4V-M5V:sSVB</pv_name>
+      <x>10</x>
+      <y>10</y>
+      <height>30</height>
+      <format>1</format>
+      <precision>2</precision>
+      <show_units>false</show_units>
+      <horizontal_alignment>1</horizontal_alignment>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_4</name>
+      <text>Set Point (mm)</text>
+      <x>10</x>
+      <y>40</y>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+    </widget>
+    <widget type="choice" version="2.0.0">
+      <name>Choice Button_1</name>
+      <pv_name>$(dev)M4V-M5V:cSVB</pv_name>
+      <x>115</x>
+      <y>10</y>
+      <width>60</width>
+      <height>80</height>
+      <horizontal>false</horizontal>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <items>
+        <item>Item 1</item>
+        <item>Item 2</item>
+      </items>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Action Button_15</name>
+      <actions execute_as_one="true">
+        <action type="open_display">
+          <file>motorTestMCR8.bob</file>
+          <macros>
+            <P>B:BL8COL_BLE_M4V:</P>
+            <M>mSVBU</M>
+          </macros>
+          <target>window</target>
+          <description>M4V - mSVB</description>
+        </action>
+        <action type="open_display">
+          <file>motorTestMCR8.bob</file>
+          <macros>
+            <P>B:BL8COL_BLE_M5V:</P>
+            <M>mSVBD</M>
+          </macros>
+          <target>window</target>
+          <description>M5V - mSVB</description>
+        </action>
+      </actions>
+      <text>M4V &amp; M5V - mSVB</text>
+      <x>205</x>
+      <y>60</y>
+      <width>150</width>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_5</name>
+      <text>Expert Controls</text>
+      <x>205</x>
+      <y>40</y>
+      <width>150</width>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>Group</name>
+      <x>10</x>
+      <y>60</y>
+      <width>100</width>
+      <height>35</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="action_button" version="3.0.0">
+        <name>Action Button_14</name>
+        <actions>
+          <action type="write_pv">
+            <pv_name>$(pv_name).PROC</pv_name>
+            <value>1</value>
+            <description>Enable Jaw</description>
+          </action>
+        </actions>
+        <pv_name>$(dev)M4V-M5V:enableJaw</pv_name>
+        <height>15</height>
+        <visible>false</visible>
+        <rules>
+          <rule name="Show Reset" prop_id="visible" out_exp="false">
+            <exp bool_exp="!pv0">
+              <value>true</value>
+            </exp>
+            <pv_name>$(dev)M4V-M5V:enableDisableJawMovement</pv_name>
+          </rule>
+        </rules>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="led" version="2.0.0">
+        <name>LED_4</name>
+        <pv_name>$(dev)M4V-M5V:enableDisableJawMovement</pv_name>
+        <y>15</y>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_16</name>
+        <pv_name>$(dev)M4V-M5V:enableDisableJawMovement</pv_name>
+        <x>45</x>
+        <y>15</y>
+        <width>55</width>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </font>
+        <show_units>false</show_units>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_25</name>
+        <text>Jaw</text>
+        <x>20</x>
+        <y>15</y>
+        <width>25</width>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </font>
+        <background_color>
+          <color name="Read_Background" red="240" green="240" blue="240">
+          </color>
+        </background_color>
+        <transparent>false</transparent>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+      </widget>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <x>1705</x>
+    <y>385</y>
+    <width>365</width>
+    <height>135</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="led" version="2.0.0">
+      <name>LED_10</name>
+      <pv_name>$(dev)M3V-M6V:skewL8SV36T</pv_name>
+      <x>185</x>
+      <y>105</y>
+      <on_color>
+        <color name="MAJOR" red="255" green="0" blue="0">
+        </color>
+      </on_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_15</name>
+      <pv_name>$(dev)M3V-M6V:skewL8SV36T</pv_name>
+      <x>215</x>
+      <y>105</y>
+      <format>6</format>
+      <show_units>false</show_units>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_33</name>
+      <text>Jaw Skew Detection: </text>
+      <x>10</x>
+      <y>105</y>
+      <width>165</width>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+    </widget>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle_7</name>
+      <width>365</width>
+      <height>135</height>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_20</name>
+      <text>Top</text>
+      <x>205</x>
+      <y>10</y>
+      <width>150</width>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="18.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color red="255" green="255" blue="255">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="Grid" red="128" green="128" blue="128">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_width>2</border_width>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Text Entry</name>
+      <pv_name>$(dev)M3V-M6V:sSVT</pv_name>
+      <x>10</x>
+      <y>10</y>
+      <height>30</height>
+      <format>1</format>
+      <precision>2</precision>
+      <show_units>false</show_units>
+      <horizontal_alignment>1</horizontal_alignment>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_1</name>
+      <text>Set Point (mm)</text>
+      <x>10</x>
+      <y>40</y>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+    </widget>
+    <widget type="choice" version="2.0.0">
+      <name>Choice Button</name>
+      <pv_name>$(dev)M3V-M6V:cSVT</pv_name>
+      <x>115</x>
+      <y>10</y>
+      <width>60</width>
+      <height>80</height>
+      <horizontal>false</horizontal>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <items>
+        <item>Item 1</item>
+        <item>Item 2</item>
+      </items>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Action Button_13</name>
+      <actions execute_as_one="true">
+        <action type="open_display">
+          <file>motorTestMCR8.bob</file>
+          <macros>
+            <P>B:BL8COL_BLE_M3V:</P>
+            <M>mSVTU</M>
+          </macros>
+          <target>window</target>
+          <description>M3V - mSVT</description>
+        </action>
+        <action type="open_display">
+          <file>motorTestMCR8.bob</file>
+          <macros>
+            <P>B:BL8COL_BLE_M6V:</P>
+            <M>mSVTD</M>
+          </macros>
+          <target>window</target>
+          <description>M6V - mSVT</description>
+        </action>
+      </actions>
+      <text>M3V &amp; M6V - mSVT</text>
+      <x>205</x>
+      <y>60</y>
+      <width>150</width>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_2</name>
+      <text>Expert Controls</text>
+      <x>205</x>
+      <y>40</y>
+      <width>150</width>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>Group</name>
+      <x>10</x>
+      <y>60</y>
+      <width>100</width>
+      <height>35</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="action_button" version="3.0.0">
+        <name>Action Button</name>
+        <actions>
+          <action type="write_pv">
+            <pv_name>$(pv_name).PROC</pv_name>
+            <value>1</value>
+            <description>Enable Jaw</description>
+          </action>
+        </actions>
+        <pv_name>$(dev)M3V-M6V:enableJaw</pv_name>
+        <height>15</height>
+        <visible>false</visible>
+        <rules>
+          <rule name="Show Reset" prop_id="visible" out_exp="false">
+            <exp bool_exp="!pv0">
+              <value>true</value>
+            </exp>
+            <pv_name>$(dev)M3V-M6V:enableDisableJawMovement</pv_name>
+          </rule>
+        </rules>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="led" version="2.0.0">
+        <name>LED</name>
+        <pv_name>$(dev)M3V-M6V:enableDisableJawMovement</pv_name>
+        <y>15</y>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_12</name>
+        <pv_name>$(dev)M3V-M6V:enableDisableJawMovement</pv_name>
+        <x>45</x>
+        <y>15</y>
+        <width>55</width>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </font>
+        <show_units>false</show_units>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_3</name>
+        <text>Jaw</text>
+        <x>20</x>
+        <y>15</y>
+        <width>25</width>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </font>
+        <background_color>
+          <color name="Read_Background" red="240" green="240" blue="240">
+          </color>
+        </background_color>
+        <transparent>false</transparent>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+      </widget>
+    </widget>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_18</name>
+    <macros>
+      <c>P</c>
+      <or>V</or>
+      <jp1>U</jp1>
+      <jp2>D</jp2>
+      <enum1>$(c)$(or)$(jp1)</enum1>
+      <enum2>$(c)$(or)$(jp2)</enum2>
+      <title>Vertical Primary Jaw Positions</title>
+      <pos1>Lower</pos1>
+      <pos2>Upper</pos2>
+    </macros>
+    <file>../Common/JawSingleV.bob</file>
+    <x>590</x>
+    <y>90</y>
+    <width>570</width>
+    <height>415</height>
+    <resize>4</resize>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_5</name>
+    <pv_name>$(dev)PVTD:TempC</pv_name>
+    <x>1020</x>
+    <y>70</y>
+    <width>50</width>
+    <format>1</format>
+    <precision>1</precision>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_4</name>
+    <pv_name>$(dev)PVTU:TempC</pv_name>
+    <x>635</x>
+    <y>70</y>
+    <width>50</width>
+    <format>1</format>
+    <precision>1</precision>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <x>635</x>
+    <y>500</y>
+    <width>435</width>
+    <height>165</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="group" version="3.0.0">
+      <name>Group</name>
+      <x>50</x>
+      <y>5</y>
+      <width>150</width>
+      <height>160</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="rectangle" version="2.0.0">
+        <name>Rectangle_11</name>
+        <width>150</width>
+        <height>160</height>
+        <line_width>1</line_width>
+        <line_color>
+          <color red="0" green="0" blue="0">
+          </color>
+        </line_color>
+        <transparent>true</transparent>
+      </widget>
+      <widget type="textentry" version="3.0.0">
+        <name>Text Entry_9</name>
+        <pv_name>$(dev)M1V:mPVU</pv_name>
+        <x>5</x>
+        <y>5</y>
+        <width>70</width>
+        <height>30</height>
+        <format>1</format>
+        <precision>2</precision>
+        <show_units>false</show_units>
+        <horizontal_alignment>1</horizontal_alignment>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_22</name>
+        <text>Set Point
+(mm)</text>
+        <x>5</x>
+        <y>45</y>
+        <width>70</width>
+        <height>30</height>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+      </widget>
+      <widget type="choice" version="2.0.0">
+        <name>Choice Button_9</name>
+        <pv_name>$(dev)M1V:mPVU.SPMG</pv_name>
+        <x>85</x>
+        <y>5</y>
+        <width>60</width>
+        <height>80</height>
+        <horizontal>false</horizontal>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <items>
+          <item>Item 1</item>
+          <item>Item 2</item>
+        </items>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_23</name>
+        <text>Expert Controls</text>
+        <x>20</x>
+        <y>106</y>
+        <width>110</width>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+      </widget>
+      <widget type="action_button" version="3.0.0">
+        <name>Action Button_8</name>
+        <actions>
+          <action type="open_display">
+            <file>motorTestMCR8.bob</file>
+            <macros>
+              <P>B:BL8COL_BLE_M1V:</P>
+              <M>mPVU</M>
+            </macros>
+            <target>window</target>
+            <description>M1V - mPVU</description>
+          </action>
+        </actions>
+        <x>20</x>
+        <y>126</y>
+        <width>110</width>
+        <tooltip>$(actions)</tooltip>
+      </widget>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>Group</name>
+      <x>225</x>
+      <y>5</y>
+      <width>150</width>
+      <height>160</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="rectangle" version="2.0.0">
+        <name>Rectangle_12</name>
+        <width>150</width>
+        <height>160</height>
+        <line_width>1</line_width>
+        <line_color>
+          <color red="0" green="0" blue="0">
+          </color>
+        </line_color>
+        <transparent>true</transparent>
+      </widget>
+      <widget type="textentry" version="3.0.0">
+        <name>Text Entry_6</name>
+        <pv_name>$(dev)M2V:mPVD</pv_name>
+        <x>5</x>
+        <y>5</y>
+        <width>70</width>
+        <height>30</height>
+        <format>1</format>
+        <precision>2</precision>
+        <show_units>false</show_units>
+        <horizontal_alignment>1</horizontal_alignment>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_13</name>
+        <text>Set Point
+(mm)</text>
+        <x>5</x>
+        <y>45</y>
+        <width>70</width>
+        <height>30</height>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+      </widget>
+      <widget type="choice" version="2.0.0">
+        <name>Choice Button_6</name>
+        <pv_name>$(dev)M2V:mPVD.SPMG</pv_name>
+        <x>85</x>
+        <y>5</y>
+        <width>60</width>
+        <height>80</height>
+        <horizontal>false</horizontal>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <items>
+          <item>Item 1</item>
+          <item>Item 2</item>
+        </items>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_14</name>
+        <text>Expert Controls</text>
+        <x>20</x>
+        <y>101</y>
+        <width>110</width>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+      </widget>
+      <widget type="action_button" version="3.0.0">
+        <name>Action Button_9</name>
+        <actions>
+          <action type="open_display">
+            <file>motorTestMCR8.bob</file>
+            <macros>
+              <P>B:BL8COL_BLE_M2V:</P>
+              <M>mPVD</M>
+            </macros>
+            <target>window</target>
+            <description>M2V - mPVD</description>
+          </action>
+        </actions>
+        <x>20</x>
+        <y>121</y>
+        <width>110</width>
+        <tooltip>$(actions)</tooltip>
+      </widget>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_6</name>
+      <pv_name>$(dev)PVBU:TempC</pv_name>
+      <width>50</width>
+      <format>1</format>
+      <precision>1</precision>
+      <wrap_words>false</wrap_words>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_7</name>
+      <pv_name>$(dev)PVBD:TempC</pv_name>
+      <x>385</x>
+      <width>50</width>
+      <format>1</format>
+      <precision>1</precision>
+      <wrap_words>false</wrap_words>
+    </widget>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_1</name>
+    <pv_name>$(dev)PHAD:TempC</pv_name>
+    <x>440</x>
+    <y>70</y>
+    <width>50</width>
+    <format>1</format>
+    <precision>1</precision>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_19</name>
+    <macros>
+      <c>P</c>
+      <or>H</or>
+      <jp1>U</jp1>
+      <jp2>D</jp2>
+      <enum1>$(c)$(or)$(jp1)</enum1>
+      <enum2>$(c)$(or)$(jp2)</enum2>
+      <title>Horizontal Primary Jaw Positions</title>
+      <pos1>Wall</pos1>
+      <pos2>Aisle</pos2>
+    </macros>
+    <file>../Common/JawSingleH.bob</file>
+    <x>10</x>
+    <y>90</y>
+    <width>570</width>
+    <height>415</height>
+    <resize>4</resize>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update</name>
+    <pv_name>$(dev)PHAU:TempC</pv_name>
+    <x>50</x>
+    <y>70</y>
+    <width>50</width>
+    <format>1</format>
+    <precision>1</precision>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <x>50</x>
+    <y>500</y>
+    <width>440</width>
+    <height>165</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="group" version="3.0.0">
+      <name>Group</name>
+      <x>55</x>
+      <y>5</y>
+      <width>150</width>
+      <height>160</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="rectangle" version="2.0.0">
+        <name>Rectangle_13</name>
+        <width>150</width>
+        <height>160</height>
+        <line_width>1</line_width>
+        <line_color>
+          <color red="0" green="0" blue="0">
+          </color>
+        </line_color>
+        <transparent>true</transparent>
+      </widget>
+      <widget type="textentry" version="3.0.0">
+        <name>Text Entry_7</name>
+        <pv_name>$(dev)M1H:mPHU</pv_name>
+        <x>5</x>
+        <y>5</y>
+        <width>70</width>
+        <height>30</height>
+        <format>1</format>
+        <precision>2</precision>
+        <show_units>false</show_units>
+        <horizontal_alignment>1</horizontal_alignment>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_15</name>
+        <text>Set Point
+(mm)</text>
+        <x>5</x>
+        <y>45</y>
+        <width>70</width>
+        <height>30</height>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+      </widget>
+      <widget type="choice" version="2.0.0">
+        <name>Choice Button_7</name>
+        <pv_name>$(dev)M1H:mPHU.SPMG</pv_name>
+        <x>85</x>
+        <y>6</y>
+        <width>60</width>
+        <height>80</height>
+        <horizontal>false</horizontal>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <items>
+          <item>Item 1</item>
+          <item>Item 2</item>
+        </items>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_16</name>
+        <text>Expert Controls</text>
+        <x>20</x>
+        <y>101</y>
+        <width>110</width>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+      </widget>
+      <widget type="action_button" version="3.0.0">
+        <name>Action Button_10</name>
+        <actions>
+          <action type="open_display">
+            <file>motorTestMCR8.bob</file>
+            <macros>
+              <P>B:BL8COL_BLE_M1H:</P>
+              <M>mPHU</M>
+            </macros>
+            <target>window</target>
+            <description>M1H - mPHU</description>
+          </action>
+        </actions>
+        <x>20</x>
+        <y>121</y>
+        <width>110</width>
+        <tooltip>$(actions)</tooltip>
+      </widget>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>Group</name>
+      <x>230</x>
+      <y>5</y>
+      <width>150</width>
+      <height>160</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="rectangle" version="2.0.0">
+        <name>Rectangle_14</name>
+        <width>150</width>
+        <height>160</height>
+        <line_width>1</line_width>
+        <line_color>
+          <color red="0" green="0" blue="0">
+          </color>
+        </line_color>
+        <transparent>true</transparent>
+      </widget>
+      <widget type="textentry" version="3.0.0">
+        <name>Text Entry_8</name>
+        <pv_name>$(dev)M2H:mPHD</pv_name>
+        <x>5</x>
+        <y>5</y>
+        <width>70</width>
+        <height>30</height>
+        <format>1</format>
+        <precision>2</precision>
+        <show_units>false</show_units>
+        <horizontal_alignment>1</horizontal_alignment>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_17</name>
+        <text>Set Point
+(mm)</text>
+        <x>5</x>
+        <y>45</y>
+        <width>70</width>
+        <height>30</height>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+      </widget>
+      <widget type="choice" version="2.0.0">
+        <name>Choice Button_8</name>
+        <pv_name>$(dev)M2H:mPHD.SPMG</pv_name>
+        <x>85</x>
+        <y>5</y>
+        <width>60</width>
+        <height>80</height>
+        <horizontal>false</horizontal>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <items>
+          <item>Item 1</item>
+          <item>Item 2</item>
+        </items>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_18</name>
+        <text>Expert Controls</text>
+        <x>20</x>
+        <y>101</y>
+        <width>110</width>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+      </widget>
+      <widget type="action_button" version="3.0.0">
+        <name>Action Button_11</name>
+        <actions>
+          <action type="open_display">
+            <file>motorTestMCR8.bob</file>
+            <macros>
+              <P>B:BL8COL_BLE_M2H:</P>
+              <M>mPHD</M>
+            </macros>
+            <target>window</target>
+            <description>M2H - mPHD</description>
+          </action>
+        </actions>
+        <x>20</x>
+        <y>121</y>
+        <width>110</width>
+        <tooltip>$(actions)</tooltip>
+      </widget>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_3</name>
+      <pv_name>$(dev)PHWD:TempC</pv_name>
+      <x>390</x>
+      <width>50</width>
+      <format>1</format>
+      <precision>1</precision>
+      <wrap_words>false</wrap_words>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_2</name>
+      <pv_name>$(dev)PHWU:TempC</pv_name>
+      <width>50</width>
+      <format>1</format>
+      <precision>1</precision>
+      <wrap_words>false</wrap_words>
+    </widget>
   </widget>
 </display>
