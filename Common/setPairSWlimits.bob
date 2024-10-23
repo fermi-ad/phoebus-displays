@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2024-10-23 14:36:50 by epics-->
+<!--Saved on 2024-10-23 15:00:18 by epics-->
 <display version="2.0.0">
   <name>SetLimits</name>
   <width>550</width>
-  <height>20</height>
+  <height>40</height>
   <grid_step_x>5</grid_step_x>
   <grid_step_y>5</grid_step_y>
   <widget type="textentry" version="3.0.0">
     <name>Text Entry_2</name>
-    <pv_name>$(dev)$(mot):setSWLowLimit</pv_name>
+    <pv_name>$(dev)$(m1)-$(m2):setSWLowLimit</pv_name>
     <x>200</x>
+    <y>10</y>
     <width>60</width>
     <format>1</format>
     <precision>1</precision>
@@ -18,7 +19,7 @@
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update</name>
-    <pv_name>$(dev)$(mot):m$(enum).LLM</pv_name>
+    <pv_name>$(dev)$(m1):m$(enum)U.LLM</pv_name>
     <x>120</x>
     <width>70</width>
     <format>1</format>
@@ -30,7 +31,7 @@
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label</name>
-    <text>$(mot) Lower Limit</text>
+    <text>$(m1) Lower Limit</text>
     <width>110</width>
     <transparent>false</transparent>
     <horizontal_alignment>1</horizontal_alignment>
@@ -39,8 +40,9 @@
   </widget>
   <widget type="textentry" version="3.0.0">
     <name>Text Entry_3</name>
-    <pv_name>$(dev)$(mot):setSWHighLimit</pv_name>
+    <pv_name>$(dev)$(m1)-$(m2):setSWHighLimit</pv_name>
     <x>490</x>
+    <y>10</y>
     <width>60</width>
     <format>1</format>
     <precision>1</precision>
@@ -49,7 +51,7 @@
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_1</name>
-    <pv_name>$(dev)$(mot):m$(enum).HLM</pv_name>
+    <pv_name>$(dev)$(m1):m$(enum)U.HLM</pv_name>
     <x>410</x>
     <width>70</width>
     <format>1</format>
@@ -61,8 +63,55 @@
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_1</name>
-    <text>$(mot) Upper Limit</text>
+    <text>$(m1) Upper Limit</text>
     <x>290</x>
+    <width>110</width>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_2</name>
+    <pv_name>$(dev)$(m2):m$(enum)D.LLM</pv_name>
+    <x>120</x>
+    <y>20</y>
+    <width>70</width>
+    <format>1</format>
+    <precision>1</precision>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_2</name>
+    <text>$(m2) Lower Limit</text>
+    <y>20</y>
+    <width>110</width>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_3</name>
+    <pv_name>$(dev)$(m2):m$(enum)D.HLM</pv_name>
+    <x>410</x>
+    <y>20</y>
+    <width>70</width>
+    <format>1</format>
+    <precision>1</precision>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_3</name>
+    <text>$(m2) Upper Limit</text>
+    <x>290</x>
+    <y>20</y>
     <width>110</width>
     <transparent>false</transparent>
     <horizontal_alignment>1</horizontal_alignment>
@@ -72,13 +121,15 @@
   <widget type="rectangle" version="2.0.0">
     <name>Rectangle</name>
     <width>260</width>
+    <height>40</height>
     <line_width>1</line_width>
     <transparent>true</transparent>
   </widget>
   <widget type="rectangle" version="2.0.0">
-    <name>Rectangle_1</name>
+    <name>Rectangle_3</name>
     <x>290</x>
     <width>260</width>
+    <height>40</height>
     <line_width>1</line_width>
     <transparent>true</transparent>
   </widget>
