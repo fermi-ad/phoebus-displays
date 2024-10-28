@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2024-10-23 17:35:34 by epics-->
+<!--Saved on 2024-10-27 19:10:18 by epics-->
 <display version="2.0.0">
   <name>BL8ColOverView</name>
   <macros>
@@ -361,7 +361,7 @@
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_10</name>
-    <pv_name>$(dev)SHW:TempC</pv_name>
+    <pv_name>$(dev)SHA:TempC</pv_name>
     <x>1395</x>
     <y>350</y>
     <width>50</width>
@@ -371,7 +371,7 @@
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_11</name>
-    <pv_name>$(dev)SHA:TempC</pv_name>
+    <pv_name>$(dev)SHW:TempC</pv_name>
     <x>1395</x>
     <y>70</y>
     <width>50</width>
@@ -444,7 +444,7 @@
   <widget type="group" version="3.0.0">
     <name>Group</name>
     <x>1240</x>
-    <y>530</y>
+    <y>385</y>
     <width>365</width>
     <height>135</height>
     <style>3</style>
@@ -672,239 +672,6 @@
         </color>
       </line_color>
       <transparent>true</transparent>
-    </widget>
-  </widget>
-  <widget type="group" version="3.0.0">
-    <name>Group</name>
-    <x>1240</x>
-    <y>385</y>
-    <width>365</width>
-    <height>135</height>
-    <style>3</style>
-    <transparent>true</transparent>
-    <widget type="led" version="2.0.0">
-      <name>LED_9</name>
-      <pv_name>$(dev)M4H-M5H:skewL8SH45A</pv_name>
-      <x>185</x>
-      <y>105</y>
-      <on_color>
-        <color name="MAJOR" red="255" green="0" blue="0">
-        </color>
-      </on_color>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-    </widget>
-    <widget type="textupdate" version="2.0.0">
-      <name>Text Update_14</name>
-      <pv_name>$(dev)M4H-M5H:skewL8SH45A</pv_name>
-      <x>215</x>
-      <y>105</y>
-      <format>6</format>
-      <show_units>false</show_units>
-      <vertical_alignment>1</vertical_alignment>
-      <wrap_words>false</wrap_words>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-    </widget>
-    <widget type="rectangle" version="2.0.0">
-      <name>Rectangle_5</name>
-      <width>365</width>
-      <height>135</height>
-      <line_width>1</line_width>
-      <line_color>
-        <color red="0" green="0" blue="0">
-        </color>
-      </line_color>
-      <transparent>true</transparent>
-    </widget>
-    <widget type="label" version="2.0.0">
-      <name>Label_19</name>
-      <text>Aisle</text>
-      <x>205</x>
-      <y>10</y>
-      <width>150</width>
-      <font>
-        <font family="Liberation Sans" style="BOLD" size="18.0">
-        </font>
-      </font>
-      <foreground_color>
-        <color red="255" green="255" blue="255">
-        </color>
-      </foreground_color>
-      <background_color>
-        <color name="Grid" red="128" green="128" blue="128">
-        </color>
-      </background_color>
-      <transparent>false</transparent>
-      <horizontal_alignment>1</horizontal_alignment>
-      <vertical_alignment>1</vertical_alignment>
-      <wrap_words>false</wrap_words>
-      <border_width>2</border_width>
-    </widget>
-    <widget type="choice" version="2.0.0">
-      <name>Choice Button_2</name>
-      <pv_name>$(dev)M4H-M5H:cSHA</pv_name>
-      <x>115</x>
-      <y>10</y>
-      <width>60</width>
-      <height>80</height>
-      <horizontal>false</horizontal>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-      <items>
-        <item>Item 1</item>
-        <item>Item 2</item>
-      </items>
-    </widget>
-    <widget type="action_button" version="3.0.0">
-      <name>Action Button_16</name>
-      <actions execute_as_one="true">
-        <action type="open_display">
-          <file>motorTestMCR8.bob</file>
-          <macros>
-            <P>B:BL8COL_BLE_M4H:</P>
-            <M>mSHAU</M>
-          </macros>
-          <target>window</target>
-          <description>M4H- mSHA</description>
-        </action>
-        <action type="open_display">
-          <file>motorTestMCR8.bob</file>
-          <macros>
-            <P>B:BL8COL_BLE_M5H:</P>
-            <M>mSHAD</M>
-          </macros>
-          <target>window</target>
-          <description>M5H - mSHA</description>
-        </action>
-      </actions>
-      <text>M4H &amp; M5H - mSHA</text>
-      <x>205</x>
-      <y>60</y>
-      <width>150</width>
-      <tooltip>$(actions)</tooltip>
-    </widget>
-    <widget type="label" version="2.0.0">
-      <name>Label_7</name>
-      <text>Expert Controls</text>
-      <x>205</x>
-      <y>41</y>
-      <width>150</width>
-      <font>
-        <font family="Liberation Sans" style="BOLD" size="14.0">
-        </font>
-      </font>
-      <horizontal_alignment>1</horizontal_alignment>
-      <vertical_alignment>1</vertical_alignment>
-      <wrap_words>false</wrap_words>
-    </widget>
-    <widget type="textentry" version="3.0.0">
-      <name>Text Entry_2</name>
-      <pv_name>$(dev)M4H-M5H:sSHA</pv_name>
-      <x>10</x>
-      <y>11</y>
-      <height>30</height>
-      <format>1</format>
-      <precision>2</precision>
-      <show_units>false</show_units>
-      <horizontal_alignment>1</horizontal_alignment>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-    </widget>
-    <widget type="label" version="2.0.0">
-      <name>Label_6</name>
-      <text>Set Point (mm)</text>
-      <x>10</x>
-      <y>41</y>
-      <font>
-        <font family="Liberation Sans" style="BOLD" size="14.0">
-        </font>
-      </font>
-      <horizontal_alignment>2</horizontal_alignment>
-      <vertical_alignment>1</vertical_alignment>
-      <wrap_words>false</wrap_words>
-    </widget>
-    <widget type="group" version="3.0.0">
-      <name>Group_2</name>
-      <x>10</x>
-      <y>61</y>
-      <width>100</width>
-      <height>35</height>
-      <style>3</style>
-      <transparent>true</transparent>
-      <widget type="action_button" version="3.0.0">
-        <name>Action Button_19</name>
-        <actions>
-          <action type="write_pv">
-            <pv_name>$(pv_name).PROC</pv_name>
-            <value>1</value>
-            <description>Enable Jaw</description>
-          </action>
-        </actions>
-        <pv_name>$(dev)M4H-M5H:enableJaw</pv_name>
-        <height>15</height>
-        <visible>false</visible>
-        <rules>
-          <rule name="Show Reset" prop_id="visible" out_exp="false">
-            <exp bool_exp="!pv0">
-              <value>true</value>
-            </exp>
-            <pv_name>$(dev)M4H-M5H:enableDisableJawMovement</pv_name>
-          </rule>
-        </rules>
-        <border_alarm_sensitive>false</border_alarm_sensitive>
-      </widget>
-      <widget type="led" version="2.0.0">
-        <name>LED_6</name>
-        <pv_name>$(dev)M4H-M5H:enableDisableJawMovement</pv_name>
-        <y>15</y>
-        <border_alarm_sensitive>false</border_alarm_sensitive>
-      </widget>
-      <widget type="textupdate" version="2.0.0">
-        <name>Text Update_18</name>
-        <pv_name>$(dev)M4H-M5H:enableDisableJawMovement</pv_name>
-        <x>45</x>
-        <y>15</y>
-        <width>55</width>
-        <font>
-          <font family="Liberation Sans" style="REGULAR" size="12.0">
-          </font>
-        </font>
-        <show_units>false</show_units>
-        <horizontal_alignment>1</horizontal_alignment>
-        <vertical_alignment>1</vertical_alignment>
-        <wrap_words>false</wrap_words>
-        <border_alarm_sensitive>false</border_alarm_sensitive>
-      </widget>
-      <widget type="label" version="2.0.0">
-        <name>Label_28</name>
-        <text>Jaw</text>
-        <x>20</x>
-        <y>15</y>
-        <width>25</width>
-        <font>
-          <font family="Liberation Sans" style="REGULAR" size="12.0">
-          </font>
-        </font>
-        <background_color>
-          <color name="Read_Background" red="240" green="240" blue="240">
-          </color>
-        </background_color>
-        <transparent>false</transparent>
-        <horizontal_alignment>1</horizontal_alignment>
-        <vertical_alignment>1</vertical_alignment>
-        <wrap_words>false</wrap_words>
-      </widget>
-    </widget>
-    <widget type="label" version="2.0.0">
-      <name>Label_32</name>
-      <text>Jaw Skew Detection: </text>
-      <x>10</x>
-      <y>105</y>
-      <width>165</width>
-      <font>
-        <font family="Liberation Sans" style="BOLD" size="16.0">
-        </font>
-      </font>
-      <horizontal_alignment>2</horizontal_alignment>
-      <vertical_alignment>1</vertical_alignment>
-      <wrap_words>false</wrap_words>
     </widget>
   </widget>
   <widget type="group" version="3.0.0">
@@ -1632,7 +1399,7 @@
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_1</name>
-    <pv_name>$(dev)PHAD:TempC</pv_name>
+    <pv_name>$(dev)PHWD:TempC</pv_name>
     <x>440</x>
     <y>70</y>
     <width>50</width>
@@ -1662,7 +1429,7 @@
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update</name>
-    <pv_name>$(dev)PHAU:TempC</pv_name>
+    <pv_name>$(dev)PHWU:TempC</pv_name>
     <x>50</x>
     <y>70</y>
     <width>50</width>
@@ -1870,7 +1637,7 @@
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_3</name>
-      <pv_name>$(dev)PHWD:TempC</pv_name>
+      <pv_name>$(dev)PHAD:TempC</pv_name>
       <x>390</x>
       <width>50</width>
       <format>1</format>
@@ -1879,10 +1646,243 @@
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_2</name>
-      <pv_name>$(dev)PHWU:TempC</pv_name>
+      <pv_name>$(dev)PHAU:TempC</pv_name>
       <width>50</width>
       <format>1</format>
       <precision>1</precision>
+      <wrap_words>false</wrap_words>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <x>1240</x>
+    <y>530</y>
+    <width>365</width>
+    <height>135</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="led" version="2.0.0">
+      <name>LED_9</name>
+      <pv_name>$(dev)M4H-M5H:skewL8SH45A</pv_name>
+      <x>185</x>
+      <y>105</y>
+      <on_color>
+        <color name="MAJOR" red="255" green="0" blue="0">
+        </color>
+      </on_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_14</name>
+      <pv_name>$(dev)M4H-M5H:skewL8SH45A</pv_name>
+      <x>215</x>
+      <y>105</y>
+      <format>6</format>
+      <show_units>false</show_units>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle_5</name>
+      <width>365</width>
+      <height>135</height>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_19</name>
+      <text>Aisle</text>
+      <x>205</x>
+      <y>10</y>
+      <width>150</width>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="18.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color red="255" green="255" blue="255">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="Grid" red="128" green="128" blue="128">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_width>2</border_width>
+    </widget>
+    <widget type="choice" version="2.0.0">
+      <name>Choice Button_2</name>
+      <pv_name>$(dev)M4H-M5H:cSHA</pv_name>
+      <x>115</x>
+      <y>10</y>
+      <width>60</width>
+      <height>80</height>
+      <horizontal>false</horizontal>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <items>
+        <item>Item 1</item>
+        <item>Item 2</item>
+      </items>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Action Button_16</name>
+      <actions execute_as_one="true">
+        <action type="open_display">
+          <file>motorTestMCR8.bob</file>
+          <macros>
+            <P>B:BL8COL_BLE_M4H:</P>
+            <M>mSHAU</M>
+          </macros>
+          <target>window</target>
+          <description>M4H- mSHA</description>
+        </action>
+        <action type="open_display">
+          <file>motorTestMCR8.bob</file>
+          <macros>
+            <P>B:BL8COL_BLE_M5H:</P>
+            <M>mSHAD</M>
+          </macros>
+          <target>window</target>
+          <description>M5H - mSHA</description>
+        </action>
+      </actions>
+      <text>M4H &amp; M5H - mSHA</text>
+      <x>205</x>
+      <y>60</y>
+      <width>150</width>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_7</name>
+      <text>Expert Controls</text>
+      <x>205</x>
+      <y>41</y>
+      <width>150</width>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Text Entry_2</name>
+      <pv_name>$(dev)M4H-M5H:sSHA</pv_name>
+      <x>10</x>
+      <y>11</y>
+      <height>30</height>
+      <format>1</format>
+      <precision>2</precision>
+      <show_units>false</show_units>
+      <horizontal_alignment>1</horizontal_alignment>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_6</name>
+      <text>Set Point (mm)</text>
+      <x>10</x>
+      <y>41</y>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>Group_2</name>
+      <x>10</x>
+      <y>61</y>
+      <width>100</width>
+      <height>35</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="action_button" version="3.0.0">
+        <name>Action Button_19</name>
+        <actions>
+          <action type="write_pv">
+            <pv_name>$(pv_name).PROC</pv_name>
+            <value>1</value>
+            <description>Enable Jaw</description>
+          </action>
+        </actions>
+        <pv_name>$(dev)M4H-M5H:enableJaw</pv_name>
+        <height>15</height>
+        <visible>false</visible>
+        <rules>
+          <rule name="Show Reset" prop_id="visible" out_exp="false">
+            <exp bool_exp="!pv0">
+              <value>true</value>
+            </exp>
+            <pv_name>$(dev)M4H-M5H:enableDisableJawMovement</pv_name>
+          </rule>
+        </rules>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="led" version="2.0.0">
+        <name>LED_6</name>
+        <pv_name>$(dev)M4H-M5H:enableDisableJawMovement</pv_name>
+        <y>15</y>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_18</name>
+        <pv_name>$(dev)M4H-M5H:enableDisableJawMovement</pv_name>
+        <x>45</x>
+        <y>15</y>
+        <width>55</width>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </font>
+        <show_units>false</show_units>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_28</name>
+        <text>Jaw</text>
+        <x>20</x>
+        <y>15</y>
+        <width>25</width>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </font>
+        <background_color>
+          <color name="Read_Background" red="240" green="240" blue="240">
+          </color>
+        </background_color>
+        <transparent>false</transparent>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+      </widget>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_32</name>
+      <text>Jaw Skew Detection: </text>
+      <x>10</x>
+      <y>105</y>
+      <width>165</width>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
       <wrap_words>false</wrap_words>
     </widget>
   </widget>
