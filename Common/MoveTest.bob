@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2024-12-12 13:06:23 by epics-->
+<!--Saved on 2024-12-12 16:28:32 by epics-->
 <display version="2.0.0">
   <name>MoveTest</name>
   <macros>
@@ -171,8 +171,7 @@
     <rules>
       <rule name="Jaw Movement" prop_id="y" out_exp="true">
         <exp bool_exp="1">
-<!--          <expression>130.0-10.36*pv0</expression> -->
-          <value>130.0-10.36*pv0</value>
+          <expression>130.0-8.83*pv0</expression>
         </exp>
         <pv_name>FNAL:TEST_CTRL_SYS:COS</pv_name>
       </rule>
@@ -194,22 +193,43 @@
   <widget type="textupdate" version="2.0.0">
     <name>Text Update</name>
     <pv_name>FNAL:TEST_CTRL_SYS:COS</pv_name>
-    <x>410</x>
-    <y>170</y>
-    <width>105</width>
+    <x>20</x>
+    <y>75</y>
+    <width>70</width>
     <height>25</height>
     <horizontal_alignment>1</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
   </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_2</name>
+    <x>255</x>
+    <y>130</y>
+    <width>150</width>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="0" green="0" blue="0" alpha="100">
+      </color>
+    </background_color>
+    <rules>
+      <rule name="Jaw Movement" prop_id="y" out_exp="true">
+        <exp bool_exp="1">
+          <expression>130.0-8.83*pv0</expression>
+        </exp>
+        <pv_name>FNAL:TEST_CTRL_SYS:SIN</pv_name>
+      </rule>
+    </rules>
+  </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_1</name>
-    <pv_name>PIP2IT:pHB650_VAC_PCC101:VacP</pv_name>
-    <x>410</x>
-    <y>80</y>
-    <width>105</width>
+    <pv_name>FNAL:TEST_CTRL_SYS:SIN</pv_name>
+    <x>415</x>
+    <y>75</y>
+    <width>70</width>
     <height>25</height>
-    <format>2</format>
-    <precision>1</precision>
     <horizontal_alignment>1</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
   </widget>
