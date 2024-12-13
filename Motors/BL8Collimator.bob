@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2024-12-13 09:18:24 by epics-->
+<!--Saved on 2024-12-13 13:57:23 by epics-->
 <display version="2.0.0">
   <name>BL8ColOverView</name>
   <macros>
     <dev>B:BL8COL_BLE_</dev>
   </macros>
   <width>2150</width>
-  <height>900</height>
+  <height>1300</height>
   <grid_step_x>5</grid_step_x>
   <grid_step_y>5</grid_step_y>
   <widget type="rectangle" version="2.0.0">
@@ -1897,5 +1897,167 @@
       <vertical_alignment>1</vertical_alignment>
       <wrap_words>false</wrap_words>
     </widget>
+  </widget>
+  <widget type="stripchart" version="2.1.0">
+    <name>Primary Jaw Temperatures</name>
+    <x>20</x>
+    <y>910</y>
+    <width>1150</width>
+    <height>370</height>
+    <foreground_color>
+      <color red="242" green="242" blue="242">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Header_Background" red="77" green="77" blue="77">
+      </color>
+    </background_color>
+    <show_grid>true</show_grid>
+    <title>Primary Jaw Temperatures</title>
+    <show_legend>true</show_legend>
+    <start>60 minutes</start>
+    <y_axes>
+      <y_axis>
+        <title>Temperature (C)</title>
+        <autoscale>false</autoscale>
+        <log_scale>false</log_scale>
+        <minimum>0.0</minimum>
+        <maximum>100.0</maximum>
+        <show_grid>true</show_grid>
+        <visible>true</visible>
+        <color>
+          <color red="242" green="242" blue="242">
+          </color>
+        </color>
+      </y_axis>
+    </y_axes>
+    <traces>
+      <trace>
+        <name>PHAU</name>
+        <y_pv>$(dev)PHAU:TempC</y_pv>
+        <axis>0</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color red="0" green="0" blue="255">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name>PHAD</name>
+        <y_pv>$(dev)PHAD:TempC</y_pv>
+        <axis>0</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color red="255" green="0" blue="0">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name>PHWU</name>
+        <y_pv>$(dev)PHWU:TempC</y_pv>
+        <axis>0</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color red="0" green="255" blue="0">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name>PHWD</name>
+        <y_pv>$(dev)PHWD:TempC</y_pv>
+        <axis>0</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color red="170" green="0" blue="255">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name>PVBU</name>
+        <y_pv>$(dev)PVBU:TempC</y_pv>
+        <axis>0</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color red="255" green="255" blue="0">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name>PVBD</name>
+        <y_pv>$(dev)PVBD:TempC</y_pv>
+        <axis>0</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color red="0" green="234" blue="255">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name>PVTU</name>
+        <y_pv>$(dev)PVTU:TempC</y_pv>
+        <axis>0</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color red="255" green="127" blue="0">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name>PVTD</name>
+        <y_pv>$(dev)PVTD:TempC</y_pv>
+        <axis>0</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color red="191" green="255" blue="0">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name>$(traces[8].y_pv)</name>
+        <y_pv></y_pv>
+        <axis>0</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color red="0" green="149" blue="255">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+    </traces>
   </widget>
 </display>
