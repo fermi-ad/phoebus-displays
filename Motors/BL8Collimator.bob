@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2024-12-13 15:18:52 by epics-->
+<!--Saved on 2024-12-14 19:10:36 by epics-->
 <display version="2.0.0">
   <name>BL8ColOverView</name>
   <macros>
     <dev>B:BL8COL_BLE_</dev>
   </macros>
   <width>2150</width>
-  <height>1300</height>
+  <height>1270</height>
   <grid_step_x>5</grid_step_x>
   <grid_step_y>5</grid_step_y>
   <widget type="rectangle" version="2.0.0">
@@ -1903,17 +1903,14 @@
     <x>20</x>
     <y>910</y>
     <width>1150</width>
-    <height>370</height>
-    <foreground_color>
-      <color red="242" green="242" blue="242">
-      </color>
-    </foreground_color>
+    <height>350</height>
     <background_color>
       <color name="Header_Background" red="77" green="77" blue="77">
       </color>
     </background_color>
     <show_grid>true</show_grid>
     <title>Primary Jaw Temperatures</title>
+    <show_toolbar>false</show_toolbar>
     <show_legend>true</show_legend>
     <start>60 minutes</start>
     <y_axes>
@@ -1926,7 +1923,7 @@
         <show_grid>true</show_grid>
         <visible>true</visible>
         <color>
-          <color red="242" green="242" blue="242">
+          <color name="Text" red="0" green="0" blue="0">
           </color>
         </color>
       </y_axis>
@@ -2044,13 +2041,88 @@
         <point_size>10</point_size>
         <visible>true</visible>
       </trace>
+    </traces>
+  </widget>
+  <widget type="stripchart" version="2.1.0">
+    <name>Secondary Jaw Temperatures_1</name>
+    <x>1180</x>
+    <y>910</y>
+    <width>1150</width>
+    <height>350</height>
+    <background_color>
+      <color name="Header_Background" red="77" green="77" blue="77">
+      </color>
+    </background_color>
+    <show_grid>true</show_grid>
+    <title>Secondary Jaw Temperatures</title>
+    <show_toolbar>false</show_toolbar>
+    <show_legend>true</show_legend>
+    <start>60 minutes</start>
+    <y_axes>
+      <y_axis>
+        <title>Temperature (C)</title>
+        <autoscale>false</autoscale>
+        <log_scale>false</log_scale>
+        <minimum>0.0</minimum>
+        <maximum>100.0</maximum>
+        <show_grid>true</show_grid>
+        <visible>true</visible>
+        <color>
+          <color name="Text" red="0" green="0" blue="0">
+          </color>
+        </color>
+      </y_axis>
+    </y_axes>
+    <traces>
       <trace>
-        <name>$(traces[8].y_pv)</name>
-        <y_pv></y_pv>
+        <name>SHA</name>
+        <y_pv>$(dev)SHA:TempC</y_pv>
         <axis>0</axis>
         <trace_type>2</trace_type>
         <color>
-          <color red="0" green="149" blue="255">
+          <color red="0" green="0" blue="255">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name>SHW</name>
+        <y_pv>$(dev)SHW:TempC</y_pv>
+        <axis>0</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color red="255" green="0" blue="0">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name>SVT</name>
+        <y_pv>$(dev)SVT:TempC</y_pv>
+        <axis>0</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color red="0" green="255" blue="0">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name>SVB</name>
+        <y_pv>$(dev)SVB:TempC</y_pv>
+        <axis>0</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color red="170" green="0" blue="255">
           </color>
         </color>
         <line_width>2</line_width>
