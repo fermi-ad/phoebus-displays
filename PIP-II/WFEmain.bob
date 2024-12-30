@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2024-11-27 15:37:09 by epics-->
+<!--Saved on 2024-12-30 08:10:00 by epics-->
 <display version="2.0.0">
   <name>WFE Main</name>
   <macros>
-    <dev>SCL:WFE_BLE_</dev>
+    <devl>WFE:LEBT_BLE_</devl>
+    <devm>WFE:MEBT_BLE_</devm>
   </macros>
   <width>1240</width>
   <grid_step_x>4</grid_step_x>
@@ -34,24 +35,804 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type="action_button" version="3.0.0">
+    <name>Action Button_41</name>
+    <actions>
+      <action type="open_display">
+        <file>Common/ble-embedded-displays/BLEcorrectors.bob</file>
+        <macros>
+          <enum1>XCOR01</enum1>
+          <enum2>YCOR01</enum2>
+          <dev>$(devm)</dev>
+        </macros>
+        <target>window</target>
+        <description>XCOR01 &amp; YCOR01</description>
+      </action>
+    </actions>
+    <pv_name>$(devm)XCOR01:Current</pv_name>
+    <text></text>
+    <x>450</x>
+    <y>192</y>
+    <width>4</width>
+    <height>24</height>
+    <transparent>true</transparent>
+    <tooltip>$(actions)
+$(pv_name)
+$(pv_value)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_60</name>
+    <actions>
+      <action type="open_display">
+        <file>Common/ble-embedded-displays/BLEcollimator.bob</file>
+        <macros>
+          <enum>COL1</enum>
+          <dev>$(devm)</dev>
+        </macros>
+        <target>window</target>
+        <description>COL1</description>
+      </action>
+    </actions>
+    <pv_name>$(devm)COL1:Voltage</pv_name>
+    <text></text>
+    <x>460</x>
+    <y>165</y>
+    <width>5</width>
+    <height>50</height>
+    <transparent>true</transparent>
+    <tooltip>$(actions)
+$(pv_name)
+$(pv_value)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_64</name>
+    <actions>
+      <action type="open_display">
+        <file>Common/ble-embedded-displays/BLEbuncherCavity.bob</file>
+        <macros>
+          <enum>CAV1</enum>
+          <dev>$(devm)</dev>
+        </macros>
+        <target>window</target>
+        <description>CAV1</description>
+      </action>
+    </actions>
+    <pv_name>$(devm)CAV1:Voltage</pv_name>
+    <text></text>
+    <x>468</x>
+    <y>165</y>
+    <width>16</width>
+    <height>50</height>
+    <transparent>true</transparent>
+    <tooltip>$(actions)
+$(pv_name)
+$(pv_value)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button</name>
+    <actions>
+      <action type="open_display">
+        <file>Common/ble-embedded-displays/BLEquadrupole.bob</file>
+        <macros>
+          <enum>QD01D</enum>
+          <dev>$(devm)</dev>
+        </macros>
+        <target>window</target>
+        <description>QD01D</description>
+      </action>
+    </actions>
+    <pv_name>$(devm)QD01D:Current</pv_name>
+    <text></text>
+    <x>430</x>
+    <y>192</y>
+    <width>8</width>
+    <height>24</height>
+    <transparent>true</transparent>
+    <tooltip>$(actions)
+$(pv_name)
+$(pv_value)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_1</name>
+    <actions>
+      <action type="open_display">
+        <file>Common/ble-embedded-displays/BLEquadrupole.bob</file>
+        <macros>
+          <enum>QD01F</enum>
+          <dev>$(devm)</dev>
+        </macros>
+        <target>window</target>
+        <description>QD01F</description>
+      </action>
+    </actions>
+    <pv_name>$(devm)QD01F:Current</pv_name>
+    <text></text>
+    <x>441</x>
+    <y>192</y>
+    <width>8</width>
+    <height>24</height>
+    <transparent>true</transparent>
+    <tooltip>$(actions)
+$(pv_name)
+$(pv_value)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_2</name>
+    <actions>
+      <action type="open_display">
+        <file>Common/ble-embedded-displays/BLEquadrupole.bob</file>
+        <macros>
+          <enum>QD02D</enum>
+          <dev>$(devm)</dev>
+        </macros>
+        <target>window</target>
+        <description>QD02D</description>
+      </action>
+    </actions>
+    <pv_name>$(devm)QD02D:Current</pv_name>
+    <text></text>
+    <x>487</x>
+    <y>192</y>
+    <width>8</width>
+    <height>24</height>
+    <transparent>true</transparent>
+    <tooltip>$(actions)
+$(pv_name)
+$(pv_value)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_68</name>
+    <actions>
+      <action type="open_display">
+        <file>Common/ble-embedded-displays/BLEkicker.bob</file>
+        <macros>
+          <enum>KICK1</enum>
+          <dev>$(devm)</dev>
+        </macros>
+        <target>window</target>
+        <description>KICK1</description>
+      </action>
+    </actions>
+    <pv_name>$(devm)KICK1:Voltage</pv_name>
+    <text></text>
+    <x>587</x>
+    <y>191</y>
+    <width>43</width>
+    <height>21</height>
+    <transparent>true</transparent>
+    <tooltip>$(actions)
+$(pv_name)
+$(pv_value)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_70</name>
+    <actions>
+      <action type="open_display">
+        <file>Common/ble-embedded-displays/BLEkicker.bob</file>
+        <macros>
+          <enum>KICK2</enum>
+          <dev>$(devm)</dev>
+        </macros>
+        <target>window</target>
+        <description>KICK2</description>
+      </action>
+    </actions>
+    <pv_name>$(devm)KICK2:Voltage</pv_name>
+    <text></text>
+    <x>736</x>
+    <y>191</y>
+    <width>43</width>
+    <height>21</height>
+    <transparent>true</transparent>
+    <tooltip>$(actions)
+$(pv_name)
+$(pv_value)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_3</name>
+    <actions>
+      <action type="open_display">
+        <file>Common/ble-embedded-displays/BLEquadrupole.bob</file>
+        <macros>
+          <enum>QD02F</enum>
+          <dev>$(devm)</dev>
+        </macros>
+        <target>window</target>
+        <description>QD02F</description>
+      </action>
+    </actions>
+    <pv_name>$(devm)QD02F:Current</pv_name>
+    <text></text>
+    <x>499</x>
+    <y>192</y>
+    <width>8</width>
+    <height>24</height>
+    <transparent>true</transparent>
+    <tooltip>$(actions)
+$(pv_name)
+$(pv_value)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_4</name>
+    <actions>
+      <action type="open_display">
+        <file>Common/ble-embedded-displays/BLEquadrupole.bob</file>
+        <macros>
+          <enum>QT03D1</enum>
+          <dev>$(devm)</dev>
+        </macros>
+        <target>window</target>
+        <description>QT03D1</description>
+      </action>
+    </actions>
+    <pv_name>$(devm)QT03D1:Current</pv_name>
+    <text></text>
+    <x>556</x>
+    <y>192</y>
+    <width>8</width>
+    <height>24</height>
+    <transparent>true</transparent>
+    <tooltip>$(actions)
+$(pv_name)
+$(pv_value)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_5</name>
+    <actions>
+      <action type="open_display">
+        <file>Common/ble-embedded-displays/BLEquadrupole.bob</file>
+        <macros>
+          <enum>QT03F2</enum>
+          <dev>$(devm)</dev>
+        </macros>
+        <target>window</target>
+        <description>QT03F2</description>
+      </action>
+    </actions>
+    <pv_name>$(devm)QT03F2:Current</pv_name>
+    <text></text>
+    <x>566</x>
+    <y>192</y>
+    <width>8</width>
+    <height>24</height>
+    <transparent>true</transparent>
+    <tooltip>$(actions)
+$(pv_name)
+$(pv_value)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_16</name>
+    <actions>
+      <action type="open_display">
+        <file>Common/ble-embedded-displays/BLEquadrupole.bob</file>
+        <macros>
+          <enum>QT03D3</enum>
+          <dev>$(devm)</dev>
+        </macros>
+        <target>window</target>
+        <description>QT03D3</description>
+      </action>
+    </actions>
+    <pv_name>$(devm)QT03D3:Current</pv_name>
+    <text></text>
+    <x>576</x>
+    <y>192</y>
+    <width>5</width>
+    <height>24</height>
+    <transparent>true</transparent>
+    <tooltip>$(actions)
+$(pv_name)
+$(pv_value)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_17</name>
+    <actions>
+      <action type="open_display">
+        <file>Common/ble-embedded-displays/BLEquadrupole.bob</file>
+        <macros>
+          <enum>QT04D1</enum>
+          <dev>$(devm)</dev>
+        </macros>
+        <target>window</target>
+        <description>QT04D1</description>
+      </action>
+    </actions>
+    <pv_name>$(devm)QT04D1:Current</pv_name>
+    <text></text>
+    <x>632</x>
+    <y>192</y>
+    <width>8</width>
+    <height>24</height>
+    <transparent>true</transparent>
+    <tooltip>$(actions)
+$(pv_name)
+$(pv_value)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_18</name>
+    <actions>
+      <action type="open_display">
+        <file>Common/ble-embedded-displays/BLEquadrupole.bob</file>
+        <macros>
+          <enum>QT04F2</enum>
+          <dev>$(devm)</dev>
+        </macros>
+        <target>window</target>
+        <description>QT04F2</description>
+      </action>
+    </actions>
+    <pv_name>$(devm)QT04F2:Current</pv_name>
+    <text></text>
+    <x>639</x>
+    <y>192</y>
+    <width>8</width>
+    <height>24</height>
+    <transparent>true</transparent>
+    <tooltip>$(actions)
+$(pv_name)
+$(pv_value)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_19</name>
+    <actions>
+      <action type="open_display">
+        <file>Common/ble-embedded-displays/BLEquadrupole.bob</file>
+        <macros>
+          <enum>QT04D3</enum>
+          <dev>$(devm)</dev>
+        </macros>
+        <target>window</target>
+        <description>QT04D3</description>
+      </action>
+    </actions>
+    <pv_name>$(devm)QT04D3:Current</pv_name>
+    <text></text>
+    <x>650</x>
+    <y>192</y>
+    <width>6</width>
+    <height>24</height>
+    <transparent>true</transparent>
+    <tooltip>$(actions)
+$(pv_name)
+$(pv_value)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_20</name>
+    <actions>
+      <action type="open_display">
+        <file>Common/ble-embedded-displays/BLEquadrupole.bob</file>
+        <macros>
+          <enum>QT05D1</enum>
+          <dev>$(devm)</dev>
+        </macros>
+        <target>window</target>
+        <description>QT05D1</description>
+      </action>
+    </actions>
+    <pv_name>$(devm)QT05D1:Current</pv_name>
+    <text></text>
+    <x>707</x>
+    <y>192</y>
+    <width>6</width>
+    <height>24</height>
+    <transparent>true</transparent>
+    <tooltip>$(actions)
+$(pv_name)
+$(pv_value)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_21</name>
+    <actions>
+      <action type="open_display">
+        <file>Common/ble-embedded-displays/BLEquadrupole.bob</file>
+        <macros>
+          <enum>QT05F2</enum>
+          <dev>$(devm)</dev>
+        </macros>
+        <target>window</target>
+        <description>QT05F2</description>
+      </action>
+    </actions>
+    <pv_name>$(devm)QT05F2:Current</pv_name>
+    <text></text>
+    <x>714</x>
+    <y>192</y>
+    <width>8</width>
+    <height>24</height>
+    <transparent>true</transparent>
+    <tooltip>$(actions)
+$(pv_name)
+$(pv_value)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_22</name>
+    <actions>
+      <action type="open_display">
+        <file>Common/ble-embedded-displays/BLEquadrupole.bob</file>
+        <macros>
+          <enum>QT05D3</enum>
+          <dev>$(devm)</dev>
+        </macros>
+        <target>window</target>
+        <description>QT05D3</description>
+      </action>
+    </actions>
+    <pv_name>$(devm)QT05D3:Current</pv_name>
+    <text></text>
+    <x>724</x>
+    <y>192</y>
+    <width>8</width>
+    <height>24</height>
+    <transparent>true</transparent>
+    <tooltip>$(actions)
+$(pv_name)
+$(pv_value)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_23</name>
+    <actions>
+      <action type="open_display">
+        <file>Common/ble-embedded-displays/BLEquadrupole.bob</file>
+        <macros>
+          <enum>QT06D1</enum>
+          <dev>$(devm)</dev>
+        </macros>
+        <target>window</target>
+        <description>QT06D1</description>
+      </action>
+    </actions>
+    <pv_name>$(devm)QT06D1:Current</pv_name>
+    <text></text>
+    <x>782</x>
+    <y>192</y>
+    <width>6</width>
+    <height>24</height>
+    <transparent>true</transparent>
+    <tooltip>$(actions)
+$(pv_name)
+$(pv_value)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_24</name>
+    <actions>
+      <action type="open_display">
+        <file>Common/ble-embedded-displays/BLEquadrupole.bob</file>
+        <macros>
+          <enum>QT06F2</enum>
+          <dev>$(devm)</dev>
+        </macros>
+        <target>window</target>
+        <description>QT06F2</description>
+      </action>
+    </actions>
+    <pv_name>$(devm)QT06F2:Current</pv_name>
+    <text></text>
+    <x>790</x>
+    <y>192</y>
+    <width>8</width>
+    <height>24</height>
+    <transparent>true</transparent>
+    <tooltip>$(actions)
+$(pv_name)
+$(pv_value)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_25</name>
+    <actions>
+      <action type="open_display">
+        <file>Common/ble-embedded-displays/BLEquadrupole.bob</file>
+        <macros>
+          <enum>QT06D3</enum>
+          <dev>$(devm)</dev>
+        </macros>
+        <target>window</target>
+        <description>QT06D3</description>
+      </action>
+    </actions>
+    <pv_name>$(devm)QT06D3:Current</pv_name>
+    <text></text>
+    <x>800</x>
+    <y>192</y>
+    <width>6</width>
+    <height>24</height>
+    <transparent>true</transparent>
+    <tooltip>$(actions)
+$(pv_name)
+$(pv_value)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_26</name>
+    <actions>
+      <action type="open_display">
+        <file>Common/ble-embedded-displays/BLEquadrupole.bob</file>
+        <macros>
+          <enum>QT07D1</enum>
+          <dev>$(devm)</dev>
+        </macros>
+        <target>window</target>
+        <description>QT07D1</description>
+      </action>
+    </actions>
+    <pv_name>$(devm)QT07D1:Current</pv_name>
+    <text></text>
+    <x>856</x>
+    <y>192</y>
+    <width>6</width>
+    <height>24</height>
+    <transparent>true</transparent>
+    <tooltip>$(actions)
+$(pv_name)
+$(pv_value)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_27</name>
+    <actions>
+      <action type="open_display">
+        <file>Common/ble-embedded-displays/BLEquadrupole.bob</file>
+        <macros>
+          <enum>QT07F2</enum>
+          <dev>$(devm)</dev>
+        </macros>
+        <target>window</target>
+        <description>QT07F2</description>
+      </action>
+    </actions>
+    <pv_name>$(devm)QT07F2:Current</pv_name>
+    <text></text>
+    <x>864</x>
+    <y>192</y>
+    <width>8</width>
+    <height>24</height>
+    <transparent>true</transparent>
+    <tooltip>$(actions)
+$(pv_name)
+$(pv_value)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_28</name>
+    <actions>
+      <action type="open_display">
+        <file>Common/ble-embedded-displays/BLEquadrupole.bob</file>
+        <macros>
+          <enum>QT07D3</enum>
+          <dev>$(devm)</dev>
+        </macros>
+        <target>window</target>
+        <description>QT07D3</description>
+      </action>
+    </actions>
+    <pv_name>$(devm)QT07D3:Current</pv_name>
+    <text></text>
+    <x>875</x>
+    <y>192</y>
+    <width>6</width>
+    <height>24</height>
+    <transparent>true</transparent>
+    <tooltip>$(actions)
+$(pv_name)
+$(pv_value)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_29</name>
+    <actions>
+      <action type="open_display">
+        <file>Common/ble-embedded-displays/BLEquadrupole.bob</file>
+        <macros>
+          <enum>QT08D1</enum>
+          <dev>$(devm)</dev>
+        </macros>
+        <target>window</target>
+        <description>QT08D1</description>
+      </action>
+    </actions>
+    <pv_name>$(devm)QT08D1:Current</pv_name>
+    <text></text>
+    <x>931</x>
+    <y>192</y>
+    <width>6</width>
+    <height>24</height>
+    <transparent>true</transparent>
+    <tooltip>$(actions)
+$(pv_name)
+$(pv_value)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_30</name>
+    <actions>
+      <action type="open_display">
+        <file>Common/ble-embedded-displays/BLEquadrupole.bob</file>
+        <macros>
+          <enum>QT08F2</enum>
+          <dev>$(devm)</dev>
+        </macros>
+        <target>window</target>
+        <description>QT08F2</description>
+      </action>
+    </actions>
+    <pv_name>$(devm)QT08F2:Current</pv_name>
+    <text></text>
+    <x>939</x>
+    <y>192</y>
+    <width>8</width>
+    <height>24</height>
+    <transparent>true</transparent>
+    <tooltip>$(actions)
+$(pv_name)
+$(pv_value)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_31</name>
+    <actions>
+      <action type="open_display">
+        <file>Common/ble-embedded-displays/BLEquadrupole.bob</file>
+        <macros>
+          <enum>QT08D3</enum>
+          <dev>$(devm)</dev>
+        </macros>
+        <target>window</target>
+        <description>QT08D3</description>
+      </action>
+    </actions>
+    <pv_name>$(devm)QT08D3:Current</pv_name>
+    <text></text>
+    <x>949</x>
+    <y>192</y>
+    <width>6</width>
+    <height>24</height>
+    <transparent>true</transparent>
+    <tooltip>$(actions)
+$(pv_name)
+$(pv_value)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_32</name>
+    <actions>
+      <action type="open_display">
+        <file>Common/ble-embedded-displays/BLEquadrupole.bob</file>
+        <macros>
+          <enum>QT09D1</enum>
+          <dev>$(devm)</dev>
+        </macros>
+        <target>window</target>
+        <description>QT09D1</description>
+      </action>
+    </actions>
+    <pv_name>$(devm)QT09D1:Current</pv_name>
+    <text></text>
+    <x>1005</x>
+    <y>192</y>
+    <width>6</width>
+    <height>24</height>
+    <transparent>true</transparent>
+    <tooltip>$(actions)
+$(pv_name)
+$(pv_value)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_33</name>
+    <actions>
+      <action type="open_display">
+        <file>Common/ble-embedded-displays/BLEquadrupole.bob</file>
+        <macros>
+          <enum>QT09F2</enum>
+          <dev>$(devm)</dev>
+        </macros>
+        <target>window</target>
+        <description>QT09F2</description>
+      </action>
+    </actions>
+    <pv_name>$(devm)QT09F2:Current</pv_name>
+    <text></text>
+    <x>1013</x>
+    <y>192</y>
+    <width>8</width>
+    <height>24</height>
+    <transparent>true</transparent>
+    <tooltip>$(actions)
+$(pv_name)
+$(pv_value)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_34</name>
+    <actions>
+      <action type="open_display">
+        <file>Common/ble-embedded-displays/BLEquadrupole.bob</file>
+        <macros>
+          <enum>QT09D3</enum>
+          <dev>$(devm)</dev>
+        </macros>
+        <target>window</target>
+        <description>QT09D3</description>
+      </action>
+    </actions>
+    <pv_name>$(devm)QT09D3:Current</pv_name>
+    <text></text>
+    <x>1023</x>
+    <y>192</y>
+    <width>6</width>
+    <height>24</height>
+    <transparent>true</transparent>
+    <tooltip>$(actions)
+$(pv_name)
+$(pv_value)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_35</name>
+    <actions>
+      <action type="open_display">
+        <file>Common/ble-embedded-displays/BLEquadrupole.bob</file>
+        <macros>
+          <enum>QT10D1</enum>
+          <dev>$(devm)</dev>
+        </macros>
+        <target>window</target>
+        <description>QT10D1</description>
+      </action>
+    </actions>
+    <pv_name>$(devm)QT10D1:Current</pv_name>
+    <text></text>
+    <x>1079</x>
+    <y>192</y>
+    <width>6</width>
+    <height>24</height>
+    <transparent>true</transparent>
+    <tooltip>$(actions)
+$(pv_name)
+$(pv_value)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
     <name>Action Button_36</name>
     <actions>
       <action type="open_display">
         <file>Common/ble-embedded-displays/BLEquadrupole.bob</file>
         <macros>
-          <enum>QF0170</enum>
+          <enum>QT10F2</enum>
+          <dev>$(devm)</dev>
         </macros>
         <target>window</target>
-        <description>QF0170</description>
+        <description>QT10F2</description>
       </action>
     </actions>
+    <pv_name>$(devm)QT10F2:Current</pv_name>
     <text></text>
-    <x>1082</x>
+    <x>1087</x>
     <y>192</y>
     <width>8</width>
     <height>24</height>
     <transparent>true</transparent>
-    <tooltip>$(actions)</tooltip>
+    <tooltip>$(actions)
+$(pv_name)
+$(pv_value)</tooltip>
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="action_button" version="3.0.0">
@@ -60,19 +841,23 @@
       <action type="open_display">
         <file>Common/ble-embedded-displays/BLEquadrupole.bob</file>
         <macros>
-          <enum>QD0172</enum>
+          <enum>QT10D3</enum>
+          <dev>$(devm)</dev>
         </macros>
         <target>window</target>
-        <description>QD0172</description>
+        <description>QT10D3</description>
       </action>
     </actions>
+    <pv_name>$(devm)QT10D3:Current</pv_name>
     <text></text>
-    <x>1092</x>
+    <x>1098</x>
     <y>192</y>
-    <width>8</width>
+    <width>6</width>
     <height>24</height>
     <transparent>true</transparent>
-    <tooltip>$(actions)</tooltip>
+    <tooltip>$(actions)
+$(pv_name)
+$(pv_value)</tooltip>
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="action_button" version="3.0.0">
@@ -81,19 +866,23 @@
       <action type="open_display">
         <file>Common/ble-embedded-displays/BLEquadrupole.bob</file>
         <macros>
-          <enum>QD0178</enum>
+          <enum>QT11D1</enum>
+          <dev>$(devm)</dev>
         </macros>
         <target>window</target>
-        <description>QD0178</description>
+        <description>QT11D1</description>
       </action>
     </actions>
+    <pv_name>$(devm)QT11D1:Current</pv_name>
     <text></text>
-    <x>1147</x>
+    <x>1154</x>
     <y>192</y>
-    <width>8</width>
+    <width>6</width>
     <height>24</height>
     <transparent>true</transparent>
-    <tooltip>$(actions)</tooltip>
+    <tooltip>$(actions)
+$(pv_name)
+$(pv_value)</tooltip>
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="action_button" version="3.0.0">
@@ -102,19 +891,23 @@
       <action type="open_display">
         <file>Common/ble-embedded-displays/BLEquadrupole.bob</file>
         <macros>
-          <enum>QF0179</enum>
+          <enum>QT11F2</enum>
+          <dev>$(devm)</dev>
         </macros>
         <target>window</target>
-        <description>QF0179</description>
+        <description>QT11F2</description>
       </action>
     </actions>
+    <pv_name>$(devm)QT11F2:Current</pv_name>
     <text></text>
-    <x>1157</x>
+    <x>1161</x>
     <y>192</y>
     <width>8</width>
     <height>24</height>
     <transparent>true</transparent>
-    <tooltip>$(actions)</tooltip>
+    <tooltip>$(actions)
+$(pv_name)
+$(pv_value)</tooltip>
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="action_button" version="3.0.0">
@@ -123,24 +916,28 @@
       <action type="open_display">
         <file>Common/ble-embedded-displays/BLEquadrupole.bob</file>
         <macros>
-          <enum>QD0181</enum>
+          <enum>QT11D3</enum>
+          <dev>$(devm)</dev>
         </macros>
         <target>window</target>
-        <description>QD0181</description>
+        <description>QT11D3</description>
       </action>
     </actions>
+    <pv_name>$(devm)QT11D3:Current</pv_name>
     <text></text>
-    <x>1167</x>
+    <x>1172</x>
     <y>192</y>
-    <width>8</width>
+    <width>6</width>
     <height>24</height>
     <transparent>true</transparent>
-    <tooltip>$(actions)</tooltip>
+    <tooltip>$(actions)
+$(pv_name)
+$(pv_value)</tooltip>
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="rectangle" version="2.0.0">
     <name>Rectangle</name>
-    <x>1219</x>
+    <x>1228</x>
     <y>144</y>
     <width>8</width>
     <height>16</height>
@@ -151,47 +948,29 @@
     </background_color>
   </widget>
   <widget type="action_button" version="3.0.0">
-    <name>Action Button_41</name>
-    <actions>
-      <action type="open_display">
-        <file>Common/ble-embedded-displays/BLEcorrectors.bob</file>
-        <macros>
-          <enum1>XCOR0104</enum1>
-          <enum2>YCOR0105</enum2>
-        </macros>
-        <target>window</target>
-        <description>XCOR0104 &amp; YCOR0105</description>
-      </action>
-    </actions>
-    <text></text>
-    <x>440</x>
-    <y>192</y>
-    <width>5</width>
-    <height>24</height>
-    <transparent>true</transparent>
-    <tooltip>$(actions)</tooltip>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
-  <widget type="action_button" version="3.0.0">
     <name>Action Button_49</name>
     <actions>
       <action type="open_display">
         <file>Common/ble-embedded-displays/BLEcorrectors.bob</file>
         <macros>
-          <enum1>XCOR0112</enum1>
-          <enum2>YCOR0113</enum2>
+          <enum1>XCOR02</enum1>
+          <enum2>YCOR02</enum2>
+          <dev>$(devm)</dev>
         </macros>
         <target>window</target>
-        <description>XCOR0112 &amp; YCOR0113</description>
+        <description>XCOR02 &amp; YCOR02</description>
       </action>
     </actions>
+    <pv_name>$(devm)XCOR02:Current</pv_name>
     <text></text>
-    <x>497</x>
+    <x>506</x>
     <y>192</y>
     <width>5</width>
     <height>24</height>
     <transparent>true</transparent>
-    <tooltip>$(actions)</tooltip>
+    <tooltip>$(actions)
+$(pv_name)
+$(pv_value)</tooltip>
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="action_button" version="3.0.0">
@@ -200,20 +979,24 @@
       <action type="open_display">
         <file>Common/ble-embedded-displays/BLEcorrectors.bob</file>
         <macros>
-          <enum1>XCOR0120</enum1>
-          <enum2>YCOR0121</enum2>
+          <enum1>XCOR03</enum1>
+          <enum2>YCOR03</enum2>
+          <dev>$(devm)</dev>
         </macros>
         <target>window</target>
-        <description>XCOR0120 &amp; YCOR0121</description>
+        <description>XCOR03 &amp; YCOR03</description>
       </action>
     </actions>
+    <pv_name>$(devm)XCOR03:Current</pv_name>
     <text></text>
-    <x>573</x>
+    <x>582</x>
     <y>192</y>
     <width>5</width>
     <height>24</height>
     <transparent>true</transparent>
-    <tooltip>$(actions)</tooltip>
+    <tooltip>$(actions)
+$(pv_name)
+$(pv_value)</tooltip>
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="action_button" version="3.0.0">
@@ -222,20 +1005,24 @@
       <action type="open_display">
         <file>Common/ble-embedded-displays/BLEcorrectors.bob</file>
         <macros>
-          <enum1>XCOR0127</enum1>
-          <enum2>YCOR0128</enum2>
+          <enum1>XCOR04</enum1>
+          <enum2>YCOR04</enum2>
+          <dev>$(devm)</dev>
         </macros>
         <target>window</target>
-        <description>XCOR0127 &amp; YCOR0128</description>
+        <description>XCOR04 &amp; YCOR04</description>
       </action>
     </actions>
+    <pv_name>$(devm)XCOR04:Current</pv_name>
     <text></text>
-    <x>647</x>
+    <x>655</x>
     <y>192</y>
     <width>5</width>
     <height>24</height>
     <transparent>true</transparent>
-    <tooltip>$(actions)</tooltip>
+    <tooltip>$(actions)
+$(pv_name)
+$(pv_value)</tooltip>
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="action_button" version="3.0.0">
@@ -244,20 +1031,24 @@
       <action type="open_display">
         <file>Common/ble-embedded-displays/BLEcorrectors.bob</file>
         <macros>
-          <enum1>XCOR0135</enum1>
-          <enum2>YCOR0136</enum2>
+          <enum1>XCOR05</enum1>
+          <enum2>YCOR05</enum2>
+          <dev>$(devm)</dev>
         </macros>
         <target>window</target>
-        <description>XCOR0135 &amp; YCOR0136</description>
+        <description>XCOR05 &amp; YCOR05</description>
       </action>
     </actions>
+    <pv_name>$(devm)XCOR05:Current</pv_name>
     <text></text>
-    <x>722</x>
+    <x>731</x>
     <y>192</y>
     <width>5</width>
     <height>24</height>
     <transparent>true</transparent>
-    <tooltip>$(actions)</tooltip>
+    <tooltip>$(actions)
+$(pv_name)
+$(pv_value)</tooltip>
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="action_button" version="3.0.0">
@@ -266,20 +1057,24 @@
       <action type="open_display">
         <file>Common/ble-embedded-displays/BLEcorrectors.bob</file>
         <macros>
-          <enum1>XCOR0142</enum1>
-          <enum2>YCOR0143</enum2>
+          <enum1>XCOR06</enum1>
+          <enum2>YCOR06</enum2>
+          <dev>$(devm)</dev>
         </macros>
         <target>window</target>
-        <description>XCOR0142 &amp; YCOR0143</description>
+        <description>XCOR06 &amp; YCOR06</description>
       </action>
     </actions>
+    <pv_name>$(devm)XCOR06:Current</pv_name>
     <text></text>
-    <x>797</x>
+    <x>804</x>
     <y>192</y>
     <width>5</width>
     <height>24</height>
     <transparent>true</transparent>
-    <tooltip>$(actions)</tooltip>
+    <tooltip>$(actions)
+$(pv_name)
+$(pv_value)</tooltip>
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="action_button" version="3.0.0">
@@ -288,20 +1083,24 @@
       <action type="open_display">
         <file>Common/ble-embedded-displays/BLEcorrectors.bob</file>
         <macros>
-          <enum1>XCOR0150</enum1>
-          <enum2>YCOR0151</enum2>
+          <enum1>XCOR07</enum1>
+          <enum2>YCOR07</enum2>
+          <dev>$(devm)</dev>
         </macros>
         <target>window</target>
-        <description>XCOR0150 &amp; YCOR0151</description>
+        <description>XCOR07 &amp; YCOR07</description>
       </action>
     </actions>
+    <pv_name>$(devm)XCOR07:Current</pv_name>
     <text></text>
-    <x>872</x>
+    <x>879</x>
     <y>192</y>
     <width>5</width>
     <height>24</height>
     <transparent>true</transparent>
-    <tooltip>$(actions)</tooltip>
+    <tooltip>$(actions)
+$(pv_name)
+$(pv_value)</tooltip>
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="action_button" version="3.0.0">
@@ -310,20 +1109,24 @@
       <action type="open_display">
         <file>Common/ble-embedded-displays/BLEcorrectors.bob</file>
         <macros>
-          <enum1>XCOR0159</enum1>
-          <enum2>YCOR0160</enum2>
+          <enum1>XCOR08</enum1>
+          <enum2>YCOR08</enum2>
+          <dev>$(devm)</dev>
         </macros>
         <target>window</target>
-        <description>XCOR0159 &amp; YCOR0160</description>
+        <description>XCOR08 &amp; YCOR08</description>
       </action>
     </actions>
+    <pv_name>$(devm)XCOR08:Current</pv_name>
     <text></text>
-    <x>947</x>
+    <x>954</x>
     <y>192</y>
     <width>5</width>
     <height>24</height>
     <transparent>true</transparent>
-    <tooltip>$(actions)</tooltip>
+    <tooltip>$(actions)
+$(pv_name)
+$(pv_value)</tooltip>
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="action_button" version="3.0.0">
@@ -332,20 +1135,24 @@
       <action type="open_display">
         <file>Common/ble-embedded-displays/BLEcorrectors.bob</file>
         <macros>
-          <enum1>XCOR0167</enum1>
-          <enum2>YCOR0168</enum2>
+          <enum1>XCOR09</enum1>
+          <enum2>YCOR09</enum2>
+          <dev>$(devm)</dev>
         </macros>
         <target>window</target>
-        <description>XCOR0167 &amp; YCOR0168</description>
+        <description>XCOR09 &amp; YCOR09</description>
       </action>
     </actions>
+    <pv_name>$(devm)XCOR09:Current</pv_name>
     <text></text>
-    <x>1023</x>
+    <x>1029</x>
     <y>192</y>
     <width>5</width>
     <height>24</height>
     <transparent>true</transparent>
-    <tooltip>$(actions)</tooltip>
+    <tooltip>$(actions)
+$(pv_name)
+$(pv_value)</tooltip>
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="action_button" version="3.0.0">
@@ -354,20 +1161,24 @@
       <action type="open_display">
         <file>Common/ble-embedded-displays/BLEcorrectors.bob</file>
         <macros>
-          <enum1>XCOR0173</enum1>
-          <enum2>YCOR0174</enum2>
+          <enum1>XCOR10</enum1>
+          <enum2>YCOR10</enum2>
+          <dev>$(devm)</dev>
         </macros>
         <target>window</target>
-        <description>XCOR0173 &amp; YCOR0174</description>
+        <description>XCOR10 &amp; YCOR10</description>
       </action>
     </actions>
+    <pv_name>$(devm)XCOR10:Current</pv_name>
     <text></text>
-    <x>1097</x>
+    <x>1103</x>
     <y>192</y>
     <width>5</width>
     <height>24</height>
     <transparent>true</transparent>
-    <tooltip>$(actions)</tooltip>
+    <tooltip>$(actions)
+$(pv_name)
+$(pv_value)</tooltip>
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="action_button" version="3.0.0">
@@ -376,41 +1187,24 @@
       <action type="open_display">
         <file>Common/ble-embedded-displays/BLEcorrectors.bob</file>
         <macros>
-          <enum1>XCOR0182</enum1>
-          <enum2>YCOR0183</enum2>
+          <enum1>XCOR11</enum1>
+          <enum2>YCOR11</enum2>
+          <dev>$(devm)</dev>
         </macros>
         <target>window</target>
-        <description>XCOR0182 &amp; YCOR0183</description>
+        <description>XCOR11 &amp; YCOR11</description>
       </action>
     </actions>
+    <pv_name>$(devm)XCOR11:Current</pv_name>
     <text></text>
-    <x>1172</x>
+    <x>1178</x>
     <y>192</y>
     <width>5</width>
     <height>24</height>
     <transparent>true</transparent>
-    <tooltip>$(actions)</tooltip>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Action Button_60</name>
-    <actions>
-      <action type="open_display">
-        <file>Common/ble-embedded-displays/BLEcollimator.bob</file>
-        <macros>
-          <enum>COL0107</enum>
-        </macros>
-        <target>window</target>
-        <description>COL0107</description>
-      </action>
-    </actions>
-    <text></text>
-    <x>450</x>
-    <y>165</y>
-    <width>5</width>
-    <height>50</height>
-    <transparent>true</transparent>
-    <tooltip>$(actions)</tooltip>
+    <tooltip>$(actions)
+$(pv_name)
+$(pv_value)</tooltip>
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="action_button" version="3.0.0">
@@ -419,19 +1213,23 @@
       <action type="open_display">
         <file>Common/ble-embedded-displays/BLEcollimator.bob</file>
         <macros>
-          <enum>COL0115</enum>
+          <enum>COL2</enum>
+          <dev>$(devm)</dev>
         </macros>
         <target>window</target>
-        <description>COL0115</description>
+        <description>COL2</description>
       </action>
     </actions>
+    <pv_name>$(devm)COL2:Voltage</pv_name>
     <text></text>
-    <x>538</x>
+    <x>547</x>
     <y>165</y>
     <width>5</width>
     <height>50</height>
     <transparent>true</transparent>
-    <tooltip>$(actions)</tooltip>
+    <tooltip>$(actions)
+$(pv_name)
+$(pv_value)</tooltip>
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="action_button" version="3.0.0">
@@ -440,19 +1238,23 @@
       <action type="open_display">
         <file>Common/ble-embedded-displays/BLEcollimator.bob</file>
         <macros>
-          <enum>COL0153</enum>
+          <enum>COL3</enum>
+          <dev>$(devm)</dev>
         </macros>
         <target>window</target>
-        <description>COL0153</description>
+        <description>COL3</description>
       </action>
     </actions>
+    <pv_name>$(devm)COL3:Voltage</pv_name>
     <text></text>
-    <x>884</x>
+    <x>891</x>
     <y>165</y>
-    <width>5</width>
+    <width>6</width>
     <height>50</height>
     <transparent>true</transparent>
-    <tooltip>$(actions)</tooltip>
+    <tooltip>$(actions)
+$(pv_name)
+$(pv_value)</tooltip>
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="action_button" version="3.0.0">
@@ -461,40 +1263,23 @@
       <action type="open_display">
         <file>Common/ble-embedded-displays/BLEcollimator.bob</file>
         <macros>
-          <enum>COL0161</enum>
+          <enum>COL4</enum>
+          <dev>$(devm)</dev>
         </macros>
         <target>window</target>
-        <description>COL0161</description>
+        <description>COL4</description>
       </action>
     </actions>
+    <pv_name>$(devm)COL4:Voltage</pv_name>
     <text></text>
-    <x>958</x>
+    <x>965</x>
     <y>165</y>
     <width>5</width>
     <height>50</height>
     <transparent>true</transparent>
-    <tooltip>$(actions)</tooltip>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Action Button_64</name>
-    <actions>
-      <action type="open_display">
-        <file>Common/ble-embedded-displays/BLEbuncherCavity.bob</file>
-        <macros>
-          <enum>CAV0108</enum>
-        </macros>
-        <target>window</target>
-        <description>CAV0108</description>
-      </action>
-    </actions>
-    <text></text>
-    <x>459</x>
-    <y>165</y>
-    <width>15</width>
-    <height>50</height>
-    <transparent>true</transparent>
-    <tooltip>$(actions)</tooltip>
+    <tooltip>$(actions)
+$(pv_name)
+$(pv_value)</tooltip>
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="action_button" version="3.0.0">
@@ -503,19 +1288,23 @@
       <action type="open_display">
         <file>Common/ble-embedded-displays/BLEbuncherCavity.bob</file>
         <macros>
-          <enum>CAV0129</enum>
+          <enum>CAV2</enum>
+          <dev>$(devm)</dev>
         </macros>
         <target>window</target>
-        <description>CAV0129</description>
+        <description>CAV2</description>
       </action>
     </actions>
+    <pv_name>$(devm)CAV2:Voltage</pv_name>
     <text></text>
-    <x>656</x>
+    <x>663</x>
     <y>165</y>
-    <width>15</width>
+    <width>16</width>
     <height>50</height>
     <transparent>true</transparent>
-    <tooltip>$(actions)</tooltip>
+    <tooltip>$(actions)
+$(pv_name)
+$(pv_value)</tooltip>
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="action_button" version="3.0.0">
@@ -524,19 +1313,23 @@
       <action type="open_display">
         <file>Common/ble-embedded-displays/BLEbuncherCavity.bob</file>
         <macros>
-          <enum>CAV0154</enum>
+          <enum>CAV3</enum>
+          <dev>$(devm)</dev>
         </macros>
         <target>window</target>
-        <description>CAV0154</description>
+        <description>CAV3</description>
       </action>
     </actions>
+    <pv_name>$(devm)CAV3:Voltage</pv_name>
     <text></text>
-    <x>905</x>
+    <x>912</x>
     <y>165</y>
-    <width>15</width>
+    <width>16</width>
     <height>50</height>
     <transparent>true</transparent>
-    <tooltip>$(actions)</tooltip>
+    <tooltip>$(actions)
+$(pv_name)
+$(pv_value)</tooltip>
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="action_button" version="3.0.0">
@@ -545,607 +1338,348 @@
       <action type="open_display">
         <file>Common/ble-embedded-displays/BLEbuncherCavity.bob</file>
         <macros>
-          <enum>CAV0177</enum>
+          <enum>CAV4</enum>
+          <dev>$(devm)</dev>
         </macros>
         <target>window</target>
-        <description>CAV0177</description>
+        <description>CAV4</description>
       </action>
     </actions>
+    <pv_name>$(devm)CAV4:Voltage</pv_name>
     <text></text>
-    <x>1130</x>
+    <x>1135</x>
     <y>165</y>
-    <width>15</width>
+    <width>16</width>
     <height>50</height>
     <transparent>true</transparent>
-    <tooltip>$(actions)</tooltip>
+    <tooltip>$(actions)
+$(pv_name)
+$(pv_value)</tooltip>
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="action_button" version="3.0.0">
-    <name>Action Button_68</name>
+    <name>Action Button_71</name>
     <actions>
       <action type="open_display">
-        <file>Common/ble-embedded-displays/BLEkicker.bob</file>
+        <file>Common/ble-embedded-displays/BLErfq.bob</file>
         <macros>
-          <enum>KICK0122</enum>
+          <enum>RFQ</enum>
+          <dev>$(devl)</dev>
         </macros>
         <target>window</target>
-        <description>KICK0122</description>
+        <description>RFQ</description>
       </action>
     </actions>
+    <pv_name>$(devl)RFQ:Power</pv_name>
     <text></text>
-    <x>578</x>
-    <y>191</y>
-    <width>43</width>
-    <height>21</height>
-    <transparent>true</transparent>
-    <tooltip>$(actions)</tooltip>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Action Button_70</name>
-    <actions>
-      <action type="open_display">
-        <file>Common/ble-embedded-displays/BLEkicker.bob</file>
-        <macros>
-          <enum>KICK0137</enum>
-        </macros>
-        <target>window</target>
-        <description>KICK0137</description>
-      </action>
-    </actions>
-    <text></text>
-    <x>729</x>
-    <y>191</y>
-    <width>43</width>
-    <height>21</height>
-    <transparent>true</transparent>
-    <tooltip>$(actions)</tooltip>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Action Button</name>
-    <actions>
-      <action type="open_display">
-        <file>Common/ble-embedded-displays/BLEquadrupole.bob</file>
-        <macros>
-          <enum>QD0101</enum>
-        </macros>
-        <target>window</target>
-        <description>QD0101</description>
-      </action>
-    </actions>
-    <text></text>
-    <x>420</x>
+    <x>172</x>
     <y>192</y>
-    <width>8</width>
+    <width>240</width>
+    <height>25</height>
+    <transparent>true</transparent>
+    <tooltip>$(actions)
+$(pv_name)
+$(pv_value)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_72</name>
+    <actions>
+      <action type="open_display">
+        <file>Common/bli-embedded-displays/BLIacct.bob</file>
+        <macros>
+          <enum>ACCT1</enum>
+          <dev>$(devm)</dev>
+        </macros>
+        <target>window</target>
+        <description>ACCT1</description>
+      </action>
+    </actions>
+    <pv_name>$(devm)ACCT1:Current</pv_name>
+    <text></text>
+    <x>423</x>
+    <y>192</y>
+    <width>4</width>
     <height>24</height>
     <transparent>true</transparent>
-    <tooltip>$(actions)</tooltip>
+    <tooltip>$(actions)
+$(pv_name)
+$(pv_value)</tooltip>
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="action_button" version="3.0.0">
-    <name>Action Button_1</name>
+    <name>Action Button_73</name>
     <actions>
       <action type="open_display">
-        <file>Common/ble-embedded-displays/BLEquadrupole.bob</file>
+        <file>Common/bli-embedded-displays/BLIbpm.bob</file>
         <macros>
-          <enum>QF0103</enum>
+          <enum>BPM01</enum>
+          <dev>$(devm)</dev>
         </macros>
         <target>window</target>
-        <description>QF0103</description>
+        <description>BPM01</description>
       </action>
     </actions>
+    <pv_name>$(devm)BPM01:Current</pv_name>
     <text></text>
-    <x>432</x>
+    <x>438</x>
     <y>192</y>
-    <width>8</width>
+    <width>4</width>
     <height>24</height>
     <transparent>true</transparent>
-    <tooltip>$(actions)</tooltip>
+    <tooltip>$(actions)
+$(pv_name)
+$(pv_value)</tooltip>
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="action_button" version="3.0.0">
-    <name>Action Button_2</name>
+    <name>Action Button_74</name>
     <actions>
       <action type="open_display">
-        <file>Common/ble-embedded-displays/BLEquadrupole.bob</file>
+        <file>Common/bli-embedded-displays/BLIbpm.bob</file>
         <macros>
-          <enum>QD0109</enum>
+          <enum>BPM02</enum>
+          <dev>$(devm)</dev>
         </macros>
         <target>window</target>
-        <description>QD0109</description>
+        <description>BPM02</description>
       </action>
     </actions>
+    <pv_name>$(devm)BPM02:Current</pv_name>
     <text></text>
-    <x>479</x>
+    <x>494</x>
     <y>192</y>
-    <width>8</width>
+    <width>4</width>
     <height>24</height>
     <transparent>true</transparent>
-    <tooltip>$(actions)</tooltip>
+    <tooltip>$(actions)
+$(pv_name)
+$(pv_value)</tooltip>
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="action_button" version="3.0.0">
-    <name>Action Button_3</name>
+    <name>Action Button_75</name>
     <actions>
       <action type="open_display">
-        <file>Common/ble-embedded-displays/BLEquadrupole.bob</file>
+        <file>Common/bli-embedded-displays/BLIbpm.bob</file>
         <macros>
-          <enum>QF0111</enum>
+          <enum>BPM03</enum>
+          <dev>$(devm)</dev>
         </macros>
         <target>window</target>
-        <description>QF0111</description>
+        <description>BPM03</description>
       </action>
     </actions>
+    <pv_name>$(devm)BPM03:Current</pv_name>
     <text></text>
-    <x>491</x>
+    <x>572</x>
     <y>192</y>
-    <width>8</width>
+    <width>4</width>
     <height>24</height>
     <transparent>true</transparent>
-    <tooltip>$(actions)</tooltip>
+    <tooltip>$(actions)
+$(pv_name)
+$(pv_value)</tooltip>
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="action_button" version="3.0.0">
-    <name>Action Button_4</name>
+    <name>Action Button_76</name>
     <actions>
       <action type="open_display">
-        <file>Common/ble-embedded-displays/BLEquadrupole.bob</file>
+        <file>Common/bli-embedded-displays/BLIbpm.bob</file>
         <macros>
-          <enum>QD0116</enum>
+          <enum>BPM04</enum>
+          <dev>$(devm)</dev>
         </macros>
         <target>window</target>
-        <description>QD0116</description>
+        <description>BPM04</description>
       </action>
     </actions>
+    <pv_name>$(devm)BPM04:Current</pv_name>
     <text></text>
-    <x>547</x>
+    <x>647</x>
     <y>192</y>
-    <width>8</width>
+    <width>4</width>
     <height>24</height>
     <transparent>true</transparent>
-    <tooltip>$(actions)</tooltip>
+    <tooltip>$(actions)
+$(pv_name)
+$(pv_value)</tooltip>
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="action_button" version="3.0.0">
-    <name>Action Button_5</name>
+    <name>Action Button_77</name>
     <actions>
       <action type="open_display">
-        <file>Common/ble-embedded-displays/BLEquadrupole.bob</file>
+        <file>Common/bli-embedded-displays/BLIbpm.bob</file>
         <macros>
-          <enum>QF0117</enum>
+          <enum>BPM05</enum>
+          <dev>$(devm)</dev>
         </macros>
         <target>window</target>
-        <description>QF0117</description>
+        <description>BPM05</description>
       </action>
     </actions>
+    <pv_name>$(devm)BPM05:Current</pv_name>
     <text></text>
-    <x>557</x>
+    <x>722</x>
     <y>192</y>
-    <width>8</width>
+    <width>4</width>
     <height>24</height>
     <transparent>true</transparent>
-    <tooltip>$(actions)</tooltip>
+    <tooltip>$(actions)
+$(pv_name)
+$(pv_value)</tooltip>
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="action_button" version="3.0.0">
-    <name>Action Button_16</name>
+    <name>Action Button_78</name>
     <actions>
       <action type="open_display">
-        <file>Common/ble-embedded-displays/BLEquadrupole.bob</file>
+        <file>Common/bli-embedded-displays/BLIbpm.bob</file>
         <macros>
-          <enum>QD0119</enum>
+          <enum>BPM06</enum>
+          <dev>$(devm)</dev>
         </macros>
         <target>window</target>
-        <description>QD0119</description>
+        <description>BPM06</description>
       </action>
     </actions>
+    <pv_name>$(devm)BPM06:Current</pv_name>
     <text></text>
-    <x>567</x>
+    <x>797</x>
     <y>192</y>
-    <width>8</width>
+    <width>4</width>
     <height>24</height>
     <transparent>true</transparent>
-    <tooltip>$(actions)</tooltip>
+    <tooltip>$(actions)
+$(pv_name)
+$(pv_value)</tooltip>
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="action_button" version="3.0.0">
-    <name>Action Button_17</name>
+    <name>Action Button_79</name>
     <actions>
       <action type="open_display">
-        <file>Common/ble-embedded-displays/BLEquadrupole.bob</file>
+        <file>Common/bli-embedded-displays/BLIbpm.bob</file>
         <macros>
-          <enum>QD0123</enum>
+          <enum>BPM07</enum>
+          <dev>$(devm)</dev>
         </macros>
         <target>window</target>
-        <description>QD0123</description>
+        <description>BPM07</description>
       </action>
     </actions>
+    <pv_name>$(devm)BPM07:Current</pv_name>
     <text></text>
-    <x>623</x>
+    <x>871</x>
     <y>192</y>
-    <width>8</width>
+    <width>4</width>
     <height>24</height>
     <transparent>true</transparent>
-    <tooltip>$(actions)</tooltip>
+    <tooltip>$(actions)
+$(pv_name)
+$(pv_value)</tooltip>
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="action_button" version="3.0.0">
-    <name>Action Button_18</name>
+    <name>Action Button_80</name>
     <actions>
       <action type="open_display">
-        <file>Common/ble-embedded-displays/BLEquadrupole.bob</file>
+        <file>Common/bli-embedded-displays/BLIbpm.bob</file>
         <macros>
-          <enum>QF0124</enum>
+          <enum>BPM08</enum>
+          <dev>$(devm)</dev>
         </macros>
         <target>window</target>
-        <description>QF0124</description>
+        <description>BPM08</description>
       </action>
     </actions>
+    <pv_name>$(devm)BPM08:Current</pv_name>
     <text></text>
-    <x>632</x>
+    <x>946</x>
     <y>192</y>
-    <width>8</width>
+    <width>4</width>
     <height>24</height>
     <transparent>true</transparent>
-    <tooltip>$(actions)</tooltip>
+    <tooltip>$(actions)
+$(pv_name)
+$(pv_value)</tooltip>
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="action_button" version="3.0.0">
-    <name>Action Button_19</name>
+    <name>Action Button_81</name>
     <actions>
       <action type="open_display">
-        <file>Common/ble-embedded-displays/BLEquadrupole.bob</file>
+        <file>Common/bli-embedded-displays/BLIbpm.bob</file>
         <macros>
-          <enum>QD0126</enum>
+          <enum>BPM09</enum>
+          <dev>$(devm)</dev>
         </macros>
         <target>window</target>
-        <description>QD0126</description>
+        <description>BPM09</description>
       </action>
     </actions>
+    <pv_name>$(devm)BPM09:Current</pv_name>
     <text></text>
-    <x>643</x>
+    <x>1022</x>
     <y>192</y>
-    <width>8</width>
+    <width>4</width>
     <height>24</height>
     <transparent>true</transparent>
-    <tooltip>$(actions)</tooltip>
+    <tooltip>$(actions)
+$(pv_name)
+$(pv_value)</tooltip>
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="action_button" version="3.0.0">
-    <name>Action Button_20</name>
+    <name>Action Button_83</name>
     <actions>
       <action type="open_display">
-        <file>Common/ble-embedded-displays/BLEquadrupole.bob</file>
+        <file>Common/bli-embedded-displays/BLIbpm.bob</file>
         <macros>
-          <enum>QD0131</enum>
+          <enum>BPM10</enum>
+          <dev>$(devm)</dev>
         </macros>
         <target>window</target>
-        <description>QD0131</description>
+        <description>BPM10</description>
       </action>
     </actions>
+    <pv_name>$(devm)BPM10:Current</pv_name>
     <text></text>
-    <x>698</x>
+    <x>1095</x>
     <y>192</y>
-    <width>8</width>
+    <width>4</width>
     <height>24</height>
     <transparent>true</transparent>
-    <tooltip>$(actions)</tooltip>
+    <tooltip>$(actions)
+$(pv_name)
+$(pv_value)</tooltip>
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="action_button" version="3.0.0">
-    <name>Action Button_21</name>
+    <name>Action Button_84</name>
     <actions>
       <action type="open_display">
-        <file>Common/ble-embedded-displays/BLEquadrupole.bob</file>
+        <file>Common/bli-embedded-displays/BLIbpm.bob</file>
         <macros>
-          <enum>QF0132</enum>
+          <enum>BPM11</enum>
+          <dev>$(devm)</dev>
         </macros>
         <target>window</target>
-        <description>QF0132</description>
+        <description>BPM11</description>
       </action>
     </actions>
+    <pv_name>$(devm)BPM11:Current</pv_name>
     <text></text>
-    <x>707</x>
+    <x>1169</x>
     <y>192</y>
-    <width>8</width>
+    <width>4</width>
     <height>24</height>
     <transparent>true</transparent>
-    <tooltip>$(actions)</tooltip>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Action Button_22</name>
-    <actions>
-      <action type="open_display">
-        <file>Common/ble-embedded-displays/BLEquadrupole.bob</file>
-        <macros>
-          <enum>QD0134</enum>
-        </macros>
-        <target>window</target>
-        <description>QD0134</description>
-      </action>
-    </actions>
-    <text></text>
-    <x>715</x>
-    <y>192</y>
-    <width>8</width>
-    <height>24</height>
-    <transparent>true</transparent>
-    <tooltip>$(actions)</tooltip>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Action Button_23</name>
-    <actions>
-      <action type="open_display">
-        <file>Common/ble-embedded-displays/BLEquadrupole.bob</file>
-        <macros>
-          <enum>QD0138</enum>
-        </macros>
-        <target>window</target>
-        <description>QD0138</description>
-      </action>
-    </actions>
-    <text></text>
-    <x>773</x>
-    <y>192</y>
-    <width>8</width>
-    <height>24</height>
-    <transparent>true</transparent>
-    <tooltip>$(actions)</tooltip>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Action Button_24</name>
-    <actions>
-      <action type="open_display">
-        <file>Common/ble-embedded-displays/BLEquadrupole.bob</file>
-        <macros>
-          <enum>QF0139</enum>
-        </macros>
-        <target>window</target>
-        <description>QF0139</description>
-      </action>
-    </actions>
-    <text></text>
-    <x>781</x>
-    <y>192</y>
-    <width>8</width>
-    <height>24</height>
-    <transparent>true</transparent>
-    <tooltip>$(actions)</tooltip>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Action Button_25</name>
-    <actions>
-      <action type="open_display">
-        <file>Common/ble-embedded-displays/BLEquadrupole.bob</file>
-        <macros>
-          <enum>QD0141</enum>
-        </macros>
-        <target>window</target>
-        <description>QD0141</description>
-      </action>
-    </actions>
-    <text></text>
-    <x>792</x>
-    <y>192</y>
-    <width>8</width>
-    <height>24</height>
-    <transparent>true</transparent>
-    <tooltip>$(actions)</tooltip>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Action Button_26</name>
-    <actions>
-      <action type="open_display">
-        <file>Common/ble-embedded-displays/BLEquadrupole.bob</file>
-        <macros>
-          <enum>QD0146</enum>
-        </macros>
-        <target>window</target>
-        <description>QD0146</description>
-      </action>
-    </actions>
-    <text></text>
-    <x>847</x>
-    <y>192</y>
-    <width>8</width>
-    <height>24</height>
-    <transparent>true</transparent>
-    <tooltip>$(actions)</tooltip>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Action Button_27</name>
-    <actions>
-      <action type="open_display">
-        <file>Common/ble-embedded-displays/BLEquadrupole.bob</file>
-        <macros>
-          <enum>QF0147</enum>
-        </macros>
-        <target>window</target>
-        <description>QF0147</description>
-      </action>
-    </actions>
-    <text></text>
-    <x>857</x>
-    <y>192</y>
-    <width>8</width>
-    <height>24</height>
-    <transparent>true</transparent>
-    <tooltip>$(actions)</tooltip>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Action Button_28</name>
-    <actions>
-      <action type="open_display">
-        <file>Common/ble-embedded-displays/BLEquadrupole.bob</file>
-        <macros>
-          <enum>QD0149</enum>
-        </macros>
-        <target>window</target>
-        <description>QD0149</description>
-      </action>
-    </actions>
-    <text></text>
-    <x>867</x>
-    <y>192</y>
-    <width>8</width>
-    <height>24</height>
-    <transparent>true</transparent>
-    <tooltip>$(actions)</tooltip>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Action Button_29</name>
-    <actions>
-      <action type="open_display">
-        <file>Common/ble-embedded-displays/BLEquadrupole.bob</file>
-        <macros>
-          <enum>QD0155</enum>
-        </macros>
-        <target>window</target>
-        <description>QD0155</description>
-      </action>
-    </actions>
-    <text></text>
-    <x>922</x>
-    <y>192</y>
-    <width>8</width>
-    <height>24</height>
-    <transparent>true</transparent>
-    <tooltip>$(actions)</tooltip>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Action Button_30</name>
-    <actions>
-      <action type="open_display">
-        <file>Common/ble-embedded-displays/BLEquadrupole.bob</file>
-        <macros>
-          <enum>QF0156</enum>
-        </macros>
-        <target>window</target>
-        <description>QF0156</description>
-      </action>
-    </actions>
-    <text></text>
-    <x>931</x>
-    <y>192</y>
-    <width>8</width>
-    <height>24</height>
-    <transparent>true</transparent>
-    <tooltip>$(actions)</tooltip>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Action Button_31</name>
-    <actions>
-      <action type="open_display">
-        <file>Common/ble-embedded-displays/BLEquadrupole.bob</file>
-        <macros>
-          <enum>QD0158</enum>
-        </macros>
-        <target>window</target>
-        <description>QD0158</description>
-      </action>
-    </actions>
-    <text></text>
-    <x>941</x>
-    <y>192</y>
-    <width>8</width>
-    <height>24</height>
-    <transparent>true</transparent>
-    <tooltip>$(actions)</tooltip>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Action Button_32</name>
-    <actions>
-      <action type="open_display">
-        <file>Common/ble-embedded-displays/BLEquadrupole.bob</file>
-        <macros>
-          <enum>QD0163</enum>
-        </macros>
-        <target>window</target>
-        <description>QD0163</description>
-      </action>
-    </actions>
-    <text></text>
-    <x>998</x>
-    <y>192</y>
-    <width>8</width>
-    <height>24</height>
-    <transparent>true</transparent>
-    <tooltip>$(actions)</tooltip>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Action Button_33</name>
-    <actions>
-      <action type="open_display">
-        <file>Common/ble-embedded-displays/BLEquadrupole.bob</file>
-        <macros>
-          <enum>QF0164</enum>
-        </macros>
-        <target>window</target>
-        <description>QF0164</description>
-      </action>
-    </actions>
-    <text></text>
-    <x>1006</x>
-    <y>192</y>
-    <width>8</width>
-    <height>24</height>
-    <transparent>true</transparent>
-    <tooltip>$(actions)</tooltip>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Action Button_34</name>
-    <actions>
-      <action type="open_display">
-        <file>Common/ble-embedded-displays/BLEquadrupole.bob</file>
-        <macros>
-          <enum>QD0166</enum>
-        </macros>
-        <target>window</target>
-        <description>QD0166</description>
-      </action>
-    </actions>
-    <text></text>
-    <x>1017</x>
-    <y>192</y>
-    <width>8</width>
-    <height>24</height>
-    <transparent>true</transparent>
-    <tooltip>$(actions)</tooltip>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Action Button_35</name>
-    <actions>
-      <action type="open_display">
-        <file>Common/ble-embedded-displays/BLEquadrupole.bob</file>
-        <macros>
-          <enum>QD0169</enum>
-        </macros>
-        <target>window</target>
-        <description>QD0169</description>
-      </action>
-    </actions>
-    <text></text>
-    <x>1073</x>
-    <y>192</y>
-    <width>8</width>
-    <height>24</height>
-    <transparent>true</transparent>
-    <tooltip>$(actions)</tooltip>
+    <tooltip>$(actions)
+$(pv_name)
+$(pv_value)</tooltip>
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
 </display>

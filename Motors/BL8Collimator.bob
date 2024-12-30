@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2024-12-14 19:10:36 by epics-->
+<!--Saved on 2024-12-23 10:42:27 by epics-->
 <display version="2.0.0">
   <name>BL8ColOverView</name>
   <macros>
     <dev>B:BL8COL_BLE_</dev>
   </macros>
   <width>2150</width>
-  <height>1270</height>
+  <height>1460</height>
   <grid_step_x>5</grid_step_x>
   <grid_step_y>5</grid_step_y>
   <widget type="rectangle" version="2.0.0">
@@ -1900,10 +1900,10 @@
   </widget>
   <widget type="stripchart" version="2.1.0">
     <name>Primary Jaw Temperatures</name>
-    <x>20</x>
-    <y>910</y>
-    <width>1150</width>
-    <height>350</height>
+    <x>10</x>
+    <y>1185</y>
+    <width>1055</width>
+    <height>270</height>
     <background_color>
       <color name="Header_Background" red="77" green="77" blue="77">
       </color>
@@ -2045,10 +2045,10 @@
   </widget>
   <widget type="stripchart" version="2.1.0">
     <name>Secondary Jaw Temperatures_1</name>
-    <x>1180</x>
-    <y>910</y>
-    <width>1150</width>
-    <height>350</height>
+    <x>1080</x>
+    <y>1185</y>
+    <width>1055</width>
+    <height>270</height>
     <background_color>
       <color name="Header_Background" red="77" green="77" blue="77">
       </color>
@@ -2126,6 +2126,82 @@
           </color>
         </color>
         <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+    </traces>
+  </widget>
+  <widget type="xyplot" version="3.0.0">
+    <name>X/Y Plot</name>
+    <x>10</x>
+    <y>905</y>
+    <width>2125</width>
+    <height>270</height>
+    <foreground_color>
+      <color red="255" green="255" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <title>Beam Losses</title>
+    <x_axis>
+      <title>BLM</title>
+      <autoscale>true</autoscale>
+      <log_scale>false</log_scale>
+      <minimum>0.0</minimum>
+      <maximum>100.0</maximum>
+      <show_grid>true</show_grid>
+      <title_font>
+        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </title_font>
+      <scale_font>
+        <font name="Default" family="Liberation Sans" style="REGULAR" size="14.0">
+        </font>
+      </scale_font>
+      <visible>true</visible>
+    </x_axis>
+    <y_axes>
+      <y_axis>
+        <title>Beam Losses (rad/s)</title>
+        <autoscale>true</autoscale>
+        <log_scale>false</log_scale>
+        <minimum>0.0</minimum>
+        <maximum>100.0</maximum>
+        <show_grid>true</show_grid>
+        <title_font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </title_font>
+        <scale_font>
+          <font name="Default" family="Liberation Sans" style="REGULAR" size="14.0">
+          </font>
+        </scale_font>
+        <on_right>false</on_right>
+        <visible>true</visible>
+        <color>
+          <color red="255" green="255" blue="0">
+          </color>
+        </color>
+      </y_axis>
+    </y_axes>
+    <traces>
+      <trace>
+        <name>$(traces[0].y_pv)</name>
+        <x_pv>BSTR:BPLOT_BLI_INTBLM:wfX</x_pv>
+        <y_pv>BSTR:BPLOT_BLI_INTBLM:wfIntLosses</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>5</trace_type>
+        <color>
+          <color red="0" green="234" blue="255">
+          </color>
+        </color>
+        <line_width>75</line_width>
+        <line_style>0</line_style>
         <point_type>0</point_type>
         <point_size>10</point_size>
         <visible>true</visible>
