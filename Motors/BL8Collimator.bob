@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2024-12-23 10:42:27 by epics-->
+<!--Saved on 2025-01-17 09:48:03 by epics-->
 <display version="2.0.0">
   <name>BL8ColOverView</name>
   <macros>
@@ -2207,5 +2207,34 @@
         <visible>true</visible>
       </trace>
     </traces>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_29</name>
+    <text>IOC restart required.
+Check motor controller connection and restart IOC.</text>
+    <x>822</x>
+    <y>370</y>
+    <width>500</width>
+    <height>300</height>
+    <visible>false</visible>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="48.0">
+      </font>
+    </font>
+    <background_color>
+      <color red="255" green="0" blue="0">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <rules>
+      <rule name="Display Reset Request" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>true</value>
+        </exp>
+        <pv_name>B:BL8COL_BLE_IOC:resetIOC</pv_name>
+      </rule>
+    </rules>
   </widget>
 </display>
