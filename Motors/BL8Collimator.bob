@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2025-01-21 20:03:49 by epics-->
+<!--Saved on 2025-01-27 13:08:36 by epics-->
 <display version="2.0.0">
   <name>BL8ColOverView</name>
   <macros>
@@ -40,34 +40,6 @@
     <wrap_words>false</wrap_words>
     <border_width>2</border_width>
   </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Action Button_1</name>
-    <actions>
-      <action type="open_display">
-        <file>SetBL8Calibrations.bob</file>
-        <target>window</target>
-        <description>Set Calibrations</description>
-      </action>
-    </actions>
-    <x>995</x>
-    <y>815</y>
-    <width>170</width>
-    <tooltip>$(actions)</tooltip>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Action Button_2</name>
-    <actions>
-      <action type="open_display">
-        <file>CompareMotorsAndLVDTs.bob</file>
-        <target>window</target>
-        <description>Compare Motors &amp; LVDTs</description>
-      </action>
-    </actions>
-    <x>995</x>
-    <y>785</y>
-    <width>170</width>
-    <tooltip>$(actions)</tooltip>
-  </widget>
   <widget type="label" version="2.0.0">
     <name>Label_11</name>
     <text>Primary Jaws</text>
@@ -90,20 +62,6 @@
     <vertical_alignment>1</vertical_alignment>
     <wrap_words>false</wrap_words>
     <border_width>2</border_width>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Action Button_3</name>
-    <actions>
-      <action type="open_display">
-        <file>SetBL8Limits.bob</file>
-        <target>window</target>
-        <description>Set Position Limits</description>
-      </action>
-    </actions>
-    <x>995</x>
-    <y>845</y>
-    <width>170</width>
-    <tooltip>$(actions)</tooltip>
   </widget>
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display</name>
@@ -2149,10 +2107,10 @@
     <title>Beam Losses</title>
     <x_axis>
       <title>BLM</title>
-      <autoscale>true</autoscale>
+      <autoscale>false</autoscale>
       <log_scale>false</log_scale>
-      <minimum>0.0</minimum>
-      <maximum>100.0</maximum>
+      <minimum>0.5</minimum>
+      <maximum>48.5</maximum>
       <show_grid>true</show_grid>
       <title_font>
         <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
@@ -2167,7 +2125,7 @@
     <y_axes>
       <y_axis>
         <title>Beam Losses (rad/s)</title>
-        <autoscale>false</autoscale>
+        <autoscale>true</autoscale>
         <log_scale>false</log_scale>
         <minimum>0.0</minimum>
         <maximum>35.0</maximum>
@@ -2191,7 +2149,7 @@
     <traces>
       <trace>
         <name>$(traces[0].y_pv)</name>
-        <x_pv>BSTR:BPLOT_BLI_INTBLM:wfX</x_pv>
+        <x_pv>BSTR:BPLOT_BLI_BLM:wfX</x_pv>
         <y_pv>BSTR:BPLOT_BLI_BLM:wfIntLosses</y_pv>
         <err_pv></err_pv>
         <axis>0</axis>
@@ -2200,7 +2158,7 @@
           <color red="0" green="234" blue="255">
           </color>
         </color>
-        <line_width>75</line_width>
+        <line_width>38</line_width>
         <line_style>0</line_style>
         <point_type>0</point_type>
         <point_size>10</point_size>
@@ -2236,5 +2194,47 @@ Check motor controller connection and restart IOC.</text>
         <pv_name>B:BL8COL_BLE_IOC:resetIOC</pv_name>
       </rule>
     </rules>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_2</name>
+    <actions>
+      <action type="open_display">
+        <file>CompareMotorsAndLVDTs.bob</file>
+        <target>window</target>
+        <description>Compare Motors &amp; LVDTs</description>
+      </action>
+    </actions>
+    <x>995</x>
+    <y>785</y>
+    <width>170</width>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_1</name>
+    <actions>
+      <action type="open_display">
+        <file>SetBL8Calibrations.bob</file>
+        <target>window</target>
+        <description>Set Calibrations</description>
+      </action>
+    </actions>
+    <x>995</x>
+    <y>815</y>
+    <width>170</width>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_3</name>
+    <actions>
+      <action type="open_display">
+        <file>SetBL8Limits.bob</file>
+        <target>window</target>
+        <description>Set Position Limits</description>
+      </action>
+    </actions>
+    <x>995</x>
+    <y>845</y>
+    <width>170</width>
+    <tooltip>$(actions)</tooltip>
   </widget>
 </display>
