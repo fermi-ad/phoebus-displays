@@ -8,7 +8,7 @@
   <scroll_step>5</scroll_step>
   <scroll>false</scroll>
   <start>2019-05-28 00:00:00.000</start>
-  <end>2025-01-30 16:13:00.789</end>
+  <end>2025-03-11 10:31:32.000</end>
   <archive_rescale>NONE</archive_rescale>
   <foreground>
     <red>0</red>
