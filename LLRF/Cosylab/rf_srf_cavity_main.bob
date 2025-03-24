@@ -1,0 +1,661 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2025-03-20 18:33:17 by epics-->
+<display version="2.0.0">
+  <name>SRF Cavity - $(CM)$(C)0</name>
+  <macros>
+    <CM>PIP2IT:PHB650:H1</CM>
+    <C>1</C>
+  </macros>
+  <x>360</x>
+  <y>64</y>
+  <width>1240</width>
+  <height>1068</height>
+  <background_color>
+    <color name="grey-4" red="187" green="187" blue="187">
+    </color>
+  </background_color>
+  <grid_step_x>4</grid_step_x>
+  <grid_step_y>4</grid_step_y>
+  <widget type="rectangle" version="2.0.0">
+    <name>EDM activeRectangleClass</name>
+    <width>1245</width>
+    <height>41</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color name="CRYO title" red="176" green="218" blue="249">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="CRYO title" red="176" green="218" blue="249">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>SRF Cavity 
+Cryomodule $(CM)00 Cavity $(C)</text>
+    <x>8</x>
+    <width>280</width>
+    <height>40</height>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="VAC title" red="225" green="248" blue="177">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="navtabs" version="2.0.0">
+    <name>EDM activePipClass</name>
+    <tabs>
+      <tab>
+        <name>Overview</name>
+        <file>rf_srf_cavity_embed.bob</file>
+        <macros>
+        </macros>
+        <group_name></group_name>
+      </tab>
+      <tab>
+        <name>Characterization</name>
+        <file>rf_srf_char_embed.bob</file>
+        <macros>
+        </macros>
+        <group_name></group_name>
+      </tab>
+      <tab>
+        <name>Detune</name>
+        <file>rf_srf_detune_embed.bob</file>
+        <macros>
+        </macros>
+        <group_name></group_name>
+      </tab>
+      <tab>
+        <name>Tuners</name>
+        <file>rf_srf_tuner_embed.bob</file>
+        <macros>
+        </macros>
+        <group_name></group_name>
+      </tab>
+      <tab>
+        <name>Interlocks</name>
+        <file>rf_srf_intlk_nocryo_embed.bob</file>
+        <macros>
+        </macros>
+        <group_name></group_name>
+      </tab>
+      <tab>
+        <name>RF Controller</name>
+        <file>rf_srf_controller_embed.bob</file>
+        <macros>
+        </macros>
+        <group_name></group_name>
+      </tab>
+      <tab>
+        <name>Ampl/Phas Diag</name>
+        <file>rf_srf_ampset_diag_embed.bob</file>
+        <macros>
+        </macros>
+        <group_name></group_name>
+      </tab>
+      <tab>
+        <name>Pulsed</name>
+        <file>rf_srf_sel_embed.bob</file>
+        <macros>
+        </macros>
+        <group_name></group_name>
+      </tab>
+      <tab>
+        <name>Hardware</name>
+        <file>rf_srf_hardware_cm_embed.bob</file>
+        <macros>
+        </macros>
+        <group_name></group_name>
+      </tab>
+      <tab>
+        <name>Signal Calib</name>
+        <file>rf_srf_cal_embed.bob</file>
+        <macros>
+        </macros>
+        <group_name></group_name>
+      </tab>
+    </tabs>
+    <x>8</x>
+    <y>48</y>
+    <width>1240</width>
+    <height>1020</height>
+    <direction>0</direction>
+    <tab_width>108</tab_width>
+    <tab_height>32</tab_height>
+    <tab_spacing>12</tab_spacing>
+    <font>
+      <font name="Fine Print" family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <active_tab>5</active_tab>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>EDM activeLineClass</name>
+    <x>80</x>
+    <y>100</y>
+    <width>1</width>
+    <height>1</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+    </points>
+    <line_width>1</line_width>
+    <line_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <arrow_length>15</arrow_length>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>EDM activeRectangleClass</name>
+    <x>607</x>
+    <y>47</y>
+    <width>110</width>
+    <height>34</height>
+    <line_width>2</line_width>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="EDM visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0&gt;=0.0 &amp;&amp; pv0&lt;1.0">
+          <value>false</value>
+        </exp>
+        <exp bool_exp="true">
+          <value>true</value>
+        </exp>
+        <pv_name>$(CM)$(C)0:CTRL_SUM.SEVR</pv_name>
+      </rule>
+    </rules>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[# EDM Alarm-sensitive color
+from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+cn = ( 'OK', 'MINOR', 'MAJOR', 'INVALID', 'DISCONNECTED' )[sevr]
+widget.setPropertyValue('line_color', WidgetColorService.getColor(cn))]]></text>
+        <pv_name>$(CM)$(C)0:CTRL_SUM</pv_name>
+      </script>
+    </scripts>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>EDM activeRectangleClass</name>
+    <x>1086</x>
+    <y>47</y>
+    <width>110</width>
+    <height>34</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color name="red-21" red="224" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="EDM visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0&gt;=0.0 &amp;&amp; pv0&lt;1.0">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="true">
+          <value>false</value>
+        </exp>
+        <pv_name>CALC\\LABELVIS($(CM)$(C)0:CAV:CAL_SCALE,$(CM)$(C)0:CAV:SCALE)</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>EDM activeRectangleClass</name>
+    <x>967</x>
+    <y>47</y>
+    <width>110</width>
+    <height>34</height>
+    <line_width>2</line_width>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="EDM visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0&gt;=2.0 &amp;&amp; pv0&lt;5.0">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="true">
+          <value>false</value>
+        </exp>
+        <pv_name>$(CM)00:RACK$(R):STATSUMY.SEVR</pv_name>
+      </rule>
+    </rules>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[# EDM Alarm-sensitive color
+from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+cn = ( 'OK', 'MINOR', 'MAJOR', 'INVALID', 'DISCONNECTED' )[sevr]
+widget.setPropertyValue('line_color', WidgetColorService.getColor(cn))]]></text>
+        <pv_name>$(CM)00:RACK$(R):STATSUMY</pv_name>
+      </script>
+    </scripts>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>EDM activeRectangleClass</name>
+    <x>487</x>
+    <y>47</y>
+    <width>110</width>
+    <height>34</height>
+    <line_width>2</line_width>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="EDM visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0&gt;=0.0 &amp;&amp; pv0&lt;1.0">
+          <value>false</value>
+        </exp>
+        <exp bool_exp="true">
+          <value>true</value>
+        </exp>
+        <pv_name>$(CM)$(C)0:RFPERMIT.SEVR</pv_name>
+      </rule>
+    </rules>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[# EDM Alarm-sensitive color
+from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+cn = ( 'OK', 'MINOR', 'MAJOR', 'INVALID', 'DISCONNECTED' )[sevr]
+widget.setPropertyValue('line_color', WidgetColorService.getColor(cn))]]></text>
+        <pv_name>$(CM)$(C)0:RFPERMIT</pv_name>
+      </script>
+    </scripts>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>EDM activeRectangleClass</name>
+    <x>366</x>
+    <y>47</y>
+    <width>110</width>
+    <height>34</height>
+    <line_width>2</line_width>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="EDM visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0&gt;=0.0 &amp;&amp; pv0&lt;1.0">
+          <value>false</value>
+        </exp>
+        <exp bool_exp="true">
+          <value>true</value>
+        </exp>
+        <pv_name>$(CM)$(C)0:PZT:STAT.SEVR</pv_name>
+      </rule>
+    </rules>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[# EDM Alarm-sensitive color
+from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+cn = ( 'OK', 'MINOR', 'MAJOR', 'INVALID', 'DISCONNECTED' )[sevr]
+widget.setPropertyValue('line_color', WidgetColorService.getColor(cn))]]></text>
+        <pv_name>$(CM)$(C)0:PZT:STAT</pv_name>
+      </script>
+    </scripts>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>Cavity $(C)</text>
+    <x>360</x>
+    <y>8</y>
+    <width>404</width>
+    <height>24</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD_ITALIC" size="18.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>EDM relatedDisplayClass</name>
+    <actions>
+      <action type="open_display">
+        <file>rf_srf_cavity_control_cm.bob</file>
+        <target>tab</target>
+        <description>8 Cavities - Overview...</description>
+      </action>
+      <action type="open_display">
+        <file>rf_srf_cavity_main.bob</file>
+        <macros>
+          <CM>$(CM)</CM>
+          <C>1</C>
+          <RFS>1A</RFS>
+          <CH>1</CH>
+          <ID>$(ID)</ID>
+          <R>A</R>
+          <SELTAB>0</SELTAB>
+        </macros>
+        <target>tab</target>
+        <description>Cavity 1...</description>
+      </action>
+      <action type="open_display">
+        <file>rf_srf_cavity_main.bob</file>
+        <macros>
+          <CM>$(CM)</CM>
+          <C>2</C>
+          <RFS>1A</RFS>
+          <CH>2</CH>
+          <ID>$(ID)</ID>
+          <R>A</R>
+          <SELTAB>0</SELTAB>
+        </macros>
+        <target>tab</target>
+        <description>Cavity 2...</description>
+      </action>
+      <action type="open_display">
+        <file>rf_srf_cavity_main.bob</file>
+        <macros>
+          <CM>$(CM)</CM>
+          <C>3</C>
+          <RFS>2A</RFS>
+          <CH>1</CH>
+          <ID>$(ID)</ID>
+          <R>A</R>
+          <SELTAB>0</SELTAB>
+        </macros>
+        <target>tab</target>
+        <description>Cavity 3...</description>
+      </action>
+      <action type="open_display">
+        <file>rf_srf_cavity_main.bob</file>
+        <macros>
+          <CM>$(CM)</CM>
+          <C>4</C>
+          <RFS>2A</RFS>
+          <CH>2</CH>
+          <ID>$(ID)</ID>
+          <R>A</R>
+          <SELTAB>0</SELTAB>
+        </macros>
+        <target>tab</target>
+        <description>Cavity 4...</description>
+      </action>
+      <action type="open_display">
+        <file>rf_srf_cavity_main.bob</file>
+        <macros>
+          <CM>$(CM)</CM>
+          <C>5</C>
+          <RFS>1B</RFS>
+          <CH>1</CH>
+          <ID>$(ID)</ID>
+          <R>B</R>
+          <SELTAB>0</SELTAB>
+        </macros>
+        <target>tab</target>
+        <description>Cavity 5...</description>
+      </action>
+      <action type="open_display">
+        <file>rf_srf_cavity_main.bob</file>
+        <macros>
+          <CM>$(CM)</CM>
+          <C>6</C>
+          <RFS>1B</RFS>
+          <CH>1</CH>
+          <ID>$(ID)</ID>
+          <R>B</R>
+          <SELTAB>0</SELTAB>
+        </macros>
+        <target>tab</target>
+        <description>Cavity 6...</description>
+      </action>
+      <action type="open_display">
+        <file>rf_srf_cavity_main.bob</file>
+        <macros>
+          <CM>$(CM)</CM>
+          <C>7</C>
+          <RFS>2B</RFS>
+          <CH>1</CH>
+          <ID>$(ID)</ID>
+          <R>B</R>
+          <SELTAB>0</SELTAB>
+        </macros>
+        <target>tab</target>
+        <description>Cavity 7...</description>
+      </action>
+      <action type="open_display">
+        <file>rf_srf_cavity_main.bob</file>
+        <macros>
+          <CM>$(CM)</CM>
+          <C>8</C>
+          <RFS>2B</RFS>
+          <CH>1</CH>
+          <ID>$(ID)</ID>
+          <R>B</R>
+          <SELTAB>0</SELTAB>
+        </macros>
+        <target>tab</target>
+        <description>Cavity 8...</description>
+      </action>
+    </actions>
+    <text>Cavities...</text>
+    <x>1068</x>
+    <y>8</y>
+    <width>120</width>
+    <height>24</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>EDM relatedDisplayClass</name>
+    <actions>
+      <action type="open_display">
+        <file>rf_srf_cavity_function_cm.bob</file>
+        <target>tab</target>
+        <description>Open Display</description>
+      </action>
+      <action type="open_display">
+        <file>rf_srf_cavity_function_cm.bob</file>
+        <macros>
+          <CM>$(CM)</CM>
+          <C>$(C)</C>
+          <R>$(R)</R>
+          <RFS>$(RFS)</RFS>
+          <CH>$(CH)</CH>
+          <ID>$(ID)</ID>
+          <dispsuffix>cavity_embed</dispsuffix>
+          <banner>Overview</banner>
+        </macros>
+        <target>tab</target>
+        <description>Overview...</description>
+      </action>
+      <action type="open_display">
+        <file>rf_srf_cavity_function_cm.bob</file>
+        <macros>
+          <CM>$(CM)</CM>
+          <C>$(C)</C>
+          <R>$(R)</R>
+          <RFS>$(RFS)</RFS>
+          <CH>$(CH)</CH>
+          <ID>$(ID)</ID>
+          <dispsuffix>char_embed</dispsuffix>
+          <banner>Characterization</banner>
+        </macros>
+        <target>tab</target>
+        <description>Characterization...</description>
+      </action>
+      <action type="open_display">
+        <file>rf_srf_cavity_function_cm.bob</file>
+        <macros>
+          <CM>$(CM)</CM>
+          <C>$(C)</C>
+          <R>$(R)</R>
+          <RFS>$(RFS)</RFS>
+          <CH>$(CH)</CH>
+          <ID>$(ID)</ID>
+          <dispsuffix>detune_embed</dispsuffix>
+          <banner>Detune</banner>
+        </macros>
+        <target>tab</target>
+        <description>Detune...</description>
+      </action>
+      <action type="open_display">
+        <file>rf_srf_cavity_function_cm.bob</file>
+        <macros>
+          <CM>$(CM)</CM>
+          <C>$(C)</C>
+          <R>$(R)</R>
+          <RFS>$(RFS)</RFS>
+          <CH>$(CH)</CH>
+          <ID>$(ID)</ID>
+          <dispsuffix>tuner_embed</dispsuffix>
+          <banner>Tuners</banner>
+        </macros>
+        <target>tab</target>
+        <description>Tuners...</description>
+      </action>
+      <action type="open_display">
+        <file>rf_srf_cavity_function_cm.bob</file>
+        <macros>
+          <CM>$(CM)</CM>
+          <C>$(C)</C>
+          <R>$(R)</R>
+          <RFS>$(RFS)</RFS>
+          <CH>$(CH)</CH>
+          <ID>$(ID)</ID>
+          <dispsuffix>intlk_nocryo_embed</dispsuffix>
+          <banner>Interlocks</banner>
+        </macros>
+        <target>tab</target>
+        <description>Interlocks...</description>
+      </action>
+      <action type="open_display">
+        <file>rf_srf_cavity_function_cm.bob</file>
+        <macros>
+          <CM>$(CM)</CM>
+          <C>$(C)</C>
+          <R>$(R)</R>
+          <RFS>$(RFS)</RFS>
+          <CH>$(CH)</CH>
+          <ID>$(ID)</ID>
+          <dispsuffix>controller_embed</dispsuffix>
+          <banner>RF Controller</banner>
+        </macros>
+        <target>tab</target>
+        <description>RF Controller...</description>
+      </action>
+      <action type="open_display">
+        <file>rf_srf_cavity_function_cm.bob</file>
+        <macros>
+          <CM>$(CM)</CM>
+          <C>$(C)</C>
+          <R>$(R)</R>
+          <RFS>$(RFS)</RFS>
+          <CH>$(CH)</CH>
+          <ID>$(ID)</ID>
+          <dispsuffix>ampset_diag_embed</dispsuffix>
+          <banner>Amplitude/Phase Diagnostics</banner>
+        </macros>
+        <target>tab</target>
+        <description>Amplitude/Phase Diagnostics...</description>
+      </action>
+      <action type="open_display">
+        <file>rf_srf_cavity_function_cm.bob</file>
+        <macros>
+          <CM>$(CM)</CM>
+          <C>$(C)</C>
+          <R>$(R)</R>
+          <RFS>$(RFS)</RFS>
+          <CH>$(CH)</CH>
+          <ID>$(ID)</ID>
+          <dispsuffix>sel_embed</dispsuffix>
+          <banner>Pulsed</banner>
+        </macros>
+        <target>tab</target>
+        <description>Pulsed...</description>
+      </action>
+      <action type="open_display">
+        <file>rf_srf_hardware_cm.bob</file>
+        <macros>
+          <CM>$(CM)</CM>
+          <C>$(C)</C>
+          <R>$(R)</R>
+          <RFS>$(RFS)</RFS>
+          <CH>$(CH)</CH>
+          <ID>$(ID)</ID>
+        </macros>
+        <target>tab</target>
+        <description>Hardware...</description>
+      </action>
+      <action type="open_display">
+        <file>rf_srf_cavity_function_cm.bob</file>
+        <macros>
+          <CM>$(CM)</CM>
+          <C>$(C)</C>
+          <R>$(R)</R>
+          <RFS>$(RFS)</RFS>
+          <CH>$(CH)</CH>
+          <ID>$(ID)</ID>
+          <dispsuffix>cal_embed</dispsuffix>
+          <banner>Signal Calibration</banner>
+        </macros>
+        <target>tab</target>
+        <description>Signal Calibration...</description>
+      </action>
+    </actions>
+    <text>8 Cavities - Functions...</text>
+    <x>888</x>
+    <y>8</y>
+    <width>152</width>
+    <height>24</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+</display>
