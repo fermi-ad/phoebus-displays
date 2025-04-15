@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2025-02-11 16:40:22 by epics-->
+<!--Saved on 2025-03-30 21:48:46 by epics-->
 <display version="2.0.0">
   <name>WFE Main</name>
   <macros>
@@ -8,7 +8,7 @@
     <devi>WFE:MEBT_BLI_</devi>
   </macros>
   <width>2005</width>
-  <height>770</height>
+  <height>1000</height>
   <grid_step_x>4</grid_step_x>
   <grid_step_y>4</grid_step_y>
   <widget type="picture" version="2.0.0">
@@ -206,7 +206,7 @@
     </y_axes>
     <traces>
       <trace>
-        <name>wfXpos</name>
+        <name>wfYpos</name>
         <x_pv>WFE:MEBT_BLI_BPM:wfZpos</x_pv>
         <y_pv>WFE:MEBT_BLI_BPM:wfYpos</y_pv>
         <err_pv></err_pv>
@@ -223,7 +223,7 @@
         <visible>true</visible>
       </trace>
       <trace>
-        <name>wfXpos+rms</name>
+        <name>wfYpos+rms</name>
         <x_pv>WFE:MEBT_BLI_BPM:wfZpos</x_pv>
         <y_pv>WFE:MEBT_BLI_BPM:wfYrmsP</y_pv>
         <err_pv></err_pv>
@@ -240,7 +240,7 @@
         <visible>true</visible>
       </trace>
       <trace>
-        <name>wfXpos-rms</name>
+        <name>wfYpos-rms</name>
         <x_pv>WFE:MEBT_BLI_BPM:wfZpos</x_pv>
         <y_pv>WFE:MEBT_BLI_BPM:wfYrmsM</y_pv>
         <err_pv></err_pv>
@@ -1904,5 +1904,116 @@ $(pv_value)</tooltip>
 $(pv_name)
 $(pv_value)</tooltip>
     <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="xyplot" version="3.0.0">
+    <name>X/Y Plot_2</name>
+    <x>730</x>
+    <y>760</y>
+    <width>1150</width>
+    <height>230</height>
+    <foreground_color>
+      <color red="255" green="255" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <title>Beam Z-Position</title>
+    <tooltip>wfZpos</tooltip>
+    <x_axis>
+      <title>BPM Position (m)</title>
+      <autoscale>true</autoscale>
+      <log_scale>false</log_scale>
+      <minimum>0.0</minimum>
+      <maximum>100.0</maximum>
+      <show_grid>true</show_grid>
+      <title_font>
+        <font family="Liberation Sans" style="REGULAR" size="12.0">
+        </font>
+      </title_font>
+      <scale_font>
+        <font family="Liberation Sans" style="REGULAR" size="10.0">
+        </font>
+      </scale_font>
+      <visible>true</visible>
+    </x_axis>
+    <y_axes>
+      <y_axis>
+        <title>Beam Z-position (mm)</title>
+        <autoscale>true</autoscale>
+        <log_scale>false</log_scale>
+        <minimum>-5.0</minimum>
+        <maximum>5.0</maximum>
+        <show_grid>true</show_grid>
+        <title_font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </title_font>
+        <scale_font>
+          <font family="Liberation Sans" style="REGULAR" size="10.0">
+          </font>
+        </scale_font>
+        <on_right>false</on_right>
+        <visible>true</visible>
+        <color>
+          <color red="255" green="255" blue="0">
+          </color>
+        </color>
+      </y_axis>
+    </y_axes>
+    <traces>
+      <trace>
+        <name>wfZpos</name>
+        <x_pv>WFE:MEBT_BLI_BPM:wfZpos</x_pv>
+        <y_pv>WFE:MEBT_BLI_BPM:wfZzero</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>0</trace_type>
+        <color>
+          <color red="255" green="0" blue="0">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <line_style>0</line_style>
+        <point_type>3</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name>wfZpos+rms</name>
+        <x_pv>WFE:MEBT_BLI_BPM:wfZpos</x_pv>
+        <y_pv>WFE:MEBT_BLI_BPM:wfZrmsP</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color red="0" green="234" blue="255">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name>wfZpos-rms</name>
+        <x_pv>WFE:MEBT_BLI_BPM:wfZpos</x_pv>
+        <y_pv>WFE:MEBT_BLI_BPM:wfZrmsM</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color red="0" green="255" blue="255">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+    </traces>
   </widget>
 </display>

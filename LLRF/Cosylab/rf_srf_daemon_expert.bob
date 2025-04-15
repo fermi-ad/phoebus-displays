@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2025-03-04 07:00:46 by edvin-->
+<!--Saved on 2025-03-05 12:26:40 by dkastelic-->
 <display version="2.0.0">
   <name>RF Daemon Process - Expert</name>
   <x>26</x>
@@ -30,7 +30,7 @@
   </widget>
   <widget type="rectangle" version="2.0.0">
     <name>EDM activeRectangleClass</name>
-    <width>705</width>
+    <width>376</width>
     <height>41</height>
     <line_width>1</line_width>
     <line_color>
@@ -39,36 +39,6 @@
     </line_color>
     <background_color>
       <color name="CRYO title" red="176" green="218" blue="249">
-      </color>
-    </background_color>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>EDM activeExitButtonClass</name>
-    <actions>
-      <action type="execute">
-        <script file="EmbeddedPy">
-          <text><![CDATA[from org.csstudio.display.builder.runtime.script import ScriptUtil
-ScriptUtil.closeDisplay(widget)
-]]></text>
-        </script>
-        <description>close</description>
-      </action>
-    </actions>
-    <text>Exit</text>
-    <x>304</x>
-    <y>12</y>
-    <width>48</width>
-    <height>24</height>
-    <font>
-      <font family="Liberation Sans" style="REGULAR" size="12.0">
-      </font>
-    </font>
-    <foreground_color>
-      <color name="black-14" red="0" green="0" blue="0">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color name="grey-4" red="187" green="187" blue="187">
       </color>
     </background_color>
   </widget>
@@ -187,8 +157,8 @@ ScriptUtil.closeDisplay(widget)
 SRF cavity ramp-up, and other RF processes.</text>
     <x>44</x>
     <y>96</y>
-    <width>257</width>
-    <height>28</height>
+    <width>245</width>
+    <height>31</height>
     <font>
       <font family="Liberation Sans" style="REGULAR" size="12.0">
       </font>
@@ -208,6 +178,7 @@ SRF cavity ramp-up, and other RF processes.</text>
     <actions>
       <action type="command">
         <command>rfRestartLauncher.bash $(CM)</command>
+        <description>Execute Command</description>
       </action>
     </actions>
     <text>Restart Daemon</text>
@@ -227,6 +198,7 @@ SRF cavity ramp-up, and other RF processes.</text>
       <color name="GLOBAL canvas" red="200" green="200" blue="200">
       </color>
     </background_color>
+    <tooltip>$(actions)</tooltip>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>EDM activeXTextDspClass</name>
@@ -249,12 +221,14 @@ SRF cavity ramp-up, and other RF processes.</text>
     <precision>3</precision>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type="action_button" version="3.0.0">
     <name>EDM shellCmdClass</name>
     <actions>
       <action type="command">
-        <command>xterm -hold -sb -rightbar -sl 10000 -geometry 130x30 -T "LLRF Daemon Log File" -e rfViewLauncherLog.bash $LCLS_DATA/tools/FEED/log $(CM) 500</command>
+        <command>xterm -hold -sb -rightbar -sl 10000 -geometry 130x30 -T "LLRF Daemon Log File" -e rfViewLauncherLog.bash $(LCLS_DATA)/tools/FEED/log $(CM) 500</command>
+        <description>Execute Command</description>
       </action>
     </actions>
     <text>Log...</text>
@@ -274,12 +248,14 @@ SRF cavity ramp-up, and other RF processes.</text>
       <color name="grey-4" red="187" green="187" blue="187">
       </color>
     </background_color>
+    <tooltip>$(actions)</tooltip>
   </widget>
   <widget type="action_button" version="3.0.0">
     <name>EDM shellCmdClass</name>
     <actions>
       <action type="command">
-        <command>xterm -hold -sb -rightbar -sl 10000 -geometry 130x30 -T "LLRF Daemon Log File" -e rfViewLauncherLog.bash $LCLS_DATA/tools/FEED/log $(CM) 10000000</command>
+        <command>xterm -hold -sb -rightbar -sl 10000 -geometry 130x30 -T "LLRF Daemon Log File" -e rfViewLauncherLog.bash $(LCLS_DATA)/tools/FEED/log $(CM) 10000000</command>
+        <description>Execute Command</description>
       </action>
     </actions>
     <text>Full Log...</text>
@@ -299,5 +275,6 @@ SRF cavity ramp-up, and other RF processes.</text>
       <color name="grey-4" red="187" green="187" blue="187">
       </color>
     </background_color>
+    <tooltip>$(actions)</tooltip>
   </widget>
 </display>

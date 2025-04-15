@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2025-03-04 06:59:57 by edvin-->
+<!--Saved on 2025-03-05 12:44:38 by dkastelic-->
 <display version="2.0.0">
   <name>Cavity Data Dump - $(CM)00</name>
   <x>105</x>
@@ -59,7 +59,7 @@
   </widget>
   <widget type="rectangle" version="2.0.0">
     <name>EDM activeRectangleClass</name>
-    <width>1245</width>
+    <width>580</width>
     <height>41</height>
     <line_width>1</line_width>
     <line_color>
@@ -91,36 +91,6 @@ Cryomodule $(CM)00</text>
       </color>
     </background_color>
     <vertical_alignment>1</vertical_alignment>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>EDM activeExitButtonClass</name>
-    <actions>
-      <action type="execute">
-        <script file="EmbeddedPy">
-          <text><![CDATA[from org.csstudio.display.builder.runtime.script import ScriptUtil
-ScriptUtil.closeDisplay(widget)
-]]></text>
-        </script>
-        <description>close</description>
-      </action>
-    </actions>
-    <text>Exit</text>
-    <x>476</x>
-    <y>8</y>
-    <width>48</width>
-    <height>24</height>
-    <font>
-      <font family="Liberation Sans" style="REGULAR" size="12.0">
-      </font>
-    </font>
-    <foreground_color>
-      <color name="black-14" red="0" green="0" blue="0">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color name="GLOBAL canvas" red="200" green="200" blue="200">
-      </color>
-    </background_color>
   </widget>
   <widget type="rectangle" version="2.0.0">
     <name>EDM activeRectangleClass</name>
@@ -160,6 +130,7 @@ ScriptUtil.closeDisplay(widget)
     <transparent>false</transparent>
     <horizontal_alignment>1</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
+    <border_width>1</border_width>
   </widget>
   <widget type="group" version="3.0.0">
     <name>EDM Group 0</name>
@@ -633,6 +604,7 @@ resets</text>
         <format>1</format>
         <show_units>false</show_units>
         <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
       </widget>
       <widget type="label" version="2.0.0">
         <name>EDM activeXTextClass</name>
@@ -1291,6 +1263,7 @@ setting</text>
     </background_color>
     <precision>3</precision>
     <show_units>false</show_units>
+    <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>EDM activeXTextDspClass</name>
@@ -1314,6 +1287,7 @@ setting</text>
     <precision>3</precision>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type="action_button" version="3.0.0">
     <name>EDM relatedDisplayClass</name>
@@ -1325,10 +1299,11 @@ setting</text>
           <ID>$(ID)</ID>
         </macros>
         <target>tab</target>
+        <description>Open Display</description>
       </action>
     </actions>
     <text>Script Manager...</text>
-    <x>336</x>
+    <x>411</x>
     <y>8</y>
     <width>112</width>
     <height>24</height>
@@ -1344,10 +1319,11 @@ setting</text>
       <color name="grey-4" red="187" green="187" blue="187">
       </color>
     </background_color>
+    <tooltip>$(actions)</tooltip>
   </widget>
   <widget type="rectangle" version="2.0.0">
     <name>EDM activeRectangleClass</name>
-    <x>335</x>
+    <x>410</x>
     <y>7</y>
     <width>114</width>
     <height>26</height>
@@ -1384,7 +1360,8 @@ widget.setPropertyValue('line_color', WidgetColorService.getColor(cn))]]></text>
     <name>EDM shellCmdClass</name>
     <actions>
       <action type="command">
-        <command>xterm -hold -sb -rightbar -sl 10000 -geometry 130x30 -T "LLRF Cavity ADC Data" -e rfViewLogRecent.bash $PHYSICS_DATA/rf_lcls2/adc_data/$(CM)10 $(CM)10 raw_z_00</command>
+        <command>xterm -hold -sb -rightbar -sl 10000 -geometry 130x30 -T "LLRF Cavity ADC Data" -e rfViewLogRecent.bash $(PHYSICS_DATA)/rf_lcls2/adc_data/$(CM)10 $(CM)10 raw_z_00</command>
+        <description>Execute Command</description>
       </action>
     </actions>
     <text>File...</text>
@@ -1404,6 +1381,7 @@ widget.setPropertyValue('line_color', WidgetColorService.getColor(cn))]]></text>
       <color name="GLOBAL canvas" red="200" green="200" blue="200">
       </color>
     </background_color>
+    <tooltip>$(actions)</tooltip>
   </widget>
   <widget type="label" version="2.0.0">
     <name>EDM activeXTextClass</name>
@@ -1658,6 +1636,7 @@ widget.setPropertyValue('line_color', WidgetColorService.getColor(cn))]]></text>
     </background_color>
     <precision>3</precision>
     <show_units>false</show_units>
+    <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>EDM activeXTextDspClass</name>
@@ -1681,6 +1660,7 @@ widget.setPropertyValue('line_color', WidgetColorService.getColor(cn))]]></text>
     <precision>3</precision>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type="action_button" version="3.0.0">
     <name>EDM activeMessageButtonClass</name>
@@ -1759,6 +1739,7 @@ widget.setPropertyValue('line_color', WidgetColorService.getColor(cn))]]></text>
     </background_color>
     <precision>3</precision>
     <show_units>false</show_units>
+    <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>EDM activeXTextDspClass</name>
@@ -1782,6 +1763,7 @@ widget.setPropertyValue('line_color', WidgetColorService.getColor(cn))]]></text>
     <precision>3</precision>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type="action_button" version="3.0.0">
     <name>EDM activeMessageButtonClass</name>
@@ -1860,6 +1842,7 @@ widget.setPropertyValue('line_color', WidgetColorService.getColor(cn))]]></text>
     </background_color>
     <precision>3</precision>
     <show_units>false</show_units>
+    <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>EDM activeXTextDspClass</name>
@@ -1883,6 +1866,7 @@ widget.setPropertyValue('line_color', WidgetColorService.getColor(cn))]]></text>
     <precision>3</precision>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type="action_button" version="3.0.0">
     <name>EDM activeMessageButtonClass</name>
@@ -1961,6 +1945,7 @@ widget.setPropertyValue('line_color', WidgetColorService.getColor(cn))]]></text>
     </background_color>
     <precision>3</precision>
     <show_units>false</show_units>
+    <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>EDM activeXTextDspClass</name>
@@ -1984,6 +1969,7 @@ widget.setPropertyValue('line_color', WidgetColorService.getColor(cn))]]></text>
     <precision>3</precision>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type="action_button" version="3.0.0">
     <name>EDM activeMessageButtonClass</name>
@@ -2062,6 +2048,7 @@ widget.setPropertyValue('line_color', WidgetColorService.getColor(cn))]]></text>
     </background_color>
     <precision>3</precision>
     <show_units>false</show_units>
+    <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>EDM activeXTextDspClass</name>
@@ -2085,6 +2072,7 @@ widget.setPropertyValue('line_color', WidgetColorService.getColor(cn))]]></text>
     <precision>3</precision>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type="action_button" version="3.0.0">
     <name>EDM activeMessageButtonClass</name>
@@ -2163,6 +2151,7 @@ widget.setPropertyValue('line_color', WidgetColorService.getColor(cn))]]></text>
     </background_color>
     <precision>3</precision>
     <show_units>false</show_units>
+    <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>EDM activeXTextDspClass</name>
@@ -2186,6 +2175,7 @@ widget.setPropertyValue('line_color', WidgetColorService.getColor(cn))]]></text>
     <precision>3</precision>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type="action_button" version="3.0.0">
     <name>EDM activeMessageButtonClass</name>
@@ -2264,6 +2254,7 @@ widget.setPropertyValue('line_color', WidgetColorService.getColor(cn))]]></text>
     </background_color>
     <precision>3</precision>
     <show_units>false</show_units>
+    <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>EDM activeXTextDspClass</name>
@@ -2287,12 +2278,14 @@ widget.setPropertyValue('line_color', WidgetColorService.getColor(cn))]]></text>
     <precision>3</precision>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type="action_button" version="3.0.0">
     <name>EDM shellCmdClass</name>
     <actions>
       <action type="command">
-        <command>xterm -hold -sb -rightbar -sl 10000 -geometry 130x30 -T "LLRF Cavity ADC Data" -e rfViewLogRecent.bash $PHYSICS_DATA/rf_lcls2/adc_data/$(CM)20 $(CM)20 raw_z_00</command>
+        <command>xterm -hold -sb -rightbar -sl 10000 -geometry 130x30 -T "LLRF Cavity ADC Data" -e rfViewLogRecent.bash $(PHYSICS_DATA)/rf_lcls2/adc_data/$(CM)20 $(CM)20 raw_z_00</command>
+        <description>Execute Command</description>
       </action>
     </actions>
     <text>File...</text>
@@ -2312,12 +2305,14 @@ widget.setPropertyValue('line_color', WidgetColorService.getColor(cn))]]></text>
       <color name="GLOBAL canvas" red="200" green="200" blue="200">
       </color>
     </background_color>
+    <tooltip>$(actions)</tooltip>
   </widget>
   <widget type="action_button" version="3.0.0">
     <name>EDM shellCmdClass</name>
     <actions>
       <action type="command">
-        <command>xterm -hold -sb -rightbar -sl 10000 -geometry 130x30 -T "LLRF Cavity ADC Data" -e rfViewLogRecent.bash $PHYSICS_DATA/rf_lcls2/adc_data/$(CM)30 $(CM)30 raw_z_00</command>
+        <command>xterm -hold -sb -rightbar -sl 10000 -geometry 130x30 -T "LLRF Cavity ADC Data" -e rfViewLogRecent.bash $(PHYSICS_DATA)/rf_lcls2/adc_data/$(CM)30 $(CM)30 raw_z_00</command>
+        <description>Execute Command</description>
       </action>
     </actions>
     <text>File...</text>
@@ -2337,12 +2332,14 @@ widget.setPropertyValue('line_color', WidgetColorService.getColor(cn))]]></text>
       <color name="GLOBAL canvas" red="200" green="200" blue="200">
       </color>
     </background_color>
+    <tooltip>$(actions)</tooltip>
   </widget>
   <widget type="action_button" version="3.0.0">
     <name>EDM shellCmdClass</name>
     <actions>
       <action type="command">
-        <command>xterm -hold -sb -rightbar -sl 10000 -geometry 130x30 -T "LLRF Cavity ADC Data" -e rfViewLogRecent.bash $PHYSICS_DATA/rf_lcls2/adc_data/$(CM)40 $(CM)40 raw_z_00</command>
+        <command>xterm -hold -sb -rightbar -sl 10000 -geometry 130x30 -T "LLRF Cavity ADC Data" -e rfViewLogRecent.bash $(PHYSICS_DATA)/rf_lcls2/adc_data/$(CM)40 $(CM)40 raw_z_00</command>
+        <description>Execute Command</description>
       </action>
     </actions>
     <text>File...</text>
@@ -2362,12 +2359,14 @@ widget.setPropertyValue('line_color', WidgetColorService.getColor(cn))]]></text>
       <color name="GLOBAL canvas" red="200" green="200" blue="200">
       </color>
     </background_color>
+    <tooltip>$(actions)</tooltip>
   </widget>
   <widget type="action_button" version="3.0.0">
     <name>EDM shellCmdClass</name>
     <actions>
       <action type="command">
-        <command>xterm -hold -sb -rightbar -sl 10000 -geometry 130x30 -T "LLRF Cavity ADC Data" -e rfViewLogRecent.bash $PHYSICS_DATA/rf_lcls2/adc_data/$(CM)50 $(CM)50 raw_z_00</command>
+        <command>xterm -hold -sb -rightbar -sl 10000 -geometry 130x30 -T "LLRF Cavity ADC Data" -e rfViewLogRecent.bash $(PHYSICS_DATA)/rf_lcls2/adc_data/$(CM)50 $(CM)50 raw_z_00</command>
+        <description>Execute Command</description>
       </action>
     </actions>
     <text>File...</text>
@@ -2387,12 +2386,14 @@ widget.setPropertyValue('line_color', WidgetColorService.getColor(cn))]]></text>
       <color name="GLOBAL canvas" red="200" green="200" blue="200">
       </color>
     </background_color>
+    <tooltip>$(actions)</tooltip>
   </widget>
   <widget type="action_button" version="3.0.0">
     <name>EDM shellCmdClass</name>
     <actions>
       <action type="command">
-        <command>xterm -hold -sb -rightbar -sl 10000 -geometry 130x30 -T "LLRF Cavity ADC Data" -e rfViewLogRecent.bash $PHYSICS_DATA/rf_lcls2/adc_data/$(CM)60 $(CM)60 raw_z_00</command>
+        <command>xterm -hold -sb -rightbar -sl 10000 -geometry 130x30 -T "LLRF Cavity ADC Data" -e rfViewLogRecent.bash $(PHYSICS_DATA)/rf_lcls2/adc_data/$(CM)60 $(CM)60 raw_z_00</command>
+        <description>Execute Command</description>
       </action>
     </actions>
     <text>File...</text>
@@ -2412,12 +2413,14 @@ widget.setPropertyValue('line_color', WidgetColorService.getColor(cn))]]></text>
       <color name="GLOBAL canvas" red="200" green="200" blue="200">
       </color>
     </background_color>
+    <tooltip>$(actions)</tooltip>
   </widget>
   <widget type="action_button" version="3.0.0">
     <name>EDM shellCmdClass</name>
     <actions>
       <action type="command">
-        <command>xterm -hold -sb -rightbar -sl 10000 -geometry 130x30 -T "LLRF Cavity ADC Data" -e rfViewLogRecent.bash $PHYSICS_DATA/rf_lcls2/adc_data/$(CM)80 $(CM)80 raw_z_00</command>
+        <command>xterm -hold -sb -rightbar -sl 10000 -geometry 130x30 -T "LLRF Cavity ADC Data" -e rfViewLogRecent.bash $(PHYSICS_DATA)/rf_lcls2/adc_data/$(CM)80 $(CM)80 raw_z_00</command>
+        <description>Execute Command</description>
       </action>
     </actions>
     <text>File...</text>
@@ -2437,12 +2440,14 @@ widget.setPropertyValue('line_color', WidgetColorService.getColor(cn))]]></text>
       <color name="GLOBAL canvas" red="200" green="200" blue="200">
       </color>
     </background_color>
+    <tooltip>$(actions)</tooltip>
   </widget>
   <widget type="action_button" version="3.0.0">
     <name>EDM shellCmdClass</name>
     <actions>
       <action type="command">
-        <command>xterm -hold -sb -rightbar -sl 10000 -geometry 130x30 -T "LLRF Cavity ADC Data" -e rfViewLogRecent.bash $PHYSICS_DATA/rf_lcls2/adc_data/$(CM)70 $(CM)70 raw_z_00</command>
+        <command>xterm -hold -sb -rightbar -sl 10000 -geometry 130x30 -T "LLRF Cavity ADC Data" -e rfViewLogRecent.bash $(PHYSICS_DATA)/rf_lcls2/adc_data/$(CM)70 $(CM)70 raw_z_00</command>
+        <description>Execute Command</description>
       </action>
     </actions>
     <text>File...</text>
@@ -2462,5 +2467,6 @@ widget.setPropertyValue('line_color', WidgetColorService.getColor(cn))]]></text>
       <color name="GLOBAL canvas" red="200" green="200" blue="200">
       </color>
     </background_color>
+    <tooltip>$(actions)</tooltip>
   </widget>
 </display>

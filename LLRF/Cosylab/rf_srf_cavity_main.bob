@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2025-03-20 18:33:17 by epics-->
+<!--Saved on 2025-03-03 14:24:34 by dkastelic-->
 <display version="2.0.0">
   <name>SRF Cavity - $(CM)$(C)0</name>
-  <macros>
-    <CM>PIP2IT:PHB650:H1</CM>
-    <C>1</C>
-  </macros>
   <x>360</x>
   <y>64</y>
   <width>1240</width>
@@ -211,7 +207,7 @@ widget.setPropertyValue('line_color', WidgetColorService.getColor(cn))]]></text>
         <exp bool_exp="true">
           <value>false</value>
         </exp>
-        <pv_name>CALC\\LABELVIS($(CM)$(C)0:CAV:CAL_SCALE,$(CM)$(C)0:CAV:SCALE)</pv_name>
+        <pv_name>eq://`$(CM)$(C)0:CAV:CAL_SCALE`==`$(CM)$(C)0:CAV:SCALE` ? 1 : 0</pv_name>
       </rule>
     </rules>
   </widget>
