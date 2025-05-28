@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2025-05-13 17:54:24 by epics-->
+<!--Saved on 2025-05-28 11:17:26 by epics-->
 <display version="2.0.0">
   <name>MYCOMloops</name>
   <macros>
@@ -21,6 +21,7 @@
           <enum>HEATX</enum>
           <sig>TempC</sig>
           <temp>TP31</temp>
+          <other>MNFLD</other>
         </macros>
         <group_name></group_name>
       </tab>
@@ -31,6 +32,7 @@
           <enum>MNFLD</enum>
           <sig>TempC</sig>
           <temp>TP32</temp>
+          <other>HEATX</other>
         </macros>
         <group_name></group_name>
       </tab>
@@ -38,5 +40,17 @@
     <width>530</width>
     <direction>0</direction>
     <tab_width>150</tab_width>
+    <actions execute_as_one="true">
+      <action type="write_pv">
+        <description>Set $(enum)</description>
+        <pv_name>$(dev)$(enum):Select</pv_name>
+        <value>1</value>
+      </action>
+      <action type="write_pv">
+        <description>Set $(other)</description>
+        <pv_name>$(dev)$(other):Select</pv_name>
+        <value>0</value>
+      </action>
+    </actions>
   </widget>
 </display>
