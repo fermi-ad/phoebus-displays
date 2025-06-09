@@ -1,51 +1,612 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2025-06-09 11:01:06 by pratik-->
 <display version="2.0.0">
   <name>Display</name>
-  <widget type="label" version="2.0.0">
-    <name>Label</name>
-    <class>TITLE</class>
-    <text>My Display</text>
-    <x use_class="true">0</x>
-    <y use_class="true">0</y>
-    <width>550</width>
-    <height>31</height>
-    <font use_class="true">
-      <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
-      </font>
-    </font>
-    <foreground_color use_class="true">
-      <color name="Text" red="0" green="0" blue="0">
+  <width>1918</width>
+  <height>950</height>
+  <background_color>
+    <color red="204" green="204" blue="204">
+    </color>
+  </background_color>
+  <grid_visible>false</grid_visible>
+  <widget type="polygon" version="2.0.0">
+    <name>Polygon</name>
+    <x>467</x>
+    <y>300</y>
+    <width>52</width>
+    <height>76</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="52.94736752707706" y="0.10526494584564716">
+      </point>
+      <point x="40.0" y="50.0">
+      </point>
+      <point x="10.0" y="50.0">
+      </point>
+    </points>
+    <line_width>1</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
       </color>
-    </foreground_color>
-    <transparent use_class="true">true</transparent>
+    </line_color>
+    <background_color>
+      <color red="115" green="115" blue="115">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_4</name>
+    <x>143</x>
+    <y>163</y>
+    <width>1693</width>
+    <height>1</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="1693.8687030516817" y="1.586309297171482">
+      </point>
+    </points>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_5</name>
+    <x>1514</x>
+    <y>273</y>
+    <width>1</width>
+    <height>27</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_6</name>
+    <x>1836</x>
+    <y>165</y>
+    <width>1</width>
+    <height>414</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="1.2222900390625" y="388.6666946411133">
+      </point>
+    </points>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group_5</name>
+    <x>1836</x>
+    <y>48</y>
+    <width>70</width>
+    <height>65</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle_19</name>
+      <width>70</width>
+      <height>65</height>
+      <line_width>1</line_width>
+      <background_color>
+        <color name="Read_Background" red="240" green="240" blue="240">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_7</name>
+      <pv_name>$(pmt)HB:HeartBeat</pv_name>
+      <x>25</x>
+      <y>40</y>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_75</name>
+      <text>PLC Heartbeat</text>
+      <width>70</width>
+      <height>35</height>
+      <background_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <border_width>1</border_width>
+    </widget>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_105</name>
+    <width>45</width>
+    <height>10</height>
+    <visible>false</visible>
+    <points>
+      <point x="0.0" y="5.0">
+      </point>
+      <point x="2.5" y="5.0">
+      </point>
+      <point x="5.0" y="0.0">
+      </point>
+      <point x="10.0" y="10.0">
+      </point>
+      <point x="15.0" y="0.0">
+      </point>
+      <point x="20.0" y="10.0">
+      </point>
+      <point x="25.0" y="0.0">
+      </point>
+      <point x="30.0" y="10.0">
+      </point>
+      <point x="35.0" y="0.0">
+      </point>
+      <point x="40.0" y="10.0">
+      </point>
+      <point x="42.5" y="5.0">
+      </point>
+      <point x="45.0" y="5.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="255" green="0" blue="0">
+      </color>
+    </line_color>
+    <arrow_length>10</arrow_length>
+    <rules>
+      <rule name="Heater On" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0">
+          <value>true</value>
+        </exp>
+        <pv_name>$(htr)HTRVSL:HTRON</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_109</name>
+    <width>45</width>
+    <height>10</height>
+    <visible>false</visible>
+    <points>
+      <point x="0.0" y="5.0">
+      </point>
+      <point x="2.5" y="5.0">
+      </point>
+      <point x="5.0" y="0.0">
+      </point>
+      <point x="10.0" y="10.0">
+      </point>
+      <point x="15.0" y="0.0">
+      </point>
+      <point x="20.0" y="10.0">
+      </point>
+      <point x="25.0" y="0.0">
+      </point>
+      <point x="30.0" y="10.0">
+      </point>
+      <point x="35.0" y="0.0">
+      </point>
+      <point x="40.0" y="10.0">
+      </point>
+      <point x="42.5" y="5.0">
+      </point>
+      <point x="45.0" y="5.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="255" green="0" blue="0">
+      </color>
+    </line_color>
+    <arrow_length>10</arrow_length>
+    <rules>
+      <rule name="Heater On" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0">
+          <value>true</value>
+        </exp>
+        <pv_name>$(htr)HTRVSL:HTRON</pv_name>
+      </rule>
+    </rules>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label_1</name>
-    <text>Some Value:</text>
-    <y>50</y>
+    <name>HB650-$(cm) $(view)</name>
+    <text>GHe Storage and Recovery</text>
+    <width>1918</width>
+    <height>36</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <background_color>
+      <color red="237" green="185" blue="185">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>T111</text>
+    <x>1066</x>
+    <y>376</y>
+    <width>30</width>
+    <height>34</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Disconn/Invalid" red="255" green="255" blue="255">
+      </color>
+    </background_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass_1</name>
+    <text>PT11100</text>
+    <x>1047</x>
+    <y>412</y>
+    <width>67</width>
+    <height>14</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="grey-1" red="236" green="236" blue="236">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL help" red="120" green="120" blue="120">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>EDM activeRectangleClass_2</name>
+    <x>1047</x>
+    <y>412</y>
+    <width>67</width>
+    <height>36</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="Disconn/Invalid" red="255" green="255" blue="255">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
-    <pv_name>sim://sine</pv_name>
-    <x>100</x>
-    <y>50</y>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label_2</name>
-    <class>COMMENT</class>
-    <text>Some comment.</text>
-    <x>220</x>
-    <y>50</y>
-    <width>140</width>
-    <font use_class="true">
-      <font name="Comment" family="Liberation Sans" style="ITALIC" size="14.0">
+    <name>EDM activeXTextDspClass</name>
+    <pv_name>CPT:CP01:1100:PRESS</pv_name>
+    <x>1049</x>
+    <y>430</y>
+    <width>63</width>
+    <height>14</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="12.0">
       </font>
     </font>
-    <foreground_color use_class="true">
-      <color name="Text" red="0" green="0" blue="0">
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
       </color>
     </foreground_color>
-    <transparent use_class="true">true</transparent>
-    <wrap_words use_class="true">true</wrap_words>
+    <background_color>
+      <color name="blue-29" red="0" green="0" blue="128">
+      </color>
+    </background_color>
+    <format>1</format>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="arc" version="2.0.0">
+    <name>EDM activeArcClass_2</name>
+    <x>1219</x>
+    <y>800</y>
+    <width>84</width>
+    <height>54</height>
+    <start_angle>180.0</start_angle>
+    <total_angle>180.0</total_angle>
+    <line_width>2</line_width>
+    <line_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="Disconn/Invalid" red="255" green="255" blue="255">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>EDM activeRectangleClass_3</name>
+    <x>1220</x>
+    <y>684</y>
+    <width>2</width>
+    <height>144</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="Disconn/Invalid" red="255" green="255" blue="255">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>EDM activeRectangleClass_4</name>
+    <x>1301</x>
+    <y>685</y>
+    <width>2</width>
+    <height>143</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="Disconn/Invalid" red="255" green="255" blue="255">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="arc" version="2.0.0">
+    <name>EDM activeArcClass_3</name>
+    <x>1219</x>
+    <y>657</y>
+    <width>84</width>
+    <height>54</height>
+    <start_angle>360.0</start_angle>
+    <total_angle>180.0</total_angle>
+    <line_width>2</line_width>
+    <line_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="Disconn/Invalid" red="255" green="255" blue="255">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass_2</name>
+    <text>T111</text>
+    <x>1247</x>
+    <y>674</y>
+    <width>30</width>
+    <height>34</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Disconn/Invalid" red="255" green="255" blue="255">
+      </color>
+    </background_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass_3</name>
+    <text>PT11100</text>
+    <x>1228</x>
+    <y>710</y>
+    <width>67</width>
+    <height>14</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="grey-1" red="236" green="236" blue="236">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL help" red="120" green="120" blue="120">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>EDM activeRectangleClass_5</name>
+    <x>1228</x>
+    <y>710</y>
+    <width>67</width>
+    <height>36</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="Disconn/Invalid" red="255" green="255" blue="255">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>EDM activeXTextDspClass_1</name>
+    <pv_name>CPT:CP01:1100:PRESS</pv_name>
+    <x>1230</x>
+    <y>728</y>
+    <width>63</width>
+    <height>14</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="blue-29" red="0" green="0" blue="128">
+      </color>
+    </background_color>
+    <format>1</format>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="arc" version="2.0.0">
+    <name>Arc</name>
+    <x>1402</x>
+    <y>676</y>
+    <width>0</width>
+    <height>0</height>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_110</name>
+    <x>1504</x>
+    <y>451</y>
+    <width>0</width>
+    <height>0</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass_4</name>
+    <text>Tube Trailer</text>
+    <x>1801</x>
+    <y>555</y>
+    <width>81</width>
+    <height>16</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Disconn/Invalid" red="255" green="255" blue="255">
+      </color>
+    </background_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button</name>
+    <text>GHe
+Distribution</text>
+    <x>12</x>
+    <y>657</y>
+    <width>130</width>
+    <height>225</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      </font>
+    </font>
+    <background_color>
+      <color red="115" green="115" blue="115">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="arc" version="2.0.0">
+    <name>Arc_2</name>
+    <x>1089</x>
+    <y>535</y>
+    <width>0</width>
+    <height>0</height>
+  </widget>
+  <widget type="arc" version="2.0.0">
+    <name>Arc_4</name>
+    <x>777</x>
+    <y>519</y>
+    <width>90</width>
+    <height>54</height>
+    <start_angle>360.0</start_angle>
+    <total_angle>180.0</total_angle>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_112</name>
+    <x>779</x>
+    <y>544</y>
+    <width>1</width>
+    <height>146</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="0.025902927186962188" y="147.00198980623833">
+      </point>
+    </points>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_113</name>
+    <x>865</x>
+    <y>544</y>
+    <width>1</width>
+    <height>146</height>
+    <points>
+      <point x="0.00861350809987016" y="0.0">
+      </point>
+      <point x="0.0" y="146.37988988568043">
+      </point>
+    </points>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>Ellipse</name>
+    <x>844</x>
+    <y>587</y>
+    <width>1</width>
+    <height>1</height>
+  </widget>
+  <widget type="arc" version="2.0.0">
+    <name>Arc_1</name>
+    <x>866</x>
+    <y>616</y>
+    <width>1</width>
+    <height>1</height>
+  </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>Ellipse_1</name>
+    <x>774</x>
+    <y>630</y>
+    <width>1</width>
+    <height>1</height>
+  </widget>
+  <widget type="arc" version="2.0.0">
+    <name>Arc_5</name>
+    <x>777</x>
+    <y>663</y>
+    <width>90</width>
+    <height>54</height>
+    <start_angle>180.0</start_angle>
+    <total_angle>180.0</total_angle>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <transparent>true</transparent>
   </widget>
 </display>
