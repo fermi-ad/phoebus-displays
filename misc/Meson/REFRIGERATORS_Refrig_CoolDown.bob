@@ -1,0 +1,553 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2023-07-01 16:13:59 by linden-->
+<display version = "2.0.0">
+  <name>Meson/REFRIGERATORS_Refrig_CoolDown.bob</name>
+  <width>1000</width>
+  <height>800</height>
+  <grid_step_x>5</grid_step_x>
+  <grid_step_y>5</grid_step_y>
+  <background_color>
+      <color name = "lightgoldenrodyellow" red = "250" green = "250" blue = "210">
+      </color>
+  </background_color>
+  <widget type = "clock" version = "2.0.0">
+    <x>210</x>
+    <y>38</y>
+    <width>140</width>
+    <height>20</height>
+    <border_width>1.0</border_width>
+    <foreground_color>
+        <color name = "midnightblue" red = "25" green = "25" blue = "112">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "16">
+        </font>
+    </font>
+  </widget>
+  <widget type = "action_button" version = "2.0.0">
+    <x>503</x>
+    <y>36</y>
+    <width>80</width>
+    <height>30</height>
+    <text>MAIN MENU</text>
+    <transparent>true</transparent>
+    <border_width>$(3.0)</border_width>
+    <foreground_color>
+        <color name = "$(midnightblue)" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "16">
+        </font>
+    </font>
+    <actions>
+      <action type = "open_display">
+        <file>Main_Menu.bob</file>
+        <target>tab</target>
+        <description>Open Display</description>
+      </action>
+    </actions>
+  </widget>
+  <widget type = "led" version = "2.0.0">
+    <x>400</x>
+    <y>220</y>
+    <width>80</width>
+    <height>20</height>
+    <border_width>1.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "16">
+        </font>
+    </font>
+    <square>true</square>
+    <bit>0</bit>
+    <pv_name>acsys://Z:REXIT.STATUS.ON</pv_name>
+    <off_color>
+        <color name = "mediumturquoise" red = "72" green = "209" blue = "204">
+        </color>
+    </off_color>
+    <on_color>
+        <color name = "crimson" red = "220" green = "20" blue = "60">
+        </color>
+    </on_color>
+    <off_label>0=RED SCRIPT RUN</off_label>
+    <on_label>$(1=RED SCRIPT EXIT)</on_label>
+  </widget>
+  <widget type = "led" version = "2.0.0">
+    <x>400</x>
+    <y>249</y>
+    <width>80</width>
+    <height>20</height>
+    <border_width>1.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "16">
+        </font>
+    </font>
+    <square>true</square>
+    <bit>0</bit>
+    <pv_name>acsys://Z:RSTEP.STATUS.ON</pv_name>
+    <off_color>
+        <color name = "crimson" red = "220" green = "20" blue = "60">
+        </color>
+    </off_color>
+    <on_color>
+        <color name = "mediumturquoise" red = "72" green = "209" blue = "204">
+        </color>
+    </on_color>
+    <off_label>0=WAIT</off_label>
+    <on_label>$(1=CONTINUE)</on_label>
+  </widget>
+  <widget type = "action_button" version = "2.0.0">
+    <x>234</x>
+    <y>247</y>
+    <width>160</width>
+    <height>29</height>
+    <text>RED SCRIPT CONTINUE</text>
+    <background_color>
+        <color name = "red" red = "255" green = "0" blue = "0">
+        </color>
+    </background_color>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "14">
+        </font>
+    </font>
+  </widget>
+  <widget type = "led" version = "2.0.0">
+    <x>400</x>
+    <y>379</y>
+    <width>80</width>
+    <height>20</height>
+    <border_width>1.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "16">
+        </font>
+    </font>
+    <square>true</square>
+    <bit>0</bit>
+    <pv_name>acsys://Z:BEXIT.STATUS.ON</pv_name>
+    <off_color>
+        <color name = "mediumturquoise" red = "72" green = "209" blue = "204">
+        </color>
+    </off_color>
+    <on_color>
+        <color name = "crimson" red = "220" green = "20" blue = "60">
+        </color>
+    </on_color>
+    <off_label>0=BRN SCRIPT RUN</off_label>
+    <on_label>$(1=BRN SCRIPT EXIT)</on_label>
+  </widget>
+  <widget type = "led" version = "2.0.0">
+    <x>400</x>
+    <y>408</y>
+    <width>80</width>
+    <height>20</height>
+    <border_width>1.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "16">
+        </font>
+    </font>
+    <square>true</square>
+    <bit>0</bit>
+    <pv_name>acsys://Z:BSTEP.STATUS.ON</pv_name>
+    <off_color>
+        <color name = "crimson" red = "220" green = "20" blue = "60">
+        </color>
+    </off_color>
+    <on_color>
+        <color name = "mediumturquoise" red = "72" green = "209" blue = "204">
+        </color>
+    </on_color>
+    <off_label>0=WAIT</off_label>
+    <on_label>$(1=CONTINUE)</on_label>
+  </widget>
+  <widget type = "action_button" version = "2.0.0">
+    <x>234</x>
+    <y>406</y>
+    <width>160</width>
+    <height>29</height>
+    <text>BRN SCRIPT CONTINUE</text>
+    <background_color>
+        <color name = "saddlebrown" red = "139" green = "69" blue = "19">
+        </color>
+    </background_color>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "14">
+        </font>
+    </font>
+  </widget>
+  <widget type = "led" version = "2.0.0">
+    <x>400</x>
+    <y>536</y>
+    <width>80</width>
+    <height>20</height>
+    <border_width>1.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "16">
+        </font>
+    </font>
+    <square>true</square>
+    <bit>0</bit>
+    <pv_name>acsys://Z:OEXIT.STATUS.ON</pv_name>
+    <off_color>
+        <color name = "mediumturquoise" red = "72" green = "209" blue = "204">
+        </color>
+    </off_color>
+    <on_color>
+        <color name = "crimson" red = "220" green = "20" blue = "60">
+        </color>
+    </on_color>
+    <off_label>0=ORG SCRIPT RUN</off_label>
+    <on_label>$(1=ORG SCRIPT EXIT)</on_label>
+  </widget>
+  <widget type = "led" version = "2.0.0">
+    <x>400</x>
+    <y>565</y>
+    <width>80</width>
+    <height>20</height>
+    <border_width>1.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "16">
+        </font>
+    </font>
+    <square>true</square>
+    <bit>0</bit>
+    <pv_name>acsys://Z:OSTEP.STATUS.ON</pv_name>
+    <off_color>
+        <color name = "crimson" red = "220" green = "20" blue = "60">
+        </color>
+    </off_color>
+    <on_color>
+        <color name = "mediumturquoise" red = "72" green = "209" blue = "204">
+        </color>
+    </on_color>
+    <off_label>0=WAIT</off_label>
+    <on_label>$(1=CONTINUE)</on_label>
+  </widget>
+  <widget type = "action_button" version = "2.0.0">
+    <x>234</x>
+    <y>563</y>
+    <width>160</width>
+    <height>29</height>
+    <text>ORG SCRIPT CONTINUE</text>
+    <background_color>
+        <color name = "orange" red = "255" green = "165" blue = "0">
+        </color>
+    </background_color>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "14">
+        </font>
+    </font>
+  </widget>
+  <widget type = "label" version = "2.0.0">
+    <name>Label</name>
+    <x>46</x>
+    <y>15</y>
+    <width>558</width>
+    <text>REFRIGERATOR COOLDOWN SCRIPT</text>
+    <transparent>true</transparent>
+    <auto_size>true</auto_size>
+    <foreground_color>
+        <color name = "midnightblue" red = "25" green = "25" blue = "112">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Monospaced" style = "BOLD" size = "28">
+        </font>
+    </font>
+    <transparent>true</transparent>
+    <horizontal_alignment>0</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type = "label" version = "2.0.0">
+    <name>Label</name>
+    <x>6</x>
+    <y>248</y>
+    <width>234</width>
+    <text>RED SCRIPT CONTINUE</text>
+    <transparent>true</transparent>
+    <auto_size>true</auto_size>
+    <foreground_color>
+        <color name = "$(=black)" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Monospaced" style = "BOLD" size = "16">
+        </font>
+    </font>
+    <transparent>true</transparent>
+    <horizontal_alignment>0</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type = "label" version = "2.0.0">
+    <name>Label</name>
+    <x>6</x>
+    <y>218</y>
+    <width>186</width>
+    <text>RED EXIT SCRIPT</text>
+    <transparent>true</transparent>
+    <auto_size>true</auto_size>
+    <foreground_color>
+        <color name = "$(=black)" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Monospaced" style = "BOLD" size = "16">
+        </font>
+    </font>
+    <transparent>true</transparent>
+    <horizontal_alignment>0</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type = "label" version = "2.0.0">
+    <name>Label</name>
+    <x>6</x>
+    <y>408</y>
+    <width>262</width>
+    <text>BROWN SCRIPT CONTINUE</text>
+    <transparent>true</transparent>
+    <auto_size>true</auto_size>
+    <foreground_color>
+        <color name = "$(=black)" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Monospaced" style = "BOLD" size = "16">
+        </font>
+    </font>
+    <transparent>true</transparent>
+    <horizontal_alignment>0</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type = "label" version = "2.0.0">
+    <name>Label</name>
+    <x>6</x>
+    <y>378</y>
+    <width>214</width>
+    <text>BROWN EXIT SCRIPT</text>
+    <transparent>true</transparent>
+    <auto_size>true</auto_size>
+    <foreground_color>
+        <color name = "$(=black)" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Monospaced" style = "BOLD" size = "16">
+        </font>
+    </font>
+    <transparent>true</transparent>
+    <horizontal_alignment>0</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type = "label" version = "2.0.0">
+    <name>Label</name>
+    <x>6</x>
+    <y>565</y>
+    <width>270</width>
+    <text>ORANGE SCRIPT CONTINUE</text>
+    <transparent>true</transparent>
+    <auto_size>true</auto_size>
+    <foreground_color>
+        <color name = "$(=black)" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Monospaced" style = "BOLD" size = "16">
+        </font>
+    </font>
+    <transparent>true</transparent>
+    <horizontal_alignment>0</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type = "label" version = "2.0.0">
+    <name>Label</name>
+    <x>6</x>
+    <y>535</y>
+    <width>222</width>
+    <text>ORANGE EXIT SCRIPT</text>
+    <transparent>true</transparent>
+    <auto_size>true</auto_size>
+    <foreground_color>
+        <color name = "$(=black)" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Monospaced" style = "BOLD" size = "16">
+        </font>
+    </font>
+    <transparent>true</transparent>
+    <horizontal_alignment>0</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type = "label" version = "2.0.0">
+    <name>Label</name>
+    <x>34</x>
+    <y>66</y>
+    <width>276</width>
+    <text>PARAMETERS ON F58 -<24>+</text>
+    <transparent>true</transparent>
+    <auto_size>true</auto_size>
+    <foreground_color>
+        <color name = "$(=blue)" red = "0" green = "0" blue = "255">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Monospaced" style = "BOLD" size = "16">
+        </font>
+    </font>
+    <transparent>true</transparent>
+    <horizontal_alignment>0</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type = "label" version = "2.0.0">
+    <name>Label</name>
+    <x>33</x>
+    <y>89</y>
+    <width>604</width>
+    <text>PARAMETER Z:HPTPAT Used For Testing  less than  and  greater than loops</text>
+    <transparent>true</transparent>
+    <auto_size>true</auto_size>
+    <foreground_color>
+        <color name = "$(=blue)" red = "0" green = "0" blue = "255">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Monospaced" style = "BOLD" size = "16">
+        </font>
+    </font>
+    <transparent>true</transparent>
+    <horizontal_alignment>0</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type = "label" version = "2.0.0">
+    <name>Label</name>
+    <x>698</x>
+    <y>235</y>
+    <width>111</width>
+    <text>Z:REXIT</text>
+    <transparent>true</transparent>
+    <auto_size>true</auto_size>
+    <foreground_color>
+        <color name = "white" red = "255" green = "255" blue = "255">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Monospaced" style = "BOLD" size = "16">
+        </font>
+    </font>
+    <transparent>true</transparent>
+    <horizontal_alignment>0</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type = "label" version = "2.0.0">
+    <name>Label</name>
+    <x>698</x>
+    <y>265</y>
+    <width>117</width>
+    <text>Z:RSTEP</text>
+    <transparent>true</transparent>
+    <auto_size>true</auto_size>
+    <foreground_color>
+        <color name = "white" red = "255" green = "255" blue = "255">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Monospaced" style = "BOLD" size = "16">
+        </font>
+    </font>
+    <transparent>true</transparent>
+    <horizontal_alignment>0</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type = "label" version = "2.0.0">
+    <name>Label</name>
+    <x>698</x>
+    <y>394</y>
+    <width>110</width>
+    <text>Z:BEXIT</text>
+    <transparent>true</transparent>
+    <auto_size>true</auto_size>
+    <foreground_color>
+        <color name = "white" red = "255" green = "255" blue = "255">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Monospaced" style = "BOLD" size = "16">
+        </font>
+    </font>
+    <transparent>true</transparent>
+    <horizontal_alignment>0</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type = "label" version = "2.0.0">
+    <name>Label</name>
+    <x>698</x>
+    <y>423</y>
+    <width>116</width>
+    <text>Z:BSTEP</text>
+    <transparent>true</transparent>
+    <auto_size>true</auto_size>
+    <foreground_color>
+        <color name = "white" red = "255" green = "255" blue = "255">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Monospaced" style = "BOLD" size = "16">
+        </font>
+    </font>
+    <transparent>true</transparent>
+    <horizontal_alignment>0</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type = "label" version = "2.0.0">
+    <name>Label</name>
+    <x>698</x>
+    <y>551</y>
+    <width>112</width>
+    <text>Z:OEXIT</text>
+    <transparent>true</transparent>
+    <auto_size>true</auto_size>
+    <foreground_color>
+        <color name = "white" red = "255" green = "255" blue = "255">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Monospaced" style = "BOLD" size = "16">
+        </font>
+    </font>
+    <transparent>true</transparent>
+    <horizontal_alignment>0</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type = "label" version = "2.0.0">
+    <name>Label</name>
+    <x>698</x>
+    <y>580</y>
+    <width>118</width>
+    <text>Z:OSTEP</text>
+    <transparent>true</transparent>
+    <auto_size>true</auto_size>
+    <foreground_color>
+        <color name = "white" red = "255" green = "255" blue = "255">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Monospaced" style = "BOLD" size = "16">
+        </font>
+    </font>
+    <transparent>true</transparent>
+    <horizontal_alignment>0</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+</display>
