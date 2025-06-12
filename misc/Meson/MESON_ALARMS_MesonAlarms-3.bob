@@ -1,0 +1,3910 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2023-07-01 16:13:59 by linden-->
+<display version = "2.0.0">
+  <name>Meson/MESON_ALARMS_MesonAlarms-3.bob</name>
+  <width>1200</width>
+  <height>900</height>
+  <grid_step_x>5</grid_step_x>
+  <grid_step_y>5</grid_step_y>
+  <background_color>
+      <color name = "wheat" red = "245" green = "222" blue = "179">
+      </color>
+  </background_color>
+  <widget type = "clock" version = "2.0.0">
+    <x>941</x>
+    <y>16</y>
+    <width>140</width>
+    <height>20</height>
+    <border_width>1.0</border_width>
+    <foreground_color>
+        <color name = "midnightblue" red = "25" green = "25" blue = "112">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "16">
+        </font>
+    </font>
+  </widget>
+  <widget type = "led" version = "2.0.0">
+    <x>210</x>
+    <y>144</y>
+    <width>120</width>
+    <height>20</height>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <square>true</square>
+    <bit>0</bit>
+    <pv_name>acsys://$(Dev1=Z:CTPSUC).ANALOG.ENABLE</pv_name>
+    <off_color>
+        <color name = "crimson" red = "220" green = "20" blue = "60">
+        </color>
+    </off_color>
+    <on_color>
+        <color name = "mediumturquoise" red = "72" green = "209" blue = "204">
+        </color>
+    </on_color>
+    <off_label>Alarm Bypassed</off_label>
+    <on_label>Alarm Enabled</on_label>
+  </widget>
+  <widget type = "led" version = "2.0.0">
+    <x>335</x>
+    <y>144</y>
+    <width>80</width>
+    <height>20</height>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <square>true</square>
+    <bit>0</bit>
+    <pv_name>acsys://$(Dev1=Z:CTPSUC).ANALOG.STATUS</pv_name>
+    <off_color>
+        <color name = "mediumturquoise" red = "72" green = "209" blue = "204">
+        </color>
+    </off_color>
+    <on_color>
+        <color name = "crimson" red = "220" green = "20" blue = "60">
+        </color>
+    </on_color>
+    <off_label>No Alarm</off_label>
+    <on_label>Alarming</on_label>
+  </widget>
+  <widget type = "textupdate" version = "2.0.0">
+    <name>Text Update</name>
+    <x>122</x>
+    <y>144</y>
+    <width>80</width>
+    <height>20</height>
+    <border_width>1</border_width>
+    <background_color>
+        <color name = "whitesmoke" red = "245" green = "245" blue = "245">
+        </color>
+    </background_color>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <pv_name>acsys://$(Dev1=Z:CTPSUC)</pv_name>
+  </widget>
+  <widget type = "label" version = "2.0.0">
+    <name>Label</name>
+    <x>53</x>
+    <y>145</y>
+    <width>50</width>
+    <height>17</height>
+    <text>$(Dev1=Z:CTPSUC)</text>
+    <transparent>false</transparent>
+    <border_width>0.0</border_width>
+    <auto_size>true</auto_size>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type = "action_button" version = "2.0.0">
+    <x>120</x>
+    <y>142</y>
+    <width>84</width>
+    <height>24</height>
+    <text></text>
+    <transparent>true</transparent>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "0">
+        </font>
+    </font>
+    <actions>
+      <action type = "open_display">
+        <file>MESON_LOOPS__AlarmSetMinMax.bob</file>
+        <target>tab</target>
+        <description>Open Display</description>
+        <macros>
+          <Var0>$(Dev1=Z:CTPSUC)</Var0>
+        </macros>
+      </action>
+    </actions>
+  </widget>
+  <widget type = "textupdate" version = "2.0.0">
+    <name>Text Update</name>
+    <x>422</x>
+    <y>145</y>
+    <width>60</width>
+    <height>18</height>
+    <border_width>1</border_width>
+    <background_color>
+        <color name = "aliceblue" red = "240" green = "248" blue = "255">
+        </color>
+    </background_color>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <pv_name>acsys://$(Dev1=Z:CTPSUC).ALARM_LIST_NAME</pv_name>
+  </widget>
+  <widget type = "led" version = "2.0.0">
+    <x>210</x>
+    <y>171</y>
+    <width>120</width>
+    <height>20</height>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <square>true</square>
+    <bit>0</bit>
+    <pv_name>acsys://$(Dev2=Z:CTPSTO).ANALOG.ENABLE</pv_name>
+    <off_color>
+        <color name = "crimson" red = "220" green = "20" blue = "60">
+        </color>
+    </off_color>
+    <on_color>
+        <color name = "mediumturquoise" red = "72" green = "209" blue = "204">
+        </color>
+    </on_color>
+    <off_label>Alarm Bypassed</off_label>
+    <on_label>Alarm Enabled</on_label>
+  </widget>
+  <widget type = "led" version = "2.0.0">
+    <x>335</x>
+    <y>171</y>
+    <width>80</width>
+    <height>20</height>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <square>true</square>
+    <bit>0</bit>
+    <pv_name>acsys://$(Dev2=Z:CTPSTO).ANALOG.STATUS</pv_name>
+    <off_color>
+        <color name = "mediumturquoise" red = "72" green = "209" blue = "204">
+        </color>
+    </off_color>
+    <on_color>
+        <color name = "crimson" red = "220" green = "20" blue = "60">
+        </color>
+    </on_color>
+    <off_label>No Alarm</off_label>
+    <on_label>Alarming</on_label>
+  </widget>
+  <widget type = "textupdate" version = "2.0.0">
+    <name>Text Update</name>
+    <x>122</x>
+    <y>171</y>
+    <width>80</width>
+    <height>20</height>
+    <border_width>1</border_width>
+    <background_color>
+        <color name = "whitesmoke" red = "245" green = "245" blue = "245">
+        </color>
+    </background_color>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <pv_name>acsys://$(Dev2=Z:CTPSTO)</pv_name>
+  </widget>
+  <widget type = "label" version = "2.0.0">
+    <name>Label</name>
+    <x>53</x>
+    <y>173</y>
+    <width>50</width>
+    <height>17</height>
+    <text>$(Dev2=Z:CTPSTO)</text>
+    <transparent>false</transparent>
+    <border_width>0.0</border_width>
+    <auto_size>true</auto_size>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type = "textupdate" version = "2.0.0">
+    <name>Text Update</name>
+    <x>422</x>
+    <y>172</y>
+    <width>60</width>
+    <height>18</height>
+    <border_width>1</border_width>
+    <background_color>
+        <color name = "aliceblue" red = "240" green = "248" blue = "255">
+        </color>
+    </background_color>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <pv_name>acsys://$(Dev2=Z:CTPSTO).ALARM_LIST_NAME</pv_name>
+  </widget>
+  <widget type = "action_button" version = "2.0.0">
+    <x>120</x>
+    <y>169</y>
+    <width>84</width>
+    <height>24</height>
+    <text></text>
+    <transparent>true</transparent>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "0">
+        </font>
+    </font>
+    <actions>
+      <action type = "open_display">
+        <file>MESON_LOOPS__AlarmSetMinMax.bob</file>
+        <target>tab</target>
+        <description>Open Display</description>
+        <macros>
+          <Var0>$(Dev2=Z:CTPSTO)</Var0>
+        </macros>
+      </action>
+    </actions>
+  </widget>
+  <widget type = "led" version = "2.0.0">
+    <x>210</x>
+    <y>223</y>
+    <width>120</width>
+    <height>20</height>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <square>true</square>
+    <bit>0</bit>
+    <pv_name>acsys://$(Dev4=Z:CTACN2).ANALOG.ENABLE</pv_name>
+    <off_color>
+        <color name = "crimson" red = "220" green = "20" blue = "60">
+        </color>
+    </off_color>
+    <on_color>
+        <color name = "mediumturquoise" red = "72" green = "209" blue = "204">
+        </color>
+    </on_color>
+    <off_label>Alarm Bypassed</off_label>
+    <on_label>Alarm Enabled</on_label>
+  </widget>
+  <widget type = "led" version = "2.0.0">
+    <x>335</x>
+    <y>223</y>
+    <width>80</width>
+    <height>20</height>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <square>true</square>
+    <bit>0</bit>
+    <pv_name>acsys://$(Dev4=Z:CTACN2).ANALOG.STATUS</pv_name>
+    <off_color>
+        <color name = "mediumturquoise" red = "72" green = "209" blue = "204">
+        </color>
+    </off_color>
+    <on_color>
+        <color name = "crimson" red = "220" green = "20" blue = "60">
+        </color>
+    </on_color>
+    <off_label>No Alarm</off_label>
+    <on_label>Alarming</on_label>
+  </widget>
+  <widget type = "textupdate" version = "2.0.0">
+    <name>Text Update</name>
+    <x>122</x>
+    <y>223</y>
+    <width>80</width>
+    <height>20</height>
+    <border_width>1</border_width>
+    <background_color>
+        <color name = "whitesmoke" red = "245" green = "245" blue = "245">
+        </color>
+    </background_color>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <pv_name>acsys://$(Dev4=Z:CTACN2)</pv_name>
+  </widget>
+  <widget type = "label" version = "2.0.0">
+    <name>Label</name>
+    <x>53</x>
+    <y>225</y>
+    <width>50</width>
+    <height>17</height>
+    <text>$(Dev4=Z:CTACN2)</text>
+    <transparent>false</transparent>
+    <border_width>0.0</border_width>
+    <auto_size>true</auto_size>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type = "textupdate" version = "2.0.0">
+    <name>Text Update</name>
+    <x>422</x>
+    <y>224</y>
+    <width>60</width>
+    <height>18</height>
+    <border_width>1</border_width>
+    <background_color>
+        <color name = "aliceblue" red = "240" green = "248" blue = "255">
+        </color>
+    </background_color>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <pv_name>acsys://$(Dev4=Z:CTACN2).ALARM_LIST_NAME</pv_name>
+  </widget>
+  <widget type = "led" version = "2.0.0">
+    <x>210</x>
+    <y>249</y>
+    <width>120</width>
+    <height>20</height>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <square>true</square>
+    <bit>0</bit>
+    <pv_name>acsys://$(Dev5=Z:VVCTN2).ANALOG.ENABLE</pv_name>
+    <off_color>
+        <color name = "crimson" red = "220" green = "20" blue = "60">
+        </color>
+    </off_color>
+    <on_color>
+        <color name = "mediumturquoise" red = "72" green = "209" blue = "204">
+        </color>
+    </on_color>
+    <off_label>Alarm Bypassed</off_label>
+    <on_label>Alarm Enabled</on_label>
+  </widget>
+  <widget type = "led" version = "2.0.0">
+    <x>335</x>
+    <y>249</y>
+    <width>80</width>
+    <height>20</height>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <square>true</square>
+    <bit>0</bit>
+    <pv_name>acsys://$(Dev5=Z:VVCTN2).ANALOG.STATUS</pv_name>
+    <off_color>
+        <color name = "mediumturquoise" red = "72" green = "209" blue = "204">
+        </color>
+    </off_color>
+    <on_color>
+        <color name = "crimson" red = "220" green = "20" blue = "60">
+        </color>
+    </on_color>
+    <off_label>No Alarm</off_label>
+    <on_label>Alarming</on_label>
+  </widget>
+  <widget type = "textupdate" version = "2.0.0">
+    <name>Text Update</name>
+    <x>122</x>
+    <y>249</y>
+    <width>80</width>
+    <height>20</height>
+    <border_width>1</border_width>
+    <background_color>
+        <color name = "whitesmoke" red = "245" green = "245" blue = "245">
+        </color>
+    </background_color>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <pv_name>acsys://$(Dev5=Z:VVCTN2)</pv_name>
+  </widget>
+  <widget type = "label" version = "2.0.0">
+    <name>Label</name>
+    <x>53</x>
+    <y>250</y>
+    <width>50</width>
+    <height>17</height>
+    <text>$(Dev5=Z:VVCTN2)</text>
+    <transparent>false</transparent>
+    <border_width>0.0</border_width>
+    <auto_size>true</auto_size>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type = "action_button" version = "2.0.0">
+    <x>120</x>
+    <y>247</y>
+    <width>84</width>
+    <height>24</height>
+    <text></text>
+    <transparent>true</transparent>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "0">
+        </font>
+    </font>
+    <actions>
+      <action type = "open_display">
+        <file>MESON_LOOPS__AlarmSetMinMax.bob</file>
+        <target>tab</target>
+        <description>Open Display</description>
+        <macros>
+          <Var0>$(Dev5=Z:VVCTN2)</Var0>
+        </macros>
+      </action>
+    </actions>
+  </widget>
+  <widget type = "textupdate" version = "2.0.0">
+    <name>Text Update</name>
+    <x>422</x>
+    <y>250</y>
+    <width>60</width>
+    <height>18</height>
+    <border_width>1</border_width>
+    <background_color>
+        <color name = "aliceblue" red = "240" green = "248" blue = "255">
+        </color>
+    </background_color>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <pv_name>acsys://$(Dev5=Z:VVCTN2).ALARM_LIST_NAME</pv_name>
+  </widget>
+  <widget type = "action_button" version = "2.0.0">
+    <x>120</x>
+    <y>221</y>
+    <width>84</width>
+    <height>24</height>
+    <text></text>
+    <transparent>true</transparent>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "0">
+        </font>
+    </font>
+    <actions>
+      <action type = "open_display">
+        <file>MESON_LOOPS__AlarmSetMinMax.bob</file>
+        <target>tab</target>
+        <description>Open Display</description>
+        <macros>
+          <Var0>$(Dev4=Z:CTACN2)</Var0>
+        </macros>
+      </action>
+    </actions>
+  </widget>
+  <widget type = "led" version = "2.0.0">
+    <x>210</x>
+    <y>197</y>
+    <width>120</width>
+    <height>20</height>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <square>true</square>
+    <bit>0</bit>
+    <pv_name>acsys://$(Dev3=Z:CTPCN2).ANALOG.ENABLE</pv_name>
+    <off_color>
+        <color name = "crimson" red = "220" green = "20" blue = "60">
+        </color>
+    </off_color>
+    <on_color>
+        <color name = "mediumturquoise" red = "72" green = "209" blue = "204">
+        </color>
+    </on_color>
+    <off_label>Alarm Bypassed</off_label>
+    <on_label>Alarm Enabled</on_label>
+  </widget>
+  <widget type = "led" version = "2.0.0">
+    <x>335</x>
+    <y>197</y>
+    <width>80</width>
+    <height>20</height>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <square>true</square>
+    <bit>0</bit>
+    <pv_name>acsys://$(Dev3=Z:CTPCN2).ANALOG.STATUS</pv_name>
+    <off_color>
+        <color name = "mediumturquoise" red = "72" green = "209" blue = "204">
+        </color>
+    </off_color>
+    <on_color>
+        <color name = "crimson" red = "220" green = "20" blue = "60">
+        </color>
+    </on_color>
+    <off_label>No Alarm</off_label>
+    <on_label>Alarming</on_label>
+  </widget>
+  <widget type = "textupdate" version = "2.0.0">
+    <name>Text Update</name>
+    <x>122</x>
+    <y>197</y>
+    <width>80</width>
+    <height>20</height>
+    <border_width>1</border_width>
+    <background_color>
+        <color name = "whitesmoke" red = "245" green = "245" blue = "245">
+        </color>
+    </background_color>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <pv_name>acsys://$(Dev3=Z:CTPCN2)</pv_name>
+  </widget>
+  <widget type = "label" version = "2.0.0">
+    <name>Label</name>
+    <x>53</x>
+    <y>199</y>
+    <width>50</width>
+    <height>17</height>
+    <text>$(Dev3=Z:CTPCN2)</text>
+    <transparent>false</transparent>
+    <border_width>0.0</border_width>
+    <auto_size>true</auto_size>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type = "textupdate" version = "2.0.0">
+    <name>Text Update</name>
+    <x>422</x>
+    <y>198</y>
+    <width>60</width>
+    <height>18</height>
+    <border_width>1</border_width>
+    <background_color>
+        <color name = "aliceblue" red = "240" green = "248" blue = "255">
+        </color>
+    </background_color>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <pv_name>acsys://$(Dev3=Z:CTPCN2).ALARM_LIST_NAME</pv_name>
+  </widget>
+  <widget type = "led" version = "2.0.0">
+    <x>210</x>
+    <y>333</y>
+    <width>120</width>
+    <height>20</height>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <square>true</square>
+    <bit>0</bit>
+    <pv_name>acsys://$(Dev8=Z:CTLLAM).ANALOG.ENABLE</pv_name>
+    <off_color>
+        <color name = "crimson" red = "220" green = "20" blue = "60">
+        </color>
+    </off_color>
+    <on_color>
+        <color name = "mediumturquoise" red = "72" green = "209" blue = "204">
+        </color>
+    </on_color>
+    <off_label>Alarm Bypassed</off_label>
+    <on_label>Alarm Enabled</on_label>
+  </widget>
+  <widget type = "led" version = "2.0.0">
+    <x>335</x>
+    <y>333</y>
+    <width>80</width>
+    <height>20</height>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <square>true</square>
+    <bit>0</bit>
+    <pv_name>acsys://$(Dev8=Z:CTLLAM).ANALOG.STATUS</pv_name>
+    <off_color>
+        <color name = "mediumturquoise" red = "72" green = "209" blue = "204">
+        </color>
+    </off_color>
+    <on_color>
+        <color name = "crimson" red = "220" green = "20" blue = "60">
+        </color>
+    </on_color>
+    <off_label>No Alarm</off_label>
+    <on_label>Alarming</on_label>
+  </widget>
+  <widget type = "textupdate" version = "2.0.0">
+    <name>Text Update</name>
+    <x>122</x>
+    <y>333</y>
+    <width>80</width>
+    <height>20</height>
+    <border_width>1</border_width>
+    <background_color>
+        <color name = "whitesmoke" red = "245" green = "245" blue = "245">
+        </color>
+    </background_color>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <pv_name>acsys://$(Dev8=Z:CTLLAM)</pv_name>
+  </widget>
+  <widget type = "label" version = "2.0.0">
+    <name>Label</name>
+    <x>53</x>
+    <y>334</y>
+    <width>50</width>
+    <height>17</height>
+    <text>$(Dev8=Z:CTLLAM)</text>
+    <transparent>false</transparent>
+    <border_width>0.0</border_width>
+    <auto_size>true</auto_size>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type = "action_button" version = "2.0.0">
+    <x>120</x>
+    <y>331</y>
+    <width>84</width>
+    <height>24</height>
+    <text></text>
+    <transparent>true</transparent>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "0">
+        </font>
+    </font>
+    <actions>
+      <action type = "open_display">
+        <file>MESON_LOOPS__AlarmSetMinMax.bob</file>
+        <target>tab</target>
+        <description>Open Display</description>
+        <macros>
+          <Var0>$(Dev8=Z:CTLLAM)</Var0>
+        </macros>
+      </action>
+    </actions>
+  </widget>
+  <widget type = "textupdate" version = "2.0.0">
+    <name>Text Update</name>
+    <x>422</x>
+    <y>334</y>
+    <width>60</width>
+    <height>18</height>
+    <border_width>1</border_width>
+    <background_color>
+        <color name = "aliceblue" red = "240" green = "248" blue = "255">
+        </color>
+    </background_color>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <pv_name>acsys://$(Dev8=Z:CTLLAM).ALARM_LIST_NAME</pv_name>
+  </widget>
+  <widget type = "led" version = "2.0.0">
+    <x>210</x>
+    <y>386</y>
+    <width>120</width>
+    <height>20</height>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <square>true</square>
+    <bit>0</bit>
+    <pv_name>acsys://$(Dev_10=Z:HTLLH1).ANALOG.ENABLE</pv_name>
+    <off_color>
+        <color name = "crimson" red = "220" green = "20" blue = "60">
+        </color>
+    </off_color>
+    <on_color>
+        <color name = "mediumturquoise" red = "72" green = "209" blue = "204">
+        </color>
+    </on_color>
+    <off_label>Alarm Bypassed</off_label>
+    <on_label>Alarm Enabled</on_label>
+  </widget>
+  <widget type = "led" version = "2.0.0">
+    <x>335</x>
+    <y>386</y>
+    <width>80</width>
+    <height>20</height>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <square>true</square>
+    <bit>0</bit>
+    <pv_name>acsys://$(Dev_10=Z:HTLLH1).ANALOG.STATUS</pv_name>
+    <off_color>
+        <color name = "mediumturquoise" red = "72" green = "209" blue = "204">
+        </color>
+    </off_color>
+    <on_color>
+        <color name = "crimson" red = "220" green = "20" blue = "60">
+        </color>
+    </on_color>
+    <off_label>No Alarm</off_label>
+    <on_label>Alarming</on_label>
+  </widget>
+  <widget type = "textupdate" version = "2.0.0">
+    <name>Text Update</name>
+    <x>122</x>
+    <y>386</y>
+    <width>80</width>
+    <height>20</height>
+    <border_width>1</border_width>
+    <background_color>
+        <color name = "whitesmoke" red = "245" green = "245" blue = "245">
+        </color>
+    </background_color>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <pv_name>acsys://$(Dev_10=Z:HTLLH1)</pv_name>
+  </widget>
+  <widget type = "label" version = "2.0.0">
+    <name>Label</name>
+    <x>53</x>
+    <y>387</y>
+    <width>50</width>
+    <height>17</height>
+    <text>$(Dev_10=Z:HTLLH1)</text>
+    <transparent>false</transparent>
+    <border_width>0.0</border_width>
+    <auto_size>true</auto_size>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type = "action_button" version = "2.0.0">
+    <x>120</x>
+    <y>384</y>
+    <width>84</width>
+    <height>24</height>
+    <text></text>
+    <transparent>true</transparent>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "0">
+        </font>
+    </font>
+    <actions>
+      <action type = "open_display">
+        <file>MESON_LOOPS__AlarmSetMinMax.bob</file>
+        <target>tab</target>
+        <description>Open Display</description>
+        <macros>
+          <Var0>$(Dev_10=Z:HTLLH1)</Var0>
+        </macros>
+      </action>
+    </actions>
+  </widget>
+  <widget type = "textupdate" version = "2.0.0">
+    <name>Text Update</name>
+    <x>422</x>
+    <y>387</y>
+    <width>60</width>
+    <height>18</height>
+    <border_width>1</border_width>
+    <background_color>
+        <color name = "aliceblue" red = "240" green = "248" blue = "255">
+        </color>
+    </background_color>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <pv_name>acsys://$(Dev_10=Z:HTLLH1).ALARM_LIST_NAME</pv_name>
+  </widget>
+  <widget type = "led" version = "2.0.0">
+    <x>210</x>
+    <y>413</y>
+    <width>120</width>
+    <height>20</height>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <square>true</square>
+    <bit>0</bit>
+    <pv_name>acsys://$(Dev_11=Z:HSLLS1).ANALOG.ENABLE</pv_name>
+    <off_color>
+        <color name = "crimson" red = "220" green = "20" blue = "60">
+        </color>
+    </off_color>
+    <on_color>
+        <color name = "mediumturquoise" red = "72" green = "209" blue = "204">
+        </color>
+    </on_color>
+    <off_label>Alarm Bypassed</off_label>
+    <on_label>Alarm Enabled</on_label>
+  </widget>
+  <widget type = "led" version = "2.0.0">
+    <x>335</x>
+    <y>413</y>
+    <width>80</width>
+    <height>20</height>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <square>true</square>
+    <bit>0</bit>
+    <pv_name>acsys://$(Dev_11=Z:HSLLS1).ANALOG.STATUS</pv_name>
+    <off_color>
+        <color name = "mediumturquoise" red = "72" green = "209" blue = "204">
+        </color>
+    </off_color>
+    <on_color>
+        <color name = "crimson" red = "220" green = "20" blue = "60">
+        </color>
+    </on_color>
+    <off_label>No Alarm</off_label>
+    <on_label>Alarming</on_label>
+  </widget>
+  <widget type = "textupdate" version = "2.0.0">
+    <name>Text Update</name>
+    <x>122</x>
+    <y>413</y>
+    <width>80</width>
+    <height>20</height>
+    <border_width>1</border_width>
+    <background_color>
+        <color name = "whitesmoke" red = "245" green = "245" blue = "245">
+        </color>
+    </background_color>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <pv_name>acsys://$(Dev_11=Z:HSLLS1)</pv_name>
+  </widget>
+  <widget type = "label" version = "2.0.0">
+    <name>Label</name>
+    <x>53</x>
+    <y>415</y>
+    <width>50</width>
+    <height>17</height>
+    <text>$(Dev_11=Z:HSLLS1)</text>
+    <transparent>false</transparent>
+    <border_width>0.0</border_width>
+    <auto_size>true</auto_size>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type = "textupdate" version = "2.0.0">
+    <name>Text Update</name>
+    <x>422</x>
+    <y>414</y>
+    <width>60</width>
+    <height>18</height>
+    <border_width>1</border_width>
+    <background_color>
+        <color name = "aliceblue" red = "240" green = "248" blue = "255">
+        </color>
+    </background_color>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <pv_name>acsys://$(Dev_11=Z:HSLLS1).ALARM_LIST_NAME</pv_name>
+  </widget>
+  <widget type = "action_button" version = "2.0.0">
+    <x>120</x>
+    <y>411</y>
+    <width>84</width>
+    <height>24</height>
+    <text></text>
+    <transparent>true</transparent>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "0">
+        </font>
+    </font>
+    <actions>
+      <action type = "open_display">
+        <file>MESON_LOOPS__AlarmSetMinMax.bob</file>
+        <target>tab</target>
+        <description>Open Display</description>
+        <macros>
+          <Var0>$(Dev_11=Z:HSLLS1)</Var0>
+        </macros>
+      </action>
+    </actions>
+  </widget>
+  <widget type = "led" version = "2.0.0">
+    <x>210</x>
+    <y>439</y>
+    <width>120</width>
+    <height>20</height>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <square>true</square>
+    <bit>0</bit>
+    <pv_name>acsys://$(Dev_12=Z:HTPTH6).ANALOG.ENABLE</pv_name>
+    <off_color>
+        <color name = "crimson" red = "220" green = "20" blue = "60">
+        </color>
+    </off_color>
+    <on_color>
+        <color name = "mediumturquoise" red = "72" green = "209" blue = "204">
+        </color>
+    </on_color>
+    <off_label>Alarm Bypassed</off_label>
+    <on_label>Alarm Enabled</on_label>
+  </widget>
+  <widget type = "led" version = "2.0.0">
+    <x>335</x>
+    <y>439</y>
+    <width>80</width>
+    <height>20</height>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <square>true</square>
+    <bit>0</bit>
+    <pv_name>acsys://$(Dev_12=Z:HTPTH6).ANALOG.STATUS</pv_name>
+    <off_color>
+        <color name = "mediumturquoise" red = "72" green = "209" blue = "204">
+        </color>
+    </off_color>
+    <on_color>
+        <color name = "crimson" red = "220" green = "20" blue = "60">
+        </color>
+    </on_color>
+    <off_label>No Alarm</off_label>
+    <on_label>Alarming</on_label>
+  </widget>
+  <widget type = "textupdate" version = "2.0.0">
+    <name>Text Update</name>
+    <x>122</x>
+    <y>439</y>
+    <width>80</width>
+    <height>20</height>
+    <border_width>1</border_width>
+    <background_color>
+        <color name = "whitesmoke" red = "245" green = "245" blue = "245">
+        </color>
+    </background_color>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <pv_name>acsys://$(Dev_12=Z:HTPTH6)</pv_name>
+  </widget>
+  <widget type = "label" version = "2.0.0">
+    <name>Label</name>
+    <x>53</x>
+    <y>440</y>
+    <width>50</width>
+    <height>17</height>
+    <text>$(Dev_12=Z:HTPTH6)</text>
+    <transparent>false</transparent>
+    <border_width>0.0</border_width>
+    <auto_size>true</auto_size>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type = "action_button" version = "2.0.0">
+    <x>120</x>
+    <y>437</y>
+    <width>84</width>
+    <height>24</height>
+    <text></text>
+    <transparent>true</transparent>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "0">
+        </font>
+    </font>
+    <actions>
+      <action type = "open_display">
+        <file>MESON_LOOPS__AlarmSetMinMax.bob</file>
+        <target>tab</target>
+        <description>Open Display</description>
+        <macros>
+          <Var0>$(Dev_12=Z:HTPTH6)</Var0>
+        </macros>
+      </action>
+    </actions>
+  </widget>
+  <widget type = "textupdate" version = "2.0.0">
+    <name>Text Update</name>
+    <x>422</x>
+    <y>440</y>
+    <width>60</width>
+    <height>18</height>
+    <border_width>1</border_width>
+    <background_color>
+        <color name = "aliceblue" red = "240" green = "248" blue = "255">
+        </color>
+    </background_color>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <pv_name>acsys://$(Dev_12=Z:HTPTH6).ALARM_LIST_NAME</pv_name>
+  </widget>
+  <widget type = "led" version = "2.0.0">
+    <x>210</x>
+    <y>466</y>
+    <width>120</width>
+    <height>20</height>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <square>true</square>
+    <bit>0</bit>
+    <pv_name>acsys://$(Dev_13=Z:HSPTS8).ANALOG.ENABLE</pv_name>
+    <off_color>
+        <color name = "crimson" red = "220" green = "20" blue = "60">
+        </color>
+    </off_color>
+    <on_color>
+        <color name = "mediumturquoise" red = "72" green = "209" blue = "204">
+        </color>
+    </on_color>
+    <off_label>Alarm Bypassed</off_label>
+    <on_label>Alarm Enabled</on_label>
+  </widget>
+  <widget type = "led" version = "2.0.0">
+    <x>335</x>
+    <y>466</y>
+    <width>80</width>
+    <height>20</height>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <square>true</square>
+    <bit>0</bit>
+    <pv_name>acsys://$(Dev_13=Z:HSPTS8).ANALOG.STATUS</pv_name>
+    <off_color>
+        <color name = "mediumturquoise" red = "72" green = "209" blue = "204">
+        </color>
+    </off_color>
+    <on_color>
+        <color name = "crimson" red = "220" green = "20" blue = "60">
+        </color>
+    </on_color>
+    <off_label>No Alarm</off_label>
+    <on_label>Alarming</on_label>
+  </widget>
+  <widget type = "textupdate" version = "2.0.0">
+    <name>Text Update</name>
+    <x>122</x>
+    <y>466</y>
+    <width>80</width>
+    <height>20</height>
+    <border_width>1</border_width>
+    <background_color>
+        <color name = "whitesmoke" red = "245" green = "245" blue = "245">
+        </color>
+    </background_color>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <pv_name>acsys://$(Dev_13=Z:HSPTS8)</pv_name>
+  </widget>
+  <widget type = "label" version = "2.0.0">
+    <name>Label</name>
+    <x>53</x>
+    <y>468</y>
+    <width>50</width>
+    <height>17</height>
+    <text>$(Dev_13=Z:HSPTS8)</text>
+    <transparent>false</transparent>
+    <border_width>0.0</border_width>
+    <auto_size>true</auto_size>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type = "textupdate" version = "2.0.0">
+    <name>Text Update</name>
+    <x>422</x>
+    <y>467</y>
+    <width>60</width>
+    <height>18</height>
+    <border_width>1</border_width>
+    <background_color>
+        <color name = "aliceblue" red = "240" green = "248" blue = "255">
+        </color>
+    </background_color>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <pv_name>acsys://$(Dev_13=Z:HSPTS8).ALARM_LIST_NAME</pv_name>
+  </widget>
+  <widget type = "action_button" version = "2.0.0">
+    <x>120</x>
+    <y>464</y>
+    <width>84</width>
+    <height>24</height>
+    <text></text>
+    <transparent>true</transparent>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "0">
+        </font>
+    </font>
+    <actions>
+      <action type = "open_display">
+        <file>MESON_LOOPS__AlarmSetMinMax.bob</file>
+        <target>tab</target>
+        <description>Open Display</description>
+        <macros>
+          <Var0>$(Dev_13=Z:HSPTS8)</Var0>
+        </macros>
+      </action>
+    </actions>
+  </widget>
+  <widget type = "led" version = "2.0.0">
+    <x>210</x>
+    <y>360</y>
+    <width>120</width>
+    <height>20</height>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <square>true</square>
+    <bit>0</bit>
+    <pv_name>acsys://$(Dev9=Z:CTLLND).ANALOG.ENABLE</pv_name>
+    <off_color>
+        <color name = "crimson" red = "220" green = "20" blue = "60">
+        </color>
+    </off_color>
+    <on_color>
+        <color name = "mediumturquoise" red = "72" green = "209" blue = "204">
+        </color>
+    </on_color>
+    <off_label>Alarm Bypassed</off_label>
+    <on_label>Alarm Enabled</on_label>
+  </widget>
+  <widget type = "led" version = "2.0.0">
+    <x>335</x>
+    <y>360</y>
+    <width>80</width>
+    <height>20</height>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <square>true</square>
+    <bit>0</bit>
+    <pv_name>acsys://$(Dev9=Z:CTLLND).ANALOG.STATUS</pv_name>
+    <off_color>
+        <color name = "mediumturquoise" red = "72" green = "209" blue = "204">
+        </color>
+    </off_color>
+    <on_color>
+        <color name = "crimson" red = "220" green = "20" blue = "60">
+        </color>
+    </on_color>
+    <off_label>No Alarm</off_label>
+    <on_label>Alarming</on_label>
+  </widget>
+  <widget type = "textupdate" version = "2.0.0">
+    <name>Text Update</name>
+    <x>122</x>
+    <y>360</y>
+    <width>80</width>
+    <height>20</height>
+    <border_width>1</border_width>
+    <background_color>
+        <color name = "whitesmoke" red = "245" green = "245" blue = "245">
+        </color>
+    </background_color>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <pv_name>acsys://$(Dev9=Z:CTLLND)</pv_name>
+  </widget>
+  <widget type = "label" version = "2.0.0">
+    <name>Label</name>
+    <x>53</x>
+    <y>361</y>
+    <width>50</width>
+    <height>17</height>
+    <text>$(Dev9=Z:CTLLND)</text>
+    <transparent>false</transparent>
+    <border_width>0.0</border_width>
+    <auto_size>true</auto_size>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type = "action_button" version = "2.0.0">
+    <x>120</x>
+    <y>358</y>
+    <width>84</width>
+    <height>24</height>
+    <text></text>
+    <transparent>true</transparent>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "0">
+        </font>
+    </font>
+    <actions>
+      <action type = "open_display">
+        <file>MESON_LOOPS__AlarmSetMinMax.bob</file>
+        <target>tab</target>
+        <description>Open Display</description>
+        <macros>
+          <Var0>$(Dev9=Z:CTLLND)</Var0>
+        </macros>
+      </action>
+    </actions>
+  </widget>
+  <widget type = "textupdate" version = "2.0.0">
+    <name>Text Update</name>
+    <x>422</x>
+    <y>361</y>
+    <width>60</width>
+    <height>18</height>
+    <border_width>1</border_width>
+    <background_color>
+        <color name = "aliceblue" red = "240" green = "248" blue = "255">
+        </color>
+    </background_color>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <pv_name>acsys://$(Dev9=Z:CTLLND).ALARM_LIST_NAME</pv_name>
+  </widget>
+  <widget type = "led" version = "2.0.0">
+    <x>210</x>
+    <y>278</y>
+    <width>120</width>
+    <height>20</height>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <square>true</square>
+    <bit>0</bit>
+    <pv_name>acsys://$(Dev6=Z:CTCTN2).ANALOG.ENABLE</pv_name>
+    <off_color>
+        <color name = "crimson" red = "220" green = "20" blue = "60">
+        </color>
+    </off_color>
+    <on_color>
+        <color name = "mediumturquoise" red = "72" green = "209" blue = "204">
+        </color>
+    </on_color>
+    <off_label>Alarm Bypassed</off_label>
+    <on_label>Alarm Enabled</on_label>
+  </widget>
+  <widget type = "led" version = "2.0.0">
+    <x>335</x>
+    <y>278</y>
+    <width>80</width>
+    <height>20</height>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <square>true</square>
+    <bit>0</bit>
+    <pv_name>acsys://$(Dev6=Z:CTCTN2).ANALOG.STATUS</pv_name>
+    <off_color>
+        <color name = "mediumturquoise" red = "72" green = "209" blue = "204">
+        </color>
+    </off_color>
+    <on_color>
+        <color name = "crimson" red = "220" green = "20" blue = "60">
+        </color>
+    </on_color>
+    <off_label>No Alarm</off_label>
+    <on_label>Alarming</on_label>
+  </widget>
+  <widget type = "textupdate" version = "2.0.0">
+    <name>Text Update</name>
+    <x>122</x>
+    <y>278</y>
+    <width>80</width>
+    <height>20</height>
+    <border_width>1</border_width>
+    <background_color>
+        <color name = "whitesmoke" red = "245" green = "245" blue = "245">
+        </color>
+    </background_color>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <pv_name>acsys://$(Dev6=Z:CTCTN2)</pv_name>
+  </widget>
+  <widget type = "label" version = "2.0.0">
+    <name>Label</name>
+    <x>53</x>
+    <y>280</y>
+    <width>50</width>
+    <height>17</height>
+    <text>$(Dev6=Z:CTCTN2)</text>
+    <transparent>false</transparent>
+    <border_width>0.0</border_width>
+    <auto_size>true</auto_size>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type = "textupdate" version = "2.0.0">
+    <name>Text Update</name>
+    <x>422</x>
+    <y>279</y>
+    <width>60</width>
+    <height>18</height>
+    <border_width>1</border_width>
+    <background_color>
+        <color name = "aliceblue" red = "240" green = "248" blue = "255">
+        </color>
+    </background_color>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <pv_name>acsys://$(Dev6=Z:CTCTN2).ALARM_LIST_NAME</pv_name>
+  </widget>
+  <widget type = "action_button" version = "2.0.0">
+    <x>120</x>
+    <y>276</y>
+    <width>84</width>
+    <height>24</height>
+    <text></text>
+    <transparent>true</transparent>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "0">
+        </font>
+    </font>
+    <actions>
+      <action type = "open_display">
+        <file>MESON_LOOPS__AlarmSetMinMax.bob</file>
+        <target>tab</target>
+        <description>Open Display</description>
+        <macros>
+          <Var0>$(Dev6=Z:CTCTN2)</Var0>
+        </macros>
+      </action>
+    </actions>
+  </widget>
+  <widget type = "led" version = "2.0.0">
+    <x>210</x>
+    <y>304</y>
+    <width>120</width>
+    <height>20</height>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <square>true</square>
+    <bit>0</bit>
+    <pv_name>acsys://$(Dev7=Z:CTLLAD).ANALOG.ENABLE</pv_name>
+    <off_color>
+        <color name = "crimson" red = "220" green = "20" blue = "60">
+        </color>
+    </off_color>
+    <on_color>
+        <color name = "mediumturquoise" red = "72" green = "209" blue = "204">
+        </color>
+    </on_color>
+    <off_label>Alarm Bypassed</off_label>
+    <on_label>Alarm Enabled</on_label>
+  </widget>
+  <widget type = "led" version = "2.0.0">
+    <x>335</x>
+    <y>304</y>
+    <width>80</width>
+    <height>20</height>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <square>true</square>
+    <bit>0</bit>
+    <pv_name>acsys://$(Dev7=Z:CTLLAD).ANALOG.STATUS</pv_name>
+    <off_color>
+        <color name = "mediumturquoise" red = "72" green = "209" blue = "204">
+        </color>
+    </off_color>
+    <on_color>
+        <color name = "crimson" red = "220" green = "20" blue = "60">
+        </color>
+    </on_color>
+    <off_label>No Alarm</off_label>
+    <on_label>Alarming</on_label>
+  </widget>
+  <widget type = "textupdate" version = "2.0.0">
+    <name>Text Update</name>
+    <x>122</x>
+    <y>304</y>
+    <width>80</width>
+    <height>20</height>
+    <border_width>1</border_width>
+    <background_color>
+        <color name = "whitesmoke" red = "245" green = "245" blue = "245">
+        </color>
+    </background_color>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <pv_name>acsys://$(Dev7=Z:CTLLAD)</pv_name>
+  </widget>
+  <widget type = "label" version = "2.0.0">
+    <name>Label</name>
+    <x>53</x>
+    <y>305</y>
+    <width>50</width>
+    <height>17</height>
+    <text>$(Dev7=Z:CTLLAD)</text>
+    <transparent>false</transparent>
+    <border_width>0.0</border_width>
+    <auto_size>true</auto_size>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type = "action_button" version = "2.0.0">
+    <x>120</x>
+    <y>302</y>
+    <width>84</width>
+    <height>24</height>
+    <text></text>
+    <transparent>true</transparent>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "0">
+        </font>
+    </font>
+    <actions>
+      <action type = "open_display">
+        <file>MESON_LOOPS__AlarmSetMinMax.bob</file>
+        <target>tab</target>
+        <description>Open Display</description>
+        <macros>
+          <Var0>$(Dev7=Z:CTLLAD)</Var0>
+        </macros>
+      </action>
+    </actions>
+  </widget>
+  <widget type = "textupdate" version = "2.0.0">
+    <name>Text Update</name>
+    <x>422</x>
+    <y>305</y>
+    <width>60</width>
+    <height>18</height>
+    <border_width>1</border_width>
+    <background_color>
+        <color name = "aliceblue" red = "240" green = "248" blue = "255">
+        </color>
+    </background_color>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <pv_name>acsys://$(Dev7=Z:CTLLAD).ALARM_LIST_NAME</pv_name>
+  </widget>
+  <widget type = "action_button" version = "2.0.0">
+    <x>120</x>
+    <y>195</y>
+    <width>84</width>
+    <height>24</height>
+    <text></text>
+    <transparent>true</transparent>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "0">
+        </font>
+    </font>
+    <actions>
+      <action type = "open_display">
+        <file>MESON_LOOPS__AlarmSetMinMax.bob</file>
+        <target>tab</target>
+        <description>Open Display</description>
+        <macros>
+          <Var0>$(Dev3=Z:CTPCN2)</Var0>
+        </macros>
+      </action>
+    </actions>
+  </widget>
+  <widget type = "led" version = "2.0.0">
+    <x>210</x>
+    <y>116</y>
+    <width>120</width>
+    <height>20</height>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <square>true</square>
+    <bit>0</bit>
+    <pv_name>acsys://$(Dev0=Z:CTPXHP).ANALOG.ENABLE</pv_name>
+    <off_color>
+        <color name = "crimson" red = "220" green = "20" blue = "60">
+        </color>
+    </off_color>
+    <on_color>
+        <color name = "mediumturquoise" red = "72" green = "209" blue = "204">
+        </color>
+    </on_color>
+    <off_label>Alarm Bypassed</off_label>
+    <on_label>Alarm Enabled</on_label>
+  </widget>
+  <widget type = "led" version = "2.0.0">
+    <x>335</x>
+    <y>116</y>
+    <width>80</width>
+    <height>20</height>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <square>true</square>
+    <bit>0</bit>
+    <pv_name>acsys://$(Dev0=Z:CTPXHP).ANALOG.STATUS</pv_name>
+    <off_color>
+        <color name = "mediumturquoise" red = "72" green = "209" blue = "204">
+        </color>
+    </off_color>
+    <on_color>
+        <color name = "crimson" red = "220" green = "20" blue = "60">
+        </color>
+    </on_color>
+    <off_label>No Alarm</off_label>
+    <on_label>Alarming</on_label>
+  </widget>
+  <widget type = "textupdate" version = "2.0.0">
+    <name>Text Update</name>
+    <x>122</x>
+    <y>116</y>
+    <width>80</width>
+    <height>20</height>
+    <border_width>1</border_width>
+    <background_color>
+        <color name = "whitesmoke" red = "245" green = "245" blue = "245">
+        </color>
+    </background_color>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <pv_name>acsys://$(Dev0=Z:CTPXHP)</pv_name>
+  </widget>
+  <widget type = "label" version = "2.0.0">
+    <name>Label</name>
+    <x>53</x>
+    <y>118</y>
+    <width>50</width>
+    <height>17</height>
+    <text>$(Dev0=Z:CTPXHP)</text>
+    <transparent>false</transparent>
+    <border_width>0.0</border_width>
+    <auto_size>true</auto_size>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type = "textupdate" version = "2.0.0">
+    <name>Text Update</name>
+    <x>422</x>
+    <y>117</y>
+    <width>60</width>
+    <height>18</height>
+    <border_width>1</border_width>
+    <background_color>
+        <color name = "aliceblue" red = "240" green = "248" blue = "255">
+        </color>
+    </background_color>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <pv_name>acsys://$(Dev0=Z:CTPXHP).ALARM_LIST_NAME</pv_name>
+  </widget>
+  <widget type = "action_button" version = "2.0.0">
+    <x>120</x>
+    <y>114</y>
+    <width>84</width>
+    <height>24</height>
+    <text></text>
+    <transparent>true</transparent>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "0">
+        </font>
+    </font>
+    <actions>
+      <action type = "open_display">
+        <file>MESON_LOOPS__AlarmSetMinMax.bob</file>
+        <target>tab</target>
+        <description>Open Display</description>
+        <macros>
+          <Var0>$(Dev0=Z:CTPXHP)</Var0>
+        </macros>
+      </action>
+    </actions>
+  </widget>
+  <widget type = "led" version = "2.0.0">
+    <x>210</x>
+    <y>516</y>
+    <width>120</width>
+    <height>20</height>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <square>true</square>
+    <bit>0</bit>
+    <pv_name>acsys://$(Dev_14=Z:VVTBBO).ANALOG.ENABLE</pv_name>
+    <off_color>
+        <color name = "crimson" red = "220" green = "20" blue = "60">
+        </color>
+    </off_color>
+    <on_color>
+        <color name = "mediumturquoise" red = "72" green = "209" blue = "204">
+        </color>
+    </on_color>
+    <off_label>Alarm Bypassed</off_label>
+    <on_label>Alarm Enabled</on_label>
+  </widget>
+  <widget type = "led" version = "2.0.0">
+    <x>335</x>
+    <y>516</y>
+    <width>80</width>
+    <height>20</height>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <square>true</square>
+    <bit>0</bit>
+    <pv_name>acsys://$(Dev_14=Z:VVTBBO).ANALOG.STATUS</pv_name>
+    <off_color>
+        <color name = "mediumturquoise" red = "72" green = "209" blue = "204">
+        </color>
+    </off_color>
+    <on_color>
+        <color name = "crimson" red = "220" green = "20" blue = "60">
+        </color>
+    </on_color>
+    <off_label>No Alarm</off_label>
+    <on_label>Alarming</on_label>
+  </widget>
+  <widget type = "textupdate" version = "2.0.0">
+    <name>Text Update</name>
+    <x>122</x>
+    <y>516</y>
+    <width>80</width>
+    <height>20</height>
+    <border_width>1</border_width>
+    <background_color>
+        <color name = "whitesmoke" red = "245" green = "245" blue = "245">
+        </color>
+    </background_color>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <pv_name>acsys://$(Dev_14=Z:VVTBBO)</pv_name>
+  </widget>
+  <widget type = "label" version = "2.0.0">
+    <name>Label</name>
+    <x>53</x>
+    <y>518</y>
+    <width>50</width>
+    <height>17</height>
+    <text>$(Dev_14=Z:VVTBBO)</text>
+    <transparent>false</transparent>
+    <border_width>0.0</border_width>
+    <auto_size>true</auto_size>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type = "textupdate" version = "2.0.0">
+    <name>Text Update</name>
+    <x>422</x>
+    <y>517</y>
+    <width>60</width>
+    <height>18</height>
+    <border_width>1</border_width>
+    <background_color>
+        <color name = "aliceblue" red = "240" green = "248" blue = "255">
+        </color>
+    </background_color>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <pv_name>acsys://$(Dev_14=Z:VVTBBO).ALARM_LIST_NAME</pv_name>
+  </widget>
+  <widget type = "led" version = "2.0.0">
+    <x>210</x>
+    <y>542</y>
+    <width>120</width>
+    <height>20</height>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <square>true</square>
+    <bit>0</bit>
+    <pv_name>acsys://$(Dev_15=Z:CTBPDO).ANALOG.ENABLE</pv_name>
+    <off_color>
+        <color name = "crimson" red = "220" green = "20" blue = "60">
+        </color>
+    </off_color>
+    <on_color>
+        <color name = "mediumturquoise" red = "72" green = "209" blue = "204">
+        </color>
+    </on_color>
+    <off_label>Alarm Bypassed</off_label>
+    <on_label>Alarm Enabled</on_label>
+  </widget>
+  <widget type = "led" version = "2.0.0">
+    <x>335</x>
+    <y>542</y>
+    <width>80</width>
+    <height>20</height>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <square>true</square>
+    <bit>0</bit>
+    <pv_name>acsys://$(Dev_15=Z:CTBPDO).ANALOG.STATUS</pv_name>
+    <off_color>
+        <color name = "mediumturquoise" red = "72" green = "209" blue = "204">
+        </color>
+    </off_color>
+    <on_color>
+        <color name = "crimson" red = "220" green = "20" blue = "60">
+        </color>
+    </on_color>
+    <off_label>No Alarm</off_label>
+    <on_label>Alarming</on_label>
+  </widget>
+  <widget type = "textupdate" version = "2.0.0">
+    <name>Text Update</name>
+    <x>122</x>
+    <y>542</y>
+    <width>80</width>
+    <height>20</height>
+    <border_width>1</border_width>
+    <background_color>
+        <color name = "whitesmoke" red = "245" green = "245" blue = "245">
+        </color>
+    </background_color>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <pv_name>acsys://$(Dev_15=Z:CTBPDO)</pv_name>
+  </widget>
+  <widget type = "label" version = "2.0.0">
+    <name>Label</name>
+    <x>53</x>
+    <y>543</y>
+    <width>50</width>
+    <height>17</height>
+    <text>$(Dev_15=Z:CTBPDO)</text>
+    <transparent>false</transparent>
+    <border_width>0.0</border_width>
+    <auto_size>true</auto_size>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type = "action_button" version = "2.0.0">
+    <x>120</x>
+    <y>540</y>
+    <width>84</width>
+    <height>24</height>
+    <text></text>
+    <transparent>true</transparent>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "0">
+        </font>
+    </font>
+    <actions>
+      <action type = "open_display">
+        <file>MESON_LOOPS__AlarmSetMinMax.bob</file>
+        <target>tab</target>
+        <description>Open Display</description>
+        <macros>
+          <Var0>$(Dev_15=Z:CTBPDO)</Var0>
+        </macros>
+      </action>
+    </actions>
+  </widget>
+  <widget type = "textupdate" version = "2.0.0">
+    <name>Text Update</name>
+    <x>422</x>
+    <y>543</y>
+    <width>60</width>
+    <height>18</height>
+    <border_width>1</border_width>
+    <background_color>
+        <color name = "aliceblue" red = "240" green = "248" blue = "255">
+        </color>
+    </background_color>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <pv_name>acsys://$(Dev_15=Z:CTBPDO).ALARM_LIST_NAME</pv_name>
+  </widget>
+  <widget type = "action_button" version = "2.0.0">
+    <x>120</x>
+    <y>514</y>
+    <width>84</width>
+    <height>24</height>
+    <text></text>
+    <transparent>true</transparent>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "0">
+        </font>
+    </font>
+    <actions>
+      <action type = "open_display">
+        <file>MESON_LOOPS__AlarmSetMinMax.bob</file>
+        <target>tab</target>
+        <description>Open Display</description>
+        <macros>
+          <Var0>$(Dev_14=Z:VVTBBO)</Var0>
+        </macros>
+      </action>
+    </actions>
+  </widget>
+  <widget type = "led" version = "2.0.0">
+    <x>210</x>
+    <y>569</y>
+    <width>120</width>
+    <height>20</height>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <square>true</square>
+    <bit>0</bit>
+    <pv_name>acsys://$(Dev_16=Z:CTRPDO).ANALOG.ENABLE</pv_name>
+    <off_color>
+        <color name = "crimson" red = "220" green = "20" blue = "60">
+        </color>
+    </off_color>
+    <on_color>
+        <color name = "mediumturquoise" red = "72" green = "209" blue = "204">
+        </color>
+    </on_color>
+    <off_label>Alarm Bypassed</off_label>
+    <on_label>Alarm Enabled</on_label>
+  </widget>
+  <widget type = "led" version = "2.0.0">
+    <x>335</x>
+    <y>569</y>
+    <width>80</width>
+    <height>20</height>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <square>true</square>
+    <bit>0</bit>
+    <pv_name>acsys://$(Dev_16=Z:CTRPDO).ANALOG.STATUS</pv_name>
+    <off_color>
+        <color name = "mediumturquoise" red = "72" green = "209" blue = "204">
+        </color>
+    </off_color>
+    <on_color>
+        <color name = "crimson" red = "220" green = "20" blue = "60">
+        </color>
+    </on_color>
+    <off_label>No Alarm</off_label>
+    <on_label>Alarming</on_label>
+  </widget>
+  <widget type = "textupdate" version = "2.0.0">
+    <name>Text Update</name>
+    <x>122</x>
+    <y>569</y>
+    <width>80</width>
+    <height>20</height>
+    <border_width>1</border_width>
+    <background_color>
+        <color name = "whitesmoke" red = "245" green = "245" blue = "245">
+        </color>
+    </background_color>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <pv_name>acsys://$(Dev_16=Z:CTRPDO)</pv_name>
+  </widget>
+  <widget type = "label" version = "2.0.0">
+    <name>Label</name>
+    <x>53</x>
+    <y>571</y>
+    <width>50</width>
+    <height>17</height>
+    <text>$(Dev_16=Z:CTRPDO)</text>
+    <transparent>false</transparent>
+    <border_width>0.0</border_width>
+    <auto_size>true</auto_size>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type = "textupdate" version = "2.0.0">
+    <name>Text Update</name>
+    <x>422</x>
+    <y>570</y>
+    <width>60</width>
+    <height>18</height>
+    <border_width>1</border_width>
+    <background_color>
+        <color name = "aliceblue" red = "240" green = "248" blue = "255">
+        </color>
+    </background_color>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <pv_name>acsys://$(Dev_16=Z:CTRPDO).ALARM_LIST_NAME</pv_name>
+  </widget>
+  <widget type = "action_button" version = "2.0.0">
+    <x>120</x>
+    <y>567</y>
+    <width>84</width>
+    <height>24</height>
+    <text></text>
+    <transparent>true</transparent>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "0">
+        </font>
+    </font>
+    <actions>
+      <action type = "open_display">
+        <file>MESON_LOOPS__AlarmSetMinMax.bob</file>
+        <target>tab</target>
+        <description>Open Display</description>
+        <macros>
+          <Var0>$(Dev_16=Z:CTRPDO)</Var0>
+        </macros>
+      </action>
+    </actions>
+  </widget>
+  <widget type = "led" version = "2.0.0">
+    <x>210</x>
+    <y>595</y>
+    <width>120</width>
+    <height>20</height>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <square>true</square>
+    <bit>0</bit>
+    <pv_name>acsys://$(Dev_17=Z:CTOPDO).ANALOG.ENABLE</pv_name>
+    <off_color>
+        <color name = "crimson" red = "220" green = "20" blue = "60">
+        </color>
+    </off_color>
+    <on_color>
+        <color name = "mediumturquoise" red = "72" green = "209" blue = "204">
+        </color>
+    </on_color>
+    <off_label>Alarm Bypassed</off_label>
+    <on_label>Alarm Enabled</on_label>
+  </widget>
+  <widget type = "led" version = "2.0.0">
+    <x>335</x>
+    <y>595</y>
+    <width>80</width>
+    <height>20</height>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <square>true</square>
+    <bit>0</bit>
+    <pv_name>acsys://$(Dev_17=Z:CTOPDO).ANALOG.STATUS</pv_name>
+    <off_color>
+        <color name = "mediumturquoise" red = "72" green = "209" blue = "204">
+        </color>
+    </off_color>
+    <on_color>
+        <color name = "crimson" red = "220" green = "20" blue = "60">
+        </color>
+    </on_color>
+    <off_label>No Alarm</off_label>
+    <on_label>Alarming</on_label>
+  </widget>
+  <widget type = "textupdate" version = "2.0.0">
+    <name>Text Update</name>
+    <x>122</x>
+    <y>595</y>
+    <width>80</width>
+    <height>20</height>
+    <border_width>1</border_width>
+    <background_color>
+        <color name = "whitesmoke" red = "245" green = "245" blue = "245">
+        </color>
+    </background_color>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <pv_name>acsys://$(Dev_17=Z:CTOPDO)</pv_name>
+  </widget>
+  <widget type = "label" version = "2.0.0">
+    <name>Label</name>
+    <x>53</x>
+    <y>596</y>
+    <width>50</width>
+    <height>17</height>
+    <text>$(Dev_17=Z:CTOPDO)</text>
+    <transparent>false</transparent>
+    <border_width>0.0</border_width>
+    <auto_size>true</auto_size>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type = "action_button" version = "2.0.0">
+    <x>120</x>
+    <y>593</y>
+    <width>84</width>
+    <height>24</height>
+    <text></text>
+    <transparent>true</transparent>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "0">
+        </font>
+    </font>
+    <actions>
+      <action type = "open_display">
+        <file>MESON_LOOPS__AlarmSetMinMax.bob</file>
+        <target>tab</target>
+        <description>Open Display</description>
+        <macros>
+          <Var0>$(Dev_17=Z:CTOPDO)</Var0>
+        </macros>
+      </action>
+    </actions>
+  </widget>
+  <widget type = "textupdate" version = "2.0.0">
+    <name>Text Update</name>
+    <x>422</x>
+    <y>596</y>
+    <width>60</width>
+    <height>18</height>
+    <border_width>1</border_width>
+    <background_color>
+        <color name = "aliceblue" red = "240" green = "248" blue = "255">
+        </color>
+    </background_color>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <pv_name>acsys://$(Dev_17=Z:CTOPDO).ALARM_LIST_NAME</pv_name>
+  </widget>
+  <widget type = "led" version = "2.0.0">
+    <x>210</x>
+    <y>622</y>
+    <width>120</width>
+    <height>20</height>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <square>true</square>
+    <bit>0</bit>
+    <pv_name>acsys://$(Dev_18=Z:VVPTDI).ANALOG.ENABLE</pv_name>
+    <off_color>
+        <color name = "crimson" red = "220" green = "20" blue = "60">
+        </color>
+    </off_color>
+    <on_color>
+        <color name = "mediumturquoise" red = "72" green = "209" blue = "204">
+        </color>
+    </on_color>
+    <off_label>Alarm Bypassed</off_label>
+    <on_label>Alarm Enabled</on_label>
+  </widget>
+  <widget type = "led" version = "2.0.0">
+    <x>335</x>
+    <y>622</y>
+    <width>80</width>
+    <height>20</height>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <square>true</square>
+    <bit>0</bit>
+    <pv_name>acsys://$(Dev_18=Z:VVPTDI).ANALOG.STATUS</pv_name>
+    <off_color>
+        <color name = "mediumturquoise" red = "72" green = "209" blue = "204">
+        </color>
+    </off_color>
+    <on_color>
+        <color name = "crimson" red = "220" green = "20" blue = "60">
+        </color>
+    </on_color>
+    <off_label>No Alarm</off_label>
+    <on_label>Alarming</on_label>
+  </widget>
+  <widget type = "textupdate" version = "2.0.0">
+    <name>Text Update</name>
+    <x>122</x>
+    <y>622</y>
+    <width>80</width>
+    <height>20</height>
+    <border_width>1</border_width>
+    <background_color>
+        <color name = "whitesmoke" red = "245" green = "245" blue = "245">
+        </color>
+    </background_color>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <pv_name>acsys://$(Dev_18=Z:VVPTDI)</pv_name>
+  </widget>
+  <widget type = "label" version = "2.0.0">
+    <name>Label</name>
+    <x>53</x>
+    <y>624</y>
+    <width>50</width>
+    <height>17</height>
+    <text>$(Dev_18=Z:VVPTDI)</text>
+    <transparent>false</transparent>
+    <border_width>0.0</border_width>
+    <auto_size>true</auto_size>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type = "textupdate" version = "2.0.0">
+    <name>Text Update</name>
+    <x>422</x>
+    <y>623</y>
+    <width>60</width>
+    <height>18</height>
+    <border_width>1</border_width>
+    <background_color>
+        <color name = "aliceblue" red = "240" green = "248" blue = "255">
+        </color>
+    </background_color>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <pv_name>acsys://$(Dev_18=Z:VVPTDI).ALARM_LIST_NAME</pv_name>
+  </widget>
+  <widget type = "action_button" version = "2.0.0">
+    <x>120</x>
+    <y>620</y>
+    <width>84</width>
+    <height>24</height>
+    <text></text>
+    <transparent>true</transparent>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "0">
+        </font>
+    </font>
+    <actions>
+      <action type = "open_display">
+        <file>MESON_LOOPS__AlarmSetMinMax.bob</file>
+        <target>tab</target>
+        <description>Open Display</description>
+        <macros>
+          <Var0>$(Dev_18=Z:VVPTDI)</Var0>
+        </macros>
+      </action>
+    </actions>
+  </widget>
+  <widget type = "led" version = "2.0.0">
+    <x>210</x>
+    <y>648</y>
+    <width>120</width>
+    <height>20</height>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <square>true</square>
+    <bit>0</bit>
+    <pv_name>acsys://$(Dev_19=Z:VVSPBO).ANALOG.ENABLE</pv_name>
+    <off_color>
+        <color name = "crimson" red = "220" green = "20" blue = "60">
+        </color>
+    </off_color>
+    <on_color>
+        <color name = "mediumturquoise" red = "72" green = "209" blue = "204">
+        </color>
+    </on_color>
+    <off_label>Alarm Bypassed</off_label>
+    <on_label>Alarm Enabled</on_label>
+  </widget>
+  <widget type = "led" version = "2.0.0">
+    <x>335</x>
+    <y>648</y>
+    <width>80</width>
+    <height>20</height>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <square>true</square>
+    <bit>0</bit>
+    <pv_name>acsys://$(Dev_19=Z:VVSPBO).ANALOG.STATUS</pv_name>
+    <off_color>
+        <color name = "mediumturquoise" red = "72" green = "209" blue = "204">
+        </color>
+    </off_color>
+    <on_color>
+        <color name = "crimson" red = "220" green = "20" blue = "60">
+        </color>
+    </on_color>
+    <off_label>No Alarm</off_label>
+    <on_label>Alarming</on_label>
+  </widget>
+  <widget type = "textupdate" version = "2.0.0">
+    <name>Text Update</name>
+    <x>122</x>
+    <y>648</y>
+    <width>80</width>
+    <height>20</height>
+    <border_width>1</border_width>
+    <background_color>
+        <color name = "whitesmoke" red = "245" green = "245" blue = "245">
+        </color>
+    </background_color>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <pv_name>acsys://$(Dev_19=Z:VVSPBO)</pv_name>
+  </widget>
+  <widget type = "label" version = "2.0.0">
+    <name>Label</name>
+    <x>53</x>
+    <y>650</y>
+    <width>50</width>
+    <height>17</height>
+    <text>$(Dev_19=Z:VVSPBO)</text>
+    <transparent>false</transparent>
+    <border_width>0.0</border_width>
+    <auto_size>true</auto_size>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type = "textupdate" version = "2.0.0">
+    <name>Text Update</name>
+    <x>422</x>
+    <y>649</y>
+    <width>60</width>
+    <height>18</height>
+    <border_width>1</border_width>
+    <background_color>
+        <color name = "aliceblue" red = "240" green = "248" blue = "255">
+        </color>
+    </background_color>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <pv_name>acsys://$(Dev_19=Z:VVSPBO).ALARM_LIST_NAME</pv_name>
+  </widget>
+  <widget type = "action_button" version = "2.0.0">
+    <x>120</x>
+    <y>646</y>
+    <width>84</width>
+    <height>24</height>
+    <text></text>
+    <transparent>true</transparent>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "0">
+        </font>
+    </font>
+    <actions>
+      <action type = "open_display">
+        <file>MESON_LOOPS__AlarmSetMinMax.bob</file>
+        <target>tab</target>
+        <description>Open Display</description>
+        <macros>
+          <Var0>$(Dev_19=Z:VVSPBO)</Var0>
+        </macros>
+      </action>
+    </actions>
+  </widget>
+  <widget type = "led" version = "2.0.0">
+    <x>210</x>
+    <y>674</y>
+    <width>120</width>
+    <height>20</height>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <square>true</square>
+    <bit>0</bit>
+    <pv_name>acsys://$(Dev_20=Z:MDPAIR).ANALOG.ENABLE</pv_name>
+    <off_color>
+        <color name = "crimson" red = "220" green = "20" blue = "60">
+        </color>
+    </off_color>
+    <on_color>
+        <color name = "mediumturquoise" red = "72" green = "209" blue = "204">
+        </color>
+    </on_color>
+    <off_label>Alarm Bypassed</off_label>
+    <on_label>Alarm Enabled</on_label>
+  </widget>
+  <widget type = "led" version = "2.0.0">
+    <x>335</x>
+    <y>674</y>
+    <width>80</width>
+    <height>20</height>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <square>true</square>
+    <bit>0</bit>
+    <pv_name>acsys://$(Dev_20=Z:MDPAIR).ANALOG.STATUS</pv_name>
+    <off_color>
+        <color name = "mediumturquoise" red = "72" green = "209" blue = "204">
+        </color>
+    </off_color>
+    <on_color>
+        <color name = "crimson" red = "220" green = "20" blue = "60">
+        </color>
+    </on_color>
+    <off_label>No Alarm</off_label>
+    <on_label>Alarming</on_label>
+  </widget>
+  <widget type = "textupdate" version = "2.0.0">
+    <name>Text Update</name>
+    <x>122</x>
+    <y>674</y>
+    <width>80</width>
+    <height>20</height>
+    <border_width>1</border_width>
+    <background_color>
+        <color name = "whitesmoke" red = "245" green = "245" blue = "245">
+        </color>
+    </background_color>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <pv_name>acsys://$(Dev_20=Z:MDPAIR)</pv_name>
+  </widget>
+  <widget type = "label" version = "2.0.0">
+    <name>Label</name>
+    <x>53</x>
+    <y>675</y>
+    <width>50</width>
+    <height>17</height>
+    <text>$(Dev_20=Z:MDPAIR)</text>
+    <transparent>false</transparent>
+    <border_width>0.0</border_width>
+    <auto_size>true</auto_size>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type = "action_button" version = "2.0.0">
+    <x>120</x>
+    <y>672</y>
+    <width>84</width>
+    <height>24</height>
+    <text></text>
+    <transparent>true</transparent>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "0">
+        </font>
+    </font>
+    <actions>
+      <action type = "open_display">
+        <file>MESON_LOOPS__AlarmSetMinMax.bob</file>
+        <target>tab</target>
+        <description>Open Display</description>
+        <macros>
+          <Var0>$(Dev_20=Z:MDPAIR)</Var0>
+        </macros>
+      </action>
+    </actions>
+  </widget>
+  <widget type = "textupdate" version = "2.0.0">
+    <name>Text Update</name>
+    <x>422</x>
+    <y>675</y>
+    <width>60</width>
+    <height>18</height>
+    <border_width>1</border_width>
+    <background_color>
+        <color name = "aliceblue" red = "240" green = "248" blue = "255">
+        </color>
+    </background_color>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <pv_name>acsys://$(Dev_20=Z:MDPAIR).ALARM_LIST_NAME</pv_name>
+  </widget>
+  <widget type = "action_button" version = "2.0.0">
+    <x>974</x>
+    <y>37</y>
+    <width>80</width>
+    <height>30</height>
+    <text>MAIN MENU</text>
+    <transparent>true</transparent>
+    <border_width>3.0</border_width>
+    <foreground_color>
+        <color name = "midnightblue" red = "25" green = "25" blue = "112">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "16">
+        </font>
+    </font>
+    <actions>
+      <action type = "open_display">
+        <file>Main_Menu.bob</file>
+        <target>tab</target>
+        <description>Open Display</description>
+      </action>
+    </actions>
+  </widget>
+  <widget type = "led" version = "2.0.0">
+    <x>708</x>
+    <y>116</y>
+    <width>120</width>
+    <height>20</height>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <square>true</square>
+    <bit>0</bit>
+    <pv_name>acsys://Digital Alarm,1834</pv_name>
+    <off_color>
+        <color name = "crimson" red = "220" green = "20" blue = "60">
+        </color>
+    </off_color>
+    <on_color>
+        <color name = "mediumturquoise" red = "72" green = "209" blue = "204">
+        </color>
+    </on_color>
+    <off_label>Alarm Bypassed</off_label>
+    <on_label>Alarm Enabled</on_label>
+  </widget>
+  <widget type = "led" version = "2.0.0">
+    <x>833</x>
+    <y>116</y>
+    <width>80</width>
+    <height>20</height>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <square>true</square>
+    <bit>0</bit>
+    <pv_name>acsys://Digital Alarm,1834</pv_name>
+    <off_color>
+        <color name = "mediumturquoise" red = "72" green = "209" blue = "204">
+        </color>
+    </off_color>
+    <on_color>
+        <color name = "crimson" red = "220" green = "20" blue = "60">
+        </color>
+    </on_color>
+    <off_label>No Alarm</off_label>
+    <on_label>Alarming</on_label>
+  </widget>
+  <widget type = "label" version = "2.0.0">
+    <name>Label</name>
+    <x>551</x>
+    <y>118</y>
+    <width>55</width>
+    <height>17</height>
+    <text>$(Dev_35=F:M4FANC)</text>
+    <transparent>false</transparent>
+    <border_width>0.0</border_width>
+    <auto_size>true</auto_size>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type = "textupdate" version = "2.0.0">
+    <name>Text Update</name>
+    <x>920</x>
+    <y>117</y>
+    <width>60</width>
+    <height>18</height>
+    <border_width>1</border_width>
+    <background_color>
+        <color name = "aliceblue" red = "240" green = "248" blue = "255">
+        </color>
+    </background_color>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <pv_name>acsys://$(Dev_35=F:M4FANC).ALARM_LIST_NAME</pv_name>
+  </widget>
+  <widget type = "led" version = "2.0.0">
+    <x>659</x>
+    <y>115</y>
+    <width>20</width>
+    <height>20</height>
+    <border_width>1.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "16">
+        </font>
+    </font>
+    <square>true</square>
+    <bit>0</bit>
+    <off_color>
+        <color name = "crimson" red = "220" green = "20" blue = "60">
+        </color>
+    </off_color>
+    <on_color>
+        <color name = "aliceblue" red = "240" green = "248" blue = "255">
+        </color>
+    </on_color>
+    <off_label>*</off_label>
+    <on_label>+</on_label>
+  </widget>
+  <widget type = "led" version = "2.0.0">
+    <x>622</x>
+    <y>115</y>
+    <width>20</width>
+    <height>20</height>
+    <border_width>1.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "14">
+        </font>
+    </font>
+    <square>true</square>
+    <bit>0</bit>
+    <pv_name>acsys://$(Dev_35=F:M4FANC).STATUS.ON</pv_name>
+    <off_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </off_color>
+    <on_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </on_color>
+    <off_label>0</off_label>
+    <on_label>1</on_label>
+  </widget>
+  <widget type = "led" version = "2.0.0">
+    <x>708</x>
+    <y>142</y>
+    <width>120</width>
+    <height>20</height>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <square>true</square>
+    <bit>0</bit>
+    <pv_name>acsys://Digital Alarm,1857</pv_name>
+    <off_color>
+        <color name = "crimson" red = "220" green = "20" blue = "60">
+        </color>
+    </off_color>
+    <on_color>
+        <color name = "mediumturquoise" red = "72" green = "209" blue = "204">
+        </color>
+    </on_color>
+    <off_label>Alarm Bypassed</off_label>
+    <on_label>Alarm Enabled</on_label>
+  </widget>
+  <widget type = "led" version = "2.0.0">
+    <x>833</x>
+    <y>142</y>
+    <width>80</width>
+    <height>20</height>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <square>true</square>
+    <bit>0</bit>
+    <pv_name>acsys://Digital Alarm,1857</pv_name>
+    <off_color>
+        <color name = "mediumturquoise" red = "72" green = "209" blue = "204">
+        </color>
+    </off_color>
+    <on_color>
+        <color name = "crimson" red = "220" green = "20" blue = "60">
+        </color>
+    </on_color>
+    <off_label>No Alarm</off_label>
+    <on_label>Alarming</on_label>
+  </widget>
+  <widget type = "label" version = "2.0.0">
+    <name>Label</name>
+    <x>551</x>
+    <y>145</y>
+    <width>55</width>
+    <height>17</height>
+    <text>$(Dev_36=Z:CTCOMM)</text>
+    <transparent>false</transparent>
+    <border_width>0.0</border_width>
+    <auto_size>true</auto_size>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type = "textupdate" version = "2.0.0">
+    <name>Text Update</name>
+    <x>920</x>
+    <y>143</y>
+    <width>60</width>
+    <height>18</height>
+    <border_width>1</border_width>
+    <background_color>
+        <color name = "aliceblue" red = "240" green = "248" blue = "255">
+        </color>
+    </background_color>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <pv_name>acsys://$(Dev_36=Z:CTCOMM).ALARM_LIST_NAME</pv_name>
+  </widget>
+  <widget type = "led" version = "2.0.0">
+    <x>708</x>
+    <y>168</y>
+    <width>120</width>
+    <height>20</height>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <square>true</square>
+    <bit>0</bit>
+    <pv_name>acsys://Digital Alarm,1858</pv_name>
+    <off_color>
+        <color name = "crimson" red = "220" green = "20" blue = "60">
+        </color>
+    </off_color>
+    <on_color>
+        <color name = "mediumturquoise" red = "72" green = "209" blue = "204">
+        </color>
+    </on_color>
+    <off_label>Alarm Bypassed</off_label>
+    <on_label>Alarm Enabled</on_label>
+  </widget>
+  <widget type = "led" version = "2.0.0">
+    <x>833</x>
+    <y>168</y>
+    <width>80</width>
+    <height>20</height>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <square>true</square>
+    <bit>0</bit>
+    <pv_name>acsys://Digital Alarm,1858</pv_name>
+    <off_color>
+        <color name = "mediumturquoise" red = "72" green = "209" blue = "204">
+        </color>
+    </off_color>
+    <on_color>
+        <color name = "crimson" red = "220" green = "20" blue = "60">
+        </color>
+    </on_color>
+    <off_label>No Alarm</off_label>
+    <on_label>Alarming</on_label>
+  </widget>
+  <widget type = "label" version = "2.0.0">
+    <name>Label</name>
+    <x>551</x>
+    <y>171</y>
+    <width>55</width>
+    <height>17</height>
+    <text>$(Dev_37=Z:CTVCOM)</text>
+    <transparent>false</transparent>
+    <border_width>0.0</border_width>
+    <auto_size>true</auto_size>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type = "textupdate" version = "2.0.0">
+    <name>Text Update</name>
+    <x>920</x>
+    <y>169</y>
+    <width>60</width>
+    <height>18</height>
+    <border_width>1</border_width>
+    <background_color>
+        <color name = "aliceblue" red = "240" green = "248" blue = "255">
+        </color>
+    </background_color>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <pv_name>acsys://$(Dev_37=Z:CTVCOM).ALARM_LIST_NAME</pv_name>
+  </widget>
+  <widget type = "led" version = "2.0.0">
+    <x>659</x>
+    <y>142</y>
+    <width>20</width>
+    <height>20</height>
+    <border_width>1.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "16">
+        </font>
+    </font>
+    <square>true</square>
+    <bit>0</bit>
+    <off_color>
+        <color name = "crimson" red = "220" green = "20" blue = "60">
+        </color>
+    </off_color>
+    <on_color>
+        <color name = "white" red = "255" green = "255" blue = "255">
+        </color>
+    </on_color>
+    <off_label>*</off_label>
+    <on_label>+</on_label>
+  </widget>
+  <widget type = "led" version = "2.0.0">
+    <x>659</x>
+    <y>169</y>
+    <width>20</width>
+    <height>20</height>
+    <border_width>1.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "16">
+        </font>
+    </font>
+    <square>true</square>
+    <bit>0</bit>
+    <off_color>
+        <color name = "crimson" red = "220" green = "20" blue = "60">
+        </color>
+    </off_color>
+    <on_color>
+        <color name = "aliceblue" red = "240" green = "248" blue = "255">
+        </color>
+    </on_color>
+    <off_label>*</off_label>
+    <on_label>+</on_label>
+  </widget>
+  <widget type = "led" version = "2.0.0">
+    <x>622</x>
+    <y>141</y>
+    <width>20</width>
+    <height>20</height>
+    <border_width>1.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "14">
+        </font>
+    </font>
+    <square>true</square>
+    <bit>0</bit>
+    <pv_name>acsys://$(Dev_36=Z:CTCOMM).STATUS.ON</pv_name>
+    <off_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </off_color>
+    <on_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </on_color>
+    <off_label>0</off_label>
+    <on_label>1</on_label>
+  </widget>
+  <widget type = "led" version = "2.0.0">
+    <x>622</x>
+    <y>169</y>
+    <width>20</width>
+    <height>20</height>
+    <border_width>1.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "14">
+        </font>
+    </font>
+    <square>true</square>
+    <bit>0</bit>
+    <pv_name>acsys://$(Dev_37=Z:CTVCOM).STATUS.ON</pv_name>
+    <off_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </off_color>
+    <on_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </on_color>
+    <off_label>0</off_label>
+    <on_label>1</on_label>
+  </widget>
+  <widget type = "action_button" version = "2.0.0">
+    <x>996</x>
+    <y>84</y>
+    <width>125</width>
+    <height>20</height>
+    <text>Compressor F37-9,29</text>
+    <transparent>true</transparent>
+    <border_width>3.0</border_width>
+    <foreground_color>
+        <color name = "midnightblue" red = "25" green = "25" blue = "112">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "14">
+        </font>
+    </font>
+    <actions>
+      <action type = "open_display">
+        <file>MESON_ALARMS_MesonAlarms-1.bob</file>
+        <target>tab</target>
+        <description>Open Display</description>
+      </action>
+    </actions>
+  </widget>
+  <widget type = "action_button" version = "2.0.0">
+    <x>996</x>
+    <y>116</y>
+    <width>125</width>
+    <height>20</height>
+    <text>Non-Crit F37-11,12</text>
+    <transparent>true</transparent>
+    <border_width>3.0</border_width>
+    <foreground_color>
+        <color name = "midnightblue" red = "25" green = "25" blue = "112">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "14">
+        </font>
+    </font>
+    <actions>
+      <action type = "open_display">
+        <file>MESON_ALARMS_MesonAlarms-2.bob</file>
+        <target>tab</target>
+        <description>Open Display</description>
+      </action>
+    </actions>
+  </widget>
+  <widget type = "action_button" version = "2.0.0">
+    <x>996</x>
+    <y>145</y>
+    <width>125</width>
+    <height>20</height>
+    <text>HTS,STC,VAC SKID</text>
+    <transparent>true</transparent>
+    <border_width>3.0</border_width>
+    <foreground_color>
+        <color name = "midnightblue" red = "25" green = "25" blue = "112">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "14">
+        </font>
+    </font>
+    <actions>
+      <action type = "open_display">
+        <file>MESON_ALARMS_MesonAlarms-4.bob</file>
+        <target>tab</target>
+        <description>Open Display</description>
+      </action>
+    </actions>
+  </widget>
+  <widget type = "action_button" version = "2.0.0">
+    <x>996</x>
+    <y>176</y>
+    <width>125</width>
+    <height>20</height>
+    <text>Frigs B,R,O F37-30,31,32</text>
+    <transparent>true</transparent>
+    <border_width>3.0</border_width>
+    <foreground_color>
+        <color name = "midnightblue" red = "25" green = "25" blue = "112">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "14">
+        </font>
+    </font>
+    <actions>
+      <action type = "open_display">
+        <file>MESON_ALARMS_MesonAlarms.bob</file>
+        <target>tab</target>
+        <description>Open Display</description>
+      </action>
+    </actions>
+  </widget>
+  <widget type = "led" version = "2.0.0">
+    <x>210</x>
+    <y>704</y>
+    <width>120</width>
+    <height>20</height>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <square>true</square>
+    <bit>0</bit>
+    <pv_name>acsys://$(Dev_21=Z:CTPAIR).ANALOG.ENABLE</pv_name>
+    <off_color>
+        <color name = "crimson" red = "220" green = "20" blue = "60">
+        </color>
+    </off_color>
+    <on_color>
+        <color name = "mediumturquoise" red = "72" green = "209" blue = "204">
+        </color>
+    </on_color>
+    <off_label>Alarm Bypassed</off_label>
+    <on_label>Alarm Enabled</on_label>
+  </widget>
+  <widget type = "led" version = "2.0.0">
+    <x>335</x>
+    <y>704</y>
+    <width>80</width>
+    <height>20</height>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <square>true</square>
+    <bit>0</bit>
+    <pv_name>acsys://$(Dev_21=Z:CTPAIR).ANALOG.STATUS</pv_name>
+    <off_color>
+        <color name = "mediumturquoise" red = "72" green = "209" blue = "204">
+        </color>
+    </off_color>
+    <on_color>
+        <color name = "crimson" red = "220" green = "20" blue = "60">
+        </color>
+    </on_color>
+    <off_label>No Alarm</off_label>
+    <on_label>Alarming</on_label>
+  </widget>
+  <widget type = "textupdate" version = "2.0.0">
+    <name>Text Update</name>
+    <x>122</x>
+    <y>704</y>
+    <width>80</width>
+    <height>20</height>
+    <border_width>1</border_width>
+    <background_color>
+        <color name = "whitesmoke" red = "245" green = "245" blue = "245">
+        </color>
+    </background_color>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <pv_name>acsys://$(Dev_21=Z:CTPAIR)</pv_name>
+  </widget>
+  <widget type = "label" version = "2.0.0">
+    <name>Label</name>
+    <x>53</x>
+    <y>705</y>
+    <width>50</width>
+    <height>17</height>
+    <text>$(Dev_21=Z:CTPAIR)</text>
+    <transparent>false</transparent>
+    <border_width>0.0</border_width>
+    <auto_size>true</auto_size>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type = "action_button" version = "2.0.0">
+    <x>120</x>
+    <y>702</y>
+    <width>84</width>
+    <height>24</height>
+    <text></text>
+    <transparent>true</transparent>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "0">
+        </font>
+    </font>
+    <actions>
+      <action type = "open_display">
+        <file>MESON_LOOPS__AlarmSetMinMax.bob</file>
+        <target>tab</target>
+        <description>Open Display</description>
+        <macros>
+          <Var0>$(Dev_21=Z:CTPAIR)</Var0>
+        </macros>
+      </action>
+    </actions>
+  </widget>
+  <widget type = "textupdate" version = "2.0.0">
+    <name>Text Update</name>
+    <x>422</x>
+    <y>705</y>
+    <width>60</width>
+    <height>18</height>
+    <border_width>1</border_width>
+    <background_color>
+        <color name = "aliceblue" red = "240" green = "248" blue = "255">
+        </color>
+    </background_color>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <pv_name>acsys://$(Dev_21=Z:CTPAIR).ALARM_LIST_NAME</pv_name>
+  </widget>
+  <widget type = "led" version = "2.0.0">
+    <x>224</x>
+    <y>768</y>
+    <width>120</width>
+    <height>20</height>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <square>true</square>
+    <bit>0</bit>
+    <pv_name>acsys://$(Dev_22=E:STCINV).ANALOG.ENABLE</pv_name>
+    <off_color>
+        <color name = "crimson" red = "220" green = "20" blue = "60">
+        </color>
+    </off_color>
+    <on_color>
+        <color name = "mediumturquoise" red = "72" green = "209" blue = "204">
+        </color>
+    </on_color>
+    <off_label>Alarm Bypassed</off_label>
+    <on_label>Alarm Enabled</on_label>
+  </widget>
+  <widget type = "led" version = "2.0.0">
+    <x>349</x>
+    <y>768</y>
+    <width>80</width>
+    <height>20</height>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <square>true</square>
+    <bit>0</bit>
+    <pv_name>acsys://$(Dev_22=E:STCINV).ANALOG.STATUS</pv_name>
+    <off_color>
+        <color name = "mediumturquoise" red = "72" green = "209" blue = "204">
+        </color>
+    </off_color>
+    <on_color>
+        <color name = "crimson" red = "220" green = "20" blue = "60">
+        </color>
+    </on_color>
+    <off_label>No Alarm</off_label>
+    <on_label>Alarming</on_label>
+  </widget>
+  <widget type = "textupdate" version = "2.0.0">
+    <name>Text Update</name>
+    <x>122</x>
+    <y>769</y>
+    <width>80</width>
+    <height>20</height>
+    <border_width>1</border_width>
+    <background_color>
+        <color name = "whitesmoke" red = "245" green = "245" blue = "245">
+        </color>
+    </background_color>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <pv_name>acsys://$(Dev_22=E:STCINV)</pv_name>
+  </widget>
+  <widget type = "label" version = "2.0.0">
+    <name>Label</name>
+    <x>53</x>
+    <y>770</y>
+    <width>50</width>
+    <height>17</height>
+    <text>$(Dev_22=E:STCINV)</text>
+    <transparent>false</transparent>
+    <border_width>0.0</border_width>
+    <auto_size>true</auto_size>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type = "action_button" version = "2.0.0">
+    <x>120</x>
+    <y>767</y>
+    <width>84</width>
+    <height>24</height>
+    <text></text>
+    <transparent>true</transparent>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "0">
+        </font>
+    </font>
+    <actions>
+      <action type = "open_display">
+        <file>MESON_LOOPS__AlarmSetMinMax.bob</file>
+        <target>tab</target>
+        <description>Open Display</description>
+        <macros>
+          <Var0>$(Dev_22=E:STCINV)</Var0>
+        </macros>
+      </action>
+    </actions>
+  </widget>
+  <widget type = "textupdate" version = "2.0.0">
+    <name>Text Update</name>
+    <x>436</x>
+    <y>769</y>
+    <width>60</width>
+    <height>18</height>
+    <border_width>1</border_width>
+    <background_color>
+        <color name = "aliceblue" red = "240" green = "248" blue = "255">
+        </color>
+    </background_color>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <pv_name>acsys://$(Dev_22=E:STCINV).ALARM_LIST_NAME</pv_name>
+  </widget>
+  <widget type = "led" version = "2.0.0">
+    <x>224</x>
+    <y>798</y>
+    <width>120</width>
+    <height>20</height>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <square>true</square>
+    <bit>0</bit>
+    <pv_name>acsys://$(Dev_23=E:HTCINV).ANALOG.ENABLE</pv_name>
+    <off_color>
+        <color name = "crimson" red = "220" green = "20" blue = "60">
+        </color>
+    </off_color>
+    <on_color>
+        <color name = "mediumturquoise" red = "72" green = "209" blue = "204">
+        </color>
+    </on_color>
+    <off_label>Alarm Bypassed</off_label>
+    <on_label>Alarm Enabled</on_label>
+  </widget>
+  <widget type = "led" version = "2.0.0">
+    <x>349</x>
+    <y>798</y>
+    <width>80</width>
+    <height>20</height>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <square>true</square>
+    <bit>0</bit>
+    <pv_name>acsys://$(Dev_23=E:HTCINV).ANALOG.STATUS</pv_name>
+    <off_color>
+        <color name = "mediumturquoise" red = "72" green = "209" blue = "204">
+        </color>
+    </off_color>
+    <on_color>
+        <color name = "crimson" red = "220" green = "20" blue = "60">
+        </color>
+    </on_color>
+    <off_label>No Alarm</off_label>
+    <on_label>Alarming</on_label>
+  </widget>
+  <widget type = "textupdate" version = "2.0.0">
+    <name>Text Update</name>
+    <x>122</x>
+    <y>799</y>
+    <width>80</width>
+    <height>20</height>
+    <border_width>1</border_width>
+    <background_color>
+        <color name = "whitesmoke" red = "245" green = "245" blue = "245">
+        </color>
+    </background_color>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <pv_name>acsys://$(Dev_23=E:HTCINV)</pv_name>
+  </widget>
+  <widget type = "label" version = "2.0.0">
+    <name>Label</name>
+    <x>53</x>
+    <y>800</y>
+    <width>50</width>
+    <height>17</height>
+    <text>$(Dev_23=E:HTCINV)</text>
+    <transparent>false</transparent>
+    <border_width>0.0</border_width>
+    <auto_size>true</auto_size>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type = "action_button" version = "2.0.0">
+    <x>120</x>
+    <y>797</y>
+    <width>84</width>
+    <height>24</height>
+    <text></text>
+    <transparent>true</transparent>
+    <border_width>2.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "0">
+        </font>
+    </font>
+    <actions>
+      <action type = "open_display">
+        <file>MESON_LOOPS__AlarmSetMinMax.bob</file>
+        <target>tab</target>
+        <description>Open Display</description>
+        <macros>
+          <Var0>$(Dev_23=E:HTCINV)</Var0>
+        </macros>
+      </action>
+    </actions>
+  </widget>
+  <widget type = "textupdate" version = "2.0.0">
+    <name>Text Update</name>
+    <x>436</x>
+    <y>799</y>
+    <width>60</width>
+    <height>18</height>
+    <border_width>1</border_width>
+    <background_color>
+        <color name = "aliceblue" red = "240" green = "248" blue = "255">
+        </color>
+    </background_color>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <pv_name>acsys://$(Dev_23=E:HTCINV).ALARM_LIST_NAME</pv_name>
+  </widget>
+  <widget type = "rectangle" version = "2.0.0">
+    <name>Rectangle</name>
+    <x>4</x>
+    <y>9</y>
+    <width>1185</width>
+    <height>60</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type = "label" version = "2.0.0">
+    <name>Label</name>
+    <x>116</x>
+    <y>22</y>
+    <width>475</width>
+    <text>MESON CRITICAL ALARMS F37-22,23</text>
+    <transparent>true</transparent>
+    <auto_size>true</auto_size>
+    <foreground_color>
+        <color name = "midnightblue" red = "25" green = "25" blue = "112">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Monospaced" style = "BOLD" size = "24">
+        </font>
+    </font>
+    <transparent>true</transparent>
+    <horizontal_alignment>0</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type = "label" version = "2.0.0">
+    <name>Label</name>
+    <x>424</x>
+    <y>96</y>
+    <width>100</width>
+    <text>F37-22</text>
+    <transparent>true</transparent>
+    <auto_size>true</auto_size>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Monospaced" style = "BOLD" size = "16">
+        </font>
+    </font>
+    <transparent>true</transparent>
+    <horizontal_alignment>0</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type = "label" version = "2.0.0">
+    <name>Label</name>
+    <x>38</x>
+    <y>96</y>
+    <width>313</width>
+    <text>MCTF CRITICAL ANALOG ALARMS</text>
+    <transparent>true</transparent>
+    <auto_size>true</auto_size>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Monospaced" style = "BOLD" size = "16">
+        </font>
+    </font>
+    <transparent>true</transparent>
+    <horizontal_alignment>0</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type = "label" version = "2.0.0">
+    <name>Label</name>
+    <x>534</x>
+    <y>96</y>
+    <width>313</width>
+    <text>MCTF CRITICAL  DIGITAL ALARMS</text>
+    <transparent>true</transparent>
+    <auto_size>true</auto_size>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Monospaced" style = "BOLD" size = "16">
+        </font>
+    </font>
+    <transparent>true</transparent>
+    <horizontal_alignment>0</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type = "label" version = "2.0.0">
+    <name>Label</name>
+    <x>920</x>
+    <y>96</y>
+    <width>100</width>
+    <text>F37-23</text>
+    <transparent>true</transparent>
+    <auto_size>true</auto_size>
+    <foreground_color>
+        <color name = "black" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Monospaced" style = "BOLD" size = "16">
+        </font>
+    </font>
+    <transparent>true</transparent>
+    <horizontal_alignment>0</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+</display>
