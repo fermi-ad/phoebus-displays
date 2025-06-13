@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2025-01-30 16:27:21 by epics-->
+<!--Saved on 2025-06-13 09:16:42 by epics-->
 <display version="2.0.0">
   <name>SSR2-$(cm)</name>
   <macros>
@@ -26,6 +26,7 @@
     <name>Action Button_1</name>
     <actions>
       <action type="open_display">
+        <description>IPMS Selector</description>
         <file>../SSAs/barc-7kw-gui/IPMSselect.bob</file>
         <macros>
           <acc>PIP2IT</acc>
@@ -33,7 +34,6 @@
           <dev>$(acc):$(cm)_HPRF_SSA$(ssa)</dev>
         </macros>
         <target>tab</target>
-        <description>IPMS Selector</description>
       </action>
     </actions>
     <text>SSA Expert Control</text>
@@ -109,9 +109,9 @@
         <name>Action Button_41</name>
         <actions>
           <action type="open_display">
+            <description>Open SSR1 Vacuum</description>
             <file>SSR1Vacuum.bob</file>
             <target>tab</target>
-            <description>Open SSR1 Vacuum</description>
           </action>
         </actions>
         <text></text>
@@ -484,9 +484,9 @@
         <name>Action Button_42</name>
         <actions>
           <action type="open_display">
+            <description>Open SSR1 Cryostat</description>
             <file>SSR1cryostat.bob</file>
             <target>tab</target>
-            <description>Open SSR1 Cryostat</description>
           </action>
         </actions>
         <text></text>
@@ -835,21 +835,6 @@
           </off_color>
         </widget>
         <widget type="byte_monitor" version="2.0.0">
-          <name>Byte Monitor_98</name>
-          <pv_name>PIP2IT:pHB650_RFPI_SSA6:Status</pv_name>
-          <x>215</x>
-          <y>25</y>
-          <width>20</width>
-          <numBits>1</numBits>
-          <bitReverse>true</bitReverse>
-          <horizontal>false</horizontal>
-          <square>true</square>
-          <off_color>
-            <color name="MAJOR" red="255" green="0" blue="0">
-            </color>
-          </off_color>
-        </widget>
-        <widget type="byte_monitor" version="2.0.0">
           <name>Byte Monitor_99</name>
           <pv_name>PIP2IT:pHB650_RFPI_SSA1:Status</pv_name>
           <x>115</x>
@@ -917,22 +902,6 @@
           <name>Byte Monitor_103</name>
           <pv_name>PIP2IT:pHB650_RFPI_SSA5:Status</pv_name>
           <x>195</x>
-          <y>45</y>
-          <width>20</width>
-          <startBit>3</startBit>
-          <numBits>1</numBits>
-          <bitReverse>true</bitReverse>
-          <horizontal>false</horizontal>
-          <square>true</square>
-          <off_color>
-            <color name="MAJOR" red="255" green="0" blue="0">
-            </color>
-          </off_color>
-        </widget>
-        <widget type="byte_monitor" version="2.0.0">
-          <name>Byte Monitor_104</name>
-          <pv_name>PIP2IT:pHB650_RFPI_SSA6:Status</pv_name>
-          <x>215</x>
           <y>45</y>
           <width>20</width>
           <startBit>3</startBit>
@@ -1025,50 +994,26 @@
             </color>
           </off_color>
         </widget>
-        <widget type="byte_monitor" version="2.0.0">
-          <name>Byte Monitor_110</name>
-          <pv_name>PIP2IT:pHB650_RFPI_SSA6:Status</pv_name>
-          <x>215</x>
-          <y>65</y>
-          <width>20</width>
-          <startBit>15</startBit>
-          <numBits>1</numBits>
-          <bitReverse>true</bitReverse>
-          <horizontal>false</horizontal>
-          <square>true</square>
-          <off_color>
-            <color name="MAJOR" red="255" green="0" blue="0">
-            </color>
-          </off_color>
-        </widget>
-        <widget type="group" version="3.0.0">
-          <name>Group_7</name>
+        <widget type="label" version="2.0.0">
+          <name>Label_85</name>
+          <text>1    2    3    4    5 </text>
           <x>115</x>
           <y>85</y>
-          <width>120</width>
           <height>15</height>
-          <style>3</style>
-          <transparent>true</transparent>
-          <widget type="label" version="2.0.0">
-            <name>Label_85</name>
-            <text>1    2    3    4    5    6</text>
-            <width>120</width>
-            <height>15</height>
-            <font>
-              <font family="Liberation Sans" style="REGULAR" size="12.0">
-              </font>
+          <font>
+            <font family="Liberation Sans" style="REGULAR" size="12.0">
             </font>
-            <horizontal_alignment>1</horizontal_alignment>
-            <vertical_alignment>1</vertical_alignment>
-          </widget>
+          </font>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
         </widget>
         <widget type="action_button" version="3.0.0">
           <name>Action Button_51</name>
           <actions>
             <action type="open_display">
+              <description>Open RFPI Summary</description>
               <file>../RFPI/RFPI_PoC_main.bob</file>
               <target>window</target>
-              <description>Open RFPI Summary</description>
             </action>
           </actions>
           <text></text>
@@ -1120,55 +1065,30 @@
         <transparent>false</transparent>
         <border_width>1</border_width>
       </widget>
-      <widget type="label" version="2.0.0">
-        <name>Label_88</name>
-        <text>LLRF Permits</text>
+      <widget type="group" version="3.0.0">
+        <name>Group</name>
         <y>35</y>
         <width>140</width>
-        <height>15</height>
-        <font>
-          <font family="Liberation Sans" style="BOLD" size="12.0">
-          </font>
-        </font>
-        <horizontal_alignment>1</horizontal_alignment>
-        <vertical_alignment>1</vertical_alignment>
-      </widget>
-      <widget type="action_button" version="3.0.0">
-        <name>Action Button_52</name>
-        <actions>
-          <action type="open_display">
-            <file>../Common/cryo-embedded-displays/LLRF/LLRFcontrol.bob</file>
-            <target>tab</target>
-            <description>Open LLRF Controls</description>
-          </action>
-        </actions>
-        <text></text>
-        <width>140</width>
-        <height>100</height>
-        <font>
-          <font family="Liberation Sans" style="BOLD" size="20.0">
-          </font>
-        </font>
-        <background_color>
-          <color name="Header_Background" red="77" green="77" blue="77">
-          </color>
-        </background_color>
-        <transparent>true</transparent>
-        <tooltip>$(actions)</tooltip>
-      </widget>
-      <widget type="group" version="3.0.0">
-        <name>Group_9</name>
-        <x>10</x>
-        <y>55</y>
-        <width>120</width>
-        <height>35</height>
+        <height>55</height>
         <style>3</style>
         <transparent>true</transparent>
         <widget type="label" version="2.0.0">
+          <name>Label_88</name>
+          <text>LLRF Permits</text>
+          <width>140</width>
+          <height>15</height>
+          <font>
+            <font family="Liberation Sans" style="BOLD" size="12.0">
+            </font>
+          </font>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="label" version="2.0.0">
           <name>Label_89</name>
-          <text> 1    2    3    4    5    6</text>
-          <y>20</y>
-          <width>120</width>
+          <text> 1    2    3    4    5 </text>
+          <x>20</x>
+          <y>40</y>
           <height>15</height>
           <font>
             <font family="Liberation Sans" style="REGULAR" size="12.0">
@@ -1178,8 +1098,10 @@
           <vertical_alignment>1</vertical_alignment>
         </widget>
         <widget type="group" version="3.0.0">
-          <name>Group_10</name>
-          <width>120</width>
+          <name>Group</name>
+          <x>20</x>
+          <y>20</y>
+          <width>100</width>
           <height>20</height>
           <style>3</style>
           <transparent>true</transparent>
@@ -1257,22 +1179,40 @@
               </color>
             </off_color>
           </widget>
-          <widget type="byte_monitor" version="2.0.0">
-            <name>Byte Monitor_116</name>
-            <pv_name>PIP2IT:pHB650_RFPI_SSA6:Status</pv_name>
-            <x>100</x>
-            <width>20</width>
-            <startBit>1</startBit>
-            <numBits>1</numBits>
-            <bitReverse>true</bitReverse>
-            <horizontal>false</horizontal>
-            <square>true</square>
-            <off_color>
-              <color name="MAJOR" red="255" green="0" blue="0">
-              </color>
-            </off_color>
-          </widget>
         </widget>
+      </widget>
+      <widget type="action_button" version="3.0.0">
+        <name>Action Button_2</name>
+        <actions>
+          <action type="open_display">
+            <description>Open LLRF Controls</description>
+            <file>../LLRF/edm-to-bob/BOB/slac/rf_srf_cavity_main_fnal.bob</file>
+            <macros>
+              <CM>PIP2IT:PHB650:H1</CM>
+              <C>1</C>
+              <RFS>1A</RFS>
+              <R>A</R>
+              <CH>1</CH>
+              <ID>2</ID>
+              <SELCHAR>3</SELCHAR>
+            </macros>
+            <target>tab</target>
+          </action>
+        </actions>
+        <text></text>
+        <width>140</width>
+        <height>100</height>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="20.0">
+          </font>
+        </font>
+        <background_color>
+          <color name="Header_Background" red="77" green="77" blue="77">
+          </color>
+        </background_color>
+        <transparent>true</transparent>
+        <tooltip>$(actions)</tooltip>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
       </widget>
     </widget>
   </widget>
@@ -1306,19 +1246,19 @@
       <name>Action Button_43</name>
       <actions execute_as_one="true">
         <action type="write_pv">
+          <description>Safety Reset</description>
           <pv_name>$(rf06)1_RFA:CMD</pv_name>
           <value>4</value>
-          <description>Safety Reset</description>
         </action>
         <action type="write_pv">
+          <description>Reset Enable</description>
           <pv_name>$(rf06)1_RFA:CMD</pv_name>
           <value>2</value>
-          <description>Reset Enable</description>
         </action>
         <action type="write_pv">
+          <description>Start Enable</description>
           <pv_name>$(rf06)1_RFA:CMD</pv_name>
           <value>0</value>
-          <description>Start Enable</description>
         </action>
       </actions>
       <text>Ext. Enables</text>
@@ -1465,12 +1405,12 @@ Enable</text>
       <name>Action Button_20</name>
       <actions>
         <action type="open_display">
+          <description>Open Display</description>
           <file>SSR1-SSA.bob</file>
           <macros>
             <ssa>1</ssa>
           </macros>
           <target>tab</target>
-          <description>Open Display</description>
         </action>
       </actions>
       <text></text>
@@ -1567,6 +1507,7 @@ Enable</text>
       <name>Action Button_33</name>
       <actions>
         <action type="open_display">
+          <description>Open Coupler Display</description>
           <file>../PIP2TS/CouplerSummary.bob</file>
           <macros>
             <plc>1</plc>
@@ -1574,7 +1515,6 @@ Enable</text>
             <ssa>1</ssa>
           </macros>
           <target>window</target>
-          <description>Open Coupler Display</description>
         </action>
       </actions>
       <text></text>
@@ -1588,9 +1528,9 @@ Enable</text>
     <name>Action Button_53</name>
     <actions>
       <action type="open_display">
+        <description>Flux Gates</description>
         <file>HB650FluxGates.bob</file>
         <target>window</target>
-        <description>Flux Gates</description>
       </action>
     </actions>
     <text>Flux Gates</text>
@@ -1604,9 +1544,9 @@ Enable</text>
     <name>Action Button_54</name>
     <actions>
       <action type="open_display">
+        <description>Radiation Detectors</description>
         <file>../CMTF-RadDetectors.bob</file>
         <target>window</target>
-        <description>Radiation Detectors</description>
       </action>
     </actions>
     <text>Radiation Detectors</text>
@@ -1789,31 +1729,13 @@ Enable</text>
     <style>3</style>
     <transparent>true</transparent>
     <widget type="embedded" version="2.0.0">
-      <name>Embedded Display_1</name>
+      <name>Embedded Display_5</name>
       <macros>
-        <ssa>1</ssa>
+        <ssa>5</ssa>
+        <cav>5</cav>
       </macros>
       <file>../Common/ssa-embedded-displays/SSAoverviewBARC.bob</file>
-      <width>120</width>
-      <height>215</height>
-    </widget>
-    <widget type="embedded" version="2.0.0">
-      <name>Embedded Display_2</name>
-      <macros>
-        <ssa>2</ssa>
-      </macros>
-      <file>../Common/ssa-embedded-displays/SSAoverviewBARC.bob</file>
-      <x>170</x>
-      <width>120</width>
-      <height>215</height>
-    </widget>
-    <widget type="embedded" version="2.0.0">
-      <name>Embedded Display_3</name>
-      <macros>
-        <ssa>3</ssa>
-      </macros>
-      <file>../Common/ssa-embedded-displays/SSAoverviewBARC.bob</file>
-      <x>340</x>
+      <x>680</x>
       <width>120</width>
       <height>215</height>
     </widget>
@@ -1821,6 +1743,7 @@ Enable</text>
       <name>Embedded Display_4</name>
       <macros>
         <ssa>4</ssa>
+        <cav>4</cav>
       </macros>
       <file>../Common/ssa-embedded-displays/SSAoverviewBARC.bob</file>
       <x>510</x>
@@ -1828,14 +1751,161 @@ Enable</text>
       <height>215</height>
     </widget>
     <widget type="embedded" version="2.0.0">
-      <name>Embedded Display_5</name>
+      <name>Embedded Display_3</name>
       <macros>
-        <ssa>5</ssa>
+        <ssa>3</ssa>
+        <cav>3</cav>
       </macros>
       <file>../Common/ssa-embedded-displays/SSAoverviewBARC.bob</file>
-      <x>680</x>
+      <x>340</x>
       <width>120</width>
       <height>215</height>
     </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Embedded Display_2</name>
+      <macros>
+        <ssa>2</ssa>
+        <cav>2</cav>
+      </macros>
+      <file>../Common/ssa-embedded-displays/SSAoverviewBARC.bob</file>
+      <x>170</x>
+      <width>120</width>
+      <height>215</height>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Embedded Display_1</name>
+      <macros>
+        <ssa>1</ssa>
+        <cav>1</cav>
+      </macros>
+      <file>../Common/ssa-embedded-displays/SSAoverviewBARC.bob</file>
+      <width>120</width>
+      <height>215</height>
+    </widget>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_3</name>
+    <actions>
+      <action type="open_display">
+        <description>Open LLRF Ctrl</description>
+        <file>../LLRF/edm-to-bob/BOB/slac/rf_srf_cavity_main_fnal.bob</file>
+        <macros>
+          <CM>PIP2IT:PHB650:H1</CM>
+          <C>1</C>
+          <RFS>1A</RFS>
+          <R>A</R>
+          <CH>1</CH>
+          <ID>2</ID>
+          <SELCHAR>3</SELCHAR>
+        </macros>
+        <target>window</target>
+      </action>
+    </actions>
+    <x>210</x>
+    <y>740</y>
+    <width>120</width>
+    <height>25</height>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_4</name>
+    <actions>
+      <action type="open_display">
+        <description>Open LLRF Ctrl</description>
+        <file>../LLRF/edm-to-bob/BOB/slac/rf_srf_cavity_main_fnal.bob</file>
+        <macros>
+          <CM>PIP2IT:PHB650:H1</CM>
+          <C>2</C>
+          <RFS>1A</RFS>
+          <R>A</R>
+          <CH>1</CH>
+          <ID>2</ID>
+          <SELCHAR>3</SELCHAR>
+        </macros>
+        <target>window</target>
+      </action>
+    </actions>
+    <x>380</x>
+    <y>740</y>
+    <width>120</width>
+    <height>25</height>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_5</name>
+    <actions>
+      <action type="open_display">
+        <description>Open LLRF Ctrl</description>
+        <file>../LLRF/edm-to-bob/BOB/slac/rf_srf_cavity_main_fnal.bob</file>
+        <macros>
+          <CM>PIP2IT:PHB650:H1</CM>
+          <C>3</C>
+          <RFS>2A</RFS>
+          <R>A</R>
+          <CH>1</CH>
+          <ID>2</ID>
+          <SELCHAR>3</SELCHAR>
+        </macros>
+        <target>window</target>
+      </action>
+    </actions>
+    <x>550</x>
+    <y>740</y>
+    <width>120</width>
+    <height>25</height>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_6</name>
+    <actions>
+      <action type="open_display">
+        <description>Open LLRF Ctrl</description>
+        <file>../LLRF/edm-to-bob/BOB/slac/rf_srf_cavity_main_fnal.bob</file>
+        <macros>
+          <CM>PIP2IT:PHB650:H1</CM>
+          <C>4</C>
+          <RFS>2A</RFS>
+          <R>A</R>
+          <CH>1</CH>
+          <ID>2</ID>
+          <SELCHAR>3</SELCHAR>
+        </macros>
+        <target>window</target>
+      </action>
+    </actions>
+    <x>720</x>
+    <y>740</y>
+    <width>120</width>
+    <height>25</height>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_7</name>
+    <actions>
+      <action type="open_display">
+        <description>Open LLRF Ctrl</description>
+        <file>../LLRF/edm-to-bob/BOB/slac/rf_srf_cavity_main_fnal.bob</file>
+        <macros>
+          <CM>PIP2IT:PHB650:H1</CM>
+          <C>5</C>
+          <RFS>1B</RFS>
+          <R>B</R>
+          <CH>1</CH>
+          <ID>2</ID>
+          <SELCHAR>3</SELCHAR>
+        </macros>
+        <target>window</target>
+      </action>
+    </actions>
+    <x>890</x>
+    <y>740</y>
+    <width>120</width>
+    <height>25</height>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
 </display>
