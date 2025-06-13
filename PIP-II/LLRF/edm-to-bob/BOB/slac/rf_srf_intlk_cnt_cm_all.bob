@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2025-03-18 13:26:05 by dkastelic-->
+<display version="2.0.0">
+  <name>Interlock Fault Counts - $(CM)00</name>
+  <x>127</x>
+  <y>31</y>
+  <width>1880</width>
+  <height>836</height>
+  <background_color>
+    <color name="grey-7" red="145" green="145" blue="145">
+    </color>
+  </background_color>
+  <grid_step_x>4</grid_step_x>
+  <grid_step_y>4</grid_step_y>
+  <widget type="rectangle" version="2.0.0">
+    <name>EDM activeRectangleClass</name>
+    <width>1880</width>
+    <height>41</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color name="CRYO title" red="176" green="218" blue="249">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="CRYO title" red="176" green="218" blue="249">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>SRF Interlocks Fault Counts
+Cryomodule $(CM)00</text>
+    <x>8</x>
+    <width>516</width>
+    <height>40</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="CRYO title" red="176" green="218" blue="249">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>EDM TextupdateClass</name>
+    <pv_name>SIOC:SYS0:AL00:TOD</pv_name>
+    <x>1648</x>
+    <y>724</y>
+    <width>168</width>
+    <height>16</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-12" red="70" green="70" blue="70">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>EDM TextupdateClass</name>
+    <pv_name>SIOC:SYS0:AL00:MODE</pv_name>
+    <x>20</x>
+    <y>720</y>
+    <width>120</width>
+    <height>16</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-12" red="70" green="70" blue="70">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="navtabs" version="2.0.0">
+    <name>EDM activePipClass</name>
+    <tabs>
+      <tab>
+        <name>Tab 1</name>
+        <file>rf_srf_intlk_cnt_cm.bob</file>
+        <macros>
+          <CNT>CNTT</CNT>
+        </macros>
+        <group_name></group_name>
+      </tab>
+      <tab>
+        <name>Tab 2</name>
+        <file>rf_srf_intlk_cnt_cm.bob</file>
+        <macros>
+          <CNT>CNTY</CNT>
+        </macros>
+        <group_name></group_name>
+      </tab>
+      <tab>
+        <name>Tab 3</name>
+        <file>rf_srf_intlk_cnt_cm.bob</file>
+        <macros>
+          <CNT>CNT</CNT>
+        </macros>
+        <group_name></group_name>
+      </tab>
+      <tab>
+        <name>Tab 4</name>
+        <file>rf_srf_intlk_cnt_cm_user.bob</file>
+        <macros>
+          <CNT>CNTU</CNT>
+        </macros>
+        <group_name></group_name>
+      </tab>
+    </tabs>
+    <x>16</x>
+    <y>92</y>
+    <width>1844</width>
+    <height>630</height>
+    <tab_width>0</tab_width>
+    <tab_height>0</tab_height>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+widget.setPropertyValue('active_tab', PVUtil.getInt(pvs[0]))
+]]></text>
+        <pv_name>loc://$(DID)dispPV&lt;VEnum&gt;(0,"Today","Yesterday","Total","User")</pv_name>
+      </script>
+    </scripts>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>EDM activeMessageButtonClass</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(pv_name)</pv_name>
+        <value>Today</value>
+        <description>Today</description>
+      </action>
+    </actions>
+    <pv_name>loc://$(DID)dispPV&lt;VEnum&gt;(0,"Today","Yesterday","Total","User")</pv_name>
+    <text>Today</text>
+    <x>20</x>
+    <y>52</y>
+    <width>108</width>
+    <height>28</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <rules>
+      <rule name="EDM visibility" prop_id="background_color" out_exp="false">
+        <exp bool_exp="pv0&gt;=0.0 &amp;&amp; pv0&lt;1.0">
+          <value>
+            <color name="grey-2" red="218" green="218" blue="218">
+            </color>
+          </value>
+        </exp>
+        <exp bool_exp="true">
+          <value>
+            <color name="grey-4" red="187" green="187" blue="187">
+            </color>
+          </value>
+        </exp>
+        <pv_name>loc://$(DID)dispPV&lt;VEnum&gt;(0,"Today","Yesterday","Total","User")</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>EDM activeMessageButtonClass</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(pv_name)</pv_name>
+        <value>Yesterday</value>
+        <description>Yesterday</description>
+      </action>
+    </actions>
+    <pv_name>loc://$(DID)dispPV&lt;VEnum&gt;(0,"Today","Yesterday","Total","User")</pv_name>
+    <text>Yesterday</text>
+    <x>140</x>
+    <y>52</y>
+    <width>108</width>
+    <height>28</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <rules>
+      <rule name="EDM visibility" prop_id="background_color" out_exp="false">
+        <exp bool_exp="pv0&gt;=1.0 &amp;&amp; pv0&lt;2.0">
+          <value>
+            <color name="grey-2" red="218" green="218" blue="218">
+            </color>
+          </value>
+        </exp>
+        <exp bool_exp="true">
+          <value>
+            <color name="grey-4" red="187" green="187" blue="187">
+            </color>
+          </value>
+        </exp>
+        <pv_name>loc://$(DID)dispPV&lt;VEnum&gt;(0,"Today","Yesterday","Total","User")</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>EDM activeMessageButtonClass</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(pv_name)</pv_name>
+        <value>Total</value>
+        <description>Total</description>
+      </action>
+    </actions>
+    <pv_name>loc://$(DID)dispPV&lt;VEnum&gt;(0,"Today","Yesterday","Total","User")</pv_name>
+    <text>Total</text>
+    <x>260</x>
+    <y>52</y>
+    <width>108</width>
+    <height>28</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <rules>
+      <rule name="EDM visibility" prop_id="background_color" out_exp="false">
+        <exp bool_exp="pv0&gt;=2.0 &amp;&amp; pv0&lt;3.0">
+          <value>
+            <color name="grey-2" red="218" green="218" blue="218">
+            </color>
+          </value>
+        </exp>
+        <exp bool_exp="true">
+          <value>
+            <color name="grey-4" red="187" green="187" blue="187">
+            </color>
+          </value>
+        </exp>
+        <pv_name>loc://$(DID)dispPV&lt;VEnum&gt;(0,"Today","Yesterday","Total","User")</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>EDM activeMessageButtonClass</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(pv_name)</pv_name>
+        <value>User</value>
+        <description>User</description>
+      </action>
+    </actions>
+    <pv_name>loc://$(DID)dispPV&lt;VEnum&gt;(0,"Today","Yesterday","Total","User")</pv_name>
+    <text>User</text>
+    <x>380</x>
+    <y>52</y>
+    <width>108</width>
+    <height>28</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <rules>
+      <rule name="EDM visibility" prop_id="background_color" out_exp="false">
+        <exp bool_exp="pv0&gt;=3.0 &amp;&amp; pv0&lt;4.0">
+          <value>
+            <color name="grey-2" red="218" green="218" blue="218">
+            </color>
+          </value>
+        </exp>
+        <exp bool_exp="true">
+          <value>
+            <color name="grey-4" red="187" green="187" blue="187">
+            </color>
+          </value>
+        </exp>
+        <pv_name>loc://$(DID)dispPV&lt;VEnum&gt;(0,"Today","Yesterday","Total","User")</pv_name>
+      </rule>
+    </rules>
+  </widget>
+</display>

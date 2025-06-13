@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2024-06-19 13:39:00 by epics-->
+<!--Saved on 2025-06-06 11:28:29 by epics-->
 <display version="2.0.0">
   <name>HB650Vacuum</name>
   <macros>
@@ -142,6 +142,9 @@
     <y>150</y>
     <width>40</width>
     <height>40</height>
+    <tooltip>$(pv_name)
+$(pv_value)
+$(actions)</tooltip>
   </widget>
   <widget type="polygon" version="2.0.0">
     <name>Polygon_3</name>
@@ -938,9 +941,9 @@ $(actions)</tooltip>
       <name>Action Button_8</name>
       <actions>
         <action type="write_pv">
+          <description>Start Turbo</description>
           <pv_name>$(vac)PT102:sStart</pv_name>
           <value>1</value>
-          <description>Start Turbo</description>
         </action>
       </actions>
       <pv_name>$(vac)PT102:sStart</pv_name>
@@ -1180,9 +1183,9 @@ $(actions)</tooltip>
       <name>Action Button_7</name>
       <actions>
         <action type="write_pv">
+          <description>Stop Turbo</description>
           <pv_name>$(vac)PT102:sStart</pv_name>
           <value>0</value>
-          <description>Stop Turbo</description>
         </action>
       </actions>
       <pv_name>$(vac)PT102:sStart</pv_name>
@@ -1649,9 +1652,9 @@ Vacuum</text>
       <name>Action Button_1</name>
       <actions>
         <action type="open_display">
+          <description>IV Strip Charts</description>
           <file>../../Plots/HB650InsulatingVacuum.bob</file>
           <target>window</target>
-          <description>IV Strip Charts</description>
         </action>
       </actions>
       <text>IV Strip Charts</text>
@@ -1664,9 +1667,9 @@ Vacuum</text>
       <name>Action Button_4</name>
       <actions>
         <action type="open_display">
+          <description>Coupler Strip Charts</description>
           <file>../../Plots/HB650CouplerVacuum.bob</file>
           <target>window</target>
-          <description>Coupler Strip Charts</description>
         </action>
       </actions>
       <text>Coupler Strip Charts</text>
@@ -1679,9 +1682,9 @@ Vacuum</text>
       <name>Action Button_5</name>
       <actions>
         <action type="open_display">
+          <description>Cavity Strip Charts</description>
           <file>../../Plots/HB650BeamlineVacuum.bob</file>
           <target>window</target>
-          <description>Cavity Strip Charts</description>
         </action>
       </actions>
       <text>Cavity Strip Charts</text>
@@ -1694,10 +1697,10 @@ Vacuum</text>
       <name>Action Button_20</name>
       <actions>
         <action type="open_display">
+          <description>Vacuum Table</description>
           <file>HB650VacuumTable.bob</file>
           <target>window</target>
           <name>Temperature Table</name>
-          <description>Vacuum Table</description>
         </action>
       </actions>
       <text>Vacuum Table</text>
@@ -1868,9 +1871,9 @@ Permits</text>
       <name>Action Button_6</name>
       <actions>
         <action type="write_pv">
+          <description>Reset</description>
           <pv_name>$(vac)VACPMT:sReset</pv_name>
           <value>1</value>
-          <description>Reset</description>
         </action>
       </actions>
       <pv_name>$(vac)VACPMT:sReset</pv_name>
@@ -2209,12 +2212,12 @@ Vacuum</text>
     <name>Action Button_10</name>
     <actions>
       <action type="open_display">
+        <description>Open BL MKS937</description>
         <file>../Common/vacuum-embedded-displays/mks937bGauge.bob</file>
         <macros>
           <device>PIP2IT:pHB650_VAC_MKS937BL</device>
         </macros>
         <target>window</target>
-        <description>Open BL MKS937</description>
       </action>
     </actions>
     <text>Open
@@ -2229,12 +2232,12 @@ BL MKS937</text>
     <name>Action Button_11</name>
     <actions>
       <action type="open_display">
+        <description>Open IV MKS937</description>
         <file>../Common/vacuum-embedded-displays/mks937bGauge.bob</file>
         <macros>
           <device>PIP2IT:pHB650_VAC_MKS937IV</device>
         </macros>
         <target>window</target>
-        <description>Open IV MKS937</description>
       </action>
     </actions>
     <text>Open
@@ -2249,13 +2252,13 @@ IV MKS937</text>
     <name>Action Button_12</name>
     <actions>
       <action type="open_display">
+        <description>Open EdwardsXDS</description>
         <file>../Common/vacuum-embedded-displays/EdwardsXDS15i.bob</file>
         <macros>
           <P>$(vac)</P>
           <R>PS053</R>
         </macros>
         <target>window</target>
-        <description>Open EdwardsXDS</description>
       </action>
     </actions>
     <text></text>
@@ -2271,13 +2274,13 @@ IV MKS937</text>
     <name>Action Button_13</name>
     <actions>
       <action type="open_display">
+        <description>Open EdwardsXDS</description>
         <file>../Common/vacuum-embedded-displays/EdwardsXDS15i.bob</file>
         <macros>
           <P>$(vac)</P>
           <R>PS103</R>
         </macros>
         <target>window</target>
-        <description>Open EdwardsXDS</description>
       </action>
     </actions>
     <text></text>
@@ -2293,13 +2296,13 @@ IV MKS937</text>
     <name>Action Button_14</name>
     <actions>
       <action type="open_display">
+        <description>Open Leybold Turbovac</description>
         <file>../Common/vacuum-embedded-displays/LeyboldTurbo.bob</file>
         <macros>
           <P>$(vac)</P>
           <R>TV90i</R>
         </macros>
         <target>window</target>
-        <description>Open Leybold Turbovac</description>
       </action>
     </actions>
     <text></text>
@@ -2315,13 +2318,13 @@ IV MKS937</text>
     <name>Action Button_16</name>
     <actions>
       <action type="open_display">
+        <description>Open Leybold TD20</description>
         <file>../Common/vacuum-embedded-displays/LeyboldTD20.bob</file>
         <macros>
           <P>$(vac)</P>
           <R>PT052</R>
         </macros>
         <target>window</target>
-        <description>Open Leybold TD20</description>
       </action>
     </actions>
     <text></text>
@@ -3351,13 +3354,13 @@ Vacuum</text>
     <name>Action Button_15</name>
     <actions>
       <action type="open_display">
+        <description>Open Gamma SPCe</description>
         <file>../Common/vacuum-embedded-displays/Gamma_SPCe.bob</file>
         <macros>
           <P>$(vac)</P>
           <R>PI101</R>
         </macros>
         <target>window</target>
-        <description>Open Gamma SPCe</description>
       </action>
     </actions>
     <text></text>
@@ -3499,6 +3502,7 @@ Vacuum</text>
     <name>Action Button</name>
     <actions>
       <action type="open_display">
+        <description>Open Display</description>
         <file>../Common/vacuum-embedded-displays/TPG500.bob</file>
         <macros>
           <prefix>$(vac)SYSA</prefix>
@@ -3508,7 +3512,6 @@ Vacuum</text>
           <SENSOR4>PCC471</SENSOR4>
         </macros>
         <target>window</target>
-        <description>Open Display</description>
       </action>
     </actions>
     <text></text>
@@ -3523,6 +3526,7 @@ Vacuum</text>
     <name>Action Button_2</name>
     <actions>
       <action type="open_display">
+        <description>Open Display</description>
         <file>../Common/vacuum-embedded-displays/TPG500.bob</file>
         <macros>
           <prefix>$(vac)SYSA</prefix>
@@ -3532,7 +3536,6 @@ Vacuum</text>
           <SENSOR4>PCC471</SENSOR4>
         </macros>
         <target>window</target>
-        <description>Open Display</description>
       </action>
     </actions>
     <text></text>
@@ -3547,6 +3550,7 @@ Vacuum</text>
     <name>Action Button_3</name>
     <actions>
       <action type="open_display">
+        <description>Open Display</description>
         <file>../Common/vacuum-embedded-displays/TPG500.bob</file>
         <macros>
           <prefix>$(vac)SYSA</prefix>
@@ -3556,7 +3560,6 @@ Vacuum</text>
           <SENSOR4>PCC471</SENSOR4>
         </macros>
         <target>window</target>
-        <description>Open Display</description>
       </action>
     </actions>
     <text></text>
@@ -3571,6 +3574,7 @@ Vacuum</text>
     <name>Action Button_9</name>
     <actions>
       <action type="open_display">
+        <description>Open Display</description>
         <file>../Common/vacuum-embedded-displays/TPG500.bob</file>
         <macros>
           <prefix>$(vac)SYSA</prefix>
@@ -3580,7 +3584,6 @@ Vacuum</text>
           <SENSOR4>PCC471</SENSOR4>
         </macros>
         <target>window</target>
-        <description>Open Display</description>
       </action>
     </actions>
     <text></text>
@@ -3595,6 +3598,7 @@ Vacuum</text>
     <name>Action Button_17</name>
     <actions>
       <action type="open_display">
+        <description>Open Display</description>
         <file>../Common/vacuum-embedded-displays/TPG500.bob</file>
         <macros>
           <prefix>$(vac)SYSB</prefix>
@@ -3604,7 +3608,6 @@ Vacuum</text>
           <SENSOR4>B2</SENSOR4>
         </macros>
         <target>window</target>
-        <description>Open Display</description>
       </action>
     </actions>
     <text></text>
@@ -3619,6 +3622,7 @@ Vacuum</text>
     <name>Action Button_18</name>
     <actions>
       <action type="open_display">
+        <description>Open Display</description>
         <file>../Common/vacuum-embedded-displays/TPG500.bob</file>
         <macros>
           <prefix>$(vac)SYSB</prefix>
@@ -3628,7 +3632,6 @@ Vacuum</text>
           <SENSOR4>B2</SENSOR4>
         </macros>
         <target>window</target>
-        <description>Open Display</description>
       </action>
     </actions>
     <text></text>

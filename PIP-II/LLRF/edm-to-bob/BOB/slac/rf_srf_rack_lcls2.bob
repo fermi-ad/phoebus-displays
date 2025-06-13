@@ -1,0 +1,784 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2025-03-13 14:37:04 by dkastelic-->
+<display version="2.0.0">
+  <name>RF Rack Diagnostics - $(CM)00 - Rack $(R)</name>
+  <x>149</x>
+  <y>145</y>
+  <width>960</width>
+  <height>520</height>
+  <background_color>
+    <color name="grey-7" red="145" green="145" blue="145">
+    </color>
+  </background_color>
+  <grid_visible>false</grid_visible>
+  <grid_step_x>4</grid_step_x>
+  <grid_step_y>4</grid_step_y>
+  <widget type="rectangle" version="2.0.0">
+    <name>EDM activeRectangleClass</name>
+    <x>20</x>
+    <y>240</y>
+    <width>837</width>
+    <height>97</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>EDM activeRectangleClass</name>
+    <width>960</width>
+    <height>41</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color name="CRYO title" red="176" green="218" blue="249">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="CRYO title" red="176" green="218" blue="249">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>RF Hardware Initialization and Test
+Cryomodule $(CM)00 - Rack $(R)</text>
+    <x>8</x>
+    <width>340</width>
+    <height>40</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="VAC title" red="225" green="248" blue="177">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>EDM TextupdateClass</name>
+    <pv_name>SIOC:SYS0:AL00:TOD</pv_name>
+    <x>684</x>
+    <y>492</y>
+    <width>168</width>
+    <height>16</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-12" red="70" green="70" blue="70">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>EDM TextupdateClass</name>
+    <pv_name>SIOC:SYS0:AL00:MODE</pv_name>
+    <x>16</x>
+    <y>492</y>
+    <width>120</width>
+    <height>16</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-12" red="70" green="70" blue="70">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>EDM activeRectangleClass</name>
+    <x>16</x>
+    <y>68</y>
+    <width>837</width>
+    <height>117</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>Rack Checkout</text>
+    <x>32</x>
+    <y>52</y>
+    <width>148</width>
+    <height>28</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-2" red="218" green="218" blue="218">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>EDM activeMessageButtonClass</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(pv_name)</pv_name>
+        <value>1</value>
+        <description>Go</description>
+      </action>
+    </actions>
+    <pv_name>$(CM)00:RACK$(R):TESTSTRT</pv_name>
+    <text>Go</text>
+    <x>44</x>
+    <y>124</y>
+    <width>48</width>
+    <height>28</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>EDM activeXTextDspClass</name>
+    <pv_name>$(CM)00:RACK$(R):TESTSTS</pv_name>
+    <x>108</x>
+    <y>124</y>
+    <height>28</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="green-16" red="0" green="224" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-12" red="70" green="70" blue="70">
+      </color>
+    </background_color>
+    <precision>3</precision>
+    <show_units>false</show_units>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>EDM relatedDisplayClass</name>
+    <actions>
+      <action type="open_display">
+        <file>rf_srf_daemon_expert.bob</file>
+        <target>tab</target>
+        <description>Open Display</description>
+      </action>
+    </actions>
+    <text>Script launcher...</text>
+    <x>736</x>
+    <y>8</y>
+    <width>140</width>
+    <height>24</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>EDM activeRectangleClass</name>
+    <x>735</x>
+    <y>7</y>
+    <width>142</width>
+    <height>26</height>
+    <line_width>2</line_width>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="EDM visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0&gt;=1.0 &amp;&amp; pv0&lt;10.0">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="true">
+          <value>false</value>
+        </exp>
+        <pv_name>ALRM:SYS0:RFCM$(ID)DMN:ALHBERR.SEVR</pv_name>
+      </rule>
+    </rules>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[# EDM Alarm-sensitive color
+from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+cn = ( 'OK', 'MINOR', 'MAJOR', 'INVALID', 'DISCONNECTED' )[sevr]
+widget.setPropertyValue('line_color', WidgetColorService.getColor(cn))]]></text>
+        <pv_name>ALRM:SYS0:RFCM$(ID)DMN:ALHBERR.SEVR</pv_name>
+      </script>
+    </scripts>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>EDM shellCmdClass</name>
+    <actions>
+      <action type="command">
+        <command>xterm -hold -sb -rightbar -sl 10000 -geometry 130x30 -T "LLRF Rack Test Log File" -e rfTestViewLog.bash $(CM)00:RACK$(R)</command>
+        <description>Execute Command</description>
+      </action>
+    </actions>
+    <text>Log...</text>
+    <x>220</x>
+    <y>128</y>
+    <width>40</width>
+    <height>24</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>EDM activeXTextDspClass</name>
+    <pv_name>$(CM)00:RACK$(R):TESTTS</pv_name>
+    <x>684</x>
+    <y>124</y>
+    <width>152</width>
+    <height>24</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="green-16" red="0" green="224" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-12" red="70" green="70" blue="70">
+      </color>
+    </background_color>
+    <format>2</format>
+    <precision>3</precision>
+    <show_units>false</show_units>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>EDM activeXTextDspClass</name>
+    <pv_name>$(CM)00:RACK$(R):TESTMSG</pv_name>
+    <x>364</x>
+    <y>124</y>
+    <width>304</width>
+    <height>24</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="green-16" red="0" green="224" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-12" red="70" green="70" blue="70">
+      </color>
+    </background_color>
+    <format>2</format>
+    <precision>3</precision>
+    <show_units>false</show_units>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>EDM activeXTextDspClass</name>
+    <pv_name>$(CM)00:RACK$(R):TESTSTAT</pv_name>
+    <x>280</x>
+    <y>124</y>
+    <width>68</width>
+    <height>24</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="green-16" red="0" green="224" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-12" red="70" green="70" blue="70">
+      </color>
+    </background_color>
+    <format>2</format>
+    <precision>3</precision>
+    <show_units>false</show_units>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="multi_state_led" version="2.0.0">
+    <name>EDM activeCircleClass</name>
+    <pv_name>=highestSeverity(`$(CM)00:RACK$(R):HWSTATSUM`)</pv_name>
+    <x>248</x>
+    <y>20</y>
+    <width>8</width>
+    <height>8</height>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <states>
+      <state>
+        <value>0</value>
+        <label></label>
+        <color>
+          <color name="OK" red="0" green="255" blue="0">
+          </color>
+        </color>
+      </state>
+      <state>
+        <value>1</value>
+        <label></label>
+        <color>
+          <color name="MINOR" red="255" green="128" blue="0">
+          </color>
+        </color>
+      </state>
+      <state>
+        <value>2</value>
+        <label></label>
+        <color>
+          <color name="MAJOR" red="255" green="0" blue="0">
+          </color>
+        </color>
+      </state>
+      <state>
+        <value>3</value>
+        <label></label>
+        <color>
+          <color name="INVALID" red="255" green="0" blue="255">
+          </color>
+        </color>
+      </state>
+      <state>
+        <value>4</value>
+        <label></label>
+        <color>
+          <color name="DISCONNECTED" red="200" green="0" blue="200" alpha="200">
+          </color>
+        </color>
+      </state>
+    </states>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>EDM activeMessageButtonClass</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(pv_name)</pv_name>
+        <value>1</value>
+        <description>Go</description>
+      </action>
+    </actions>
+    <pv_name>$(CM)00:RES$(R):INITSTRT</pv_name>
+    <text>Go</text>
+    <x>48</x>
+    <y>296</y>
+    <width>48</width>
+    <height>28</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>EDM activeXTextDspClass</name>
+    <pv_name>$(CM)00:RES$(R):INITSTS</pv_name>
+    <x>112</x>
+    <y>296</y>
+    <height>28</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="green-16" red="0" green="224" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-12" red="70" green="70" blue="70">
+      </color>
+    </background_color>
+    <precision>3</precision>
+    <show_units>false</show_units>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>EDM activeRectangleClass</name>
+    <x>20</x>
+    <y>384</y>
+    <width>837</width>
+    <height>97</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>SW-FW Communication</text>
+    <x>36</x>
+    <y>368</y>
+    <width>156</width>
+    <height>28</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-2" red="218" green="218" blue="218">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>EDM activeMessageButtonClass</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(pv_name)</pv_name>
+        <value>1</value>
+        <description>Halt</description>
+      </action>
+    </actions>
+    <pv_name>$(CM)00:RACK$(R):CTRL_HALT</pv_name>
+    <text>Halt</text>
+    <x>276</x>
+    <y>444</y>
+    <width>108</width>
+    <height>24</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>EDM activeMessageButtonClass</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(pv_name)</pv_name>
+        <value>1</value>
+        <description>Reset</description>
+      </action>
+    </actions>
+    <pv_name>$(CM)00:RACK$(R):CTRL_RESET</pv_name>
+    <text>Reset</text>
+    <x>500</x>
+    <y>444</y>
+    <width>108</width>
+    <height>24</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>EDM relatedDisplayClass</name>
+    <actions>
+      <action type="open_display">
+        <file>rf_srf_rack_lcls2_comm.bob</file>
+        <target>tab</target>
+        <description>Open Display</description>
+      </action>
+    </actions>
+    <text>RFS&lt;-&gt;RES Comm...</text>
+    <x>580</x>
+    <y>8</y>
+    <width>136</width>
+    <height>24</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>EDM activeRectangleClass</name>
+    <x>579</x>
+    <y>7</y>
+    <width>138</width>
+    <height>26</height>
+    <line_width>2</line_width>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[# EDM Alarm-sensitive color
+from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+cn = ( 'OK', 'MINOR', 'MAJOR', 'INVALID', 'DISCONNECTED' )[sevr]
+widget.setPropertyValue('line_color', WidgetColorService.getColor(cn))]]></text>
+        <pv_name>$(CM)00:COMMRACK$(R):STATSUMY</pv_name>
+      </script>
+    </scripts>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>EDM shellCmdClass</name>
+    <actions>
+      <action type="command">
+        <command>xterm -hold -sb -rightbar -sl 10000 -geometry 130x30 -T "LLRF Daemon Log File" -e rfViewLauncherLog.bash $(LCLS_DATA)/tools/FEED/log $(CM) 500</command>
+        <description>Execute Command</description>
+      </action>
+    </actions>
+    <text>Log...</text>
+    <x>224</x>
+    <y>296</y>
+    <width>40</width>
+    <height>24</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>Resonance Init</text>
+    <x>36</x>
+    <y>228</y>
+    <width>148</width>
+    <height>28</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-2" red="218" green="218" blue="218">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>Halt EPICS Communication
+with all LLRF chassis in Rack $(R)</text>
+    <x>232</x>
+    <y>400</y>
+    <width>183</width>
+    <height>31</height>
+    <font>
+      <font family="Liberation Sans" style="ITALIC" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>Resume EPICS Communication
+with all LLRF chassis in Rack $(R)</text>
+    <x>452</x>
+    <y>400</y>
+    <width>183</width>
+    <height>31</height>
+    <font>
+      <font family="Liberation Sans" style="ITALIC" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>EDM relatedDisplayClass</name>
+    <actions>
+      <action type="open_display">
+        <file>rf_srf_rack_lcls2_expert.bob</file>
+        <target>tab</target>
+        <description>Open Display</description>
+      </action>
+    </actions>
+    <text>Other Functions...</text>
+    <x>424</x>
+    <y>8</y>
+    <width>136</width>
+    <height>24</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>Initialization/Test of all RFS and PRC Chassis in Rack $(R)</text>
+    <x>44</x>
+    <y>88</y>
+    <width>364</width>
+    <font>
+      <font family="Liberation Sans" style="ITALIC" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>Initialization of Resonance Chassis in Rack $(R)</text>
+    <x>48</x>
+    <y>260</y>
+    <width>320</width>
+    <font>
+      <font family="Liberation Sans" style="ITALIC" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+</display>

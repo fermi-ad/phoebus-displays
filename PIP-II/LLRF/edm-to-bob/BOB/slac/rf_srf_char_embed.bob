@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2025-03-27 13:57:34 by dkastelic-->
+<display version="2.0.0">
+  <name>SRF Cavity Ramp and Characterization - $(CM)$(C)0</name>
+  <x>1573</x>
+  <y>139</y>
+  <width>1820</width>
+  <height>1000</height>
+  <background_color>
+    <color name="grey-4" red="187" green="187" blue="187">
+    </color>
+  </background_color>
+  <grid_step_x>4</grid_step_x>
+  <grid_step_y>4</grid_step_y>
+  <widget type="rectangle" version="2.0.0">
+    <name>EDM activeRectangleClass</name>
+    <x>31</x>
+    <y>79</y>
+    <width>1150</width>
+    <height>892</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color name="Wid-bg/Anno-pri" red="105" green="105" blue="105">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="navtabs" version="2.0.0">
+    <name>EDM activePipClass</name>
+    <tabs>
+      <tab>
+        <name>Tab 1</name>
+        <file>rf_srf_char_embed_pzt.bob</file>
+        <macros>
+        </macros>
+        <group_name></group_name>
+      </tab>
+      <tab>
+        <name>Tab 2</name>
+        <file>rf_srf_char_embed_ssa.bob</file>
+        <macros>
+        </macros>
+        <group_name></group_name>
+      </tab>
+      <tab>
+        <name>Tab 3</name>
+        <file>rf_srf_char_embed_freq.bob</file>
+        <macros>
+        </macros>
+        <group_name></group_name>
+      </tab>
+      <tab>
+        <name>Tab 4</name>
+        <file>rf_srf_char_embed_ramp.bob</file>
+        <macros>
+        </macros>
+        <group_name></group_name>
+      </tab>
+      <tab>
+        <name>Tab 5</name>
+        <file>rf_srf_char_embed_pzt_rf.bob</file>
+        <macros>
+        </macros>
+        <group_name></group_name>
+      </tab>
+    </tabs>
+    <x>48</x>
+    <y>92</y>
+    <width>1120</width>
+    <height>862</height>
+    <tab_width>0</tab_width>
+    <tab_height>0</tab_height>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+widget.setPropertyValue('active_tab', PVUtil.getInt(pvs[0]))
+]]></text>
+        <pv_name>loc://$(DID)charDispPV&lt;VEnum&gt;($(SELCHAR),"Piezo Pre-RF","SSA","Frequency Tune","Cavity","Piezo With-RF")</pv_name>
+      </script>
+    </scripts>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>$(CM)$(C)0 Characterization</text>
+    <x>8</x>
+    <y>8</y>
+    <width>344</width>
+    <font>
+      <font family="Liberation Sans" style="ITALIC" size="18.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="VAC title" red="225" green="248" blue="177">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>EDM TextupdateClass</name>
+    <pv_name>SIOC:SYS0:AL00:TOD</pv_name>
+    <x>1044</x>
+    <y>976</y>
+    <width>168</width>
+    <height>16</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-12" red="70" green="70" blue="70">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>EDM TextupdateClass</name>
+    <pv_name>SIOC:SYS0:AL00:MODE</pv_name>
+    <x>4</x>
+    <y>976</y>
+    <width>120</width>
+    <height>16</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-12" red="70" green="70" blue="70">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>-     Frequency Tune</text>
+    <x>364</x>
+    <y>8</y>
+    <width>272</width>
+    <font>
+      <font family="Liberation Sans" style="ITALIC" size="18.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="VAC title" red="225" green="248" blue="177">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+    <rules>
+      <rule name="EDM visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0&gt;=2.0 &amp;&amp; pv0&lt;3.0">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="true">
+          <value>false</value>
+        </exp>
+        <pv_name>loc://$(DID)charDispPV&lt;VEnum&gt;($(SELCHAR),"Piezo Pre-RF","SSA","Frequency Tune","Cavity","Piezo With-RF")</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>-     SSA</text>
+    <x>364</x>
+    <y>8</y>
+    <width>272</width>
+    <font>
+      <font family="Liberation Sans" style="ITALIC" size="18.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="VAC title" red="225" green="248" blue="177">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+    <rules>
+      <rule name="EDM visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0&gt;=1.0 &amp;&amp; pv0&lt;2.0">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="true">
+          <value>false</value>
+        </exp>
+        <pv_name>loc://$(DID)charDispPV&lt;VEnum&gt;($(SELCHAR),"Piezo Pre-RF","SSA","Frequency Tune","Cavity","Piezo With-RF")</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>-     Cavity</text>
+    <x>364</x>
+    <y>8</y>
+    <width>272</width>
+    <font>
+      <font family="Liberation Sans" style="ITALIC" size="18.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="VAC title" red="225" green="248" blue="177">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+    <rules>
+      <rule name="EDM visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0&gt;=3.0 &amp;&amp; pv0&lt;4.0">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="true">
+          <value>false</value>
+        </exp>
+        <pv_name>loc://$(DID)charDispPV&lt;VEnum&gt;($(SELCHAR),"Piezo Pre-RF","SSA","Frequency Tune","Cavity","Piezo With-RF")</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="choice" version="2.0.0">
+    <name>EDM activeChoiceButtonClass</name>
+    <pv_name>loc://$(DID)charDispPV&lt;VEnum&gt;($(SELCHAR),"Piezo Pre-RF","SSA Cal","Frequency Tune","Cavity","Piezo With-RF")</pv_name>
+    <x>36</x>
+    <y>48</y>
+    <width>524</width>
+    <height>28</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <selected_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </selected_color>
+    <items>
+      <item>Item 1</item>
+      <item>Item 2</item>
+    </items>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>-     Piezo Tuner Pre-RF</text>
+    <x>364</x>
+    <y>8</y>
+    <width>272</width>
+    <font>
+      <font family="Liberation Sans" style="ITALIC" size="18.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="VAC title" red="225" green="248" blue="177">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+    <rules>
+      <rule name="EDM visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0&gt;=0.0 &amp;&amp; pv0&lt;1.0">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="true">
+          <value>false</value>
+        </exp>
+        <pv_name>loc://$(DID)charDispPV&lt;VEnum&gt;($(SELCHAR),"Piezo Pre-RF","SSA","Frequency Tune","Cavity","Piezo With-RF")</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>-     Piezo Tuner With-RF</text>
+    <x>364</x>
+    <y>8</y>
+    <width>272</width>
+    <font>
+      <font family="Liberation Sans" style="ITALIC" size="18.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="VAC title" red="225" green="248" blue="177">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+    <rules>
+      <rule name="EDM visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0&gt;=4.0 &amp;&amp; pv0&lt;5.0">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="true">
+          <value>false</value>
+        </exp>
+        <pv_name>loc://$(DID)charDispPV&lt;VEnum&gt;($(SELCHAR),"Piezo Pre-RF","SSA","Frequency Tune","Cavity","Piezo With-RF")</pv_name>
+      </rule>
+    </rules>
+  </widget>
+</display>
