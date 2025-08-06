@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2025-03-27 13:58:15 by dkastelic-->
+<!--Saved on 2025-07-16 06:00:09 by epics-->
 <display version="2.0.0">
   <name>Detune Expert - Cryomodule $(CM) Cavity $(C)</name>
   <x>380</x>
@@ -104,7 +104,7 @@
     <x>872</x>
     <y>8</y>
     <width>220</width>
-    <height>15</height>
+    <height>14</height>
     <font>
       <font family="Liberation Sans" style="BOLD" size="12.0">
       </font>
@@ -190,28 +190,6 @@
           </color>
         </color>
       </y_axis>
-      <y_axis>
-        <title></title>
-        <autoscale>true</autoscale>
-        <log_scale>false</log_scale>
-        <minimum>0.0</minimum>
-        <maximum>100.0</maximum>
-        <show_grid>false</show_grid>
-        <title_font>
-          <font family="Liberation Sans" style="REGULAR" size="12.0">
-          </font>
-        </title_font>
-        <scale_font>
-          <font family="Liberation Sans" style="REGULAR" size="12.0">
-          </font>
-        </scale_font>
-        <on_right>false</on_right>
-        <visible>false</visible>
-        <color>
-          <color name="Text" red="0" green="0" blue="0">
-          </color>
-        </color>
-      </y_axis>
     </y_axes>
     <traces>
       <trace>
@@ -220,7 +198,7 @@
         <y_pv>$(CM)$(C)0:FWD:PWRWF</y_pv>
         <err_pv></err_pv>
         <axis>0</axis>
-        <trace_type>1</trace_type>
+        <trace_type>0</trace_type>
         <color>
           <color name="blue-26" red="0" green="0" blue="224">
           </color>
@@ -253,6 +231,26 @@
       </font>
     </title_font>
     <show_legend>false</show_legend>
+    <rules>
+      <rule name="From Cav and Fwd visibility" prop_id="traces[0].visible" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="pv0==0">
+          <value>false</value>
+        </exp>
+        <pv_name>loc://$(DID)wfDispSig1(1)</pv_name>
+      </rule>
+      <rule name="Frequency Counter visibility" prop_id="traces[1].visible" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="pv0==0">
+          <value>false</value>
+        </exp>
+        <pv_name>loc://$(DID)wfDispSig2(1)</pv_name>
+      </rule>
+    </rules>
     <x_axis>
       <title>seconds</title>
       <autoscale>true</autoscale>
@@ -308,7 +306,7 @@
           <font family="Liberation Sans" style="REGULAR" size="12.0">
           </font>
         </scale_font>
-        <on_right>false</on_right>
+        <on_right>true</on_right>
         <visible>true</visible>
         <color>
           <color name="Text" red="0" green="0" blue="0">
@@ -559,7 +557,7 @@
           <font family="Liberation Sans" style="REGULAR" size="12.0">
           </font>
         </scale_font>
-        <on_right>false</on_right>
+        <on_right>true</on_right>
         <visible>true</visible>
         <color>
           <color name="Text" red="0" green="0" blue="0">
@@ -610,7 +608,7 @@
     <x>872</x>
     <y>28</y>
     <width>231</width>
-    <height>15</height>
+    <height>14</height>
     <font>
       <font family="Liberation Sans" style="BOLD" size="12.0">
       </font>
@@ -1254,7 +1252,7 @@ Low</text>
     <x>872</x>
     <y>48</y>
     <width>210</width>
-    <height>15</height>
+    <height>14</height>
     <font>
       <font family="Liberation Sans" style="BOLD" size="12.0">
       </font>
@@ -1345,6 +1343,7 @@ Low</text>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>EDM activeXTextDspClass</name>
@@ -1367,6 +1366,7 @@ Low</text>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>EDM activeXTextDspClass</name>
@@ -1389,6 +1389,7 @@ Low</text>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>EDM activeXTextDspClass</name>
@@ -1411,6 +1412,7 @@ Low</text>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>EDM activeXTextDspClass</name>
@@ -1433,6 +1435,7 @@ Low</text>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="label" version="2.0.0">
     <name>EDM activeXTextClass</name>
@@ -1608,6 +1611,7 @@ Low</text>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>EDM activeXTextDspClass</name>
@@ -1630,6 +1634,7 @@ Low</text>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>EDM activeXTextDspClass</name>
@@ -1652,6 +1657,7 @@ Low</text>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>EDM activeXTextDspClass</name>
@@ -1674,6 +1680,7 @@ Low</text>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>EDM activeXTextDspClass</name>
@@ -1811,6 +1818,7 @@ Low</text>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>EDM activeXTextDspClass</name>
@@ -1833,6 +1841,7 @@ Low</text>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>EDM activeXTextDspClass</name>
@@ -1855,6 +1864,7 @@ Low</text>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>EDM activeXTextDspClass</name>
@@ -1877,6 +1887,7 @@ Low</text>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>EDM activeXTextDspClass</name>
@@ -1899,6 +1910,7 @@ Low</text>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="label" version="2.0.0">
     <name>EDM activeXTextClass</name>
@@ -1921,170 +1933,6 @@ Counter</text>
       </color>
     </background_color>
     <vertical_alignment>1</vertical_alignment>
-  </widget>
-  <widget type="group" version="3.0.0">
-    <name>EDM Group 1</name>
-    <x>811</x>
-    <y>259</y>
-    <width>26</width>
-    <height>30</height>
-    <style>3</style>
-    <transparent>true</transparent>
-    <widget type="bool_button" version="2.0.0">
-      <name>EDM activeMessageButtonClass</name>
-      <pv_name>loc://$(DID)wfDispSig2(1)</pv_name>
-      <x>5</x>
-      <y>4</y>
-      <width>16</width>
-      <height>19</height>
-      <off_label>null</off_label>
-      <off_color>
-        <color name="Controller" red="0" green="0" blue="255">
-        </color>
-      </off_color>
-      <on_label>null</on_label>
-      <on_color>
-        <color name="grey-4" red="187" green="187" blue="187">
-        </color>
-      </on_color>
-      <show_led>false</show_led>
-      <font>
-        <font family="Liberation Sans" style="REGULAR" size="12.0">
-        </font>
-      </font>
-      <foreground_color>
-        <color name="black-14" red="0" green="0" blue="0">
-        </color>
-      </foreground_color>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-    </widget>
-    <widget type="bool_button" version="2.0.0">
-      <name>EDM activeMessageButtonClass</name>
-      <x>5</x>
-      <y>4</y>
-      <width>16</width>
-      <height>19</height>
-      <off_label>null</off_label>
-      <off_color>
-        <color name="grey-4" red="187" green="187" blue="187">
-        </color>
-      </off_color>
-      <on_label>null</on_label>
-      <on_color>
-        <color name="Controller" red="0" green="0" blue="255">
-        </color>
-      </on_color>
-      <show_led>false</show_led>
-      <font>
-        <font family="Liberation Sans" style="REGULAR" size="12.0">
-        </font>
-      </font>
-      <foreground_color>
-        <color name="black-14" red="0" green="0" blue="0">
-        </color>
-      </foreground_color>
-      <rules>
-        <rule name="EDM visibility" prop_id="visible" out_exp="false">
-          <exp bool_exp="pv0&gt;=0.0 &amp;&amp; pv0&lt;1.0">
-            <value>true</value>
-          </exp>
-          <exp bool_exp="true">
-            <value>false</value>
-          </exp>
-          <pv_name>loc://$(DID)wfDispSig2(1)</pv_name>
-        </rule>
-      </rules>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-    </widget>
-    <widget type="group" version="3.0.0">
-      <name>EDM Group 2</name>
-      <width>26</width>
-      <height>29</height>
-      <style>3</style>
-      <transparent>true</transparent>
-      <rules>
-        <rule name="EDM visibility" prop_id="visible" out_exp="false">
-          <exp bool_exp="pv0&gt;=1.0 &amp;&amp; pv0&lt;2.0">
-            <value>true</value>
-          </exp>
-          <exp bool_exp="true">
-            <value>false</value>
-          </exp>
-          <pv_name>loc://$(DID)wfDispSig2(1)</pv_name>
-        </rule>
-      </rules>
-      <widget type="rectangle" version="2.0.0">
-        <name>EDM activeRectangleClass</name>
-        <x>5</x>
-        <y>5</y>
-        <width>15</width>
-        <height>18</height>
-        <line_width>1</line_width>
-        <line_color>
-          <color name="RING title" red="174" green="196" blue="195">
-          </color>
-        </line_color>
-        <background_color>
-          <color name="RING title" red="174" green="196" blue="195">
-          </color>
-        </background_color>
-      </widget>
-      <widget type="polyline" version="2.0.0">
-        <name>EDM activeLineClass</name>
-        <x>17</x>
-        <y>15</y>
-        <width>2</width>
-        <height>2</height>
-        <line_width>1</line_width>
-        <line_color>
-          <color name="black-14" red="0" green="0" blue="0">
-          </color>
-        </line_color>
-        <arrow_length>15</arrow_length>
-      </widget>
-      <widget type="polyline" version="2.0.0">
-        <name>EDM activeLineClass</name>
-        <x>5</x>
-        <y>5</y>
-        <width>14</width>
-        <height>17</height>
-        <points>
-          <point x="0.0" y="17.0">
-          </point>
-          <point x="0.0" y="0.0">
-          </point>
-          <point x="14.0" y="0.0">
-          </point>
-        </points>
-        <line_width>1</line_width>
-        <line_color>
-          <color name="grey-11" red="90" green="90" blue="90">
-          </color>
-        </line_color>
-        <arrow_length>15</arrow_length>
-      </widget>
-      <widget type="polyline" version="2.0.0">
-        <name>EDM activeLineClass</name>
-        <x>5</x>
-        <y>5</y>
-        <width>14</width>
-        <height>17</height>
-        <points>
-          <point x="14.0" y="0.0">
-          </point>
-          <point x="14.0" y="17.0">
-          </point>
-          <point x="0.0" y="17.0">
-          </point>
-        </points>
-        <line_width>1</line_width>
-        <line_color>
-          <color name="grey-1" red="236" green="236" blue="236">
-          </color>
-        </line_color>
-        <arrow_length>15</arrow_length>
-      </widget>
-    </widget>
   </widget>
   <widget type="polyline" version="2.0.0">
     <name>EDM activeLineClass</name>
@@ -2126,170 +1974,6 @@ and Fwd</text>
       </color>
     </background_color>
     <vertical_alignment>1</vertical_alignment>
-  </widget>
-  <widget type="group" version="3.0.0">
-    <name>EDM Group 3</name>
-    <x>655</x>
-    <y>259</y>
-    <width>26</width>
-    <height>30</height>
-    <style>3</style>
-    <transparent>true</transparent>
-    <widget type="bool_button" version="2.0.0">
-      <name>EDM activeMessageButtonClass</name>
-      <pv_name>loc://$(DID)wfDispSig1(1)</pv_name>
-      <x>5</x>
-      <y>4</y>
-      <width>16</width>
-      <height>19</height>
-      <off_label>null</off_label>
-      <off_color>
-        <color name="Controller" red="0" green="0" blue="255">
-        </color>
-      </off_color>
-      <on_label>null</on_label>
-      <on_color>
-        <color name="grey-4" red="187" green="187" blue="187">
-        </color>
-      </on_color>
-      <show_led>false</show_led>
-      <font>
-        <font family="Liberation Sans" style="REGULAR" size="12.0">
-        </font>
-      </font>
-      <foreground_color>
-        <color name="black-14" red="0" green="0" blue="0">
-        </color>
-      </foreground_color>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-    </widget>
-    <widget type="bool_button" version="2.0.0">
-      <name>EDM activeMessageButtonClass</name>
-      <x>5</x>
-      <y>4</y>
-      <width>16</width>
-      <height>19</height>
-      <off_label>null</off_label>
-      <off_color>
-        <color name="grey-4" red="187" green="187" blue="187">
-        </color>
-      </off_color>
-      <on_label>null</on_label>
-      <on_color>
-        <color name="Controller" red="0" green="0" blue="255">
-        </color>
-      </on_color>
-      <show_led>false</show_led>
-      <font>
-        <font family="Liberation Sans" style="REGULAR" size="12.0">
-        </font>
-      </font>
-      <foreground_color>
-        <color name="black-14" red="0" green="0" blue="0">
-        </color>
-      </foreground_color>
-      <rules>
-        <rule name="EDM visibility" prop_id="visible" out_exp="false">
-          <exp bool_exp="pv0&gt;=0.0 &amp;&amp; pv0&lt;1.0">
-            <value>true</value>
-          </exp>
-          <exp bool_exp="true">
-            <value>false</value>
-          </exp>
-          <pv_name>loc://$(DID)wfDispSig1(1)</pv_name>
-        </rule>
-      </rules>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-    </widget>
-    <widget type="group" version="3.0.0">
-      <name>EDM Group 4</name>
-      <width>26</width>
-      <height>29</height>
-      <style>3</style>
-      <transparent>true</transparent>
-      <rules>
-        <rule name="EDM visibility" prop_id="visible" out_exp="false">
-          <exp bool_exp="pv0&gt;=1.0 &amp;&amp; pv0&lt;2.0">
-            <value>true</value>
-          </exp>
-          <exp bool_exp="true">
-            <value>false</value>
-          </exp>
-          <pv_name>loc://$(DID)wfDispSig1(1)</pv_name>
-        </rule>
-      </rules>
-      <widget type="rectangle" version="2.0.0">
-        <name>EDM activeRectangleClass</name>
-        <x>5</x>
-        <y>5</y>
-        <width>15</width>
-        <height>18</height>
-        <line_width>1</line_width>
-        <line_color>
-          <color name="RING title" red="174" green="196" blue="195">
-          </color>
-        </line_color>
-        <background_color>
-          <color name="RING title" red="174" green="196" blue="195">
-          </color>
-        </background_color>
-      </widget>
-      <widget type="polyline" version="2.0.0">
-        <name>EDM activeLineClass</name>
-        <x>17</x>
-        <y>15</y>
-        <width>2</width>
-        <height>2</height>
-        <line_width>1</line_width>
-        <line_color>
-          <color name="black-14" red="0" green="0" blue="0">
-          </color>
-        </line_color>
-        <arrow_length>15</arrow_length>
-      </widget>
-      <widget type="polyline" version="2.0.0">
-        <name>EDM activeLineClass</name>
-        <x>5</x>
-        <y>5</y>
-        <width>14</width>
-        <height>17</height>
-        <points>
-          <point x="0.0" y="17.0">
-          </point>
-          <point x="0.0" y="0.0">
-          </point>
-          <point x="14.0" y="0.0">
-          </point>
-        </points>
-        <line_width>1</line_width>
-        <line_color>
-          <color name="grey-11" red="90" green="90" blue="90">
-          </color>
-        </line_color>
-        <arrow_length>15</arrow_length>
-      </widget>
-      <widget type="polyline" version="2.0.0">
-        <name>EDM activeLineClass</name>
-        <x>5</x>
-        <y>5</y>
-        <width>14</width>
-        <height>17</height>
-        <points>
-          <point x="14.0" y="0.0">
-          </point>
-          <point x="14.0" y="17.0">
-          </point>
-          <point x="0.0" y="17.0">
-          </point>
-        </points>
-        <line_width>1</line_width>
-        <line_color>
-          <color name="grey-1" red="236" green="236" blue="236">
-          </color>
-        </line_color>
-        <arrow_length>15</arrow_length>
-      </widget>
-    </widget>
   </widget>
   <widget type="polyline" version="2.0.0">
     <name>EDM activeLineClass</name>
@@ -2501,9 +2185,9 @@ does not match</text>
       <name>EDM relatedDisplayClass</name>
       <actions>
         <action type="open_display">
+          <description>Open Display</description>
           <file>rf_srf_quench_valid_help.bob</file>
           <target>window</target>
-          <description>Open Display</description>
         </action>
       </actions>
       <text>?</text>
@@ -2615,13 +2299,14 @@ does not match</text>
       </color>
     </foreground_color>
     <background_color>
-      <color name="grey-12" red="70" green="70" blue="70">
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
       </color>
     </background_color>
     <format>2</format>
     <precision>3</precision>
     <show_units>false</show_units>
     <vertical_alignment>1</vertical_alignment>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>EDM activeXTextDspClass</name>
@@ -2663,13 +2348,14 @@ does not match</text>
       </color>
     </foreground_color>
     <background_color>
-      <color name="grey-12" red="70" green="70" blue="70">
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
       </color>
     </background_color>
     <format>2</format>
     <precision>3</precision>
     <show_units>false</show_units>
     <vertical_alignment>1</vertical_alignment>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>EDM activeXTextDspClass</name>
@@ -2755,12 +2441,13 @@ does not match</text>
       </color>
     </foreground_color>
     <background_color>
-      <color name="grey-12" red="70" green="70" blue="70">
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
       </color>
     </background_color>
     <format>2</format>
     <precision>3</precision>
     <show_units>false</show_units>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="label" version="2.0.0">
     <name>EDM activeXTextClass</name>
@@ -2887,13 +2574,14 @@ does not match</text>
       </color>
     </foreground_color>
     <background_color>
-      <color name="grey-12" red="70" green="70" blue="70">
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
       </color>
     </background_color>
     <format>2</format>
     <precision>3</precision>
     <show_units>false</show_units>
     <vertical_alignment>1</vertical_alignment>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>EDM activeXTextDspClass</name>
@@ -3056,6 +2744,7 @@ the SEL phase offset to minimize forward power</text>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textentry" version="3.0.0">
     <name>EDM activeXTextDspClass</name>
@@ -3518,13 +3207,14 @@ the SEL phase offset to minimize forward power</text>
       </color>
     </foreground_color>
     <background_color>
-      <color name="grey-12" red="70" green="70" blue="70">
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
       </color>
     </background_color>
     <format>2</format>
     <precision>3</precision>
     <show_units>false</show_units>
     <vertical_alignment>1</vertical_alignment>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>EDM activeXTextDspClass</name>
@@ -3542,13 +3232,14 @@ the SEL phase offset to minimize forward power</text>
       </color>
     </foreground_color>
     <background_color>
-      <color name="grey-12" red="70" green="70" blue="70">
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
       </color>
     </background_color>
     <format>2</format>
     <precision>3</precision>
     <show_units>false</show_units>
     <vertical_alignment>1</vertical_alignment>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>EDM activeXTextDspClass</name>
@@ -3601,6 +3292,7 @@ Forward Power</text>
     <name>EDM relatedDisplayClass</name>
     <actions>
       <action type="open_display">
+        <description>Cavity Probe</description>
         <file>rf_srf_wf_signal.bob</file>
         <macros>
           <SIG>CAV</SIG>
@@ -3609,9 +3301,9 @@ Forward Power</text>
           <PWREGU>mW</PWREGU>
         </macros>
         <target>tab</target>
-        <description>Cavity Probe...</description>
       </action>
       <action type="open_display">
+        <description>Forward</description>
         <file>rf_srf_wf_signal.bob</file>
         <macros>
           <SIG>FWD</SIG>
@@ -3620,9 +3312,9 @@ Forward Power</text>
           <PWREGU>W</PWREGU>
         </macros>
         <target>tab</target>
-        <description>Forward...</description>
       </action>
       <action type="open_display">
+        <description>Reverse</description>
         <file>rf_srf_wf_signal.bob</file>
         <macros>
           <SIG>REV</SIG>
@@ -3631,9 +3323,9 @@ Forward Power</text>
           <PWREGU>W</PWREGU>
         </macros>
         <target>tab</target>
-        <description>Reverse...</description>
       </action>
       <action type="open_display">
+        <description>Drive (Loop)</description>
         <file>rf_srf_wf_signal_autoscale.bob</file>
         <macros>
           <SIG>DRV</SIG>
@@ -3642,9 +3334,9 @@ Forward Power</text>
           <PWREGU>W</PWREGU>
         </macros>
         <target>tab</target>
-        <description>Drive (Loop)...</description>
       </action>
       <action type="open_display">
+        <description>DAC</description>
         <file>rf_srf_wf_signal_autoscale.bob</file>
         <macros>
           <SIG>DAC</SIG>
@@ -3653,9 +3345,9 @@ Forward Power</text>
           <PWREGU>-</PWREGU>
         </macros>
         <target>tab</target>
-        <description>DAC...</description>
       </action>
       <action type="open_display">
+        <description>Detune</description>
         <file>rf_srf_wf_df.bob</file>
         <macros>
           <SIG>DF</SIG>
@@ -3664,20 +3356,19 @@ Forward Power</text>
           <EGU>Hz</EGU>
         </macros>
         <target>tab</target>
-        <description>Detune...</description>
       </action>
       <action type="open_display">
+        <description>Fault Waveforms</description>
         <file>rf_srf_wf_fault_overview.bob</file>
         <target>tab</target>
-        <description>Fault Waveforms...</description>
       </action>
       <action type="open_display">
+        <description>Piezo Tuner</description>
         <file>rf_srf_wf_res.bob</file>
         <target>tab</target>
-        <description>Piezo Tuner...</description>
       </action>
     </actions>
-    <text>Cavity $(C) Waveforms...</text>
+    <text>Cavity $(C) Waveforms</text>
     <x>1052</x>
     <y>728</y>
     <width>152</width>
@@ -3700,12 +3391,12 @@ Forward Power</text>
     <name>EDM relatedDisplayClass</name>
     <actions>
       <action type="open_display">
+        <description>Forward vs Detune Plots - 8 Cavities</description>
         <file>rf_srf_wf_fwd_df_cm.bob</file>
         <target>tab</target>
-        <description>Forward vs Detune Plots - 8 Cavities</description>
       </action>
     </actions>
-    <text>Fwd vs Detune 8 Cavities...</text>
+    <text>Fwd vs Detune 8 Cavities</text>
     <x>1052</x>
     <y>764</y>
     <width>164</width>
@@ -3728,6 +3419,7 @@ Forward Power</text>
     <name>EDM relatedDisplayClass</name>
     <actions>
       <action type="open_display">
+        <description>Detune</description>
         <file>rf_srf_fft_detune_cm.bob</file>
         <macros>
           <SIG>DF</SIG>
@@ -3736,9 +3428,9 @@ Forward Power</text>
           <EGU>Hz</EGU>
         </macros>
         <target>tab</target>
-        <description>Detune...</description>
       </action>
       <action type="open_display">
+        <description>Cavity Probe Amplitude</description>
         <file>rf_srf_fft_sig_cm.bob</file>
         <macros>
           <SIG>CAV</SIG>
@@ -3747,9 +3439,9 @@ Forward Power</text>
           <PWREGU>mW</PWREGU>
         </macros>
         <target>tab</target>
-        <description>Cavity Probe Amplitude...</description>
       </action>
       <action type="open_display">
+        <description>Forward Amplitude</description>
         <file>rf_srf_fft_sig_cm.bob</file>
         <macros>
           <SIG>FWD</SIG>
@@ -3758,9 +3450,9 @@ Forward Power</text>
           <PWREGU>W</PWREGU>
         </macros>
         <target>tab</target>
-        <description>Forward Amplitude...</description>
       </action>
       <action type="open_display">
+        <description>Reverse Amplitude</description>
         <file>rf_srf_fft_sig_cm.bob</file>
         <macros>
           <SIG>REV</SIG>
@@ -3769,9 +3461,9 @@ Forward Power</text>
           <PWREGU>W</PWREGU>
         </macros>
         <target>tab</target>
-        <description>Reverse Amplitude...</description>
       </action>
       <action type="open_display">
+        <description>Drive (Loop) Amplitude</description>
         <file>rf_srf_fft_sig_cm.bob</file>
         <macros>
           <SIG>DRV</SIG>
@@ -3780,9 +3472,9 @@ Forward Power</text>
           <PWREGU>W</PWREGU>
         </macros>
         <target>tab</target>
-        <description>Drive (Loop) Amplitude...</description>
       </action>
       <action type="open_display">
+        <description>DAC Amplitude</description>
         <file>rf_srf_fft_sig_cm.bob</file>
         <macros>
           <SIG>DAC</SIG>
@@ -3791,10 +3483,9 @@ Forward Power</text>
           <PWREGU>-</PWREGU>
         </macros>
         <target>tab</target>
-        <description>DAC Amplitude...</description>
       </action>
     </actions>
-    <text>FFTs 8 Cavities...</text>
+    <text>FFTs 8 Cavities</text>
     <x>1052</x>
     <y>836</y>
     <width>136</width>
@@ -3817,12 +3508,12 @@ Forward Power</text>
     <name>EDM relatedDisplayClass</name>
     <actions>
       <action type="open_display">
+        <description>Controller I/Q Plots - 8 Cavities</description>
         <file>rf_srf_wf_ctrl_cm.bob</file>
         <target>tab</target>
-        <description>Controller I/Q Plots - 8 Cavities</description>
       </action>
     </actions>
-    <text>Controller I/Q 8 Cavities...</text>
+    <text>Controller I/Q 8 Cavities</text>
     <x>1052</x>
     <y>800</y>
     <width>164</width>
@@ -3888,6 +3579,7 @@ Forward Power</text>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textentry" version="3.0.0">
     <name>EDM activeXTextDspClass</name>
@@ -4108,9 +3800,9 @@ Setpoint</text>
       <name>EDM relatedDisplayClass</name>
       <actions>
         <action type="open_display">
+          <description>Open Display</description>
           <file>rf_srf_quench_valid_help.bob</file>
           <target>window</target>
-          <description>Open Display</description>
         </action>
       </actions>
       <text>?</text>
@@ -4322,9 +4014,9 @@ widget.setPropertyValue('line_color', WidgetColorService.getColor(cn))]]></text>
     <name>EDM relatedDisplayClass</name>
     <actions>
       <action type="open_display">
+        <description>Open Display</description>
         <file>rf_srf_wf_fwd_df_cm.bob</file>
         <target>tab</target>
-        <description>Open Display</description>
       </action>
     </actions>
     <text></text>
@@ -4346,5 +4038,45 @@ widget.setPropertyValue('line_color', WidgetColorService.getColor(cn))]]></text>
     </background_color>
     <transparent>true</transparent>
     <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>EDM activeMessageButtonClass</name>
+    <pv_name>loc://$(DID)wfDispSig1(1)</pv_name>
+    <x>664</x>
+    <y>266</y>
+    <width>16</width>
+    <height>19</height>
+    <off_label></off_label>
+    <on_label></on_label>
+    <show_led>false</show_led>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>EDM activeMessageButtonClass</name>
+    <pv_name>loc://$(DID)wfDispSig2(1)</pv_name>
+    <x>824</x>
+    <y>266</y>
+    <width>16</width>
+    <height>19</height>
+    <off_label></off_label>
+    <on_label></on_label>
+    <show_led>false</show_led>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
 </display>

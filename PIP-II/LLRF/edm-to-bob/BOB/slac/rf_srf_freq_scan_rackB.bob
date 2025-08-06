@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2025-03-19 15:26:33 by dkastelic-->
+<!--Saved on 2025-07-03 10:00:19 by dkastelic-->
 <display version="2.0.0">
   <name>SRF Rack Frequency Scan - $(CM)00 Rack $(R)</name>
   <x>1413</x>
@@ -12,73 +12,11 @@
   </background_color>
   <grid_step_x>4</grid_step_x>
   <grid_step_y>4</grid_step_y>
-  <widget type="label" version="2.0.0">
-    <name>EDM activeXTextClass</name>
-    <text>-    Shift Mode</text>
-    <x>400</x>
-    <y>60</y>
-    <width>396</width>
-    <font>
-      <font family="Liberation Sans" style="ITALIC" size="18.0">
-      </font>
-    </font>
-    <foreground_color>
-      <color name="black-14" red="0" green="0" blue="0">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color name="VAC title" red="225" green="248" blue="177">
-      </color>
-    </background_color>
-    <vertical_alignment>1</vertical_alignment>
-    <rules>
-      <rule name="EDM visibility" prop_id="visible" out_exp="false">
-        <exp bool_exp="pv0&gt;=1.0 &amp;&amp; pv0&lt;2.0">
-          <value>true</value>
-        </exp>
-        <exp bool_exp="true">
-          <value>false</value>
-        </exp>
-        <pv_name>loc://$(DID)dispPV&lt;VEnum&gt;(0,"Search","Shift")</pv_name>
-      </rule>
-    </rules>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>EDM activeXTextClass</name>
-    <text>-    Search Mode</text>
-    <x>400</x>
-    <y>60</y>
-    <width>396</width>
-    <font>
-      <font family="Liberation Sans" style="ITALIC" size="18.0">
-      </font>
-    </font>
-    <foreground_color>
-      <color name="black-14" red="0" green="0" blue="0">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color name="VAC title" red="225" green="248" blue="177">
-      </color>
-    </background_color>
-    <vertical_alignment>1</vertical_alignment>
-    <rules>
-      <rule name="EDM visibility" prop_id="visible" out_exp="false">
-        <exp bool_exp="pv0&gt;=0.0 &amp;&amp; pv0&lt;1.0">
-          <value>true</value>
-        </exp>
-        <exp bool_exp="true">
-          <value>false</value>
-        </exp>
-        <pv_name>loc://$(DID)dispPV&lt;VEnum&gt;(0,"Search","Shift")</pv_name>
-      </rule>
-    </rules>
-  </widget>
   <widget type="navtabs" version="2.0.0">
     <name>EDM activePipClass</name>
     <tabs>
       <tab>
-        <name>Tab 1</name>
+        <name>Search Mode</name>
         <file>rf_srf_freq_scan_rack_embed_search.bob</file>
         <macros>
           <CA>5</CA>
@@ -89,7 +27,7 @@
         <group_name></group_name>
       </tab>
       <tab>
-        <name>Tab 2</name>
+        <name>Shift Mode</name>
         <file>rf_srf_freq_scan_rack_embed_shift.bob</file>
         <macros>
           <CA>5</CA>
@@ -101,19 +39,17 @@
       </tab>
     </tabs>
     <x>16</x>
-    <y>440</y>
+    <y>406</y>
     <width>1108</width>
     <height>832</height>
-    <tab_width>0</tab_width>
-    <tab_height>0</tab_height>
-    <scripts>
-      <script file="EmbeddedPy">
-        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
-widget.setPropertyValue('active_tab', PVUtil.getInt(pvs[0]))
-]]></text>
-        <pv_name>loc://$(DID)dispPV&lt;VEnum&gt;(0,"Search","Shift")</pv_name>
-      </script>
-    </scripts>
+    <direction>0</direction>
+    <tab_width>200</tab_width>
+    <tab_height>32</tab_height>
+    <tab_spacing>0</tab_spacing>
+    <font>
+      <font name="Header 2" family="Liberation Sans" style="BOLD" size="18.0">
+      </font>
+    </font>
   </widget>
   <widget type="embedded" version="2.0.0">
     <name>EDM activePipClass</name>
@@ -125,38 +61,10 @@ widget.setPropertyValue('active_tab', PVUtil.getInt(pvs[0]))
     </macros>
     <file>rf_srf_freq_scan_rack_embed_cavities.bob</file>
     <x>16</x>
-    <y>180</y>
+    <y>146</y>
     <width>1088</width>
     <height>252</height>
     <transparent>true</transparent>
-  </widget>
-  <widget type="choice" version="2.0.0">
-    <name>EDM activeChoiceButtonClass</name>
-    <pv_name>loc://$(DID)dispPV&lt;VEnum&gt;(0,"Search","Shift")</pv_name>
-    <x>16</x>
-    <y>144</y>
-    <width>296</width>
-    <height>28</height>
-    <font>
-      <font family="Liberation Sans" style="REGULAR" size="12.0">
-      </font>
-    </font>
-    <foreground_color>
-      <color name="black-14" red="0" green="0" blue="0">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color name="grey-4" red="187" green="187" blue="187">
-      </color>
-    </background_color>
-    <selected_color>
-      <color name="GLOBAL canvas" red="200" green="200" blue="200">
-      </color>
-    </selected_color>
-    <items>
-      <item>Item 1</item>
-      <item>Item 2</item>
-    </items>
   </widget>
   <widget type="label" version="2.0.0">
     <name>EDM activeXTextClass</name>
@@ -250,7 +158,7 @@ Cryomodule $(CM)00 Rack $(R)</text>
         <description>Open Display</description>
       </action>
     </actions>
-    <text>Rack A...</text>
+    <text>Rack A</text>
     <x>968</x>
     <y>8</y>
     <width>92</width>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2025-06-04 15:47:23 by epics-->
+<!--Saved on 2025-07-03 08:30:35 by tjurican-->
 <display version="2.0.0">
   <name>SRF Cavity - $(CM)$(C)0</name>
   <x>14</x>
@@ -514,9 +514,9 @@
     <name>EDM activeMessageButtonClass</name>
     <actions>
       <action type="write_pv">
-        <description>Reset</description>
         <pv_name>$(pv_name)</pv_name>
         <value>1</value>
+        <description>Reset</description>
       </action>
     </actions>
     <pv_name>$(CM)$(C)0:INTLK_RESET_ALL</pv_name>
@@ -537,6 +537,7 @@
       <color name="GLOBAL canvas" red="200" green="200" blue="200">
       </color>
     </background_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="multi_state_led" version="2.0.0">
     <name>EDM activeRectangleClass</name>
@@ -1246,13 +1247,14 @@
       </color>
     </foreground_color>
     <background_color>
-      <color name="grey-12" red="70" green="70" blue="70">
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
       </color>
     </background_color>
     <format>2</format>
     <precision>3</precision>
     <show_units>false</show_units>
     <vertical_alignment>1</vertical_alignment>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>EDM activeXTextDspClass</name>
@@ -1270,13 +1272,14 @@
       </color>
     </foreground_color>
     <background_color>
-      <color name="grey-12" red="70" green="70" blue="70">
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
       </color>
     </background_color>
     <format>2</format>
     <precision>3</precision>
     <show_units>false</show_units>
     <vertical_alignment>1</vertical_alignment>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textentry" version="3.0.0">
     <name>EDM activeXTextDspClass</name>
@@ -1458,10 +1461,6 @@
       <font family="Liberation Sans" style="REGULAR" size="12.0">
       </font>
     </font>
-    <show_hihi>false</show_hihi>
-    <show_high>false</show_high>
-    <show_low>false</show_low>
-    <show_lolo>false</show_lolo>
   </widget>
   <widget type="label" version="2.0.0">
     <name>EDM activeXTextClass</name>
@@ -1531,6 +1530,7 @@
       <color name="GLOBAL canvas" red="200" green="200" blue="200">
       </color>
     </selected_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
     <items>
       <item>Item 1</item>
       <item>Item 2</item>
@@ -1555,7 +1555,7 @@
       <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
       </color>
     </background_color>
-    <format>2</format>
+    <format>6</format>
     <precision>3</precision>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
@@ -1565,9 +1565,9 @@
     <name>EDM relatedDisplayClass</name>
     <actions>
       <action type="open_display">
-        <description>Open Display</description>
         <file>rf_srf_mode_help.bob</file>
         <target>window</target>
+        <description>Open Display</description>
       </action>
     </actions>
     <text>?</text>
@@ -1634,6 +1634,7 @@
       <color name="GLOBAL canvas" red="200" green="200" blue="200">
       </color>
     </selected_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
     <items>
       <item>Item 1</item>
       <item>Item 2</item>
@@ -1658,7 +1659,7 @@
       <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
       </color>
     </background_color>
-    <format>2</format>
+    <format>6</format>
     <precision>3</precision>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
@@ -1758,15 +1759,15 @@
     <name>EDM relatedDisplayClass</name>
     <actions>
       <action type="open_display">
-        <description>Open Display</description>
         <file>ssaControl_RK_CA1300_7kW.bob</file>
         <macros>
           <P>$(CM)$(C)0:SSA</P>
         </macros>
         <target>tab</target>
+        <description>Open Display</description>
       </action>
     </actions>
-    <text>More SSA...</text>
+    <text>More SSA</text>
     <x>372</x>
     <y>76</y>
     <width>96</width>
@@ -1968,9 +1969,9 @@
     <name>EDM activeMessageButtonClass</name>
     <actions>
       <action type="write_pv">
-        <description>Reset</description>
         <pv_name>$(pv_name)</pv_name>
         <value>1</value>
+        <description>Reset</description>
       </action>
     </actions>
     <pv_name>$(CM)00:CTRL_RECOVER</pv_name>
@@ -1991,6 +1992,7 @@
       <color name="GLOBAL canvas" red="200" green="200" blue="200">
       </color>
     </background_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="label" version="2.0.0">
     <name>EDM activeXTextClass</name>
@@ -2042,18 +2044,20 @@ are all purple, try:</text>
     <name>EDM relatedDisplayClass</name>
     <actions>
       <action type="open_display">
-        <description>Cavity Probe...</description>
         <file>rf_srf_wf_signal.bob</file>
         <macros>
           <SIG>CAV</SIG>
           <SIGNAL>Cavity Probe</SIGNAL>
-          <EGU>MV</EGU>
+          <EGU>V</EGU>
           <PWREGU>mW</PWREGU>
+          <CM>$(CM)</CM>
+          <C>$(C)</C>
+          <RFS>$(RFS)</RFS>
         </macros>
         <target>tab</target>
+        <description>Cavity Probe</description>
       </action>
       <action type="open_display">
-        <description>Forward...</description>
         <file>rf_srf_wf_signal.bob</file>
         <macros>
           <SIG>FWD</SIG>
@@ -2062,9 +2066,9 @@ are all purple, try:</text>
           <PWREGU>W</PWREGU>
         </macros>
         <target>tab</target>
+        <description>Forward</description>
       </action>
       <action type="open_display">
-        <description>Reverse...</description>
         <file>rf_srf_wf_signal.bob</file>
         <macros>
           <SIG>REV</SIG>
@@ -2073,9 +2077,9 @@ are all purple, try:</text>
           <PWREGU>W</PWREGU>
         </macros>
         <target>tab</target>
+        <description>Reverse</description>
       </action>
       <action type="open_display">
-        <description>Drive (Loop)...</description>
         <file>rf_srf_wf_signal_autoscale.bob</file>
         <macros>
           <SIG>DRV</SIG>
@@ -2084,9 +2088,9 @@ are all purple, try:</text>
           <PWREGU>W</PWREGU>
         </macros>
         <target>tab</target>
+        <description>Drive (Loop)</description>
       </action>
       <action type="open_display">
-        <description>DAC...</description>
         <file>rf_srf_wf_signal_autoscale.bob</file>
         <macros>
           <SIG>DAC</SIG>
@@ -2095,9 +2099,9 @@ are all purple, try:</text>
           <PWREGU>-</PWREGU>
         </macros>
         <target>tab</target>
+        <description>DAC</description>
       </action>
       <action type="open_display">
-        <description>Detune...</description>
         <file>rf_srf_wf_df.bob</file>
         <macros>
           <SIG>DF</SIG>
@@ -2106,19 +2110,20 @@ are all purple, try:</text>
           <EGU>Hz</EGU>
         </macros>
         <target>tab</target>
+        <description>Detune</description>
       </action>
       <action type="open_display">
-        <description>Fault Waveforms...</description>
         <file>rf_srf_wf_fault_overview.bob</file>
         <target>tab</target>
+        <description>Fault Waveforms</description>
       </action>
       <action type="open_display">
-        <description>Piezo Tuner...</description>
         <file>rf_srf_wf_res.bob</file>
         <target>tab</target>
+        <description>Piezo Tuner</description>
       </action>
     </actions>
-    <text>More Cavity $(C)...</text>
+    <text>More Cavity $(C)</text>
     <x>832</x>
     <y>828</y>
     <width>152</width>
@@ -2141,17 +2146,17 @@ are all purple, try:</text>
     <name>EDM relatedDisplayClass</name>
     <actions>
       <action type="open_display">
-        <description>Unit Test this CM...</description>
         <file>rf_srf_cavity_unit.bob</file>
         <target>tab</target>
+        <description>Unit Test this CM</description>
       </action>
       <action type="open_display">
-        <description>Select Unit Test...</description>
         <file>rf_srf_cavity_unit_all.bob</file>
         <target>tab</target>
+        <description>Select Unit Test</description>
       </action>
     </actions>
-    <text>Other Displays...</text>
+    <text>Other Displays</text>
     <x>832</x>
     <y>864</y>
     <width>152</width>
@@ -2174,12 +2179,12 @@ are all purple, try:</text>
     <name>EDM relatedDisplayClass</name>
     <actions>
       <action type="open_display">
-        <description>Open Display</description>
         <file>rf_srf_wf_cavity_overview.bob</file>
         <target>tab</target>
+        <description>Open Display</description>
       </action>
     </actions>
-    <text>Cavity $(C) Overview...</text>
+    <text>Cavity $(C) Overview</text>
     <x>832</x>
     <y>776</y>
     <width>152</width>
@@ -2498,13 +2503,14 @@ are all purple, try:</text>
       </color>
     </foreground_color>
     <background_color>
-      <color name="grey-12" red="70" green="70" blue="70">
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
       </color>
     </background_color>
     <format>2</format>
     <precision>3</precision>
     <show_units>false</show_units>
     <vertical_alignment>1</vertical_alignment>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>EDM activeXTextDspClass</name>
@@ -2613,13 +2619,14 @@ are all purple, try:</text>
       </color>
     </foreground_color>
     <background_color>
-      <color name="grey-12" red="70" green="70" blue="70">
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
       </color>
     </background_color>
     <format>2</format>
     <precision>3</precision>
     <show_units>false</show_units>
     <vertical_alignment>1</vertical_alignment>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>EDM activeXTextDspClass</name>
@@ -2752,13 +2759,14 @@ are all purple, try:</text>
       </color>
     </foreground_color>
     <background_color>
-      <color name="grey-12" red="70" green="70" blue="70">
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
       </color>
     </background_color>
     <format>2</format>
     <precision>3</precision>
     <show_units>false</show_units>
     <vertical_alignment>1</vertical_alignment>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="label" version="2.0.0">
     <name>EDM activeXTextClass</name>
@@ -2854,9 +2862,9 @@ are all purple, try:</text>
     <name>EDM activeMessageButtonClass</name>
     <actions>
       <action type="write_pv">
-        <description>Stop</description>
         <pv_name>$(pv_name)</pv_name>
         <value>1</value>
+        <description>Stop</description>
       </action>
     </actions>
     <pv_name>$(CM)$(C)0:PULSEOFFSTRT</pv_name>
@@ -2877,6 +2885,7 @@ are all purple, try:</text>
       <color name="GLOBAL canvas" red="200" green="200" blue="200">
       </color>
     </background_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textentry" version="3.0.0">
     <name>EDM activeXTextDspClass</name>
@@ -2968,6 +2977,7 @@ are all purple, try:</text>
     <precision>3</precision>
     <show_units>false</show_units>
     <vertical_alignment>1</vertical_alignment>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>EDM activeXTextDspClass</name>
@@ -3042,9 +3052,9 @@ RF</text>
     <name>EDM activeMessageButtonClass</name>
     <actions>
       <action type="write_pv">
-        <description>Go</description>
         <pv_name>$(pv_name)</pv_name>
         <value>1</value>
+        <description>Go</description>
       </action>
     </actions>
     <pv_name>$(CM)$(C)0:PULSEONSTRT</pv_name>
@@ -3065,6 +3075,7 @@ RF</text>
       <color name="GLOBAL canvas" red="200" green="200" blue="200">
       </color>
     </background_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="rectangle" version="2.0.0">
     <name>EDM activeRectangleClass</name>
@@ -4280,12 +4291,12 @@ widget.setPropertyValue('line_color', WidgetColorService.getColor(cn))]]></text>
     <name>EDM relatedDisplayClass</name>
     <actions>
       <action type="open_display">
-        <description>Open Display</description>
         <file>rf_srf_chirp.bob</file>
         <target>tab</target>
+        <description>Open Display</description>
       </action>
     </actions>
-    <text>Chirp...</text>
+    <text>Chirp</text>
     <x>912</x>
     <y>916</y>
     <width>68</width>
@@ -4320,13 +4331,14 @@ widget.setPropertyValue('line_color', WidgetColorService.getColor(cn))]]></text>
       </color>
     </foreground_color>
     <background_color>
-      <color name="grey-12" red="70" green="70" blue="70">
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
       </color>
     </background_color>
     <format>2</format>
     <precision>3</precision>
     <show_units>false</show_units>
     <vertical_alignment>1</vertical_alignment>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="label" version="2.0.0">
     <name>EDM activeXTextClass</name>
@@ -4425,6 +4437,7 @@ widget.setPropertyValue('line_color', WidgetColorService.getColor(cn))]]></text>
       <precision>3</precision>
       <show_units>false</show_units>
       <vertical_alignment>1</vertical_alignment>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>EDM activeXTextDspClass</name>
@@ -4476,9 +4489,9 @@ widget.setPropertyValue('line_color', WidgetColorService.getColor(cn))]]></text>
       <name>EDM activeMessageButtonClass</name>
       <actions>
         <action type="write_pv">
-          <description>ABORT</description>
           <pv_name>$(pv_name)</pv_name>
           <value>1</value>
+          <description>ABORT</description>
         </action>
       </actions>
       <pv_name>$(CM)$(C)0:STEP:ABORT_REQ</pv_name>
@@ -4499,6 +4512,7 @@ widget.setPropertyValue('line_color', WidgetColorService.getColor(cn))]]></text>
         <color name="red-24" red="128" green="0" blue="0">
         </color>
       </background_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="label" version="2.0.0">
       <name>EDM activeXTextClass</name>
@@ -4533,9 +4547,9 @@ widget.setPropertyValue('line_color', WidgetColorService.getColor(cn))]]></text>
         <name>EDM activeMessageButtonClass</name>
         <actions>
           <action type="write_pv">
-            <description>Write</description>
             <pv_name>$(pv_name)</pv_name>
             <value>1</value>
+            <description>Write</description>
           </action>
         </actions>
         <pv_name>$(CM)$(C)0:STEP:MOV_REQ_NEG</pv_name>
@@ -4556,6 +4570,7 @@ widget.setPropertyValue('line_color', WidgetColorService.getColor(cn))]]></text>
           <color name="green-19" red="0" green="128" blue="0">
           </color>
         </background_color>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
       </widget>
       <widget type="polygon" version="2.0.0">
         <name>EDM activeLineClass</name>
@@ -4646,9 +4661,9 @@ widget.setPropertyValue('line_color', WidgetColorService.getColor(cn))]]></text>
         <name>EDM activeMessageButtonClass</name>
         <actions>
           <action type="write_pv">
-            <description>Write</description>
             <pv_name>$(pv_name)</pv_name>
             <value>1</value>
+            <description>Write</description>
           </action>
         </actions>
         <pv_name>$(CM)$(C)0:STEP:MOV_REQ_POS</pv_name>
@@ -4669,6 +4684,7 @@ widget.setPropertyValue('line_color', WidgetColorService.getColor(cn))]]></text>
           <color name="green-19" red="0" green="128" blue="0">
           </color>
         </background_color>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
       </widget>
       <widget type="polygon" version="2.0.0">
         <name>EDM activeLineClass</name>
@@ -5266,9 +5282,9 @@ widget.setPropertyValue('line_color', WidgetColorService.getColor(cn))]]></text>
     <name>EDM activeMessageButtonClass</name>
     <actions>
       <action type="write_pv">
-        <description>TGEN Off</description>
         <pv_name>$(pv_name)</pv_name>
         <value>1</value>
+        <description>TGEN Off</description>
       </action>
     </actions>
     <pv_name>$(CM)$(C)0:TGENOFFSTRT</pv_name>
@@ -5289,14 +5305,15 @@ widget.setPropertyValue('line_color', WidgetColorService.getColor(cn))]]></text>
       <color name="GLOBAL canvas" red="200" green="200" blue="200">
       </color>
     </background_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="action_button" version="3.0.0">
     <name>EDM relatedDisplayClass</name>
     <actions>
       <action type="open_display">
-        <description>Open Display</description>
         <file>rf_srf_tgen_help.bob</file>
         <target>window</target>
+        <description>Open Display</description>
       </action>
     </actions>
     <text>?</text>
@@ -6527,13 +6544,14 @@ widget.setPropertyValue('line_color', WidgetColorService.getColor(cn))]]></text>
       </color>
     </foreground_color>
     <background_color>
-      <color name="grey-12" red="70" green="70" blue="70">
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
       </color>
     </background_color>
     <format>2</format>
     <precision>3</precision>
     <show_units>false</show_units>
     <vertical_alignment>1</vertical_alignment>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>EDM activeXTextDspClass</name>
@@ -6723,6 +6741,7 @@ for Beam</text>
       <color name="GLOBAL canvas" red="200" green="200" blue="200">
       </color>
     </selected_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
     <items>
       <item>Item 1</item>
       <item>Item 2</item>
@@ -6885,10 +6904,6 @@ for Beam</text>
       <font family="Liberation Sans" style="REGULAR" size="12.0">
       </font>
     </font>
-    <show_hihi>false</show_hihi>
-    <show_high>false</show_high>
-    <show_low>false</show_low>
-    <show_lolo>false</show_lolo>
   </widget>
   <widget type="textentry" version="3.0.0">
     <name>EDM activeXTextDspClass</name>
@@ -7076,13 +7091,14 @@ Offset</text>
       </color>
     </foreground_color>
     <background_color>
-      <color name="grey-12" red="70" green="70" blue="70">
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
       </color>
     </background_color>
     <format>2</format>
     <precision>3</precision>
     <show_units>false</show_units>
     <vertical_alignment>1</vertical_alignment>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="label" version="2.0.0">
     <name>EDM activeXTextClass</name>
@@ -7166,13 +7182,14 @@ Level</text>
       </color>
     </foreground_color>
     <background_color>
-      <color name="grey-12" red="70" green="70" blue="70">
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
       </color>
     </background_color>
     <format>2</format>
     <precision>1</precision>
     <show_units>false</show_units>
     <vertical_alignment>1</vertical_alignment>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textentry" version="3.0.0">
     <name>EDM activeXTextDspClass</name>
@@ -7276,6 +7293,7 @@ Level</text>
       <color name="GLOBAL canvas" red="200" green="200" blue="200">
       </color>
     </selected_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
     <items>
       <item>Item 1</item>
       <item>Item 2</item>
@@ -7451,10 +7469,6 @@ Level</text>
       <font family="Liberation Sans" style="REGULAR" size="12.0">
       </font>
     </font>
-    <show_hihi>false</show_hihi>
-    <show_high>false</show_high>
-    <show_low>false</show_low>
-    <show_lolo>false</show_lolo>
     <minimum>-180.0</minimum>
     <maximum>180.0</maximum>
   </widget>
@@ -7482,6 +7496,7 @@ Level</text>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textentry" version="3.0.0">
     <name>EDM activeXTextDspClass</name>
@@ -7551,6 +7566,22 @@ Offset</text>
     </background_color>
     <horizontal_alignment>2</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>EDM activeRectangleClass</name>
+    <x>312</x>
+    <y>324</y>
+    <width>193</width>
+    <height>17</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
   </widget>
   <widget type="group" version="3.0.0">
     <name>EDM Group 9</name>
@@ -7740,9 +7771,9 @@ Offset</text>
     <name>EDM relatedDisplayClass</name>
     <actions>
       <action type="open_display">
-        <description>Open Display</description>
         <file>rf_srf_ioc_watch_help.bob</file>
         <target>window</target>
+        <description>Open Display</description>
       </action>
     </actions>
     <text>?</text>
@@ -7859,9 +7890,9 @@ widget.setPropertyValue('line_color', WidgetColorService.getColor(cn))]]></text>
       <name>EDM relatedDisplayClass</name>
       <actions>
         <action type="open_display">
-          <description>Open Display</description>
           <file>rf_srf_quench_valid_help.bob</file>
           <target>window</target>
+          <description>Open Display</description>
         </action>
       </actions>
       <text>?</text>
@@ -7961,12 +7992,12 @@ widget.setPropertyValue('line_color', WidgetColorService.getColor(cn))]]></text>
     <name>EDM relatedDisplayClass</name>
     <actions>
       <action type="open_display">
-        <description>Open Display</description>
         <file>rf_srf_phase_cm.bob</file>
         <target>tab</target>
+        <description>Open Display</description>
       </action>
     </actions>
-    <text>Phase offsets...</text>
+    <text>Phase offsets</text>
     <x>356</x>
     <y>376</y>
     <width>96</width>

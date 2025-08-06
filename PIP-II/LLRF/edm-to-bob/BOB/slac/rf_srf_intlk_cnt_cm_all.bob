@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2025-03-18 13:26:05 by dkastelic-->
+<!--Saved on 2025-07-03 09:40:46 by tjurican-->
 <display version="2.0.0">
   <name>Interlock Fault Counts - $(CM)00</name>
   <x>127</x>
@@ -96,7 +96,7 @@ Cryomodule $(CM)00</text>
     <name>EDM activePipClass</name>
     <tabs>
       <tab>
-        <name>Tab 1</name>
+        <name>Today</name>
         <file>rf_srf_intlk_cnt_cm.bob</file>
         <macros>
           <CNT>CNTT</CNT>
@@ -104,7 +104,7 @@ Cryomodule $(CM)00</text>
         <group_name></group_name>
       </tab>
       <tab>
-        <name>Tab 2</name>
+        <name>Yesterday</name>
         <file>rf_srf_intlk_cnt_cm.bob</file>
         <macros>
           <CNT>CNTY</CNT>
@@ -112,7 +112,7 @@ Cryomodule $(CM)00</text>
         <group_name></group_name>
       </tab>
       <tab>
-        <name>Tab 3</name>
+        <name>Total</name>
         <file>rf_srf_intlk_cnt_cm.bob</file>
         <macros>
           <CNT>CNT</CNT>
@@ -120,7 +120,7 @@ Cryomodule $(CM)00</text>
         <group_name></group_name>
       </tab>
       <tab>
-        <name>Tab 4</name>
+        <name>User</name>
         <file>rf_srf_intlk_cnt_cm_user.bob</file>
         <macros>
           <CNT>CNTU</CNT>
@@ -128,199 +128,13 @@ Cryomodule $(CM)00</text>
         <group_name></group_name>
       </tab>
     </tabs>
-    <x>16</x>
-    <y>92</y>
-    <width>1844</width>
-    <height>630</height>
-    <tab_width>0</tab_width>
-    <tab_height>0</tab_height>
-    <scripts>
-      <script file="EmbeddedPy">
-        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
-widget.setPropertyValue('active_tab', PVUtil.getInt(pvs[0]))
-]]></text>
-        <pv_name>loc://$(DID)dispPV&lt;VEnum&gt;(0,"Today","Yesterday","Total","User")</pv_name>
-      </script>
-    </scripts>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>EDM activeMessageButtonClass</name>
-    <actions>
-      <action type="write_pv">
-        <pv_name>$(pv_name)</pv_name>
-        <value>Today</value>
-        <description>Today</description>
-      </action>
-    </actions>
-    <pv_name>loc://$(DID)dispPV&lt;VEnum&gt;(0,"Today","Yesterday","Total","User")</pv_name>
-    <text>Today</text>
     <x>20</x>
     <y>52</y>
-    <width>108</width>
-    <height>28</height>
-    <font>
-      <font family="Liberation Sans" style="REGULAR" size="12.0">
-      </font>
-    </font>
-    <foreground_color>
-      <color name="black-14" red="0" green="0" blue="0">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color name="grey-4" red="187" green="187" blue="187">
-      </color>
-    </background_color>
-    <rules>
-      <rule name="EDM visibility" prop_id="background_color" out_exp="false">
-        <exp bool_exp="pv0&gt;=0.0 &amp;&amp; pv0&lt;1.0">
-          <value>
-            <color name="grey-2" red="218" green="218" blue="218">
-            </color>
-          </value>
-        </exp>
-        <exp bool_exp="true">
-          <value>
-            <color name="grey-4" red="187" green="187" blue="187">
-            </color>
-          </value>
-        </exp>
-        <pv_name>loc://$(DID)dispPV&lt;VEnum&gt;(0,"Today","Yesterday","Total","User")</pv_name>
-      </rule>
-    </rules>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>EDM activeMessageButtonClass</name>
-    <actions>
-      <action type="write_pv">
-        <pv_name>$(pv_name)</pv_name>
-        <value>Yesterday</value>
-        <description>Yesterday</description>
-      </action>
-    </actions>
-    <pv_name>loc://$(DID)dispPV&lt;VEnum&gt;(0,"Today","Yesterday","Total","User")</pv_name>
-    <text>Yesterday</text>
-    <x>140</x>
-    <y>52</y>
-    <width>108</width>
-    <height>28</height>
-    <font>
-      <font family="Liberation Sans" style="REGULAR" size="12.0">
-      </font>
-    </font>
-    <foreground_color>
-      <color name="black-14" red="0" green="0" blue="0">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color name="grey-4" red="187" green="187" blue="187">
-      </color>
-    </background_color>
-    <rules>
-      <rule name="EDM visibility" prop_id="background_color" out_exp="false">
-        <exp bool_exp="pv0&gt;=1.0 &amp;&amp; pv0&lt;2.0">
-          <value>
-            <color name="grey-2" red="218" green="218" blue="218">
-            </color>
-          </value>
-        </exp>
-        <exp bool_exp="true">
-          <value>
-            <color name="grey-4" red="187" green="187" blue="187">
-            </color>
-          </value>
-        </exp>
-        <pv_name>loc://$(DID)dispPV&lt;VEnum&gt;(0,"Today","Yesterday","Total","User")</pv_name>
-      </rule>
-    </rules>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>EDM activeMessageButtonClass</name>
-    <actions>
-      <action type="write_pv">
-        <pv_name>$(pv_name)</pv_name>
-        <value>Total</value>
-        <description>Total</description>
-      </action>
-    </actions>
-    <pv_name>loc://$(DID)dispPV&lt;VEnum&gt;(0,"Today","Yesterday","Total","User")</pv_name>
-    <text>Total</text>
-    <x>260</x>
-    <y>52</y>
-    <width>108</width>
-    <height>28</height>
-    <font>
-      <font family="Liberation Sans" style="REGULAR" size="12.0">
-      </font>
-    </font>
-    <foreground_color>
-      <color name="black-14" red="0" green="0" blue="0">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color name="grey-4" red="187" green="187" blue="187">
-      </color>
-    </background_color>
-    <rules>
-      <rule name="EDM visibility" prop_id="background_color" out_exp="false">
-        <exp bool_exp="pv0&gt;=2.0 &amp;&amp; pv0&lt;3.0">
-          <value>
-            <color name="grey-2" red="218" green="218" blue="218">
-            </color>
-          </value>
-        </exp>
-        <exp bool_exp="true">
-          <value>
-            <color name="grey-4" red="187" green="187" blue="187">
-            </color>
-          </value>
-        </exp>
-        <pv_name>loc://$(DID)dispPV&lt;VEnum&gt;(0,"Today","Yesterday","Total","User")</pv_name>
-      </rule>
-    </rules>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>EDM activeMessageButtonClass</name>
-    <actions>
-      <action type="write_pv">
-        <pv_name>$(pv_name)</pv_name>
-        <value>User</value>
-        <description>User</description>
-      </action>
-    </actions>
-    <pv_name>loc://$(DID)dispPV&lt;VEnum&gt;(0,"Today","Yesterday","Total","User")</pv_name>
-    <text>User</text>
-    <x>380</x>
-    <y>52</y>
-    <width>108</width>
-    <height>28</height>
-    <font>
-      <font family="Liberation Sans" style="REGULAR" size="12.0">
-      </font>
-    </font>
-    <foreground_color>
-      <color name="black-14" red="0" green="0" blue="0">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color name="grey-4" red="187" green="187" blue="187">
-      </color>
-    </background_color>
-    <rules>
-      <rule name="EDM visibility" prop_id="background_color" out_exp="false">
-        <exp bool_exp="pv0&gt;=3.0 &amp;&amp; pv0&lt;4.0">
-          <value>
-            <color name="grey-2" red="218" green="218" blue="218">
-            </color>
-          </value>
-        </exp>
-        <exp bool_exp="true">
-          <value>
-            <color name="grey-4" red="187" green="187" blue="187">
-            </color>
-          </value>
-        </exp>
-        <pv_name>loc://$(DID)dispPV&lt;VEnum&gt;(0,"Today","Yesterday","Total","User")</pv_name>
-      </rule>
-    </rules>
+    <width>1840</width>
+    <height>670</height>
+    <direction>0</direction>
+    <tab_width>108</tab_width>
+    <tab_height>32</tab_height>
+    <tab_spacing>12</tab_spacing>
   </widget>
 </display>
