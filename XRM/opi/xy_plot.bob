@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2025-02-26 15:49:08 by dt100-->
+<display version="2.0.0">
+  <name>xy+plot</name>
+  <width>850</width>
+  <height>800</height>
+  <widget type="group" version="3.0.0">
+    <name>xy_plot_container</name>
+    <macros>
+      <UUT>$(UUT=acq2106_000)</UUT>
+      <SITE>$(SITE=1)</SITE>
+      <pmode>$(pmode=LIVE)</pmode>
+      <ptype>$(ptype=VOLTS)</ptype>
+      <pchans>$(pchans=1-8)</pchans>
+      <LIVE>WF</LIVE>
+      <POST>TW</POST>
+      <LIVE_UPDATE>true</LIVE_UPDATE>
+      <POST_UPDATE>false</POST_UPDATE>
+      <ptarget>$(ptarget=$(SITE))</ptarget>
+    </macros>
+    <x>10</x>
+    <width>850</width>
+    <height>970</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="xyplot" version="3.0.0">
+      <name>xy_plot</name>
+      <width>850</width>
+      <height>800</height>
+      <show_toolbar>true</show_toolbar>
+      <scripts>
+        <script file="../scripts/init_xy_plot.py" check_connections="false">
+        </script>
+        <script file="../scripts/handle_trace_visibility.py">
+          <pv_name>loc://trace_en_$(timestamp)</pv_name>
+        </script>
+      </scripts>
+      <x_axis>
+        <title>Samples</title>
+        <autoscale>true</autoscale>
+        <log_scale>false</log_scale>
+        <minimum>0.0</minimum>
+        <maximum>100.0</maximum>
+        <show_grid>true</show_grid>
+        <title_font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </title_font>
+        <scale_font>
+          <font name="Default" family="Liberation Sans" style="REGULAR" size="14.0">
+          </font>
+        </scale_font>
+        <visible>true</visible>
+      </x_axis>
+      <y_axes>
+        <y_axis>
+          <title>Codes</title>
+          <autoscale>true</autoscale>
+          <log_scale>false</log_scale>
+          <minimum>0.0</minimum>
+          <maximum>100.0</maximum>
+          <show_grid>false</show_grid>
+          <title_font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </title_font>
+          <scale_font>
+            <font name="Default" family="Liberation Sans" style="REGULAR" size="14.0">
+            </font>
+          </scale_font>
+          <on_right>false</on_right>
+          <visible>true</visible>
+          <color>
+            <color name="Text" red="0" green="0" blue="0">
+            </color>
+          </color>
+        </y_axis>
+      </y_axes>
+      <traces>
+        <trace>
+          <name>$(traces[0].y_pv)</name>
+          <x_pv></x_pv>
+          <y_pv></y_pv>
+          <err_pv></err_pv>
+          <axis>0</axis>
+          <trace_type>1</trace_type>
+          <color>
+            <color red="0" green="0" blue="255">
+            </color>
+          </color>
+          <line_width>1</line_width>
+          <line_style>0</line_style>
+          <point_type>0</point_type>
+          <point_size>10</point_size>
+          <visible>true</visible>
+        </trace>
+        <trace>
+          <name>$(traces[1].y_pv)</name>
+          <x_pv></x_pv>
+          <y_pv></y_pv>
+          <err_pv></err_pv>
+          <axis>0</axis>
+          <trace_type>1</trace_type>
+          <color>
+            <color red="255" green="0" blue="0">
+            </color>
+          </color>
+          <line_width>1</line_width>
+          <line_style>0</line_style>
+          <point_type>0</point_type>
+          <point_size>10</point_size>
+          <visible>true</visible>
+        </trace>
+        <trace>
+          <name>$(traces[2].y_pv)</name>
+          <x_pv></x_pv>
+          <y_pv></y_pv>
+          <err_pv></err_pv>
+          <axis>0</axis>
+          <trace_type>1</trace_type>
+          <color>
+            <color red="0" green="255" blue="0">
+            </color>
+          </color>
+          <line_width>1</line_width>
+          <line_style>0</line_style>
+          <point_type>0</point_type>
+          <point_size>10</point_size>
+          <visible>true</visible>
+        </trace>
+        <trace>
+          <name>$(traces[3].y_pv)</name>
+          <x_pv></x_pv>
+          <y_pv></y_pv>
+          <err_pv></err_pv>
+          <axis>0</axis>
+          <trace_type>1</trace_type>
+          <color>
+            <color red="170" green="0" blue="255">
+            </color>
+          </color>
+          <line_width>1</line_width>
+          <line_style>0</line_style>
+          <point_type>0</point_type>
+          <point_size>10</point_size>
+          <visible>true</visible>
+        </trace>
+        <trace>
+          <name>$(traces[4].y_pv)</name>
+          <x_pv></x_pv>
+          <y_pv></y_pv>
+          <err_pv></err_pv>
+          <axis>0</axis>
+          <trace_type>1</trace_type>
+          <color>
+            <color red="255" green="255" blue="0">
+            </color>
+          </color>
+          <line_width>1</line_width>
+          <line_style>0</line_style>
+          <point_type>0</point_type>
+          <point_size>10</point_size>
+          <visible>true</visible>
+        </trace>
+        <trace>
+          <name>$(traces[5].y_pv)</name>
+          <x_pv></x_pv>
+          <y_pv></y_pv>
+          <err_pv></err_pv>
+          <axis>0</axis>
+          <trace_type>1</trace_type>
+          <color>
+            <color red="0" green="234" blue="255">
+            </color>
+          </color>
+          <line_width>1</line_width>
+          <line_style>0</line_style>
+          <point_type>0</point_type>
+          <point_size>10</point_size>
+          <visible>true</visible>
+        </trace>
+        <trace>
+          <name>$(traces[6].y_pv)</name>
+          <x_pv></x_pv>
+          <y_pv></y_pv>
+          <err_pv></err_pv>
+          <axis>0</axis>
+          <trace_type>1</trace_type>
+          <color>
+            <color red="255" green="127" blue="0">
+            </color>
+          </color>
+          <line_width>1</line_width>
+          <line_style>0</line_style>
+          <point_type>0</point_type>
+          <point_size>10</point_size>
+          <visible>true</visible>
+        </trace>
+        <trace>
+          <name>$(traces[7].y_pv)</name>
+          <x_pv></x_pv>
+          <y_pv></y_pv>
+          <err_pv></err_pv>
+          <axis>0</axis>
+          <trace_type>1</trace_type>
+          <color>
+            <color red="191" green="255" blue="0">
+            </color>
+          </color>
+          <line_width>1</line_width>
+          <line_style>0</line_style>
+          <point_type>0</point_type>
+          <point_size>10</point_size>
+          <visible>true</visible>
+        </trace>
+      </traces>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WF TYPE</name>
+      <pv_name>$(UUT):1:AI:$($(pmode)):01.FTVL</pv_name>
+      <y>810</y>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WF UPDATES</name>
+      <pv_name>$(UUT):1:AI:WF:01:UPDATES</pv_name>
+      <x>105</x>
+      <y>810</y>
+      <height>30</height>
+      <visible>$($(pmode)_UPDATE)</visible>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="combo" version="2.0.0">
+      <name>ADC_CAL Input</name>
+      <pv_name>${UUT}:${SITE}:ADC_CAL</pv_name>
+      <x>210</x>
+      <y>810</y>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Embedded Display</name>
+      <macros>
+        <pvname>loc://trace_en_$(timestamp)</pvname>
+      </macros>
+      <file>components/xy_plot/trace_viz_control.bob</file>
+      <x>320</x>
+      <y>810</y>
+      <width>160</width>
+      <height>40</height>
+      <resize>2</resize>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Local PV Init</name>
+      <pv_name>loc://trace_en_$(timestamp)&lt;VDouble&gt;(255)</pv_name>
+      <x>320</x>
+      <y>850</y>
+      <width>160</width>
+      <height>40</height>
+      <visible>false</visible>
+    </widget>
+  </widget>
+</display>

@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2025-02-20 11:43:25 by dt100-->
+<display version="2.0.0">
+  <name>transient</name>
+  <width>710</width>
+  <height>160</height>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <width>710</width>
+    <height>160</height>
+    <style>3</style>
+    <background_color>
+      <color red="128" green="153" blue="255">
+      </color>
+    </background_color>
+    <widget type="embedded" version="2.0.0">
+      <name>Pre Input</name>
+      <macros>
+        <pvtitle>PRE</pvtitle>
+        <pvinput>${UUT}:MODE:TRANSIENT:PRE</pvinput>
+        <fmt>1</fmt>
+        <precision>0</precision>
+        <pvread>${UUT}:MODE:TRANS_ACT:PRE</pvread>
+        <read>1</read>
+      </macros>
+      <file>../text_input.bob</file>
+      <x>150</x>
+      <y>50</y>
+      <width>236</width>
+      <height>30</height>
+      <resize>2</resize>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Post Input</name>
+      <macros>
+        <pvtitle>POST</pvtitle>
+        <pvinput>${UUT}:MODE:TRANSIENT:POST</pvinput>
+        <fmt>1</fmt>
+        <precision>0</precision>
+        <pvread>${UUT}:MODE:TRANS_ACT:POST</pvread>
+        <read>1</read>
+      </macros>
+      <file>../text_input.bob</file>
+      <x>150</x>
+      <y>83</y>
+      <width>236</width>
+      <height>30</height>
+      <resize>2</resize>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Osam Input</name>
+      <macros>
+        <pvtitle>OSAM</pvtitle>
+        <pvinput>${UUT}:MODE:TRANSIENT:OSAM</pvinput>
+        <fmt>1</fmt>
+        <precision>0</precision>
+        <read>0</read>
+      </macros>
+      <file>../text_input.bob</file>
+      <x>386</x>
+      <y>50</y>
+      <width>236</width>
+      <height>30</height>
+      <resize>2</resize>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Repeat Input</name>
+      <macros>
+        <pvtitle>REPEAT</pvtitle>
+        <pvinput>${UUT}:MODE:TRANSIENT:REPEAT</pvinput>
+        <fmt>1</fmt>
+        <precision>0</precision>
+        <read>0</read>
+      </macros>
+      <file>../text_input.bob</file>
+      <x>386</x>
+      <y>83</y>
+      <width>236</width>
+      <height>30</height>
+      <resize>2</resize>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>Demux Input</name>
+      <x>386</x>
+      <y>116</y>
+      <width>236</width>
+      <height>30</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>Demux label#</name>
+        <text>DEMUX</text>
+        <width>80</width>
+        <height>30</height>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="choice" version="2.0.0">
+        <name>Choice Button</name>
+        <pv_name>${UUT}:MODE:TRANSIENT:DEMUX</pv_name>
+        <x>85</x>
+        <width>151</width>
+        <height>30</height>
+        <selected_color>
+          <color red="185" green="215" blue="237">
+          </color>
+        </selected_color>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <items>
+          <item>On</item>
+          <item>Off</item>
+        </items>
+      </widget>
+    </widget>
+    <widget type="bool_button" version="2.0.0">
+      <name>Boolean Button_1</name>
+      <pv_name>${UUT}:MODE:TRANSIENT:SET_ARM</pv_name>
+      <bit>1</bit>
+      <x>20</x>
+      <y>83</y>
+      <width>120</width>
+      <off_label>ARM  </off_label>
+      <off_color>
+        <color red="128" green="128" blue="128">
+        </color>
+      </off_color>
+      <on_label>ARM  </on_label>
+      <on_color>
+        <color red="255" green="127" blue="0">
+        </color>
+      </on_color>
+      <font>
+        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <rules>
+        <rule name="disable" prop_id="enabled" out_exp="true">
+          <exp bool_exp="pv0==1">
+            <expression>False</expression>
+          </exp>
+          <pv_name>${UUT}:MODE:CONTINUOUS</pv_name>
+        </rule>
+      </rules>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <mode>1</mode>
+    </widget>
+    <widget type="bool_button" version="2.0.0">
+      <name>Boolean Button_2</name>
+      <pv_name>${UUT}:MODE:TRANSIENT:SET_ABORT</pv_name>
+      <bit>1</bit>
+      <x>20</x>
+      <y>116</y>
+      <width>120</width>
+      <off_label>STOP</off_label>
+      <off_color>
+        <color red="128" green="128" blue="128">
+        </color>
+      </off_color>
+      <on_label>STOP</on_label>
+      <on_color>
+        <color red="255" green="0" blue="0">
+        </color>
+      </on_color>
+      <font>
+        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <rules>
+        <rule name="disable" prop_id="enabled" out_exp="true">
+          <exp bool_exp="pv0==1">
+            <expression>False</expression>
+          </exp>
+          <pv_name>${UUT}:MODE:CONTINUOUS</pv_name>
+        </rule>
+      </rules>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <mode>1</mode>
+    </widget>
+    <widget type="bool_button" version="2.0.0">
+      <name>Boolean Button_3</name>
+      <pv_name>${UUT}:MODE:TRANSIENT</pv_name>
+      <bit>1</bit>
+      <x>20</x>
+      <y>50</y>
+      <width>120</width>
+      <off_label>SET   </off_label>
+      <off_color>
+        <color red="128" green="128" blue="128">
+        </color>
+      </off_color>
+      <on_label>SET   </on_label>
+      <on_color>
+        <color red="0" green="149" blue="255">
+        </color>
+      </on_color>
+      <font>
+        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <actions>
+        <action type="write_pv">
+          <pv_name>${UUT}:1:TRG:DX</pv_name>
+          <value>${UUT}:MODE:TRANSIENT:SOFT_TRIGGER</value>
+          <description>WritePV</description>
+        </action>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <mode>1</mode>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Default PRE/POST</name>
+      <actions execute_as_one="true">
+        <action type="write_pv">
+          <pv_name>${UUT}:MODE:TRANSIENT:PRE</pv_name>
+          <value>50000</value>
+          <description>SET PRE</description>
+        </action>
+        <action type="write_pv">
+          <pv_name>${UUT}:MODE:TRANSIENT:POST</pv_name>
+          <value>50000</value>
+          <description>SET POST</description>
+        </action>
+        <action type="write_pv">
+          <pv_name>${UUT}:MODE:TRANSIENT:OSAM</pv_name>
+          <value>1</value>
+          <description>SET OSAM</description>
+        </action>
+      </actions>
+      <text>Default PRE/POST</text>
+      <x>256</x>
+      <y>116</y>
+      <width>130</width>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Default PRE/POST_1</name>
+      <actions execute_as_one="true">
+        <action type="write_pv">
+          <pv_name>${UUT}:MODE:TRANSIENT:PRE</pv_name>
+          <value>0</value>
+          <description>SET PRE</description>
+        </action>
+        <action type="write_pv">
+          <pv_name>${UUT}:MODE:TRANSIENT:POST</pv_name>
+          <value>100000</value>
+          <description>SET POST</description>
+        </action>
+        <action type="write_pv">
+          <pv_name>${UUT}:MODE:TRANSIENT:OSAM</pv_name>
+          <value>1</value>
+          <description>SET OSAM</description>
+        </action>
+      </actions>
+      <text>Default POST</text>
+      <x>150</x>
+      <y>116</y>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_1</name>
+      <text>Transient Control</text>
+      <x>20</x>
+      <y>10</y>
+      <width>670</width>
+      <height>24</height>
+      <font>
+        <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+        </font>
+      </font>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>Data Valid</name>
+      <x>550</x>
+      <y>50</y>
+      <width>68</width>
+      <height>48</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>Label_2</name>
+        <text>Data Valid</text>
+        <width>68</width>
+        <height>16</height>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <auto_size>true</auto_size>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_3</name>
+        <text>RAW</text>
+        <y>16</y>
+        <width>34</width>
+        <height>16</height>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <auto_size>true</auto_size>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_4</name>
+        <text>CHAN</text>
+        <y>32</y>
+        <width>41</width>
+        <height>16</height>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <auto_size>true</auto_size>
+      </widget>
+      <widget type="led" version="2.0.0">
+        <name>LED</name>
+        <pv_name>${UUT}:MODE:TRANS_ACT:RAW:DATA_VALID</pv_name>
+        <x>50</x>
+        <y>16</y>
+        <width>16</width>
+        <height>16</height>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="led" version="2.0.0">
+        <name>LED_1</name>
+        <pv_name>${UUT}:MODE:TRANS_ACT:CH:DATA_VALID</pv_name>
+        <x>50</x>
+        <y>32</y>
+        <width>16</width>
+        <height>16</height>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+    </widget>
+  </widget>
+</display>

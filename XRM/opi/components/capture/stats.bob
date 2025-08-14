@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2025-02-20 14:23:45 by dt100-->
+<display version="2.0.0">
+  <name>stats</name>
+  <width>580</width>
+  <height>270</height>
+  <widget type="group" version="3.0.0">
+    <name>stats group</name>
+    <width>580</width>
+    <height>270</height>
+    <style>3</style>
+    <background_color>
+      <color red="255" green="212" blue="0">
+      </color>
+    </background_color>
+    <widget type="label" version="2.0.0">
+      <name>Count Label</name>
+      <text>Count</text>
+      <x>100</x>
+      <y>44</y>
+      <font>
+        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Rate Label</name>
+      <text>Rate</text>
+      <x>210</x>
+      <y>44</y>
+      <font>
+        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="template" version="2.0.0">
+      <name>Stats Values</name>
+      <file>stats_values.bob</file>
+      <instances>
+        <instance>
+          <macros>
+            <label>Gets</label>
+            <target>GETS</target>
+          </macros>
+        </instance>
+        <instance>
+          <macros>
+            <label>Puts</label>
+            <target>PUTS</target>
+          </macros>
+        </instance>
+        <instance>
+          <macros>
+            <label>Axi Wakeups</label>
+            <target>AXI64:W</target>
+          </macros>
+        </instance>
+        <instance>
+          <macros>
+            <label>Axi Fetch</label>
+            <target>AXI64:F</target>
+          </macros>
+        </instance>
+        <instance>
+          <macros>
+            <label>Axi Catchup</label>
+            <target>AXI64:C</target>
+          </macros>
+        </instance>
+      </instances>
+      <x>20</x>
+      <y>64</y>
+      <width>320</width>
+      <height>190</height>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="template" version="2.0.0">
+      <name>Stats Values 2</name>
+      <file>../pv_state_v.bob</file>
+      <instances>
+        <instance>
+          <macros>
+            <pvtitle>Bufferlen</pvtitle>
+            <pvname>${UUT}:0:STAT:BLEN</pvname>
+          </macros>
+        </instance>
+        <instance>
+          <macros>
+            <pvtitle>MB/s</pvtitle>
+            <pvname>${UUT}:0:STAT:GETS:MBPS</pvname>
+          </macros>
+        </instance>
+      </instances>
+      <x>360</x>
+      <y>64</y>
+      <width>102</width>
+      <height>134</height>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Stream Title</name>
+      <text>Stats</text>
+      <x>20</x>
+      <y>20</y>
+      <width>360</width>
+      <height>24</height>
+      <font>
+        <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+        </font>
+      </font>
+    </widget>
+  </widget>
+</display>

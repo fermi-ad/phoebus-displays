@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2025-02-19 17:18:24 by dt100-->
+<display version="2.0.0">
+  <name>capture_state</name>
+  <width>627</width>
+  <height>42</height>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <width>627</width>
+    <height>42</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="group" version="3.0.0">
+      <name>Group</name>
+      <width>102</width>
+      <height>42</height>
+      <style>2</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>Shot Label</name>
+        <text>SHOT</text>
+        <font>
+          <font name="Header 3" family="Liberation Sans" style="BOLD" size="16.0">
+          </font>
+        </font>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Shot Value</name>
+        <pv_name>${UUT}:1:SHOT</pv_name>
+        <y>20</y>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>Group</name>
+      <x>105</x>
+      <width>102</width>
+      <height>42</height>
+      <style>2</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>Tstate Label</name>
+        <text>TSTATE</text>
+        <font>
+          <font name="Header 3" family="Liberation Sans" style="BOLD" size="16.0">
+          </font>
+        </font>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Tstate Value</name>
+        <pv_name>${UUT}:MODE:TRANS_ACT:STATE</pv_name>
+        <y>20</y>
+        <format>6</format>
+        <vertical_alignment>1</vertical_alignment>
+        <rules>
+          <rule name="Tstate color" prop_id="background_color" out_exp="false">
+            <exp bool_exp="pv0==0">
+              <value>
+                <color red="255" green="0" blue="0">
+                </color>
+              </value>
+            </exp>
+            <exp bool_exp="pv0==1">
+              <value>
+                <color red="255" green="127" blue="0">
+                </color>
+              </value>
+            </exp>
+            <exp bool_exp="pv0==2">
+              <value>
+                <color red="0" green="255" blue="0">
+                </color>
+              </value>
+            </exp>
+            <exp bool_exp="pv0==3">
+              <value>
+                <color red="0" green="255" blue="0">
+                </color>
+              </value>
+            </exp>
+            <exp bool_exp="pv0==4">
+              <value>
+                <color red="170" green="0" blue="255">
+                </color>
+              </value>
+            </exp>
+            <exp bool_exp="pv0==5">
+              <value>
+                <color red="0" green="234" blue="255">
+                </color>
+              </value>
+            </exp>
+            <pv_name>${UUT}:MODE:TRANS_ACT:STATE</pv_name>
+          </rule>
+        </rules>
+      </widget>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>Group</name>
+      <x>210</x>
+      <width>102</width>
+      <height>42</height>
+      <style>2</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>Cstate Label</name>
+        <text>CSTATE</text>
+        <font>
+          <font name="Header 3" family="Liberation Sans" style="BOLD" size="16.0">
+          </font>
+        </font>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Cstate Value</name>
+        <pv_name>${UUT}:MODE:CONTINUOUS:STATE</pv_name>
+        <y>20</y>
+        <format>6</format>
+        <vertical_alignment>1</vertical_alignment>
+        <rules>
+          <rule name="Cstate colors" prop_id="background_color" out_exp="false">
+            <exp bool_exp="pv1&gt;0">
+              <value>
+                <color red="255" green="0" blue="0">
+                </color>
+              </value>
+            </exp>
+            <exp bool_exp="pv0==0">
+              <value>
+                <color red="255" green="0" blue="0">
+                </color>
+              </value>
+            </exp>
+            <exp bool_exp="pv0==1">
+              <value>
+                <color red="255" green="127" blue="0">
+                </color>
+              </value>
+            </exp>
+            <exp bool_exp="pv0==2">
+              <value>
+                <color red="0" green="255" blue="0">
+                </color>
+              </value>
+            </exp>
+            <exp bool_exp="pv0==5">
+              <value>
+                <color red="0" green="234" blue="255">
+                </color>
+              </value>
+            </exp>
+            <pv_name>${UUT}:MODE:CONTINUOUS:STATE</pv_name>
+            <pv_name>${UUT}:MODE:TRANS_ACT:STATE</pv_name>
+          </rule>
+        </rules>
+      </widget>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>Group</name>
+      <x>315</x>
+      <width>102</width>
+      <height>42</height>
+      <style>2</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>Runtime Label</name>
+        <text>RUNTIME</text>
+        <font>
+          <font name="Header 3" family="Liberation Sans" style="BOLD" size="16.0">
+          </font>
+        </font>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Runtime Value</name>
+        <pv_name>${UUT}:1:SIG:sample_count:nzcount</pv_name>
+        <y>20</y>
+        <format>1</format>
+        <precision>0</precision>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>Group</name>
+      <x>420</x>
+      <width>102</width>
+      <height>42</height>
+      <style>2</style>
+      <transparent>true</transparent>
+      <widget type="textupdate" version="2.0.0">
+        <name>Tsamples Value</name>
+        <pv_name>${UUT}:MODE:CONTINUOUS:SC</pv_name>
+        <y>20</y>
+        <format>1</format>
+        <precision>0</precision>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Tsamples Label</name>
+        <text>TSAMPLES</text>
+        <font>
+          <font name="Header 3" family="Liberation Sans" style="BOLD" size="16.0">
+          </font>
+        </font>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>Group</name>
+      <x>525</x>
+      <width>102</width>
+      <height>42</height>
+      <style>2</style>
+      <transparent>true</transparent>
+      <widget type="textupdate" version="2.0.0">
+        <name>Rate Value</name>
+        <pv_name>${UUT}:0:STAT:GETS:MBPS</pv_name>
+        <y>20</y>
+        <format>1</format>
+        <precision>2</precision>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Rate Label</name>
+        <text>RATE (MB/s)</text>
+        <font>
+          <font name="Header 3" family="Liberation Sans" style="BOLD" size="16.0">
+          </font>
+        </font>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+    </widget>
+  </widget>
+</display>

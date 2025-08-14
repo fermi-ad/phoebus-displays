@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2025-03-06 10:50:37 by sam-->
+<display version="2.0.0">
+  <name>Clocktree</name>
+  <width>1440</width>
+  <height>1050</height>
+  <widget type="embedded" version="2.0.0">
+    <name>SITE LINES</name>
+    <file>components/clocktree/site_lines.bob</file>
+    <x>10</x>
+    <y>480</y>
+    <width>960</width>
+    <height>520</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>SI5326</name>
+    <x>330</x>
+    <y>40</y>
+    <width>800</width>
+    <height>600</height>
+    <resize>2</resize>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="LOAD_BY_MODEL" prop_id="file" out_exp="true">
+        <exp bool_exp="pvStr0=='acq1001'||pvStr0=='acq1002'">
+          <expression>"components/clocktree/mbclk.bob"</expression>
+        </exp>
+        <exp bool_exp="true">
+          <expression>"components/clocktree/Si5326.bob"</expression>
+        </exp>
+        <pv_name>loc://MODEL</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>SI53315</name>
+    <x>630</x>
+    <y>40</y>
+    <width>800</width>
+    <height>600</height>
+    <resize>2</resize>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="LOAD_BY_MODEL" prop_id="file" out_exp="true">
+        <exp bool_exp="pvStr0=='acq1001'||pvStr0=='acq1002'">
+          <expression>"components/clocktree/basic_out.bob"</expression>
+        </exp>
+        <exp bool_exp="true">
+          <expression>"components/clocktree/Si53315.bob"</expression>
+        </exp>
+        <pv_name>loc://MODEL</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>INPUT</name>
+    <file>components/clocktree/input.bob</file>
+    <x>10</x>
+    <y>40</y>
+    <width>320</width>
+    <height>420</height>
+    <resize>2</resize>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>TITLE</name>
+    <text>$(UUT) CLOCKTREE</text>
+    <x>10</x>
+    <width>320</width>
+    <height>30</height>
+    <font>
+      <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+</display>

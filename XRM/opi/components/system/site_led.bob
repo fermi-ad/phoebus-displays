@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2025-02-27 16:36:29 by dt100-->
+<display version="2.0.0">
+  <name>Site Led</name>
+  <width>20</width>
+  <height>90</height>
+  <widget type="group" version="3.0.0">
+    <name>SITE_LED_1</name>
+    <macros>
+      <label>C$(site)</label>
+      <pvbase>${UUT}:MOD:$(site)</pvbase>
+    </macros>
+    <width>20</width>
+    <height>90</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="led" version="2.0.0">
+      <name>LED_GOOD_1</name>
+      <pv_name>$(pvbase):GOOD</pv_name>
+      <y>40</y>
+      <off_color>
+        <color red="51" green="102" blue="51">
+        </color>
+      </off_color>
+      <line_color>
+        <color name="Text" red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_WARN_1</name>
+      <pv_name>$(pvbase):WARN</pv_name>
+      <y>20</y>
+      <off_color>
+        <color red="153" green="77" blue="0">
+        </color>
+      </off_color>
+      <on_color>
+        <color name="MINOR" red="255" green="128" blue="0">
+        </color>
+      </on_color>
+      <line_color>
+        <color name="Text" red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_FAIL_1</name>
+      <pv_name>$(pvbase):FAIL</pv_name>
+      <off_color>
+        <color red="76" green="0" blue="0">
+        </color>
+      </off_color>
+      <on_color>
+        <color name="MAJOR" red="255" green="0" blue="0">
+        </color>
+      </on_color>
+      <line_color>
+        <color name="Text" red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>SITE_LABEL_1</name>
+      <text>$(label)</text>
+      <y>70</y>
+      <width>20</width>
+      <font>
+        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+    </widget>
+  </widget>
+</display>

@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2025-02-27 16:43:10 by dt100-->
+<display version="2.0.0">
+  <name>Front Panel</name>
+  <width>380</width>
+  <height>140</height>
+  <widget type="group" version="3.0.0">
+    <name>FRONT PANEL</name>
+    <width>380</width>
+    <height>140</height>
+    <style>3</style>
+    <background_color>
+      <color name="Read_Background" red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <widget type="group" version="3.0.0">
+      <name>FRONT PANEL INNER</name>
+      <x>10</x>
+      <y>10</y>
+      <width>360</width>
+      <height>120</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="template" version="2.0.0">
+        <name>SITE LEDS</name>
+        <file>site_led.bob</file>
+        <instances>
+          <instance>
+            <macros>
+              <site>1</site>
+            </macros>
+          </instance>
+          <instance>
+            <macros>
+              <site>2</site>
+            </macros>
+          </instance>
+          <instance>
+            <macros>
+              <site>3</site>
+            </macros>
+          </instance>
+          <instance>
+            <macros>
+              <site>4</site>
+            </macros>
+          </instance>
+          <instance>
+            <macros>
+              <site>5</site>
+            </macros>
+          </instance>
+          <instance>
+            <macros>
+              <site>6</site>
+            </macros>
+          </instance>
+        </instances>
+        <y>30</y>
+        <width>170</width>
+        <height>90</height>
+        <horizontal>true</horizontal>
+        <transparent>true</transparent>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>LED_TRI_1</name>
+        <macros>
+          <label>CK</label>
+          <pvname0>${UUT}:SYS:LED:CLK_GG</pvname0>
+          <pvname1>${UUT}:SYS:LED:CLK_A</pvname1>
+          <pvname2>${UUT}:SYS:LED:CLK_RR</pvname2>
+        </macros>
+        <x>190</x>
+        <y>30</y>
+        <width>20</width>
+        <height>90</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="led" version="2.0.0">
+          <name>LED_GOOD_1</name>
+          <pv_name>$(pvname0)</pv_name>
+          <y>40</y>
+          <off_color>
+            <color red="51" green="102" blue="51">
+            </color>
+          </off_color>
+          <line_color>
+            <color name="Text" red="0" green="0" blue="0">
+            </color>
+          </line_color>
+          <border_alarm_sensitive>false</border_alarm_sensitive>
+        </widget>
+        <widget type="led" version="2.0.0">
+          <name>LED_WARN_1</name>
+          <pv_name>$(pvname1)</pv_name>
+          <y>20</y>
+          <off_color>
+            <color red="153" green="77" blue="0">
+            </color>
+          </off_color>
+          <on_color>
+            <color name="MINOR" red="255" green="128" blue="0">
+            </color>
+          </on_color>
+          <line_color>
+            <color name="Text" red="0" green="0" blue="0">
+            </color>
+          </line_color>
+          <border_alarm_sensitive>false</border_alarm_sensitive>
+        </widget>
+        <widget type="led" version="2.0.0">
+          <name>LED_FAIL_1</name>
+          <pv_name>$(pvname2)</pv_name>
+          <off_color>
+            <color red="76" green="0" blue="0">
+            </color>
+          </off_color>
+          <on_color>
+            <color name="MAJOR" red="255" green="0" blue="0">
+            </color>
+          </on_color>
+          <line_color>
+            <color name="Text" red="0" green="0" blue="0">
+            </color>
+          </line_color>
+          <border_alarm_sensitive>false</border_alarm_sensitive>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>SITE_LABEL_1</name>
+          <text>$(label)</text>
+          <y>70</y>
+          <width>20</width>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <horizontal_alignment>1</horizontal_alignment>
+        </widget>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>LED_TRI_2</name>
+        <macros>
+          <label>S1</label>
+          <pvname0>${UUT}:SYS:LED:ACT_GG</pvname0>
+          <pvname1>${UUT}:SYS:LED:ACT_A</pvname1>
+          <pvname2>${UUT}:SYS:LED:ACT_RR</pvname2>
+        </macros>
+        <x>250</x>
+        <y>30</y>
+        <width>20</width>
+        <height>90</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="led" version="2.0.0">
+          <name>LED_GOOD_2</name>
+          <pv_name>$(pvname0)</pv_name>
+          <y>40</y>
+          <off_color>
+            <color red="51" green="102" blue="51">
+            </color>
+          </off_color>
+          <line_color>
+            <color name="Text" red="0" green="0" blue="0">
+            </color>
+          </line_color>
+          <border_alarm_sensitive>false</border_alarm_sensitive>
+        </widget>
+        <widget type="led" version="2.0.0">
+          <name>LED_WARN_2</name>
+          <pv_name>$(pvname1)</pv_name>
+          <y>20</y>
+          <off_color>
+            <color red="153" green="77" blue="0">
+            </color>
+          </off_color>
+          <on_color>
+            <color name="MINOR" red="255" green="128" blue="0">
+            </color>
+          </on_color>
+          <line_color>
+            <color name="Text" red="0" green="0" blue="0">
+            </color>
+          </line_color>
+          <border_alarm_sensitive>false</border_alarm_sensitive>
+        </widget>
+        <widget type="led" version="2.0.0">
+          <name>LED_FAIL_2</name>
+          <pv_name>$(pvname2)</pv_name>
+          <off_color>
+            <color red="76" green="0" blue="0">
+            </color>
+          </off_color>
+          <on_color>
+            <color name="MAJOR" red="255" green="0" blue="0">
+            </color>
+          </on_color>
+          <line_color>
+            <color name="Text" red="0" green="0" blue="0">
+            </color>
+          </line_color>
+          <border_alarm_sensitive>false</border_alarm_sensitive>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>SITE_LABEL_2</name>
+          <text>$(label)</text>
+          <y>70</y>
+          <width>20</width>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <horizontal_alignment>1</horizontal_alignment>
+        </widget>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>LED_SINGLE_1</name>
+        <macros>
+          <label>TR</label>
+          <pvname0>${UUT}:0:SIG:TRG_EXT:ACTIVE</pvname0>
+        </macros>
+        <x>220</x>
+        <y>30</y>
+        <width>20</width>
+        <height>90</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="led" version="2.0.0">
+          <name>LED_GOOD_3</name>
+          <pv_name>$(pvname0)</pv_name>
+          <y>40</y>
+          <off_color>
+            <color red="51" green="102" blue="51">
+            </color>
+          </off_color>
+          <line_color>
+            <color name="Text" red="0" green="0" blue="0">
+            </color>
+          </line_color>
+          <border_alarm_sensitive>false</border_alarm_sensitive>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>SITE_LABEL_3</name>
+          <text>$(label)</text>
+          <y>70</y>
+          <width>20</width>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <horizontal_alignment>1</horizontal_alignment>
+        </widget>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>LED_SINGLE_2</name>
+        <macros>
+          <label>S2</label>
+          <pvname0>${UUT}:SYS:HB</pvname0>
+        </macros>
+        <x>280</x>
+        <y>30</y>
+        <width>20</width>
+        <height>90</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="led" version="2.0.0">
+          <name>LED_GOOD_4</name>
+          <pv_name>$(pvname0)</pv_name>
+          <y>40</y>
+          <off_color>
+            <color red="51" green="102" blue="51">
+            </color>
+          </off_color>
+          <line_color>
+            <color name="Text" red="0" green="0" blue="0">
+            </color>
+          </line_color>
+          <border_alarm_sensitive>false</border_alarm_sensitive>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>SITE_LABEL_4</name>
+          <text>$(label)</text>
+          <y>70</y>
+          <width>20</width>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <horizontal_alignment>1</horizontal_alignment>
+        </widget>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>LED_SINGLE_3</name>
+        <macros>
+          <label>LD</label>
+          <pvname0>${UUT}:SYS:UPTIME</pvname0>
+        </macros>
+        <x>310</x>
+        <y>30</y>
+        <width>20</width>
+        <height>90</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="led" version="2.0.0">
+          <name>LED_GOOD_5</name>
+          <pv_name>$(pvname0)</pv_name>
+          <y>40</y>
+          <off_color>
+            <color red="51" green="102" blue="51">
+            </color>
+          </off_color>
+          <line_color>
+            <color name="Text" red="0" green="0" blue="0">
+            </color>
+          </line_color>
+          <border_alarm_sensitive>false</border_alarm_sensitive>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>SITE_LABEL_5</name>
+          <text>$(label)</text>
+          <y>70</y>
+          <width>20</width>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <horizontal_alignment>1</horizontal_alignment>
+        </widget>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>LED_SINGLE_4</name>
+        <macros>
+          <label>P</label>
+          <pvname0>${UUT}:SYS:UPTIME</pvname0>
+        </macros>
+        <x>340</x>
+        <y>30</y>
+        <width>20</width>
+        <height>90</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="led" version="2.0.0">
+          <name>LED_GOOD_6</name>
+          <pv_name>$(pvname0)</pv_name>
+          <y>40</y>
+          <off_color>
+            <color red="51" green="102" blue="51">
+            </color>
+          </off_color>
+          <line_color>
+            <color name="Text" red="0" green="0" blue="0">
+            </color>
+          </line_color>
+          <border_alarm_sensitive>false</border_alarm_sensitive>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>SITE_LABEL_6</name>
+          <text>$(label)</text>
+          <y>70</y>
+          <width>20</width>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <horizontal_alignment>1</horizontal_alignment>
+        </widget>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label</name>
+        <text>FRONT PANEL</text>
+        <width>240</width>
+        <font>
+          <font name="Header 3" family="Liberation Sans" style="BOLD" size="16.0">
+          </font>
+        </font>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+    </widget>
+  </widget>
+</display>
