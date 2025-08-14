@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2025-03-06 11:47:07 by sam-->
+<display version="2.0.0">
+  <name>Stream</name>
+  <width>710</width>
+  <height>230</height>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <width>710</width>
+    <height>230</height>
+    <style>3</style>
+    <background_color>
+      <color red="128" green="179" blue="128">
+      </color>
+    </background_color>
+    <widget type="bool_button" version="2.0.0">
+      <name>Stream Start</name>
+      <pv_name>${UUT}:MODE:CONTINUOUS</pv_name>
+      <x>20</x>
+      <y>40</y>
+      <width>120</width>
+      <height>40</height>
+      <off_label>START</off_label>
+      <on_label>STOP</on_label>
+      <font>
+        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <rules>
+        <rule name="DISABLE" prop_id="enabled" out_exp="true">
+          <exp bool_exp="pv0&gt;0">
+            <expression>False</expression>
+          </exp>
+          <pv_name>${UUT}:MODE:TRANS_ACT:STATE</pv_name>
+        </rule>
+      </rules>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Stream Status</name>
+      <pv_name>${UUT}:MODE:CONTINUOUS:STATUS</pv_name>
+      <x>150</x>
+      <y>40</y>
+      <width>540</width>
+      <height>38</height>
+      <format>6</format>
+      <show_units>false</show_units>
+      <vertical_alignment>1</vertical_alignment>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Stream Title</name>
+      <text>Stream Control</text>
+      <x>20</x>
+      <y>10</y>
+      <width>670</width>
+      <height>24</height>
+      <font>
+        <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+        </font>
+      </font>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Counter Func</name>
+      <macros>
+        <site>1</site>
+      </macros>
+      <file>../func_counter.bob</file>
+      <x>20</x>
+      <y>90</y>
+      <width>530</width>
+      <height>50</height>
+      <resize>2</resize>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Scope Mode</name>
+      <macros>
+        <pvtitle>Scope Mode</pvtitle>
+        <pvname>${UUT}:LIVE:MODE</pvname>
+        <fmt>6</fmt>
+      </macros>
+      <file>../pv_state_v.bob</file>
+      <x>20</x>
+      <y>150</y>
+      <width>102</width>
+      <height>62</height>
+      <resize>2</resize>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Live WF</name>
+      <macros>
+        <pvtitle>Live WF Rate</pvtitle>
+        <pvname>${UUT}:1:AI:WF:FREQ</pvname>
+        <units>true</units>
+      </macros>
+      <file>../pv_state_v.bob</file>
+      <x>130</x>
+      <y>150</y>
+      <width>102</width>
+      <height>62</height>
+      <resize>2</resize>
+    </widget>
+  </widget>
+</display>
