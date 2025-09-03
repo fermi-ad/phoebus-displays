@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2024-12-12 16:34:02 by epics-->
+<!--Saved on 2025-06-28 17:04:04 by epics-->
 <display version="2.0.0">
   <name>MoveTest</name>
   <macros>
-    <dev>B:BL8COL_BLE_</dev>
-    <enum1>PHU</enum1>
-    <enum2>PHD</enum2>
-    <or>H</or>
-    <title>Test y-position Rule</title>
+    <title>Motor Jaw Motion Test</title>
   </macros>
   <width>570</width>
   <height>255</height>
@@ -178,27 +174,17 @@
     </rules>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update_3</name>
-    <pv_name>$(dev)$(enum1):Position</pv_name>
-    <x>20</x>
-    <y>150</y>
-    <width>70</width>
-    <format>1</format>
-    <precision>1</precision>
-    <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <border_width>1</border_width>
-  </widget>
-  <widget type="textupdate" version="2.0.0">
     <name>Text Update</name>
     <pv_name>FNAL:TEST_CTRL_SYS:COS</pv_name>
     <x>20</x>
     <y>75</y>
     <width>70</width>
     <height>25</height>
+    <format>1</format>
+    <precision>1</precision>
     <horizontal_alignment>1</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="rectangle" version="2.0.0">
     <name>Rectangle_2</name>
@@ -230,8 +216,12 @@
     <y>75</y>
     <width>70</width>
     <height>25</height>
+    <format>1</format>
+    <precision>1</precision>
     <horizontal_alignment>1</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_4</name>
@@ -266,5 +256,72 @@
     <vertical_alignment>1</vertical_alignment>
     <wrap_words>false</wrap_words>
     <border_width>1</border_width>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_3</name>
+    <pv_name>FNAL:TEST_CTRL_SYS:SinHLim</pv_name>
+    <x>415</x>
+    <y>50</y>
+    <off_label>OK</off_label>
+    <on_label>Lim</on_label>
+    <on_color>
+      <color name="MAJOR" red="255" green="0" blue="0">
+      </color>
+    </on_color>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="11.0">
+      </font>
+    </font>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_4</name>
+    <pv_name>FNAL:TEST_CTRL_SYS:CosHLim</pv_name>
+    <x>70</x>
+    <y>50</y>
+    <off_label>OK</off_label>
+    <on_label>Lim</on_label>
+    <on_color>
+      <color name="MAJOR" red="255" green="0" blue="0">
+      </color>
+    </on_color>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="11.0">
+      </font>
+    </font>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_5</name>
+    <pv_name>FNAL:TEST_CTRL_SYS:CosLLim</pv_name>
+    <x>70</x>
+    <y>210</y>
+    <off_label>OK</off_label>
+    <on_label>Lim</on_label>
+    <on_color>
+      <color name="MAJOR" red="255" green="0" blue="0">
+      </color>
+    </on_color>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="11.0">
+      </font>
+    </font>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_6</name>
+    <pv_name>FNAL:TEST_CTRL_SYS:SinLLim</pv_name>
+    <x>415</x>
+    <y>210</y>
+    <off_label>OK</off_label>
+    <on_label>Lim</on_label>
+    <on_color>
+      <color name="MAJOR" red="255" green="0" blue="0">
+      </color>
+    </on_color>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="11.0">
+      </font>
+    </font>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
 </display>
