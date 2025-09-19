@@ -1,5 +1,5 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<!--Saved on 2025-03-11 14:59:10 by dkastelic-->
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2025-09-04 09:55:34 by epics-->
 <display version="2.0.0">
   <name>SRF Cavity Ramp and Characterization - $(CM)$(C)0</name>
   <y>280</y>
@@ -49,7 +49,7 @@
     <x>56</x>
     <y>392</y>
     <width>665</width>
-    <height>317</height>
+    <height>300</height>
     <line_width>1</line_width>
     <line_color>
       <color name="black-14" red="0" green="0" blue="0">
@@ -80,9 +80,9 @@
     <name>EDM relatedDisplayClass</name>
     <actions>
       <action type="open_display">
+        <description>Open Display</description>
         <file>rf_srf_char_cm.bob</file>
         <target>tab</target>
-        <description>Open Display</description>
       </action>
     </actions>
     <text>All 8 Cavities</text>
@@ -351,9 +351,9 @@
     <name>EDM activeMessageButtonClass</name>
     <actions>
       <action type="write_pv">
+        <description>Push</description>
         <pv_name>$(pv_name)</pv_name>
         <value>1</value>
-        <description>Push</description>
       </action>
     </actions>
     <pv_name>$(CM)$(C)0:PUSH_SSA_SLOPE.PROC</pv_name>
@@ -374,14 +374,15 @@
       <color name="GLOBAL canvas" red="200" green="200" blue="200">
       </color>
     </background_color>
-  <border_alarm_sensitive>false</border_alarm_sensitive></widget>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
   <widget type="action_button" version="3.0.0">
     <name>EDM activeMessageButtonClass</name>
     <actions>
       <action type="write_pv">
+        <description>Save</description>
         <pv_name>$(pv_name)</pv_name>
         <value>1</value>
-        <description>Save</description>
       </action>
     </actions>
     <pv_name>$(CM)$(C)0:SAVE_SSA_SLOPE.PROC</pv_name>
@@ -402,14 +403,15 @@
       <color name="GLOBAL canvas" red="200" green="200" blue="200">
       </color>
     </background_color>
-  <border_alarm_sensitive>false</border_alarm_sensitive></widget>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
   <widget type="action_button" version="3.0.0">
     <name>EDM activeMessageButtonClass</name>
     <actions>
       <action type="write_pv">
+        <description>Restore</description>
         <pv_name>$(pv_name)</pv_name>
         <value>1</value>
-        <description>Restore</description>
       </action>
     </actions>
     <pv_name>$(CM)$(C)0:RESTORE_SSA_SLOPE.PROC</pv_name>
@@ -430,7 +432,8 @@
       <color name="GLOBAL canvas" red="200" green="200" blue="200">
       </color>
     </background_color>
-  <border_alarm_sensitive>false</border_alarm_sensitive></widget>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
   <widget type="polyline" version="2.0.0">
     <name>EDM activeLineClass</name>
     <x>424</x>
@@ -496,9 +499,9 @@
     <name>EDM relatedDisplayClass</name>
     <actions>
       <action type="open_display">
+        <description>Open Display</description>
         <file>rf_srf_wf_cavity_overview.bob</file>
         <target>tab</target>
-        <description>Open Display</description>
       </action>
     </actions>
     <text>Cavity $(C) Overview Waveforms</text>
@@ -523,9 +526,9 @@
   <widget type="embedded" version="2.0.0">
     <name>EDM activePipClass</name>
     <file>rf_srf_overview_mini.bob</file>
-    <y>4</y>
-    <width>792</width>
-    <height>200</height>
+    <y>5</y>
+    <width>785</width>
+    <height>205</height>
     <resize>4</resize>
     <transparent>true</transparent>
   </widget>
@@ -533,9 +536,9 @@
     <name>EDM relatedDisplayClass</name>
     <actions>
       <action type="open_display">
+        <description>Open Display</description>
         <file>rf_srf_daemon_expert.bob</file>
         <target>tab</target>
-        <description>Open Display</description>
       </action>
     </actions>
     <text>Script Manager</text>
@@ -1107,8 +1110,8 @@ Max</text>
     <name>EDM shellCmdClass</name>
     <actions>
       <action type="command">
-        <command>rfViewImageRecent.bash $(PHYSICS_DATA)/rf_lcls2/ssa_cal/$(CM)$(C)0 $(CM)$(C)0 ssa_cal.png</command>
         <description>Execute Command</description>
+        <command>rfViewImageRecent.bash $(PHYSICS_DATA)/rf_lcls2/ssa_cal/$(CM)$(C)0 $(CM)$(C)0 ssa_cal.png</command>
       </action>
     </actions>
     <text>Plot</text>
@@ -1157,8 +1160,8 @@ Max</text>
     <name>EDM shellCmdClass</name>
     <actions>
       <action type="command">
-        <command>xterm -hold -sb -rightbar -sl 10000 -geometry 130x30 -T "SSA Calibration Log File" -e rfViewLogRecent.bash $(PHYSICS_DATA)/rf_lcls2/ssa_cal/$(CM)$(C)0 $(CM)$(C)0 ssa_cal.log</command>
         <description>Execute Command</description>
+        <command>xterm -hold -sb -rightbar -sl 10000 -geometry 130x30 -T "SSA Calibration Log File" -e rfViewLogRecent.bash $(PHYSICS_DATA)/rf_lcls2/ssa_cal/$(CM)$(C)0 $(CM)$(C)0 ssa_cal.log</command>
       </action>
     </actions>
     <text>Log</text>
@@ -1184,9 +1187,9 @@ Max</text>
     <name>EDM activeMessageButtonClass</name>
     <actions>
       <action type="write_pv">
+        <description>Abort</description>
         <pv_name>$(pv_name)</pv_name>
         <value>1</value>
-        <description>Abort</description>
       </action>
     </actions>
     <pv_name>$(CM)$(C)0:SSA:CALSTOP</pv_name>
@@ -1207,7 +1210,8 @@ Max</text>
       <color name="GLOBAL canvas" red="200" green="200" blue="200">
       </color>
     </background_color>
-  <border_alarm_sensitive>false</border_alarm_sensitive></widget>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
   <widget type="textupdate" version="2.0.0">
     <name>EDM activeXTextDspClass</name>
     <pv_name>$(CM)$(C)0:SSA:CALSTS</pv_name>
@@ -1231,14 +1235,15 @@ Max</text>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="action_button" version="3.0.0">
     <name>EDM activeMessageButtonClass</name>
     <actions>
       <action type="write_pv">
+        <description>Go</description>
         <pv_name>$(pv_name)</pv_name>
         <value>1</value>
-        <description>Go</description>
       </action>
     </actions>
     <pv_name>$(CM)$(C)0:SSA:CALSTRT</pv_name>
@@ -1259,5 +1264,6 @@ Max</text>
       <color name="GLOBAL canvas" red="200" green="200" blue="200">
       </color>
     </background_color>
-  <border_alarm_sensitive>false</border_alarm_sensitive></widget>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
 </display>
