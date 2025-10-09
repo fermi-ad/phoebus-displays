@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2025-10-06 12:48:39 by pratik-->
+<!--Saved on 2025-10-09 15:07:31 by pratik-->
 <display version="2.0.0">
   <name>Cryo storage and recovery</name>
+  <macros>
+    <complex>PIP2CP</complex>
+    <dev>$(complex):RECOVERY_SYSTEM_CRYO_</dev>
+  </macros>
   <width>1980</width>
   <height>960</height>
   <background_color>
@@ -579,7 +583,7 @@ Distribution</text>
       <x>28</x>
       <y>11</y>
       <width>47</width>
-      <height>14</height>
+      <height>15</height>
       <font>
         <font family="Liberation Sans" style="REGULAR" size="12.0">
         </font>
@@ -695,7 +699,7 @@ Distribution</text>
       <x>28</x>
       <y>11</y>
       <width>47</width>
-      <height>14</height>
+      <height>15</height>
       <font>
         <font family="Liberation Sans" style="REGULAR" size="12.0">
         </font>
@@ -800,7 +804,7 @@ Distribution</text>
       <x>28</x>
       <y>11</y>
       <width>47</width>
-      <height>14</height>
+      <height>15</height>
       <font>
         <font family="Liberation Sans" style="REGULAR" size="12.0">
         </font>
@@ -905,7 +909,7 @@ Distribution</text>
       <x>28</x>
       <y>11</y>
       <width>47</width>
-      <height>14</height>
+      <height>15</height>
       <font>
         <font family="Liberation Sans" style="REGULAR" size="12.0">
         </font>
@@ -1010,7 +1014,7 @@ Distribution</text>
       <x>28</x>
       <y>11</y>
       <width>47</width>
-      <height>14</height>
+      <height>15</height>
       <font>
         <font family="Liberation Sans" style="REGULAR" size="12.0">
         </font>
@@ -1115,7 +1119,7 @@ Distribution</text>
       <x>28</x>
       <y>11</y>
       <width>47</width>
-      <height>14</height>
+      <height>15</height>
       <font>
         <font family="Liberation Sans" style="REGULAR" size="12.0">
         </font>
@@ -1260,7 +1264,7 @@ Distribution</text>
     <x>1855</x>
     <y>458</y>
     <width>88</width>
-    <height>14</height>
+    <height>15</height>
     <font>
       <font family="Liberation Sans" style="BOLD" size="12.0">
       </font>
@@ -1322,7 +1326,7 @@ Distribution</text>
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display_139</name>
     <macros>
-      <dev>EV1351</dev>
+      <vlv>EV1351</vlv>
     </macros>
     <file>../Common/cryo-embedded-displays/ValveStatusUp.bob</file>
     <x>887</x>
@@ -1333,7 +1337,7 @@ Distribution</text>
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display_140</name>
     <macros>
-      <dev>EV1341</dev>
+      <vlv>EV1341</vlv>
     </macros>
     <file>../Common/cryo-embedded-displays/ValveStatusUp.bob</file>
     <x>1050</x>
@@ -1805,7 +1809,7 @@ $(actions)</tooltip>
     <x>190</x>
     <y>431</y>
     <width>71</width>
-    <height>23</height>
+    <height>22</height>
     <font>
       <font family="Liberation Sans" style="BOLD" size="20.0">
       </font>
@@ -2683,7 +2687,7 @@ $(actions)</tooltip>
     <x>121</x>
     <y>135</y>
     <width>98</width>
-    <height>23</height>
+    <height>22</height>
     <font>
       <font family="Liberation Sans" style="BOLD" size="20.0">
       </font>
@@ -2698,7 +2702,7 @@ $(actions)</tooltip>
     <x>156</x>
     <y>704</y>
     <width>161</width>
-    <height>23</height>
+    <height>22</height>
     <font>
       <font family="Liberation Sans" style="BOLD" size="20.0">
       </font>
@@ -3332,7 +3336,7 @@ $(actions)</tooltip>
     <x>154</x>
     <y>866</y>
     <width>271</width>
-    <height>23</height>
+    <height>22</height>
     <font>
       <font family="Liberation Sans" style="BOLD" size="20.0">
       </font>
@@ -3681,6 +3685,7 @@ Distribution</text>
   </widget>
   <widget type="symbol" version="2.0.0">
     <name>Symbol_7</name>
+    <pv_name>$(dev)EV1341:Status</pv_name>
     <symbols>
       <symbol>../Images/Cryo/Controlvalvegray.svg</symbol>
       <symbol>../Images/Cryo/Controlvalvegreen.svg</symbol>
@@ -3692,6 +3697,17 @@ Distribution</text>
     <height>70</height>
     <initial_index>2</initial_index>
     <rotation>90.0</rotation>
+    <actions>
+      <action type="open_display">
+        <description>Open Display</description>
+        <file>ValveControlSimple.bob</file>
+        <macros>
+          <vlv>EV1341</vlv>
+        </macros>
+        <target>tab</target>
+      </action>
+    </actions>
+    <run_actions_on_mouse_click>true</run_actions_on_mouse_click>
     <tooltip>$(pv_name)
 $(pv_value)
 $(actions)</tooltip>
@@ -3844,6 +3860,7 @@ $(actions)</tooltip>
   </widget>
   <widget type="symbol" version="2.0.0">
     <name>Symbol_8</name>
+    <pv_name>$(dev)EV1351:Status</pv_name>
     <symbols>
       <symbol>../Images/Cryo/Controlvalvegray.svg</symbol>
       <symbol>../Images/Cryo/Controlvalvegreen.svg</symbol>
@@ -3860,7 +3877,7 @@ $(actions)</tooltip>
         <description>Open Display</description>
         <file>ValveControlSimple.bob</file>
         <macros>
-          <valve>EV1351</valve>
+          <vlv>EV1351</vlv>
         </macros>
         <target>tab</target>
       </action>
