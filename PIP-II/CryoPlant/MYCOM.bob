@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2025-05-19 14:15:30 by epics-->
+<!--Saved on 2025-09-09 14:02:42 by pratik-->
 <display version="2.0.0">
   <name>MYCOM</name>
   <macros>
@@ -9,6 +9,10 @@
   </macros>
   <width>750</width>
   <height>500</height>
+  <background_color>
+    <color name="cryo.PrimaryBackground" red="217" green="217" blue="217">
+    </color>
+  </background_color>
   <actions>
   </actions>
   <grid_step_x>5</grid_step_x>
@@ -362,11 +366,11 @@
     <actions>
       <action type="open_display">
         <description>MYCOM Control Loops</description>
-        <file>MYCOMloops.bob</file>
+        <file>MYCOMwatervalve.bob</file>
         <target>window</target>
       </action>
     </actions>
-    <text>Open Control Loops</text>
+    <text>Water Valve Control Loop</text>
     <x>535</x>
     <y>465</y>
     <width>205</width>
@@ -648,7 +652,7 @@
         </color>
       </foreground_color>
       <background_color>
-        <color red="0" green="149" blue="255">
+        <color name="fgs.NAL-Blue" red="0" green="76" blue="151">
         </color>
       </background_color>
       <transparent>false</transparent>
@@ -671,18 +675,6 @@
       <wrap_words>false</wrap_words>
       <border_width>1</border_width>
     </widget>
-  </widget>
-  <widget type="rectangle" version="2.0.0">
-    <name>Rectangle_20</name>
-    <y>30</y>
-    <width>750</width>
-    <height>470</height>
-    <line_width>1</line_width>
-    <background_color>
-      <color name="Background" red="255" green="255" blue="255">
-      </color>
-    </background_color>
-    <transparent>true</transparent>
   </widget>
   <widget type="group" version="3.0.0">
     <name>Group</name>
@@ -916,7 +908,7 @@
         </color>
       </foreground_color>
       <background_color>
-        <color red="0" green="149" blue="255">
+        <color name="fgs.NAL-Blue" red="0" green="76" blue="151">
         </color>
       </background_color>
       <transparent>false</transparent>
@@ -1146,7 +1138,7 @@
         </color>
       </foreground_color>
       <background_color>
-        <color red="0" green="149" blue="255">
+        <color name="fgs.NAL-Blue" red="0" green="76" blue="151">
         </color>
       </background_color>
       <transparent>false</transparent>
@@ -1170,12 +1162,39 @@
       </color>
     </foreground_color>
     <background_color>
-      <color red="0" green="149" blue="255">
+      <color name="fgs.NAL-Blue" red="0" green="76" blue="151">
       </color>
     </background_color>
     <transparent>false</transparent>
     <horizontal_alignment>1</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
     <border_width>2</border_width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_76</name>
+    <text>PLC Heartbeat</text>
+    <width>108</width>
+    <height>30</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="255" green="255" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </background_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_9</name>
+    <pv_name>$(dev)PLC080:rBIT</pv_name>
+    <x>112</x>
+    <y>5</y>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
 </display>

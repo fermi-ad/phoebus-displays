@@ -10,41 +10,39 @@
       <color name = "lightgoldenrodyellow" red = "250" green = "250" blue = "210">
       </color>
   </background_color>
-  <widget type = "led" version = "2.0.0">
+  <widget type = "symbol" version = "2.0.0">
+    <name>symbol_146</name>
     <x>62</x>
     <y>476</y>
     <width>40</width>
     <height>40</height>
-    <square>true</square>
-    <bit>0</bit>
-    <off_color>
-        <color name = "black" red = "0" green = "0" blue = "0">
-        </color>
-    </off_color>
-    <on_color>
-        <color name = "black" red = "0" green = "0" blue = "0">
-        </color>
-    </on_color>
+    <transparent>true</transparent>
+    <symbols>
+      <symbol>../stateImages/ValveRed.png</symbol>
+      <symbol>../stateImages/ValveGreen.png</symbol>
+    </symbols>
+    <initial_index>0</initial_index>
+    <show_index>false</show_index>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
-  <widget type = "led" version = "2.0.0">
+  <widget type = "symbol" version = "2.0.0">
+    <name>symbol_147</name>
     <x>575</x>
     <y>580</y>
     <width>100</width>
     <height>100</height>
-    <square>true</square>
-    <bit>0</bit>
+    <transparent>true</transparent>
+    <symbols>
+      <symbol>../stateImages/TriangleRed.png</symbol>
+      <symbol>../stateImages/TriangleGreen.png</symbol>
+    </symbols>
+    <initial_index>0</initial_index>
+    <show_index>false</show_index>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
     <pv_name>acsys://Z:CTODON.STATUS.ON</pv_name>
-    <off_color>
-        <color name = "red" red = "255" green = "0" blue = "0">
-        </color>
-    </off_color>
-    <on_color>
-        <color name = "mediumturquoise" red = "72" green = "209" blue = "204">
-        </color>
-    </on_color>
   </widget>
   <widget type = "textupdate" version = "2.0.0">
-    <name>Text Update</name>
+    <name>textupdate_1022</name>
     <x>250</x>
     <y>190</y>
     <width>80</width>
@@ -65,7 +63,7 @@
     <pv_name>acsys://Z:CTOPLN</pv_name>
   </widget>
   <widget type = "textupdate" version = "2.0.0">
-    <name>Text Update</name>
+    <name>textupdate_1023</name>
     <x>115</x>
     <y>225</y>
     <width>$(70)</width>
@@ -86,34 +84,46 @@
     <pv_name>acsys://Z:CTVOLN</pv_name>
   </widget>
   <widget type = "tank" version = "2.0.0">
-    <name>Tank</name>
+    <name>tank_19</name>
     <x>255</x>
     <y>275</y>
     <width>120</width>
     <height>70</height>
+    <transparent>true</transparent>
     <minimum>0.0</minimum>
     <maximum>100.0</maximum>
     <pv_name>acsys://Z:CTOLXN</pv_name>
   </widget>
-  <widget type = "led" version = "2.0.0">
+  <widget type = "symbol" version = "2.0.0">
+    <name>symbol_148</name>
     <x>145</x>
     <y>300</y>
     <width>40</width>
     <height>40</height>
-    <square>true</square>
-    <bit>0</bit>
-    <pv_name>acsys://Z:CTVOX1</pv_name>
-    <off_color>
-        <color name = "red" red = "255" green = "0" blue = "0">
-        </color>
-    </off_color>
-    <on_color>
-        <color name = "mediumturquoise" red = "72" green = "209" blue = "204">
-        </color>
-    </on_color>
+    <text></text>
+    <transparent>true</transparent>
+    <rules>
+      <rule name = "Rule 1" prop_id = "pv_name" out_exp = "false">
+        <exp bool_exp = "pv0 &lt; 0.75">
+          <value>sim://const(0)</value>
+        </exp>
+        <exp bool_exp = "true">
+          <value>sim://const(1)</value>
+        </exp>
+        <pv_name>acsys://Z:CTVOX1</pv_name>
+      </rule>
+    </rules>
+    <symbols>
+      <symbol>../stateImages/ControlValveRed.png</symbol>
+      <symbol>../stateImages/ControlValveGreen.png</symbol>
+    </symbols>
+    <initial_index>0</initial_index>
+    <show_index>false</show_index>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <pv_name></pv_name>
   </widget>
   <widget type = "textupdate" version = "2.0.0">
-    <name>Text Update</name>
+    <name>textupdate_1024</name>
     <x>250</x>
     <y>235</y>
     <width>80</width>
@@ -134,7 +144,7 @@
     <pv_name>acsys://Z:CTOLXN</pv_name>
   </widget>
   <widget type = "textupdate" version = "2.0.0">
-    <name>Text Update</name>
+    <name>textupdate_1025</name>
     <x>370</x>
     <y>190</y>
     <width>80</width>
@@ -155,7 +165,7 @@
     <pv_name>acsys://Z:CTOTLN</pv_name>
   </widget>
   <widget type = "textupdate" version = "2.0.0">
-    <name>Text Update</name>
+    <name>textupdate_1026</name>
     <x>132</x>
     <y>350</y>
     <width>70</width>
@@ -175,25 +185,36 @@
     </font>
     <pv_name>acsys://Z:CTVOX1</pv_name>
   </widget>
-  <widget type = "led" version = "2.0.0">
+  <widget type = "symbol" version = "2.0.0">
+    <name>symbol_149</name>
     <x>145</x>
     <y>630</y>
     <width>40</width>
     <height>40</height>
-    <square>true</square>
-    <bit>0</bit>
-    <pv_name>acsys://Z:CTVOX2</pv_name>
-    <off_color>
-        <color name = "red" red = "255" green = "0" blue = "0">
-        </color>
-    </off_color>
-    <on_color>
-        <color name = "mediumturquoise" red = "72" green = "209" blue = "204">
-        </color>
-    </on_color>
+    <text></text>
+    <transparent>true</transparent>
+    <rules>
+      <rule name = "Rule 1" prop_id = "pv_name" out_exp = "false">
+        <exp bool_exp = "pv0 &lt; 0.75">
+          <value>sim://const(0)</value>
+        </exp>
+        <exp bool_exp = "true">
+          <value>sim://const(1)</value>
+        </exp>
+        <pv_name>acsys://Z:CTVOX2</pv_name>
+      </rule>
+    </rules>
+    <symbols>
+      <symbol>../stateImages/ControlValveRed.png</symbol>
+      <symbol>../stateImages/ControlValveGreen.png</symbol>
+    </symbols>
+    <initial_index>0</initial_index>
+    <show_index>false</show_index>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <pv_name></pv_name>
   </widget>
   <widget type = "textupdate" version = "2.0.0">
-    <name>Text Update</name>
+    <name>textupdate_1027</name>
     <x>125</x>
     <y>681</y>
     <width>70</width>
@@ -214,7 +235,7 @@
     <pv_name>acsys://Z:CTVOX2</pv_name>
   </widget>
   <widget type = "textupdate" version = "2.0.0">
-    <name>Text Update</name>
+    <name>textupdate_1028</name>
     <x>250</x>
     <y>775</y>
     <width>80</width>
@@ -235,7 +256,7 @@
     <pv_name>acsys://Z:CTOXO2</pv_name>
   </widget>
   <widget type = "textupdate" version = "2.0.0">
-    <name>Text Update</name>
+    <name>textupdate_1029</name>
     <x>250</x>
     <y>720</y>
     <width>80</width>
@@ -256,7 +277,7 @@
     <pv_name>acsys://Z:CTOXO1</pv_name>
   </widget>
   <widget type = "textupdate" version = "2.0.0">
-    <name>Text Update</name>
+    <name>textupdate_1030</name>
     <x>370</x>
     <y>780</y>
     <width>80</width>
@@ -277,7 +298,7 @@
     <pv_name>acsys://Z:CTOPLP</pv_name>
   </widget>
   <widget type = "textupdate" version = "2.0.0">
-    <name>Text Update</name>
+    <name>textupdate_1031</name>
     <x>450</x>
     <y>450</y>
     <width>80</width>
@@ -298,7 +319,7 @@
     <pv_name>acsys://Z:CTOT2L</pv_name>
   </widget>
   <widget type = "textupdate" version = "2.0.0">
-    <name>Text Update</name>
+    <name>textupdate_1032</name>
     <x>405</x>
     <y>250</y>
     <width>80</width>
@@ -319,7 +340,7 @@
     <pv_name>acsys://Z:CTOT1H</pv_name>
   </widget>
   <widget type = "textupdate" version = "2.0.0">
-    <name>Text Update</name>
+    <name>textupdate_1033</name>
     <x>425</x>
     <y>295</y>
     <width>80</width>
@@ -340,7 +361,7 @@
     <pv_name>acsys://Z:CTOP2H</pv_name>
   </widget>
   <widget type = "textupdate" version = "2.0.0">
-    <name>Text Update</name>
+    <name>textupdate_1034</name>
     <x>425</x>
     <y>340</y>
     <width>80</width>
@@ -361,7 +382,7 @@
     <pv_name>acsys://Z:CTOT2H</pv_name>
   </widget>
   <widget type = "textupdate" version = "2.0.0">
-    <name>Text Update</name>
+    <name>textupdate_1035</name>
     <x>570</x>
     <y>440</y>
     <width>80</width>
@@ -382,7 +403,7 @@
     <pv_name>acsys://Z:CTOT3L</pv_name>
   </widget>
   <widget type = "textupdate" version = "2.0.0">
-    <name>Text Update</name>
+    <name>textupdate_1036</name>
     <x>505</x>
     <y>540</y>
     <width>80</width>
@@ -403,7 +424,7 @@
     <pv_name>acsys://Z:CTOP3H</pv_name>
   </widget>
   <widget type = "textupdate" version = "2.0.0">
-    <name>Text Update</name>
+    <name>textupdate_1037</name>
     <x>505</x>
     <y>585</y>
     <width>80</width>
@@ -424,7 +445,7 @@
     <pv_name>acsys://Z:CTOTDI</pv_name>
   </widget>
   <widget type = "textupdate" version = "2.0.0">
-    <name>Text Update</name>
+    <name>textupdate_1038</name>
     <x>520</x>
     <y>690</y>
     <width>80</width>
@@ -445,7 +466,7 @@
     <pv_name>acsys://Z:CTOSDE</pv_name>
   </widget>
   <widget type = "textupdate" version = "2.0.0">
-    <name>Text Update</name>
+    <name>textupdate_1039</name>
     <x>650</x>
     <y>740</y>
     <width>80</width>
@@ -466,7 +487,7 @@
     <pv_name>acsys://Z:CTOTDO</pv_name>
   </widget>
   <widget type = "textupdate" version = "2.0.0">
-    <name>Text Update</name>
+    <name>textupdate_1040</name>
     <x>650</x>
     <y>785</y>
     <width>80</width>
@@ -487,7 +508,7 @@
     <pv_name>acsys://Z:CTOTDL</pv_name>
   </widget>
   <widget type = "textupdate" version = "2.0.0">
-    <name>Text Update</name>
+    <name>textupdate_1041</name>
     <x>675</x>
     <y>310</y>
     <width>80</width>
@@ -507,25 +528,24 @@
     </font>
     <pv_name>acsys://Z:CTOT3H</pv_name>
   </widget>
-  <widget type = "led" version = "2.0.0">
+  <widget type = "symbol" version = "2.0.0">
+    <name>symbol_150</name>
     <x>840</x>
     <y>580</y>
     <width>100</width>
     <height>100</height>
-    <square>true</square>
-    <bit>0</bit>
+    <transparent>true</transparent>
+    <symbols>
+      <symbol>../stateImages/TriangleRed.png</symbol>
+      <symbol>../stateImages/TriangleGreen.png</symbol>
+    </symbols>
+    <initial_index>0</initial_index>
+    <show_index>false</show_index>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
     <pv_name>acsys://Z:CTOWON.STATUS.ON</pv_name>
-    <off_color>
-        <color name = "red" red = "255" green = "0" blue = "0">
-        </color>
-    </off_color>
-    <on_color>
-        <color name = "mediumturquoise" red = "72" green = "209" blue = "204">
-        </color>
-    </on_color>
   </widget>
   <widget type = "textupdate" version = "2.0.0">
-    <name>Text Update</name>
+    <name>textupdate_1042</name>
     <x>875</x>
     <y>295</y>
     <width>80</width>
@@ -546,7 +566,7 @@
     <pv_name>acsys://Z:CTOP4H</pv_name>
   </widget>
   <widget type = "textupdate" version = "2.0.0">
-    <name>Text Update</name>
+    <name>textupdate_1043</name>
     <x>875</x>
     <y>340</y>
     <width>80</width>
@@ -567,7 +587,7 @@
     <pv_name>acsys://Z:CTOT4H</pv_name>
   </widget>
   <widget type = "textupdate" version = "2.0.0">
-    <name>Text Update</name>
+    <name>textupdate_1044</name>
     <x>785</x>
     <y>690</y>
     <width>80</width>
@@ -588,7 +608,7 @@
     <pv_name>acsys://Z:CTOSWE</pv_name>
   </widget>
   <widget type = "textupdate" version = "2.0.0">
-    <name>Text Update</name>
+    <name>textupdate_1045</name>
     <x>918</x>
     <y>740</y>
     <width>80</width>
@@ -609,7 +629,7 @@
     <pv_name>acsys://Z:CTOTWO</pv_name>
   </widget>
   <widget type = "textupdate" version = "2.0.0">
-    <name>Text Update</name>
+    <name>textupdate_1046</name>
     <x>1023</x>
     <y>350</y>
     <width>80</width>
@@ -630,7 +650,7 @@
     <pv_name>acsys://Z:CTOT4L</pv_name>
   </widget>
   <widget type = "textupdate" version = "2.0.0">
-    <name>Text Update</name>
+    <name>textupdate_1047</name>
     <x>795</x>
     <y>530</y>
     <width>80</width>
@@ -651,7 +671,7 @@
     <pv_name>acsys://Z:CTOTWI</pv_name>
   </widget>
   <widget type = "textupdate" version = "2.0.0">
-    <name>Text Update</name>
+    <name>textupdate_1048</name>
     <x>990</x>
     <y>640</y>
     <width>70</width>
@@ -672,7 +692,7 @@
     <pv_name>acsys://Z:CTVOJT</pv_name>
   </widget>
   <widget type = "textupdate" version = "2.0.0">
-    <name>Text Update</name>
+    <name>textupdate_1049</name>
     <x>1023</x>
     <y>250</y>
     <width>70</width>
@@ -693,7 +713,7 @@
     <pv_name>acsys://Z:CTVORT</pv_name>
   </widget>
   <widget type = "textupdate" version = "2.0.0">
-    <name>Text Update</name>
+    <name>textupdate_1050</name>
     <x>1040</x>
     <y>440</y>
     <width>60</width>
@@ -713,25 +733,36 @@
     </font>
     <pv_name>acsys://Z:CTVOBY</pv_name>
   </widget>
-  <widget type = "led" version = "2.0.0">
+  <widget type = "symbol" version = "2.0.0">
+    <name>symbol_151</name>
     <x>990</x>
     <y>425</y>
     <width>40</width>
     <height>40</height>
-    <square>true</square>
-    <bit>0</bit>
-    <pv_name>acsys://Z:CTVOBY</pv_name>
-    <off_color>
-        <color name = "red" red = "255" green = "0" blue = "0">
-        </color>
-    </off_color>
-    <on_color>
-        <color name = "mediumturquoise" red = "72" green = "209" blue = "204">
-        </color>
-    </on_color>
+    <text></text>
+    <transparent>true</transparent>
+    <rules>
+      <rule name = "Rule 1" prop_id = "pv_name" out_exp = "false">
+        <exp bool_exp = "pv0 &lt; 0.75">
+          <value>sim://const(0)</value>
+        </exp>
+        <exp bool_exp = "true">
+          <value>sim://const(1)</value>
+        </exp>
+        <pv_name>acsys://Z:CTVOBY</pv_name>
+      </rule>
+    </rules>
+    <symbols>
+      <symbol>../stateImages/ControlValveRed.png</symbol>
+      <symbol>../stateImages/ControlValveGreen.png</symbol>
+    </symbols>
+    <initial_index>0</initial_index>
+    <show_index>false</show_index>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <pv_name></pv_name>
   </widget>
   <widget type = "textupdate" version = "2.0.0">
-    <name>Text Update</name>
+    <name>textupdate_1051</name>
     <x>370</x>
     <y>720</y>
     <width>80</width>
@@ -752,7 +783,7 @@
     <pv_name>acsys://Z:CTOT2S</pv_name>
   </widget>
   <widget type = "textupdate" version = "2.0.0">
-    <name>Text Update</name>
+    <name>textupdate_1052</name>
     <x>1013</x>
     <y>150</y>
     <width>80</width>
@@ -773,7 +804,7 @@
     <pv_name>acsys://Z:CTOTJ2</pv_name>
   </widget>
   <widget type = "textupdate" version = "2.0.0">
-    <name>Text Update</name>
+    <name>textupdate_1053</name>
     <x>1013</x>
     <y>190</y>
     <width>80</width>
@@ -793,25 +824,36 @@
     </font>
     <pv_name>acsys://Z:CTOPB2</pv_name>
   </widget>
-  <widget type = "led" version = "2.0.0">
+  <widget type = "symbol" version = "2.0.0">
+    <name>symbol_152</name>
     <x>1103</x>
     <y>235</y>
     <width>40</width>
     <height>40</height>
-    <square>true</square>
-    <bit>0</bit>
-    <pv_name>acsys://Z:CTVORT</pv_name>
-    <off_color>
-        <color name = "red" red = "255" green = "0" blue = "0">
-        </color>
-    </off_color>
-    <on_color>
-        <color name = "mediumturquoise" red = "72" green = "209" blue = "204">
-        </color>
-    </on_color>
+    <text></text>
+    <transparent>true</transparent>
+    <rules>
+      <rule name = "Rule 1" prop_id = "pv_name" out_exp = "false">
+        <exp bool_exp = "pv0 &lt; 0.75">
+          <value>sim://const(0)</value>
+        </exp>
+        <exp bool_exp = "true">
+          <value>sim://const(1)</value>
+        </exp>
+        <pv_name>acsys://Z:CTVORT</pv_name>
+      </rule>
+    </rules>
+    <symbols>
+      <symbol>../stateImages/ControlValveRed.png</symbol>
+      <symbol>../stateImages/ControlValveGreen.png</symbol>
+    </symbols>
+    <initial_index>0</initial_index>
+    <show_index>false</show_index>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <pv_name></pv_name>
   </widget>
   <widget type = "textupdate" version = "2.0.0">
-    <name>Text Update</name>
+    <name>textupdate_1054</name>
     <x>1170</x>
     <y>165</y>
     <width>80</width>
@@ -832,7 +874,7 @@
     <pv_name>acsys://Z:CTOTJ1</pv_name>
   </widget>
   <widget type = "textupdate" version = "2.0.0">
-    <name>Text Update</name>
+    <name>textupdate_1055</name>
     <x>1170</x>
     <y>210</y>
     <width>80</width>
@@ -853,7 +895,7 @@
     <pv_name>acsys://Z:CTOPB1</pv_name>
   </widget>
   <widget type = "textupdate" version = "2.0.0">
-    <name>Text Update</name>
+    <name>textupdate_1056</name>
     <x>1170</x>
     <y>110</y>
     <width>80</width>
@@ -874,7 +916,7 @@
     <pv_name>acsys://Z:CTOTB1</pv_name>
   </widget>
   <widget type = "textupdate" version = "2.0.0">
-    <name>Text Update</name>
+    <name>textupdate_1057</name>
     <x>1013</x>
     <y>110</y>
     <width>80</width>
@@ -894,402 +936,64 @@
     </font>
     <pv_name>acsys://Z:CTOTB2</pv_name>
   </widget>
-  <widget type = "action_button" version = "2.0.0">
-    <x>140</x>
-    <y>295</y>
-    <width>50</width>
-    <height>50</height>
-    <text>Loop</text>
-    <transparent>true</transparent>
-    <border_width>3.0</border_width>
-    <font>
-        <font family = "Liberation Sans" style = "BOLD" size = "0">
-        </font>
-    </font>
-    <actions>
-      <action type = "open_display">
-        <file>MESON_LOOPS__VALVE_TEMPLATE.bob</file>
-        <target>tab</target>
-        <description>Open Display</description>
-        <macros>
-          <Title>ORANGE+REFRIGERATOR+EVX1+LOOP</Title>
-          <DevName>Z:CTVOX1</DevName>
-          <LoopAutoMan>Z:ROX1EN</LoopAutoMan>
-          <InputDevice>Z:CTOT2L</InputDevice>
-          <LoopSetPoint>Z:ROX1SP</LoopSetPoint>
-          <DevSetManual>Z:ROX1ST</DevSetManual>
-          <DevCurrentValue>Z:CTVOX1</DevCurrentValue>
-          <LoopSetMin>Z:ROX1MN</LoopSetMin>
-          <LoopSetMax>Z:ROX1MX</LoopSetMax>
-          <RemLocLoopStatus>Z:ROX1RM</RemLocLoopStatus>
-          <StrokeColor>orange</StrokeColor>
-        </macros>
-      </action>
-    </actions>
-  </widget>
-  <widget type = "action_button" version = "2.0.0">
-    <x>140</x>
-    <y>625</y>
-    <width>50</width>
-    <height>50</height>
-    <text>Loop</text>
-    <transparent>true</transparent>
-    <border_width>3.0</border_width>
-    <font>
-        <font family = "Liberation Sans" style = "BOLD" size = "0">
-        </font>
-    </font>
-    <actions>
-      <action type = "open_display">
-        <file>MESON_LOOPS__VALVE_TEMPLATE.bob</file>
-        <target>tab</target>
-        <description>Open Display</description>
-        <macros>
-          <Title>ORANGE+REFRIGERATOR+EVX2+LOOP</Title>
-          <DevName>Z:CTVOX2</DevName>
-          <LoopAutoMan>Z:ROX2EN</LoopAutoMan>
-          <InputDevice>Z:CTOT2L</InputDevice>
-          <LoopSetPoint>Z:ROX2SP</LoopSetPoint>
-          <DevSetManual>Z:ROX2ST</DevSetManual>
-          <DevCurrentValue>Z:CTVOX2</DevCurrentValue>
-          <LoopSetMin>Z:ROX2MN</LoopSetMin>
-          <LoopSetMax>Z:ROX2MX</LoopSetMax>
-          <RemLocLoopStatus>Z:ROX2RM</RemLocLoopStatus>
-          <StrokeColor>orange</StrokeColor>
-        </macros>
-      </action>
-    </actions>
-  </widget>
-  <widget type = "action_button" version = "2.0.0">
-    <x>664</x>
-    <y>593</y>
-    <width>70</width>
-    <height>40</height>
-    <text>DRY LOOP\nCONTROLS</text>
-    <transparent>true</transparent>
-    <border_width>3.0</border_width>
-    <foreground_color>
-        <color name = "orange" red = "255" green = "165" blue = "0">
-        </color>
-    </foreground_color>
-    <font>
-        <font family = "Liberation Sans" style = "BOLD" size = "16">
-        </font>
-    </font>
-    <actions>
-      <action type = "open_display">
-        <file>MESON_LOOPS__WET_DRY_LOOP.bob</file>
-        <target>tab</target>
-        <description>Open Display</description>
-        <macros>
-          <Title>ORANGE+DRY+ENGINE+LOOP</Title>
-          <DevName>Z:CTOSDE</DevName>
-          <LoopAutoMan>Z:RODENA</LoopAutoMan>
-          <InputDevice>Z:CTOTDI</InputDevice>
-          <LoopSetPoint>Z:RODSP</LoopSetPoint>
-          <DevSetManual>Z:RODSTM</DevSetManual>
-          <DevCurrentValue>Z:CTOSDE</DevCurrentValue>
-          <LoopSetMin>Z:RODMIN</LoopSetMin>
-          <LoopSetMax>Z:RODMAX</LoopSetMax>
-          <RemLocLoopStatus>Z:RODREM</RemLocLoopStatus>
-          <StrokeColor>orange</StrokeColor>
-          <FillColor>darkred</FillColor>
-        </macros>
-      </action>
-    </actions>
-  </widget>
-  <widget type = "action_button" version = "2.0.0">
-    <x>985</x>
-    <y>420</y>
-    <width>50</width>
-    <height>50</height>
-    <text>Loop</text>
-    <transparent>true</transparent>
-    <border_width>3.0</border_width>
-    <font>
-        <font family = "Liberation Sans" style = "BOLD" size = "0">
-        </font>
-    </font>
-    <actions>
-      <action type = "open_display">
-        <file>MESON_LOOPS__VALVE_TEMPLATE.bob</file>
-        <target>tab</target>
-        <description>Open Display</description>
-        <macros>
-          <Title>ORANGE+REFRIGERATOR+EVXBY+LOOP</Title>
-          <DevName>Z:CTVOBY</DevName>
-          <LoopAutoMan>Z:ROBYEN</LoopAutoMan>
-          <InputDevice>Z:CTOTWI</InputDevice>
-          <LoopSetPoint>Z:ROBYSP</LoopSetPoint>
-          <DevSetManual>Z:ROBYST</DevSetManual>
-          <DevCurrentValue>Z:CTVOBY</DevCurrentValue>
-          <LoopSetMin>Z:ROBYMN</LoopSetMin>
-          <LoopSetMax>Z:ROBYMX</LoopSetMax>
-          <RemLocLoopStatus>Z:ROBYRM</RemLocLoopStatus>
-          <StrokeColor>orange</StrokeColor>
-        </macros>
-      </action>
-    </actions>
-  </widget>
-  <widget type = "action_button" version = "2.0.0">
-    <x>1098</x>
-    <y>230</y>
-    <width>50</width>
-    <height>50</height>
-    <text>Loop</text>
-    <transparent>true</transparent>
-    <border_width>3.0</border_width>
-    <font>
-        <font family = "Liberation Sans" style = "BOLD" size = "0">
-        </font>
-    </font>
-    <actions>
-      <action type = "open_display">
-        <file>MESON_LOOPS__VALVE_TEMPLATE.bob</file>
-        <target>tab</target>
-        <description>Open Display</description>
-        <macros>
-          <Title>ORANGE+REFRIGERATOR+EVXRET+LOOP</Title>
-          <DevName>Z:CTVORT</DevName>
-          <LoopAutoMan>Z:RORTEN</LoopAutoMan>
-          <InputDevice>Z:CTOTDI</InputDevice>
-          <LoopSetPoint>Z:RORTSP</LoopSetPoint>
-          <DevSetManual>Z:RORTST</DevSetManual>
-          <DevCurrentValue>Z:CTVORT</DevCurrentValue>
-          <LoopSetMin>Z:RORTMN</LoopSetMin>
-          <LoopSetMax>Z:RORTMX</LoopSetMax>
-          <RemLocLoopStatus>Z:RORTRM</RemLocLoopStatus>
-          <StrokeColor>orange</StrokeColor>
-        </macros>
-      </action>
-    </actions>
-  </widget>
-  <widget type = "action_button" version = "2.0.0">
-    <x>560</x>
-    <y>570</y>
-    <width>120</width>
-    <height>110</height>
-    <text>Loop</text>
-    <transparent>true</transparent>
-    <border_width>3.0</border_width>
-    <font>
-        <font family = "Liberation Sans" style = "BOLD" size = "0">
-        </font>
-    </font>
-    <actions>
-      <action type = "open_display">
-        <file>REFRIGERATORS__WET_DRY_ENGINE.bob</file>
-        <target>tab</target>
-        <description>Open Display</description>
-        <macros>
-          <DisplayName>ORANGE+DRY+ENGINE</DisplayName>
-          <InputText>TRDEI</InputText>
-          <InputReadback>Z:CTOTDI</InputReadback>
-          <OutputText>TRDEO</OutputText>
-          <OutputReadback>Z:CTOTDO</OutputReadback>
-          <StsEngineOn>Z:CTODON</StsEngineOn>
-          <StsEngineLoc>Z:RODREM</StsEngineLoc>
-          <StsEngineRdy>Z:RODRDY</StsEngineRdy>
-          <CtrlEngineStart>Z:RODSRT</CtrlEngineStart>
-          <CtrlEngineReset>Z:RODRST</CtrlEngineReset>
-          <CtrlEngineStop>Z:RODSTP</CtrlEngineStop>
-          <SpeedEngine>Z:CTOSDE</SpeedEngine>
-          <StsEstop>Z:RODESP</StsEstop>
-          <StsEbrake>Z:RODEBK</StsEbrake>
-          <StsPowerRev>Z:RODLOP</StsPowerRev>
-          <StsDriveFault>Z:RODDFR</StsDriveFault>
-          <StsContact>Z:RODCCL</StsContact>
-          <StsCoolFan>Z:RODCFT</StsCoolFan>
-          <StsTherm>Z:RODTOV</StsTherm>
-          <FillColor>darkred</FillColor>
-          <EngColor>orange</EngColor>
-        </macros>
-      </action>
-    </actions>
-  </widget>
-  <widget type = "action_button" version = "2.0.0">
-    <x>830</x>
-    <y>570</y>
-    <width>120</width>
-    <height>110</height>
-    <text>Loop</text>
-    <transparent>true</transparent>
-    <border_width>3.0</border_width>
-    <font>
-        <font family = "Liberation Sans" style = "BOLD" size = "0">
-        </font>
-    </font>
-    <actions>
-      <action type = "open_display">
-        <file>REFRIGERATORS__WET_DRY_ENGINE.bob</file>
-        <target>tab</target>
-        <description>Open Display</description>
-        <macros>
-          <DisplayName>ORANGE+WET+ENGINE</DisplayName>
-          <InputText>TRDEI</InputText>
-          <InputReadback>Z:CTOTWI</InputReadback>
-          <OutputText>TRDEO</OutputText>
-          <OutputReadback>Z:CTOTWO</OutputReadback>
-          <StsEngineOn>Z:CTOWON</StsEngineOn>
-          <StsEngineLoc>Z:ROWREM</StsEngineLoc>
-          <StsEngineRdy>Z:ROWRDY</StsEngineRdy>
-          <CtrlEngineStart>Z:ROWSRT</CtrlEngineStart>
-          <CtrlEngineReset>Z:ROWRST</CtrlEngineReset>
-          <CtrlEngineStop>Z:ROWSTP</CtrlEngineStop>
-          <SpeedEngine>Z:CTOSWE</SpeedEngine>
-          <StsEstop>Z:ROWESP</StsEstop>
-          <StsEbrake>Z:ROWEBK</StsEbrake>
-          <StsPowerRev>Z:ROWLOP</StsPowerRev>
-          <StsDriveFault>Z:ROWDFR</StsDriveFault>
-          <StsContact>Z:ROWCCL</StsContact>
-          <StsCoolFan>Z:ROWCFT</StsCoolFan>
-          <StsTherm>Z:ROWTOV</StsTherm>
-          <FillColor>blue</FillColor>
-          <EngColor>orange</EngColor>
-        </macros>
-      </action>
-    </actions>
-  </widget>
-  <widget type = "action_button" version = "2.0.0">
-    <x>750</x>
-    <y>593</y>
-    <width>70</width>
-    <height>40</height>
-    <text>WET LOOP\nCONTROLS</text>
-    <transparent>true</transparent>
-    <border_width>3.0</border_width>
-    <foreground_color>
-        <color name = "orange" red = "255" green = "165" blue = "0">
-        </color>
-    </foreground_color>
-    <font>
-        <font family = "Liberation Sans" style = "BOLD" size = "16">
-        </font>
-    </font>
-    <actions>
-      <action type = "open_display">
-        <file>MESON_LOOPS__WET_DRY_LOOP.bob</file>
-        <target>tab</target>
-        <description>Open Display</description>
-        <macros>
-          <Title>ORANGE+WET+ENGINE+LOOP</Title>
-          <DevName>Z:CTOSWE</DevName>
-          <LoopAutoMan>Z:ROWENA</LoopAutoMan>
-          <InputDevice>Z:CTOPB1</InputDevice>
-          <LoopSetPoint>Z:ROWSP</LoopSetPoint>
-          <DevSetManual>Z:ROWSTM</DevSetManual>
-          <DevCurrentValue>Z:CTOSWE</DevCurrentValue>
-          <LoopSetMin>Z:ROWMIN</LoopSetMin>
-          <LoopSetMax>Z:ROWMAX</LoopSetMax>
-          <RemLocLoopStatus>Z:ROWREM</RemLocLoopStatus>
-          <StrokeColor>orange</StrokeColor>
-          <FillColor>blue</FillColor>
-        </macros>
-      </action>
-    </actions>
-  </widget>
-  <widget type = "led" version = "2.0.0">
+  <widget type = "symbol" version = "2.0.0">
+    <name>symbol_153</name>
     <x>940</x>
     <y>625</y>
     <width>40</width>
     <height>40</height>
-    <square>true</square>
-    <bit>0</bit>
-    <pv_name>acsys://Z:CTVOJT</pv_name>
-    <off_color>
-        <color name = "red" red = "255" green = "0" blue = "0">
-        </color>
-    </off_color>
-    <on_color>
-        <color name = "mediumturquoise" red = "72" green = "209" blue = "204">
-        </color>
-    </on_color>
-  </widget>
-  <widget type = "action_button" version = "2.0.0">
-    <x>935</x>
-    <y>620</y>
-    <width>50</width>
-    <height>50</height>
-    <text>Loop</text>
+    <text></text>
     <transparent>true</transparent>
-    <border_width>3.0</border_width>
-    <font>
-        <font family = "Liberation Sans" style = "BOLD" size = "0">
-        </font>
-    </font>
-    <actions>
-      <action type = "open_display">
-        <file>MESON_LOOPS__VALVE_TEMPLATE.bob</file>
-        <target>tab</target>
-        <description>Open Display</description>
-        <macros>
-          <Title>ORANGE+REFRIGERATOR+EVXJT+LOOP</Title>
-          <DevName>Z:CTVOJT</DevName>
-          <LoopAutoMan>Z:ROJTEN</LoopAutoMan>
-          <InputDevice>Z:CTOPB1</InputDevice>
-          <LoopSetPoint>Z:ROJTSP</LoopSetPoint>
-          <DevSetManual>Z:ROJTST</DevSetManual>
-          <DevCurrentValue>Z:CTVOJT</DevCurrentValue>
-          <LoopSetMin>Z:ROJTMN</LoopSetMin>
-          <LoopSetMax>Z:ROJTMX</LoopSetMax>
-          <RemLocLoopStatus>Z:ROJTRM</RemLocLoopStatus>
-          <StrokeColor>orange</StrokeColor>
-        </macros>
-      </action>
-    </actions>
+    <rules>
+      <rule name = "Rule 1" prop_id = "pv_name" out_exp = "false">
+        <exp bool_exp = "pv0 &lt; 0.75">
+          <value>sim://const(0)</value>
+        </exp>
+        <exp bool_exp = "true">
+          <value>sim://const(1)</value>
+        </exp>
+        <pv_name>acsys://Z:CTVOJT</pv_name>
+      </rule>
+    </rules>
+    <symbols>
+      <symbol>../stateImages/ControlValveRed.png</symbol>
+      <symbol>../stateImages/ControlValveGreen.png</symbol>
+    </symbols>
+    <initial_index>0</initial_index>
+    <show_index>false</show_index>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <pv_name></pv_name>
   </widget>
-  <widget type = "led" version = "2.0.0">
+  <widget type = "symbol" version = "2.0.0">
+    <name>symbol_154</name>
     <x>195</x>
     <y>205</y>
     <width>40</width>
     <height>40</height>
-    <square>true</square>
-    <bit>0</bit>
-    <pv_name>acsys://Z:CTVOLN</pv_name>
-    <off_color>
-        <color name = "red" red = "255" green = "0" blue = "0">
-        </color>
-    </off_color>
-    <on_color>
-        <color name = "mediumturquoise" red = "72" green = "209" blue = "204">
-        </color>
-    </on_color>
-  </widget>
-  <widget type = "action_button" version = "2.0.0">
-    <x>190</x>
-    <y>200</y>
-    <width>50</width>
-    <height>50</height>
-    <text>Loop</text>
+    <text></text>
     <transparent>true</transparent>
-    <border_width>3.0</border_width>
-    <font>
-        <font family = "Liberation Sans" style = "BOLD" size = "0">
-        </font>
-    </font>
-    <actions>
-      <action type = "open_display">
-        <file>MESON_LOOPS__VALVE_TEMPLATE.bob</file>
-        <target>tab</target>
-        <description>Open Display</description>
-        <macros>
-          <Title>ORANGE+REFRIGERATOR+EVXLN+LOOP</Title>
-          <DevName>Z:CTVOLN</DevName>
-          <LoopAutoMan>Z:ROLNEN</LoopAutoMan>
-          <InputDevice>Z:CTOLXN</InputDevice>
-          <LoopSetPoint>Z:ROLNSP</LoopSetPoint>
-          <DevSetManual>Z:ROLNST</DevSetManual>
-          <DevCurrentValue>Z:CTVOLN</DevCurrentValue>
-          <LoopSetMin>Z:ROLNMN</LoopSetMin>
-          <LoopSetMax>Z:ROLNMX</LoopSetMax>
-          <RemLocLoopStatus>Z:ROLNRM</RemLocLoopStatus>
-          <StrokeColor>orange</StrokeColor>
-        </macros>
-      </action>
-    </actions>
+    <rules>
+      <rule name = "Rule 1" prop_id = "pv_name" out_exp = "false">
+        <exp bool_exp = "pv0 &lt; 0.75">
+          <value>sim://const(0)</value>
+        </exp>
+        <exp bool_exp = "true">
+          <value>sim://const(1)</value>
+        </exp>
+        <pv_name>acsys://Z:CTVOLN</pv_name>
+      </rule>
+    </rules>
+    <symbols>
+      <symbol>../stateImages/ControlValveRed.png</symbol>
+      <symbol>../stateImages/ControlValveGreen.png</symbol>
+    </symbols>
+    <initial_index>0</initial_index>
+    <show_index>false</show_index>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <pv_name></pv_name>
   </widget>
   <widget type = "textupdate" version = "2.0.0">
-    <name>Text Update</name>
+    <name>textupdate_1058</name>
     <x>540</x>
     <y>785</y>
     <width>80</width>
@@ -1310,7 +1014,7 @@
     <pv_name>acsys://Z:CTOPDO</pv_name>
   </widget>
   <widget type = "textupdate" version = "2.0.0">
-    <name>Text Update</name>
+    <name>textupdate_1059</name>
     <x>529</x>
     <y>725</y>
     <width>80</width>
@@ -1331,7 +1035,7 @@
     <pv_name>acsys://Z:CTODST</pv_name>
   </widget>
   <widget type = "textupdate" version = "2.0.0">
-    <name>Text Update</name>
+    <name>textupdate_1060</name>
     <x>800</x>
     <y>785</y>
     <width>80</width>
@@ -1352,7 +1056,7 @@
     <pv_name>acsys://Z:CTOPWO</pv_name>
   </widget>
   <widget type = "textupdate" version = "2.0.0">
-    <name>Text Update</name>
+    <name>textupdate_1061</name>
     <x>797</x>
     <y>725</y>
     <width>80</width>
@@ -1372,37 +1076,45 @@
     </font>
     <pv_name>acsys://Z:CTOWST</pv_name>
   </widget>
-  <widget type = "led" version = "2.0.0">
+  <widget type = "symbol" version = "2.0.0">
+    <name>symbol_155</name>
     <x>63</x>
     <y>476</y>
     <width>40</width>
     <height>40</height>
-    <square>true</square>
-    <bit>0</bit>
+    <transparent>true</transparent>
+    <symbols>
+      <symbol>../stateImages/ValveRed.png</symbol>
+      <symbol>../stateImages/ValveGreen.png</symbol>
+    </symbols>
+    <initial_index>0</initial_index>
+    <show_index>false</show_index>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
     <pv_name>acsys://Z:ROXHPC.STATUS.ON</pv_name>
-    <on_color>
-        <color name = "red" red = "255" green = "0" blue = "0">
-        </color>
-    </on_color>
   </widget>
-  <widget type = "led" version = "2.0.0">
+  <widget type = "symbol" version = "2.0.0">
+    <name>symbol_156</name>
     <x>62</x>
     <y>476</y>
     <width>40</width>
     <height>40</height>
-    <square>true</square>
-    <bit>0</bit>
+    <transparent>true</transparent>
+    <symbols>
+      <symbol>../stateImages/ValveRed.png</symbol>
+      <symbol>../stateImages/ValveGreen.png</symbol>
+    </symbols>
+    <initial_index>0</initial_index>
+    <show_index>false</show_index>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
     <pv_name>acsys://Z:ROXHPO.STATUS.ON</pv_name>
-    <on_color>
-        <color name = "mediumturquoise" red = "72" green = "209" blue = "204">
-        </color>
-    </on_color>
   </widget>
   <widget type = "led" version = "2.0.0">
+    <name>led_870</name>
     <x>27</x>
     <y>556</y>
     <width>80</width>
     <height>20</height>
+    <transparent>true</transparent>
     <border_width>1.0</border_width>
     <font>
         <font family = "Liberation Sans" style = "BOLD" size = "12">
@@ -1422,58 +1134,25 @@
     <off_label>HEAT-X CRASHED</off_label>
     <on_label>HEAT-X UNCRASHED</on_label>
   </widget>
-  <widget type = "action_button" version = "2.0.0">
-    <x>59</x>
-    <y>474</y>
-    <width>46</width>
-    <height>44</height>
-    <text></text>
-    <transparent>true</transparent>
-    <border_width>3.0</border_width>
-    <font>
-        <font family = "Liberation Sans" style = "BOLD" size = "12">
-        </font>
-    </font>
-    <actions>
-      <action type = "open_display">
-        <file>MESON_LOOPS__VALVE_CRASH_DIGITAL.bob</file>
-        <target>tab</target>
-        <description>Open Display</description>
-        <macros>
-          <Title>MESON+ORANGE+CTOVHP+CRASH+CONTROL</Title>
-          <DevName>ORANGE+Z:CTOVHP</DevName>
-          <ValvePosOpen>Z:ROXHPO</ValvePosOpen>
-          <ValvePosClosed>Z:ROXHPC</ValvePosClosed>
-          <ValveSet>Z:CTOVHP</ValveSet>
-          <ValveCrash>Z:CTOHPC</ValveCrash>
-          <CrashText>ORANGE+HEAT-X+CRASHED</CrashText>
-          <UnCrashText>ORANGE+HEAT-X+UNCRASHED</UnCrashText>
-          <background>orange</background>
-          <OpenStatus>Z:CTOVHP+Status+Open</OpenStatus>
-          <ClosedStatus>Z:CTOVHP+Status+Closed</ClosedStatus>
-        </macros>
-      </action>
-    </actions>
-  </widget>
-  <widget type = "led" version = "2.0.0">
+  <widget type = "symbol" version = "2.0.0">
+    <name>symbol_157</name>
     <x>55</x>
     <y>534</y>
     <width>25</width>
     <height>25</height>
-    <square>true</square>
-    <bit>0</bit>
+    <text></text>
+    <transparent>true</transparent>
+    <symbols>
+      <symbol>../stateImages/EllipseRed.png</symbol>
+      <symbol>../stateImages/EllipseGreen.png</symbol>
+    </symbols>
+    <initial_index>0</initial_index>
+    <show_index>false</show_index>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
     <pv_name>acsys://Z:CTOHPC.STATUS.ON</pv_name>
-    <off_color>
-        <color name = "red" red = "255" green = "0" blue = "0">
-        </color>
-    </off_color>
-    <on_color>
-        <color name = "mediumturquoise" red = "72" green = "209" blue = "204">
-        </color>
-    </on_color>
   </widget>
   <widget type = "textupdate" version = "2.0.0">
-    <name>Text Update</name>
+    <name>textupdate_1062</name>
     <x>26</x>
     <y>441</y>
     <width>60</width>
@@ -1494,7 +1173,7 @@
     <pv_name>acsys://Z:CTHPSP</pv_name>
   </widget>
   <widget type = "textupdate" version = "2.0.0">
-    <name>Text Update</name>
+    <name>textupdate_1063</name>
     <x>26</x>
     <y>400</y>
     <width>80</width>
@@ -1515,10 +1194,12 @@
     <pv_name>acsys://Z:CTPXHP</pv_name>
   </widget>
   <widget type = "led" version = "2.0.0">
+    <name>led_871</name>
     <x>1021</x>
     <y>453</y>
     <width>10</width>
     <height>20</height>
+    <transparent>true</transparent>
     <border_width>2.0</border_width>
     <font>
         <font family = "Liberation Sans" style = "BOLD" size = "12">
@@ -1539,10 +1220,12 @@
     <on_label>-</on_label>
   </widget>
   <widget type = "led" version = "2.0.0">
+    <name>led_872</name>
     <x>1134</x>
     <y>263</y>
     <width>10</width>
     <height>20</height>
+    <transparent>true</transparent>
     <border_width>2.0</border_width>
     <font>
         <font family = "Liberation Sans" style = "BOLD" size = "12">
@@ -1563,10 +1246,12 @@
     <on_label>-</on_label>
   </widget>
   <widget type = "led" version = "2.0.0">
+    <name>led_873</name>
     <x>972</x>
     <y>653</y>
     <width>10</width>
     <height>20</height>
+    <transparent>true</transparent>
     <border_width>2.0</border_width>
     <font>
         <font family = "Liberation Sans" style = "BOLD" size = "12">
@@ -1587,10 +1272,12 @@
     <on_label>-</on_label>
   </widget>
   <widget type = "led" version = "2.0.0">
+    <name>led_874</name>
     <x>177</x>
     <y>659</y>
     <width>10</width>
     <height>20</height>
+    <transparent>true</transparent>
     <border_width>2.0</border_width>
     <font>
         <font family = "Liberation Sans" style = "BOLD" size = "12">
@@ -1611,10 +1298,12 @@
     <on_label>-</on_label>
   </widget>
   <widget type = "led" version = "2.0.0">
+    <name>led_875</name>
     <x>227</x>
     <y>233</y>
     <width>10</width>
     <height>20</height>
+    <transparent>true</transparent>
     <border_width>2.0</border_width>
     <font>
         <font family = "Liberation Sans" style = "BOLD" size = "12">
@@ -1635,10 +1324,12 @@
     <on_label>-</on_label>
   </widget>
   <widget type = "led" version = "2.0.0">
+    <name>led_876</name>
     <x>177</x>
     <y>328</y>
     <width>10</width>
     <height>20</height>
+    <transparent>true</transparent>
     <border_width>2.0</border_width>
     <font>
         <font family = "Liberation Sans" style = "BOLD" size = "12">
@@ -1659,10 +1350,12 @@
     <on_label>-</on_label>
   </widget>
   <widget type = "clock" version = "2.0.0">
+    <name>clock_45</name>
     <x>1119</x>
     <y>16</y>
     <width>140</width>
     <height>20</height>
+    <transparent>true</transparent>
     <border_width>1.0</border_width>
     <foreground_color>
         <color name = "midnightblue" red = "25" green = "25" blue = "112">
@@ -1673,65 +1366,39 @@
         </font>
     </font>
   </widget>
-  <widget type = "action_button" version = "2.0.0">
-    <x>1151</x>
-    <y>40</y>
-    <width>80</width>
-    <height>30</height>
-    <text>MAIN MENU</text>
-    <transparent>true</transparent>
-    <border_width>$(3.0)</border_width>
-    <foreground_color>
-        <color name = "$(midnightblue)" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
-    <font>
-        <font family = "Liberation Sans" style = "BOLD" size = "16">
-        </font>
-    </font>
-    <actions>
-      <action type = "open_display">
-        <file>Main_Menu.bob</file>
-        <target>tab</target>
-        <description>Open Display</description>
-      </action>
-    </actions>
-  </widget>
-  <widget type = "led" version = "2.0.0">
+  <widget type = "symbol" version = "2.0.0">
+    <name>symbol_158</name>
     <x>180</x>
     <y>25</y>
     <width>20</width>
     <height>20</height>
-    <square>true</square>
-    <bit>0</bit>
+    <transparent>true</transparent>
+    <symbols>
+      <symbol>../stateImages/EllipseRed.png</symbol>
+      <symbol>../stateImages/EllipseGreen.png</symbol>
+    </symbols>
+    <initial_index>0</initial_index>
+    <show_index>false</show_index>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
     <pv_name>acsys://Z:CTICOM.STATUS.ON</pv_name>
-    <off_color>
-        <color name = "yellow" red = "255" green = "255" blue = "0">
-        </color>
-    </off_color>
-    <on_color>
-        <color name = "slateblue" red = "106" green = "90" blue = "205">
-        </color>
-    </on_color>
   </widget>
-  <widget type = "led" version = "2.0.0">
+  <widget type = "symbol" version = "2.0.0">
+    <name>symbol_159</name>
     <x>246</x>
     <y>58</y>
     <width>40</width>
     <height>40</height>
-    <square>true</square>
-    <bit>0</bit>
-    <off_color>
-        <color name = "black" red = "0" green = "0" blue = "0">
-        </color>
-    </off_color>
-    <on_color>
-        <color name = "black" red = "0" green = "0" blue = "0">
-        </color>
-    </on_color>
+    <transparent>true</transparent>
+    <symbols>
+      <symbol>../stateImages/ValveRed.png</symbol>
+      <symbol>../stateImages/ValveGreen.png</symbol>
+    </symbols>
+    <initial_index>0</initial_index>
+    <show_index>false</show_index>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type = "textupdate" version = "2.0.0">
-    <name>Text Update</name>
+    <name>textupdate_1064</name>
     <x>529</x>
     <y>755</y>
     <width>80</width>
@@ -1752,7 +1419,7 @@
     <pv_name>acsys://Z:CTODPR</pv_name>
   </widget>
   <widget type = "textupdate" version = "2.0.0">
-    <name>Text Update</name>
+    <name>textupdate_1065</name>
     <x>795</x>
     <y>755</y>
     <width>80</width>
@@ -1773,7 +1440,7 @@
     <pv_name>acsys://Z:CTOWPR</pv_name>
   </widget>
   <widget type = "textupdate" version = "2.0.0">
-    <name>Text Update</name>
+    <name>textupdate_1066</name>
     <x>744</x>
     <y>658</y>
     <width>80</width>
@@ -1794,7 +1461,7 @@
     <pv_name>acsys://Z:CTOWEF</pv_name>
   </widget>
   <widget type = "textupdate" version = "2.0.0">
-    <name>Text Update</name>
+    <name>textupdate_1067</name>
     <x>480</x>
     <y>658</y>
     <width>80</width>
@@ -1815,15 +1482,11 @@
     <pv_name>acsys://Z:CTODEF</pv_name>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_502</name>
     <x>29</x>
     <y>495</y>
     <width>107</width>
     <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "mediumblue" red = "0" green = "0" blue = "205">
         </color>
@@ -1836,23 +1499,23 @@
     </points>
   </widget>
   <widget type = "rectangle" version = "2.0.0">
-    <name>Rectangle</name>
+    <name>rectangle_137</name>
     <x>8</x>
     <y>9</y>
     <width>1287</width>
     <height>822</height>
     <transparent>true</transparent>
+    <line_color>
+        <color name = "orange" red = "255" green = "165" blue = "0">
+        </color>
+    </line_color>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_503</name>
     <x>215</x>
     <y>305</y>
     <width>10</width>
     <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "darkred" red = "139" green = "0" blue = "0">
         </color>
@@ -1865,15 +1528,11 @@
     </points>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_504</name>
     <x>885</x>
     <y>650</y>
     <width>223</width>
     <height>70</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "cornflowerblue" red = "100" green = "149" blue = "237">
         </color>
@@ -1888,15 +1547,11 @@
     </points>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_505</name>
     <x>1264</x>
     <y>405</y>
     <width>10</width>
     <height>115</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "cornflowerblue" red = "100" green = "149" blue = "237">
         </color>
@@ -1909,15 +1564,11 @@
     </points>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_506</name>
     <x>1080</x>
     <y>510</y>
     <width>195</width>
     <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "cornflowerblue" red = "100" green = "149" blue = "237">
         </color>
@@ -1932,15 +1583,11 @@
     </points>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_507</name>
     <x>890</x>
     <y>460</y>
     <width>80</width>
     <height>190</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "mediumblue" red = "0" green = "0" blue = "205">
         </color>
@@ -1955,15 +1602,11 @@
     </points>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_508</name>
     <x>900</x>
     <y>390</y>
     <width>233</width>
     <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "cornflowerblue" red = "100" green = "149" blue = "237">
         </color>
@@ -1976,7 +1619,7 @@
     </points>
   </widget>
   <widget type = "polygon" version = "2.0.0">
-    <name>Polygon</name>
+    <name>polygon_204</name>
     <x>516</x>
     <y>335</y>
     <width>157</width>
@@ -2007,7 +1650,7 @@
     </points>
   </widget>
   <widget type = "polygon" version = "2.0.0">
-    <name>Polygon</name>
+    <name>polygon_205</name>
     <x>716</x>
     <y>335</y>
     <width>157</width>
@@ -2038,15 +1681,11 @@
     </points>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_509</name>
     <x>625</x>
     <y>365</y>
     <width>120</width>
     <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "mediumblue" red = "0" green = "0" blue = "205">
         </color>
@@ -2059,15 +1698,11 @@
     </points>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_510</name>
     <x>620</x>
     <y>660</y>
     <width>130</width>
     <height>70</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "cornflowerblue" red = "100" green = "149" blue = "237">
         </color>
@@ -2082,15 +1717,11 @@
     </points>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_511</name>
     <x>625</x>
     <y>520</y>
     <width>10</width>
     <height>100</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "mediumblue" red = "0" green = "0" blue = "205">
         </color>
@@ -2103,15 +1734,11 @@
     </points>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_512</name>
     <x>230</x>
     <y>305</y>
     <width>50</width>
     <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "darkred" red = "139" green = "0" blue = "0">
         </color>
@@ -2126,15 +1753,11 @@
     </points>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_513</name>
     <x>355</x>
     <y>193</y>
     <width>10</width>
     <height>102</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "darkred" red = "139" green = "0" blue = "0">
         </color>
@@ -2147,7 +1770,7 @@
     </points>
   </widget>
   <widget type = "polygon" version = "2.0.0">
-    <name>Polygon</name>
+    <name>polygon_206</name>
     <x>250</x>
     <y>270</y>
     <width>157</width>
@@ -2178,7 +1801,7 @@
     </points>
   </widget>
   <widget type = "polygon" version = "2.0.0">
-    <name>Polygon</name>
+    <name>polygon_207</name>
     <x>402</x>
     <y>294</y>
     <width>10</width>
@@ -2203,7 +1826,7 @@
     </points>
   </widget>
   <widget type = "polygon" version = "2.0.0">
-    <name>Polygon</name>
+    <name>polygon_208</name>
     <x>1263</x>
     <y>95</y>
     <width>-2147483639</width>
@@ -2228,7 +1851,7 @@
     </points>
   </widget>
   <widget type = "label" version = "2.0.0">
-    <name>Label</name>
+    <name>label_2615</name>
     <x>35</x>
     <y>715</y>
     <width>87</width>
@@ -2248,7 +1871,7 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type = "polygon" version = "2.0.0">
-    <name>Polygon</name>
+    <name>polygon_209</name>
     <x>207</x>
     <y>177</y>
     <width>-2147483639</width>
@@ -2273,15 +1896,11 @@
     </points>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_514</name>
     <x>191</x>
     <y>471</y>
     <width>10</width>
     <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "black" red = "0" green = "0" blue = "0">
         </color>
@@ -2292,7 +1911,7 @@
     </points>
   </widget>
   <widget type = "polygon" version = "2.0.0">
-    <name>Polygon</name>
+    <name>polygon_210</name>
     <x>407</x>
     <y>331</y>
     <width>-2147483639</width>
@@ -2317,7 +1936,7 @@
     </points>
   </widget>
   <widget type = "polygon" version = "2.0.0">
-    <name>Polygon</name>
+    <name>polygon_211</name>
     <x>88</x>
     <y>621</y>
     <width>-2147483639</width>
@@ -2342,7 +1961,7 @@
     </points>
   </widget>
   <widget type = "polygon" version = "2.0.0">
-    <name>Polygon</name>
+    <name>polygon_212</name>
     <x>207</x>
     <y>453</y>
     <width>-2147483639</width>
@@ -2367,15 +1986,11 @@
     </points>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_515</name>
     <x>490</x>
     <y>358</y>
     <width>10</width>
     <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "black" red = "0" green = "0" blue = "0">
         </color>
@@ -2386,15 +2001,11 @@
     </points>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_516</name>
     <x>486</x>
     <y>366</y>
     <width>10</width>
     <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "black" red = "0" green = "0" blue = "0">
         </color>
@@ -2405,15 +2016,11 @@
     </points>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_517</name>
     <x>607</x>
     <y>362</y>
     <width>10</width>
     <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "black" red = "0" green = "0" blue = "0">
         </color>
@@ -2424,15 +2031,11 @@
     </points>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_518</name>
     <x>603</x>
     <y>366</y>
     <width>10</width>
     <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "black" red = "0" green = "0" blue = "0">
         </color>
@@ -2443,15 +2046,11 @@
     </points>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_519</name>
     <x>615</x>
     <y>366</y>
     <width>10</width>
     <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "black" red = "0" green = "0" blue = "0">
         </color>
@@ -2462,15 +2061,11 @@
     </points>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_520</name>
     <x>1208</x>
     <y>394</y>
     <width>10</width>
     <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "black" red = "0" green = "0" blue = "0">
         </color>
@@ -2481,15 +2076,11 @@
     </points>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_521</name>
     <x>1275</x>
     <y>129</y>
     <width>10</width>
     <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "black" red = "0" green = "0" blue = "0">
         </color>
@@ -2500,7 +2091,7 @@
     </points>
   </widget>
   <widget type = "polygon" version = "2.0.0">
-    <name>Polygon</name>
+    <name>polygon_213</name>
     <x>73</x>
     <y>711</y>
     <width>-2147483639</width>
@@ -2525,7 +2116,7 @@
     </points>
   </widget>
   <widget type = "label" version = "2.0.0">
-    <name>Label</name>
+    <name>label_2616</name>
     <x>610</x>
     <y>635</y>
     <width>88</width>
@@ -2545,7 +2136,7 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type = "label" version = "2.0.0">
-    <name>Label</name>
+    <name>label_2617</name>
     <x>590</x>
     <y>650</y>
     <width>119</width>
@@ -2565,15 +2156,11 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_522</name>
     <x>122</x>
     <y>167</y>
     <width>10</width>
     <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "black" red = "0" green = "0" blue = "0">
         </color>
@@ -2584,7 +2171,7 @@
     </points>
   </widget>
   <widget type = "label" version = "2.0.0">
-    <name>Label</name>
+    <name>label_2618</name>
     <x>375</x>
     <y>130</y>
     <width>136</width>
@@ -2604,15 +2191,11 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_523</name>
     <x>215</x>
     <y>311</y>
     <width>10</width>
     <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "black" red = "0" green = "0" blue = "0">
         </color>
@@ -2623,7 +2206,7 @@
     </points>
   </widget>
   <widget type = "polygon" version = "2.0.0">
-    <name>Polygon</name>
+    <name>polygon_214</name>
     <x>620</x>
     <y>431</y>
     <width>-2147483639</width>
@@ -2648,7 +2231,7 @@
     </points>
   </widget>
   <widget type = "polygon" version = "2.0.0">
-    <name>Polygon</name>
+    <name>polygon_215</name>
     <x>870</x>
     <y>431</y>
     <width>-2147483639</width>
@@ -2673,7 +2256,7 @@
     </points>
   </widget>
   <widget type = "label" version = "2.0.0">
-    <name>Label</name>
+    <name>label_2619</name>
     <x>140</x>
     <y>330</y>
     <width>90</width>
@@ -2693,7 +2276,7 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type = "label" version = "2.0.0">
-    <name>Label</name>
+    <name>label_2620</name>
     <x>295</x>
     <y>44</y>
     <width>642</width>
@@ -2713,7 +2296,7 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type = "label" version = "2.0.0">
-    <name>Label</name>
+    <name>label_2621</name>
     <x>135</x>
     <y>205</y>
     <width>102</width>
@@ -2733,7 +2316,7 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type = "polygon" version = "2.0.0">
-    <name>Polygon</name>
+    <name>polygon_216</name>
     <x>1100</x>
     <y>536</y>
     <width>-2147483639</width>
@@ -2758,7 +2341,7 @@
     </points>
   </widget>
   <widget type = "polygon" version = "2.0.0">
-    <name>Polygon</name>
+    <name>polygon_217</name>
     <x>38</x>
     <y>261</y>
     <width>-2147483639</width>
@@ -2783,15 +2366,11 @@
     </points>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_524</name>
     <x>1166</x>
     <y>570</y>
     <width>10</width>
     <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "black" red = "0" green = "0" blue = "0">
         </color>
@@ -2802,7 +2381,7 @@
     </points>
   </widget>
   <widget type = "label" version = "2.0.0">
-    <name>Label</name>
+    <name>label_2622</name>
     <x>325</x>
     <y>357</y>
     <width>97</width>
@@ -2822,15 +2401,11 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_525</name>
     <x>127</x>
     <y>320</y>
     <width>10</width>
     <height>340</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "mediumblue" red = "0" green = "0" blue = "205">
         </color>
@@ -2843,15 +2418,11 @@
     </points>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_526</name>
     <x>268</x>
     <y>320</y>
     <width>110</width>
     <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "mediumblue" red = "0" green = "0" blue = "205">
         </color>
@@ -2882,15 +2453,11 @@
     </points>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_527</name>
     <x>365</x>
     <y>320</y>
     <width>45</width>
     <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "mediumblue" red = "0" green = "0" blue = "205">
         </color>
@@ -2903,7 +2470,7 @@
     </points>
   </widget>
   <widget type = "polygon" version = "2.0.0">
-    <name>Polygon</name>
+    <name>polygon_218</name>
     <x>250</x>
     <y>390</y>
     <width>157</width>
@@ -2934,15 +2501,11 @@
     </points>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_528</name>
     <x>265</x>
     <y>420</y>
     <width>110</width>
     <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "mediumblue" red = "0" green = "0" blue = "205">
         </color>
@@ -2973,15 +2536,11 @@
     </points>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_529</name>
     <x>225</x>
     <y>305</y>
     <width>40</width>
     <height>20</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "darkred" red = "139" green = "0" blue = "0">
         </color>
@@ -3002,15 +2561,11 @@
     </points>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_530</name>
     <x>240</x>
     <y>305</y>
     <width>40</width>
     <height>20</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "darkred" red = "139" green = "0" blue = "0">
         </color>
@@ -3031,15 +2586,11 @@
     </points>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_531</name>
     <x>265</x>
     <y>430</y>
     <width>110</width>
     <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "darkred" red = "139" green = "0" blue = "0">
         </color>
@@ -3070,15 +2621,11 @@
     </points>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_532</name>
     <x>265</x>
     <y>440</y>
     <width>110</width>
     <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "darkred" red = "139" green = "0" blue = "0">
         </color>
@@ -3109,15 +2656,11 @@
     </points>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_533</name>
     <x>265</x>
     <y>450</y>
     <width>110</width>
     <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "mediumblue" red = "0" green = "0" blue = "205">
         </color>
@@ -3148,15 +2691,11 @@
     </points>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_534</name>
     <x>215</x>
     <y>335</y>
     <width>60</width>
     <height>115</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "darkred" red = "139" green = "0" blue = "0">
         </color>
@@ -3171,15 +2710,11 @@
     </points>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_535</name>
     <x>230</x>
     <y>335</y>
     <width>50</width>
     <height>105</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "darkred" red = "139" green = "0" blue = "0">
         </color>
@@ -3194,7 +2729,7 @@
     </points>
   </widget>
   <widget type = "label" version = "2.0.0">
-    <name>Label</name>
+    <name>label_2623</name>
     <x>303</x>
     <y>477</y>
     <width>114</width>
@@ -3214,15 +2749,11 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_536</name>
     <x>265</x>
     <y>420</y>
     <width>10</width>
     <height>40</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "mediumblue" red = "0" green = "0" blue = "205">
         </color>
@@ -3235,15 +2766,11 @@
     </points>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_537</name>
     <x>365</x>
     <y>430</y>
     <width>10</width>
     <height>20</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "darkred" red = "139" green = "0" blue = "0">
         </color>
@@ -3256,15 +2783,11 @@
     </points>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_538</name>
     <x>365</x>
     <y>420</y>
     <width>45</width>
     <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "mediumblue" red = "0" green = "0" blue = "205">
         </color>
@@ -3277,15 +2800,11 @@
     </points>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_539</name>
     <x>365</x>
     <y>450</y>
     <width>45</width>
     <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "mediumblue" red = "0" green = "0" blue = "205">
         </color>
@@ -3298,15 +2817,11 @@
     </points>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_540</name>
     <x>165</x>
     <y>320</y>
     <width>118</width>
     <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "mediumblue" red = "0" green = "0" blue = "205">
         </color>
@@ -3319,7 +2834,7 @@
     </points>
   </widget>
   <widget type = "label" version = "2.0.0">
-    <name>Label</name>
+    <name>label_2624</name>
     <x>250</x>
     <y>170</y>
     <width>91</width>
@@ -3339,7 +2854,7 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type = "label" version = "2.0.0">
-    <name>Label</name>
+    <name>label_2625</name>
     <x>250</x>
     <y>215</y>
     <width>98</width>
@@ -3359,7 +2874,7 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type = "polygon" version = "2.0.0">
-    <name>Polygon</name>
+    <name>polygon_219</name>
     <x>360</x>
     <y>150</y>
     <width>20</width>
@@ -3385,29 +2900,8 @@
       </point>
     </points>
   </widget>
-  <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
-    <x>350</x>
-    <y>190</y>
-    <width>20</width>
-    <height>25</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
-    <line_color>
-        <color name = "black" red = "0" green = "0" blue = "0">
-        </color>
-    </line_color>
-    <points>
-      <point x = "10.0" y = "5.0">
-      </point>
-      <point x = "10.0" y = "15.0">
-      </point>
-    </points>
-  </widget>
   <widget type = "label" version = "2.0.0">
-    <name>Label</name>
+    <name>label_2626</name>
     <x>370</x>
     <y>170</y>
     <width>101</width>
@@ -3427,7 +2921,7 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type = "polygon" version = "2.0.0">
-    <name>Polygon</name>
+    <name>polygon_220</name>
     <x>251</x>
     <y>610</y>
     <width>157</width>
@@ -3458,7 +2952,7 @@
     </points>
   </widget>
   <widget type = "label" version = "2.0.0">
-    <name>Label</name>
+    <name>label_2627</name>
     <x>315</x>
     <y>592</y>
     <width>102</width>
@@ -3478,15 +2972,11 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_541</name>
     <x>265</x>
     <y>655</y>
     <width>110</width>
     <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "mediumblue" red = "0" green = "0" blue = "205">
         </color>
@@ -3517,15 +3007,11 @@
     </points>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_542</name>
     <x>265</x>
     <y>645</y>
     <width>110</width>
     <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "mediumblue" red = "0" green = "0" blue = "205">
         </color>
@@ -3556,15 +3042,11 @@
     </points>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_543</name>
     <x>265</x>
     <y>645</y>
     <width>10</width>
     <height>20</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "mediumblue" red = "0" green = "0" blue = "205">
         </color>
@@ -3577,15 +3059,11 @@
     </points>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_544</name>
     <x>365</x>
     <y>645</y>
     <width>10</width>
     <height>20</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "mediumblue" red = "0" green = "0" blue = "205">
         </color>
@@ -3598,15 +3076,11 @@
     </points>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_545</name>
     <x>265</x>
     <y>650</y>
     <width>10</width>
     <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "mediumblue" red = "0" green = "0" blue = "205">
         </color>
@@ -3619,15 +3093,11 @@
     </points>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_546</name>
     <x>365</x>
     <y>650</y>
     <width>45</width>
     <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "mediumblue" red = "0" green = "0" blue = "205">
         </color>
@@ -3640,15 +3110,11 @@
     </points>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_547</name>
     <x>400</x>
     <y>450</y>
     <width>10</width>
     <height>210</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "mediumblue" red = "0" green = "0" blue = "205">
         </color>
@@ -3661,15 +3127,11 @@
     </points>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_548</name>
     <x>400</x>
     <y>320</y>
     <width>10</width>
     <height>110</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "mediumblue" red = "0" green = "0" blue = "205">
         </color>
@@ -3682,7 +3144,7 @@
     </points>
   </widget>
   <widget type = "polygon" version = "2.0.0">
-    <name>Polygon</name>
+    <name>polygon_221</name>
     <x>405</x>
     <y>540</y>
     <width>20</width>
@@ -3709,7 +3171,7 @@
     </points>
   </widget>
   <widget type = "label" version = "2.0.0">
-    <name>Label</name>
+    <name>label_2628</name>
     <x>140</x>
     <y>660</y>
     <width>90</width>
@@ -3729,15 +3191,11 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_549</name>
     <x>220</x>
     <y>680</y>
     <width>220</width>
     <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "cornflowerblue" red = "100" green = "149" blue = "237">
         </color>
@@ -3758,15 +3216,11 @@
     </points>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_550</name>
     <x>220</x>
     <y>680</y>
     <width>10</width>
     <height>65</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "cornflowerblue" red = "100" green = "149" blue = "237">
         </color>
@@ -3781,7 +3235,7 @@
     </points>
   </widget>
   <widget type = "polygon" version = "2.0.0">
-    <name>Polygon</name>
+    <name>polygon_222</name>
     <x>170</x>
     <y>730</y>
     <width>20</width>
@@ -3808,7 +3262,7 @@
     </points>
   </widget>
   <widget type = "label" version = "2.0.0">
-    <name>Label</name>
+    <name>label_2629</name>
     <x>35</x>
     <y>730</y>
     <width>124</width>
@@ -3828,36 +3282,11 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
-    <x>225</x>
-    <y>675</y>
-    <width>20</width>
-    <height>25</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
-    <line_color>
-        <color name = "black" red = "0" green = "0" blue = "0">
-        </color>
-    </line_color>
-    <points>
-      <point x = "10.0" y = "5.0">
-      </point>
-      <point x = "10.0" y = "15.0">
-      </point>
-    </points>
-  </widget>
-  <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_551</name>
     <x>235</x>
     <y>690</y>
     <width>10</width>
     <height>85</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "black" red = "0" green = "0" blue = "0">
         </color>
@@ -3870,15 +3299,11 @@
     </points>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_552</name>
     <x>235</x>
     <y>765</y>
     <width>20</width>
     <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "black" red = "0" green = "0" blue = "0">
         </color>
@@ -3891,7 +3316,7 @@
     </points>
   </widget>
   <widget type = "label" version = "2.0.0">
-    <name>Label</name>
+    <name>label_2630</name>
     <x>250</x>
     <y>755</y>
     <width>123</width>
@@ -3911,7 +3336,7 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type = "label" version = "2.0.0">
-    <name>Label</name>
+    <name>label_2631</name>
     <x>250</x>
     <y>700</y>
     <width>123</width>
@@ -3931,15 +3356,11 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_553</name>
     <x>235</x>
     <y>710</y>
     <width>20</width>
     <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "black" red = "0" green = "0" blue = "0">
         </color>
@@ -3952,15 +3373,11 @@
     </points>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_554</name>
     <x>430</x>
     <y>680</y>
     <width>10</width>
     <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "cornflowerblue" red = "100" green = "149" blue = "237">
         </color>
@@ -3973,7 +3390,7 @@
     </points>
   </widget>
   <widget type = "polygon" version = "2.0.0">
-    <name>Polygon</name>
+    <name>polygon_223</name>
     <x>425</x>
     <y>530</y>
     <width>20</width>
@@ -4000,36 +3417,11 @@
     </points>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
-    <x>425</x>
-    <y>450</y>
-    <width>20</width>
-    <height>25</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
-    <line_color>
-        <color name = "black" red = "0" green = "0" blue = "0">
-        </color>
-    </line_color>
-    <points>
-      <point x = "10.0" y = "5.0">
-      </point>
-      <point x = "10.0" y = "15.0">
-      </point>
-    </points>
-  </widget>
-  <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_555</name>
     <x>360</x>
     <y>695</y>
     <width>10</width>
     <height>85</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "black" red = "0" green = "0" blue = "0">
         </color>
@@ -4042,15 +3434,11 @@
     </points>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_556</name>
     <x>360</x>
     <y>770</y>
     <width>20</width>
     <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "black" red = "0" green = "0" blue = "0">
         </color>
@@ -4063,15 +3451,11 @@
     </points>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_557</name>
     <x>360</x>
     <y>710</y>
     <width>20</width>
     <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "black" red = "0" green = "0" blue = "0">
         </color>
@@ -4084,7 +3468,7 @@
     </points>
   </widget>
   <widget type = "label" version = "2.0.0">
-    <name>Label</name>
+    <name>label_2632</name>
     <x>370</x>
     <y>760</y>
     <width>90</width>
@@ -4104,7 +3488,7 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type = "label" version = "2.0.0">
-    <name>Label</name>
+    <name>label_2633</name>
     <x>450</x>
     <y>430</y>
     <width>98</width>
@@ -4124,36 +3508,11 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
-    <x>400</x>
-    <y>310</y>
-    <width>20</width>
-    <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
-    <line_color>
-        <color name = "black" red = "0" green = "0" blue = "0">
-        </color>
-    </line_color>
-    <points>
-      <point x = "10.0" y = "-10.0">
-      </point>
-      <point x = "10.0" y = "0.0">
-      </point>
-    </points>
-  </widget>
-  <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_558</name>
     <x>390</x>
     <y>310</y>
     <width>20</width>
     <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "black" red = "0" green = "0" blue = "0">
         </color>
@@ -4168,7 +3527,7 @@
     </points>
   </widget>
   <widget type = "label" version = "2.0.0">
-    <name>Label</name>
+    <name>label_2634</name>
     <x>405</x>
     <y>230</y>
     <width>101</width>
@@ -4188,36 +3547,11 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
-    <x>420</x>
-    <y>355</y>
-    <width>20</width>
-    <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
-    <line_color>
-        <color name = "black" red = "0" green = "0" blue = "0">
-        </color>
-    </line_color>
-    <points>
-      <point x = "10.0" y = "-10.0">
-      </point>
-      <point x = "10.0" y = "0.0">
-      </point>
-    </points>
-  </widget>
-  <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_559</name>
     <x>410</x>
     <y>355</y>
     <width>20</width>
     <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "black" red = "0" green = "0" blue = "0">
         </color>
@@ -4232,7 +3566,7 @@
     </points>
   </widget>
   <widget type = "label" version = "2.0.0">
-    <name>Label</name>
+    <name>label_2635</name>
     <x>425</x>
     <y>275</y>
     <width>102</width>
@@ -4252,7 +3586,7 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type = "label" version = "2.0.0">
-    <name>Label</name>
+    <name>label_2636</name>
     <x>425</x>
     <y>320</y>
     <width>101</width>
@@ -4272,15 +3606,11 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_560</name>
     <x>400</x>
     <y>365</y>
     <width>145</width>
     <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "mediumblue" red = "0" green = "0" blue = "205">
         </color>
@@ -4293,15 +3623,11 @@
     </points>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_561</name>
     <x>530</x>
     <y>365</y>
     <width>110</width>
     <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "mediumblue" red = "0" green = "0" blue = "205">
         </color>
@@ -4332,15 +3658,11 @@
     </points>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_562</name>
     <x>490</x>
     <y>390</y>
     <width>200</width>
     <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "cornflowerblue" red = "100" green = "149" blue = "237">
         </color>
@@ -4361,36 +3683,11 @@
     </points>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
-    <x>670</x>
-    <y>355</y>
-    <width>20</width>
-    <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
-    <line_color>
-        <color name = "black" red = "0" green = "0" blue = "0">
-        </color>
-    </line_color>
-    <points>
-      <point x = "10.0" y = "-10.0">
-      </point>
-      <point x = "10.0" y = "0.0">
-      </point>
-    </points>
-  </widget>
-  <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_563</name>
     <x>690</x>
     <y>365</y>
     <width>10</width>
     <height>165</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "mediumblue" red = "0" green = "0" blue = "205">
         </color>
@@ -4403,15 +3700,11 @@
     </points>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_564</name>
     <x>675</x>
     <y>379</y>
     <width>40</width>
     <height>21</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "cornflowerblue" red = "100" green = "149" blue = "237">
         </color>
@@ -4432,15 +3725,11 @@
     </points>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_565</name>
     <x>625</x>
     <y>520</y>
     <width>75</width>
     <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "mediumblue" red = "0" green = "0" blue = "205">
         </color>
@@ -4452,29 +3741,8 @@
       </point>
     </points>
   </widget>
-  <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
-    <x>660</x>
-    <y>400</y>
-    <width>20</width>
-    <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
-    <line_color>
-        <color name = "black" red = "0" green = "0" blue = "0">
-        </color>
-    </line_color>
-    <points>
-      <point x = "10.0" y = "-10.0">
-      </point>
-      <point x = "10.0" y = "0.0">
-      </point>
-    </points>
-  </widget>
   <widget type = "label" version = "2.0.0">
-    <name>Label</name>
+    <name>label_2637</name>
     <x>600</x>
     <y>420</y>
     <width>98</width>
@@ -4494,15 +3762,11 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_566</name>
     <x>655</x>
     <y>440</y>
     <width>25</width>
     <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "black" red = "0" green = "0" blue = "0">
         </color>
@@ -4515,36 +3779,11 @@
     </points>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
-    <x>615</x>
-    <y>520</y>
-    <width>20</width>
-    <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
-    <line_color>
-        <color name = "black" red = "0" green = "0" blue = "0">
-        </color>
-    </line_color>
-    <points>
-      <point x = "10.0" y = "-10.0">
-      </point>
-      <point x = "10.0" y = "0.0">
-      </point>
-    </points>
-  </widget>
-  <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_567</name>
     <x>615</x>
     <y>530</y>
     <width>10</width>
     <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "black" red = "0" green = "0" blue = "0">
         </color>
@@ -4557,7 +3796,7 @@
     </points>
   </widget>
   <widget type = "label" version = "2.0.0">
-    <name>Label</name>
+    <name>label_2638</name>
     <x>535</x>
     <y>520</y>
     <width>102</width>
@@ -4577,7 +3816,7 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type = "label" version = "2.0.0">
-    <name>Label</name>
+    <name>label_2639</name>
     <x>535</x>
     <y>565</y>
     <width>98</width>
@@ -4597,7 +3836,7 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type = "polygon" version = "2.0.0">
-    <name>Polygon</name>
+    <name>polygon_224</name>
     <x>745</x>
     <y>490</y>
     <width>20</width>
@@ -4624,7 +3863,7 @@
     </points>
   </widget>
   <widget type = "polygon" version = "2.0.0">
-    <name>Polygon</name>
+    <name>polygon_225</name>
     <x>685</x>
     <y>480</y>
     <width>20</width>
@@ -4651,7 +3890,7 @@
     </points>
   </widget>
   <widget type = "label" version = "2.0.0">
-    <name>Label</name>
+    <name>label_2640</name>
     <x>650</x>
     <y>720</y>
     <width>106</width>
@@ -4671,7 +3910,7 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type = "label" version = "2.0.0">
-    <name>Label</name>
+    <name>label_2641</name>
     <x>650</x>
     <y>765</y>
     <width>105</width>
@@ -4691,15 +3930,11 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_568</name>
     <x>705</x>
     <y>390</y>
     <width>185</width>
     <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "cornflowerblue" red = "100" green = "149" blue = "237">
         </color>
@@ -4720,15 +3955,11 @@
     </points>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_569</name>
     <x>730</x>
     <y>365</y>
     <width>110</width>
     <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "mediumblue" red = "0" green = "0" blue = "205">
         </color>
@@ -4759,15 +3990,11 @@
     </points>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_570</name>
     <x>740</x>
     <y>390</y>
     <width>10</width>
     <height>340</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "cornflowerblue" red = "100" green = "149" blue = "237">
         </color>
@@ -4780,15 +4007,11 @@
     </points>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_571</name>
     <x>410</x>
     <y>330</y>
     <width>20</width>
     <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "black" red = "0" green = "0" blue = "0">
         </color>
@@ -4801,7 +4024,7 @@
     </points>
   </widget>
   <widget type = "label" version = "2.0.0">
-    <name>Label</name>
+    <name>label_2642</name>
     <x>675</x>
     <y>290</y>
     <width>101</width>
@@ -4821,15 +4044,11 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_572</name>
     <x>660</x>
     <y>360</y>
     <width>20</width>
     <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "black" red = "0" green = "0" blue = "0">
         </color>
@@ -4844,15 +4063,11 @@
     </points>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_573</name>
     <x>890</x>
     <y>590</y>
     <width>10</width>
     <height>30</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "mediumblue" red = "0" green = "0" blue = "205">
         </color>
@@ -4865,15 +4080,11 @@
     </points>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_574</name>
     <x>875</x>
     <y>379</y>
     <width>40</width>
     <height>21</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "cornflowerblue" red = "100" green = "149" blue = "237">
         </color>
@@ -4894,15 +4105,11 @@
     </points>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_575</name>
     <x>825</x>
     <y>365</y>
     <width>75</width>
     <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "mediumblue" red = "0" green = "0" blue = "205">
         </color>
@@ -4915,36 +4122,11 @@
     </points>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
-    <x>870</x>
-    <y>355</y>
-    <width>20</width>
-    <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
-    <line_color>
-        <color name = "black" red = "0" green = "0" blue = "0">
-        </color>
-    </line_color>
-    <points>
-      <point x = "10.0" y = "-10.0">
-      </point>
-      <point x = "10.0" y = "0.0">
-      </point>
-    </points>
-  </widget>
-  <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_576</name>
     <x>860</x>
     <y>355</y>
     <width>20</width>
     <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "black" red = "0" green = "0" blue = "0">
         </color>
@@ -4959,15 +4141,11 @@
     </points>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_577</name>
     <x>860</x>
     <y>330</y>
     <width>20</width>
     <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "black" red = "0" green = "0" blue = "0">
         </color>
@@ -4980,7 +4158,7 @@
     </points>
   </widget>
   <widget type = "label" version = "2.0.0">
-    <name>Label</name>
+    <name>label_2643</name>
     <x>875</x>
     <y>320</y>
     <width>101</width>
@@ -5000,7 +4178,7 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type = "label" version = "2.0.0">
-    <name>Label</name>
+    <name>label_2644</name>
     <x>875</x>
     <y>275</y>
     <width>102</width>
@@ -5020,7 +4198,7 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type = "label" version = "2.0.0">
-    <name>Label</name>
+    <name>label_2645</name>
     <x>855</x>
     <y>650</y>
     <width>119</width>
@@ -5040,7 +4218,7 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type = "label" version = "2.0.0">
-    <name>Label</name>
+    <name>label_2646</name>
     <x>875</x>
     <y>635</y>
     <width>89</width>
@@ -5059,29 +4237,8 @@
     <horizontal_alignment>0</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
   </widget>
-  <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
-    <x>890</x>
-    <y>705</y>
-    <width>20</width>
-    <height>25</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
-    <line_color>
-        <color name = "black" red = "0" green = "0" blue = "0">
-        </color>
-    </line_color>
-    <points>
-      <point x = "10.0" y = "5.0">
-      </point>
-      <point x = "10.0" y = "15.0">
-      </point>
-    </points>
-  </widget>
   <widget type = "label" version = "2.0.0">
-    <name>Label</name>
+    <name>label_2647</name>
     <x>918</x>
     <y>720</y>
     <width>109</width>
@@ -5100,29 +4257,8 @@
     <horizontal_alignment>0</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
   </widget>
-  <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
-    <x>1063</x>
-    <y>380</y>
-    <width>20</width>
-    <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
-    <line_color>
-        <color name = "black" red = "0" green = "0" blue = "0">
-        </color>
-    </line_color>
-    <points>
-      <point x = "10.0" y = "-10.0">
-      </point>
-      <point x = "10.0" y = "0.0">
-      </point>
-    </points>
-  </widget>
   <widget type = "label" version = "2.0.0">
-    <name>Label</name>
+    <name>label_2648</name>
     <x>1023</x>
     <y>330</y>
     <width>98</width>
@@ -5142,7 +4278,7 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type = "polygon" version = "2.0.0">
-    <name>Polygon</name>
+    <name>polygon_226</name>
     <x>885</x>
     <y>480</y>
     <width>20</width>
@@ -5168,29 +4304,8 @@
       </point>
     </points>
   </widget>
-  <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
-    <x>880</x>
-    <y>510</y>
-    <width>20</width>
-    <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
-    <line_color>
-        <color name = "black" red = "0" green = "0" blue = "0">
-        </color>
-    </line_color>
-    <points>
-      <point x = "10.0" y = "-10.0">
-      </point>
-      <point x = "10.0" y = "0.0">
-      </point>
-    </points>
-  </widget>
   <widget type = "label" version = "2.0.0">
-    <name>Label</name>
+    <name>label_2649</name>
     <x>825</x>
     <y>510</y>
     <width>101</width>
@@ -5210,7 +4325,7 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type = "label" version = "2.0.0">
-    <name>Label</name>
+    <name>label_2650</name>
     <x>990</x>
     <y>620</y>
     <width>99</width>
@@ -5230,7 +4345,7 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type = "label" version = "2.0.0">
-    <name>Label</name>
+    <name>label_2651</name>
     <x>568</x>
     <y>317</y>
     <width>107</width>
@@ -5250,7 +4365,7 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type = "label" version = "2.0.0">
-    <name>Label</name>
+    <name>label_2652</name>
     <x>779</x>
     <y>317</y>
     <width>109</width>
@@ -5270,15 +4385,11 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_578</name>
     <x>1123</x>
     <y>230</y>
     <width>10</width>
     <height>170</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "cornflowerblue" red = "100" green = "149" blue = "237">
         </color>
@@ -5291,7 +4402,7 @@
     </points>
   </widget>
   <widget type = "label" version = "2.0.0">
-    <name>Label</name>
+    <name>label_2653</name>
     <x>1043</x>
     <y>230</y>
     <width>114</width>
@@ -5311,7 +4422,7 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type = "label" version = "2.0.0">
-    <name>Label</name>
+    <name>label_2654</name>
     <x>1040</x>
     <y>420</y>
     <width>103</width>
@@ -5331,15 +4442,11 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_579</name>
     <x>1099</x>
     <y>710</y>
     <width>10</width>
     <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "cornflowerblue" red = "100" green = "149" blue = "237">
         </color>
@@ -5352,7 +4459,7 @@
     </points>
   </widget>
   <widget type = "polygon" version = "2.0.0">
-    <name>Polygon</name>
+    <name>polygon_227</name>
     <x>1118</x>
     <y>310</y>
     <width>20</width>
@@ -5379,15 +4486,11 @@
     </points>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_580</name>
     <x>670</x>
     <y>390</y>
     <width>10</width>
     <height>60</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "black" red = "0" green = "0" blue = "0">
         </color>
@@ -5401,29 +4504,8 @@
       </point>
     </points>
   </widget>
-  <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
-    <x>350</x>
-    <y>685</y>
-    <width>20</width>
-    <height>25</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
-    <line_color>
-        <color name = "black" red = "0" green = "0" blue = "0">
-        </color>
-    </line_color>
-    <points>
-      <point x = "10.0" y = "5.0">
-      </point>
-      <point x = "10.0" y = "15.0">
-      </point>
-    </points>
-  </widget>
   <widget type = "label" version = "2.0.0">
-    <name>Label</name>
+    <name>label_2655</name>
     <x>370</x>
     <y>700</y>
     <width>98</width>
@@ -5443,7 +4525,7 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type = "label" version = "2.0.0">
-    <name>Label</name>
+    <name>label_2656</name>
     <x>1043</x>
     <y>130</y>
     <width>98</width>
@@ -5463,7 +4545,7 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type = "label" version = "2.0.0">
-    <name>Label</name>
+    <name>label_2657</name>
     <x>1053</x>
     <y>170</y>
     <width>88</width>
@@ -5482,29 +4564,8 @@
     <horizontal_alignment>0</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
   </widget>
-  <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
-    <x>1113</x>
-    <y>150</y>
-    <width>20</width>
-    <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
-    <line_color>
-        <color name = "black" red = "0" green = "0" blue = "0">
-        </color>
-    </line_color>
-    <points>
-      <point x = "10.0" y = "-10.0">
-      </point>
-      <point x = "10.0" y = "0.0">
-      </point>
-    </points>
-  </widget>
   <widget type = "label" version = "2.0.0">
-    <name>Label</name>
+    <name>label_2658</name>
     <x>1185</x>
     <y>145</y>
     <width>98</width>
@@ -5524,7 +4585,7 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type = "label" version = "2.0.0">
-    <name>Label</name>
+    <name>label_2659</name>
     <x>1195</x>
     <y>190</y>
     <width>88</width>
@@ -5544,15 +4605,11 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_581</name>
     <x>1264</x>
     <y>255</y>
     <width>10</width>
     <height>115</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "cornflowerblue" red = "100" green = "149" blue = "237">
         </color>
@@ -5564,29 +4621,8 @@
       </point>
     </points>
   </widget>
-  <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
-    <x>1254</x>
-    <y>225</y>
-    <width>20</width>
-    <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
-    <line_color>
-        <color name = "black" red = "0" green = "0" blue = "0">
-        </color>
-    </line_color>
-    <points>
-      <point x = "10.0" y = "-10.0">
-      </point>
-      <point x = "10.0" y = "0.0">
-      </point>
-    </points>
-  </widget>
   <widget type = "polygon" version = "2.0.0">
-    <name>Polygon</name>
+    <name>polygon_228</name>
     <x>1269</x>
     <y>380</y>
     <width>20</width>
@@ -5613,15 +4649,11 @@
     </points>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_582</name>
     <x>1113</x>
     <y>200</y>
     <width>20</width>
     <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "black" red = "0" green = "0" blue = "0">
         </color>
@@ -5636,15 +4668,11 @@
     </points>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_583</name>
     <x>1103</x>
     <y>160</y>
     <width>20</width>
     <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "black" red = "0" green = "0" blue = "0">
         </color>
@@ -5657,15 +4685,11 @@
     </points>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_584</name>
     <x>1103</x>
     <y>200</y>
     <width>20</width>
     <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "black" red = "0" green = "0" blue = "0">
         </color>
@@ -5678,15 +4702,11 @@
     </points>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_585</name>
     <x>1244</x>
     <y>160</y>
     <width>20</width>
     <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "black" red = "0" green = "0" blue = "0">
         </color>
@@ -5699,15 +4719,11 @@
     </points>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_586</name>
     <x>1254</x>
     <y>200</y>
     <width>10</width>
     <height>45</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "black" red = "0" green = "0" blue = "0">
         </color>
@@ -5722,15 +4738,11 @@
     </points>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_587</name>
     <x>1244</x>
     <y>200</y>
     <width>20</width>
     <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "black" red = "0" green = "0" blue = "0">
         </color>
@@ -5743,7 +4755,7 @@
     </points>
   </widget>
   <widget type = "polygon" version = "2.0.0">
-    <name>Polygon</name>
+    <name>polygon_229</name>
     <x>1269</x>
     <y>320</y>
     <width>20</width>
@@ -5770,15 +4782,11 @@
     </points>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_588</name>
     <x>1254</x>
     <y>160</y>
     <width>10</width>
     <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "black" red = "0" green = "0" blue = "0">
         </color>
@@ -5793,7 +4801,7 @@
     </points>
   </widget>
   <widget type = "label" version = "2.0.0">
-    <name>Label</name>
+    <name>label_2660</name>
     <x>1185</x>
     <y>90</y>
     <width>98</width>
@@ -5813,7 +4821,7 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type = "label" version = "2.0.0">
-    <name>Label</name>
+    <name>label_2661</name>
     <x>1043</x>
     <y>90</y>
     <width>98</width>
@@ -5833,15 +4841,11 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_589</name>
     <x>1113</x>
     <y>160</y>
     <width>10</width>
     <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "black" red = "0" green = "0" blue = "0">
         </color>
@@ -5856,15 +4860,11 @@
     </points>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_590</name>
     <x>960</x>
     <y>635</y>
     <width>10</width>
     <height>85</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "cornflowerblue" red = "100" green = "149" blue = "237">
         </color>
@@ -5877,7 +4877,7 @@
     </points>
   </widget>
   <widget type = "polygon" version = "2.0.0">
-    <name>Polygon</name>
+    <name>polygon_230</name>
     <x>1269</x>
     <y>140</y>
     <width>20</width>
@@ -5904,7 +4904,7 @@
     </points>
   </widget>
   <widget type = "polygon" version = "2.0.0">
-    <name>Polygon</name>
+    <name>polygon_231</name>
     <x>1118</x>
     <y>130</y>
     <width>20</width>
@@ -5931,7 +4931,7 @@
     </points>
   </widget>
   <widget type = "polygon" version = "2.0.0">
-    <name>Polygon</name>
+    <name>polygon_232</name>
     <x>210</x>
     <y>130</y>
     <width>20</width>
@@ -5958,15 +4958,11 @@
     </points>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_591</name>
     <x>635</x>
     <y>725</y>
     <width>10</width>
     <height>76</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "black" red = "0" green = "0" blue = "0">
         </color>
@@ -5979,36 +4975,11 @@
     </points>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
-    <x>625</x>
-    <y>715</y>
-    <width>20</width>
-    <height>25</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
-    <line_color>
-        <color name = "black" red = "0" green = "0" blue = "0">
-        </color>
-    </line_color>
-    <points>
-      <point x = "10.0" y = "5.0">
-      </point>
-      <point x = "10.0" y = "15.0">
-      </point>
-    </points>
-  </widget>
-  <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_592</name>
     <x>635</x>
     <y>730</y>
     <width>20</width>
     <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "black" red = "0" green = "0" blue = "0">
         </color>
@@ -6021,15 +4992,11 @@
     </points>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_593</name>
     <x>633</x>
     <y>793</y>
     <width>20</width>
     <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "black" red = "0" green = "0" blue = "0">
         </color>
@@ -6042,7 +5009,7 @@
     </points>
   </widget>
   <widget type = "label" version = "2.0.0">
-    <name>Label</name>
+    <name>label_2662</name>
     <x>493</x>
     <y>784</y>
     <width>92</width>
@@ -6062,7 +5029,7 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type = "label" version = "2.0.0">
-    <name>Label</name>
+    <name>label_2663</name>
     <x>494</x>
     <y>725</y>
     <width>82</width>
@@ -6082,15 +5049,11 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_594</name>
     <x>900</x>
     <y>720</y>
     <width>10</width>
     <height>84</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "black" red = "0" green = "0" blue = "0">
         </color>
@@ -6103,15 +5066,11 @@
     </points>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_595</name>
     <x>900</x>
     <y>728</y>
     <width>20</width>
     <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "black" red = "0" green = "0" blue = "0">
         </color>
@@ -6124,15 +5083,11 @@
     </points>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_596</name>
     <x>890</x>
     <y>796</y>
     <width>20</width>
     <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "black" red = "0" green = "0" blue = "0">
         </color>
@@ -6145,7 +5100,7 @@
     </points>
   </widget>
   <widget type = "label" version = "2.0.0">
-    <name>Label</name>
+    <name>label_2664</name>
     <x>753</x>
     <y>784</y>
     <width>96</width>
@@ -6165,7 +5120,7 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type = "label" version = "2.0.0">
-    <name>Label</name>
+    <name>label_2665</name>
     <x>755</x>
     <y>725</y>
     <width>85</width>
@@ -6185,7 +5140,7 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type = "label" version = "2.0.0">
-    <name>Label</name>
+    <name>label_2666</name>
     <x>62</x>
     <y>462</y>
     <width>93</width>
@@ -6205,7 +5160,7 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type = "polygon" version = "2.0.0">
-    <name>Polygon</name>
+    <name>polygon_233</name>
     <x>37</x>
     <y>500</y>
     <width>20</width>
@@ -6232,7 +5187,7 @@
     </points>
   </widget>
   <widget type = "label" version = "2.0.0">
-    <name>Label</name>
+    <name>label_2667</name>
     <x>14</x>
     <y>518</y>
     <width>168</width>
@@ -6252,36 +5207,11 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
-    <x>31</x>
-    <y>485</y>
-    <width>20</width>
-    <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
-    <line_color>
-        <color name = "black" red = "0" green = "0" blue = "0">
-        </color>
-    </line_color>
-    <points>
-      <point x = "10.0" y = "-10.0">
-      </point>
-      <point x = "10.0" y = "0.0">
-      </point>
-    </points>
-  </widget>
-  <widget type = "polyline" version = "2.0.0">
-    <name>Polyline</name>
+    <name>polyline_597</name>
     <x>21</x>
     <y>488</y>
     <width>10</width>
     <height>10</height>
-    <foreground_color>
-        <color name = "none" red = "0" green = "0" blue = "0">
-        </color>
-    </foreground_color>
     <line_color>
         <color name = "black" red = "0" green = "0" blue = "0">
         </color>
@@ -6294,7 +5224,7 @@
     </points>
   </widget>
   <widget type = "label" version = "2.0.0">
-    <name>Label</name>
+    <name>label_2668</name>
     <x>26</x>
     <y>420</y>
     <width>93</width>
@@ -6314,7 +5244,7 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type = "label" version = "2.0.0">
-    <name>Label</name>
+    <name>label_2669</name>
     <x>29</x>
     <y>377</y>
     <width>93</width>
@@ -6334,7 +5264,7 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type = "label" version = "2.0.0">
-    <name>Label</name>
+    <name>label_2670</name>
     <x>25</x>
     <y>25</y>
     <width>198</width>
@@ -6354,7 +5284,7 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type = "label" version = "2.0.0">
-    <name>Label</name>
+    <name>label_2671</name>
     <x>20</x>
     <y>68</y>
     <width>271</width>
@@ -6374,7 +5304,7 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type = "label" version = "2.0.0">
-    <name>Label</name>
+    <name>label_2672</name>
     <x>747</x>
     <y>690</y>
     <width>86</width>
@@ -6394,7 +5324,7 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type = "label" version = "2.0.0">
-    <name>Label</name>
+    <name>label_2673</name>
     <x>485</x>
     <y>689</y>
     <width>82</width>
@@ -6414,7 +5344,7 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type = "label" version = "2.0.0">
-    <name>Label</name>
+    <name>label_2674</name>
     <x>494</x>
     <y>754</y>
     <width>83</width>
@@ -6434,7 +5364,7 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type = "label" version = "2.0.0">
-    <name>Label</name>
+    <name>label_2675</name>
     <x>755</x>
     <y>754</y>
     <width>87</width>
@@ -6454,7 +5384,7 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type = "label" version = "2.0.0">
-    <name>Label</name>
+    <name>label_2676</name>
     <x>744</x>
     <y>635</y>
     <width>97</width>
@@ -6474,7 +5404,7 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type = "label" version = "2.0.0">
-    <name>Label</name>
+    <name>label_2677</name>
     <x>480</x>
     <y>635</y>
     <width>94</width>
@@ -6492,5 +5422,434 @@
     <transparent>true</transparent>
     <horizontal_alignment>0</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type = "action_button" version = "2.0.0">
+    <name>action_button_420</name>
+    <x>140</x>
+    <y>295</y>
+    <width>50</width>
+    <height>50</height>
+    <text>Loop</text>
+    <transparent>true</transparent>
+    <border_width>3.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "0">
+        </font>
+    </font>
+    <actions>
+      <action type = "open_display">
+        <file>MESON_LOOPS__VALVE_TEMPLATE.bob</file>
+        <target>window</target>
+        <description>Open Display</description>
+        <macros>
+          <Title>ORANGE+REFRIGERATOR+EVX1+LOOP</Title>
+          <DevName>Z:CTVOX1</DevName>
+          <LoopAutoMan>Z:ROX1EN</LoopAutoMan>
+          <InputDevice>Z:CTOT2L</InputDevice>
+          <LoopSetPoint>Z:ROX1SP</LoopSetPoint>
+          <DevSetManual>Z:ROX1ST</DevSetManual>
+          <DevCurrentValue>Z:CTVOX1</DevCurrentValue>
+          <LoopSetMin>Z:ROX1MN</LoopSetMin>
+          <LoopSetMax>Z:ROX1MX</LoopSetMax>
+          <RemLocLoopStatus>Z:ROX1RM</RemLocLoopStatus>
+          <StrokeColor>orange</StrokeColor>
+        </macros>
+      </action>
+    </actions>
+  </widget>
+  <widget type = "action_button" version = "2.0.0">
+    <name>action_button_421</name>
+    <x>140</x>
+    <y>625</y>
+    <width>50</width>
+    <height>50</height>
+    <text>Loop</text>
+    <transparent>true</transparent>
+    <border_width>3.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "0">
+        </font>
+    </font>
+    <actions>
+      <action type = "open_display">
+        <file>MESON_LOOPS__VALVE_TEMPLATE.bob</file>
+        <target>window</target>
+        <description>Open Display</description>
+        <macros>
+          <Title>ORANGE+REFRIGERATOR+EVX2+LOOP</Title>
+          <DevName>Z:CTVOX2</DevName>
+          <LoopAutoMan>Z:ROX2EN</LoopAutoMan>
+          <InputDevice>Z:CTOT2L</InputDevice>
+          <LoopSetPoint>Z:ROX2SP</LoopSetPoint>
+          <DevSetManual>Z:ROX2ST</DevSetManual>
+          <DevCurrentValue>Z:CTVOX2</DevCurrentValue>
+          <LoopSetMin>Z:ROX2MN</LoopSetMin>
+          <LoopSetMax>Z:ROX2MX</LoopSetMax>
+          <RemLocLoopStatus>Z:ROX2RM</RemLocLoopStatus>
+          <StrokeColor>orange</StrokeColor>
+        </macros>
+      </action>
+    </actions>
+  </widget>
+  <widget type = "action_button" version = "2.0.0">
+    <name>action_button_422</name>
+    <x>664</x>
+    <y>593</y>
+    <width>70</width>
+    <height>40</height>
+    <text>DRY LOOP\nCONTROLS</text>
+    <transparent>true</transparent>
+    <border_width>3.0</border_width>
+    <foreground_color>
+        <color name = "orange" red = "255" green = "165" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "16">
+        </font>
+    </font>
+    <actions>
+      <action type = "open_display">
+        <file>MESON_LOOPS__WET_DRY_LOOP.bob</file>
+        <target>window</target>
+        <description>Open Display</description>
+        <macros>
+          <Title>ORANGE+DRY+ENGINE+LOOP</Title>
+          <DevName>Z:CTOSDE</DevName>
+          <LoopAutoMan>Z:RODENA</LoopAutoMan>
+          <InputDevice>Z:CTOTDI</InputDevice>
+          <LoopSetPoint>Z:RODSP</LoopSetPoint>
+          <DevSetManual>Z:RODSTM</DevSetManual>
+          <DevCurrentValue>Z:CTOSDE</DevCurrentValue>
+          <LoopSetMin>Z:RODMIN</LoopSetMin>
+          <LoopSetMax>Z:RODMAX</LoopSetMax>
+          <RemLocLoopStatus>Z:RODREM</RemLocLoopStatus>
+          <StrokeColor>orange</StrokeColor>
+          <FillColor>darkred</FillColor>
+        </macros>
+      </action>
+    </actions>
+  </widget>
+  <widget type = "action_button" version = "2.0.0">
+    <name>action_button_423</name>
+    <x>985</x>
+    <y>420</y>
+    <width>50</width>
+    <height>50</height>
+    <text>Loop</text>
+    <transparent>true</transparent>
+    <border_width>3.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "0">
+        </font>
+    </font>
+    <actions>
+      <action type = "open_display">
+        <file>MESON_LOOPS__VALVE_TEMPLATE.bob</file>
+        <target>window</target>
+        <description>Open Display</description>
+        <macros>
+          <Title>ORANGE+REFRIGERATOR+EVXBY+LOOP</Title>
+          <DevName>Z:CTVOBY</DevName>
+          <LoopAutoMan>Z:ROBYEN</LoopAutoMan>
+          <InputDevice>Z:CTOTWI</InputDevice>
+          <LoopSetPoint>Z:ROBYSP</LoopSetPoint>
+          <DevSetManual>Z:ROBYST</DevSetManual>
+          <DevCurrentValue>Z:CTVOBY</DevCurrentValue>
+          <LoopSetMin>Z:ROBYMN</LoopSetMin>
+          <LoopSetMax>Z:ROBYMX</LoopSetMax>
+          <RemLocLoopStatus>Z:ROBYRM</RemLocLoopStatus>
+          <StrokeColor>orange</StrokeColor>
+        </macros>
+      </action>
+    </actions>
+  </widget>
+  <widget type = "action_button" version = "2.0.0">
+    <name>action_button_424</name>
+    <x>1098</x>
+    <y>230</y>
+    <width>50</width>
+    <height>50</height>
+    <text>Loop</text>
+    <transparent>true</transparent>
+    <border_width>3.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "0">
+        </font>
+    </font>
+    <actions>
+      <action type = "open_display">
+        <file>MESON_LOOPS__VALVE_TEMPLATE.bob</file>
+        <target>window</target>
+        <description>Open Display</description>
+        <macros>
+          <Title>ORANGE+REFRIGERATOR+EVXRET+LOOP</Title>
+          <DevName>Z:CTVORT</DevName>
+          <LoopAutoMan>Z:RORTEN</LoopAutoMan>
+          <InputDevice>Z:CTOTDI</InputDevice>
+          <LoopSetPoint>Z:RORTSP</LoopSetPoint>
+          <DevSetManual>Z:RORTST</DevSetManual>
+          <DevCurrentValue>Z:CTVORT</DevCurrentValue>
+          <LoopSetMin>Z:RORTMN</LoopSetMin>
+          <LoopSetMax>Z:RORTMX</LoopSetMax>
+          <RemLocLoopStatus>Z:RORTRM</RemLocLoopStatus>
+          <StrokeColor>orange</StrokeColor>
+        </macros>
+      </action>
+    </actions>
+  </widget>
+  <widget type = "action_button" version = "2.0.0">
+    <name>action_button_425</name>
+    <x>560</x>
+    <y>570</y>
+    <width>120</width>
+    <height>110</height>
+    <text>Loop</text>
+    <transparent>true</transparent>
+    <border_width>3.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "0">
+        </font>
+    </font>
+    <actions>
+      <action type = "open_display">
+        <file>REFRIGERATORS__WET_DRY_ENGINE.bob</file>
+        <target>window</target>
+        <description>Open Display</description>
+        <macros>
+          <DisplayName>ORANGE+DRY+ENGINE</DisplayName>
+          <InputText>TRDEI</InputText>
+          <InputReadback>Z:CTOTDI</InputReadback>
+          <OutputText>TRDEO</OutputText>
+          <OutputReadback>Z:CTOTDO</OutputReadback>
+          <StsEngineOn>Z:CTODON</StsEngineOn>
+          <StsEngineLoc>Z:RODREM</StsEngineLoc>
+          <StsEngineRdy>Z:RODRDY</StsEngineRdy>
+          <CtrlEngineStart>Z:RODSRT</CtrlEngineStart>
+          <CtrlEngineReset>Z:RODRST</CtrlEngineReset>
+          <CtrlEngineStop>Z:RODSTP</CtrlEngineStop>
+          <SpeedEngine>Z:CTOSDE</SpeedEngine>
+          <StsEstop>Z:RODESP</StsEstop>
+          <StsEbrake>Z:RODEBK</StsEbrake>
+          <StsPowerRev>Z:RODLOP</StsPowerRev>
+          <StsDriveFault>Z:RODDFR</StsDriveFault>
+          <StsContact>Z:RODCCL</StsContact>
+          <StsCoolFan>Z:RODCFT</StsCoolFan>
+          <StsTherm>Z:RODTOV</StsTherm>
+          <FillColor>darkred</FillColor>
+          <EngColor>orange</EngColor>
+        </macros>
+      </action>
+    </actions>
+  </widget>
+  <widget type = "action_button" version = "2.0.0">
+    <name>action_button_426</name>
+    <x>830</x>
+    <y>570</y>
+    <width>120</width>
+    <height>110</height>
+    <text>Loop</text>
+    <transparent>true</transparent>
+    <border_width>3.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "0">
+        </font>
+    </font>
+    <actions>
+      <action type = "open_display">
+        <file>REFRIGERATORS__WET_DRY_ENGINE.bob</file>
+        <target>window</target>
+        <description>Open Display</description>
+        <macros>
+          <DisplayName>ORANGE+WET+ENGINE</DisplayName>
+          <InputText>TRDEI</InputText>
+          <InputReadback>Z:CTOTWI</InputReadback>
+          <OutputText>TRDEO</OutputText>
+          <OutputReadback>Z:CTOTWO</OutputReadback>
+          <StsEngineOn>Z:CTOWON</StsEngineOn>
+          <StsEngineLoc>Z:ROWREM</StsEngineLoc>
+          <StsEngineRdy>Z:ROWRDY</StsEngineRdy>
+          <CtrlEngineStart>Z:ROWSRT</CtrlEngineStart>
+          <CtrlEngineReset>Z:ROWRST</CtrlEngineReset>
+          <CtrlEngineStop>Z:ROWSTP</CtrlEngineStop>
+          <SpeedEngine>Z:CTOSWE</SpeedEngine>
+          <StsEstop>Z:ROWESP</StsEstop>
+          <StsEbrake>Z:ROWEBK</StsEbrake>
+          <StsPowerRev>Z:ROWLOP</StsPowerRev>
+          <StsDriveFault>Z:ROWDFR</StsDriveFault>
+          <StsContact>Z:ROWCCL</StsContact>
+          <StsCoolFan>Z:ROWCFT</StsCoolFan>
+          <StsTherm>Z:ROWTOV</StsTherm>
+          <FillColor>blue</FillColor>
+          <EngColor>orange</EngColor>
+        </macros>
+      </action>
+    </actions>
+  </widget>
+  <widget type = "action_button" version = "2.0.0">
+    <name>action_button_427</name>
+    <x>750</x>
+    <y>593</y>
+    <width>70</width>
+    <height>40</height>
+    <text>WET LOOP\nCONTROLS</text>
+    <transparent>true</transparent>
+    <border_width>3.0</border_width>
+    <foreground_color>
+        <color name = "orange" red = "255" green = "165" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "16">
+        </font>
+    </font>
+    <actions>
+      <action type = "open_display">
+        <file>MESON_LOOPS__WET_DRY_LOOP.bob</file>
+        <target>window</target>
+        <description>Open Display</description>
+        <macros>
+          <Title>ORANGE+WET+ENGINE+LOOP</Title>
+          <DevName>Z:CTOSWE</DevName>
+          <LoopAutoMan>Z:ROWENA</LoopAutoMan>
+          <InputDevice>Z:CTOPB1</InputDevice>
+          <LoopSetPoint>Z:ROWSP</LoopSetPoint>
+          <DevSetManual>Z:ROWSTM</DevSetManual>
+          <DevCurrentValue>Z:CTOSWE</DevCurrentValue>
+          <LoopSetMin>Z:ROWMIN</LoopSetMin>
+          <LoopSetMax>Z:ROWMAX</LoopSetMax>
+          <RemLocLoopStatus>Z:ROWREM</RemLocLoopStatus>
+          <StrokeColor>orange</StrokeColor>
+          <FillColor>blue</FillColor>
+        </macros>
+      </action>
+    </actions>
+  </widget>
+  <widget type = "action_button" version = "2.0.0">
+    <name>action_button_428</name>
+    <x>935</x>
+    <y>620</y>
+    <width>50</width>
+    <height>50</height>
+    <text>Loop</text>
+    <transparent>true</transparent>
+    <border_width>3.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "0">
+        </font>
+    </font>
+    <actions>
+      <action type = "open_display">
+        <file>MESON_LOOPS__VALVE_TEMPLATE.bob</file>
+        <target>window</target>
+        <description>Open Display</description>
+        <macros>
+          <Title>ORANGE+REFRIGERATOR+EVXJT+LOOP</Title>
+          <DevName>Z:CTVOJT</DevName>
+          <LoopAutoMan>Z:ROJTEN</LoopAutoMan>
+          <InputDevice>Z:CTOPB1</InputDevice>
+          <LoopSetPoint>Z:ROJTSP</LoopSetPoint>
+          <DevSetManual>Z:ROJTST</DevSetManual>
+          <DevCurrentValue>Z:CTVOJT</DevCurrentValue>
+          <LoopSetMin>Z:ROJTMN</LoopSetMin>
+          <LoopSetMax>Z:ROJTMX</LoopSetMax>
+          <RemLocLoopStatus>Z:ROJTRM</RemLocLoopStatus>
+          <StrokeColor>orange</StrokeColor>
+        </macros>
+      </action>
+    </actions>
+  </widget>
+  <widget type = "action_button" version = "2.0.0">
+    <name>action_button_429</name>
+    <x>190</x>
+    <y>200</y>
+    <width>50</width>
+    <height>50</height>
+    <text>Loop</text>
+    <transparent>true</transparent>
+    <border_width>3.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "0">
+        </font>
+    </font>
+    <actions>
+      <action type = "open_display">
+        <file>MESON_LOOPS__VALVE_TEMPLATE.bob</file>
+        <target>window</target>
+        <description>Open Display</description>
+        <macros>
+          <Title>ORANGE+REFRIGERATOR+EVXLN+LOOP</Title>
+          <DevName>Z:CTVOLN</DevName>
+          <LoopAutoMan>Z:ROLNEN</LoopAutoMan>
+          <InputDevice>Z:CTOLXN</InputDevice>
+          <LoopSetPoint>Z:ROLNSP</LoopSetPoint>
+          <DevSetManual>Z:ROLNST</DevSetManual>
+          <DevCurrentValue>Z:CTVOLN</DevCurrentValue>
+          <LoopSetMin>Z:ROLNMN</LoopSetMin>
+          <LoopSetMax>Z:ROLNMX</LoopSetMax>
+          <RemLocLoopStatus>Z:ROLNRM</RemLocLoopStatus>
+          <StrokeColor>orange</StrokeColor>
+        </macros>
+      </action>
+    </actions>
+  </widget>
+  <widget type = "action_button" version = "2.0.0">
+    <name>action_button_430</name>
+    <x>59</x>
+    <y>474</y>
+    <width>46</width>
+    <height>44</height>
+    <text></text>
+    <transparent>true</transparent>
+    <border_width>3.0</border_width>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "12">
+        </font>
+    </font>
+    <actions>
+      <action type = "open_display">
+        <file>MESON_LOOPS__VALVE_CRASH_DIGITAL.bob</file>
+        <target>window</target>
+        <description>Open Display</description>
+        <macros>
+          <Title>MESON+ORANGE+CTOVHP+CRASH+CONTROL</Title>
+          <DevName>ORANGE+Z:CTOVHP</DevName>
+          <ValvePosOpen>Z:ROXHPO</ValvePosOpen>
+          <ValvePosClosed>Z:ROXHPC</ValvePosClosed>
+          <ValveSet>Z:CTOVHP</ValveSet>
+          <ValveCrash>Z:CTOHPC</ValveCrash>
+          <CrashText>ORANGE+HEAT-X+CRASHED</CrashText>
+          <UnCrashText>ORANGE+HEAT-X+UNCRASHED</UnCrashText>
+          <background>orange</background>
+          <OpenStatus>Z:CTOVHP+Status+Open</OpenStatus>
+          <ClosedStatus>Z:CTOVHP+Status+Closed</ClosedStatus>
+        </macros>
+      </action>
+    </actions>
+  </widget>
+  <widget type = "action_button" version = "2.0.0">
+    <name>action_button_431</name>
+    <x>1151</x>
+    <y>40</y>
+    <width>80</width>
+    <height>30</height>
+    <text>MAIN MENU</text>
+    <transparent>true</transparent>
+    <border_width>$(3.0)</border_width>
+    <foreground_color>
+        <color name = "$(midnightblue)" red = "0" green = "0" blue = "0">
+        </color>
+    </foreground_color>
+    <font>
+        <font family = "Liberation Sans" style = "BOLD" size = "16">
+        </font>
+    </font>
+    <actions>
+      <action type = "open_display">
+        <file>Main_Menu.bob</file>
+        <target>window</target>
+        <description>Open Display</description>
+      </action>
+    </actions>
   </widget>
 </display>

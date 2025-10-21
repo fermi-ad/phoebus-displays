@@ -2,10 +2,14 @@
 <!--Saved on 2025-10-06 14:12:04 by epics-->
 <display version="2.0.0">
   <name>Cryo storage and recovery</name>
+  <macros>
+    <complex>PIP2CP</complex>
+    <sys>$(complex):RCVRY_CRYO_</sys>
+  </macros>
   <width>1980</width>
   <height>960</height>
   <background_color>
-    <color red="217" green="217" blue="217">
+    <color name="cryo.PrimaryBackground" red="217" green="217" blue="217">
     </color>
   </background_color>
   <grid_visible>false</grid_visible>
@@ -314,7 +318,7 @@
       </point>
     </points>
     <line_color>
-      <color red="170" green="0" blue="255">
+      <color name="cryo.Helium.Warm" red="170" green="0" blue="255">
       </color>
     </line_color>
   </widget>
@@ -422,7 +426,7 @@
       </color>
     </foreground_color>
     <background_color>
-      <color red="0" green="149" blue="255">
+      <color name="fgs.NAL-Blue" red="0" green="76" blue="151">
       </color>
     </background_color>
     <transparent>false</transparent>
@@ -1322,7 +1326,7 @@ Distribution</text>
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display_139</name>
     <macros>
-      <dev>EV1351</dev>
+      <vlv>EV1351</vlv>
     </macros>
     <file>../Common/cryo-embedded-displays/ValveStatusUp.bob</file>
     <x>887</x>
@@ -1333,7 +1337,7 @@ Distribution</text>
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display_140</name>
     <macros>
-      <dev>PV607H</dev>
+      <vlv>EV1341</vlv>
     </macros>
     <file>../Common/cryo-embedded-displays/ValveStatusUp.bob</file>
     <x>1050</x>
@@ -1344,7 +1348,7 @@ Distribution</text>
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display_141</name>
     <macros>
-      <dev>PV607H</dev>
+      <vlv>EV1331</vlv>
     </macros>
     <file>../Common/cryo-embedded-displays/ValveStatusUp.bob</file>
     <x>1210</x>
@@ -1355,7 +1359,7 @@ Distribution</text>
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display_142</name>
     <macros>
-      <dev>PV607H</dev>
+      <vlv>EV1321</vlv>
     </macros>
     <file>../Common/cryo-embedded-displays/ValveStatusUp.bob</file>
     <x>1380</x>
@@ -1366,7 +1370,7 @@ Distribution</text>
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display_144</name>
     <macros>
-      <dev>PV607H</dev>
+      <vlv>EV1311</vlv>
     </macros>
     <file>../Common/cryo-embedded-displays/ValveStatusUp.bob</file>
     <x>1541</x>
@@ -1399,7 +1403,7 @@ Distribution</text>
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display_146</name>
     <macros>
-      <dev>PVXXX</dev>
+      <vlv>EV1353</vlv>
     </macros>
     <file>../Common/cryo-embedded-displays/ValveStatusUp.bob</file>
     <x>855</x>
@@ -1410,7 +1414,7 @@ Distribution</text>
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display_143</name>
     <macros>
-      <dev>PV607H</dev>
+      <vlv>EV1343</vlv>
     </macros>
     <file>../Common/cryo-embedded-displays/ValveStatusUp.bob</file>
     <x>1020</x>
@@ -1421,7 +1425,7 @@ Distribution</text>
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display_147</name>
     <macros>
-      <dev>PV607H</dev>
+      <vlv>EV1333</vlv>
     </macros>
     <file>../Common/cryo-embedded-displays/ValveStatusUp.bob</file>
     <x>1185</x>
@@ -1432,7 +1436,7 @@ Distribution</text>
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display_148</name>
     <macros>
-      <dev>PV607H</dev>
+      <vlv>EV1323</vlv>
     </macros>
     <file>../Common/cryo-embedded-displays/ValveStatusDown.bob</file>
     <x>1350</x>
@@ -1443,7 +1447,7 @@ Distribution</text>
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display_149</name>
     <macros>
-      <dev>PV607H</dev>
+      <vlv>EV1313</vlv>
     </macros>
     <file>../Common/cryo-embedded-displays/ValveStatusDown.bob</file>
     <x>1510</x>
@@ -1454,7 +1458,7 @@ Distribution</text>
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display_150</name>
     <macros>
-      <dev>PV607H</dev>
+      <vlv>EV1303</vlv>
     </macros>
     <file>../Common/cryo-embedded-displays/ValveStatusDown.bob</file>
     <x>1680</x>
@@ -1475,19 +1479,20 @@ Distribution</text>
     <height>70</height>
     <initial_index>1</initial_index>
     <rotation>90.0</rotation>
+    <actions>
+      <action type="open_display">
+        <description>Open Display</description>
+        <file>ValveControlSimple.bob</file>
+        <macros>
+          <vlv>EV1331</vlv>
+        </macros>
+        <target>tab</target>
+      </action>
+    </actions>
+    <run_actions_on_mouse_click>true</run_actions_on_mouse_click>
     <tooltip>$(pv_name)
 $(pv_value)
 $(actions)</tooltip>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Action Button_10</name>
-    <text></text>
-    <x>1275</x>
-    <y>246</y>
-    <width>31</width>
-    <height>37</height>
-    <transparent>true</transparent>
-    <tooltip>$(actions)</tooltip>
   </widget>
   <widget type="symbol" version="2.0.0">
     <name>Symbol_5</name>
@@ -1504,16 +1509,6 @@ $(actions)</tooltip>
     <tooltip>$(pv_name)
 $(pv_value)
 $(actions)</tooltip>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Action Button_14</name>
-    <text></text>
-    <x>1446</x>
-    <y>246</y>
-    <width>31</width>
-    <height>37</height>
-    <transparent>true</transparent>
-    <tooltip>$(actions)</tooltip>
   </widget>
   <widget type="symbol" version="2.0.0">
     <name>Symbol_6</name>
@@ -1532,16 +1527,6 @@ $(actions)</tooltip>
 $(pv_value)
 $(actions)</tooltip>
   </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Action Button_15</name>
-    <text></text>
-    <x>1601</x>
-    <y>246</y>
-    <width>31</width>
-    <height>37</height>
-    <transparent>true</transparent>
-    <tooltip>$(actions)</tooltip>
-  </widget>
   <widget type="symbol" version="2.0.0">
     <name>Symbol_13</name>
     <symbols>
@@ -1559,16 +1544,6 @@ $(actions)</tooltip>
 $(pv_value)
 $(actions)</tooltip>
   </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Action Button_19</name>
-    <text></text>
-    <x>1771</x>
-    <y>246</y>
-    <width>31</width>
-    <height>37</height>
-    <transparent>true</transparent>
-    <tooltip>$(actions)</tooltip>
-  </widget>
   <widget type="symbol" version="2.0.0">
     <name>Symbol_14</name>
     <symbols>
@@ -1582,19 +1557,20 @@ $(actions)</tooltip>
     <height>70</height>
     <initial_index>1</initial_index>
     <rotation>90.0</rotation>
+    <actions>
+      <action type="open_display">
+        <description>Open Display</description>
+        <file>ValveControlSimple.bob</file>
+        <macros>
+          <valve>PV1424</valve>
+        </macros>
+        <target>tab</target>
+      </action>
+    </actions>
+    <run_actions_on_mouse_click>true</run_actions_on_mouse_click>
     <tooltip>$(pv_name)
 $(pv_value)
 $(actions)</tooltip>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Action Button_20</name>
-    <text></text>
-    <x>913</x>
-    <y>614</y>
-    <width>31</width>
-    <height>37</height>
-    <transparent>true</transparent>
-    <tooltip>$(actions)</tooltip>
   </widget>
   <widget type="symbol" version="2.0.0">
     <name>Symbol_15</name>
@@ -1613,16 +1589,6 @@ $(actions)</tooltip>
 $(pv_value)
 $(actions)</tooltip>
   </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Action Button_21</name>
-    <text></text>
-    <x>1075</x>
-    <y>614</y>
-    <width>31</width>
-    <height>37</height>
-    <transparent>true</transparent>
-    <tooltip>$(actions)</tooltip>
-  </widget>
   <widget type="symbol" version="2.0.0">
     <name>Symbol_16</name>
     <symbols>
@@ -1640,16 +1606,6 @@ $(actions)</tooltip>
 $(pv_value)
 $(actions)</tooltip>
   </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Action Button_22</name>
-    <text></text>
-    <x>1242</x>
-    <y>614</y>
-    <width>31</width>
-    <height>37</height>
-    <transparent>true</transparent>
-    <tooltip>$(actions)</tooltip>
-  </widget>
   <widget type="symbol" version="2.0.0">
     <name>Symbol_17</name>
     <symbols>
@@ -1665,16 +1621,6 @@ $(actions)</tooltip>
     <tooltip>$(pv_name)
 $(pv_value)
 $(actions)</tooltip>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Action Button_23</name>
-    <text></text>
-    <x>1403</x>
-    <y>614</y>
-    <width>31</width>
-    <height>37</height>
-    <transparent>true</transparent>
-    <tooltip>$(actions)</tooltip>
   </widget>
   <widget type="symbol" version="2.0.0">
     <name>Symbol_18</name>
@@ -1692,16 +1638,6 @@ $(actions)</tooltip>
 $(pv_value)
 $(actions)</tooltip>
   </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Action Button_24</name>
-    <text></text>
-    <x>1578</x>
-    <y>615</y>
-    <width>31</width>
-    <height>37</height>
-    <transparent>true</transparent>
-    <tooltip>$(actions)</tooltip>
-  </widget>
   <widget type="symbol" version="2.0.0">
     <name>Symbol_19</name>
     <symbols>
@@ -1717,16 +1653,6 @@ $(actions)</tooltip>
     <tooltip>$(pv_name)
 $(pv_value)
 $(actions)</tooltip>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Action Button_25</name>
-    <text></text>
-    <x>1743</x>
-    <y>615</y>
-    <width>31</width>
-    <height>37</height>
-    <transparent>true</transparent>
-    <tooltip>$(actions)</tooltip>
   </widget>
   <widget type="group" version="3.0.0">
     <name>Group</name>
@@ -2185,6 +2111,16 @@ $(actions)</tooltip>
     <y>128</y>
     <width>58</width>
     <height>70</height>
+    <actions>
+      <action type="open_display">
+        <description>Open Display</description>
+        <file>ValveControlPIDSimple.bob</file>
+        <macros>
+          <valve>1426</valve>
+        </macros>
+        <target>tab</target>
+      </action>
+    </actions>
     <tooltip>$(pv_name)
 $(pv_value)
 $(actions)</tooltip>
@@ -2574,6 +2510,13 @@ $(actions)</tooltip>
     <width>58</width>
     <height>70</height>
     <rotation>90.0</rotation>
+    <actions>
+      <action type="open_display">
+        <description>Open Display</description>
+        <file>ValveControlSimple.bob</file>
+        <target>tab</target>
+      </action>
+    </actions>
     <tooltip>$(pv_name)
 $(pv_value)
 $(actions)</tooltip>
@@ -3657,7 +3600,7 @@ $(actions)</tooltip>
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display_156</name>
     <macros>
-      <dev>PVXXX</dev>
+      <vlv>PVXXX</vlv>
     </macros>
     <file>../Common/cryo-embedded-displays/ValveStatusUp.bob</file>
     <x>921</x>
@@ -3729,17 +3672,9 @@ $(actions)</tooltip>
     <width>154</width>
     <height>41</height>
     <date_visible>true</date_visible>
+    <title>Current </title>
+    <title_visible>true</title_visible>
     <lcd_crystal_enabled>true</lcd_crystal_enabled>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Action Button_26</name>
-    <text></text>
-    <x>724</x>
-    <y>716</y>
-    <width>31</width>
-    <height>37</height>
-    <transparent>true</transparent>
-    <tooltip>$(actions)</tooltip>
   </widget>
   <widget type="action_button" version="3.0.0">
     <name>Action Button_3</name>
@@ -3759,65 +3694,9 @@ Distribution</text>
     </background_color>
     <tooltip>$(actions)</tooltip>
   </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Action Button_27</name>
-    <actions>
-      <action type="open_display">
-        <description>Open Display</description>
-        <file>ControlValvePID.bob</file>
-        <target>tab</target>
-      </action>
-    </actions>
-    <text></text>
-    <x>339</x>
-    <y>717</y>
-    <width>60</width>
-    <height>36</height>
-    <transparent>true</transparent>
-    <tooltip>$(actions)</tooltip>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Action Button_28</name>
-    <actions>
-      <action type="open_display">
-        <description>Open Display</description>
-        <file>ValveControlOnOffSimple.bob</file>
-        <macros>
-          <valve>PV1423</valve>
-        </macros>
-        <target>tab</target>
-      </action>
-    </actions>
-    <text></text>
-    <x>336</x>
-    <y>604</y>
-    <width>31</width>
-    <height>26</height>
-    <transparent>true</transparent>
-    <tooltip>$(actions)</tooltip>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Action Button_30</name>
-    <actions>
-      <action type="open_display">
-        <description>Open Display</description>
-        <file>ValveControlOnOffSimple.bob</file>
-        <macros>
-          <valve>PV1426</valve>
-        </macros>
-        <target>tab</target>
-      </action>
-    </actions>
-    <text></text>
-    <x>371</x>
-    <y>151</y>
-    <width>37</width>
-    <height>24</height>
-    <transparent>true</transparent>
-    <tooltip>$(actions)</tooltip>
-  </widget>
   <widget type="symbol" version="2.0.0">
     <name>Symbol_7</name>
+    <pv_name>$(sys)EV1341:Status</pv_name>
     <symbols>
       <symbol>../Images/Cryo/Controlvalvegray.svg</symbol>
       <symbol>../Images/Cryo/Controlvalvegreen.svg</symbol>
@@ -3829,6 +3708,17 @@ Distribution</text>
     <height>70</height>
     <initial_index>2</initial_index>
     <rotation>90.0</rotation>
+    <actions>
+      <action type="open_display">
+        <description>Open Display</description>
+        <file>ValveControlSimple.bob</file>
+        <macros>
+          <vlv>EV1341</vlv>
+        </macros>
+        <target>tab</target>
+      </action>
+    </actions>
+    <run_actions_on_mouse_click>true</run_actions_on_mouse_click>
     <tooltip>$(pv_name)
 $(pv_value)
 $(actions)</tooltip>
@@ -3958,7 +3848,7 @@ $(actions)</tooltip>
     <actions>
       <action type="open_display">
         <description>Open Display</description>
-        <file>MYCOM.bob</file>
+        <file>MYCOMmain.bob</file>
         <target>tab</target>
       </action>
     </actions>
@@ -3981,6 +3871,7 @@ $(actions)</tooltip>
   </widget>
   <widget type="symbol" version="2.0.0">
     <name>Symbol_8</name>
+    <pv_name>$(sys)EV1351:Status</pv_name>
     <symbols>
       <symbol>../Images/Cryo/Controlvalvegray.svg</symbol>
       <symbol>../Images/Cryo/Controlvalvegreen.svg</symbol>
@@ -3992,29 +3883,20 @@ $(actions)</tooltip>
     <height>70</height>
     <initial_index>2</initial_index>
     <rotation>90.0</rotation>
-    <tooltip>$(pv_name)
-$(pv_value)
-$(actions)</tooltip>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Action Button_31</name>
     <actions>
       <action type="open_display">
         <description>Open Display</description>
-        <file>OnOffValve.bob</file>
+        <file>ValveControlSimple.bob</file>
         <macros>
-          <valve>PV1423</valve>
+          <vlv>EV1351</vlv>
         </macros>
         <target>tab</target>
       </action>
     </actions>
-    <text></text>
-    <x>331</x>
-    <y>491</y>
-    <width>45</width>
-    <height>26</height>
-    <transparent>true</transparent>
-    <tooltip>$(actions)</tooltip>
+    <run_actions_on_mouse_click>true</run_actions_on_mouse_click>
+    <tooltip>$(pv_name)
+$(pv_value)
+$(actions)</tooltip>
   </widget>
   <widget type="group" version="3.0.0">
     <name>Group</name>
@@ -4273,46 +4155,6 @@ $(actions)</tooltip>
     <y>760</y>
     <width>65</width>
     <height>35</height>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Action Button_32</name>
-    <actions>
-      <action type="open_display">
-        <description>Open Display</description>
-        <file>ValveControlSimple.bob</file>
-        <macros>
-          <valve>EV1351</valve>
-        </macros>
-        <target>tab</target>
-      </action>
-    </actions>
-    <text></text>
-    <x>949</x>
-    <y>246</y>
-    <width>38</width>
-    <height>37</height>
-    <transparent>true</transparent>
-    <tooltip>$(actions)</tooltip>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Action Button_33</name>
-    <actions>
-      <action type="open_display">
-        <description>Open Display</description>
-        <file>ValveControlPIDSimple.bob</file>
-        <macros>
-          <valve>PV1426</valve>
-        </macros>
-        <target>tab</target>
-      </action>
-    </actions>
-    <text></text>
-    <x>721</x>
-    <y>134</y>
-    <width>39</width>
-    <height>38</height>
-    <transparent>true</transparent>
-    <tooltip>$(actions)</tooltip>
   </widget>
   <widget type="action_button" version="3.0.0">
     <name>Action Button_34</name>
