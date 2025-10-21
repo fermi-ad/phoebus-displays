@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <databrowser>
-  <title>pHB650 Heat Load Studies</title>
+  <title>pHB650 LTTS Heat Load Studies</title>
   <show_legend>true</show_legend>
   <show_toolbar>true</show_toolbar>
   <grid>true</grid>
   <update_period>3.0</update_period>
   <scroll_step>1</scroll_step>
   <scroll>false</scroll>
-  <start>2024-05-22 09:00:00.000</start>
-  <end>2024-05-22 11:06:45.541</end>
+  <start>2024-06-04 09:00:00.000</start>
+  <end>2024-06-05 08:00:00.000</end>
   <archive_rescale>NONE</archive_rescale>
   <foreground>
     <red>242</red>
@@ -36,8 +36,8 @@
         <green>255</green>
         <blue>255</blue>
       </color>
-      <min>250.0</min>
-      <max>350.0</max>
+      <min>300.0</min>
+      <max>400.0</max>
       <grid>false</grid>
       <autoscale>false</autoscale>
       <log_scale>false</log_scale>
@@ -53,10 +53,10 @@
         <green>127</green>
         <blue>255</blue>
       </color>
-      <min>1.02425</min>
-      <max>1.67875</max>
+      <min>1.0</min>
+      <max>3.5</max>
       <grid>false</grid>
-      <autoscale>true</autoscale>
+      <autoscale>false</autoscale>
       <log_scale>false</log_scale>
     </axis>
     <axis>
@@ -70,8 +70,8 @@
         <green>255</green>
         <blue>255</blue>
       </color>
-      <min>5.0</min>
-      <max>10.0</max>
+      <min>4.0</min>
+      <max>8.0</max>
       <grid>false</grid>
       <autoscale>false</autoscale>
       <log_scale>false</log_scale>
@@ -87,10 +87,10 @@
         <green>255</green>
         <blue>255</blue>
       </color>
-      <min>-1053.0</min>
-      <max>113.0</max>
+      <min>0.0</min>
+      <max>120.0</max>
       <grid>false</grid>
-      <autoscale>true</autoscale>
+      <autoscale>false</autoscale>
       <log_scale>false</log_scale>
     </axis>
     <axis>
@@ -105,7 +105,7 @@
         <blue>0</blue>
       </color>
       <min>0.0</min>
-      <max>265.0</max>
+      <max>60.0</max>
       <grid>true</grid>
       <autoscale>false</autoscale>
       <log_scale>false</log_scale>
