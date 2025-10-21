@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <databrowser>
-  <title>pHB650 Heat Load Studies</title>
+  <title>pHB650 HTTS Heat Load Studies</title>
   <show_legend>true</show_legend>
   <show_toolbar>true</show_toolbar>
   <grid>true</grid>
   <update_period>3.0</update_period>
   <scroll_step>1</scroll_step>
   <scroll>false</scroll>
-  <start>2024-05-21 09:55:00.000</start>
-  <end>2024-05-21 10:56:24.266</end>
+  <start>2024-06-03 09:00:00.000</start>
+  <end>2024-06-04 07:00:00.000</end>
   <archive_rescale>NONE</archive_rescale>
   <foreground>
     <red>242</red>
@@ -37,7 +37,7 @@
         <blue>255</blue>
       </color>
       <min>1380.0</min>
-      <max>1400.0</max>
+      <max>1450.0</max>
       <grid>false</grid>
       <autoscale>false</autoscale>
       <log_scale>false</log_scale>
@@ -53,8 +53,8 @@
         <green>127</green>
         <blue>255</blue>
       </color>
-      <min>4.0</min>
-      <max>5.0</max>
+      <min>1.0</min>
+      <max>3.5</max>
       <grid>false</grid>
       <autoscale>false</autoscale>
       <log_scale>false</log_scale>
@@ -71,7 +71,7 @@
         <blue>255</blue>
       </color>
       <min>30.0</min>
-      <max>50.0</max>
+      <max>100.0</max>
       <grid>false</grid>
       <autoscale>false</autoscale>
       <log_scale>false</log_scale>
@@ -87,8 +87,8 @@
         <green>255</green>
         <blue>255</blue>
       </color>
-      <min>185.0</min>
-      <max>260.0</max>
+      <min>200.0</min>
+      <max>400.0</max>
       <grid>false</grid>
       <autoscale>false</autoscale>
       <log_scale>false</log_scale>
@@ -104,8 +104,8 @@
         <green>0</green>
         <blue>0</blue>
       </color>
-      <min>265.0</min>
-      <max>300.0</max>
+      <min>0.0</min>
+      <max>350.0</max>
       <grid>true</grid>
       <autoscale>false</autoscale>
       <log_scale>false</log_scale>
