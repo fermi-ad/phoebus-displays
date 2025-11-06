@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2025-08-20 14:01:10 by kacpe-->
+<display version="2.0.0">
+  <name>$(CHANNEL_NAME)</name>
+  <width>720</width>
+  <height>790</height>
+  <widget type="rectangle" version="2.0.0">
+    <name>Titlebar</name>
+    <width>720</width>
+    <height>50</height>
+    <line_width>0</line_width>
+    <background_color>
+      <color name="PRIMARY-HEADER-BACKGROUND" red="151" green="188" blue="202">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Title</name>
+    <text>RFPI</text>
+    <x>20</x>
+    <width>160</width>
+    <height>50</height>
+    <font>
+      <font name="Header 1" family="Source Sans Pro" style="BOLD_ITALIC" size="36.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="HEADER-TEXT" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Subtitle</name>
+    <text>$(CHANNEL_NAME)</text>
+    <x>370</x>
+    <y>20</y>
+    <width>330</width>
+    <height>30</height>
+    <font>
+      <font name="Header 2" family="Source Sans Pro" style="BOLD_ITALIC" size="21.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Status_group</name>
+    <x>20</x>
+    <y>70</y>
+    <width>680</width>
+    <height>100</height>
+    <style>3</style>
+    <background_color>
+      <color name="BACKGROUND" red="220" green="225" blue="221">
+      </color>
+    </background_color>
+    <widget type="rectangle" version="2.0.0">
+      <name>Status_rectangle</name>
+      <width>680</width>
+      <height>100</height>
+      <line_width>2</line_width>
+      <line_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="GROUP-BACKGROUND" red="200" green="205" blue="201">
+        </color>
+      </background_color>
+      <corner_width>10</corner_width>
+      <corner_height>10</corner_height>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Status_title</name>
+      <text>Status</text>
+      <width>680</width>
+      <height>40</height>
+      <font>
+        <font name="Header 2" family="Source Sans Pro" style="BOLD_ITALIC" size="21.0">
+        </font>
+      </font>
+      <background_color>
+        <color name="RED-BORDER" red="150" green="8" blue="16">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Reset_button</name>
+      <actions execute_as_one="true">
+        <action type="write_pv">
+          <pv_name>$(acc):$(sys)_$(group)_$(num):Rst_s</pv_name>
+          <value>1</value>
+          <description>WritePV</description>
+        </action>
+      </actions>
+      <text>Reset</text>
+      <x>60</x>
+      <y>50</y>
+      <width>80</width>
+      <tooltip>$(actions)</tooltip>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>Status_LED</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):Status_r</pv_name>
+      <x>20</x>
+      <y>50</y>
+      <width>30</width>
+      <height>30</height>
+      <states>
+        <state>
+          <value>0</value>
+          <label></label>
+          <color>
+            <color name="On" red="70" green="255" blue="70">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>1</value>
+          <label></label>
+          <color>
+            <color name="MAJOR" red="252" green="13" blue="27">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>2</value>
+          <label></label>
+          <color>
+            <color name="WARNING" red="252" green="242" blue="17">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label></fallback_label>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LatchedStatus_LED</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):LatchStatus_r</pv_name>
+      <x>340</x>
+      <y>50</y>
+      <width>30</width>
+      <height>30</height>
+      <off_color>
+        <color name="ON" red="70" green="255" blue="70">
+        </color>
+      </off_color>
+      <on_color>
+        <color name="MAJOR" red="252" green="13" blue="27">
+        </color>
+      </on_color>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>CurrentStatus_LED</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):CurrentStatus_r</pv_name>
+      <x>230</x>
+      <y>50</y>
+      <width>30</width>
+      <height>30</height>
+      <off_color>
+        <color name="ON" red="70" green="255" blue="70">
+        </color>
+      </off_color>
+      <on_color>
+        <color name="MAJOR" red="252" green="13" blue="27">
+        </color>
+      </on_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>CurrentStatus_label</name>
+      <text>Current:</text>
+      <x>160</x>
+      <y>50</y>
+      <width>60</width>
+      <height>30</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>LatchedStatus_label</name>
+      <text>Latched:</text>
+      <x>270</x>
+      <y>50</y>
+      <width>60</width>
+      <height>30</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Timestamp_label</name>
+      <text>Timestamp:</text>
+      <x>380</x>
+      <y>50</y>
+      <width>90</width>
+      <height>30</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Plot_group</name>
+    <x>20</x>
+    <y>310</y>
+    <width>680</width>
+    <height>410</height>
+    <style>3</style>
+    <background_color>
+      <color name="BACKGROUND" red="220" green="225" blue="221">
+      </color>
+    </background_color>
+    <widget type="rectangle" version="2.0.0">
+      <name>Plot_rectangle</name>
+      <width>680</width>
+      <height>410</height>
+      <line_width>2</line_width>
+      <line_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="BACKGROUND" red="220" green="225" blue="221">
+        </color>
+      </background_color>
+      <corner_width>10</corner_width>
+      <corner_height>10</corner_height>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Plot_title</name>
+      <text>Plot</text>
+      <width>680</width>
+      <height>40</height>
+      <font>
+        <font name="Header 2" family="Source Sans Pro" style="BOLD_ITALIC" size="21.0">
+        </font>
+      </font>
+      <background_color>
+        <color name="RED-BORDER" red="150" green="8" blue="16">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="xyplot" version="3.0.0">
+      <name>X/Y Plot</name>
+      <x>20</x>
+      <y>40</y>
+      <width>640</width>
+      <height>360</height>
+      <x_axis>
+        <title>X</title>
+        <autoscale>true</autoscale>
+        <log_scale>false</log_scale>
+        <minimum>0.0</minimum>
+        <maximum>100.0</maximum>
+        <show_grid>false</show_grid>
+        <title_font>
+          <font name="Default Bold" family="Source Sans Pro" style="BOLD" size="16.0">
+          </font>
+        </title_font>
+        <scale_font>
+          <font name="Default" family="Source Sans Pro" style="REGULAR" size="16.0">
+          </font>
+        </scale_font>
+        <visible>true</visible>
+      </x_axis>
+      <y_axes>
+        <y_axis>
+          <title>Y</title>
+          <autoscale>true</autoscale>
+          <log_scale>false</log_scale>
+          <minimum>0.0</minimum>
+          <maximum>100.0</maximum>
+          <show_grid>false</show_grid>
+          <title_font>
+            <font name="Default Bold" family="Source Sans Pro" style="BOLD" size="16.0">
+            </font>
+          </title_font>
+          <scale_font>
+            <font name="Default" family="Source Sans Pro" style="REGULAR" size="16.0">
+            </font>
+          </scale_font>
+          <on_right>false</on_right>
+          <visible>true</visible>
+          <color>
+            <color name="Text" red="25" green="25" blue="25">
+            </color>
+          </color>
+        </y_axis>
+      </y_axes>
+      <traces>
+        <trace>
+          <name>Max</name>
+          <x_pv></x_pv>
+          <y_pv>$(acc):$(sys)_$(group)_$(num):DMAdataMax</y_pv>
+          <err_pv></err_pv>
+          <axis>0</axis>
+          <trace_type>1</trace_type>
+          <color>
+            <color red="0" green="0" blue="255">
+            </color>
+          </color>
+          <line_width>1</line_width>
+          <line_style>0</line_style>
+          <point_type>0</point_type>
+          <point_size>10</point_size>
+          <visible>true</visible>
+        </trace>
+        <trace>
+          <name>Avg</name>
+          <x_pv></x_pv>
+          <y_pv>$(acc):$(sys)_$(group)_$(num):DMAdataAvg</y_pv>
+          <err_pv></err_pv>
+          <axis>0</axis>
+          <trace_type>1</trace_type>
+          <color>
+            <color name="DISCONNECTED" red="105" green="77" blue="164">
+            </color>
+          </color>
+          <line_width>1</line_width>
+          <line_style>0</line_style>
+          <point_type>0</point_type>
+          <point_size>10</point_size>
+          <visible>true</visible>
+        </trace>
+        <trace>
+          <name>Min</name>
+          <x_pv></x_pv>
+          <y_pv>$(acc):$(sys)_$(group)_$(num):DMAdataMin</y_pv>
+          <err_pv></err_pv>
+          <axis>0</axis>
+          <trace_type>1</trace_type>
+          <color>
+            <color name="MACHINE-PROTECTION" red="196" green="96" blue="140">
+            </color>
+          </color>
+          <line_width>1</line_width>
+          <line_style>0</line_style>
+          <point_type>0</point_type>
+          <point_size>10</point_size>
+          <visible>true</visible>
+        </trace>
+      </traces>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Values_group</name>
+    <x>20</x>
+    <y>190</y>
+    <width>680</width>
+    <height>100</height>
+    <style>3</style>
+    <background_color>
+      <color name="BACKGROUND" red="220" green="225" blue="221">
+      </color>
+    </background_color>
+    <widget type="rectangle" version="2.0.0">
+      <name>Values_rectangle</name>
+      <width>680</width>
+      <height>100</height>
+      <line_width>2</line_width>
+      <line_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="GROUP-BACKGROUND" red="200" green="205" blue="201">
+        </color>
+      </background_color>
+      <corner_width>10</corner_width>
+      <corner_height>10</corner_height>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Values_title</name>
+      <text>Values</text>
+      <width>680</width>
+      <height>40</height>
+      <font>
+        <font name="Header 2" family="Source Sans Pro" style="BOLD_ITALIC" size="21.0">
+        </font>
+      </font>
+      <background_color>
+        <color name="RED-BORDER" red="150" green="8" blue="16">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>ValueScalCurr_update</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):ValueScaledCurr_r</pv_name>
+      <x>200</x>
+      <y>50</y>
+      <width>130</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <rules>
+        <rule name="Fix unit" prop_id="show_units" out_exp="false">
+          <exp bool_exp="pv0 != &quot;&quot;">
+            <value>true</value>
+          </exp>
+          <pv_name>$(acc):$(sys)_$(group)_$(num):Unit_s</pv_name>
+        </rule>
+      </rules>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>CurrScaled_label</name>
+      <text>Current:</text>
+      <x>130</x>
+      <y>50</y>
+      <width>60</width>
+      <height>30</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>ValueScalLatch_update</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):ValueScaledLatch_r</pv_name>
+      <x>420</x>
+      <y>50</y>
+      <width>130</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <rules>
+        <rule name="Fix unit" prop_id="show_units" out_exp="false">
+          <exp bool_exp="pv0 != &quot;&quot;">
+            <value>true</value>
+          </exp>
+          <pv_name>$(acc):$(sys)_$(group)_$(num):Unit_s</pv_name>
+        </rule>
+      </rules>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>LatchScaled_label</name>
+      <text>Latched:</text>
+      <x>350</x>
+      <y>50</y>
+      <width>60</width>
+      <height>30</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Timestamps_update</name>
+    <pv_name>$(acc):$(sys)_$(group)_$(num):Timestamp_r</pv_name>
+    <x>500</x>
+    <y>120</y>
+    <width>180</width>
+    <height>30</height>
+    <format>6</format>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Expert_button</name>
+    <actions>
+      <action type="open_display">
+        <file>analog_input_expert.bob</file>
+        <target>tab</target>
+        <description>Open Display</description>
+      </action>
+    </actions>
+    <text>Expert</text>
+    <x>600</x>
+    <y>740</y>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+</display>

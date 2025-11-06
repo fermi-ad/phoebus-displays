@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2025-02-11 12:43:55 by kacpe-->
+<display version="2.0.0">
+  <name>Slot $(NAME)</name>
+  <width>160</width>
+  <height>150</height>
+  <widget type="group" version="3.0.0">
+    <name>MGGrey03</name>
+    <width>160</width>
+    <height>150</height>
+    <style>3</style>
+    <background_color>
+      <color name="BACKGROUND" red="220" green="225" blue="221">
+      </color>
+    </background_color>
+    <widget type="rectangle" version="2.0.0">
+      <name>Background</name>
+      <width>160</width>
+      <height>150</height>
+      <line_width>2</line_width>
+      <line_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="BACKGROUND" red="220" green="225" blue="221">
+        </color>
+      </background_color>
+      <corner_width>10</corner_width>
+      <corner_height>10</corner_height>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Title</name>
+      <text>$(NAME)</text>
+      <width>160</width>
+      <height>30</height>
+      <font>
+        <font name="SUBSUB-GROUP-HEADER" family="Source Sans Pro" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <background_color>
+        <color name="RED-BORDER" red="150" green="8" blue="16">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Status_label</name>
+      <text>Status:</text>
+      <x>20</x>
+      <y>50</y>
+      <width>60</width>
+      <height>30</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Details_button</name>
+      <actions>
+        <action type="open_display">
+          <file>../expert/board_details.bob</file>
+          <target>tab</target>
+          <description>Open Display</description>
+        </action>
+      </actions>
+      <text>Details</text>
+      <x>30</x>
+      <y>100</y>
+      <rules>
+        <rule name="Disable when slot empty" prop_id="enabled" out_exp="false">
+          <exp bool_exp="pv0 == 0">
+            <value>false</value>
+          </exp>
+          <pv_name>$(acc):$(sys)_$(group)_$(SLOT):Presence_r</pv_name>
+        </rule>
+      </rules>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>LED (Multi State)</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(SLOT):Status_r</pv_name>
+      <x>90</x>
+      <y>50</y>
+      <width>30</width>
+      <height>30</height>
+      <rules>
+        <rule name="Make grey when slot empty" prop_id="states[0].color" out_exp="false">
+          <exp bool_exp="pv0 == 0">
+            <value>
+              <color name="GRAY" red="169" green="169" blue="169">
+              </color>
+            </value>
+          </exp>
+          <exp bool_exp="pv0 == 1 &amp;&amp; pv1 == 0">
+            <value>
+              <color name="MAJOR" red="252" green="13" blue="27">
+              </color>
+            </value>
+          </exp>
+          <exp bool_exp="pv0 == 0 &amp;&amp; pv1 == 1">
+            <value>
+              <color name="On" red="70" green="255" blue="70">
+              </color>
+            </value>
+          </exp>
+          <pv_name>$(acc):$(sys)_$(group)_$(SLOT):Presence_r</pv_name>
+          <pv_name>$(acc):$(sys)_$(group)_$(SLOT):Status_r</pv_name>
+        </rule>
+      </rules>
+      <states>
+        <state>
+          <value>0</value>
+          <label></label>
+          <color>
+            <color name="MAJOR" red="252" green="13" blue="27">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>1</value>
+          <label></label>
+          <color>
+            <color name="On" red="70" green="255" blue="70">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label></fallback_label>
+    </widget>
+  </widget>
+</display>

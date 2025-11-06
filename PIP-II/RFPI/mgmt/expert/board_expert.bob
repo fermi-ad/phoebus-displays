@@ -1,0 +1,934 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2025-04-23 14:02:59 by kacpe-->
+<display version="2.0.0">
+  <name>Expert Slot $(SLOT)</name>
+  <macros>
+    <num>$(SLOT)</num>
+  </macros>
+  <width>1080</width>
+  <height>730</height>
+  <widget type="rectangle" version="2.0.0">
+    <name>Titlebar</name>
+    <width>1080</width>
+    <height>50</height>
+    <line_width>0</line_width>
+    <background_color>
+      <color name="PRIMARY-HEADER-BACKGROUND" red="151" green="188" blue="202">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Title</name>
+    <text>RFPI Management Slot $(SLOT)</text>
+    <x>20</x>
+    <width>310</width>
+    <height>50</height>
+    <font>
+      <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="HEADER-TEXT" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Limits_group</name>
+    <x>20</x>
+    <y>70</y>
+    <width>1040</width>
+    <height>310</height>
+    <style>3</style>
+    <background_color>
+      <color name="BACKGROUND" red="220" green="225" blue="221">
+      </color>
+    </background_color>
+    <widget type="rectangle" version="2.0.0">
+      <name>Limits_background</name>
+      <width>1040</width>
+      <height>310</height>
+      <line_width>2</line_width>
+      <line_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="GROUP-BACKGROUND" red="200" green="205" blue="201">
+        </color>
+      </background_color>
+      <corner_width>10</corner_width>
+      <corner_height>10</corner_height>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Limits_title</name>
+      <text>Limits</text>
+      <width>1040</width>
+      <height>40</height>
+      <font>
+        <font name="Header 2" family="Liberation Sans" style="BOLD" size="18.0">
+        </font>
+      </font>
+      <background_color>
+        <color name="RED-BORDER" red="150" green="8" blue="16">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="rectangle" version="2.0.0">
+      <name>Current_background</name>
+      <x>20</x>
+      <y>40</y>
+      <width>530</width>
+      <height>250</height>
+      <line_width>2</line_width>
+      <line_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="BACKGROUND" red="220" green="225" blue="221">
+        </color>
+      </background_color>
+      <corner_width>5</corner_width>
+      <corner_height>5</corner_height>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Current_label</name>
+      <text>Current</text>
+      <x>20</x>
+      <y>40</y>
+      <width>530</width>
+      <height>40</height>
+      <font>
+        <font name="Header 3" family="Liberation Sans" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Warn_label</name>
+      <text>Warning:</text>
+      <x>30</x>
+      <y>160</y>
+      <width>60</width>
+      <height>30</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Alert_label</name>
+      <text>Alert:</text>
+      <x>30</x>
+      <y>200</y>
+      <width>60</width>
+      <height>30</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Crit_label</name>
+      <text>Critical:</text>
+      <x>30</x>
+      <y>240</y>
+      <width>60</width>
+      <height>30</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Ch1Warn_entry</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):CurrentCh1Soft_s</pv_name>
+      <x>100</x>
+      <y>160</y>
+      <width>60</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Ch1Alert_entry</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):CurrentCh1Warn_s</pv_name>
+      <x>100</x>
+      <y>200</y>
+      <width>60</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Ch1Crit_entry</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):CurrentCh1Crit_s</pv_name>
+      <x>100</x>
+      <y>240</y>
+      <width>60</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Ch1_label</name>
+      <text>Ch1</text>
+      <x>100</x>
+      <y>90</y>
+      <width>130</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Ch2Warn_entry</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):CurrentCh2Soft_s</pv_name>
+      <x>250</x>
+      <y>160</y>
+      <width>60</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Ch2Alert_entry</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):CurrentCh2Warn_s</pv_name>
+      <x>250</x>
+      <y>200</y>
+      <width>60</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Ch2Crit_entry</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):CurrentCh2Crit_s</pv_name>
+      <x>250</x>
+      <y>240</y>
+      <width>60</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Ch2_label</name>
+      <text>Ch2</text>
+      <x>250</x>
+      <y>90</y>
+      <width>130</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Ch1_Update</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):CurrentCh1_r</pv_name>
+      <x>140</x>
+      <y>120</y>
+      <width>60</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Ch2_Update</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):CurrentCh2_r</pv_name>
+      <x>290</x>
+      <y>120</y>
+      <width>60</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Ch1Warn_entry</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):CurrentCh1Warn_r</pv_name>
+      <x>170</x>
+      <y>200</y>
+      <width>60</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Ch1Alert_update</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):CurrentCh1Crit_r</pv_name>
+      <x>170</x>
+      <y>240</y>
+      <width>60</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Ch2Warn_update</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):CurrentCh2Warn_r</pv_name>
+      <x>320</x>
+      <y>200</y>
+      <width>60</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Ch2Alert_update</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):CurrentCh2Crit_r</pv_name>
+      <x>320</x>
+      <y>240</y>
+      <width>60</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Ch3Warn_entry</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):CurrentCh3Soft_s</pv_name>
+      <x>400</x>
+      <y>160</y>
+      <width>60</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Ch3Alert_entry</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):CurrentCh3Warn_s</pv_name>
+      <x>400</x>
+      <y>200</y>
+      <width>60</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Ch3Crit_entry</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):CurrentCh3Crit_s</pv_name>
+      <x>400</x>
+      <y>240</y>
+      <width>60</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Ch3_label</name>
+      <text>Ch3</text>
+      <x>400</x>
+      <y>90</y>
+      <width>130</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Ch3_Update</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):CurrentCh3_r</pv_name>
+      <x>430</x>
+      <y>120</y>
+      <width>60</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Ch3Warn_update</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):CurrentCh3Warn_r</pv_name>
+      <x>470</x>
+      <y>200</y>
+      <width>60</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Ch3Alert_update</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):CurrentCh3Crit_r</pv_name>
+      <x>470</x>
+      <y>240</y>
+      <width>60</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="rectangle" version="2.0.0">
+      <name>Temperature_background</name>
+      <x>570</x>
+      <y>40</y>
+      <width>160</width>
+      <height>250</height>
+      <line_width>2</line_width>
+      <line_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="BACKGROUND" red="220" green="225" blue="221">
+        </color>
+      </background_color>
+      <corner_width>5</corner_width>
+      <corner_height>5</corner_height>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Temperature_label</name>
+      <text>Temperature</text>
+      <x>570</x>
+      <y>40</y>
+      <width>160</width>
+      <height>40</height>
+      <font>
+        <font name="Header 3" family="Liberation Sans" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Temperature_update</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):Temperature_r</pv_name>
+      <x>650</x>
+      <y>120</y>
+      <width>60</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>WarnTemp_label</name>
+      <text>Warning:</text>
+      <x>580</x>
+      <y>160</y>
+      <width>60</width>
+      <height>30</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>AlertTemp_label</name>
+      <text>Alert:</text>
+      <x>580</x>
+      <y>200</y>
+      <width>60</width>
+      <height>30</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>CritTemp_label</name>
+      <text>Critical:</text>
+      <x>580</x>
+      <y>240</y>
+      <width>60</width>
+      <height>30</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>TempWarn_entry</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):TemperatureWarn_s</pv_name>
+      <x>650</x>
+      <y>160</y>
+      <width>60</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>TempAlert_entry</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):TemperatureAlert_s</pv_name>
+      <x>650</x>
+      <y>200</y>
+      <width>60</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>TempCrit_entry</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):TemperatureCrit_s</pv_name>
+      <x>650</x>
+      <y>240</y>
+      <width>60</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+    </widget>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Expert_subtitle</name>
+    <text>Expert $(NAME)</text>
+    <x>860</x>
+    <y>20</y>
+    <width>200</width>
+    <height>30</height>
+    <font>
+      <font name="Header 2" family="Liberation Sans" style="BOLD" size="18.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="HEADER-TEXT" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>2</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Voltage_background</name>
+    <x>770</x>
+    <y>110</y>
+    <width>270</width>
+    <height>250</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color name="GROUP-BORDER" red="150" green="155" blue="151">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="BACKGROUND" red="220" green="225" blue="221">
+      </color>
+    </background_color>
+    <corner_width>5</corner_width>
+    <corner_height>5</corner_height>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Voltage_label</name>
+    <text>Voltage</text>
+    <x>770</x>
+    <y>110</y>
+    <width>270</width>
+    <height>40</height>
+    <font>
+      <font name="Header 3" family="Liberation Sans" style="BOLD" size="16.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>VoltageCh1_update</name>
+    <pv_name>$(acc):$(sys)_$(group)_$(num):VoltageCh1_r</pv_name>
+    <x>830</x>
+    <y>190</y>
+    <width>60</width>
+    <height>30</height>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>LowVolt_label</name>
+    <text>Low:</text>
+    <x>890</x>
+    <y>190</y>
+    <width>50</width>
+    <height>30</height>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>HighVolt_label</name>
+    <text>High:</text>
+    <x>890</x>
+    <y>230</y>
+    <width>50</width>
+    <height>30</height>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>VoltageLow_update</name>
+    <pv_name>$(acc):$(sys)_$(group)_$(num):VoltageLow_r</pv_name>
+    <x>950</x>
+    <y>190</y>
+    <width>70</width>
+    <height>30</height>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>VoltageHigh_update</name>
+    <pv_name>$(acc):$(sys)_$(group)_$(num):VoltageHigh_r</pv_name>
+    <x>950</x>
+    <y>230</y>
+    <width>70</width>
+    <height>30</height>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>VoltageCh2_update</name>
+    <pv_name>$(acc):$(sys)_$(group)_$(num):VoltageCh2_r</pv_name>
+    <x>830</x>
+    <y>230</y>
+    <width>60</width>
+    <height>30</height>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>VoltageCh3_update</name>
+    <pv_name>$(acc):$(sys)_$(group)_$(num):VoltageCh3_r</pv_name>
+    <x>830</x>
+    <y>270</y>
+    <width>60</width>
+    <height>30</height>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Ch1Volt_label</name>
+    <text>Ch1:</text>
+    <x>770</x>
+    <y>190</y>
+    <width>50</width>
+    <height>30</height>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Ch2Volt_label</name>
+    <text>Ch2:</text>
+    <x>770</x>
+    <y>230</y>
+    <width>50</width>
+    <height>30</height>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Ch3Volt_label</name>
+    <text>Ch3:</text>
+    <x>770</x>
+    <y>270</y>
+    <width>50</width>
+    <height>30</height>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Setpoints_group</name>
+    <x>280</x>
+    <y>400</y>
+    <width>600</width>
+    <height>300</height>
+    <style>3</style>
+    <background_color>
+      <color name="BACKGROUND" red="220" green="225" blue="221">
+      </color>
+    </background_color>
+    <widget type="rectangle" version="2.0.0">
+      <name>Setpoints_background</name>
+      <width>600</width>
+      <height>300</height>
+      <line_width>2</line_width>
+      <line_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="GROUP-BACKGROUND" red="200" green="205" blue="201">
+        </color>
+      </background_color>
+      <corner_width>10</corner_width>
+      <corner_height>10</corner_height>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Setpoints_title</name>
+      <text>Limits Setpoints Recover</text>
+      <width>600</width>
+      <height>40</height>
+      <font>
+        <font name="Header 2" family="Liberation Sans" style="BOLD" size="18.0">
+        </font>
+      </font>
+      <background_color>
+        <color name="RED-BORDER" red="150" green="8" blue="16">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="rectangle" version="2.0.0">
+      <name>Current_background</name>
+      <x>20</x>
+      <y>40</y>
+      <width>560</width>
+      <height>240</height>
+      <line_width>2</line_width>
+      <line_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="BACKGROUND" red="220" green="225" blue="221">
+        </color>
+      </background_color>
+      <corner_width>5</corner_width>
+      <corner_height>5</corner_height>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Current_label</name>
+      <text>Current</text>
+      <x>20</x>
+      <y>40</y>
+      <width>560</width>
+      <height>40</height>
+      <font>
+        <font name="Header 3" family="Liberation Sans" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>AsCh3Crit_update</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):asCurrentCh3Crit_s</pv_name>
+      <x>430</x>
+      <y>180</y>
+      <width>60</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>AsCh3Warn_update</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):asCurrentCh3Warn_s</pv_name>
+      <x>430</x>
+      <y>140</y>
+      <width>60</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>AsCh2Crit_update</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):asCurrentCh2Crit_s</pv_name>
+      <x>270</x>
+      <y>180</y>
+      <width>60</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>AsCh2Warn_update</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):asCurrentCh2Warn_s</pv_name>
+      <x>270</x>
+      <y>140</y>
+      <width>60</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>AsCh1Crit_update</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):asCurrentCh1Crit_s</pv_name>
+      <x>110</x>
+      <y>180</y>
+      <width>60</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>AsCh1Warn_update</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):asCurrentCh1Warn_s</pv_name>
+      <x>110</x>
+      <y>140</y>
+      <width>60</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>AsAlert_label</name>
+      <text>Alert:</text>
+      <x>40</x>
+      <y>140</y>
+      <width>60</width>
+      <height>30</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>AsCrit_label</name>
+      <text>Critical:</text>
+      <x>40</x>
+      <y>180</y>
+      <width>60</width>
+      <height>30</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>FWCh1Warn_update</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):CurrentCh1Warn_r</pv_name>
+      <x>180</x>
+      <y>140</y>
+      <width>60</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>FWCh1Crit_update</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):CurrentCh1Crit_r</pv_name>
+      <x>180</x>
+      <y>180</y>
+      <width>60</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>ASCh1_label</name>
+      <text>AS</text>
+      <x>110</x>
+      <y>110</y>
+      <width>60</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>FWCh1_label</name>
+      <text>FW</text>
+      <x>180</x>
+      <y>110</y>
+      <width>60</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>AsCh1_label</name>
+      <text>Ch1</text>
+      <x>110</x>
+      <y>80</y>
+      <width>130</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>FWCh2Warn_update</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):CurrentCh2Warn_r</pv_name>
+      <x>340</x>
+      <y>140</y>
+      <width>60</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>FWCh2Alert_update</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):CurrentCh2Crit_r</pv_name>
+      <x>340</x>
+      <y>180</y>
+      <width>60</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>FWCh3Alert_update</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):CurrentCh3Crit_r</pv_name>
+      <x>500</x>
+      <y>180</y>
+      <width>60</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>FWCh3Warn_update</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):CurrentCh3Warn_r</pv_name>
+      <x>500</x>
+      <y>140</y>
+      <width>60</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>ASCh2_label</name>
+      <text>AS</text>
+      <x>270</x>
+      <y>110</y>
+      <width>60</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>FWCh2_label</name>
+      <text>FW</text>
+      <x>340</x>
+      <y>110</y>
+      <width>60</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>ASCh3_label</name>
+      <text>AS</text>
+      <x>430</x>
+      <y>110</y>
+      <width>60</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>FWCh3_label</name>
+      <text>FW</text>
+      <x>500</x>
+      <y>110</y>
+      <width>60</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>AsCh2_label</name>
+      <text>Ch2</text>
+      <x>270</x>
+      <y>80</y>
+      <width>130</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>AsCh3_label</name>
+      <text>Ch3</text>
+      <x>430</x>
+      <y>80</y>
+      <width>130</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>LoadAS_button</name>
+      <actions>
+        <action type="write_pv">
+          <description>WritePV</description>
+          <pv_name>$(pv_name)</pv_name>
+          <value>1</value>
+        </action>
+      </actions>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):LoadAutoSave_s</pv_name>
+      <text>Load From AS</text>
+      <x>170</x>
+      <y>230</y>
+      <width>120</width>
+      <tooltip>$(actions)</tooltip>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>LoadFW_button</name>
+      <actions>
+        <action type="write_pv">
+          <description>WritePV</description>
+          <pv_name>$(pv_name)</pv_name>
+          <value>1</value>
+        </action>
+      </actions>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):LoadR_s</pv_name>
+      <text>Load From FW</text>
+      <x>320</x>
+      <y>230</y>
+      <width>120</width>
+      <tooltip>$(actions)</tooltip>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+  </widget>
+</display>

@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2025-04-23 14:06:11 by kacpe-->
+<display version="2.0.0">
+  <name>RFPI Management Main</name>
+  <macros>
+    <acc>PIP2IT</acc>
+    <group>RFPI_MGMT_KC6</group>
+    <num>MAIN</num>
+    <num_gen>ina</num_gen>
+    <sys>pHB650</sys>
+  </macros>
+  <width>1040</width>
+  <height>660</height>
+  <widget type="rectangle" version="2.0.0">
+    <name>Titlebar</name>
+    <width>1040</width>
+    <height>50</height>
+    <line_width>0</line_width>
+    <background_color>
+      <color name="PRIMARY-HEADER-BACKGROUND" red="151" green="188" blue="202">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Title</name>
+    <text>RFPI Management</text>
+    <x>20</x>
+    <width>300</width>
+    <height>50</height>
+    <font>
+      <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="HEADER-TEXT" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>System_group</name>
+    <x>20</x>
+    <y>70</y>
+    <width>1000</width>
+    <height>100</height>
+    <style>3</style>
+    <background_color>
+      <color name="BACKGROUND" red="220" green="225" blue="221">
+      </color>
+    </background_color>
+    <widget type="rectangle" version="2.0.0">
+      <name>System_background</name>
+      <width>1000</width>
+      <height>100</height>
+      <line_width>2</line_width>
+      <line_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="GROUP-BACKGROUND" red="200" green="205" blue="201">
+        </color>
+      </background_color>
+      <corner_width>10</corner_width>
+      <corner_height>10</corner_height>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>On_button</name>
+      <actions>
+        <action type="write_pv">
+          <description>WritePV</description>
+          <pv_name>$(pv_name)</pv_name>
+          <value>1</value>
+        </action>
+      </actions>
+      <pv_name>$(acc):$(sys)_$(group)_$(num_gen):PowerSystem_s</pv_name>
+      <text>ON</text>
+      <x>690</x>
+      <y>50</y>
+      <width>60</width>
+      <font>
+        <font family="Source Sans Pro" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <tooltip>$(actions)</tooltip>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Off_button</name>
+      <actions>
+        <action type="write_pv">
+          <description>WritePV</description>
+          <pv_name>$(pv_name)</pv_name>
+          <value>0</value>
+        </action>
+      </actions>
+      <pv_name>$(acc):$(sys)_$(group)_$(num_gen):PowerSystem_s</pv_name>
+      <text>OFF</text>
+      <x>760</x>
+      <y>50</y>
+      <width>60</width>
+      <font>
+        <font family="Source Sans Pro" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <tooltip>$(actions)</tooltip>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Status_update</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num_gen):SystemStatusStr_r</pv_name>
+      <x>410</x>
+      <y>50</y>
+      <width>200</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Status_title</name>
+      <text>System Overall</text>
+      <width>1000</width>
+      <height>40</height>
+      <font>
+        <font name="Header 2" family="Liberation Sans" style="BOLD" size="18.0">
+        </font>
+      </font>
+      <background_color>
+        <color name="RED-BORDER" red="150" green="8" blue="16">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Power_label</name>
+      <text>Power:</text>
+      <x>630</x>
+      <y>50</y>
+      <width>50</width>
+      <height>30</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>Status_LED</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num_gen):SystemStatus_r</pv_name>
+      <x>10</x>
+      <y>50</y>
+      <width>30</width>
+      <height>30</height>
+      <states>
+        <state>
+          <value>2</value>
+          <label></label>
+          <color>
+            <color name="ERROR" red="252" green="13" blue="27">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>3</value>
+          <label></label>
+          <color>
+            <color name="On" red="0" green="255" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>4</value>
+          <label></label>
+          <color>
+            <color name="ATTENTION" red="252" green="242" blue="17">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>5</value>
+          <label></label>
+          <color>
+            <color name="ATTENTION" red="252" green="242" blue="17">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>7</value>
+          <label></label>
+          <color>
+            <color name="ERROR" red="252" green="13" blue="27">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>6</value>
+          <label></label>
+          <color>
+            <color name="ERROR" red="252" green="13" blue="27">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>0</value>
+          <label></label>
+          <color>
+            <color name="ERROR" red="252" green="13" blue="27">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>1</value>
+          <label></label>
+          <color>
+            <color name="ERROR" red="252" green="13" blue="27">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label></fallback_label>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>PowerStatus_update</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num_gen):PowerSystemMsg_r</pv_name>
+      <x>830</x>
+      <y>50</y>
+      <width>150</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>SystemStatus_update</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num_gen):SystemStatus_r</pv_name>
+      <x>50</x>
+      <y>50</y>
+      <width>110</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Timestamp_update</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num_gen):SystemEventTime_r</pv_name>
+      <x>170</x>
+      <y>50</y>
+      <width>230</width>
+      <height>30</height>
+      <format>6</format>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Slots_Group</name>
+    <x>360</x>
+    <y>280</y>
+    <width>560</width>
+    <height>360</height>
+    <style>3</style>
+    <widget type="rectangle" version="2.0.0">
+      <name>Slots_Rectangle</name>
+      <width>560</width>
+      <height>360</height>
+      <line_width>2</line_width>
+      <line_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="GROUP-BACKGROUND" red="200" green="205" blue="201">
+        </color>
+      </background_color>
+      <corner_width>10</corner_width>
+      <corner_height>10</corner_height>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>TOP0_display</name>
+      <macros>
+        <SLOT>TOP0</SLOT>
+        <NAME>SLOT TOP0</NAME>
+      </macros>
+      <file>templates/board.bob</file>
+      <x>20</x>
+      <y>20</y>
+      <width>160</width>
+      <height>150</height>
+      <resize>2</resize>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>TOP1_display</name>
+      <macros>
+        <SLOT>TOP1</SLOT>
+        <NAME>SLOT TOP1</NAME>
+      </macros>
+      <file>templates/board.bob</file>
+      <x>200</x>
+      <y>20</y>
+      <width>160</width>
+      <height>150</height>
+      <resize>2</resize>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>BOT0_display</name>
+      <macros>
+        <SLOT>BOT0</SLOT>
+        <NAME>SLOT BOT0</NAME>
+      </macros>
+      <file>templates/board.bob</file>
+      <x>20</x>
+      <y>190</y>
+      <width>160</width>
+      <height>150</height>
+      <resize>2</resize>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>BOT1_display</name>
+      <macros>
+        <SLOT>BOT1</SLOT>
+        <NAME>SLOT BOT1</NAME>
+      </macros>
+      <file>templates/board.bob</file>
+      <x>200</x>
+      <y>190</y>
+      <width>160</width>
+      <height>150</height>
+      <resize>2</resize>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>BOT2_display</name>
+      <macros>
+        <SLOT>BOT2</SLOT>
+        <NAME>SLOT BOT2</NAME>
+      </macros>
+      <file>templates/board.bob</file>
+      <x>380</x>
+      <y>190</y>
+      <width>160</width>
+      <height>150</height>
+      <resize>2</resize>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>TOP2_display</name>
+      <macros>
+        <SLOT>TOP2</SLOT>
+        <NAME>SLOT TOP2</NAME>
+      </macros>
+      <file>templates/board.bob</file>
+      <x>380</x>
+      <y>20</y>
+      <width>160</width>
+      <height>150</height>
+      <resize>2</resize>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Main_Group</name>
+    <x>140</x>
+    <y>280</y>
+    <width>200</width>
+    <height>360</height>
+    <style>3</style>
+    <widget type="rectangle" version="2.0.0">
+      <name>Main_Rectangle</name>
+      <width>200</width>
+      <height>360</height>
+      <line_width>2</line_width>
+      <line_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="GROUP-BACKGROUND" red="200" green="205" blue="201">
+        </color>
+      </background_color>
+      <corner_width>10</corner_width>
+      <corner_height>10</corner_height>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>INTER_display</name>
+      <macros>
+        <SLOT>INTER</SLOT>
+        <NAME>INTERFACE</NAME>
+      </macros>
+      <file>templates/board.bob</file>
+      <x>20</x>
+      <y>190</y>
+      <width>160</width>
+      <height>150</height>
+      <resize>2</resize>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>MAIN_display</name>
+      <macros>
+        <SLOT>MAIN</SLOT>
+        <NAME>MAIN</NAME>
+      </macros>
+      <file>templates/board.bob</file>
+      <x>20</x>
+      <y>20</y>
+      <width>160</width>
+      <height>150</height>
+      <resize>2</resize>
+    </widget>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Versions Button</name>
+    <actions>
+      <action type="open_display">
+        <description>Open Display</description>
+        <file>versions/versions.bob</file>
+        <target>tab</target>
+      </action>
+    </actions>
+    <text>Versions</text>
+    <x>490</x>
+    <y>230</y>
+    <width>80</width>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Deamon_Group</name>
+    <x>290</x>
+    <y>190</y>
+    <width>180</width>
+    <height>70</height>
+    <style>3</style>
+    <widget type="rectangle" version="2.0.0">
+      <name>Deamon_Rectangle</name>
+      <width>180</width>
+      <height>70</height>
+      <line_width>2</line_width>
+      <line_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="GROUP-BACKGROUND" red="200" green="205" blue="201">
+        </color>
+      </background_color>
+      <corner_width>10</corner_width>
+      <corner_height>10</corner_height>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>Deamon_LED</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num_gen):DeamonConnection_r</pv_name>
+      <x>140</x>
+      <y>20</y>
+      <width>30</width>
+      <height>30</height>
+      <off_color>
+        <color name="ERROR" red="252" green="13" blue="27">
+        </color>
+      </off_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Deamon_label</name>
+      <text>Deamon Status:</text>
+      <y>20</y>
+      <width>130</width>
+      <height>30</height>
+      <font>
+        <font family="Source Sans Pro" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>History_Group</name>
+    <x>20</x>
+    <y>190</y>
+    <width>250</width>
+    <height>70</height>
+    <style>3</style>
+    <widget type="rectangle" version="2.0.0">
+      <name>History_Rectangle</name>
+      <width>250</width>
+      <height>70</height>
+      <line_width>2</line_width>
+      <line_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="GROUP-BACKGROUND" red="200" green="205" blue="201">
+        </color>
+      </background_color>
+      <corner_width>10</corner_width>
+      <corner_height>10</corner_height>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>History_label</name>
+      <text>System History:</text>
+      <y>20</y>
+      <width>130</width>
+      <height>30</height>
+      <font>
+        <font family="Source Sans Pro" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>History_button</name>
+      <actions>
+        <action type="open_display">
+          <description>Open Display</description>
+          <file>history/history.bob</file>
+          <target>tab</target>
+        </action>
+      </actions>
+      <text>History</text>
+      <x>150</x>
+      <y>20</y>
+      <width>80</width>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+  </widget>
+</display>
