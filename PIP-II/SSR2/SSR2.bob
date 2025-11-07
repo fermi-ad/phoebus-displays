@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2025-09-03 18:21:11 by epics-->
 <display version="2.0.0">
   <name>SSR2-$(cm)</name>
   <macros>
@@ -1009,10 +1008,23 @@
         </widget>
         <widget type="action_button" version="3.0.0">
           <name>Action Button_51</name>
-          <actions>
+          <actions execute_as_one="true">
             <action type="open_display">
-              <description>Open RFPI Summary</description>
-              <file>../RFPI/RFPI_PoC_main.bob</file>
+              <description>Open RFPI-1 Summary</description>
+              <file>../RFPI/mgmt/RFPI_main.bob</file>
+              <macros>
+                <sys>ppSSR2</sys>
+                <num>MGMT1</num>
+              </macros>
+              <target>window</target>
+            </action>
+            <action type="open_display">
+              <description>Open RFPI-2 Summary</description>
+              <file>../RFPI/mgmt/RFPI_main.bob</file>
+              <macros>
+                <sys>ppSSR2</sys>
+                <num>MGMT2</num>
+              </macros>
               <target>window</target>
             </action>
           </actions>
