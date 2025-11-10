@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2025-09-09 12:43:00 by pratik-->
 <display version="2.0.0">
-  <name>Onoffvalve</name>
-  <width>600</width>
-  <height>400</height>
+  <name>$(dev): Valve Control</name>
+  <width>500</width>
+  <height>375</height>
   <background_color>
     <color name="cryo.PrimaryBackground" red="217" green="217" blue="217">
     </color>
@@ -194,8 +193,8 @@
   </widget>
   <widget type="label" version="2.0.0">
     <name>HB650-$(cm) $(view)_1</name>
-    <text>$(valve): Valve Control</text>
-    <width>600</width>
+    <text>$(dev): Valve Control</text>
+    <width>500</width>
     <height>36</height>
     <font>
       <font family="Liberation Sans" style="BOLD" size="22.0">
@@ -215,89 +214,35 @@
     <wrap_words>false</wrap_words>
     <border_width>1</border_width>
   </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label_76</name>
-    <text>PLC Heartbeat</text>
-    <width>108</width>
-    <height>35</height>
-    <font>
-      <font family="Liberation Sans" style="BOLD" size="14.0">
-      </font>
-    </font>
-    <foreground_color>
-      <color red="255" green="255" blue="0">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color name="Button_Background" red="210" green="210" blue="210">
-      </color>
-    </background_color>
-    <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-  </widget>
-  <widget type="led" version="2.0.0">
-    <name>LED_8</name>
-    <pv_name>$(pmt)HB:HeartBeat</pv_name>
-    <x>106</x>
-    <y>8</y>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
   <widget type="action_button" version="3.0.0">
     <name>Action Button_3</name>
     <text>HOME</text>
-    <x>505</x>
+    <x>405</x>
     <y>4</y>
     <width>89</width>
     <tooltip>$(actions)</tooltip>
   </widget>
   <widget type="symbol" version="2.0.0">
     <name>Symbol_25</name>
+    <pv_name>$(sys)$(dev):VLVstat</pv_name>
     <symbols>
       <symbol>../Images/Cryo/on_off_valve_Gray.svg</symbol>
       <symbol>../Images/Cryo/on_off_valve_Green.svg</symbol>
       <symbol>../Images/Cryo/on_off_valve_Red.svg</symbol>
     </symbols>
-    <x>147</x>
-    <y>207</y>
+    <x>95</x>
+    <y>209</y>
     <width>260</width>
     <height>170</height>
     <tooltip>$(pv_name)
 $(pv_value)
 $(actions)</tooltip>
   </widget>
-  <widget type="bool_button" version="2.0.0">
-    <name>Boolean Button</name>
-    <pv_name>$(valve):close_command</pv_name>
-    <x>163</x>
-    <y>66</y>
-    <height>60</height>
-    <off_label>Close Valve</off_label>
-    <off_color>
-      <color red="115" green="115" blue="115">
-      </color>
-    </off_color>
-    <on_label>Valve Closing</on_label>
-    <show_led>false</show_led>
-    <mode>1</mode>
-  </widget>
-  <widget type="bool_button" version="2.0.0">
-    <name>Boolean Button_1</name>
-    <x>313</x>
-    <y>66</y>
-    <height>60</height>
-    <off_label>Open Valve</off_label>
-    <off_color>
-      <color red="115" green="115" blue="115">
-      </color>
-    </off_color>
-    <on_label>Valve Opening</on_label>
-    <show_led>false</show_led>
-    <mode>1</mode>
-  </widget>
   <widget type="led" version="2.0.0">
     <name>LED</name>
-    <x>363</x>
-    <y>150</y>
+    <pv_name>$(sys)$(dev):Open</pv_name>
+    <x>311</x>
+    <y>172</y>
     <width>30</width>
     <height>30</height>
     <off_color>
@@ -312,8 +257,8 @@ $(actions)</tooltip>
   <widget type="label" version="2.0.0">
     <name>Label</name>
     <text>VALVE OPEN LIMIT SWITCH</text>
-    <x>163</x>
-    <y>156</y>
+    <x>111</x>
+    <y>178</y>
     <width>190</width>
     <font>
       <font family="Liberation Sans" style="BOLD" size="14.0">
@@ -324,8 +269,9 @@ $(actions)</tooltip>
   </widget>
   <widget type="led" version="2.0.0">
     <name>LED_1</name>
-    <x>363</x>
-    <y>190</y>
+    <pv_name>$(sys)$(dev):Close</pv_name>
+    <x>311</x>
+    <y>212</y>
     <width>30</width>
     <height>30</height>
     <off_color>
@@ -340,8 +286,8 @@ $(actions)</tooltip>
   <widget type="label" version="2.0.0">
     <name>Label_1</name>
     <text>VALVE CLOSED LIMIT SWITCH</text>
-    <x>139</x>
-    <y>196</y>
+    <x>87</x>
+    <y>218</y>
     <width>214</width>
     <font>
       <font family="Liberation Sans" style="BOLD" size="14.0">
@@ -349,5 +295,29 @@ $(actions)</tooltip>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>Boolean Button</name>
+    <pv_name>$(sys)$(dev):sOpen</pv_name>
+    <x>164</x>
+    <y>78</y>
+    <width>132</width>
+    <height>66</height>
+    <off_label>$(dev) Closed 
+ OPEN $(dev)</off_label>
+    <off_color>
+      <color name="fgs.Gray-45" red="167" green="168" blue="170">
+      </color>
+    </off_color>
+    <on_label>$(dev) Opened /n Close $(dev)</on_label>
+    <on_color>
+      <color name="acorn.Green" red="82" green="171" blue="90">
+      </color>
+    </on_color>
+    <show_led>false</show_led>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
   </widget>
 </display>
