@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>BufferTank</name>
+  <macros>
+    <complex>PIP2CP</complex>
+    <sys>$(complex):RCVRY_CRYO_</sys>
+  </macros>
+  <width>175</width>
+  <height>740</height>
+  <background_color>
+    <color red="0" green="0" blue="0" alpha="0">
+    </color>
+  </background_color>
+  <grid_step_x>5</grid_step_x>
+  <grid_step_y>5</grid_step_y>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_153</name>
+    <x>70</x>
+    <y>403</y>
+    <width>1</width>
+    <height>175</height>
+    <points>
+      <point x="0.0" y="175.5416757966055">
+      </point>
+      <point x="0.014854829419505222" y="0.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="170" green="0" blue="255">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_152</name>
+    <x>140</x>
+    <y>401</y>
+    <width>1</width>
+    <height>169</height>
+    <points>
+      <point x="0.0" y="169.52310405500762">
+      </point>
+      <point x="0.014854829419505222" y="0.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="170" green="0" blue="255">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_134</name>
+    <x>105</x>
+    <width>1</width>
+    <height>219</height>
+    <points>
+      <point x="0.0" y="219.6503323338064">
+      </point>
+      <point x="0.5793287594733556" y="0.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="170" green="0" blue="255">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_139</name>
+    <macros>
+      <dev>EV$(tank)1</dev>
+    </macros>
+    <file>../Common/cryo-embedded-displays/ValveStatusUp.bob</file>
+    <x>40</x>
+    <y>87</y>
+    <width>55</width>
+    <height>35</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_146</name>
+    <macros>
+      <dev>EV$(tank)3</dev>
+    </macros>
+    <file>../Common/cryo-embedded-displays/ValveStatusUp.bob</file>
+    <x>5</x>
+    <y>452</y>
+    <width>55</width>
+    <height>35</height>
+  </widget>
+  <widget type="symbol" version="2.0.0">
+    <name>Symbol_14</name>
+    <pv_name>$(sys)EV$(tank)3:VLVstat</pv_name>
+    <symbols>
+      <symbol>../Images/Cryo/Controlvalvegray.svg</symbol>
+      <symbol>../Images/Cryo/Controlvalvegreen.svg</symbol>
+      <symbol>../Images/Cryo/Controlvalvered.svg</symbol>
+    </symbols>
+    <x>41</x>
+    <y>436</y>
+    <width>58</width>
+    <height>70</height>
+    <initial_index>1</initial_index>
+    <rotation>90.0</rotation>
+    <actions>
+      <action type="open_display">
+        <description>Open Display</description>
+        <file>ValveControlSimple.bob</file>
+        <macros>
+          <valve>PV1424</valve>
+        </macros>
+        <target>window</target>
+      </action>
+    </actions>
+    <run_actions_on_mouse_click>true</run_actions_on_mouse_click>
+    <tooltip>$(pv_name)
+$(pv_value)
+$(actions)</tooltip>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED</name>
+    <x>120</x>
+    <y>65</y>
+    <off_label>M</off_label>
+    <on_label>A</on_label>
+    <square>true</square>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_165</name>
+    <x>140</x>
+    <y>584</y>
+    <width>1</width>
+    <height>150</height>
+    <points>
+      <point x="0.0" y="150.46429353994762">
+      </point>
+      <point x="0.014854829419505222" y="0.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="170" green="0" blue="255">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="arc" version="2.0.0">
+    <name>Arc_1</name>
+    <x>130</x>
+    <y>567</y>
+    <width>20</width>
+    <height>20</height>
+    <start_angle>270.0</start_angle>
+    <total_angle>180.0</total_angle>
+    <line_color>
+      <color red="170" green="0" blue="255">
+      </color>
+    </line_color>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="symbol" version="2.0.0">
+    <name>Symbol_32</name>
+    <pv_name>$(sys)EV$(tank)2:VLVstat</pv_name>
+    <symbols>
+      <symbol>../Images/Cryo/Controlvalvegray.svg</symbol>
+      <symbol>../Images/Cryo/Controlvalvegreen.svg</symbol>
+      <symbol>../Images/Cryo/Controlvalvered.svg</symbol>
+    </symbols>
+    <x>111</x>
+    <y>633</y>
+    <width>58</width>
+    <height>70</height>
+    <rotation>90.0</rotation>
+    <actions>
+      <action type="open_display">
+        <description>Open Display</description>
+        <file>ValveControlSimple.bob</file>
+        <target>window</target>
+      </action>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)
+$(actions)</tooltip>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_10</name>
+    <x>155</x>
+    <y>630</y>
+    <off_label>M</off_label>
+    <on_label>A</on_label>
+    <square>true</square>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_12</name>
+    <x>85</x>
+    <y>433</y>
+    <off_label>M</off_label>
+    <on_label>A</on_label>
+    <square>true</square>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_156</name>
+    <macros>
+      <dev>EV$(tank)2</dev>
+    </macros>
+    <file>../Common/cryo-embedded-displays/ValveStatusUp.bob</file>
+    <x>70</x>
+    <y>652</y>
+    <width>55</width>
+    <height>35</height>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <x>60</x>
+    <y>218</y>
+    <width>93</width>
+    <height>198</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="ellipse" version="2.0.0">
+      <name>Ellipse_4</name>
+      <x>70</x>
+      <y>118</y>
+      <width>1</width>
+      <height>1</height>
+    </widget>
+    <widget type="arc" version="2.0.0">
+      <name>Arc_10</name>
+      <width>90</width>
+      <height>54</height>
+      <start_angle>360.0</start_angle>
+      <total_angle>180.0</total_angle>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_116</name>
+      <x>2</x>
+      <y>25</y>
+      <width>1</width>
+      <height>146</height>
+      <points>
+        <point x="0.0" y="0.0">
+        </point>
+        <point x="0.025902927186962188" y="147.00198980623833">
+        </point>
+      </points>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_117</name>
+      <x>88</x>
+      <y>25</y>
+      <width>1</width>
+      <height>146</height>
+      <points>
+        <point x="0.00861350809987016" y="0.0">
+        </point>
+        <point x="0.0" y="146.37988988568043">
+        </point>
+      </points>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+    </widget>
+    <widget type="arc" version="2.0.0">
+      <name>Arc_11</name>
+      <x>92</x>
+      <y>97</y>
+      <width>1</width>
+      <height>1</height>
+    </widget>
+    <widget type="ellipse" version="2.0.0">
+      <name>Ellipse_5</name>
+      <y>111</y>
+      <width>1</width>
+      <height>1</height>
+    </widget>
+    <widget type="arc" version="2.0.0">
+      <name>Arc_12</name>
+      <y>144</y>
+      <width>90</width>
+      <height>54</height>
+      <start_angle>180.0</start_angle>
+      <total_angle>180.0</total_angle>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label</name>
+      <text>TK-$(tank)0</text>
+      <x>15</x>
+      <y>12</y>
+      <width>64</width>
+      <height>14</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="12.0">
+        </font>
+      </font>
+      <background_color>
+        <color red="0" green="234" blue="255">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Embedded Display_168</name>
+      <macros>
+        <dev>PT$(tank)5</dev>
+      </macros>
+      <file>../Common/cryo-embedded-displays/PressureSensorUp.bob</file>
+      <x>12</x>
+      <y>40</y>
+      <width>65</width>
+      <height>35</height>
+    </widget>
+  </widget>
+  <widget type="symbol" version="2.0.0">
+    <name>Symbol_8</name>
+    <pv_name>$(sys)EV$(tank)1:VLVstat</pv_name>
+    <symbols>
+      <symbol>../Images/Cryo/Controlvalvegray.svg</symbol>
+      <symbol>../Images/Cryo/Controlvalvegreen.svg</symbol>
+      <symbol>../Images/Cryo/Controlvalvered.svg</symbol>
+    </symbols>
+    <x>77</x>
+    <y>68</y>
+    <width>58</width>
+    <height>70</height>
+    <initial_index>2</initial_index>
+    <rotation>90.0</rotation>
+    <actions>
+      <action type="open_display">
+        <description>Open Display</description>
+        <file>ValveControlSimple.bob</file>
+        <macros>
+          <vlv>EV1351</vlv>
+        </macros>
+        <target>window</target>
+      </action>
+    </actions>
+    <run_actions_on_mouse_click>true</run_actions_on_mouse_click>
+    <tooltip>$(pv_name)
+$(pv_value)
+$(actions)</tooltip>
+  </widget>
+</display>

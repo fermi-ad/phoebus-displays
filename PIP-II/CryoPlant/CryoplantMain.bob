@@ -3,7 +3,7 @@
   <name>Cryoplant Main</name>
   <macros>
     <complex>PIP2CP</complex>
-    <vlv>$(complex):RCVRY_CRYO_</vlv>
+    <group>CRYO</group>
   </macros>
   <width>1200</width>
   <height>800</height>
@@ -185,8 +185,7 @@
         <description>Open Display</description>
         <file>CryoRecoverySystem.bob</file>
         <macros>
-          <complex>PIP2CP:</complex>
-          <vlv>RCVRY_SYS_CRYO_</vlv>
+          <sys>$(complex):RCVRY_$(group)_</sys>
         </macros>
         <target>tab</target>
       </action>
@@ -205,8 +204,7 @@
         <description>Open Display</description>
         <file>CryoPurifier.bob</file>
         <macros>
-          <complex>PIP2CP:</complex>
-          <vlv>$(complex):RECOVERYSYSTEM</vlv>
+          <sys>$(complex):PURIFY_$(group)_</sys>
         </macros>
         <target>tab</target>
       </action>
@@ -224,6 +222,9 @@
       <action type="open_display">
         <description>Open Display</description>
         <file>MYCOMmain.bob</file>
+        <macros>
+          <sys>$(complex):MYCOM_$(group)_</sys>
+        </macros>
         <target>tab</target>
       </action>
     </actions>
