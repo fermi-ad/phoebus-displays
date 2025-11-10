@@ -1,0 +1,1034 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2025-10-27 13:52:28 by kacpe-->
+<display version="2.0.0">
+  <name>RFPI Logic</name>
+  <macros>
+    <acc>PIP2IT</acc>
+    <group>RFPI_KRIA_KC6</group>
+    <sys>pHB650</sys>
+    <num>KRIA</num>
+    <ina_num>ina</ina_num>
+    <ina_group>RFPI_MGMT_KC6</ina_group>
+  </macros>
+  <width>1680</width>
+  <height>1080</height>
+  <widget type="rectangle" version="2.0.0">
+    <name>Main_rectangle</name>
+    <x>20</x>
+    <y>200</y>
+    <width>1640</width>
+    <height>860</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color name="GROUP-TEXT" red="25" green="25" blue="25">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="BACKGROUND" red="220" green="225" blue="221">
+      </color>
+    </background_color>
+    <corner_width>10</corner_width>
+    <corner_height>10</corner_height>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Titlebar</name>
+    <width>1680</width>
+    <height>50</height>
+    <line_width>0</line_width>
+    <background_color>
+      <color name="PRIMARY-HEADER-BACKGROUND" red="151" green="188" blue="202">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Title</name>
+    <text>RFPI Kria</text>
+    <x>20</x>
+    <width>280</width>
+    <height>50</height>
+    <font>
+      <font name="Header 1" family="Source Sans Pro" style="BOLD_ITALIC" size="36.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="HEADER-TEXT" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Diagnostics_group</name>
+    <x>1080</x>
+    <y>70</y>
+    <width>320</width>
+    <height>110</height>
+    <style>3</style>
+    <background_color>
+      <color name="BACKGROUND" red="220" green="225" blue="221">
+      </color>
+    </background_color>
+    <widget type="rectangle" version="2.0.0">
+      <name>Diagnostics_rectangle</name>
+      <width>320</width>
+      <height>110</height>
+      <line_width>2</line_width>
+      <line_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="GROUP-BACKGROUND" red="200" green="205" blue="201">
+        </color>
+      </background_color>
+      <corner_width>10</corner_width>
+      <corner_height>10</corner_height>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Diagnostic_label</name>
+      <text>Diagnostics and Management</text>
+      <width>320</width>
+      <height>40</height>
+      <font>
+        <font name="Header 2" family="Source Sans Pro" style="BOLD_ITALIC" size="21.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>Diagnostic_LED</name>
+      <pv_name>$(acc):$(sys)_$(ina_group)_$(ina_num):SystemStatus_r</pv_name>
+      <x>30</x>
+      <y>50</y>
+      <width>40</width>
+      <height>40</height>
+      <off_color>
+        <color name="MAJOR" red="252" green="13" blue="27">
+        </color>
+      </off_color>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Diagnostic_button</name>
+      <actions>
+        <action type="open_display">
+          <file>../mgmt/RFPI_main.bob</file>
+          <target>tab</target>
+          <description>Open Display</description>
+        </action>
+      </actions>
+      <text>Diagnostics/Management</text>
+      <x>90</x>
+      <y>50</y>
+      <width>200</width>
+      <height>40</height>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Status_subtitle</name>
+    <text>Status</text>
+    <x>1500</x>
+    <y>20</y>
+    <width>160</width>
+    <height>30</height>
+    <font>
+      <font name="Header 2" family="Source Sans Pro" style="BOLD_ITALIC" size="21.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="HEADER-TEXT" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>2</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Alarms_group</name>
+    <x>20</x>
+    <y>70</y>
+    <width>700</width>
+    <height>110</height>
+    <style>3</style>
+    <background_color>
+      <color name="BACKGROUND" red="220" green="225" blue="221">
+      </color>
+    </background_color>
+    <widget type="rectangle" version="2.0.0">
+      <name>Alarms_rectangle</name>
+      <width>700</width>
+      <height>110</height>
+      <line_width>2</line_width>
+      <line_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="GROUP-BACKGROUND" red="200" green="205" blue="201">
+        </color>
+      </background_color>
+      <corner_width>10</corner_width>
+      <corner_height>10</corner_height>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Alarms_label</name>
+      <text>Alarms</text>
+      <width>700</width>
+      <height>40</height>
+      <font>
+        <font name="Header 2" family="Source Sans Pro" style="BOLD_ITALIC" size="21.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>AlarmsMsg_update</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):AlarmMsg_r</pv_name>
+      <x>70</x>
+      <y>50</y>
+      <width>500</width>
+      <height>40</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>Alarms_LED</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):Alarm_r</pv_name>
+      <x>10</x>
+      <y>50</y>
+      <width>40</width>
+      <height>40</height>
+      <off_color>
+        <color name="ON" red="70" green="255" blue="70">
+        </color>
+      </off_color>
+      <on_color>
+        <color name="MAJOR" red="252" green="13" blue="27">
+        </color>
+      </on_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Ack_Button</name>
+      <actions>
+        <action type="write_pv">
+          <pv_name>$(pv_name)</pv_name>
+          <value>1</value>
+          <description>WritePV</description>
+        </action>
+      </actions>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):AlarmAck_s</pv_name>
+      <text>ACK</text>
+      <x>590</x>
+      <y>50</y>
+      <width>90</width>
+      <height>40</height>
+      <font>
+        <font name="Default Bold" family="Source Sans Pro" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <tooltip>$(actions)</tooltip>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Common_group</name>
+    <x>1330</x>
+    <y>270</y>
+    <height>470</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="rectangle" version="2.0.0">
+      <name>Common_rectangle</name>
+      <width>300</width>
+      <height>470</height>
+      <line_width>2</line_width>
+      <line_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="GROUP-BACKGROUND" red="200" green="205" blue="201">
+        </color>
+      </background_color>
+      <corner_width>10</corner_width>
+      <corner_height>10</corner_height>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>RFAntenna1_LED</name>
+      <pv_name>$(acc):$(sys)_$(group)_NIRP1:Status_r</pv_name>
+      <x>20</x>
+      <y>50</y>
+      <width>30</width>
+      <height>30</height>
+      <states>
+        <state>
+          <value>0</value>
+          <label></label>
+          <color>
+            <color name="ON" red="70" green="255" blue="70">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>1</value>
+          <label></label>
+          <color>
+            <color name="MAJOR" red="252" green="13" blue="27">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>2</value>
+          <label></label>
+          <color>
+            <color name="WARNING" red="252" green="242" blue="17">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label></fallback_label>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>RFAntenna2_button</name>
+      <actions>
+        <action type="open_display">
+          <file>expert/analog_input.bob</file>
+          <macros>
+            <CHANNEL_NAME>RF Antenna 2</CHANNEL_NAME>
+            <num>NIRP2</num>
+            <adc>FEP</adc>
+            <gen_num>KRIA</gen_num>
+          </macros>
+          <target>tab</target>
+          <description>Open Display</description>
+        </action>
+      </actions>
+      <text>RF Antenna 2 (NIRP2)</text>
+      <x>60</x>
+      <y>90</y>
+      <width>210</width>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>RFAntenna2_LED</name>
+      <pv_name>$(acc):$(sys)_$(group)_NIRP2:Status_r</pv_name>
+      <x>20</x>
+      <y>90</y>
+      <width>30</width>
+      <height>30</height>
+      <states>
+        <state>
+          <value>0</value>
+          <label></label>
+          <color>
+            <color name="ON" red="70" green="255" blue="70">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>1</value>
+          <label></label>
+          <color>
+            <color name="MAJOR" red="252" green="13" blue="27">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>2</value>
+          <label></label>
+          <color>
+            <color name="WARNING" red="252" green="242" blue="17">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label></fallback_label>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>RFAntenna1_button</name>
+      <actions>
+        <action type="open_display">
+          <file>expert/analog_input.bob</file>
+          <macros>
+            <CHANNEL_NAME>RF Antenna 1</CHANNEL_NAME>
+            <num>NIRP1</num>
+            <adc>FEP</adc>
+            <gen_num>KRIA</gen_num>
+          </macros>
+          <target>tab</target>
+          <description>Open Display</description>
+        </action>
+      </actions>
+      <text>RF Antenna 1 (NIRP1)</text>
+      <x>60</x>
+      <y>50</y>
+      <width>210</width>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>RFAntenna3_button</name>
+      <actions>
+        <action type="open_display">
+          <file>expert/analog_input.bob</file>
+          <macros>
+            <CHANNEL_NAME>RF Antenna 3</CHANNEL_NAME>
+            <num>NIRP3</num>
+            <adc>FEP</adc>
+            <gen_num>KRIA</gen_num>
+          </macros>
+          <target>tab</target>
+          <description>Open Display</description>
+        </action>
+      </actions>
+      <text>RF Antenna 3 (NIRP3)</text>
+      <x>60</x>
+      <y>130</y>
+      <width>210</width>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>RFAntenna3_LED</name>
+      <pv_name>$(acc):$(sys)_$(group)_NIRP3:Status_r</pv_name>
+      <x>20</x>
+      <y>130</y>
+      <width>30</width>
+      <height>30</height>
+      <states>
+        <state>
+          <value>0</value>
+          <label></label>
+          <color>
+            <color name="ON" red="70" green="255" blue="70">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>1</value>
+          <label></label>
+          <color>
+            <color name="MAJOR" red="252" green="13" blue="27">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>2</value>
+          <label></label>
+          <color>
+            <color name="WARNING" red="252" green="242" blue="17">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label></fallback_label>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>RFAntenna4_LED</name>
+      <pv_name>$(acc):$(sys)_$(group)_NIRP4:Status_r</pv_name>
+      <x>20</x>
+      <y>170</y>
+      <width>30</width>
+      <height>30</height>
+      <states>
+        <state>
+          <value>0</value>
+          <label></label>
+          <color>
+            <color name="ON" red="70" green="255" blue="70">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>1</value>
+          <label></label>
+          <color>
+            <color name="MAJOR" red="252" green="13" blue="27">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>2</value>
+          <label></label>
+          <color>
+            <color name="WARNING" red="252" green="242" blue="17">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label></fallback_label>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>RFAntenna5_button</name>
+      <actions>
+        <action type="open_display">
+          <file>expert/analog_input.bob</file>
+          <macros>
+            <CHANNEL_NAME>RF Antenna 5</CHANNEL_NAME>
+            <num>NIRP5</num>
+            <adc>FEP</adc>
+            <gen_num>KRIA</gen_num>
+          </macros>
+          <target>tab</target>
+          <description>Open Display</description>
+        </action>
+      </actions>
+      <text>RF Antenna 5 (NIRP5)</text>
+      <x>60</x>
+      <y>210</y>
+      <width>210</width>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>RFAntenna5_LED</name>
+      <pv_name>$(acc):$(sys)_$(group)_NIRP5:Status_r</pv_name>
+      <x>20</x>
+      <y>208</y>
+      <width>30</width>
+      <height>30</height>
+      <states>
+        <state>
+          <value>0</value>
+          <label></label>
+          <color>
+            <color name="ON" red="70" green="255" blue="70">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>1</value>
+          <label></label>
+          <color>
+            <color name="MAJOR" red="252" green="13" blue="27">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>2</value>
+          <label></label>
+          <color>
+            <color name="WARNING" red="252" green="242" blue="17">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label></fallback_label>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>RFAntenna4_button</name>
+      <actions>
+        <action type="open_display">
+          <file>expert/analog_input.bob</file>
+          <macros>
+            <CHANNEL_NAME>RF Antenna 4</CHANNEL_NAME>
+            <num>NIRP4</num>
+            <adc>FEP</adc>
+            <gen_num>KRIA</gen_num>
+          </macros>
+          <target>tab</target>
+          <description>Open Display</description>
+        </action>
+      </actions>
+      <text>RF Antenna 4 (NIRP4)</text>
+      <x>60</x>
+      <y>170</y>
+      <width>210</width>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>RFAntenna6_button</name>
+      <actions>
+        <action type="open_display">
+          <file>expert/analog_input.bob</file>
+          <macros>
+            <CHANNEL_NAME>RF Antenna 6</CHANNEL_NAME>
+            <num>NIRP6</num>
+            <adc>FEP</adc>
+            <gen_num>KRIA</gen_num>
+          </macros>
+          <target>tab</target>
+          <description>Open Display</description>
+        </action>
+      </actions>
+      <text>RF Antenna 6 (NIRP6)</text>
+      <x>60</x>
+      <y>250</y>
+      <width>210</width>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>RFAntenna6_LED</name>
+      <pv_name>$(acc):$(sys)_$(group)_NIRP6:Status_r</pv_name>
+      <x>20</x>
+      <y>248</y>
+      <width>30</width>
+      <height>30</height>
+      <states>
+        <state>
+          <value>0</value>
+          <label></label>
+          <color>
+            <color name="ON" red="70" green="255" blue="70">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>1</value>
+          <label></label>
+          <color>
+            <color name="MAJOR" red="252" green="13" blue="27">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>2</value>
+          <label></label>
+          <color>
+            <color name="WARNING" red="252" green="242" blue="17">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label></fallback_label>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label</name>
+      <text>Inputs</text>
+      <width>300</width>
+      <height>50</height>
+      <font>
+        <font name="Header 2" family="Source Sans Pro" style="BOLD_ITALIC" size="21.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>VacuumStatus_button</name>
+      <actions>
+        <action type="open_display">
+          <file>expert/binary_input_expert.bob</file>
+          <macros>
+            <CHANNEL_NAME>Vacuum Status</CHANNEL_NAME>
+            <num>BEAM_VAC</num>
+          </macros>
+          <target>tab</target>
+          <description>Open Display</description>
+        </action>
+      </actions>
+      <text>Vacuum Status</text>
+      <x>60</x>
+      <y>330</y>
+      <width>210</width>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>HeLevel_button</name>
+      <actions>
+        <action type="open_display">
+          <file>expert/binary_input_expert.bob</file>
+          <macros>
+            <CHANNEL_NAME>He Level and Pressure (Cryo)</CHANNEL_NAME>
+            <num>HE_LEVEL</num>
+          </macros>
+          <target>tab</target>
+          <description>Open Display</description>
+        </action>
+      </actions>
+      <text>He Level&amp;Pressure (CRYO)</text>
+      <x>60</x>
+      <y>290</y>
+      <width>210</width>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>VacuumStatus_LED</name>
+      <pv_name>$(acc):$(sys)_$(group)_BEAM_VAC:Status_r</pv_name>
+      <x>20</x>
+      <y>330</y>
+      <width>30</width>
+      <height>30</height>
+      <states>
+        <state>
+          <value>0</value>
+          <label></label>
+          <color>
+            <color name="ON" red="70" green="255" blue="70">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>1</value>
+          <label></label>
+          <color>
+            <color name="MAJOR" red="252" green="13" blue="27">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>2</value>
+          <label></label>
+          <color>
+            <color name="WARNING" red="252" green="242" blue="17">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label></fallback_label>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>HeLevel_LED</name>
+      <pv_name>$(acc):$(sys)_$(group)_HE_LEVEL:Status_r</pv_name>
+      <x>20</x>
+      <y>290</y>
+      <width>30</width>
+      <height>30</height>
+      <states>
+        <state>
+          <value>0</value>
+          <label></label>
+          <color>
+            <color name="ON" red="70" green="255" blue="70">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>1</value>
+          <label></label>
+          <color>
+            <color name="MAJOR" red="252" green="13" blue="27">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>2</value>
+          <label></label>
+          <color>
+            <color name="WARNING" red="252" green="242" blue="17">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label></fallback_label>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>ResetCommon_button</name>
+      <actions execute_as_one="true">
+        <action type="write_pv">
+          <pv_name>$(acc):$(sys)_$(group)_NIRP1:Rst_s</pv_name>
+          <value>1</value>
+          <description>WritePV</description>
+        </action>
+        <action type="write_pv">
+          <pv_name>$(acc):$(sys)_$(group)_NIRP2:Rst_s</pv_name>
+          <value>1</value>
+          <description>WritePV</description>
+        </action>
+        <action type="write_pv">
+          <pv_name>$(acc):$(sys)_$(group)_NIRP3:Rst_s</pv_name>
+          <value>1</value>
+          <description>WritePV</description>
+        </action>
+        <action type="write_pv">
+          <pv_name>$(acc):$(sys)_$(group)_NIRP4:Rst_s</pv_name>
+          <value>1</value>
+          <description>WritePV</description>
+        </action>
+        <action type="write_pv">
+          <pv_name>$(acc):$(sys)_$(group)_NIRP5:Rst_s</pv_name>
+          <value>1</value>
+          <description>WritePV</description>
+        </action>
+        <action type="write_pv">
+          <pv_name>$(acc):$(sys)_$(group)_NIRP6:Rst_s</pv_name>
+          <value>1</value>
+          <description>WritePV</description>
+        </action>
+        <action type="write_pv">
+          <pv_name>$(acc):$(sys)_$(group)_HE_LEVEL:Reset_s</pv_name>
+          <value>1</value>
+          <description>WritePV</description>
+        </action>
+        <action type="write_pv">
+          <pv_name>$(acc):$(sys)_$(group)_BEAM_VAC:Reset_s</pv_name>
+          <value>1</value>
+          <description>WritePV</description>
+        </action>
+      </actions>
+      <text>Reset</text>
+      <x>100</x>
+      <y>410</y>
+      <width>110</width>
+      <height>40</height>
+      <font>
+        <font family="Source Sans Pro" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>ErrorsTracking_button</name>
+    <actions>
+      <action type="open_display">
+        <file>expert/error_tracking_v2.bob</file>
+        <target>tab</target>
+        <description>Open Display</description>
+      </action>
+    </actions>
+    <text>Errors Tracking</text>
+    <x>1420</x>
+    <y>140</y>
+    <width>120</width>
+    <height>40</height>
+    <font>
+      <font name="Default Bold" family="Source Sans Pro" style="BOLD" size="16.0">
+      </font>
+    </font>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Versrions_button</name>
+    <actions>
+      <action type="open_display">
+        <file>versions/versions.bob</file>
+        <target>tab</target>
+        <description>Open Display</description>
+      </action>
+    </actions>
+    <text>Versions</text>
+    <x>1420</x>
+    <y>70</y>
+    <width>120</width>
+    <height>40</height>
+    <font>
+      <font name="Default Bold" family="Source Sans Pro" style="BOLD" size="16.0">
+      </font>
+    </font>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Cavity1_label</name>
+    <text>Cavity 1</text>
+    <x>50</x>
+    <y>210</y>
+    <width>300</width>
+    <height>50</height>
+    <font>
+      <font name="Header 1" family="Source Sans Pro" style="BOLD_ITALIC" size="36.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Cavity2_label</name>
+    <text>Cavity 2</text>
+    <x>370</x>
+    <y>210</y>
+    <width>300</width>
+    <height>50</height>
+    <font>
+      <font name="Header 1" family="Source Sans Pro" style="BOLD_ITALIC" size="36.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Cavity3_label</name>
+    <text>Cavity 3</text>
+    <x>690</x>
+    <y>210</y>
+    <width>300</width>
+    <height>50</height>
+    <font>
+      <font name="Header 1" family="Source Sans Pro" style="BOLD_ITALIC" size="36.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Cavity4_label</name>
+    <text>Cavity 4</text>
+    <x>1010</x>
+    <y>210</y>
+    <width>300</width>
+    <height>50</height>
+    <font>
+      <font name="Header 1" family="Source Sans Pro" style="BOLD_ITALIC" size="36.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Cavity1_display</name>
+    <macros>
+      <CAVITY>1</CAVITY>
+      <gen_num>KRIA</gen_num>
+    </macros>
+    <file>template/input.bob</file>
+    <x>50</x>
+    <y>270</y>
+    <width>300</width>
+    <height>770</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Cavity2_display</name>
+    <macros>
+      <CAVITY>2</CAVITY>
+      <gen_num>KRIA</gen_num>
+    </macros>
+    <file>template/input.bob</file>
+    <x>370</x>
+    <y>270</y>
+    <width>300</width>
+    <height>770</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Cavity3_display</name>
+    <macros>
+      <CAVITY>3</CAVITY>
+      <gen_num>KRIA</gen_num>
+    </macros>
+    <file>template/input.bob</file>
+    <x>690</x>
+    <y>270</y>
+    <width>300</width>
+    <height>770</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Cavity4_display</name>
+    <macros>
+      <CAVITY>4</CAVITY>
+      <gen_num>KRIA</gen_num>
+    </macros>
+    <file>template/input.bob</file>
+    <x>1010</x>
+    <y>270</y>
+    <width>300</width>
+    <height>770</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Common_label</name>
+    <text>Common</text>
+    <x>1330</x>
+    <y>210</y>
+    <width>300</width>
+    <height>50</height>
+    <font>
+      <font name="Header 1" family="Source Sans Pro" style="BOLD_ITALIC" size="36.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Init_group</name>
+    <x>740</x>
+    <y>70</y>
+    <width>320</width>
+    <height>110</height>
+    <style>3</style>
+    <background_color>
+      <color name="BACKGROUND" red="220" green="225" blue="221">
+      </color>
+    </background_color>
+    <widget type="rectangle" version="2.0.0">
+      <name>Init_rectangle</name>
+      <width>320</width>
+      <height>110</height>
+      <line_width>2</line_width>
+      <line_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="GROUP-BACKGROUND" red="200" green="205" blue="201">
+        </color>
+      </background_color>
+      <corner_width>10</corner_width>
+      <corner_height>10</corner_height>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Init_Button</name>
+      <actions>
+        <action type="write_pv">
+          <pv_name>$(pv_name)</pv_name>
+          <value>1</value>
+          <description>WritePV</description>
+        </action>
+      </actions>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):InitDevice_s</pv_name>
+      <text>Initialisation</text>
+      <x>70</x>
+      <y>50</y>
+      <width>180</width>
+      <height>40</height>
+      <font>
+        <font name="Default Bold" family="Source Sans Pro" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <tooltip>$(actions)</tooltip>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Init_label</name>
+      <text>System Initialisation</text>
+      <width>320</width>
+      <height>40</height>
+      <font>
+        <font name="Header 2" family="Source Sans Pro" style="BOLD_ITALIC" size="21.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Waveforms_button</name>
+    <actions>
+      <action type="open_display">
+        <file>waveforms/settings.bob</file>
+        <target>tab</target>
+        <description>Open Display</description>
+      </action>
+    </actions>
+    <text>Waveforms</text>
+    <x>1560</x>
+    <y>70</y>
+    <height>40</height>
+    <font>
+      <font name="Default Bold" family="Source Sans Pro" style="BOLD" size="16.0">
+      </font>
+    </font>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>PGA_DAC_button</name>
+    <actions>
+      <action type="open_display">
+        <file>pga_dac/settings.bob</file>
+        <target>tab</target>
+        <description>Open Display</description>
+      </action>
+    </actions>
+    <text>PGA/DAC</text>
+    <x>1560</x>
+    <y>140</y>
+    <height>40</height>
+    <font>
+      <font name="Default Bold" family="Source Sans Pro" style="BOLD" size="16.0">
+      </font>
+    </font>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+</display>

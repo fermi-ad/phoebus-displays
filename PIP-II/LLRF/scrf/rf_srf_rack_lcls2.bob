@@ -1,5 +1,4 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<!--Saved on 2025-06-23 15:31:44 by tjurican-->
+<?xml version="1.0" encoding="UTF-8"?>
 <display version="2.0.0">
   <name>RF Rack Diagnostics - $(CM)00 - Rack $(R)</name>
   <x>149</x>
@@ -153,9 +152,9 @@ Cryomodule $(CM)00 - Rack $(R)</text>
     <name>EDM activeMessageButtonClass</name>
     <actions>
       <action type="write_pv">
+        <description>Go</description>
         <pv_name>$(pv_name)</pv_name>
         <value>1</value>
-        <description>Go</description>
       </action>
     </actions>
     <pv_name>$(CM)00:RACK$(R):TESTSTRT</pv_name>
@@ -176,7 +175,8 @@ Cryomodule $(CM)00 - Rack $(R)</text>
       <color name="GLOBAL canvas" red="200" green="200" blue="200">
       </color>
     </background_color>
-  <border_alarm_sensitive>false</border_alarm_sensitive></widget>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
   <widget type="textupdate" version="2.0.0">
     <name>EDM activeXTextDspClass</name>
     <pv_name>$(CM)00:RACK$(R):TESTSTS</pv_name>
@@ -204,9 +204,9 @@ Cryomodule $(CM)00 - Rack $(R)</text>
     <name>EDM relatedDisplayClass</name>
     <actions>
       <action type="open_display">
+        <description>Open Display</description>
         <file>rf_srf_daemon_expert.bob</file>
         <target>tab</target>
-        <description>Open Display</description>
       </action>
     </actions>
     <text>Script launcher</text>
@@ -267,8 +267,8 @@ widget.setPropertyValue('line_color', WidgetColorService.getColor(cn))]]></text>
     <name>EDM shellCmdClass</name>
     <actions>
       <action type="command">
-        <command>xterm -hold -sb -rightbar -sl 10000 -geometry 130x30 -T "LLRF Rack Test Log File" -e rfTestViewLog.bash $(CM)00:RACK$(R)</command>
         <description>Execute Command</description>
+        <command>xterm -hold -sb -rightbar -sl 10000 -geometry 130x30 -T "LLRF Rack Test Log File" -e rfTestViewLog.bash $(CM)00:RACK$(R)</command>
       </action>
     </actions>
     <text>Log</text>
@@ -419,9 +419,9 @@ widget.setPropertyValue('line_color', WidgetColorService.getColor(cn))]]></text>
     <name>EDM activeMessageButtonClass</name>
     <actions>
       <action type="write_pv">
+        <description>Go</description>
         <pv_name>$(pv_name)</pv_name>
         <value>1</value>
-        <description>Go</description>
       </action>
     </actions>
     <pv_name>$(CM)00:RES$(R):INITSTRT</pv_name>
@@ -442,7 +442,8 @@ widget.setPropertyValue('line_color', WidgetColorService.getColor(cn))]]></text>
       <color name="GLOBAL canvas" red="200" green="200" blue="200">
       </color>
     </background_color>
-  <border_alarm_sensitive>false</border_alarm_sensitive></widget>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
   <widget type="textupdate" version="2.0.0">
     <name>EDM activeXTextDspClass</name>
     <pv_name>$(CM)00:RES$(R):INITSTS</pv_name>
@@ -510,9 +511,9 @@ widget.setPropertyValue('line_color', WidgetColorService.getColor(cn))]]></text>
     <name>EDM activeMessageButtonClass</name>
     <actions>
       <action type="write_pv">
+        <description>Halt</description>
         <pv_name>$(pv_name)</pv_name>
         <value>1</value>
-        <description>Halt</description>
       </action>
     </actions>
     <pv_name>$(CM)00:RACK$(R):CTRL_HALT</pv_name>
@@ -533,14 +534,15 @@ widget.setPropertyValue('line_color', WidgetColorService.getColor(cn))]]></text>
       <color name="GLOBAL canvas" red="200" green="200" blue="200">
       </color>
     </background_color>
-  <border_alarm_sensitive>false</border_alarm_sensitive></widget>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
   <widget type="action_button" version="3.0.0">
     <name>EDM activeMessageButtonClass</name>
     <actions>
       <action type="write_pv">
+        <description>Reset</description>
         <pv_name>$(pv_name)</pv_name>
         <value>1</value>
-        <description>Reset</description>
       </action>
     </actions>
     <pv_name>$(CM)00:RACK$(R):CTRL_RESET</pv_name>
@@ -561,14 +563,15 @@ widget.setPropertyValue('line_color', WidgetColorService.getColor(cn))]]></text>
       <color name="GLOBAL canvas" red="200" green="200" blue="200">
       </color>
     </background_color>
-  <border_alarm_sensitive>false</border_alarm_sensitive></widget>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
   <widget type="action_button" version="3.0.0">
     <name>EDM relatedDisplayClass</name>
     <actions>
       <action type="open_display">
+        <description>Open Display</description>
         <file>rf_srf_rack_lcls2_comm.bob</file>
         <target>tab</target>
-        <description>Open Display</description>
       </action>
     </actions>
     <text>RFS&lt;-&gt;RES Comm</text>
@@ -618,8 +621,8 @@ widget.setPropertyValue('line_color', WidgetColorService.getColor(cn))]]></text>
     <name>EDM shellCmdClass</name>
     <actions>
       <action type="command">
-        <command>xterm -hold -sb -rightbar -sl 10000 -geometry 130x30 -T "LLRF Daemon Log File" -e rfViewLauncherLog.bash $(LCLS_DATA)/tools/FEED/log $(CM) 500</command>
         <description>Execute Command</description>
+        <command>xterm -hold -sb -rightbar -sl 10000 -geometry 130x30 -T "LLRF Daemon Log File" -e rfViewLauncherLog.bash $(LCLS_DATA)/tools/FEED/log $(CM) 500</command>
       </action>
     </actions>
     <text>Log</text>
@@ -715,9 +718,9 @@ with all LLRF chassis in Rack $(R)</text>
     <name>EDM relatedDisplayClass</name>
     <actions>
       <action type="open_display">
+        <description>Open Display</description>
         <file>rf_srf_rack_lcls2_expert.bob</file>
         <target>tab</target>
-        <description>Open Display</description>
       </action>
     </actions>
     <text>Other Functions</text>
