@@ -30,23 +30,6 @@
     </line_color>
   </widget>
   <widget type="polyline" version="2.0.0">
-    <name>Polyline_134</name>
-    <x>962</x>
-    <y>100</y>
-    <width>1</width>
-    <height>219</height>
-    <points>
-      <point x="0.0" y="219.6503323338064">
-      </point>
-      <point x="0.5793287594733556" y="0.0">
-      </point>
-    </points>
-    <line_color>
-      <color red="170" green="0" blue="255">
-      </color>
-    </line_color>
-  </widget>
-  <widget type="polyline" version="2.0.0">
     <name>Polyline</name>
     <x>140</x>
     <y>740</y>
@@ -686,6 +669,7 @@ $(actions)</tooltip>
   </widget>
   <widget type="symbol" version="2.0.0">
     <name>Symbol_25</name>
+    <pv_name>$(sys)PV1423:VLVstat</pv_name>
     <symbols>
       <symbol>../Images/Cryo/on_off_valve_Gray.svg</symbol>
       <symbol>../Images/Cryo/on_off_valve_Green.svg</symbol>
@@ -702,6 +686,7 @@ $(actions)</tooltip>
   </widget>
   <widget type="symbol" version="2.0.0">
     <name>Symbol_26</name>
+    <pv_name>$(sys)PV1423:VLVstat</pv_name>
     <symbols>
       <symbol>../Images/Cryo/on_off_valve_Gray.svg</symbol>
       <symbol>../Images/Cryo/on_off_valve_Green.svg</symbol>
@@ -712,12 +697,24 @@ $(actions)</tooltip>
     <width>58</width>
     <height>70</height>
     <initial_index>2</initial_index>
+    <actions>
+      <action type="open_display">
+        <description>Open Display</description>
+        <file>ValveControlOnOffSimple.bob</file>
+        <macros>
+          <dev>PV1423</dev>
+        </macros>
+        <target>tab</target>
+      </action>
+    </actions>
+    <run_actions_on_mouse_click>true</run_actions_on_mouse_click>
     <tooltip>$(pv_name)
 $(pv_value)
 $(actions)</tooltip>
   </widget>
   <widget type="symbol" version="2.0.0">
     <name>Symbol_27</name>
+    <pv_name>$(sys)PV1404:VLVstat</pv_name>
     <symbols>
       <symbol>../Images/Cryo/on_off_valve_Gray.svg</symbol>
       <symbol>../Images/Cryo/on_off_valve_Green.svg</symbol>
@@ -729,27 +726,23 @@ $(actions)</tooltip>
     <height>70</height>
     <initial_index>1</initial_index>
     <rotation>90.0</rotation>
-    <tooltip>$(pv_name)
-$(pv_value)
-$(actions)</tooltip>
-  </widget>
-  <widget type="symbol" version="2.0.0">
-    <name>Symbol_24</name>
-    <symbols>
-      <symbol>../Images/Cryo/Controlvalvegray.svg</symbol>
-      <symbol>../Images/Cryo/Controlvalvegreen.svg</symbol>
-      <symbol>../Images/Cryo/Controlvalvered.svg</symbol>
-    </symbols>
-    <x>336</x>
-    <y>705</y>
-    <width>58</width>
-    <height>70</height>
+    <actions>
+      <action type="open_display">
+        <description>Open Display</description>
+        <file>ValveControlOnOffSimple.bob</file>
+        <macros>
+          <dev>PV1404</dev>
+        </macros>
+        <target>tab</target>
+      </action>
+    </actions>
     <tooltip>$(pv_name)
 $(pv_value)
 $(actions)</tooltip>
   </widget>
   <widget type="symbol" version="2.0.0">
     <name>Symbol_28</name>
+    <pv_name>$(sys)PV1422:VLVstat</pv_name>
     <symbols>
       <symbol>../Images/Cryo/Controlvalvegray.svg</symbol>
       <symbol>../Images/Cryo/Controlvalvegreen.svg</symbol>
@@ -766,7 +759,7 @@ $(actions)</tooltip>
   </widget>
   <widget type="symbol" version="2.0.0">
     <name>Symbol_29</name>
-    <pv_name>PV1426_Status</pv_name>
+    <pv_name>$(sys)PV1426:VLVstat</pv_name>
     <symbols>
       <symbol>../Images/Cryo/Controlvalvegray.svg</symbol>
       <symbol>../Images/Cryo/Controlvalvegreen.svg</symbol>
@@ -796,9 +789,9 @@ $(actions)</tooltip>
       <dev>PV1426</dev>
     </macros>
     <file>../Common/cryo-embedded-displays/ValveStatusUp.bob</file>
-    <x>712</x>
-    <y>186</y>
-    <width>55</width>
+    <x>709</x>
+    <y>184</y>
+    <width>65</width>
     <height>35</height>
   </widget>
   <widget type="embedded" version="2.0.0">
@@ -807,21 +800,27 @@ $(actions)</tooltip>
       <dev>PV1422</dev>
     </macros>
     <file>../Common/cryo-embedded-displays/ValveStatusUp.bob</file>
-    <x>629</x>
-    <y>411</y>
-    <width>55</width>
+    <x>615</x>
+    <y>415</y>
+    <width>65</width>
     <height>35</height>
   </widget>
   <widget type="led" version="2.0.0">
     <name>LED_6</name>
+    <pv_name>$(sys)PV1426:ManualAuto</pv_name>
+    <bit>0</bit>
     <x>754</x>
     <y>128</y>
     <off_label>M</off_label>
     <off_color>
-      <color red="115" green="115" blue="115">
+      <color name="fgs.Gray-45" red="167" green="168" blue="170">
       </color>
     </off_color>
     <on_label>A</on_label>
+    <on_color>
+      <color name="acorn.Green" red="82" green="171" blue="90">
+      </color>
+    </on_color>
     <square>true</square>
   </widget>
   <widget type="symbol" version="2.0.0">
@@ -839,6 +838,7 @@ $(actions)</tooltip>
   </widget>
   <widget type="symbol" version="2.0.0">
     <name>Symbol_31</name>
+    <pv_name>$(sys)PV1426:VLVstat</pv_name>
     <symbols>
       <symbol>../Images/Cryo/on_off_valve_Gray.svg</symbol>
       <symbol>../Images/Cryo/on_off_valve_Green.svg</symbol>
@@ -858,11 +858,11 @@ $(actions)</tooltip>
     <macros>
       <dev>PV1426</dev>
     </macros>
-    <file>../Common/cryo-embedded-displays/ValveStatusUp.bob</file>
-    <x>371</x>
-    <y>178</y>
-    <width>55</width>
-    <height>35</height>
+    <file>../Common/cryo-embedded-displays/ValveStatusNameOnly.bob</file>
+    <x>359</x>
+    <y>180</y>
+    <width>65</width>
+    <height>20</height>
   </widget>
   <widget type="polygon" version="2.0.0">
     <name>Polygon_3</name>
@@ -914,10 +914,20 @@ $(actions)</tooltip>
   </widget>
   <widget type="led" version="2.0.0">
     <name>LED_8</name>
+    <pv_name>$(sys)PV1422:ManualAuto</pv_name>
+    <bit>0</bit>
     <x>712</x>
     <y>394</y>
     <off_label>M</off_label>
+    <off_color>
+      <color name="fgs.Gray-45" red="167" green="168" blue="170">
+      </color>
+    </off_color>
     <on_label>A</on_label>
+    <on_color>
+      <color name="acorn.Green" red="82" green="171" blue="90">
+      </color>
+    </on_color>
     <square>true</square>
   </widget>
   <widget type="led" version="2.0.0">
@@ -930,6 +940,7 @@ $(actions)</tooltip>
   </widget>
   <widget type="symbol" version="2.0.0">
     <name>Symbol_38</name>
+    <pv_name>$(sys)PV1423:VLVstat</pv_name>
     <symbols>
       <symbol>../Images/Cryo/Controlvalvegray.svg</symbol>
       <symbol>../Images/Cryo/Controlvalvegreen.svg</symbol>
@@ -940,6 +951,16 @@ $(actions)</tooltip>
     <width>58</width>
     <height>70</height>
     <initial_index>1</initial_index>
+    <actions>
+      <action type="open_display">
+        <description>Open Display</description>
+        <file>ValveControlPIDSimple.bob</file>
+        <macros>
+          <dev>PV1423</dev>
+        </macros>
+        <target>tab</target>
+      </action>
+    </actions>
     <tooltip>$(pv_name)
 $(pv_value)
 $(actions)</tooltip>
@@ -947,20 +968,30 @@ $(actions)</tooltip>
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display_155</name>
     <macros>
-      <dev>PV607H</dev>
+      <dev>PV1423</dev>
     </macros>
     <file>../Common/cryo-embedded-displays/ValveStatusUp.bob</file>
-    <x>712</x>
-    <y>760</y>
-    <width>55</width>
+    <x>706</x>
+    <y>758</y>
+    <width>65</width>
     <height>35</height>
   </widget>
   <widget type="led" version="2.0.0">
     <name>LED_17</name>
+    <pv_name>$(sys)PV1423:ManualAuto</pv_name>
+    <bit>0</bit>
     <x>757</x>
     <y>708</y>
     <off_label>M</off_label>
+    <off_color>
+      <color name="fgs.Gray-45" red="167" green="168" blue="170">
+      </color>
+    </off_color>
     <on_label>A</on_label>
+    <on_color>
+      <color name="acorn.Green" red="82" green="171" blue="90">
+      </color>
+    </on_color>
     <square>true</square>
   </widget>
   <widget type="label" version="2.0.0">
@@ -995,7 +1026,7 @@ $(actions)</tooltip>
   </widget>
   <widget type="group" version="3.0.0">
     <name>Group_222</name>
-    <x>215</x>
+    <x>205</x>
     <y>159</y>
     <width>16</width>
     <height>20</height>
@@ -1037,17 +1068,17 @@ $(actions)</tooltip>
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display_175</name>
     <macros>
-      <sensor>PT1433</sensor>
+      <dev>PT1433</dev>
     </macros>
     <file>../Common/cryo-embedded-displays/PressureSensorUp.bob</file>
-    <x>187</x>
+    <x>177</x>
     <y>188</y>
     <width>65</width>
     <height>35</height>
   </widget>
   <widget type="group" version="3.0.0">
     <name>Group_223</name>
-    <x>292</x>
+    <x>272</x>
     <y>159</y>
     <width>16</width>
     <height>20</height>
@@ -1089,12 +1120,12 @@ $(actions)</tooltip>
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display_179</name>
     <macros>
-      <sensor>TT1433</sensor>
+      <dev>TT1433</dev>
     </macros>
     <file>../Common/cryo-embedded-displays/TempSensorUp.bob</file>
-    <x>270</x>
+    <x>250</x>
     <y>188</y>
-    <width>55</width>
+    <width>65</width>
     <height>35</height>
   </widget>
   <widget type="polyline" version="2.0.0">
@@ -1111,7 +1142,7 @@ $(actions)</tooltip>
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display_180</name>
     <macros>
-      <sensor>DPT1408</sensor>
+      <dev>DPT1408</dev>
     </macros>
     <file>../Common/cryo-embedded-displays/PressureSensorUp.bob</file>
     <x>554</x>
@@ -1232,22 +1263,22 @@ $(actions)</tooltip>
     <macros>
       <dev>PV607H</dev>
     </macros>
-    <file>../Common/cryo-embedded-displays/ValveStatusUp.bob</file>
+    <file>../Common/cryo-embedded-displays/ValveStatusNameOnly.bob</file>
     <x>325</x>
     <y>518</y>
-    <width>55</width>
-    <height>35</height>
+    <width>65</width>
+    <height>20</height>
   </widget>
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display_182</name>
     <macros>
       <dev>PV607H</dev>
     </macros>
-    <file>../Common/cryo-embedded-displays/ValveStatusUp.bob</file>
+    <file>../Common/cryo-embedded-displays/ValveStatusNameOnly.bob</file>
     <x>551</x>
     <y>554</y>
-    <width>55</width>
-    <height>35</height>
+    <width>65</width>
+    <height>20</height>
   </widget>
   <widget type="led" version="2.0.0">
     <name>LED_22</name>
@@ -1262,22 +1293,22 @@ $(actions)</tooltip>
     <macros>
       <dev>PV607H</dev>
     </macros>
-    <file>../Common/cryo-embedded-displays/ValveStatusUp.bob</file>
+    <file>../Common/cryo-embedded-displays/ValveStatusNameOnly.bob</file>
     <x>323</x>
     <y>636</y>
-    <width>55</width>
-    <height>35</height>
+    <width>65</width>
+    <height>20</height>
   </widget>
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display_184</name>
     <macros>
       <dev>PV1452</dev>
     </macros>
-    <file>../Common/cryo-embedded-displays/ValveStatusUp.bob</file>
-    <x>337</x>
-    <y>758</y>
-    <width>55</width>
-    <height>35</height>
+    <file>../Common/cryo-embedded-displays/ValveStatusNameOnly.bob</file>
+    <x>326</x>
+    <y>756</y>
+    <width>65</width>
+    <height>20</height>
   </widget>
   <widget type="polyline" version="2.0.0">
     <name>Polyline_2</name>
@@ -1377,7 +1408,7 @@ $(actions)</tooltip>
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display_185</name>
     <macros>
-      <sensor>PT1415</sensor>
+      <dev>PT1415</dev>
     </macros>
     <file>../Common/cryo-embedded-displays/PressureSensorUp.bob</file>
     <x>618</x>
@@ -1448,7 +1479,7 @@ $(actions)</tooltip>
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display_193</name>
     <macros>
-      <sensor>PT621H</sensor>
+      <dev>PT1418</dev>
     </macros>
     <file>../Common/cryo-embedded-displays/PressureSensorUp.bob</file>
     <x>593</x>
@@ -1500,12 +1531,12 @@ $(actions)</tooltip>
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display_194</name>
     <macros>
-      <sensor>TT1379</sensor>
+      <dev>TT1379</dev>
     </macros>
     <file>../Common/cryo-embedded-displays/TempSensorUp.bob</file>
-    <x>734</x>
+    <x>728</x>
     <y>920</y>
-    <width>55</width>
+    <width>65</width>
     <height>35</height>
   </widget>
   <widget type="label" version="2.0.0">
@@ -1568,7 +1599,7 @@ $(actions)</tooltip>
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display_195</name>
     <macros>
-      <sensor>PT621H</sensor>
+      <dev>DPT1413</dev>
     </macros>
     <file>../Common/cryo-embedded-displays/PressureSensorUp.bob</file>
     <x>410</x>
@@ -1578,7 +1609,7 @@ $(actions)</tooltip>
   </widget>
   <widget type="group" version="3.0.0">
     <name>Group_230</name>
-    <x>813</x>
+    <x>823</x>
     <y>734</y>
     <width>16</width>
     <height>25</height>
@@ -1621,10 +1652,10 @@ $(actions)</tooltip>
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display_196</name>
     <macros>
-      <sensor>PT621H</sensor>
+      <dev>PT1453</dev>
     </macros>
     <file>../Common/cryo-embedded-displays/PressureSensorUp.bob</file>
-    <x>785</x>
+    <x>795</x>
     <y>760</y>
     <width>65</width>
     <height>35</height>
@@ -1632,7 +1663,7 @@ $(actions)</tooltip>
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display_197</name>
     <macros>
-      <sensor>PT621H</sensor>
+      <dev>DPT1427</dev>
     </macros>
     <file>../Common/cryo-embedded-displays/PressureSensorUp.bob</file>
     <x>715</x>
@@ -1726,7 +1757,7 @@ $(actions)</tooltip>
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display_198</name>
     <macros>
-      <sensor>PT1455</sensor>
+      <dev>PT1455</dev>
     </macros>
     <file>../Common/cryo-embedded-displays/PressureSensorUp.bob</file>
     <x>808</x>
@@ -1824,10 +1855,10 @@ Distribution</text>
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display_199</name>
     <macros>
-      <sensor>PTINT</sensor>
+      <dev>PTINT</dev>
     </macros>
     <file>../Common/cryo-embedded-displays/PressureSensorUp.bob</file>
-    <x>568</x>
+    <x>577</x>
     <y>323</y>
     <width>65</width>
     <height>35</height>
@@ -1838,9 +1869,9 @@ Distribution</text>
       <dev>PV607H</dev>
     </macros>
     <file>../Common/cryo-embedded-displays/ValveStatusUp.bob</file>
-    <x>431</x>
-    <y>326</y>
-    <width>55</width>
+    <x>415</x>
+    <y>325</y>
+    <width>65</width>
     <height>35</height>
   </widget>
   <widget type="polyline" version="2.0.0">
@@ -1907,7 +1938,7 @@ Distribution</text>
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display_192</name>
     <macros>
-      <sensor>DPT2115</sensor>
+      <dev>DPT2115</dev>
     </macros>
     <file>../Common/cryo-embedded-displays/PressureSensorUp.bob</file>
     <x>37</x>
@@ -2068,7 +2099,7 @@ Distribution</text>
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display_201</name>
     <macros>
-      <sensor>PT1441</sensor>
+      <dev>PT1441</dev>
     </macros>
     <file>../Common/cryo-embedded-displays/PressureSensorUp.bob</file>
     <x>441</x>
@@ -2128,7 +2159,7 @@ Distribution</text>
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display_202</name>
     <macros>
-      <sensor>CT001</sensor>
+      <dev>CT0001</dev>
     </macros>
     <file>../Common/cryo-embedded-displays/ArcCellReadingUp.bob</file>
     <x>428</x>
@@ -2139,7 +2170,7 @@ Distribution</text>
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display_203</name>
     <macros>
-      <sensor>CT002</sensor>
+      <dev>CT0002</dev>
     </macros>
     <file>../Common/cryo-embedded-displays/ArcCellReadingUp.bob</file>
     <x>425</x>
@@ -2147,87 +2178,15 @@ Distribution</text>
     <width>65</width>
     <height>35</height>
   </widget>
-  <widget type="group" version="3.0.0">
-    <name>Group_238</name>
-    <x>886</x>
-    <y>734</y>
-    <width>16</width>
-    <height>20</height>
-    <style>3</style>
-    <background_color>
-      <color red="217" green="217" blue="217">
-      </color>
-    </background_color>
-    <transparent>true</transparent>
-    <widget type="ellipse" version="2.0.0">
-      <name>Ellipse_135</name>
-      <width>12</width>
-      <height>12</height>
-      <line_width>1</line_width>
-      <line_color>
-        <color red="0" green="0" blue="0">
-        </color>
-      </line_color>
-      <transparent>true</transparent>
-    </widget>
-    <widget type="polyline" version="2.0.0">
-      <name>Polyline_306</name>
-      <x>6</x>
-      <y>5</y>
-      <width>1</width>
-      <points>
-        <point x="0.0" y="20.0">
-        </point>
-        <point x="0.0" y="0.0">
-        </point>
-      </points>
-      <line_width>1</line_width>
-      <line_color>
-        <color red="0" green="0" blue="0">
-        </color>
-      </line_color>
-    </widget>
-  </widget>
-  <widget type="embedded" version="2.0.0">
-    <name>Embedded Display_204</name>
-    <macros>
-      <sensor>CT003</sensor>
-    </macros>
-    <file>../Common/cryo-embedded-displays/ArcCellReadingUp.bob</file>
-    <x>858</x>
-    <y>760</y>
-    <width>65</width>
-    <height>35</height>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Action Button_34</name>
-    <actions>
-      <action type="open_display">
-        <description>Open Display</description>
-        <file>ValveControlPIDSimple.bob</file>
-        <macros>
-          <valve>PV1422</valve>
-        </macros>
-        <target>tab</target>
-      </action>
-    </actions>
-    <text></text>
-    <x>680</x>
-    <y>409</y>
-    <width>39</width>
-    <height>38</height>
-    <transparent>true</transparent>
-    <tooltip>$(actions)</tooltip>
-  </widget>
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display_186</name>
     <macros>
-      <sensor>TO604H</sensor>
+      <dev>TT1321</dev>
     </macros>
     <file>../Common/cryo-embedded-displays/TempSensorUp.bob</file>
-    <x>873</x>
-    <y>80</y>
-    <width>55</width>
+    <x>942</x>
+    <y>470</y>
+    <width>65</width>
     <height>35</height>
   </widget>
   <widget type="embedded" version="2.0.0">
@@ -2295,5 +2254,86 @@ Distribution</text>
     <y>162</y>
     <width>300</width>
     <height>740</height>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group_234</name>
+    <x>892</x>
+    <y>734</y>
+    <width>16</width>
+    <height>25</height>
+    <style>3</style>
+    <background_color>
+      <color red="217" green="217" blue="217">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <widget type="ellipse" version="2.0.0">
+      <name>Ellipse_135</name>
+      <width>12</width>
+      <height>12</height>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_306</name>
+      <x>6</x>
+      <y>5</y>
+      <width>1</width>
+      <height>25</height>
+      <points>
+        <point x="0.0" y="18.75">
+        </point>
+        <point x="0.0" y="0.0">
+        </point>
+      </points>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+    </widget>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_204</name>
+    <macros>
+      <dev>CT0003</dev>
+    </macros>
+    <file>../Common/cryo-embedded-displays/ArcCellReadingUp.bob</file>
+    <x>864</x>
+    <y>760</y>
+    <width>65</width>
+    <height>35</height>
+  </widget>
+  <widget type="symbol" version="2.0.0">
+    <name>Symbol_32</name>
+    <pv_name>$(sys)PV1452:VLVstat</pv_name>
+    <symbols>
+      <symbol>../Images/Cryo/on_off_valve_Gray.svg</symbol>
+      <symbol>../Images/Cryo/on_off_valve_Green.svg</symbol>
+      <symbol>../Images/Cryo/on_off_valve_Red.svg</symbol>
+    </symbols>
+    <x>328</x>
+    <y>704</y>
+    <width>58</width>
+    <height>70</height>
+    <initial_index>1</initial_index>
+    <actions>
+      <action type="open_display">
+        <description>Open Display</description>
+        <file>ValveControlOnOffSimple.bob</file>
+        <macros>
+          <dev>PV1452</dev>
+        </macros>
+        <target>tab</target>
+      </action>
+    </actions>
+    <run_actions_on_mouse_click>true</run_actions_on_mouse_click>
+    <tooltip>$(pv_name)
+$(pv_value)
+$(actions)</tooltip>
   </widget>
 </display>
