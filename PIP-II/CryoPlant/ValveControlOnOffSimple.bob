@@ -250,7 +250,7 @@ $(actions)</tooltip>
       </color>
     </off_color>
     <on_color>
-      <color red="0" green="128" blue="128">
+      <color name="acorn.Green" red="82" green="171" blue="90">
       </color>
     </on_color>
   </widget>
@@ -279,7 +279,7 @@ $(actions)</tooltip>
       </color>
     </off_color>
     <on_color>
-      <color red="0" green="128" blue="128">
+      <color name="acorn.Green" red="82" green="171" blue="90">
       </color>
     </on_color>
   </widget>
@@ -296,28 +296,75 @@ $(actions)</tooltip>
     <horizontal_alignment>1</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
   </widget>
-  <widget type="bool_button" version="2.0.0">
-    <name>Boolean Button</name>
+  <widget type="tank" version="2.0.0">
+    <name>Tank</name>
+    <x>648</x>
+    <y>304</y>
+    <width>1</width>
+    <height>1</height>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Close</name>
+    <actions>
+      <action type="write_pv">
+        <description>Close Valve</description>
+        <pv_name>$(pv_name)</pv_name>
+        <value>0</value>
+      </action>
+    </actions>
     <pv_name>$(sys)$(dev):sOpen</pv_name>
-    <x>164</x>
+    <text>CLOSE $(dev)</text>
+    <x>94</x>
+    <y>79</y>
+    <width>122</width>
+    <height>64</height>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>OPEN</name>
+    <actions>
+      <action type="write_pv">
+        <description>Open Valve</description>
+        <pv_name>$(pv_name)</pv_name>
+        <value>1</value>
+      </action>
+    </actions>
+    <pv_name>$(sys)$(dev):sOpen</pv_name>
+    <text>OPEN $(dev)</text>
+    <x>241</x>
     <y>78</y>
-    <width>132</width>
-    <height>66</height>
-    <off_label>$(dev) Closed 
- OPEN $(dev)</off_label>
+    <width>122</width>
+    <height>64</height>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_2</name>
+    <pv_name>$(sys)$(dev):Open</pv_name>
+    <x>199</x>
+    <y>82</y>
+    <width>15</width>
+    <height>15</height>
+    <off_color>
+      <color name="acorn.Green" red="82" green="171" blue="90">
+      </color>
+    </off_color>
+    <on_color>
+      <color name="fgs.Gray-45" red="167" green="168" blue="170">
+      </color>
+    </on_color>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_3</name>
+    <pv_name>$(sys)$(dev):Open</pv_name>
+    <x>345</x>
+    <y>82</y>
+    <width>15</width>
+    <height>15</height>
     <off_color>
       <color name="fgs.Gray-45" red="167" green="168" blue="170">
       </color>
     </off_color>
-    <on_label>$(dev) Opened /n Close $(dev)</on_label>
     <on_color>
       <color name="acorn.Green" red="82" green="171" blue="90">
       </color>
     </on_color>
-    <show_led>false</show_led>
-    <font>
-      <font family="Liberation Sans" style="BOLD" size="14.0">
-      </font>
-    </font>
   </widget>
 </display>
