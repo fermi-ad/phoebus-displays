@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>LEDs</name>
+  <background_color>
+    <color name="acorn.GroupPrimaryBackground" red="217" green="217" blue="217">
+    </color>
+  </background_color>
+  <widget type="label" version="2.0.0">
+    <name>Title</name>
+    <class>Label</class>
+    <text>LED Usage</text>
+    <width>550</width>
+    <height>62</height>
+    <font>
+      <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="acorn.Text.White" red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="fgs.NAL-Blue" red="0" green="76" blue="151">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Resource_Group</name>
+    <text>UI Guidance / LEDs</text>
+    <x>3</x>
+    <y>3</y>
+    <width>272</width>
+    <height>21</height>
+    <foreground_color>
+      <color name="acorn.Text.White" red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_1</name>
+    <text>Binary Off/On</text>
+    <x>20</x>
+    <y>80</y>
+    <font>
+      <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update</name>
+    <pv_name>loc://On_${DID}&lt;VEnum&gt;(0,"ON","OFF")</pv_name>
+    <x>310</x>
+    <y>140</y>
+    <height>21</height>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Alive_SysTime</name>
+    <pv_name>sys://time</pv_name>
+    <x>393</x>
+    <y>3</y>
+    <width>150</width>
+    <height>21</height>
+    <foreground_color>
+      <color name="acorn.Text.White" red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="fgs.NAL-Blue" red="0" green="76" blue="151">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <format>7</format>
+    <horizontal_alignment>2</horizontal_alignment>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED</name>
+    <pv_name>loc://On_${DID}&lt;VEnum&gt;(0,"ON","OFF")</pv_name>
+    <x>125</x>
+    <y>120</y>
+    <width>21</width>
+    <height>21</height>
+    <off_color>
+      <color name="fgs.NAL-Green.Dark" red="54" green="87" blue="59">
+      </color>
+    </off_color>
+    <on_label>✔</on_label>
+    <tooltip>Off/On Binary Enum
+$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button</name>
+    <actions>
+      <action type="write_pv">
+        <description>Write 1 to On</description>
+        <pv_name>$(pv_name)</pv_name>
+        <value>1</value>
+      </action>
+    </actions>
+    <pv_name>loc://On_${DID}</pv_name>
+    <text>On</text>
+    <x>83</x>
+    <y>120</y>
+    <width>30</width>
+    <height>21</height>
+    <tooltip>$(actions)
+(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_1</name>
+    <actions>
+      <action type="write_pv">
+        <description>Write 0 to On</description>
+        <pv_name>$(pv_name)</pv_name>
+        <value>0</value>
+      </action>
+    </actions>
+    <pv_name>loc://On_${DID}</pv_name>
+    <text>Off</text>
+    <x>50</x>
+    <y>120</y>
+    <width>30</width>
+    <height>21</height>
+    <tooltip>$(actions)
+(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry</name>
+    <pv_name>loc://On_${DID}</pv_name>
+    <x>260</x>
+    <y>140</y>
+    <width>30</width>
+    <height>21</height>
+    <background_color>
+      <color name="acorn.White" red="255" green="255" blue="255">
+      </color>
+    </background_color>
+    <tooltip>Set Off/On Value
+$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+</display>
