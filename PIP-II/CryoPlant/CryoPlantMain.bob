@@ -5,8 +5,8 @@
     <complex>PIP2CP</complex>
     <group>CRYO</group>
   </macros>
-  <width>1200</width>
-  <height>800</height>
+  <width>500</width>
+  <height>630</height>
   <background_color>
     <color red="217" green="217" blue="217">
     </color>
@@ -131,8 +131,8 @@
   <widget type="label" version="2.0.0">
     <name>HB650-$(cm) $(view)</name>
     <text>PIP-II Cryogenics Overview</text>
-    <width>1200</width>
-    <height>36</height>
+    <width>500</width>
+    <height>30</height>
     <font>
       <font family="Liberation Sans" style="BOLD" size="22.0">
       </font>
@@ -154,9 +154,10 @@
   <widget type="action_button" version="3.0.0">
     <name>Action Button_2</name>
     <text>HOME</text>
-    <x>1104</x>
-    <y>2</y>
-    <width>89</width>
+    <x>415</x>
+    <y>5</y>
+    <width>80</width>
+    <height>20</height>
     <font>
       <font family="Liberation Sans" style="BOLD" size="14.0">
       </font>
@@ -165,10 +166,9 @@
   </widget>
   <widget type="rectangle" version="2.0.0">
     <name>Rectangle</name>
-    <x>195</x>
-    <y>126</y>
-    <width>513</width>
-    <height>634</height>
+    <y>30</y>
+    <width>500</width>
+    <height>600</height>
     <line_color>
       <color red="0" green="0" blue="0">
       </color>
@@ -185,14 +185,14 @@
         <description>Open Display</description>
         <file>CryoRecoverySystem.bob</file>
         <macros>
-          <sys>$(complex):RCVRY_$(group)_</sys>
+          <system>$(complex):RCVRY_$(group)_</system>
         </macros>
         <target>tab</target>
       </action>
     </actions>
     <text>Storage and Recovery</text>
-    <x>204</x>
-    <y>175</y>
+    <x>9</x>
+    <y>79</y>
     <width>235</width>
     <height>48</height>
     <tooltip>$(actions)</tooltip>
@@ -204,14 +204,14 @@
         <description>Open Display</description>
         <file>CryoPurifier.bob</file>
         <macros>
-          <sys>$(complex):PURIFY_$(group)_</sys>
+          <system>$(complex):RCVRY_$(group)_</system>
         </macros>
         <target>tab</target>
       </action>
     </actions>
     <text>Purifier</text>
-    <x>204</x>
-    <y>233</y>
+    <x>9</x>
+    <y>137</y>
     <width>235</width>
     <height>48</height>
     <tooltip>$(actions)</tooltip>
@@ -223,14 +223,14 @@
         <description>Open Display</description>
         <file>MYCOMmain.bob</file>
         <macros>
-          <sys>$(complex):MYCOM_$(group)_</sys>
+          <system>$(complex):MYCOM_$(group)_</system>
         </macros>
         <target>tab</target>
       </action>
     </actions>
     <text>Mycom</text>
-    <x>204</x>
-    <y>293</y>
+    <x>9</x>
+    <y>197</y>
     <width>235</width>
     <height>48</height>
     <tooltip>$(actions)</tooltip>
@@ -238,8 +238,8 @@
   <widget type="action_button" version="3.0.0">
     <name>Action Button_4</name>
     <text>Bulding</text>
-    <x>204</x>
-    <y>352</y>
+    <x>9</x>
+    <y>256</y>
     <width>235</width>
     <height>48</height>
     <tooltip>$(actions)</tooltip>
@@ -247,8 +247,8 @@
   <widget type="action_button" version="3.0.0">
     <name>Action Button_5</name>
     <text>ICW Loop</text>
-    <x>204</x>
-    <y>410</y>
+    <x>9</x>
+    <y>314</y>
     <width>235</width>
     <height>48</height>
     <tooltip>$(actions)</tooltip>
@@ -256,8 +256,8 @@
   <widget type="label" version="2.0.0">
     <name>Label_58</name>
     <text>Cryoplant Screens</text>
-    <x>377</x>
-    <y>134</y>
+    <x>182</x>
+    <y>38</y>
     <width>195</width>
     <height>25</height>
     <font>
@@ -271,8 +271,8 @@
   <widget type="label" version="2.0.0">
     <name>Label_59</name>
     <text>Coldbox Screens</text>
-    <x>371</x>
-    <y>476</y>
+    <x>176</x>
+    <y>380</y>
     <width>180</width>
     <height>25</height>
     <font>
@@ -282,5 +282,89 @@
     <horizontal_alignment>1</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
     <auto_size>true</auto_size>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_1</name>
+    <text>S7 PLC</text>
+    <x>295</x>
+    <y>79</y>
+    <width>80</width>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="multi_state_led" version="2.0.0">
+    <name>LED (Multi State)</name>
+    <pv_name>$(complex):RCVRY_$(group)_S7PLC:HBstatus</pv_name>
+    <x>380</x>
+    <y>79</y>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="11.0">
+      </font>
+    </font>
+    <states>
+      <state>
+        <value>0</value>
+        <label>OK</label>
+        <color>
+          <color name="Off" red="60" green="100" blue="60">
+          </color>
+        </color>
+      </state>
+      <state>
+        <value>1</value>
+        <label>OK</label>
+        <color>
+          <color name="On" red="0" green="255" blue="0">
+          </color>
+        </color>
+      </state>
+    </states>
+    <fallback_color>
+      <color name="MAJOR" red="255" green="0" blue="0">
+      </color>
+    </fallback_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_2</name>
+    <text>Mycom PLC</text>
+    <x>295</x>
+    <y>109</y>
+    <width>80</width>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="multi_state_led" version="2.0.0">
+    <name>LED (Multi State)_1</name>
+    <pv_name>$(complex):MYCOM_$(group)_MCPLC:HBstatus</pv_name>
+    <x>380</x>
+    <y>109</y>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="11.0">
+      </font>
+    </font>
+    <states>
+      <state>
+        <value>0</value>
+        <label>OK</label>
+        <color>
+          <color name="Off" red="60" green="100" blue="60">
+          </color>
+        </color>
+      </state>
+      <state>
+        <value>1</value>
+        <label>OK</label>
+        <color>
+          <color name="On" red="0" green="255" blue="0">
+          </color>
+        </color>
+      </state>
+    </states>
+    <fallback_color>
+      <color name="MAJOR" red="255" green="0" blue="0">
+      </color>
+    </fallback_color>
   </widget>
 </display>
