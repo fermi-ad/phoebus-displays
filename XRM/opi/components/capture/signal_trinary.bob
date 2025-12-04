@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2025-03-06 12:04:01 by sam-->
+<!--Saved on 2025-03-14 15:46:28 by dt100-->
 <display version="2.0.0">
   <name>signal trinary</name>
-  <width>330</width>
+  <width>350</width>
   <height>30</height>
   <widget type="group" version="3.0.0">
     <name>Sig Group</name>
     <macros>
       <sig>$(sig=TRG)</sig>
     </macros>
-    <width>330</width>
+    <width>350</width>
     <height>30</height>
     <style>3</style>
     <transparent>true</transparent>
     <widget type="label" version="2.0.0">
       <name>Sig label</name>
       <text>$(sig)</text>
-      <width>80</width>
+      <width>70</width>
       <height>30</height>
       <transparent>false</transparent>
       <horizontal_alignment>1</horizontal_alignment>
@@ -25,15 +25,15 @@
     <widget type="combo" version="2.0.0">
       <name>Sig En</name>
       <pv_name>${UUT}:$(site):${sig}</pv_name>
-      <x>90</x>
-      <width>80</width>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <x>80</x>
+      <width>90</width>
+      <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
     </widget>
     <widget type="combo" version="2.0.0">
       <name>Sig Src</name>
       <pv_name>${UUT}:$(site):${sig}:DX</pv_name>
       <x>180</x>
-      <width>50</width>
+      <width>70</width>
       <rules>
         <rule name="DISABLE" prop_id="enabled" out_exp="false">
           <exp bool_exp="pv0==0">
@@ -45,12 +45,12 @@
           <pv_name>${UUT}:$(site):${sig}</pv_name>
         </rule>
       </rules>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
     </widget>
     <widget type="combo" version="2.0.0">
       <name>Sig Sens</name>
       <pv_name>${UUT}:$(site):${sig}:SENSE</pv_name>
-      <x>240</x>
+      <x>260</x>
       <width>90</width>
       <rules>
         <rule name="DISABLE" prop_id="enabled" out_exp="false">
@@ -63,7 +63,7 @@
           <pv_name>${UUT}:$(site):${sig}</pv_name>
         </rule>
       </rules>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
     </widget>
   </widget>
 </display>

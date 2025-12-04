@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2025-03-06 11:10:18 by sam-->
+<!--Saved on 2025-05-29 17:13:55 by sam-->
 <display version="2.0.0">
   <name>480 Site Bar</name>
   <width>760</width>
@@ -29,13 +29,10 @@
     </background_color>
     <rules>
       <rule name="SHOW_480" prop_id="visible" out_exp="true">
-        <exp bool_exp="pvStr0.startswith(&quot;48&quot;)">
-          <expression>true</expression>
-        </exp>
         <exp bool_exp="true">
-          <expression>false</expression>
+          <expression>pvStr0.upper().startswith("ACQ48")</expression>
         </exp>
-        <pv_name>loc://SITE_$(site)_MODEL</pv_name>
+        <pv_name>$(UUT):$(site):PART_NUM</pv_name>
       </rule>
     </rules>
     <widget type="group" version="3.0.0">
@@ -65,7 +62,7 @@
           <color red="102" green="102" blue="102">
           </color>
         </off_color>
-        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
       </widget>
       <widget type="led" version="2.0.0">
         <name>LED_4</name>
@@ -79,7 +76,7 @@
           <color red="255" green="127" blue="0">
           </color>
         </on_color>
-        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
       </widget>
       <widget type="led" version="2.0.0">
         <name>LED_6</name>
@@ -93,7 +90,7 @@
           <color red="255" green="127" blue="0">
           </color>
         </on_color>
-        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
       </widget>
       <widget type="label" version="2.0.0">
         <name>Label_13</name>
@@ -125,7 +122,7 @@
             <pv_name>$(pvname3)</pv_name>
           </rule>
         </rules>
-        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
       </widget>
       <widget type="led" version="2.0.0">
         <name>LED_7</name>
@@ -139,7 +136,7 @@
           <color red="255" green="127" blue="0">
           </color>
         </on_color>
-        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
       </widget>
       <widget type="led" version="2.0.0">
         <name>LED_8</name>
@@ -153,7 +150,7 @@
           <color red="255" green="127" blue="0">
           </color>
         </on_color>
-        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
       </widget>
       <widget type="led" version="2.0.0">
         <name>LED_10</name>
@@ -167,7 +164,7 @@
           <color red="255" green="0" blue="0">
           </color>
         </on_color>
-        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
       </widget>
       <widget type="group" version="3.0.0">
         <name>ADC</name>
@@ -202,7 +199,7 @@
           </background_color>
           <horizontal_alignment>1</horizontal_alignment>
           <vertical_alignment>1</vertical_alignment>
-          <border_alarm_sensitive>false</border_alarm_sensitive>
+          <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
         </widget>
         <widget type="label" version="2.0.0">
           <name>Label_15</name>
@@ -230,7 +227,7 @@
           <show_units>false</show_units>
           <horizontal_alignment>1</horizontal_alignment>
           <vertical_alignment>1</vertical_alignment>
-          <border_alarm_sensitive>false</border_alarm_sensitive>
+          <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
         </widget>
       </widget>
       <widget type="group" version="3.0.0">
@@ -262,7 +259,7 @@
           </background_color>
           <horizontal_alignment>1</horizontal_alignment>
           <vertical_alignment>1</vertical_alignment>
-          <border_alarm_sensitive>false</border_alarm_sensitive>
+          <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
         </widget>
         <widget type="label" version="2.0.0">
           <name>Label_17</name>
@@ -289,7 +286,7 @@
           <precision>3</precision>
           <horizontal_alignment>1</horizontal_alignment>
           <vertical_alignment>1</vertical_alignment>
-          <border_alarm_sensitive>false</border_alarm_sensitive>
+          <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
         </widget>
       </widget>
     </widget>

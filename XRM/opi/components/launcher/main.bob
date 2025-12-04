@@ -1,0 +1,1485 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>Main</name>
+  <width>700</width>
+  <height>660</height>
+  <widget type="group" version="3.0.0">
+    <name>LAUNCHER</name>
+    <macros>
+      <UUT>$(UUT)</UUT>
+      <MODEL>$(MODEL=none)</MODEL>
+      <SITE_1_MODEL>$(SITE_1_MODEL=none)</SITE_1_MODEL>
+      <SITE_2_MODEL>$(SITE_2_MODEL=none)</SITE_2_MODEL>
+      <SITE_3_MODEL>$(SITE_3_MODEL=none)</SITE_3_MODEL>
+      <SITE_4_MODEL>$(SITE_4_MODEL=none)</SITE_4_MODEL>
+      <SITE_5_MODEL>$(SITE_5_MODEL=none)</SITE_5_MODEL>
+      <SITE_6_MODEL>$(SITE_6_MODEL=none)</SITE_6_MODEL>
+      <SITES>$(SITES=1,2,3,4,5,6)</SITES>
+      <NSITES>$(NSITES=6)</NSITES>
+      <SITE>1</SITE>
+      <USER_GUIDE>https://www.d-tacq.com/resources/d-tacq-4G-acq4xx-UserGuide-r49.pdf</USER_GUIDE>
+    </macros>
+    <width>700</width>
+    <height>660</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <scripts>
+      <script file="../../../scripts/handle_site.py">
+        <pv_name>loc://SITE_$(DID)</pv_name>
+        <pv_name trigger="false">loc://SITE_MODEL_$(DID)</pv_name>
+      </script>
+      <script file="../../../scripts/handle_boot.py">
+        <pv_name>$(UUT):IOC_READY</pv_name>
+      </script>
+    </scripts>
+    <widget type="group" version="3.0.0">
+      <name>LAUNCHER INNER</name>
+      <x>10</x>
+      <y>10</y>
+      <width>680</width>
+      <height>640</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="group" version="3.0.0">
+        <name>UUT CONFIG</name>
+        <width>170</width>
+        <height>420</height>
+        <style>3</style>
+        <background_color>
+          <color red="0" green="51" blue="171">
+          </color>
+        </background_color>
+        <widget type="group" version="3.0.0">
+          <name>UUT CONFIG INNER</name>
+          <x>10</x>
+          <y>10</y>
+          <width>150</width>
+          <height>400</height>
+          <style>3</style>
+          <transparent>true</transparent>
+          <widget type="group" version="3.0.0">
+            <name>UUT CONFIG ARRAY</name>
+            <y>130</y>
+            <width>150</width>
+            <height>270</height>
+            <style>3</style>
+            <transparent>true</transparent>
+            <widget type="group" version="3.0.0">
+              <name>INIT SITE 1 MODEL</name>
+              <macros>
+                <pvname>loc://SITE_1_MODEL</pvname>
+                <pvtype>VString</pvtype>
+                <pvvalue>none</pvvalue>
+                <label>Site 1</label>
+              </macros>
+              <y>100</y>
+              <width>150</width>
+              <height>20</height>
+              <style>3</style>
+              <transparent>true</transparent>
+              <widget type="label" version="2.0.0">
+                <name>INIT NAME_8</name>
+                <text>$(label)</text>
+                <width>50</width>
+                <font>
+                  <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+                  </font>
+                </font>
+                <foreground_color>
+                  <color name="Background" red="255" green="255" blue="255">
+                  </color>
+                </foreground_color>
+                <horizontal_alignment>2</horizontal_alignment>
+                <vertical_alignment>1</vertical_alignment>
+              </widget>
+              <widget type="label" version="2.0.0">
+                <name>INIT VALUE_8</name>
+                <text>$(SITE_1_MODEL)</text>
+                <x>60</x>
+                <width>90</width>
+                <background_color>
+                  <color name="Read_Background" red="240" green="240" blue="240">
+                  </color>
+                </background_color>
+                <transparent>false</transparent>
+                <horizontal_alignment>1</horizontal_alignment>
+                <vertical_alignment>1</vertical_alignment>
+                <wrap_words>false</wrap_words>
+                <tooltip>$(UUT):1:MODEL</tooltip>
+              </widget>
+            </widget>
+            <widget type="group" version="3.0.0">
+              <name>INIT SITE 2 MODEL</name>
+              <macros>
+                <pvname>loc://SITE_2_MODEL</pvname>
+                <pvtype>VString</pvtype>
+                <pvvalue>none</pvvalue>
+                <label>Site 2</label>
+              </macros>
+              <y>130</y>
+              <width>150</width>
+              <height>20</height>
+              <style>3</style>
+              <transparent>true</transparent>
+              <widget type="label" version="2.0.0">
+                <name>INIT NAME_9</name>
+                <text>$(label)</text>
+                <width>50</width>
+                <font>
+                  <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+                  </font>
+                </font>
+                <foreground_color>
+                  <color name="Background" red="255" green="255" blue="255">
+                  </color>
+                </foreground_color>
+                <horizontal_alignment>2</horizontal_alignment>
+                <vertical_alignment>1</vertical_alignment>
+              </widget>
+              <widget type="label" version="2.0.0">
+                <name>INIT VALUE_9</name>
+                <text>$(SITE_2_MODEL)</text>
+                <x>60</x>
+                <width>90</width>
+                <background_color>
+                  <color name="Read_Background" red="240" green="240" blue="240">
+                  </color>
+                </background_color>
+                <transparent>false</transparent>
+                <horizontal_alignment>1</horizontal_alignment>
+                <vertical_alignment>1</vertical_alignment>
+                <wrap_words>false</wrap_words>
+                <tooltip>$(UUT):2:MODEL</tooltip>
+              </widget>
+            </widget>
+            <widget type="group" version="3.0.0">
+              <name>INIT SITE 3 MODEL</name>
+              <macros>
+                <pvname>loc://SITE_3_MODEL</pvname>
+                <pvtype>VString</pvtype>
+                <pvvalue>none</pvvalue>
+                <label>Site 3</label>
+              </macros>
+              <y>160</y>
+              <width>150</width>
+              <height>20</height>
+              <style>3</style>
+              <transparent>true</transparent>
+              <widget type="label" version="2.0.0">
+                <name>INIT NAME_10</name>
+                <text>$(label)</text>
+                <width>50</width>
+                <font>
+                  <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+                  </font>
+                </font>
+                <foreground_color>
+                  <color name="Background" red="255" green="255" blue="255">
+                  </color>
+                </foreground_color>
+                <horizontal_alignment>2</horizontal_alignment>
+                <vertical_alignment>1</vertical_alignment>
+              </widget>
+              <widget type="label" version="2.0.0">
+                <name>INIT VALUE_10</name>
+                <text>$(SITE_3_MODEL)</text>
+                <x>60</x>
+                <width>90</width>
+                <background_color>
+                  <color name="Read_Background" red="240" green="240" blue="240">
+                  </color>
+                </background_color>
+                <transparent>false</transparent>
+                <horizontal_alignment>1</horizontal_alignment>
+                <vertical_alignment>1</vertical_alignment>
+                <wrap_words>false</wrap_words>
+                <tooltip>$(UUT):3:MODEL</tooltip>
+              </widget>
+            </widget>
+            <widget type="group" version="3.0.0">
+              <name>INIT SITE 4 MODEL</name>
+              <macros>
+                <pvname>loc://SITE_4_MODEL</pvname>
+                <pvtype>VString</pvtype>
+                <pvvalue>none</pvvalue>
+                <label>Site 4</label>
+              </macros>
+              <y>190</y>
+              <width>150</width>
+              <height>20</height>
+              <style>3</style>
+              <transparent>true</transparent>
+              <widget type="label" version="2.0.0">
+                <name>INIT NAME_11</name>
+                <text>$(label)</text>
+                <width>50</width>
+                <font>
+                  <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+                  </font>
+                </font>
+                <foreground_color>
+                  <color name="Background" red="255" green="255" blue="255">
+                  </color>
+                </foreground_color>
+                <horizontal_alignment>2</horizontal_alignment>
+                <vertical_alignment>1</vertical_alignment>
+              </widget>
+              <widget type="label" version="2.0.0">
+                <name>INIT VALUE_11</name>
+                <text>$(SITE_4_MODEL)</text>
+                <x>60</x>
+                <width>90</width>
+                <background_color>
+                  <color name="Read_Background" red="240" green="240" blue="240">
+                  </color>
+                </background_color>
+                <transparent>false</transparent>
+                <horizontal_alignment>1</horizontal_alignment>
+                <vertical_alignment>1</vertical_alignment>
+                <wrap_words>false</wrap_words>
+                <tooltip>$(UUT):4:MODEL</tooltip>
+              </widget>
+            </widget>
+            <widget type="group" version="3.0.0">
+              <name>INIT SITE 5 MODEL</name>
+              <macros>
+                <pvname>loc://SITE_5_MODEL</pvname>
+                <pvtype>VString</pvtype>
+                <pvvalue>none</pvvalue>
+                <label>Site 5</label>
+              </macros>
+              <y>220</y>
+              <width>150</width>
+              <height>20</height>
+              <style>3</style>
+              <transparent>true</transparent>
+              <widget type="label" version="2.0.0">
+                <name>INIT NAME_12</name>
+                <text>$(label)</text>
+                <width>50</width>
+                <font>
+                  <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+                  </font>
+                </font>
+                <foreground_color>
+                  <color name="Background" red="255" green="255" blue="255">
+                  </color>
+                </foreground_color>
+                <horizontal_alignment>2</horizontal_alignment>
+                <vertical_alignment>1</vertical_alignment>
+              </widget>
+              <widget type="label" version="2.0.0">
+                <name>INIT VALUE_12</name>
+                <text>$(SITE_5_MODEL)</text>
+                <x>60</x>
+                <width>90</width>
+                <background_color>
+                  <color name="Read_Background" red="240" green="240" blue="240">
+                  </color>
+                </background_color>
+                <transparent>false</transparent>
+                <horizontal_alignment>1</horizontal_alignment>
+                <vertical_alignment>1</vertical_alignment>
+                <wrap_words>false</wrap_words>
+                <tooltip>$(UUT):5:MODEL</tooltip>
+              </widget>
+            </widget>
+            <widget type="group" version="3.0.0">
+              <name>INIT SITE 6 MODEL</name>
+              <macros>
+                <pvname>loc://SITE_6_MODEL</pvname>
+                <pvtype>VString</pvtype>
+                <pvvalue>none</pvvalue>
+                <label>Site 6</label>
+              </macros>
+              <y>250</y>
+              <width>150</width>
+              <height>20</height>
+              <style>3</style>
+              <transparent>true</transparent>
+              <widget type="label" version="2.0.0">
+                <name>INIT NAME_13</name>
+                <text>$(label)</text>
+                <width>50</width>
+                <font>
+                  <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+                  </font>
+                </font>
+                <foreground_color>
+                  <color name="Background" red="255" green="255" blue="255">
+                  </color>
+                </foreground_color>
+                <horizontal_alignment>2</horizontal_alignment>
+                <vertical_alignment>1</vertical_alignment>
+              </widget>
+              <widget type="label" version="2.0.0">
+                <name>INIT VALUE_13</name>
+                <text>$(SITE_6_MODEL)</text>
+                <x>60</x>
+                <width>90</width>
+                <background_color>
+                  <color name="Read_Background" red="240" green="240" blue="240">
+                  </color>
+                </background_color>
+                <transparent>false</transparent>
+                <horizontal_alignment>1</horizontal_alignment>
+                <vertical_alignment>1</vertical_alignment>
+                <wrap_words>false</wrap_words>
+                <tooltip>$(UUT):6:MODEL</tooltip>
+              </widget>
+            </widget>
+            <widget type="group" version="3.0.0">
+              <name>INIT MODEL</name>
+              <macros>
+                <pvname>loc://MODEL</pvname>
+                <pvtype>VString</pvtype>
+                <pvvalue>none</pvvalue>
+                <label>Carrier</label>
+              </macros>
+              <y>70</y>
+              <width>150</width>
+              <height>20</height>
+              <style>3</style>
+              <transparent>true</transparent>
+              <widget type="label" version="2.0.0">
+                <name>INIT NAME_14</name>
+                <text>$(label)</text>
+                <width>50</width>
+                <font>
+                  <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+                  </font>
+                </font>
+                <foreground_color>
+                  <color name="Background" red="255" green="255" blue="255">
+                  </color>
+                </foreground_color>
+                <horizontal_alignment>2</horizontal_alignment>
+                <vertical_alignment>1</vertical_alignment>
+              </widget>
+              <widget type="label" version="2.0.0">
+                <name>INIT VALUE_14</name>
+                <text>$(MODEL)</text>
+                <x>60</x>
+                <width>90</width>
+                <background_color>
+                  <color name="Read_Background" red="240" green="240" blue="240">
+                  </color>
+                </background_color>
+                <transparent>false</transparent>
+                <horizontal_alignment>1</horizontal_alignment>
+                <vertical_alignment>1</vertical_alignment>
+                <wrap_words>false</wrap_words>
+                <tooltip>$(UUT):0:MODEL</tooltip>
+              </widget>
+            </widget>
+            <widget type="textentry" version="3.0.0">
+              <name>UUT Input</name>
+              <pv_name>loc://UUT_$(DID)</pv_name>
+              <width>149</width>
+              <height>30</height>
+              <font>
+                <font family="Liberation Sans" style="BOLD" size="14.0">
+                </font>
+              </font>
+              <background_color>
+                <color name="Header_ForeGround" red="255" green="255" blue="255">
+                </color>
+              </background_color>
+              <horizontal_alignment>1</horizontal_alignment>
+              <tooltip>UUT Hostname</tooltip>
+            </widget>
+            <widget type="led" version="2.0.0">
+              <name>LED</name>
+              <pv_name>${UUT}:IOC_READY</pv_name>
+              <x>30</x>
+              <y>40</y>
+              <line_color>
+                <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+                </color>
+              </line_color>
+              <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+            </widget>
+            <widget type="label" version="2.0.0">
+              <name>Label</name>
+              <text>IOC Ready</text>
+              <x>60</x>
+              <y>40</y>
+              <width>80</width>
+              <font>
+                <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+                </font>
+              </font>
+              <foreground_color>
+                <color name="Header_ForeGround" red="255" green="255" blue="255">
+                </color>
+              </foreground_color>
+              <vertical_alignment>1</vertical_alignment>
+            </widget>
+          </widget>
+          <widget type="group" version="3.0.0">
+            <name>LOGO BOX</name>
+            <width>150</width>
+            <height>119</height>
+            <style>3</style>
+            <widget type="picture" version="2.0.0">
+              <name>logo</name>
+              <file>../../../images/d-tacq_logo_tight.svg</file>
+              <height>119</height>
+            </widget>
+          </widget>
+        </widget>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>UUT OPIS</name>
+        <x>190</x>
+        <width>490</width>
+        <height>210</height>
+        <style>3</style>
+        <background_color>
+          <color red="255" green="71" blue="87">
+          </color>
+        </background_color>
+        <widget type="group" version="3.0.0">
+          <name>UUT OPI INNER</name>
+          <x>10</x>
+          <y>10</y>
+          <width>470</width>
+          <height>190</height>
+          <style>3</style>
+          <background_color>
+            <color red="255" green="212" blue="0">
+            </color>
+          </background_color>
+          <transparent>true</transparent>
+          <widget type="label" version="2.0.0">
+            <name>TITLE_2</name>
+            <text>Carrier</text>
+            <width>470</width>
+            <height>30</height>
+            <font>
+              <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+              </font>
+            </font>
+            <vertical_alignment>1</vertical_alignment>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>Capture Button</name>
+            <actions>
+              <action type="execute">
+                <description>open opi/capture.bob</description>
+                <script file="../../../scripts/handle_action_button.py">
+                </script>
+              </action>
+            </actions>
+            <text>Capture</text>
+            <y>40</y>
+            <width>150</width>
+            <font>
+              <font family="Ubuntu" style="BOLD" size="14.0">
+              </font>
+            </font>
+            <tooltip>Data Capture Controls</tooltip>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>Sync Button</name>
+            <actions>
+              <action type="execute">
+                <description>open opi/sync.bob</description>
+                <script file="../../../scripts/handle_action_button.py">
+                </script>
+              </action>
+            </actions>
+            <text>Sync</text>
+            <x>160</x>
+            <y>40</y>
+            <width>150</width>
+            <font>
+              <font family="Ubuntu" style="BOLD" size="14.0">
+              </font>
+            </font>
+            <tooltip>System Timing Highway</tooltip>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>Clocktree Button</name>
+            <actions>
+              <action type="execute">
+                <description>open opi/clocktree.bob</description>
+                <script file="../../../scripts/handle_action_button.py">
+                </script>
+              </action>
+            </actions>
+            <text>Clocktree</text>
+            <y>80</y>
+            <width>150</width>
+            <font>
+              <font family="Ubuntu" style="BOLD" size="14.0">
+              </font>
+            </font>
+            <tooltip>System clocking</tooltip>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>Counters Button</name>
+            <actions>
+              <action type="execute">
+                <description>open opi/counters.bob</description>
+                <script file="../../../scripts/handle_action_button.py">
+                </script>
+              </action>
+            </actions>
+            <text>Counters</text>
+            <y>120</y>
+            <width>150</width>
+            <font>
+              <font family="Ubuntu" style="BOLD" size="14.0">
+              </font>
+            </font>
+            <tooltip>Counters</tooltip>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>System Button</name>
+            <actions>
+              <action type="execute">
+                <description>open opi/system.bob</description>
+                <script file="../../../scripts/handle_action_button.py">
+                </script>
+              </action>
+            </actions>
+            <text>System</text>
+            <x>160</x>
+            <y>80</y>
+            <width>150</width>
+            <font>
+              <font family="Ubuntu" style="BOLD" size="14.0">
+              </font>
+            </font>
+            <tooltip>Temp + Voltage</tooltip>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>White Rabbit Button</name>
+            <actions>
+              <action type="execute">
+                <description>open opi/white_rabbit.bob</description>
+                <script file="../../../scripts/handle_action_button.py">
+                </script>
+              </action>
+            </actions>
+            <text>White Rabbit</text>
+            <x>160</x>
+            <y>120</y>
+            <width>150</width>
+            <font>
+              <font family="Ubuntu" style="BOLD" size="14.0">
+              </font>
+            </font>
+            <tooltip>White Rabbit Timing</tooltip>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>Firmware Button</name>
+            <actions>
+              <action type="execute">
+                <description>open opi/firmware.bob</description>
+                <script file="../../../scripts/handle_action_button.py">
+                </script>
+              </action>
+            </actions>
+            <text>Firmware</text>
+            <x>320</x>
+            <y>40</y>
+            <width>150</width>
+            <font>
+              <font family="Ubuntu" style="BOLD" size="14.0">
+              </font>
+            </font>
+            <tooltip>Firmware</tooltip>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>MGT Button</name>
+            <actions>
+              <action type="execute">
+                <description>open opi/mgt.bob</description>
+                <script file="../../../scripts/handle_action_button.py">
+                </script>
+              </action>
+            </actions>
+            <text>MGT</text>
+            <x>320</x>
+            <y>80</y>
+            <width>150</width>
+            <font>
+              <font family="Ubuntu" style="BOLD" size="14.0">
+              </font>
+            </font>
+            <tooltip>Multi-Gigabit Transceiver</tooltip>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>HUDP Button</name>
+            <actions>
+              <action type="execute">
+                <description>open opi/hudp.bob</description>
+                <script file="../../../scripts/handle_action_button.py">
+                </script>
+              </action>
+            </actions>
+            <text>HUDP</text>
+            <x>320</x>
+            <y>120</y>
+            <width>150</width>
+            <font>
+              <font family="Ubuntu" style="BOLD" size="14.0">
+              </font>
+            </font>
+            <tooltip>Hardware UDP</tooltip>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>Slowmon Button</name>
+            <actions>
+              <action type="execute">
+                <description>open opi/slowmon.bob</description>
+                <script file="../../../scripts/handle_action_button.py">
+                </script>
+              </action>
+            </actions>
+            <text>Slowmon</text>
+            <y>160</y>
+            <width>150</width>
+            <font>
+              <font family="Ubuntu" style="BOLD" size="14.0">
+              </font>
+            </font>
+            <tooltip>Slow Monitor</tooltip>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>gpg Button</name>
+            <actions>
+              <action type="execute">
+                <description>open opi/gpg.bob</description>
+                <script file="../../../scripts/handle_action_button.py">
+                </script>
+              </action>
+            </actions>
+            <text>GPG</text>
+            <x>160</x>
+            <y>160</y>
+            <width>150</width>
+            <font>
+              <font family="Ubuntu" style="BOLD" size="14.0">
+              </font>
+            </font>
+            <tooltip>Gate Pulse Generator</tooltip>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>AWG Button</name>
+            <actions>
+              <action type="execute">
+                <description>open opi/awg.bob</description>
+                <script file="../../../scripts/handle_action_button.py">
+                </script>
+              </action>
+            </actions>
+            <text>AWG</text>
+            <x>320</x>
+            <y>160</y>
+            <width>150</width>
+            <font>
+              <font family="Ubuntu" style="BOLD" size="14.0">
+              </font>
+            </font>
+            <tooltip>Arbitrary Waveform Generator</tooltip>
+          </widget>
+        </widget>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>SITE OPIS</name>
+        <x>190</x>
+        <y>230</y>
+        <width>490</width>
+        <height>170</height>
+        <style>3</style>
+        <background_color>
+          <color red="236" green="204" blue="104">
+          </color>
+        </background_color>
+        <widget type="group" version="3.0.0">
+          <name>SITE OPIS INNER</name>
+          <x>10</x>
+          <y>10</y>
+          <width>470</width>
+          <height>150</height>
+          <style>3</style>
+          <background_color>
+            <color red="255" green="212" blue="0">
+            </color>
+          </background_color>
+          <transparent>true</transparent>
+          <widget type="label" version="2.0.0">
+            <name>TITLE_3</name>
+            <text>Site</text>
+            <width>50</width>
+            <height>30</height>
+            <font>
+              <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+              </font>
+            </font>
+            <vertical_alignment>1</vertical_alignment>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>Text Update</name>
+            <pv_name>loc://SITE_MODEL_$(DID)</pv_name>
+            <x>110</x>
+            <width>200</width>
+            <height>30</height>
+            <font>
+              <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+              </font>
+            </font>
+            <transparent>true</transparent>
+            <vertical_alignment>1</vertical_alignment>
+            <tooltip>Current Module</tooltip>
+          </widget>
+          <widget type="spinner" version="2.0.0">
+            <name>SITE INPUT</name>
+            <pv_name>loc://SITE_$(DID)</pv_name>
+            <x>50</x>
+            <width>50</width>
+            <height>30</height>
+            <font>
+              <font name="Header 3" family="Liberation Sans" style="BOLD" size="16.0">
+              </font>
+            </font>
+            <precision>0</precision>
+            <background_color>
+              <color red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <tooltip>Select Site</tooltip>
+            <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+            <minimum>1.0</minimum>
+            <maximum>6.0</maximum>
+            <limits_from_pv>false</limits_from_pv>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>DC Button</name>
+            <actions>
+              <action type="execute">
+                <description>open opi/dac_dc.bob</description>
+                <script file="../../../scripts/handle_action_button.py">
+                </script>
+              </action>
+            </actions>
+            <text>DAC DC</text>
+            <y>40</y>
+            <width>150</width>
+            <font>
+              <font family="Ubuntu" style="BOLD" size="14.0">
+              </font>
+            </font>
+            <tooltip>DAC Direct Current</tooltip>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>DIO32 Button</name>
+            <actions>
+              <action type="execute">
+                <description>open opi/dio_32.bob</description>
+                <script file="../../../scripts/handle_action_button.py">
+                </script>
+              </action>
+            </actions>
+            <text>DIO 32</text>
+            <y>80</y>
+            <width>150</width>
+            <font>
+              <font family="Ubuntu" style="BOLD" size="14.0">
+              </font>
+            </font>
+            <tooltip>Digital IO</tooltip>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>AI Monitor Button</name>
+            <actions>
+              <action type="execute">
+                <description>open opi/ai_monitor.bob</description>
+                <script file="../../../scripts/handle_action_button.py">
+                </script>
+              </action>
+            </actions>
+            <text>AI Monitor</text>
+            <y>120</y>
+            <width>150</width>
+            <font>
+              <font family="Ubuntu" style="BOLD" size="14.0">
+              </font>
+            </font>
+            <tooltip>Analog Input Monitor</tooltip>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>ADC Stats Button</name>
+            <actions>
+              <action type="execute">
+                <description>open opi/adc_stats.bob</description>
+                <script file="../../../scripts/handle_action_button.py">
+                </script>
+              </action>
+            </actions>
+            <text>ADC Stats</text>
+            <x>160</x>
+            <y>80</y>
+            <width>150</width>
+            <font>
+              <font family="Ubuntu" style="BOLD" size="14.0">
+              </font>
+            </font>
+            <tooltip>Analog Digital Converter Stats</tooltip>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>Judgement Button</name>
+            <actions>
+              <action type="execute">
+                <description>open opi/judgement.bob</description>
+                <script file="../../../scripts/handle_action_button.py">
+                </script>
+              </action>
+            </actions>
+            <text>Judgement</text>
+            <x>160</x>
+            <y>40</y>
+            <width>150</width>
+            <font>
+              <font family="Ubuntu" style="BOLD" size="14.0">
+              </font>
+            </font>
+            <tooltip>Rapid Burst Judgement</tooltip>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>Gains Button</name>
+            <actions>
+              <action type="execute">
+                <description>open opi/gains.bob</description>
+                <script file="../../../scripts/handle_action_button.py">
+                </script>
+              </action>
+            </actions>
+            <text>Gains</text>
+            <x>320</x>
+            <y>80</y>
+            <width>150</width>
+            <font>
+              <font family="Ubuntu" style="BOLD" size="14.0">
+              </font>
+            </font>
+            <tooltip>Module Gains</tooltip>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>Anatrg Button</name>
+            <actions>
+              <action type="execute">
+                <description>open opi/anatrg.bob</description>
+                <script file="../../../scripts/handle_action_button.py">
+                </script>
+              </action>
+            </actions>
+            <text>ANATRG</text>
+            <x>160</x>
+            <y>120</y>
+            <width>150</width>
+            <font>
+              <font family="Ubuntu" style="BOLD" size="14.0">
+              </font>
+            </font>
+            <tooltip>Analog Trigger Thresholds</tooltip>
+          </widget>
+          <widget type="group" version="3.0.0">
+            <name>MODULE OPIS</name>
+            <x>320</x>
+            <width>150</width>
+            <height>30</height>
+            <style>3</style>
+            <transparent>true</transparent>
+            <widget type="action_button" version="3.0.0">
+              <name>acq43x Button</name>
+              <actions>
+                <action type="execute">
+                  <description>open opi/module_acq43x.bob</description>
+                  <script file="../../../scripts/handle_action_button.py">
+                  </script>
+                </action>
+              </actions>
+              <text>ACQ43X</text>
+              <width>150</width>
+              <visible>false</visible>
+              <font>
+                <font family="Ubuntu" style="BOLD" size="14.0">
+                </font>
+              </font>
+              <rules>
+                <rule name="SHOW_ON_MODULE" prop_id="visible" out_exp="false">
+                  <exp bool_exp="pvStr0.upper().startswith(&quot;ACQ43&quot;)">
+                    <value>true</value>
+                  </exp>
+                  <pv_name>loc://SITE_MODEL_$(DID)</pv_name>
+                </rule>
+              </rules>
+              <tooltip>ACQ43x Controls</tooltip>
+            </widget>
+            <widget type="action_button" version="3.0.0">
+              <name>acq48x Button</name>
+              <actions>
+                <action type="execute">
+                  <description>open opi/module_acq48x.bob</description>
+                  <script file="../../../scripts/handle_action_button.py">
+                  </script>
+                </action>
+              </actions>
+              <text>ACQ48X</text>
+              <width>150</width>
+              <visible>false</visible>
+              <font>
+                <font family="Ubuntu" style="BOLD" size="14.0">
+                </font>
+              </font>
+              <rules>
+                <rule name="SHOW_ON_MODULE" prop_id="visible" out_exp="false">
+                  <exp bool_exp="pvStr0.upper().startswith(&quot;ACQ48&quot;)">
+                    <value>true</value>
+                  </exp>
+                  <pv_name>loc://SITE_MODEL_$(DID)</pv_name>
+                </rule>
+              </rules>
+              <tooltip>ACQ48x Controls</tooltip>
+            </widget>
+            <widget type="action_button" version="3.0.0">
+              <name>acq42x Button</name>
+              <actions>
+                <action type="execute">
+                  <description>open opi/module_acq42x.bob</description>
+                  <script file="../../../scripts/handle_action_button.py">
+                  </script>
+                </action>
+              </actions>
+              <text>ACQ42X</text>
+              <width>150</width>
+              <visible>false</visible>
+              <font>
+                <font family="Ubuntu" style="BOLD" size="14.0">
+                </font>
+              </font>
+              <rules>
+                <rule name="SHOW_ON_MODULE" prop_id="visible" out_exp="false">
+                  <exp bool_exp="pvStr0.upper().startswith(&quot;ACQ42&quot;)">
+                    <value>true</value>
+                  </exp>
+                  <pv_name>loc://SITE_MODEL_$(DID)</pv_name>
+                </rule>
+              </rules>
+              <tooltip>ACQ42x Controls</tooltip>
+            </widget>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>QEN Button_1</name>
+            <actions>
+              <action type="execute">
+                <description>open opi/qen.bob</description>
+                <script file="../../../scripts/handle_action_button.py">
+                </script>
+              </action>
+            </actions>
+            <text>QEN</text>
+            <x>320</x>
+            <y>40</y>
+            <width>150</width>
+            <font>
+              <font family="Ubuntu" style="BOLD" size="14.0">
+              </font>
+            </font>
+            <tooltip>Quadrature Encoder</tooltip>
+          </widget>
+        </widget>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>SCOPE OPIS</name>
+        <x>170</x>
+        <y>410</y>
+        <width>510</width>
+        <height>230</height>
+        <style>3</style>
+        <background_color>
+          <color red="46" green="213" blue="115">
+          </color>
+        </background_color>
+        <widget type="label" version="2.0.0">
+          <name>TITLE_5</name>
+          <text>Scope</text>
+          <x>10</x>
+          <y>10</y>
+          <width>160</width>
+          <height>30</height>
+          <font>
+            <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+            </font>
+          </font>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>LABEL 2</name>
+          <text>X Axis</text>
+          <x>300</x>
+          <y>40</y>
+          <width>150</width>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="choice" version="2.0.0">
+          <name>XTYPE CHOICE</name>
+          <pv_name>loc://SCOPE_XTYPE_$(DID)</pv_name>
+          <x>300</x>
+          <y>60</y>
+          <width>180</width>
+          <height>30</height>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <tooltip>X Axis</tooltip>
+          <items>
+            <item>SAMPLES</item>
+            <item>SECONDS</item>
+          </items>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>LABEL 3</name>
+          <text>Y Axis</text>
+          <x>300</x>
+          <y>100</y>
+          <width>150</width>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="choice" version="2.0.0">
+          <name>YTYPE CHOICE</name>
+          <pv_name>loc://SCOPE_YTYPE_$(DID)</pv_name>
+          <x>300</x>
+          <y>120</y>
+          <width>180</width>
+          <height>30</height>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <tooltip>Y Axis</tooltip>
+          <items>
+            <item>CODES</item>
+            <item>VOLTS</item>
+          </items>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>LABEL 4</name>
+          <text>Size</text>
+          <x>300</x>
+          <y>160</y>
+          <width>150</width>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="choice" version="2.0.0">
+          <name>SIZE CHOICE</name>
+          <pv_name>loc://SCOPE_SIZE_$(DID)</pv_name>
+          <x>300</x>
+          <y>180</y>
+          <width>160</width>
+          <height>30</height>
+          <font>
+            <font family="Liberation Sans" style="BOLD" size="12.0">
+            </font>
+          </font>
+          <tooltip>Scope Size</tooltip>
+          <items>
+            <item>S</item>
+            <item>M</item>
+            <item>L</item>
+          </items>
+        </widget>
+        <widget type="textentry" version="3.0.0">
+          <name>CARRIER CHANS INPUT</name>
+          <pv_name>loc://SCOPE_MAP_$(DID)</pv_name>
+          <x>10</x>
+          <y>180</y>
+          <width>130</width>
+          <height>30</height>
+          <background_color>
+            <color name="Read_Background" red="240" green="240" blue="240">
+            </color>
+          </background_color>
+          <format>6</format>
+          <show_units>false</show_units>
+          <tooltip>Set Custom Chans</tooltip>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>CARRIER CHANS LABEL</name>
+          <text>Carrier Chans</text>
+          <x>10</x>
+          <y>160</y>
+          <width>220</width>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="group" version="3.0.0">
+          <name>PLOT_LAUNCHER</name>
+          <macros>
+            <YTRACE_FMT_CODES>{uut}:{site}:AI:{mode}:{chan:02d}</YTRACE_FMT_CODES>
+            <YTRACE_FMT_VOLTS>{uut}:{site}:AI:{mode}:{chan:02d}:V.VALA</YTRACE_FMT_VOLTS>
+            <XTRACE_FMT_SECONDS>{uut}:{site}:AI:{mode}:TB.VALA</XTRACE_FMT_SECONDS>
+            <POST_OPI>opi/scope_post.bob</POST_OPI>
+            <LIVE_OPI>opi/scope_live.bob</LIVE_OPI>
+            <CROSS_SITE>1</CROSS_SITE>
+            <YAXIS_VOLTS_LABEL>Volts (V)</YAXIS_VOLTS_LABEL>
+            <XAXIS_SECONDS_LABEL>Seconds (s)</XAXIS_SECONDS_LABEL>
+            <WIDTH_S>500</WIDTH_S>
+            <HEIGHT_S>380</HEIGHT_S>
+            <WIDTH_L>1000</WIDTH_L>
+            <HEIGHT_L>700</HEIGHT_L>
+            <STRIP_OPI>opi/scope_strip.bob</STRIP_OPI>
+            <MODE_POST>TW</MODE_POST>
+          </macros>
+          <x>150</x>
+          <y>180</y>
+          <width>130</width>
+          <height>30</height>
+          <style>3</style>
+          <transparent>true</transparent>
+          <scripts>
+            <script file="../../../scripts/handle_local.py">
+              <pv_name>loc://SCOPE_MAP_$(DID)</pv_name>
+              <pv_name>loc://SCOPE_YTYPE_$(DID)</pv_name>
+              <pv_name>loc://SCOPE_XTYPE_$(DID)</pv_name>
+              <pv_name>loc://SCOPE_MODE_$(DID)</pv_name>
+              <pv_name>loc://SCOPE_SIZE_$(DID)</pv_name>
+            </script>
+          </scripts>
+          <widget type="action_button" version="3.0.0">
+            <name>OPEN PLOT</name>
+            <actions>
+              <action type="execute">
+                <description>Execute Script</description>
+                <script file="../../../scripts/init_scope.py">
+                </script>
+              </action>
+            </actions>
+            <text>Plot Carrier</text>
+            <width>130</width>
+            <font>
+              <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+              </font>
+            </font>
+            <tooltip>Scope Custom</tooltip>
+          </widget>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>LABEL 1</name>
+          <text>Mode</text>
+          <x>10</x>
+          <y>40</y>
+          <width>150</width>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="choice" version="2.0.0">
+          <name>MODE CHOICE</name>
+          <pv_name>loc://SCOPE_MODE_$(DID)</pv_name>
+          <x>10</x>
+          <y>60</y>
+          <width>260</width>
+          <height>30</height>
+          <font>
+            <font family="Liberation Sans" style="BOLD" size="12.0">
+            </font>
+          </font>
+          <items>
+            <item>LIVE</item>
+            <item>POST</item>
+            <item>STRIP</item>
+          </items>
+        </widget>
+        <widget type="group" version="3.0.0">
+          <name>PLOT_LAUNCHER_1-8</name>
+          <macros>
+            <YTRACE_FMT_CODES>{uut}:{site}:AI:{mode}:{chan:02d}</YTRACE_FMT_CODES>
+            <YTRACE_FMT_VOLTS>{uut}:{site}:AI:{mode}:{chan:02d}:V.VALA</YTRACE_FMT_VOLTS>
+            <XTRACE_FMT_SECONDS>{uut}:{site}:AI:{mode}:TB.VALA</XTRACE_FMT_SECONDS>
+            <POST_OPI>opi/scope_post.bob</POST_OPI>
+            <LIVE_OPI>opi/scope_live.bob</LIVE_OPI>
+            <CROSS_SITE>0</CROSS_SITE>
+            <YAXIS_VOLTS_LABEL>Volts (V)</YAXIS_VOLTS_LABEL>
+            <XAXIS_SECONDS_LABEL>Seconds (s)</XAXIS_SECONDS_LABEL>
+            <WIDTH_S>500</WIDTH_S>
+            <HEIGHT_S>380</HEIGHT_S>
+            <WIDTH_L>1000</WIDTH_L>
+            <HEIGHT_L>700</HEIGHT_L>
+            <STRIP_OPI>opi/scope_strip.bob</STRIP_OPI>
+            <MODE_POST>TW</MODE_POST>
+            <SCOPE_MAP>1-8</SCOPE_MAP>
+            <MODE_STRIP>CH</MODE_STRIP>
+          </macros>
+          <x>10</x>
+          <y>120</y>
+          <width>60</width>
+          <height>30</height>
+          <style>3</style>
+          <transparent>true</transparent>
+          <scripts>
+            <script file="../../../scripts/handle_local.py">
+              <pv_name>loc://SCOPE_MAP_$(DID)</pv_name>
+              <pv_name>loc://SCOPE_YTYPE_$(DID)</pv_name>
+              <pv_name>loc://SCOPE_XTYPE_$(DID)</pv_name>
+              <pv_name>loc://SCOPE_MODE_$(DID)</pv_name>
+              <pv_name>loc://SCOPE_SIZE_$(DID)</pv_name>
+            </script>
+          </scripts>
+          <widget type="action_button" version="3.0.0">
+            <name>1-8 Button</name>
+            <actions>
+              <action type="execute">
+                <description>Execute Script</description>
+                <script file="../../../scripts/init_scope.py">
+                </script>
+              </action>
+            </actions>
+            <text>1-8</text>
+            <width>60</width>
+            <font>
+              <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+              </font>
+            </font>
+            <tooltip>Scope 01-08</tooltip>
+          </widget>
+        </widget>
+        <widget type="group" version="3.0.0">
+          <name>PLOT_LAUNCHER_9-16</name>
+          <macros>
+            <YTRACE_FMT_CODES>{uut}:{site}:AI:{mode}:{chan:02d}</YTRACE_FMT_CODES>
+            <YTRACE_FMT_VOLTS>{uut}:{site}:AI:{mode}:{chan:02d}:V.VALA</YTRACE_FMT_VOLTS>
+            <XTRACE_FMT_SECONDS>{uut}:{site}:AI:{mode}:TB.VALA</XTRACE_FMT_SECONDS>
+            <POST_OPI>opi/scope_post.bob</POST_OPI>
+            <LIVE_OPI>opi/scope_live.bob</LIVE_OPI>
+            <CROSS_SITE>0</CROSS_SITE>
+            <YAXIS_VOLTS_LABEL>Volts (V)</YAXIS_VOLTS_LABEL>
+            <XAXIS_SECONDS_LABEL>Seconds (s)</XAXIS_SECONDS_LABEL>
+            <WIDTH_S>500</WIDTH_S>
+            <HEIGHT_S>380</HEIGHT_S>
+            <WIDTH_L>1000</WIDTH_L>
+            <HEIGHT_L>700</HEIGHT_L>
+            <STRIP_OPI>opi/scope_strip.bob</STRIP_OPI>
+            <MODE_POST>TW</MODE_POST>
+            <SCOPE_MAP>9-16</SCOPE_MAP>
+          </macros>
+          <x>80</x>
+          <y>120</y>
+          <width>60</width>
+          <height>30</height>
+          <style>3</style>
+          <transparent>true</transparent>
+          <scripts>
+            <script file="../../../scripts/handle_local.py">
+              <pv_name>loc://SCOPE_MAP_$(DID)</pv_name>
+              <pv_name>loc://SCOPE_YTYPE_$(DID)</pv_name>
+              <pv_name>loc://SCOPE_XTYPE_$(DID)</pv_name>
+              <pv_name>loc://SCOPE_MODE_$(DID)</pv_name>
+              <pv_name>loc://SCOPE_SIZE_$(DID)</pv_name>
+            </script>
+          </scripts>
+          <widget type="action_button" version="3.0.0">
+            <name>9-16 Button</name>
+            <actions>
+              <action type="execute">
+                <description>Execute Script</description>
+                <script file="../../../scripts/init_scope.py">
+                </script>
+              </action>
+            </actions>
+            <text>9-16</text>
+            <width>60</width>
+            <font>
+              <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+              </font>
+            </font>
+            <tooltip>Scope 09-16</tooltip>
+          </widget>
+        </widget>
+        <widget type="group" version="3.0.0">
+          <name>PLOT_LAUNCHER_17-24</name>
+          <macros>
+            <YTRACE_FMT_CODES>{uut}:{site}:AI:{mode}:{chan:02d}</YTRACE_FMT_CODES>
+            <YTRACE_FMT_VOLTS>{uut}:{site}:AI:{mode}:{chan:02d}:V.VALA</YTRACE_FMT_VOLTS>
+            <XTRACE_FMT_SECONDS>{uut}:{site}:AI:{mode}:TB.VALA</XTRACE_FMT_SECONDS>
+            <POST_OPI>opi/scope_post.bob</POST_OPI>
+            <LIVE_OPI>opi/scope_live.bob</LIVE_OPI>
+            <CROSS_SITE>0</CROSS_SITE>
+            <YAXIS_VOLTS_LABEL>Volts (V)</YAXIS_VOLTS_LABEL>
+            <XAXIS_SECONDS_LABEL>Seconds (s)</XAXIS_SECONDS_LABEL>
+            <WIDTH_S>500</WIDTH_S>
+            <HEIGHT_S>380</HEIGHT_S>
+            <WIDTH_L>1000</WIDTH_L>
+            <HEIGHT_L>700</HEIGHT_L>
+            <STRIP_OPI>opi/scope_strip.bob</STRIP_OPI>
+            <MODE_POST>TW</MODE_POST>
+            <SCOPE_MAP>17-24</SCOPE_MAP>
+          </macros>
+          <x>150</x>
+          <y>120</y>
+          <width>60</width>
+          <height>30</height>
+          <style>3</style>
+          <transparent>true</transparent>
+          <scripts>
+            <script file="../../../scripts/handle_local.py">
+              <pv_name>loc://SCOPE_MAP_$(DID)</pv_name>
+              <pv_name>loc://SCOPE_YTYPE_$(DID)</pv_name>
+              <pv_name>loc://SCOPE_XTYPE_$(DID)</pv_name>
+              <pv_name>loc://SCOPE_MODE_$(DID)</pv_name>
+              <pv_name>loc://SCOPE_SIZE_$(DID)</pv_name>
+            </script>
+          </scripts>
+          <widget type="action_button" version="3.0.0">
+            <name>17-24 Button</name>
+            <actions>
+              <action type="execute">
+                <description>Execute Script</description>
+                <script file="../../../scripts/init_scope.py">
+                </script>
+              </action>
+            </actions>
+            <text>17-24</text>
+            <width>60</width>
+            <font>
+              <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+              </font>
+            </font>
+            <tooltip>Scope 17-24</tooltip>
+          </widget>
+        </widget>
+        <widget type="group" version="3.0.0">
+          <name>PLOT_LAUNCHER_25-32</name>
+          <macros>
+            <YTRACE_FMT_CODES>{uut}:{site}:AI:{mode}:{chan:02d}</YTRACE_FMT_CODES>
+            <YTRACE_FMT_VOLTS>{uut}:{site}:AI:{mode}:{chan:02d}:V.VALA</YTRACE_FMT_VOLTS>
+            <XTRACE_FMT_SECONDS>{uut}:{site}:AI:{mode}:TB.VALA</XTRACE_FMT_SECONDS>
+            <POST_OPI>opi/scope_post.bob</POST_OPI>
+            <LIVE_OPI>opi/scope_live.bob</LIVE_OPI>
+            <CROSS_SITE>0</CROSS_SITE>
+            <YAXIS_VOLTS_LABEL>Volts (V)</YAXIS_VOLTS_LABEL>
+            <XAXIS_SECONDS_LABEL>Seconds (s)</XAXIS_SECONDS_LABEL>
+            <WIDTH_S>500</WIDTH_S>
+            <HEIGHT_S>380</HEIGHT_S>
+            <WIDTH_L>1000</WIDTH_L>
+            <HEIGHT_L>700</HEIGHT_L>
+            <STRIP_OPI>opi/scope_strip.bob</STRIP_OPI>
+            <MODE_POST>TW</MODE_POST>
+            <SCOPE_MAP>25-32</SCOPE_MAP>
+          </macros>
+          <x>220</x>
+          <y>120</y>
+          <width>60</width>
+          <height>30</height>
+          <style>3</style>
+          <transparent>true</transparent>
+          <scripts>
+            <script file="../../../scripts/handle_local.py">
+              <pv_name>loc://SCOPE_MAP_$(DID)</pv_name>
+              <pv_name>loc://SCOPE_YTYPE_$(DID)</pv_name>
+              <pv_name>loc://SCOPE_XTYPE_$(DID)</pv_name>
+              <pv_name>loc://SCOPE_MODE_$(DID)</pv_name>
+              <pv_name>loc://SCOPE_SIZE_$(DID)</pv_name>
+            </script>
+          </scripts>
+          <widget type="action_button" version="3.0.0">
+            <name>25-32 Button</name>
+            <actions>
+              <action type="execute">
+                <description>Execute Script</description>
+                <script file="../../../scripts/init_scope.py">
+                </script>
+              </action>
+            </actions>
+            <text>25-32</text>
+            <width>60</width>
+            <font>
+              <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+              </font>
+            </font>
+            <tooltip>Scope 25-32</tooltip>
+          </widget>
+        </widget>
+        <widget type="group" version="3.0.0">
+          <name>PRESET CHANS LABEL</name>
+          <x>10</x>
+          <y>100</y>
+          <width>150</width>
+          <height>20</height>
+          <style>3</style>
+          <transparent>true</transparent>
+          <widget type="textupdate" version="2.0.0">
+            <name>CURRENT SITE</name>
+            <pv_name>loc://SITE_$(DID)</pv_name>
+            <x>30</x>
+            <width>10</width>
+            <font>
+              <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+              </font>
+            </font>
+            <background_color>
+              <color red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <transparent>true</transparent>
+            <format>1</format>
+            <precision>0</precision>
+            <show_units>false</show_units>
+            <vertical_alignment>1</vertical_alignment>
+            <wrap_words>false</wrap_words>
+            <tooltip>Select Site</tooltip>
+            <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>PRESET SITE LABEL</name>
+            <text>Site</text>
+            <width>30</width>
+            <font>
+              <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+              </font>
+            </font>
+            <background_color>
+              <color name="INVALID" red="255" green="0" blue="255">
+              </color>
+            </background_color>
+            <vertical_alignment>1</vertical_alignment>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>CHANS LABEL</name>
+            <text>Preset Chans</text>
+            <x>42</x>
+            <font>
+              <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+              </font>
+            </font>
+            <vertical_alignment>1</vertical_alignment>
+          </widget>
+        </widget>
+      </widget>
+    </widget>
+  </widget>
+</display>

@@ -1,0 +1,596 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>HUDP$(MUUT)</name>
+  <macros>
+    <port_acq2106>D</port_acq2106>
+    <site_acq2106>10</site_acq2106>
+    <port_acq2206>D</port_acq2206>
+    <site_acq2206>10</site_acq2206>
+    <port_acq1102>A</port_acq1102>
+    <site_acq1102>13</site_acq1102>
+    <hudp_site>$(site_$(MODEL)=unknown)</hudp_site>
+    <hudp_port>$(port_$(MODEL)=unknown)</hudp_port>
+  </macros>
+  <width>550</width>
+  <height>620</height>
+  <widget type="group" version="3.0.0">
+    <name>HUDP</name>
+    <width>550</width>
+    <height>620</height>
+    <style>3</style>
+    <background_color>
+      <color red="179" green="230" blue="179">
+      </color>
+    </background_color>
+    <widget type="group" version="3.0.0">
+      <name>HUDP INNER</name>
+      <x>10</x>
+      <y>10</y>
+      <width>530</width>
+      <height>600</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="group" version="3.0.0">
+        <name>TX</name>
+        <y>170</y>
+        <width>530</width>
+        <height>140</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="textupdate" version="2.0.0">
+          <name>UPDATE_2</name>
+          <pv_name>${UUT}:${hudp_site}:HUDP:TX:DST_IP</pv_name>
+          <x>210</x>
+          <y>50</y>
+          <width>130</width>
+          <height>30</height>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>UPDATE_1</name>
+          <pv_name>${UUT}:${hudp_site}:HUDP:IP</pv_name>
+          <y>50</y>
+          <width>130</width>
+          <height>30</height>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label_9</name>
+          <text>Destination IP</text>
+          <x>210</x>
+          <y>30</y>
+          <width>120</width>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="polyline" version="2.0.0">
+          <name>Polyline</name>
+          <x>130</x>
+          <y>50</y>
+          <width>80</width>
+          <height>30</height>
+          <points>
+            <point x="0.0" y="15.0">
+            </point>
+            <point x="80.0" y="15.0">
+            </point>
+          </points>
+          <line_width>5</line_width>
+          <line_color>
+            <color red="77" green="77" blue="77" alpha="93">
+            </color>
+          </line_color>
+          <arrows>2</arrows>
+          <arrow_length>30</arrow_length>
+          <rules>
+            <rule name="SHOW_ENABLED" prop_id="line_color" out_exp="false">
+              <exp bool_exp="pv0&gt;0">
+                <value>
+                  <color name="OK" red="0" green="255" blue="0">
+                  </color>
+                </value>
+              </exp>
+              <exp bool_exp="true">
+                <value>
+                  <color red="77" green="77" blue="77" alpha="93">
+                  </color>
+                </value>
+              </exp>
+              <pv_name>${UUT}:${hudp_site}:HUDP:TX:ENABLED</pv_name>
+            </rule>
+          </rules>
+        </widget>
+        <widget type="embedded" version="2.0.0">
+          <name>HUDP_TX_PKT COUNTER</name>
+          <macros>
+            <func>SIG:HUDP_TX_PKT</func>
+            <site>$(hudp_site)</site>
+          </macros>
+          <file>components/func_counter.bob</file>
+          <y>90</y>
+          <width>530</width>
+          <height>50</height>
+          <resize>2</resize>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>UPDATE_3</name>
+          <pv_name>${UUT}:${hudp_site}:HUDP:TX:DST_PORT</pv_name>
+          <x>350</x>
+          <y>50</y>
+          <width>60</width>
+          <height>30</height>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label_10</name>
+          <text>Port</text>
+          <x>350</x>
+          <y>30</y>
+          <width>60</width>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label_13</name>
+          <text>System IP</text>
+          <y>30</y>
+          <width>120</width>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label_15</name>
+          <text>Tx</text>
+          <width>30</width>
+          <height>30</height>
+          <font>
+            <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+            </font>
+          </font>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>UPDATE_4</name>
+          <pv_name>${UUT}:${hudp_site}:HUDP:TX:PKT_SZ</pv_name>
+          <x>420</x>
+          <y>50</y>
+          <width>80</width>
+          <height>30</height>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label_16</name>
+          <text>Packet Size</text>
+          <x>420</x>
+          <y>30</y>
+          <width>80</width>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="led" version="2.0.0">
+          <name>LED</name>
+          <pv_name>${UUT}:${hudp_site}:HUDP:TX:ENABLED</pv_name>
+          <x>510</x>
+          <y>55</y>
+        </widget>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>RX</name>
+        <y>340</y>
+        <width>530</width>
+        <height>260</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="textupdate" version="2.0.0">
+          <name>UPDATE_5</name>
+          <pv_name>${UUT}:${hudp_site}:HUDP:IP</pv_name>
+          <x>210</x>
+          <y>50</y>
+          <width>130</width>
+          <height>30</height>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>UPDATE_6</name>
+          <pv_name>${UUT}:${hudp_site}:HUDP:RX:SRC_IP</pv_name>
+          <y>50</y>
+          <width>130</width>
+          <height>30</height>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label_17</name>
+          <text>System IP</text>
+          <x>210</x>
+          <y>30</y>
+          <width>120</width>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="polyline" version="2.0.0">
+          <name>Polyline_1</name>
+          <x>130</x>
+          <y>50</y>
+          <width>80</width>
+          <height>30</height>
+          <points>
+            <point x="0.0" y="15.0">
+            </point>
+            <point x="80.0" y="15.0">
+            </point>
+          </points>
+          <line_width>5</line_width>
+          <line_color>
+            <color red="77" green="77" blue="77" alpha="93">
+            </color>
+          </line_color>
+          <arrows>2</arrows>
+          <arrow_length>30</arrow_length>
+          <rules>
+            <rule name="SHOW_ENABLED" prop_id="line_color" out_exp="false">
+              <exp bool_exp="pv0&gt;0">
+                <value>
+                  <color name="OK" red="0" green="255" blue="0">
+                  </color>
+                </value>
+              </exp>
+              <exp bool_exp="true">
+                <value>
+                  <color red="77" green="77" blue="77" alpha="93">
+                  </color>
+                </value>
+              </exp>
+              <pv_name>${UUT}:${hudp_site}:HUDP:RX:ENABLED</pv_name>
+            </rule>
+          </rules>
+        </widget>
+        <widget type="embedded" version="2.0.0">
+          <name>HUDP_RX_PKT COUNTER</name>
+          <macros>
+            <func>SIG:HUDP_RX_PKT</func>
+            <site>$(hudp_site)</site>
+          </macros>
+          <file>components/func_counter.bob</file>
+          <y>90</y>
+          <width>530</width>
+          <height>50</height>
+          <resize>2</resize>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>UPDATE_7</name>
+          <pv_name>${UUT}:${hudp_site}:HUDP:RX:PORT</pv_name>
+          <x>350</x>
+          <y>50</y>
+          <width>60</width>
+          <height>30</height>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label_18</name>
+          <text>Port</text>
+          <x>350</x>
+          <y>30</y>
+          <width>60</width>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label_19</name>
+          <text>Transmit IP</text>
+          <y>30</y>
+          <width>120</width>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label_20</name>
+          <text>Rx</text>
+          <width>30</width>
+          <height>30</height>
+          <font>
+            <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+            </font>
+          </font>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>UPDATE_8</name>
+          <pv_name>${UUT}:${hudp_site}:HUDP:RX:PKT_SZ</pv_name>
+          <x>420</x>
+          <y>50</y>
+          <width>80</width>
+          <height>30</height>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label_21</name>
+          <text>Packet Size</text>
+          <x>420</x>
+          <y>30</y>
+          <width>80</width>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="led" version="2.0.0">
+          <name>LED_1</name>
+          <pv_name>${UUT}:${hudp_site}:HUDP:RX:ENABLED</pv_name>
+          <x>510</x>
+          <y>55</y>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label_22</name>
+          <text>Enable DISCO</text>
+          <y>150</y>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="embedded" version="2.0.0">
+          <name>HUDP_DISCO COUNTER</name>
+          <macros>
+            <func>SIG:HUDP_DISCO</func>
+            <site>$(hudp_site)</site>
+          </macros>
+          <file>components/func_counter.bob</file>
+          <y>210</y>
+          <width>530</width>
+          <height>50</height>
+          <resize>2</resize>
+        </widget>
+        <widget type="bool_button" version="2.0.0">
+          <name>Boolean Button</name>
+          <pv_name>${UUT}:${hudp_site}:HUDP:DISCO</pv_name>
+          <y>170</y>
+          <off_label></off_label>
+          <on_label></on_label>
+        </widget>
+        <widget type="textentry" version="3.0.0">
+          <name>Text Entry_1</name>
+          <pv_name>${UUT}:${hudp_site}:HUDP:DISCO:IDX</pv_name>
+          <x>110</x>
+          <y>170</y>
+          <width>120</width>
+          <height>30</height>
+          <background_color>
+            <color red="255" green="255" blue="255">
+            </color>
+          </background_color>
+          <horizontal_alignment>1</horizontal_alignment>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label_23</name>
+          <text>DISCO IDX</text>
+          <x>110</x>
+          <y>150</y>
+          <width>120</width>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>HEADER</name>
+        <width>400</width>
+        <height>70</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="label" version="2.0.0">
+          <name>TITLE</name>
+          <text>$(UUT) HUDP</text>
+          <width>400</width>
+          <height>30</height>
+          <font>
+            <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+            </font>
+          </font>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>TITLE_1</name>
+          <text>Site $(hudp_site) SFP $(hudp_port)</text>
+          <y>40</y>
+          <width>400</width>
+          <height>30</height>
+          <font>
+            <font name="Header 3" family="Liberation Sans" style="BOLD" size="16.0">
+            </font>
+          </font>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>CONTROLS</name>
+        <y>90</y>
+        <width>480</width>
+        <height>50</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="label" version="2.0.0">
+          <name>Label_24</name>
+          <text>Mode</text>
+          <width>90</width>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="combo" version="2.0.0">
+          <name>Combo Box</name>
+          <pv_name>${UUT}:${hudp_site}:HUDP:CONTROL</pv_name>
+          <y>20</y>
+          <width>90</width>
+          <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+        </widget>
+        <widget type="combo" version="2.0.0">
+          <name>Combo Box_1</name>
+          <pv_name>${UUT}:${hudp_site}:HUDP:UDP:DATA_SRC</pv_name>
+          <x>100</x>
+          <y>20</y>
+          <width>90</width>
+          <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label_25</name>
+          <text>Source</text>
+          <x>100</x>
+          <width>90</width>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label_26</name>
+          <text>DIST Source</text>
+          <x>200</x>
+          <width>110</width>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="combo" version="2.0.0">
+          <name>Combo Box_2</name>
+          <pv_name>${UUT}:0:DISTRIBUTOR:COMMS</pv_name>
+          <x>200</x>
+          <y>20</y>
+          <width>110</width>
+          <rules>
+            <rule name="DISABLE_IF_AGG" prop_id="enabled" out_exp="false">
+              <exp bool_exp="pvInt0==0">
+                <value>false</value>
+              </exp>
+              <pv_name>${UUT}:${hudp_site}:HUDP:UDP:DATA_SRC</pv_name>
+            </rule>
+          </rules>
+          <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>Combo Box_3</name>
+          <pv_name>${UUT}:${hudp_site}:HUDP:TX:SPP</pv_name>
+          <x>320</x>
+          <y>20</y>
+          <width>90</width>
+          <height>30</height>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+          <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label_27</name>
+          <text>SPP</text>
+          <x>320</x>
+          <width>90</width>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>DOC_LINK_1</name>
+        <macros>
+          <URL>https://www.d-tacq.com/resources/HUDP_Rev8.pdf</URL>
+        </macros>
+        <x>505</x>
+        <width>25</width>
+        <height>25</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="picture" version="2.0.0">
+          <name>LINK_SYMBOL_1</name>
+          <file>../images/doc_link.png</file>
+          <width>25</width>
+          <height>25</height>
+        </widget>
+        <widget type="action_button" version="3.0.0">
+          <name>OPEN_LINK_BUTTON_1</name>
+          <actions>
+            <action type="open_webpage">
+              <description>Open Web Page</description>
+              <url>$(URL)</url>
+            </action>
+          </actions>
+          <text></text>
+          <width>25</width>
+          <height>25</height>
+          <transparent>true</transparent>
+          <tooltip>$(URL)</tooltip>
+          <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+        </widget>
+      </widget>
+    </widget>
+  </widget>
+</display>

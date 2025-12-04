@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2025-02-20 11:43:25 by dt100-->
 <display version="2.0.0">
   <name>transient</name>
   <width>710</width>
   <height>160</height>
   <widget type="group" version="3.0.0">
-    <name>Group</name>
+    <name>TRANSIENT</name>
     <width>710</width>
     <height>160</height>
     <style>3</style>
@@ -13,259 +12,21 @@
       <color red="128" green="153" blue="255">
       </color>
     </background_color>
-    <widget type="embedded" version="2.0.0">
-      <name>Pre Input</name>
-      <macros>
-        <pvtitle>PRE</pvtitle>
-        <pvinput>${UUT}:MODE:TRANSIENT:PRE</pvinput>
-        <fmt>1</fmt>
-        <precision>0</precision>
-        <pvread>${UUT}:MODE:TRANS_ACT:PRE</pvread>
-        <read>1</read>
-      </macros>
-      <file>../text_input.bob</file>
-      <x>150</x>
-      <y>50</y>
-      <width>236</width>
-      <height>30</height>
-      <resize>2</resize>
-      <transparent>true</transparent>
-    </widget>
-    <widget type="embedded" version="2.0.0">
-      <name>Post Input</name>
-      <macros>
-        <pvtitle>POST</pvtitle>
-        <pvinput>${UUT}:MODE:TRANSIENT:POST</pvinput>
-        <fmt>1</fmt>
-        <precision>0</precision>
-        <pvread>${UUT}:MODE:TRANS_ACT:POST</pvread>
-        <read>1</read>
-      </macros>
-      <file>../text_input.bob</file>
-      <x>150</x>
-      <y>83</y>
-      <width>236</width>
-      <height>30</height>
-      <resize>2</resize>
-      <transparent>true</transparent>
-    </widget>
-    <widget type="embedded" version="2.0.0">
-      <name>Osam Input</name>
-      <macros>
-        <pvtitle>OSAM</pvtitle>
-        <pvinput>${UUT}:MODE:TRANSIENT:OSAM</pvinput>
-        <fmt>1</fmt>
-        <precision>0</precision>
-        <read>0</read>
-      </macros>
-      <file>../text_input.bob</file>
-      <x>386</x>
-      <y>50</y>
-      <width>236</width>
-      <height>30</height>
-      <resize>2</resize>
-      <transparent>true</transparent>
-    </widget>
-    <widget type="embedded" version="2.0.0">
-      <name>Repeat Input</name>
-      <macros>
-        <pvtitle>REPEAT</pvtitle>
-        <pvinput>${UUT}:MODE:TRANSIENT:REPEAT</pvinput>
-        <fmt>1</fmt>
-        <precision>0</precision>
-        <read>0</read>
-      </macros>
-      <file>../text_input.bob</file>
-      <x>386</x>
-      <y>83</y>
-      <width>236</width>
-      <height>30</height>
-      <resize>2</resize>
-      <transparent>true</transparent>
-    </widget>
-    <widget type="group" version="3.0.0">
-      <name>Demux Input</name>
-      <x>386</x>
-      <y>116</y>
-      <width>236</width>
-      <height>30</height>
-      <style>3</style>
-      <transparent>true</transparent>
-      <widget type="label" version="2.0.0">
-        <name>Demux label#</name>
-        <text>DEMUX</text>
-        <width>80</width>
-        <height>30</height>
-        <horizontal_alignment>2</horizontal_alignment>
-        <vertical_alignment>1</vertical_alignment>
-      </widget>
-      <widget type="choice" version="2.0.0">
-        <name>Choice Button</name>
-        <pv_name>${UUT}:MODE:TRANSIENT:DEMUX</pv_name>
-        <x>85</x>
-        <width>151</width>
-        <height>30</height>
-        <selected_color>
-          <color red="185" green="215" blue="237">
-          </color>
-        </selected_color>
-        <border_alarm_sensitive>false</border_alarm_sensitive>
-        <items>
-          <item>On</item>
-          <item>Off</item>
-        </items>
-      </widget>
-    </widget>
-    <widget type="bool_button" version="2.0.0">
-      <name>Boolean Button_1</name>
-      <pv_name>${UUT}:MODE:TRANSIENT:SET_ARM</pv_name>
-      <bit>1</bit>
-      <x>20</x>
-      <y>83</y>
+    <widget type="textupdate" version="2.0.0">
+      <name>loc://UNSET_$(DID)</name>
+      <pv_name>loc://UNSET_$(DID)&lt;VInt&gt;(1)</pv_name>
+      <x>260</x>
+      <y>10</y>
       <width>120</width>
-      <off_label>ARM  </off_label>
-      <off_color>
-        <color red="128" green="128" blue="128">
-        </color>
-      </off_color>
-      <on_label>ARM  </on_label>
-      <on_color>
-        <color red="255" green="127" blue="0">
-        </color>
-      </on_color>
-      <font>
-        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
-        </font>
-      </font>
-      <rules>
-        <rule name="disable" prop_id="enabled" out_exp="true">
-          <exp bool_exp="pv0==1">
-            <expression>False</expression>
-          </exp>
-          <pv_name>${UUT}:MODE:CONTINUOUS</pv_name>
-        </rule>
-      </rules>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-      <mode>1</mode>
-    </widget>
-    <widget type="bool_button" version="2.0.0">
-      <name>Boolean Button_2</name>
-      <pv_name>${UUT}:MODE:TRANSIENT:SET_ABORT</pv_name>
-      <bit>1</bit>
-      <x>20</x>
-      <y>116</y>
-      <width>120</width>
-      <off_label>STOP</off_label>
-      <off_color>
-        <color red="128" green="128" blue="128">
-        </color>
-      </off_color>
-      <on_label>STOP</on_label>
-      <on_color>
-        <color red="255" green="0" blue="0">
-        </color>
-      </on_color>
-      <font>
-        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
-        </font>
-      </font>
-      <rules>
-        <rule name="disable" prop_id="enabled" out_exp="true">
-          <exp bool_exp="pv0==1">
-            <expression>False</expression>
-          </exp>
-          <pv_name>${UUT}:MODE:CONTINUOUS</pv_name>
-        </rule>
-      </rules>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-      <mode>1</mode>
-    </widget>
-    <widget type="bool_button" version="2.0.0">
-      <name>Boolean Button_3</name>
-      <pv_name>${UUT}:MODE:TRANSIENT</pv_name>
-      <bit>1</bit>
-      <x>20</x>
-      <y>50</y>
-      <width>120</width>
-      <off_label>SET   </off_label>
-      <off_color>
-        <color red="128" green="128" blue="128">
-        </color>
-      </off_color>
-      <on_label>SET   </on_label>
-      <on_color>
-        <color red="0" green="149" blue="255">
-        </color>
-      </on_color>
-      <font>
-        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
-        </font>
-      </font>
-      <actions>
-        <action type="write_pv">
-          <pv_name>${UUT}:1:TRG:DX</pv_name>
-          <value>${UUT}:MODE:TRANSIENT:SOFT_TRIGGER</value>
-          <description>WritePV</description>
-        </action>
-      </actions>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-      <mode>1</mode>
-    </widget>
-    <widget type="action_button" version="3.0.0">
-      <name>Default PRE/POST</name>
-      <actions execute_as_one="true">
-        <action type="write_pv">
-          <pv_name>${UUT}:MODE:TRANSIENT:PRE</pv_name>
-          <value>50000</value>
-          <description>SET PRE</description>
-        </action>
-        <action type="write_pv">
-          <pv_name>${UUT}:MODE:TRANSIENT:POST</pv_name>
-          <value>50000</value>
-          <description>SET POST</description>
-        </action>
-        <action type="write_pv">
-          <pv_name>${UUT}:MODE:TRANSIENT:OSAM</pv_name>
-          <value>1</value>
-          <description>SET OSAM</description>
-        </action>
-      </actions>
-      <text>Default PRE/POST</text>
-      <x>256</x>
-      <y>116</y>
-      <width>130</width>
-      <tooltip>$(actions)</tooltip>
-    </widget>
-    <widget type="action_button" version="3.0.0">
-      <name>Default PRE/POST_1</name>
-      <actions execute_as_one="true">
-        <action type="write_pv">
-          <pv_name>${UUT}:MODE:TRANSIENT:PRE</pv_name>
-          <value>0</value>
-          <description>SET PRE</description>
-        </action>
-        <action type="write_pv">
-          <pv_name>${UUT}:MODE:TRANSIENT:POST</pv_name>
-          <value>100000</value>
-          <description>SET POST</description>
-        </action>
-        <action type="write_pv">
-          <pv_name>${UUT}:MODE:TRANSIENT:OSAM</pv_name>
-          <value>1</value>
-          <description>SET OSAM</description>
-        </action>
-      </actions>
-      <text>Default POST</text>
-      <x>150</x>
-      <y>116</y>
-      <tooltip>$(actions)</tooltip>
+      <visible>false</visible>
+      <format>1</format>
     </widget>
     <widget type="label" version="2.0.0">
       <name>Label_1</name>
       <text>Transient Control</text>
       <x>20</x>
       <y>10</y>
-      <width>670</width>
+      <width>200</width>
       <height>24</height>
       <font>
         <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
@@ -273,65 +34,565 @@
       </font>
     </widget>
     <widget type="group" version="3.0.0">
-      <name>Data Valid</name>
-      <x>550</x>
+      <name>PRE</name>
+      <x>140</x>
       <y>50</y>
-      <width>68</width>
-      <height>48</height>
+      <width>80</width>
+      <height>97</height>
       <style>3</style>
       <transparent>true</transparent>
       <widget type="label" version="2.0.0">
-        <name>Label_2</name>
-        <text>Data Valid</text>
-        <width>68</width>
-        <height>16</height>
+        <name>PRE LABEL</name>
+        <text>PRE</text>
+        <width>80</width>
+        <height>30</height>
         <font>
-          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          <font name="Header 3" family="Liberation Sans" style="BOLD" size="16.0">
           </font>
         </font>
-        <auto_size>true</auto_size>
+        <background_color>
+          <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+          </color>
+        </background_color>
+        <vertical_alignment>1</vertical_alignment>
       </widget>
+      <widget type="textentry" version="3.0.0">
+        <name>PRE INPUT</name>
+        <pv_name>${UUT}:MODE:TRANSIENT:PRE</pv_name>
+        <y>33</y>
+        <width>80</width>
+        <height>30</height>
+        <background_color>
+          <color name="Header_ForeGround" red="255" green="255" blue="255">
+          </color>
+        </background_color>
+        <format>1</format>
+        <precision>0</precision>
+        <show_units>false</show_units>
+        <horizontal_alignment>1</horizontal_alignment>
+        <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>PRE VALUE</name>
+        <pv_name>${UUT}:MODE:TRANS_ACT:PRE</pv_name>
+        <y>67</y>
+        <width>80</width>
+        <height>30</height>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+        <border_color>
+          <color name="Grid" red="128" green="128" blue="128">
+          </color>
+        </border_color>
+      </widget>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>POST</name>
+      <x>230</x>
+      <y>50</y>
+      <width>80</width>
+      <height>97</height>
+      <style>3</style>
+      <transparent>true</transparent>
       <widget type="label" version="2.0.0">
-        <name>Label_3</name>
-        <text>RAW</text>
-        <y>16</y>
-        <width>34</width>
-        <height>16</height>
+        <name>POST LABEL</name>
+        <text>POST</text>
+        <width>80</width>
+        <height>30</height>
         <font>
-          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          <font name="Header 3" family="Liberation Sans" style="BOLD" size="16.0">
           </font>
         </font>
-        <auto_size>true</auto_size>
+        <background_color>
+          <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+          </color>
+        </background_color>
+        <transparent>false</transparent>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="textentry" version="3.0.0">
+        <name>POST INPUT</name>
+        <pv_name>${UUT}:MODE:TRANSIENT:POST</pv_name>
+        <y>33</y>
+        <width>80</width>
+        <height>30</height>
+        <background_color>
+          <color name="Header_ForeGround" red="255" green="255" blue="255">
+          </color>
+        </background_color>
+        <format>1</format>
+        <precision>0</precision>
+        <show_units>false</show_units>
+        <horizontal_alignment>1</horizontal_alignment>
+        <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>POST VALUE</name>
+        <pv_name>${UUT}:MODE:TRANS_ACT:POST</pv_name>
+        <y>67</y>
+        <width>80</width>
+        <height>30</height>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+        <border_color>
+          <color name="Grid" red="128" green="128" blue="128">
+          </color>
+        </border_color>
+      </widget>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>REPEAT</name>
+      <x>320</x>
+      <y>101</y>
+      <width>80</width>
+      <height>46</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>REPEAT LABEL</name>
+        <text>REPEAT</text>
+        <width>80</width>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <background_color>
+          <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+          </color>
+        </background_color>
+        <transparent>false</transparent>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="spinner" version="2.0.0">
+        <name>REPEAT INPUT</name>
+        <pv_name>${UUT}:MODE:TRANSIENT:REPEAT</pv_name>
+        <y>20</y>
+        <width>80</width>
+        <height>26</height>
+        <precision>0</precision>
+        <background_color>
+          <color name="Header_ForeGround" red="255" green="255" blue="255">
+          </color>
+        </background_color>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+      </widget>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>OSAM</name>
+      <x>320</x>
+      <y>50</y>
+      <width>80</width>
+      <height>46</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>OSAM LABEL</name>
+        <text>OSAM</text>
+        <width>80</width>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <background_color>
+          <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+          </color>
+        </background_color>
+        <transparent>false</transparent>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="spinner" version="2.0.0">
+        <name>OSAM INPUT</name>
+        <pv_name>${UUT}:MODE:TRANSIENT:OSAM</pv_name>
+        <y>20</y>
+        <width>80</width>
+        <height>26</height>
+        <precision>0</precision>
+        <background_color>
+          <color name="Header_ForeGround" red="255" green="255" blue="255">
+          </color>
+        </background_color>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+      </widget>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Default PRE/POST_1</name>
+      <actions execute_as_one="true">
+        <action type="write_pv">
+          <description>SET PRE</description>
+          <pv_name>${UUT}:MODE:TRANSIENT:PRE</pv_name>
+          <value>0</value>
+        </action>
+        <action type="write_pv">
+          <description>SET POST</description>
+          <pv_name>${UUT}:MODE:TRANSIENT:POST</pv_name>
+          <value>100000</value>
+        </action>
+        <action type="write_pv">
+          <description>SET OSAM</description>
+          <pv_name>${UUT}:MODE:TRANSIENT:OSAM</pv_name>
+          <value>1</value>
+        </action>
+      </actions>
+      <text>Default POST</text>
+      <x>520</x>
+      <y>50</y>
+      <width>84</width>
+      <height>46</height>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Default PRE/POST</name>
+      <actions execute_as_one="true">
+        <action type="write_pv">
+          <description>SET PRE</description>
+          <pv_name>${UUT}:MODE:TRANSIENT:PRE</pv_name>
+          <value>50000</value>
+        </action>
+        <action type="write_pv">
+          <description>SET POST</description>
+          <pv_name>${UUT}:MODE:TRANSIENT:POST</pv_name>
+          <value>50000</value>
+        </action>
+        <action type="write_pv">
+          <description>SET OSAM</description>
+          <pv_name>${UUT}:MODE:TRANSIENT:OSAM</pv_name>
+          <value>1</value>
+        </action>
+      </actions>
+      <text>Default PRE/POST</text>
+      <x>520</x>
+      <y>100</y>
+      <width>84</width>
+      <height>46</height>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>SOFT TRIGGER</name>
+      <x>410</x>
+      <y>50</y>
+      <width>100</width>
+      <height>46</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>SOFT TRIGGER LABEL</name>
+        <text>AUTO TRG</text>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <background_color>
+          <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+          </color>
+        </background_color>
+        <transparent>false</transparent>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="bool_button" version="2.0.0">
+        <name>SOFT TRIGGER INPUT</name>
+        <pv_name>$(UUT):MODE:TRANSIENT:SOFT_TRIGGER</pv_name>
+        <y>20</y>
+        <height>26</height>
+        <off_label></off_label>
+        <on_label></on_label>
+        <background_color>
+          <color name="Header_ForeGround" red="255" green="255" blue="255">
+          </color>
+        </background_color>
+        <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+      </widget>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>DEMUX</name>
+      <x>410</x>
+      <y>101</y>
+      <width>100</width>
+      <height>46</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>DEMUX LABEL</name>
+        <text>DEMUX</text>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <background_color>
+          <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+          </color>
+        </background_color>
+        <transparent>false</transparent>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="bool_button" version="2.0.0">
+        <name>DEMUX INPUT</name>
+        <pv_name>${UUT}:MODE:TRANSIENT:DEMUX</pv_name>
+        <y>20</y>
+        <height>26</height>
+        <off_label></off_label>
+        <on_label></on_label>
+        <background_color>
+          <color name="Header_ForeGround" red="255" green="255" blue="255">
+          </color>
+        </background_color>
+        <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+      </widget>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>DATA STATUS</name>
+      <x>614</x>
+      <y>67</y>
+      <width>65</width>
+      <height>80</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="led" version="2.0.0">
+        <name>LED_2</name>
+        <pv_name>${UUT}:MODE:TRANS_ACT:CH:DATA_VALID</pv_name>
+        <x>45</x>
+        <y>60</y>
+        <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
       </widget>
       <widget type="label" version="2.0.0">
         <name>Label_4</name>
         <text>CHAN</text>
-        <y>32</y>
+        <y>60</y>
         <width>41</width>
-        <height>16</height>
-        <font>
-          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
-          </font>
-        </font>
-        <auto_size>true</auto_size>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_3</name>
+        <text>RAW</text>
+        <y>40</y>
+        <width>34</width>
+        <vertical_alignment>1</vertical_alignment>
       </widget>
       <widget type="led" version="2.0.0">
         <name>LED</name>
         <pv_name>${UUT}:MODE:TRANS_ACT:RAW:DATA_VALID</pv_name>
-        <x>50</x>
-        <y>16</y>
-        <width>16</width>
-        <height>16</height>
-        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <x>45</x>
+        <y>40</y>
+        <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_6</name>
+        <text>DATA VALID</text>
+        <width>65</width>
+        <height>40</height>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>SET ARM</name>
+      <x>10</x>
+      <y>83</y>
+      <width>120</width>
+      <height>30</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="action_button" version="3.0.0">
+        <name>SET ARM BUTTON</name>
+        <actions execute_as_one="true">
+          <action type="write_pv">
+            <description>SET ARM</description>
+            <pv_name>${UUT}:MODE:TRANSIENT:SET_ARM</pv_name>
+            <value>1</value>
+          </action>
+          <action type="write_pv">
+            <description>DISABLE ARM</description>
+            <pv_name>loc://UNSET_$(DID)</pv_name>
+            <value>1</value>
+          </action>
+        </actions>
+        <pv_name>${UUT}:MODE:TRANSIENT:SET_ARM</pv_name>
+        <text>ARM</text>
+        <width>120</width>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <rules>
+          <rule name="DISABLE" prop_id="enabled" out_exp="false">
+            <exp bool_exp="pv0&gt;0">
+              <value>false</value>
+            </exp>
+            <exp bool_exp="pv1&gt;0 &amp;&amp; int(pvStr2.split('-')[1]) &lt; 773">
+              <value>false</value>
+            </exp>
+            <pv_name>${UUT}:MODE:CONTINUOUS</pv_name>
+            <pv_name>loc://UNSET_$(DID)</pv_name>
+            <pv_name>${UUT}:SYS:VERSION:SW</pv_name>
+          </rule>
+        </rules>
+        <tooltip>ARM TRANSIENT</tooltip>
+        <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
       </widget>
       <widget type="led" version="2.0.0">
-        <name>LED_1</name>
-        <pv_name>${UUT}:MODE:TRANS_ACT:CH:DATA_VALID</pv_name>
-        <x>50</x>
-        <y>32</y>
+        <name>SET ARM LED</name>
+        <pv_name>${UUT}:MODE:TRANSIENT:SET_ARM</pv_name>
+        <x>15</x>
+        <y>7</y>
         <width>16</width>
         <height>16</height>
-        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <off_color>
+          <color name="Grid" red="128" green="128" blue="128">
+          </color>
+        </off_color>
+        <on_color>
+          <color name="MINOR" red="255" green="128" blue="0">
+          </color>
+        </on_color>
+      </widget>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>SET ABORT</name>
+      <x>10</x>
+      <y>116</y>
+      <width>120</width>
+      <height>30</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="action_button" version="3.0.0">
+        <name>SET ABORT BUTTON</name>
+        <actions execute_as_one="true">
+          <action type="write_pv">
+            <description>SET ABORT</description>
+            <pv_name>${UUT}:MODE:TRANSIENT:SET_ABORT</pv_name>
+            <value>1</value>
+          </action>
+        </actions>
+        <pv_name>${UUT}:MODE:TRANSIENT:SET_ABORT</pv_name>
+        <text>STOP</text>
+        <width>120</width>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <rules>
+          <rule name="DISABLE_ON_STREAM" prop_id="enabled" out_exp="false">
+            <exp bool_exp="pv0 &gt; 0">
+              <value>false</value>
+            </exp>
+            <pv_name>${UUT}:MODE:CONTINUOUS</pv_name>
+          </rule>
+        </rules>
+        <tooltip>STOP TRANSIENT</tooltip>
+        <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+      </widget>
+      <widget type="led" version="2.0.0">
+        <name>SET ABORT LED</name>
+        <pv_name>${UUT}:MODE:TRANSIENT:SET_ABORT</pv_name>
+        <x>15</x>
+        <y>7</y>
+        <width>16</width>
+        <height>16</height>
+        <off_color>
+          <color name="Grid" red="128" green="128" blue="128">
+          </color>
+        </off_color>
+        <on_color>
+          <color name="MAJOR" red="255" green="0" blue="0">
+          </color>
+        </on_color>
+      </widget>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label</name>
+      <text>AUTOSET</text>
+      <x>10</x>
+      <y>50</y>
+      <width>120</width>
+      <height>30</height>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="OK" red="0" green="255" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="Off" red="60" green="100" blue="60">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>SET SET</name>
+      <x>10</x>
+      <y>50</y>
+      <width>120</width>
+      <height>30</height>
+      <visible>false</visible>
+      <style>3</style>
+      <transparent>true</transparent>
+      <rules>
+        <rule name="SHOW_IF_REL&lt;773" prop_id="visible" out_exp="false">
+          <exp bool_exp="int(pvStr0.split('-')[1]) &lt; 773">
+            <value>true</value>
+          </exp>
+          <pv_name>${UUT}:SYS:VERSION:SW</pv_name>
+        </rule>
+      </rules>
+      <widget type="action_button" version="3.0.0">
+        <name>SET SET BUTTON</name>
+        <actions execute_as_one="true">
+          <action type="write_pv">
+            <description>SET</description>
+            <pv_name>${UUT}:MODE:TRANSIENT</pv_name>
+            <value>1</value>
+          </action>
+          <action type="write_pv">
+            <description>ENABLE ARM</description>
+            <pv_name>loc://UNSET_$(DID)</pv_name>
+            <value>0</value>
+          </action>
+        </actions>
+        <pv_name>${UUT}:MODE:TRANSIENT</pv_name>
+        <text>SET</text>
+        <width>120</width>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <tooltip>SET TRANSIENT </tooltip>
+        <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+      </widget>
+      <widget type="led" version="2.0.0">
+        <name>SET LED</name>
+        <pv_name>${UUT}:MODE:TRANSIENT</pv_name>
+        <x>15</x>
+        <y>7</y>
+        <width>16</width>
+        <height>16</height>
+        <off_color>
+          <color name="Grid" red="128" green="128" blue="128">
+          </color>
+        </off_color>
+        <on_color>
+          <color red="0" green="149" blue="255">
+          </color>
+        </on_color>
       </widget>
     </widget>
   </widget>

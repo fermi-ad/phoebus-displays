@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2025-03-05 11:51:05 by dt100-->
+<!--Saved on 2025-06-20 13:38:57 by dt100-->
 <display version="2.0.0">
   <name>Si53315</name>
   <width>530</width>
@@ -178,6 +178,7 @@
           <pvname1>${UUT}:0:SIG:CLK_MB:FREQ</pvname1>
           <label>d1</label>
           <site>0</site>
+          <pvname2>${UUT}:0:SIG:SRC:CLK:1</pvname2>
         </macros>
         <width>390</width>
         <height>20</height>
@@ -286,6 +287,9 @@
           <vertical_alignment>1</vertical_alignment>
           <rules>
             <rule name="HIDE_DISABLED" prop_id="visible" out_exp="false">
+              <exp bool_exp="pv1=0">
+                <value>true</value>
+              </exp>
               <exp bool_exp="pv0!=0">
                 <value>true</value>
               </exp>
@@ -293,12 +297,13 @@
                 <value>false</value>
               </exp>
               <pv_name>$(pvname0)</pv_name>
+              <pv_name>$(pvname2)</pv_name>
             </rule>
           </rules>
         </widget>
         <widget type="combo" version="2.0.0">
           <name>Combo Box_2</name>
-          <pv_name>${UUT}:0:SIG:SRC:CLK:1</pv_name>
+          <pv_name>$(pvname2)</pv_name>
           <x>70</x>
           <width>80</width>
           <height>20</height>

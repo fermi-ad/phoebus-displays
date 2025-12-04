@@ -1,9 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2025-03-05 12:29:13 by dt100-->
 <display version="2.0.0">
   <name>Site Temp</name>
   <width>80</width>
   <height>230</height>
+  <widget type="rectangle" version="2.0.0">
+    <name>PLACEHOLDER</name>
+    <width>80</width>
+    <height>230</height>
+    <line_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="Read_Background" red="240" green="240" blue="240">
+      </color>
+    </background_color>
+  </widget>
   <widget type="group" version="3.0.0">
     <name>SITE_TEMP_1</name>
     <macros>
@@ -17,16 +29,12 @@
     <height>230</height>
     <visible>false</visible>
     <style>3</style>
-    <transparent>true</transparent>
     <rules>
-      <rule name="HIDE_EMPTY" prop_id="visible" out_exp="true">
-        <exp bool_exp="pvStr0.find(&quot;$(site)&quot;) &gt;= 0">
-          <expression>true</expression>
-        </exp>
+      <rule name="HIDE_EMPTY" prop_id="visible" out_exp="false">
         <exp bool_exp="true">
-          <expression>false</expression>
+          <value>true</value>
         </exp>
-        <pv_name>loc://SITES</pv_name>
+        <pv_name>${UUT}:$(site):MODEL</pv_name>
       </rule>
     </rules>
     <widget type="label" version="2.0.0">
@@ -47,7 +55,7 @@
         <color name="MAJOR" red="255" green="0" blue="0">
         </color>
       </fill_color>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
       <limits_from_pv>false</limits_from_pv>
       <maximum>75.0</maximum>
     </widget>
