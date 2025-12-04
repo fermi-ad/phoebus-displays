@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2025-02-18 17:14:03 by dt100-->
 <display version="2.0.0">
   <name>Counter</name>
   <width>102</width>
@@ -13,17 +12,6 @@
       <color name="Button_Background" red="210" green="210" blue="210">
       </color>
     </background_color>
-    <rules>
-      <rule name="HIDE_NOSITE" prop_id="visible" out_exp="false">
-        <exp bool_exp="pv0 + 1 &gt;= $(NUM)">
-          <value>true</value>
-        </exp>
-        <exp bool_exp="pv0 + 1 &lt; $(NUM)">
-          <value>false</value>
-        </exp>
-        <pv_name>loc://NSITES</pv_name>
-      </rule>
-    </rules>
     <widget type="label" version="2.0.0">
       <name>Counter Title</name>
       <text>${FUNC}.d${NUM}</text>
@@ -92,7 +80,7 @@
               </color>
             </value>
           </exp>
-          <pv_name>loc://NSITES</pv_name>
+          <pv_name>=abs(1)</pv_name>
         </rule>
         <rule name="SITE_TEXT_COLOR " prop_id="foreground_color" out_exp="false">
           <exp bool_exp="$(NUM)==0">
@@ -107,34 +95,47 @@
               </color>
             </value>
           </exp>
-          <pv_name>loc://NSITES</pv_name>
+          <pv_name>=abs(1)</pv_name>
         </rule>
       </rules>
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Freq Box</name>
       <pv_name>${UUT}:0:SIG:${FUNC}_${TARGET}:FREQ</pv_name>
+      <x>5</x>
       <y>25</y>
+      <width>95</width>
       <height>35</height>
+      <font>
+        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
       <background_color>
         <color name="Background" red="255" green="255" blue="255">
         </color>
       </background_color>
       <format>5</format>
-      <precision>0</precision>
+      <precision>3</precision>
       <vertical_alignment>1</vertical_alignment>
       <wrap_words>false</wrap_words>
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Count Box</name>
       <pv_name>${UUT}:0:SIG:${FUNC}_${TARGET}:COUNT</pv_name>
+      <x>5</x>
       <y>65</y>
+      <width>95</width>
       <height>35</height>
+      <font>
+        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
       <background_color>
         <color name="Background" red="255" green="255" blue="255">
         </color>
       </background_color>
       <precision>0</precision>
+      <show_units>false</show_units>
       <vertical_alignment>1</vertical_alignment>
       <wrap_words>false</wrap_words>
     </widget>
@@ -151,9 +152,9 @@
       <name>Counter Reset</name>
       <actions>
         <action type="write_pv">
+          <description>WritePV</description>
           <pv_name>$(pv_name)</pv_name>
           <value>1</value>
-          <description>WritePV</description>
         </action>
       </actions>
       <pv_name>${UUT}:0:SIG:${FUNC}_${TARGET}:RESET</pv_name>
@@ -163,7 +164,7 @@
       <width>25</width>
       <height>20</height>
       <tooltip>$(actions)</tooltip>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
     </widget>
     <widget type="led" version="2.0.0">
       <name>Counter Status</name>
@@ -172,6 +173,34 @@
       <x>80</x>
       <y>105</y>
       <square>true</square>
+    </widget>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle</name>
+      <y>25</y>
+      <width>5</width>
+      <height>35</height>
+      <line_color>
+        <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="Header_ForeGround" red="255" green="255" blue="255">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle_1</name>
+      <y>65</y>
+      <width>5</width>
+      <height>35</height>
+      <line_color>
+        <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="Header_ForeGround" red="255" green="255" blue="255">
+        </color>
+      </background_color>
     </widget>
   </widget>
 </display>

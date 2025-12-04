@@ -1,80 +1,292 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2025-02-20 14:55:42 by dt100-->
 <display version="2.0.0">
-  <name>Capture</name>
-  <width>730</width>
-  <height>750</height>
-  <widget type="led" version="2.0.0">
-    <name>Ready</name>
-    <pv_name>pva://${UUT}:IOC_READY</pv_name>
-    <x>10</x>
-    <y>40</y>
-    <width>42</width>
-    <height>42</height>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>Capture Label</name>
-    <text>$(UUT) Capture</text>
-    <x>10</x>
-    <width>320</width>
-    <height>25</height>
-    <font>
-      <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
-      </font>
-    </font>
-    <vertical_alignment>1</vertical_alignment>
-  </widget>
-  <widget type="embedded" version="2.0.0">
-    <name>Capture State Bar</name>
-    <file>components/capture/capture_state.bob</file>
-    <x>90</x>
-    <y>40</y>
-    <width>627</width>
-    <height>42</height>
-    <resize>2</resize>
-  </widget>
-  <widget type="embedded" version="2.0.0">
-    <name>Transient</name>
-    <file>components/capture/transient.bob</file>
-    <x>10</x>
-    <y>100</y>
-    <width>710</width>
-    <height>160</height>
-    <resize>2</resize>
-  </widget>
-  <widget type="embedded" version="2.0.0">
-    <name>Stream</name>
-    <file>components/capture/stream.bob</file>
-    <x>10</x>
-    <y>280</y>
-    <width>710</width>
-    <height>230</height>
-    <resize>2</resize>
-  </widget>
-  <widget type="embedded" version="2.0.0">
-    <name>Signals</name>
-    <file>components/capture/capture_signals.bob</file>
-    <x>10</x>
-    <y>530</y>
-    <width>710</width>
-    <height>220</height>
-    <resize>2</resize>
-  </widget>
-  <widget type="template" version="2.0.0">
-    <name>SyncRole</name>
-    <file>components/capture/sync_role.bob</file>
-    <x>740</x>
-    <y>100</y>
-    <width>580</width>
-    <height>280</height>
-  </widget>
-  <widget type="embedded" version="2.0.0">
-    <name>Stats</name>
-    <file>components/capture/stats.bob</file>
-    <x>740</x>
-    <y>400</y>
-    <width>580</width>
-    <height>270</height>
-    <resize>2</resize>
+  <name>Capture$(MUUT)</name>
+  <macros>
+    <SITE>$(AGG_FIRST_SITE=1)</SITE>
+  </macros>
+  <width>1330</width>
+  <height>800</height>
+  <widget type="group" version="3.0.0">
+    <name>CAPTURE</name>
+    <width>1330</width>
+    <height>800</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="group" version="3.0.0">
+      <name>CAPTURE INNER</name>
+      <x>10</x>
+      <y>10</y>
+      <width>1310</width>
+      <height>780</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>Capture Label</name>
+        <text>$(UUT) Capture</text>
+        <width>320</width>
+        <height>30</height>
+        <font>
+          <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+          </font>
+        </font>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="embedded" version="2.0.0">
+        <name>Transient</name>
+        <file>components/capture/transient.bob</file>
+        <y>120</y>
+        <width>710</width>
+        <height>160</height>
+        <resize>2</resize>
+      </widget>
+      <widget type="embedded" version="2.0.0">
+        <name>Stream</name>
+        <file>components/capture/stream.bob</file>
+        <y>300</y>
+        <width>710</width>
+        <height>220</height>
+        <resize>2</resize>
+      </widget>
+      <widget type="embedded" version="2.0.0">
+        <name>Signals</name>
+        <file>components/capture/capture_signals.bob</file>
+        <y>540</y>
+        <width>710</width>
+        <height>210</height>
+        <resize>2</resize>
+      </widget>
+      <widget type="template" version="2.0.0">
+        <name>SyncRole</name>
+        <file>components/capture/sync_role.bob</file>
+        <x>730</x>
+        <y>40</y>
+        <width>580</width>
+        <height>140</height>
+      </widget>
+      <widget type="embedded" version="2.0.0">
+        <name>Stats</name>
+        <file>components/capture/stats.bob</file>
+        <x>730</x>
+        <y>200</y>
+        <width>580</width>
+        <height>210</height>
+        <resize>2</resize>
+      </widget>
+      <widget type="embedded" version="2.0.0">
+        <name>DATAFLOW</name>
+        <file>components/capture/dataflow.bob</file>
+        <x>730</x>
+        <y>430</y>
+        <width>580</width>
+        <height>330</height>
+        <resize>2</resize>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>STATUS</name>
+        <y>40</y>
+        <width>710</width>
+        <height>60</height>
+        <style>3</style>
+        <background_color>
+          <color name="Read_Background" red="240" green="240" blue="240">
+          </color>
+        </background_color>
+        <widget type="group" version="3.0.0">
+          <name>STATUS INNER</name>
+          <x>10</x>
+          <y>10</y>
+          <width>692</width>
+          <height>40</height>
+          <style>3</style>
+          <transparent>true</transparent>
+          <widget type="embedded" version="2.0.0">
+            <name>Capture State Bar</name>
+            <file>components/capture/capture_state.bob</file>
+            <x>42</x>
+            <width>650</width>
+            <height>40</height>
+            <resize>2</resize>
+            <transparent>true</transparent>
+          </widget>
+          <widget type="led" version="2.0.0">
+            <name>Ready</name>
+            <pv_name>${UUT}:IOC_READY</pv_name>
+            <y>5</y>
+            <width>30</width>
+            <height>30</height>
+          </widget>
+        </widget>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>DOC_LINK_2</name>
+        <macros>
+          <TARGET>12.2 Universal Clock command : sync_role</TARGET>
+          <URL>${USER_GUIDE}#${TARGET}</URL>
+        </macros>
+        <x>850</x>
+        <y>50</y>
+        <width>25</width>
+        <height>25</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="picture" version="2.0.0">
+          <name>LINK_SYMBOL_2</name>
+          <file>../images/doc_link.png</file>
+          <width>25</width>
+          <height>25</height>
+        </widget>
+        <widget type="action_button" version="3.0.0">
+          <name>OPEN_LINK_BUTTON_2</name>
+          <actions>
+            <action type="open_webpage">
+              <description>Open Web Page</description>
+              <url>$(URL)</url>
+            </action>
+          </actions>
+          <text></text>
+          <width>25</width>
+          <height>25</height>
+          <transparent>true</transparent>
+          <tooltip>$(URL)</tooltip>
+          <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+        </widget>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>DOC_LINK_3</name>
+        <macros>
+          <TARGET>10.5 Transient Data Capture</TARGET>
+          <URL>${USER_GUIDE}#${TARGET}</URL>
+        </macros>
+        <x>210</x>
+        <y>130</y>
+        <width>25</width>
+        <height>25</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="picture" version="2.0.0">
+          <name>LINK_SYMBOL_3</name>
+          <file>../images/doc_link.png</file>
+          <width>25</width>
+          <height>25</height>
+        </widget>
+        <widget type="action_button" version="3.0.0">
+          <name>OPEN_LINK_BUTTON_3</name>
+          <actions>
+            <action type="open_webpage">
+              <description>Open Web Page</description>
+              <url>$(URL)</url>
+            </action>
+          </actions>
+          <text></text>
+          <width>25</width>
+          <height>25</height>
+          <transparent>true</transparent>
+          <tooltip>$(URL)</tooltip>
+          <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+        </widget>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>DOC_LINK_4</name>
+        <macros>
+          <TARGET>10.4 Continuous (Streaming Capture)</TARGET>
+          <URL>${USER_GUIDE}#${TARGET}</URL>
+        </macros>
+        <x>180</x>
+        <y>310</y>
+        <width>25</width>
+        <height>25</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="picture" version="2.0.0">
+          <name>LINK_SYMBOL_4</name>
+          <file>../images/doc_link.png</file>
+          <width>25</width>
+          <height>25</height>
+        </widget>
+        <widget type="action_button" version="3.0.0">
+          <name>OPEN_LINK_BUTTON_4</name>
+          <actions>
+            <action type="open_webpage">
+              <description>Open Web Page</description>
+              <url>$(URL)</url>
+            </action>
+          </actions>
+          <text></text>
+          <width>25</width>
+          <height>25</height>
+          <transparent>true</transparent>
+          <tooltip>$(URL)</tooltip>
+          <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+        </widget>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>DOC_LINK_6</name>
+        <macros>
+          <TARGET>10 Data Capture</TARGET>
+          <URL>${USER_GUIDE}#${TARGET}</URL>
+        </macros>
+        <x>242</x>
+        <y>4</y>
+        <width>25</width>
+        <height>25</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="picture" version="2.0.0">
+          <name>LINK_SYMBOL_6</name>
+          <file>../images/doc_link.png</file>
+          <width>25</width>
+          <height>25</height>
+        </widget>
+        <widget type="action_button" version="3.0.0">
+          <name>OPEN_LINK_BUTTON_6</name>
+          <actions>
+            <action type="open_webpage">
+              <description>Open Web Page</description>
+              <url>$(URL)</url>
+            </action>
+          </actions>
+          <text></text>
+          <width>25</width>
+          <height>25</height>
+          <transparent>true</transparent>
+          <tooltip>$(URL)</tooltip>
+          <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+        </widget>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>DOC_LINK_1</name>
+        <macros>
+          <TARGET>12.1.1 Between modules on a carrier</TARGET>
+          <URL>${USER_GUIDE}#${TARGET}</URL>
+        </macros>
+        <x>330</x>
+        <y>550</y>
+        <width>25</width>
+        <height>25</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="picture" version="2.0.0">
+          <name>LINK_SYMBOL_1</name>
+          <file>../images/doc_link.png</file>
+          <width>25</width>
+          <height>25</height>
+        </widget>
+        <widget type="action_button" version="3.0.0">
+          <name>OPEN_LINK_BUTTON_1</name>
+          <actions>
+            <action type="open_webpage">
+              <description>Open Web Page</description>
+              <url>$(URL)</url>
+            </action>
+          </actions>
+          <text></text>
+          <width>25</width>
+          <height>25</height>
+          <transparent>true</transparent>
+          <tooltip>$(URL)</tooltip>
+          <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+        </widget>
+      </widget>
+    </widget>
   </widget>
 </display>

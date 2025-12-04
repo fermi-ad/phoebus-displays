@@ -1,23 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2025-02-20 14:42:20 by dt100-->
+<!--Saved on 2025-03-14 15:30:55 by dt100-->
 <display version="2.0.0">
   <name>stats values</name>
-  <width>320</width>
-  <height>30</height>
+  <width>420</width>
+  <height>20</height>
   <widget type="group" version="3.0.0">
     <name>Stats Group</name>
     <macros>
       <label>$(label=nolabel)</label>
       <target>$(target=GETS)</target>
     </macros>
-    <width>320</width>
-    <height>30</height>
+    <width>420</width>
+    <height>20</height>
     <style>3</style>
     <transparent>true</transparent>
     <widget type="label" version="2.0.0">
       <name>Stat Label</name>
       <text>$(label)</text>
-      <height>30</height>
       <font>
         <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
         </font>
@@ -29,19 +28,27 @@
       <name>Stat Count</name>
       <pv_name>${UUT}:0:STAT:$(target):COUNT</pv_name>
       <x>110</x>
-      <height>30</height>
+      <width>150</width>
+      <background_color>
+        <color name="Background" red="255" green="255" blue="255">
+        </color>
+      </background_color>
       <horizontal_alignment>1</horizontal_alignment>
       <vertical_alignment>1</vertical_alignment>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Stat Rate</name>
       <pv_name>${UUT}:0:STAT:$(target):FREQ</pv_name>
-      <x>220</x>
-      <height>30</height>
+      <x>270</x>
+      <width>150</width>
+      <background_color>
+        <color name="Background" red="255" green="255" blue="255">
+        </color>
+      </background_color>
       <horizontal_alignment>1</horizontal_alignment>
       <vertical_alignment>1</vertical_alignment>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
     </widget>
   </widget>
 </display>

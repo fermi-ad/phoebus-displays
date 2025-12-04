@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2025-03-04 17:12:05 by dt100-->
 <display version="2.0.0">
   <name>Si5326</name>
   <width>300</width>
@@ -169,7 +168,7 @@
             <x>90</x>
             <y>80</y>
             <width>70</width>
-            <border_alarm_sensitive>false</border_alarm_sensitive>
+            <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
             <items>
               <item>PLAN</item>
             </items>
@@ -195,7 +194,7 @@
               </color>
             </background_color>
             <vertical_alignment>1</vertical_alignment>
-            <border_alarm_sensitive>false</border_alarm_sensitive>
+            <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
           </widget>
           <widget type="led" version="2.0.0">
             <name>LED_6</name>
@@ -240,7 +239,7 @@
             <width>70</width>
             <off_label></off_label>
             <on_label></on_label>
-            <border_alarm_sensitive>false</border_alarm_sensitive>
+            <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
           </widget>
         </widget>
       </widget>
@@ -285,7 +284,7 @@
           </color>
         </background_color>
         <vertical_alignment>1</vertical_alignment>
-        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
       </widget>
       <widget type="label" version="2.0.0">
         <name>Label_10</name>
@@ -337,6 +336,40 @@
         <color name="Text" red="0" green="0" blue="0">
         </color>
       </line_color>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>DOC_LINK_1</name>
+      <macros>
+        <TARGET>34.2 Control Names</TARGET>
+        <URL>${USER_GUIDE}#${TARGET}</URL>
+      </macros>
+      <x>10</x>
+      <y>10</y>
+      <width>25</width>
+      <height>25</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="picture" version="2.0.0">
+        <name>LINK_SYMBOL_1</name>
+        <file>../../../images/doc_link.png</file>
+        <width>25</width>
+        <height>25</height>
+      </widget>
+      <widget type="action_button" version="3.0.0">
+        <name>OPEN_LINK_BUTTON_1</name>
+        <actions>
+          <action type="open_webpage">
+            <description>Open Web Page</description>
+            <url>$(URL)</url>
+          </action>
+        </actions>
+        <text></text>
+        <width>25</width>
+        <height>25</height>
+        <transparent>true</transparent>
+        <tooltip>$(URL)</tooltip>
+        <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+      </widget>
     </widget>
   </widget>
   <widget type="polyline" version="2.0.0">

@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2025-03-04 17:28:21 by dt100-->
 <display version="2.0.0">
   <name>mbclk</name>
   <width>300</width>
@@ -70,7 +69,7 @@
               </color>
             </background_color>
             <vertical_alignment>1</vertical_alignment>
-            <border_alarm_sensitive>false</border_alarm_sensitive>
+            <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
           </widget>
           <widget type="textupdate" version="2.0.0">
             <name>Spinner_1</name>
@@ -86,7 +85,7 @@
             <precision>3</precision>
             <show_units>false</show_units>
             <vertical_alignment>1</vertical_alignment>
-            <border_alarm_sensitive>false</border_alarm_sensitive>
+            <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
           </widget>
         </widget>
         <widget type="polyline" version="2.0.0">
@@ -205,7 +204,7 @@
           </color>
         </background_color>
         <vertical_alignment>1</vertical_alignment>
-        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
       </widget>
       <widget type="textupdate" version="2.0.0">
         <name>Spinner_4</name>
@@ -221,7 +220,7 @@
         <precision>3</precision>
         <show_units>false</show_units>
         <vertical_alignment>1</vertical_alignment>
-        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
       </widget>
     </widget>
     <widget type="polyline" version="2.0.0">
@@ -239,6 +238,40 @@
         <color name="Text" red="0" green="0" blue="0">
         </color>
       </line_color>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>DOC_LINK_1</name>
+      <macros>
+        <TARGET>6.2.2 Clocktree</TARGET>
+        <URL>${USER_GUIDE}#${TARGET}</URL>
+      </macros>
+      <x>10</x>
+      <y>20</y>
+      <width>25</width>
+      <height>25</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="picture" version="2.0.0">
+        <name>LINK_SYMBOL_1</name>
+        <file>../../../images/doc_link.png</file>
+        <width>25</width>
+        <height>25</height>
+      </widget>
+      <widget type="action_button" version="3.0.0">
+        <name>OPEN_LINK_BUTTON_1</name>
+        <actions>
+          <action type="open_webpage">
+            <description>Open Web Page</description>
+            <url>$(URL)</url>
+          </action>
+        </actions>
+        <text></text>
+        <width>25</width>
+        <height>25</height>
+        <transparent>true</transparent>
+        <tooltip>$(URL)</tooltip>
+        <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+      </widget>
     </widget>
   </widget>
 </display>

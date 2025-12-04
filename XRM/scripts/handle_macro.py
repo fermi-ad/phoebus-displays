@@ -1,23 +1,28 @@
-import time
 from java.util.logging import Logger
 from org.csstudio.display.builder.runtime.script import PVUtil
+from org.phoebus.framework.macros import Macros
 
-""" Update Macro when changed """
+""" On pv change update macros """
 
 # Startup
 logger = Logger.getLogger('handle_macro')
 widget = locals()['widget']
 pvs = locals()['pvs']
 display = widget.getTopDisplayModel()
-t0 = time.time()
 
-def is_stale(pv):
-    timestamp = float(PVUtil.getTimeInMilliseconds(pv)) / 1000
-    return t0 - timestamp > 1
+# Functions
+def set_macros(widget, macros):
+    new_macros = Macros()
+    for key in macros:
+        new_macros.add(key, str(macros[key]))
+    widget.setPropertyValue("macros", new_macros)
 
+# Main
+macros = {}
 for pv in pvs:
-    #if is_stale(pv): continue # fix me
-    pvname = pv.getName().split('://')[-1]
-    pvvalue = PVUtil.getString(pv)
-    display.getEffectiveMacros().add(pvname, str(pvvalue))
-    logger.info("Updated {} macro to {}".format(pvname, pvvalue))
+    key = pv.name.replace('loc://', '').split('_WD')[0]
+    value = PVUtil.getString(pv)
+    macros[key] = str(value)
+    logger.info("Updated {} macro to {}".format(key, value))
+
+set_macros(widget, macros)
