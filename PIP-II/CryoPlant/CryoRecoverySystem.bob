@@ -274,13 +274,6 @@ Distribution</text>
       </color>
     </line_color>
   </widget>
-  <widget type="polyline" version="2.0.0">
-    <name>Polyline_145</name>
-    <x>445</x>
-    <y>316</y>
-    <width>1</width>
-    <height>1</height>
-  </widget>
   <widget type="label" version="2.0.0">
     <name>Label_7</name>
     <text>TUBE TRAILER</text>
@@ -317,17 +310,6 @@ Distribution</text>
     <y>170</y>
     <width>1</width>
     <height>1</height>
-  </widget>
-  <widget type="embedded" version="2.0.0">
-    <name>Embedded Display_169</name>
-    <macros>
-      <sensor>PTXXX</sensor>
-    </macros>
-    <file>../Common/cryo-embedded-displays/PressureSensorUp.bob</file>
-    <x>554</x>
-    <y>243</y>
-    <width>65</width>
-    <height>35</height>
   </widget>
   <widget type="polyline" version="2.0.0">
     <name>Polyline_149</name>
@@ -765,6 +747,17 @@ $(actions)</tooltip>
     <width>58</width>
     <height>70</height>
     <rotation>90.0</rotation>
+    <actions>
+      <action type="open_display">
+        <description>Open Display</description>
+        <file>ValveControlPIDSimple.bob</file>
+        <macros>
+          <dev>PV1422</dev>
+        </macros>
+        <target>tab</target>
+      </action>
+    </actions>
+    <run_actions_on_mouse_click>true</run_actions_on_mouse_click>
     <tooltip>$(pv_name)
 $(pv_value)
 $(actions)</tooltip>
@@ -786,11 +779,12 @@ $(actions)</tooltip>
         <description>Open Display</description>
         <file>ValveControlPIDSimple.bob</file>
         <macros>
-          <valve>1426</valve>
+          <dev>PV1426</dev>
         </macros>
         <target>tab</target>
       </action>
     </actions>
+    <run_actions_on_mouse_click>true</run_actions_on_mouse_click>
     <tooltip>$(pv_name)
 $(pv_value)
 $(actions)</tooltip>
@@ -823,14 +817,14 @@ $(actions)</tooltip>
     <bit>0</bit>
     <x>754</x>
     <y>128</y>
-    <off_label>M</off_label>
+    <off_label>A</off_label>
     <off_color>
-      <color name="fgs.Gray-45" red="167" green="168" blue="170">
+      <color name="acorn.Green" red="82" green="171" blue="90">
       </color>
     </off_color>
-    <on_label>A</on_label>
+    <on_label>M</on_label>
     <on_color>
-      <color name="acorn.Green" red="82" green="171" blue="90">
+      <color name="fgs.Gray-45" red="167" green="168" blue="170">
       </color>
     </on_color>
     <square>true</square>
@@ -934,24 +928,6 @@ $(actions)</tooltip>
     <vertical_alignment>1</vertical_alignment>
     <auto_size>true</auto_size>
   </widget>
-  <widget type="led" version="2.0.0">
-    <name>LED_8</name>
-    <pv_name>$(sys)PV1422:ManualAuto</pv_name>
-    <bit>0</bit>
-    <x>712</x>
-    <y>394</y>
-    <off_label>M</off_label>
-    <off_color>
-      <color name="fgs.Gray-45" red="167" green="168" blue="170">
-      </color>
-    </off_color>
-    <on_label>A</on_label>
-    <on_color>
-      <color name="acorn.Green" red="82" green="171" blue="90">
-      </color>
-    </on_color>
-    <square>true</square>
-  </widget>
   <widget type="symbol" version="2.0.0">
     <name>Symbol_38</name>
     <pv_name>$(sys)PV1423:VLVstat</pv_name>
@@ -971,10 +947,13 @@ $(actions)</tooltip>
         <file>ValveControlPIDSimple.bob</file>
         <macros>
           <dev>PV1423</dev>
+          <PV>PT1418</PV>
+          <Var>Pressure</Var>
         </macros>
         <target>tab</target>
       </action>
     </actions>
+    <run_actions_on_mouse_click>true</run_actions_on_mouse_click>
     <tooltip>$(pv_name)
 $(pv_value)
 $(actions)</tooltip>
@@ -989,24 +968,6 @@ $(actions)</tooltip>
     <y>758</y>
     <width>65</width>
     <height>35</height>
-  </widget>
-  <widget type="led" version="2.0.0">
-    <name>LED_17</name>
-    <pv_name>$(sys)PV1423:ManualAuto</pv_name>
-    <bit>0</bit>
-    <x>757</x>
-    <y>708</y>
-    <off_label>M</off_label>
-    <off_color>
-      <color name="fgs.Gray-45" red="167" green="168" blue="170">
-      </color>
-    </off_color>
-    <on_label>A</on_label>
-    <on_color>
-      <color name="acorn.Green" red="82" green="171" blue="90">
-      </color>
-    </on_color>
-    <square>true</square>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_11</name>
@@ -1810,7 +1771,7 @@ Distribution</text>
   </widget>
   <widget type="tank" version="2.0.0">
     <name>Tank</name>
-    <pv_name>$(sys):DPT2115</pv_name>
+    <pv_name>$(sys)DPT2115:Pressure</pv_name>
     <x>170</x>
     <y>490</y>
     <width>110</width>
@@ -1835,29 +1796,6 @@ Distribution</text>
       <point x="0.0" y="0.0">
       </point>
     </points>
-  </widget>
-  <widget type="embedded" version="2.0.0">
-    <name>Embedded Display_199</name>
-    <macros>
-      <dev>PTINT</dev>
-    </macros>
-    <file>../Common/cryo-embedded-displays/PressureSensorUp.bob</file>
-    <x>577</x>
-    <y>323</y>
-    <width>65</width>
-    <height>35</height>
-  </widget>
-  <widget type="embedded" version="2.0.0">
-    <name>Embedded Display_200</name>
-    <macros>
-      <dev>PIP2CP:MYCOM_H2OPos</dev>
-      <sys>$(dev)$(enum):H2OPos</sys>
-    </macros>
-    <file>../Common/cryo-embedded-displays/ValveStatusUp.bob</file>
-    <x>417</x>
-    <y>325</y>
-    <width>65</width>
-    <height>35</height>
   </widget>
   <widget type="polyline" version="2.0.0">
     <name>Polyline_9</name>
@@ -1930,32 +1868,6 @@ Distribution</text>
     <y>550</y>
     <width>65</width>
     <height>35</height>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Action Button_1</name>
-    <actions>
-      <action type="open_display">
-        <description>Open Display</description>
-        <file>MYCOMmain.bob</file>
-        <target>tab</target>
-      </action>
-    </actions>
-    <text></text>
-    <x>493</x>
-    <y>284</y>
-    <width>76</width>
-    <height>126</height>
-    <font>
-      <font family="Liberation Sans" style="BOLD" size="16.0">
-      </font>
-    </font>
-    <background_color>
-      <color red="217" green="217" blue="217">
-      </color>
-    </background_color>
-    <transparent>true</transparent>
-    <vertical_alignment>0</vertical_alignment>
-    <tooltip>$(actions)</tooltip>
   </widget>
   <widget type="group" version="3.0.0">
     <name>Group</name>
@@ -2232,7 +2144,7 @@ Distribution</text>
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display_5</name>
     <macros>
-      <tank>131</tank>
+      <tank>130</tank>
     </macros>
     <file>BufferTank.bob</file>
     <x>1660</x>
@@ -2323,7 +2235,6 @@ $(actions)</tooltip>
   </widget>
   <widget type="led" version="2.0.0">
     <name>LED_9</name>
-    <pv_name>$(sys)PV1422:ManualAuto</pv_name>
     <bit>0</bit>
     <x>366</x>
     <y>472</y>
@@ -2341,7 +2252,6 @@ $(actions)</tooltip>
   </widget>
   <widget type="led" version="2.0.0">
     <name>LED_10</name>
-    <pv_name>$(sys)PV1422:ManualAuto</pv_name>
     <bit>0</bit>
     <x>365</x>
     <y>585</y>
@@ -2359,7 +2269,6 @@ $(actions)</tooltip>
   </widget>
   <widget type="led" version="2.0.0">
     <name>LED_11</name>
-    <pv_name>$(sys)PV1422:ManualAuto</pv_name>
     <bit>0</bit>
     <x>366</x>
     <y>707</y>
@@ -2377,7 +2286,6 @@ $(actions)</tooltip>
   </widget>
   <widget type="led" version="2.0.0">
     <name>LED_12</name>
-    <pv_name>$(sys)PV1422:ManualAuto</pv_name>
     <bit>0</bit>
     <x>546</x>
     <y>531</y>
@@ -2410,5 +2318,320 @@ $(actions)</tooltip>
       </color>
     </on_color>
     <square>true</square>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_8</name>
+    <pv_name>$(sys)PV1426:ManualAuto</pv_name>
+    <bit>0</bit>
+    <x>713</x>
+    <y>391</y>
+    <off_label>A</off_label>
+    <off_color>
+      <color name="acorn.Green" red="82" green="171" blue="90">
+      </color>
+    </off_color>
+    <on_label>M</on_label>
+    <on_color>
+      <color name="fgs.Gray-45" red="167" green="168" blue="170">
+      </color>
+    </on_color>
+    <square>true</square>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_14</name>
+    <pv_name>$(sys)PV1426:ManualAuto</pv_name>
+    <bit>0</bit>
+    <x>750</x>
+    <y>698</y>
+    <off_label>A</off_label>
+    <off_color>
+      <color name="acorn.Green" red="82" green="171" blue="90">
+      </color>
+    </off_color>
+    <on_label>M</on_label>
+    <on_color>
+      <color name="fgs.Gray-45" red="167" green="168" blue="170">
+      </color>
+    </on_color>
+    <square>true</square>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_1</name>
+    <actions>
+      <action type="open_display">
+        <description>Open Display</description>
+        <file>MYCOMmain.bob</file>
+        <target>tab</target>
+      </action>
+    </actions>
+    <text></text>
+    <x>493</x>
+    <y>284</y>
+    <width>76</width>
+    <height>126</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="16.0">
+      </font>
+    </font>
+    <background_color>
+      <color red="217" green="217" blue="217">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <vertical_alignment>0</vertical_alignment>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_147</name>
+    <x>422</x>
+    <y>372</y>
+    <width>1</width>
+    <height>1</height>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <x>422</x>
+    <y>304</y>
+    <width>62</width>
+    <height>30</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="group" version="3.0.0">
+      <name>Group_2</name>
+      <width>60</width>
+      <height>30</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_227</name>
+        <pv_name>PIP2CP:MYCOM_CRYO_CONSYS:HSVPos</pv_name>
+        <x>2</x>
+        <y>17</y>
+        <width>60</width>
+        <height>15</height>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="11.0">
+          </font>
+        </font>
+        <precision>1</precision>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <border_width>2</border_width>
+        <border_color>
+          <color red="0" green="0" blue="255">
+          </color>
+        </border_color>
+      </widget>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_1</name>
+      <text>HSVPos</text>
+      <x>2</x>
+      <width>60</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <background_color>
+        <color name="Read_Background" red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <border_width>2</border_width>
+      <border_color>
+        <color red="0" green="0" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_145</name>
+      <x>23</x>
+      <y>12</y>
+      <width>1</width>
+      <height>1</height>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group_4</name>
+    <x>422</x>
+    <y>363</y>
+    <width>62</width>
+    <height>30</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="group" version="3.0.0">
+      <name>Group_5</name>
+      <width>60</width>
+      <height>30</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_229</name>
+        <pv_name>PIP2CP:MYCOM_CRYO_CONSYS:LSVPos</pv_name>
+        <x>2</x>
+        <y>17</y>
+        <width>60</width>
+        <height>15</height>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="11.0">
+          </font>
+        </font>
+        <precision>1</precision>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <border_width>2</border_width>
+        <border_color>
+          <color red="0" green="0" blue="255">
+          </color>
+        </border_color>
+      </widget>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_3</name>
+      <text>LSVPos</text>
+      <x>2</x>
+      <width>60</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <background_color>
+        <color name="Read_Background" red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <border_width>2</border_width>
+      <border_color>
+        <color red="0" green="0" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_148</name>
+      <x>23</x>
+      <y>12</y>
+      <width>1</width>
+      <height>1</height>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <x>557</x>
+    <y>240</y>
+    <width>62</width>
+    <height>31</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>Label</name>
+      <text>PTSCT</text>
+      <x>2</x>
+      <width>60</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <background_color>
+        <color name="Read_Background" red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <border_width>2</border_width>
+      <border_color>
+        <color red="143" green="106" blue="35">
+        </color>
+      </border_color>
+    </widget>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_225</name>
+    <pv_name>PIP2CP:MYCOM_CRYO_CONSYS:PTSCT</pv_name>
+    <x>559</x>
+    <y>258</y>
+    <width>60</width>
+    <height>15</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="11.0">
+      </font>
+    </font>
+    <precision>1</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <rules>
+      <rule name="show units" prop_id="show_units" out_exp="false">
+        <pv_name>$(pv_name)</pv_name>
+      </rule>
+    </rules>
+    <border_width>2</border_width>
+    <border_color>
+      <color red="143" green="106" blue="35">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group_6</name>
+    <x>580</x>
+    <y>329</y>
+    <width>62</width>
+    <height>31</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>Label_4</name>
+      <text>PTDIS</text>
+      <x>2</x>
+      <width>60</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <background_color>
+        <color name="Read_Background" red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <border_width>2</border_width>
+      <border_color>
+        <color red="143" green="106" blue="35">
+        </color>
+      </border_color>
+    </widget>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_230</name>
+    <pv_name>PIP2CP:MYCOM_CRYO_CONSYS:PTDIS</pv_name>
+    <x>582</x>
+    <y>347</y>
+    <width>60</width>
+    <height>15</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="11.0">
+      </font>
+    </font>
+    <precision>1</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <rules>
+      <rule name="show units" prop_id="show_units" out_exp="false">
+        <pv_name>$(pv_name)</pv_name>
+      </rule>
+    </rules>
+    <border_width>2</border_width>
+    <border_color>
+      <color red="143" green="106" blue="35">
+      </color>
+    </border_color>
   </widget>
 </display>
