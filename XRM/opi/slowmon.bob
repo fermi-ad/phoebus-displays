@@ -1,0 +1,554 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>Slowmon$(MUUT)</name>
+  <width>760</width>
+  <height>330</height>
+  <widget type="group" version="3.0.0">
+    <name>INIT LOC</name>
+    <y>340</y>
+    <width>130</width>
+    <height>80</height>
+    <visible>$(DEBUG)</visible>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="textupdate" version="2.0.0">
+      <name>INIT LOC://SCOPE_CHANS</name>
+      <pv_name>loc://SCOPE_CHANS_$(DID)&lt;VString&gt;("1-8")</pv_name>
+      <y>40</y>
+      <width>130</width>
+      <background_color>
+        <color red="255" green="212" blue="0">
+        </color>
+      </background_color>
+      <precision>0</precision>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>GLOBAL_MACROS</name>
+      <text>GLOBAL MACROS</text>
+      <y>10</y>
+      <width>122</width>
+      <height>16</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <auto_size>true</auto_size>
+      <scripts>
+        <script file="../scripts/handle_macro.py">
+          <pv_name>loc://SCOPE_CHANS_$(DID)</pv_name>
+        </script>
+      </scripts>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>SLOWMON</name>
+    <width>760</width>
+    <height>330</height>
+    <style>3</style>
+    <background_color>
+      <color red="255" green="230" blue="204">
+      </color>
+    </background_color>
+    <widget type="group" version="3.0.0">
+      <name>SLOWMON INNER</name>
+      <x>10</x>
+      <y>10</y>
+      <width>740</width>
+      <height>310</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="rectangle" version="2.0.0">
+        <name>Rectangle</name>
+        <x>110</x>
+        <y>250</y>
+        <width>630</width>
+        <height>60</height>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>TITLE</name>
+        <text>$(UUT) SLOWMON</text>
+        <width>320</width>
+        <height>30</height>
+        <font>
+          <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+          </font>
+        </font>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>LABEL_1</name>
+        <text>CLK</text>
+        <y>50</y>
+        <width>80</width>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>UPDATE_1</name>
+        <pv_name>${UUT}:SYS:SYNC_ROLE</pv_name>
+        <y>70</y>
+        <width>200</width>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+      </widget>
+      <widget type="polyline" version="2.0.0">
+        <name>ARROW_1</name>
+        <y>90</y>
+        <width>60</width>
+        <height>50</height>
+        <points>
+          <point x="10.0" y="0.0">
+          </point>
+          <point x="10.0" y="40.0">
+          </point>
+          <point x="60.0" y="40.0">
+          </point>
+        </points>
+        <line_width>5</line_width>
+        <line_color>
+          <color name="Text" red="0" green="0" blue="0">
+          </color>
+        </line_color>
+        <arrows>2</arrows>
+        <arrow_length>15</arrow_length>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>LABEL_2</name>
+        <text>PRESCALE</text>
+        <x>70</x>
+        <y>100</y>
+        <width>80</width>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>UPDATE_2</name>
+        <pv_name>${UUT}:0:NACC:PRES</pv_name>
+        <x>70</x>
+        <y>120</y>
+        <width>80</width>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+      </widget>
+      <widget type="polyline" version="2.0.0">
+        <name>ARROW_2</name>
+        <x>70</x>
+        <y>140</y>
+        <width>60</width>
+        <height>50</height>
+        <points>
+          <point x="10.0" y="0.0">
+          </point>
+          <point x="10.0" y="40.0">
+          </point>
+          <point x="60.0" y="40.0">
+          </point>
+        </points>
+        <line_width>5</line_width>
+        <line_color>
+          <color name="Text" red="0" green="0" blue="0">
+          </color>
+        </line_color>
+        <arrows>2</arrows>
+        <arrow_length>15</arrow_length>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>LABEL_3</name>
+        <text>NACC</text>
+        <x>140</x>
+        <y>150</y>
+        <width>80</width>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>UPDATE_3</name>
+        <pv_name>${UUT}:0:NACC:NACC</pv_name>
+        <x>140</x>
+        <y>170</y>
+        <width>80</width>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>LABEL_4</name>
+        <text>START</text>
+        <x>230</x>
+        <y>150</y>
+        <width>80</width>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>UPDATE_4</name>
+        <pv_name>${UUT}:0:NACC:START</pv_name>
+        <x>230</x>
+        <y>170</y>
+        <width>80</width>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>UPDATE_5</name>
+        <pv_name>${UUT}:0:NACC:SHR</pv_name>
+        <x>320</x>
+        <y>170</y>
+        <width>80</width>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>LABEL_5</name>
+        <text>SHR</text>
+        <x>320</x>
+        <y>150</y>
+        <width>80</width>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="polyline" version="2.0.0">
+        <name>ARROW_3</name>
+        <x>140</x>
+        <y>190</y>
+        <width>60</width>
+        <height>50</height>
+        <points>
+          <point x="10.0" y="0.0">
+          </point>
+          <point x="10.0" y="40.0">
+          </point>
+          <point x="60.0" y="40.0">
+          </point>
+        </points>
+        <line_width>5</line_width>
+        <line_color>
+          <color name="Text" red="0" green="0" blue="0">
+          </color>
+        </line_color>
+        <arrows>2</arrows>
+        <arrow_length>15</arrow_length>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>UPDATE_6</name>
+        <pv_name>${UUT}:0:SLOWMON:FIN:ACT</pv_name>
+        <x>210</x>
+        <y>220</y>
+        <width>80</width>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>LABEL_6</name>
+        <text>FIN Actual</text>
+        <x>210</x>
+        <y>200</y>
+        <width>80</width>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="polyline" version="2.0.0">
+        <name>ARROW_5</name>
+        <x>210</x>
+        <y>240</y>
+        <width>60</width>
+        <height>60</height>
+        <points>
+          <point x="10.0" y="0.0">
+          </point>
+          <point x="10.0" y="48.0">
+          </point>
+          <point x="60.0" y="48.0">
+          </point>
+        </points>
+        <line_width>5</line_width>
+        <line_color>
+          <color name="Text" red="0" green="0" blue="0">
+          </color>
+        </line_color>
+        <arrows>2</arrows>
+        <arrow_length>15</arrow_length>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>UPDATE_7</name>
+        <pv_name>${UUT}:0:SLOWMON:FIN</pv_name>
+        <x>280</x>
+        <y>280</y>
+        <width>80</width>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>LABEL_7</name>
+        <text>FIN</text>
+        <x>280</x>
+        <y>260</y>
+        <width>80</width>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>UPDATE_8</name>
+        <pv_name>${UUT}:0:SLOWMON:NACC</pv_name>
+        <x>370</x>
+        <y>280</y>
+        <width>80</width>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>LABEL_8</name>
+        <text>NACC</text>
+        <x>370</x>
+        <y>260</y>
+        <width>80</width>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="textentry" version="3.0.0">
+        <name>INPUT_1</name>
+        <pv_name>${UUT}:0:SLOWMON:FS</pv_name>
+        <x>460</x>
+        <y>280</y>
+        <width>80</width>
+        <background_color>
+          <color name="Read_Background" red="240" green="240" blue="240">
+          </color>
+        </background_color>
+        <horizontal_alignment>1</horizontal_alignment>
+        <wrap_words>true</wrap_words>
+        <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>LABEL_9</name>
+        <text>FS</text>
+        <x>460</x>
+        <y>260</y>
+        <width>80</width>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="textentry" version="3.0.0">
+        <name>INPUT_2</name>
+        <pv_name>${UUT}:0:SLOWMON:SLOWMONMS</pv_name>
+        <x>550</x>
+        <y>280</y>
+        <width>80</width>
+        <background_color>
+          <color name="Read_Background" red="240" green="240" blue="240">
+          </color>
+        </background_color>
+        <horizontal_alignment>1</horizontal_alignment>
+        <wrap_words>true</wrap_words>
+        <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>LABEL_10</name>
+        <text>MS</text>
+        <x>550</x>
+        <y>260</y>
+        <width>80</width>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="bool_button" version="2.0.0">
+        <name>INPUT_3</name>
+        <pv_name>${UUT}:0:SLOWMON:EN</pv_name>
+        <x>640</x>
+        <y>280</y>
+        <width>80</width>
+        <height>20</height>
+        <background_color>
+          <color name="Read_Background" red="240" green="240" blue="240">
+          </color>
+        </background_color>
+        <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>LABEL_11</name>
+        <text>ENABLE</text>
+        <x>640</x>
+        <y>260</y>
+        <width>80</width>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>UPDATE_10</name>
+        <pv_name>${UUT}:0:SLOWMON:NACC:DUTY</pv_name>
+        <x>300</x>
+        <y>220</y>
+        <width>80</width>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>LABEL_12</name>
+        <text>DUTY</text>
+        <x>300</x>
+        <y>200</y>
+        <width>80</width>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="led" version="2.0.0">
+        <name>LED_GOOD_1</name>
+        <pv_name>${UUT}:NACC:DNA</pv_name>
+        <x>210</x>
+        <y>70</y>
+        <off_color>
+          <color red="51" green="102" blue="51">
+          </color>
+        </off_color>
+        <line_color>
+          <color name="Text" red="0" green="0" blue="0">
+          </color>
+        </line_color>
+        <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label</name>
+        <text>SLOWMON PROCESS</text>
+        <x>110</x>
+        <y>250</y>
+        <width>90</width>
+        <height>60</height>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>STRIP PLOT</name>
+        <macros>
+          <title_fmt>Slowmon {UUT} {pchans}</title_fmt>
+        </macros>
+        <x>440</x>
+        <y>50</y>
+        <height>50</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="textentry" version="3.0.0">
+          <name>INIT STRIP CHANS</name>
+          <pv_name>loc://SCOPE_CHANS_$(DID)</pv_name>
+          <y>20</y>
+          <width>141</width>
+          <height>30</height>
+          <background_color>
+            <color name="Read_Background" red="240" green="240" blue="240">
+            </color>
+          </background_color>
+          <precision>0</precision>
+          <wrap_words>true</wrap_words>
+        </widget>
+        <widget type="action_button" version="3.0.0">
+          <name>SLOWMON TEMP BUTTON</name>
+          <actions>
+            <action type="execute">
+              <description>open slowmon_strip.bob</description>
+              <script file="../scripts/handle_action_button.py">
+              </script>
+            </action>
+          </actions>
+          <text>PLOT</text>
+          <x>150</x>
+          <y>20</y>
+          <width>150</width>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <tooltip>$(actions)</tooltip>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>LABEL_13</name>
+          <text>Strip Plot</text>
+          <width>80</width>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>DOC_LINK_1</name>
+        <macros>
+          <TARGET>10.9 Slowmon</TARGET>
+          <URL>${USER_GUIDE}#${TARGET}</URL>
+        </macros>
+        <x>710</x>
+        <width>25</width>
+        <height>25</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="picture" version="2.0.0">
+          <name>LINK_SYMBOL_1</name>
+          <file>../images/doc_link.png</file>
+          <width>25</width>
+          <height>25</height>
+        </widget>
+        <widget type="action_button" version="3.0.0">
+          <name>OPEN_LINK_BUTTON_1</name>
+          <actions>
+            <action type="open_webpage">
+              <description>Open Web Page</description>
+              <url>$(URL)</url>
+            </action>
+          </actions>
+          <text></text>
+          <width>25</width>
+          <height>25</height>
+          <transparent>true</transparent>
+          <tooltip>$(URL)</tooltip>
+          <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+        </widget>
+      </widget>
+    </widget>
+  </widget>
+</display>

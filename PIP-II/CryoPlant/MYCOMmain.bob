@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2025-09-10 08:42:55 by pratik-->
 <display version="2.0.0">
   <name>MYCOMmain</name>
   <width>1200</width>
@@ -231,7 +230,7 @@
   </widget>
   <widget type="led" version="2.0.0">
     <name>LED_7</name>
-    <pv_name>$(pmt)HB:HeartBeat</pv_name>
+    <pv_name>$(system)MCPLC:HBstatus</pv_name>
     <x>106</x>
     <y>8</y>
     <border_alarm_sensitive>false</border_alarm_sensitive>
@@ -796,5 +795,26 @@ $(actions)</tooltip>
     <y>446</y>
     <width>55</width>
     <height>35</height>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_3</name>
+    <actions>
+      <action type="open_display">
+        <description>Mycom Engineering</description>
+        <file>MYCOM.bob</file>
+        <macros>
+          <system>$(complex):MYCOM_$(group)_</system>
+        </macros>
+        <target>window</target>
+      </action>
+    </actions>
+    <x>10</x>
+    <y>560</y>
+    <width>170</width>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <tooltip>$(actions)</tooltip>
   </widget>
 </display>

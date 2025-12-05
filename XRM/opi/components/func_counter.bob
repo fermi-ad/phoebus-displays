@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2025-03-06 11:47:40 by sam-->
+<!--Saved on 2025-03-12 14:20:10 by dt100-->
 <display version="2.0.0">
   <name>func counter</name>
   <width>530</width>
@@ -7,7 +7,13 @@
   <widget type="group" version="3.0.0">
     <name>Func Group</name>
     <macros>
-      <func>$(func=sample_count)</func>
+      <func>$(func=SIG:sample_count)</func>
+      <pvname0>${UUT}:${site}:${func}:ACTIVE</pvname0>
+      <pvname1>${UUT}:${site}:${func}:COUNT</pvname1>
+      <pvname2>${UUT}:${site}:${func}:FREQ</pvname2>
+      <pvname3>${UUT}:${site}:${func}:RESET</pvname3>
+      <label>$(label=$(func))</label>
+      <site>$(site=0)</site>
     </macros>
     <width>530</width>
     <height>50</height>
@@ -18,7 +24,7 @@
     </background_color>
     <widget type="label" version="2.0.0">
       <name>Func Name</name>
-      <text>$(func)</text>
+      <text>$(label)</text>
       <x>10</x>
       <y>10</y>
       <width>150</width>
@@ -29,7 +35,7 @@
     </widget>
     <widget type="led" version="2.0.0">
       <name>Func Active</name>
-      <pv_name>${UUT}:${site}:SIG:${func}:ACTIVE</pv_name>
+      <pv_name>$(pvname0)</pv_name>
       <x>170</x>
       <y>10</y>
       <width>30</width>
@@ -37,7 +43,7 @@
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Func Count</name>
-      <pv_name>${UUT}:${site}:SIG:${func}:COUNT</pv_name>
+      <pv_name>$(pvname1)</pv_name>
       <x>210</x>
       <y>10</y>
       <width>130</width>
@@ -51,7 +57,7 @@
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Func Freq</name>
-      <pv_name>${UUT}:${site}:SIG:${func}:FREQ</pv_name>
+      <pv_name>$(pvname2)</pv_name>
       <x>350</x>
       <y>10</y>
       <width>130</width>
@@ -61,16 +67,16 @@
         </color>
       </background_color>
       <format>1</format>
-      <precision>0</precision>
+      <precision>2</precision>
       <vertical_alignment>1</vertical_alignment>
     </widget>
     <widget type="action_button" version="3.0.0">
       <name>Func Reset</name>
       <actions>
         <action type="write_pv">
-          <description>Reset</description>
-          <pv_name>${UUT}:${site}:SIG:${func}:RESET</pv_name>
+          <pv_name>$(pvname3)</pv_name>
           <value>1</value>
+          <description>Reset</description>
         </action>
       </actions>
       <text>C</text>

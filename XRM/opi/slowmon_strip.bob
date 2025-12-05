@@ -1,91 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2025-02-28 14:05:32 by dt100-->
+<!--Saved on 2025-06-09 10:41:22 by dt100-->
 <display version="2.0.0">
-  <name>slowmon_strip</name>
-  <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
-    <pv_name>acq2106_119:0:SLOWMON:MEAN</pv_name>
-    <width>550</width>
-    <height>50</height>
-  </widget>
-  <widget type="stripchart" version="2.1.0">
-    <name>Strip Chart_1</name>
-    <y>70</y>
+  <name>Slowmon Plot$(MUUT)</name>
+  <width>960</width>
+  <height>720</height>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display</name>
+    <macros>
+      <SCOPE_MODE>LIVE</SCOPE_MODE>
+      <MODE_LIVE>WF</MODE_LIVE>
+      <MODE_POST>TW</MODE_POST>
+      <MODE>$(mode_$(SCOPE_MODE)=WF)</MODE>
+      <SCOPE_TYPE>RAW</SCOPE_TYPE>
+      <TYPE_VOLTS>:V.VALA</TYPE_VOLTS>
+      <TYPE>$(TYPE_$(SCOPE_TYPE)=)</TYPE>
+      <Y_LABEL_RAW>Codes</Y_LABEL_RAW>
+      <Y_LABEL_VOLTS>Volts (V)</Y_LABEL_VOLTS>
+      <Y_LABEL>$(Y_LABEL_$(SCOPE_TYPE))</Y_LABEL>
+      <PV_FMT>=elementAt({UUT}:0:SLOWMON:MEAN, {chan} - 1)</PV_FMT>
+      <NAME_FMT>$(UUT):0:SLOWMON:MEAN[{index}]</NAME_FMT>
+      <TITLE_FMT>{UUT} Slowmon Plot</TITLE_FMT>
+      <MAX_TRACES>8</MAX_TRACES>
+      <X_LABEL>Samples</X_LABEL>
+      <CHANS>$(SCOPE_CHANS)</CHANS>
+      <SITE>0</SITE>
+    </macros>
+    <file>components/strip_chart_base.bob</file>
     <width>960</width>
-    <height>670</height>
-    <show_legend>true</show_legend>
-    <y_axes>
-      <y_axis>
-        <title>Y</title>
-        <autoscale>true</autoscale>
-        <log_scale>false</log_scale>
-        <minimum>0.0</minimum>
-        <maximum>100.0</maximum>
-        <show_grid>false</show_grid>
-        <visible>true</visible>
-        <color>
-          <color name="Text" red="0" green="0" blue="0">
-          </color>
+    <height>720</height>
+    <resize>2</resize>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>MS STATE</name>
+    <x>770</x>
+    <width>130</width>
+    <height>35</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="textentry" version="3.0.0">
+      <name>MS INPUT</name>
+      <pv_name>${UUT}:0:SLOWMON:SLOWMONMS</pv_name>
+      <x>60</x>
+      <y>5</y>
+      <width>70</width>
+      <height>25</height>
+      <background_color>
+        <color name="Read_Background" red="240" green="240" blue="240">
         </color>
-      </y_axis>
-    </y_axes>
-    <traces>
-      <trace>
-        <name>$(traces[0].y_pv)</name>
-        <y_pv>=elementAt($(UUT):0:SLOWMON:MEAN, 0)</y_pv>
-        <axis>0</axis>
-        <trace_type>2</trace_type>
-        <color>
-          <color red="0" green="0" blue="255">
-          </color>
-        </color>
-        <line_width>2</line_width>
-        <point_type>0</point_type>
-        <point_size>10</point_size>
-        <visible>true</visible>
-      </trace>
-      <trace>
-        <name>$(traces[1].y_pv)</name>
-        <y_pv>=elementAt($(UUT):0:SLOWMON:MEAN, 1)</y_pv>
-        <axis>0</axis>
-        <trace_type>2</trace_type>
-        <color>
-          <color red="255" green="0" blue="0">
-          </color>
-        </color>
-        <line_width>2</line_width>
-        <point_type>0</point_type>
-        <point_size>10</point_size>
-        <visible>true</visible>
-      </trace>
-      <trace>
-        <name>$(traces[2].y_pv)</name>
-        <y_pv>=elementAt($(UUT):0:SLOWMON:MEAN, 2)</y_pv>
-        <axis>0</axis>
-        <trace_type>2</trace_type>
-        <color>
-          <color red="0" green="255" blue="0">
-          </color>
-        </color>
-        <line_width>2</line_width>
-        <point_type>0</point_type>
-        <point_size>10</point_size>
-        <visible>true</visible>
-      </trace>
-      <trace>
-        <name>$(traces[3].y_pv)</name>
-        <y_pv>=elementAt($(UUT):0:SLOWMON:MEAN, 3)</y_pv>
-        <axis>0</axis>
-        <trace_type>2</trace_type>
-        <color>
-          <color red="170" green="0" blue="255">
-          </color>
-        </color>
-        <line_width>2</line_width>
-        <point_type>0</point_type>
-        <point_size>10</point_size>
-        <visible>true</visible>
-      </trace>
-    </traces>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <wrap_words>true</wrap_words>
+      <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>MS LABEL</name>
+      <text>Sample Interval</text>
+      <width>50</width>
+      <height>35</height>
+      <font>
+        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
   </widget>
 </display>

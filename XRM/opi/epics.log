@@ -1,0 +1,223 @@
+X=2,N1=CRC,N2=RTY" )
+dbLoadRecords( "db/_counter.db","UUT=acq2106_347,SITE=B,chan=B,SIG=AS,CTRMAX=65535,DT=1,DTC=1,lname=CRC" )
+dbLoadRecords( "db/_counter.db","UUT=acq2106_347,SITE=B,chan=B,SIG=AS,CTRMAX=65535,DT=1,DTC=1,lname=RTY" )
+dbLoadRecords( "db/mgt400.db","UUT=acq2106_347,SITE=B,chan=B,pn=dma_stat_data_pull,ln=DMA_STAT_DATA_PULL,SPORT=SMB" )
+dbLoadRecords( "db/mgt400.db","UUT=acq2106_347,SITE=B,chan=B,pn=dma_stat_data_push,ln=DMA_STAT_DATA_PUSH,SPORT=SMB" )
+dbLoadRecords( "db/mgt400.db","UUT=acq2106_347,SITE=B,chan=B,pn=dma_stat_desc_pull,ln=DMA_STAT_DESC_PULL,SPORT=SMB" )
+dbLoadRecords( "db/mgt400.db","UUT=acq2106_347,SITE=B,chan=B,pn=dma_stat_desc_push,ln=DMA_STAT_DESC_PUSH,SPORT=SMB" )
+# 1 SMB 2 127.0.0.1:4232 3  4  defaults 0 0
+drvAsynIPPortConfigure("SMB", "127.0.0.1:4232")
+dbLoadRecords("db/asynRecord.db","P=acq2106_347:,R=asyn:SMB,PORT=SMB,ADDR=0,IMAX=100,OMAX=100,TB3=0,TIB0=0")
+dbLoadRecords( "db/acq2106_mgtports.db","UUT=acq2106_347,MGTPORTS=2,MGTLIST=A,B" )
+# 1 SSFP1 2 127.0.0.1:4291 3  4  defaults 0 0
+drvAsynIPPortConfigure("SSFP1", "127.0.0.1:4291")
+dbLoadRecords("db/asynRecord.db","P=acq2106_347:,R=asyn:SSFP1,PORT=SSFP1,ADDR=0,IMAX=100,OMAX=100,TB3=0,TIB0=0")
+dbLoadRecords( "db/sfp.db", "UUT=acq2106_347,PORT=1,SPORT=SSFP1" )
+# 1 SSFP2 2 127.0.0.1:4292 3  4  defaults 0 0
+drvAsynIPPortConfigure("SSFP2", "127.0.0.1:4292")
+dbLoadRecords("db/asynRecord.db","P=acq2106_347:,R=asyn:SSFP2,PORT=SSFP2,ADDR=0,IMAX=100,OMAX=100,TB3=0,TIB0=0")
+dbLoadRecords( "db/sfp.db", "UUT=acq2106_347,PORT=2,SPORT=SSFP2" )
+# 1 SSFP3 2 127.0.0.1:4293 3  4  defaults 0 0
+drvAsynIPPortConfigure("SSFP3", "127.0.0.1:4293")
+dbLoadRecords("db/asynRecord.db","P=acq2106_347:,R=asyn:SSFP3,PORT=SSFP3,ADDR=0,IMAX=100,OMAX=100,TB3=0,TIB0=0")
+dbLoadRecords( "db/sfp.db", "UUT=acq2106_347,PORT=3,SPORT=SSFP3" )
+# 1 SSFP4 2 127.0.0.1:4294 3  4  defaults 0 0
+drvAsynIPPortConfigure("SSFP4", "127.0.0.1:4294")
+dbLoadRecords("db/asynRecord.db","P=acq2106_347:,R=asyn:SSFP4,PORT=SSFP4,ADDR=0,IMAX=100,OMAX=100,TB3=0,TIB0=0")
+dbLoadRecords( "db/sfp.db", "UUT=acq2106_347,PORT=4,SPORT=SSFP4" )
+#  gains_last
+dbLoadRecords( "db/gain423.db","UUT=acq2106_347,SITE=1,SPORT=S1,CH=01,GX=fixed,IX=1,FAN=1,fan=A" )
+dbLoadRecords( "db/gain423.db","UUT=acq2106_347,SITE=1,SPORT=S1,CH=10,GX=fixed,IX=10,FAN=2,fan=B" )
+dbLoadRecords( "db/gain423.db","UUT=acq2106_347,SITE=1,SPORT=S1,CH=11,GX=fixed,IX=11,FAN=2,fan=C" )
+dbLoadRecords( "db/gain423.db","UUT=acq2106_347,SITE=1,SPORT=S1,CH=12,GX=fixed,IX=12,FAN=2,fan=D" )
+dbLoadRecords( "db/gain423.db","UUT=acq2106_347,SITE=1,SPORT=S1,CH=13,GX=fixed,IX=13,FAN=2,fan=E" )
+dbLoadRecords( "db/gain423.db","UUT=acq2106_347,SITE=1,SPORT=S1,CH=14,GX=fixed,IX=14,FAN=2,fan=F" )
+dbLoadRecords( "db/gain423.db","UUT=acq2106_347,SITE=1,SPORT=S1,CH=15,GX=fixed,IX=15,FAN=2,fan=G" )
+dbLoadRecords( "db/gain423.db","UUT=acq2106_347,SITE=1,SPORT=S1,CH=16,GX=fixed,IX=16,FAN=2,fan=H" )
+dbLoadRecords( "db/gain423.db","UUT=acq2106_347,SITE=1,SPORT=S1,CH=17,GX=fixed,IX=17,FAN=3,fan=A" )
+dbLoadRecords( "db/gain423.db","UUT=acq2106_347,SITE=1,SPORT=S1,CH=18,GX=fixed,IX=18,FAN=3,fan=B" )
+dbLoadRecords( "db/gain423.db","UUT=acq2106_347,SITE=1,SPORT=S1,CH=19,GX=fixed,IX=19,FAN=3,fan=C" )
+dbLoadRecords( "db/gain423.db","UUT=acq2106_347,SITE=1,SPORT=S1,CH=02,GX=fixed,IX=2,FAN=1,fan=B" )
+dbLoadRecords( "db/gain423.db","UUT=acq2106_347,SITE=1,SPORT=S1,CH=20,GX=fixed,IX=20,FAN=3,fan=D" )
+dbLoadRecords( "db/gain423.db","UUT=acq2106_347,SITE=1,SPORT=S1,CH=21,GX=fixed,IX=21,FAN=3,fan=E" )
+dbLoadRecords( "db/gain423.db","UUT=acq2106_347,SITE=1,SPORT=S1,CH=22,GX=fixed,IX=22,FAN=3,fan=F" )
+dbLoadRecords( "db/gain423.db","UUT=acq2106_347,SITE=1,SPORT=S1,CH=23,GX=fixed,IX=23,FAN=3,fan=G" )
+dbLoadRecords( "db/gain423.db","UUT=acq2106_347,SITE=1,SPORT=S1,CH=24,GX=fixed,IX=24,FAN=3,fan=H" )
+dbLoadRecords( "db/gain423.db","UUT=acq2106_347,SITE=1,SPORT=S1,CH=25,GX=fixed,IX=25,FAN=4,fan=A" )
+dbLoadRecords( "db/gain423.db","UUT=acq2106_347,SITE=1,SPORT=S1,CH=26,GX=fixed,IX=26,FAN=4,fan=B" )
+dbLoadRecords( "db/gain423.db","UUT=acq2106_347,SITE=1,SPORT=S1,CH=27,GX=fixed,IX=27,FAN=4,fan=C" )
+dbLoadRecords( "db/gain423.db","UUT=acq2106_347,SITE=1,SPORT=S1,CH=28,GX=fixed,IX=28,FAN=4,fan=D" )
+dbLoadRecords( "db/gain423.db","UUT=acq2106_347,SITE=1,SPORT=S1,CH=29,GX=fixed,IX=29,FAN=4,fan=E" )
+dbLoadRecords( "db/gain423.db","UUT=acq2106_347,SITE=1,SPORT=S1,CH=03,GX=fixed,IX=3,FAN=1,fan=C" )
+dbLoadRecords( "db/gain423.db","UUT=acq2106_347,SITE=1,SPORT=S1,CH=30,GX=fixed,IX=30,FAN=4,fan=F" )
+dbLoadRecords( "db/gain423.db","UUT=acq2106_347,SITE=1,SPORT=S1,CH=31,GX=fixed,IX=31,FAN=4,fan=G" )
+dbLoadRecords( "db/gain423.db","UUT=acq2106_347,SITE=1,SPORT=S1,CH=32,GX=fixed,IX=32,FAN=4,fan=H" )
+dbLoadRecords( "db/gain423.db","UUT=acq2106_347,SITE=1,SPORT=S1,CH=04,GX=fixed,IX=4,FAN=1,fan=D" )
+dbLoadRecords( "db/gain423.db","UUT=acq2106_347,SITE=1,SPORT=S1,CH=05,GX=fixed,IX=5,FAN=1,fan=E" )
+dbLoadRecords( "db/gain423.db","UUT=acq2106_347,SITE=1,SPORT=S1,CH=06,GX=fixed,IX=6,FAN=1,fan=F" )
+dbLoadRecords( "db/gain423.db","UUT=acq2106_347,SITE=1,SPORT=S1,CH=07,GX=fixed,IX=7,FAN=1,fan=G" )
+dbLoadRecords( "db/gain423.db","UUT=acq2106_347,SITE=1,SPORT=S1,CH=08,GX=fixed,IX=8,FAN=1,fan=H" )
+dbLoadRecords( "db/gain423.db","UUT=acq2106_347,SITE=1,SPORT=S1,CH=09,GX=fixed,IX=9,FAN=2,fan=A" )
+dbLoadRecords( "db/gain423M.db","UUT=acq2106_347,SITE=1,SPORT=S1,GX=fixed,CH=ALL" )
+dbLoadRecords( "db/gain423.db","UUT=acq2106_347,SITE=3,SPORT=S3,CH=01,GX=fixed,IX=1,FAN=1,fan=A" )
+dbLoadRecords( "db/gain423.db","UUT=acq2106_347,SITE=3,SPORT=S3,CH=10,GX=fixed,IX=10,FAN=2,fan=B" )
+dbLoadRecords( "db/gain423.db","UUT=acq2106_347,SITE=3,SPORT=S3,CH=11,GX=fixed,IX=11,FAN=2,fan=C" )
+dbLoadRecords( "db/gain423.db","UUT=acq2106_347,SITE=3,SPORT=S3,CH=12,GX=fixed,IX=12,FAN=2,fan=D" )
+dbLoadRecords( "db/gain423.db","UUT=acq2106_347,SITE=3,SPORT=S3,CH=13,GX=fixed,IX=13,FAN=2,fan=E" )
+dbLoadRecords( "db/gain423.db","UUT=acq2106_347,SITE=3,SPORT=S3,CH=14,GX=fixed,IX=14,FAN=2,fan=F" )
+dbLoadRecords( "db/gain423.db","UUT=acq2106_347,SITE=3,SPORT=S3,CH=15,GX=fixed,IX=15,FAN=2,fan=G" )
+dbLoadRecords( "db/gain423.db","UUT=acq2106_347,SITE=3,SPORT=S3,CH=16,GX=fixed,IX=16,FAN=2,fan=H" )
+dbLoadRecords( "db/gain423.db","UUT=acq2106_347,SITE=3,SPORT=S3,CH=17,GX=fixed,IX=17,FAN=3,fan=A" )
+dbLoadRecords( "db/gain423.db","UUT=acq2106_347,SITE=3,SPORT=S3,CH=18,GX=fixed,IX=18,FAN=3,fan=B" )
+dbLoadRecords( "db/gain423.db","UUT=acq2106_347,SITE=3,SPORT=S3,CH=19,GX=fixed,IX=19,FAN=3,fan=C" )
+dbLoadRecords( "db/gain423.db","UUT=acq2106_347,SITE=3,SPORT=S3,CH=02,GX=fixed,IX=2,FAN=1,fan=B" )
+dbLoadRecords( "db/gain423.db","UUT=acq2106_347,SITE=3,SPORT=S3,CH=20,GX=fixed,IX=20,FAN=3,fan=D" )
+dbLoadRecords( "db/gain423.db","UUT=acq2106_347,SITE=3,SPORT=S3,CH=21,GX=fixed,IX=21,FAN=3,fan=E" )
+dbLoadRecords( "db/gain423.db","UUT=acq2106_347,SITE=3,SPORT=S3,CH=22,GX=fixed,IX=22,FAN=3,fan=F" )
+dbLoadRecords( "db/gain423.db","UUT=acq2106_347,SITE=3,SPORT=S3,CH=23,GX=fixed,IX=23,FAN=3,fan=G" )
+dbLoadRecords( "db/gain423.db","UUT=acq2106_347,SITE=3,SPORT=S3,CH=24,GX=fixed,IX=24,FAN=3,fan=H" )
+dbLoadRecords( "db/gain423.db","UUT=acq2106_347,SITE=3,SPORT=S3,CH=25,GX=fixed,IX=25,FAN=4,fan=A" )
+dbLoadRecords( "db/gain423.db","UUT=acq2106_347,SITE=3,SPORT=S3,CH=26,GX=fixed,IX=26,FAN=4,fan=B" )
+dbLoadRecords( "db/gain423.db","UUT=acq2106_347,SITE=3,SPORT=S3,CH=27,GX=fixed,IX=27,FAN=4,fan=C" )
+dbLoadRecords( "db/gain423.db","UUT=acq2106_347,SITE=3,SPORT=S3,CH=28,GX=fixed,IX=28,FAN=4,fan=D" )
+dbLoadRecords( "db/gain423.db","UUT=acq2106_347,SITE=3,SPORT=S3,CH=29,GX=fixed,IX=29,FAN=4,fan=E" )
+dbLoadRecords( "db/gain423.db","UUT=acq2106_347,SITE=3,SPORT=S3,CH=03,GX=fixed,IX=3,FAN=1,fan=C" )
+dbLoadRecords( "db/gain423.db","UUT=acq2106_347,SITE=3,SPORT=S3,CH=30,GX=fixed,IX=30,FAN=4,fan=F" )
+dbLoadRecords( "db/gain423.db","UUT=acq2106_347,SITE=3,SPORT=S3,CH=31,GX=fixed,IX=31,FAN=4,fan=G" )
+dbLoadRecords( "db/gain423.db","UUT=acq2106_347,SITE=3,SPORT=S3,CH=32,GX=fixed,IX=32,FAN=4,fan=H" )
+dbLoadRecords( "db/gain423.db","UUT=acq2106_347,SITE=3,SPORT=S3,CH=04,GX=fixed,IX=4,FAN=1,fan=D" )
+dbLoadRecords( "db/gain423.db","UUT=acq2106_347,SITE=3,SPORT=S3,CH=05,GX=fixed,IX=5,FAN=1,fan=E" )
+dbLoadRecords( "db/gain423.db","UUT=acq2106_347,SITE=3,SPORT=S3,CH=06,GX=fixed,IX=6,FAN=1,fan=F" )
+dbLoadRecords( "db/gain423.db","UUT=acq2106_347,SITE=3,SPORT=S3,CH=07,GX=fixed,IX=7,FAN=1,fan=G" )
+dbLoadRecords( "db/gain423.db","UUT=acq2106_347,SITE=3,SPORT=S3,CH=08,GX=fixed,IX=8,FAN=1,fan=H" )
+dbLoadRecords( "db/gain423.db","UUT=acq2106_347,SITE=3,SPORT=S3,CH=09,GX=fixed,IX=9,FAN=2,fan=A" )
+dbLoadRecords( "db/gain423M.db","UUT=acq2106_347,SITE=3,SPORT=S3,GX=fixed,CH=ALL" )
+dbLoadRecords( "db/mirror.db","UUT=acq2106_347" )
+callbackSetQueueSize(2000)
+#  st_pre.cmd
+dbLoadRecords("db/local-aliases.db","UUT=acq2106_347")
+iocInit()	
+Starting iocInit
+############################################################################
+## EPICS R7.0.7-acq400
+## Rev. 2024-01-03T12:48+0000
+## Rev. Date build date/time: 
+############################################################################
+2025/05/09 17:03:31.444 acq2106_347:asyn:NP: queueRequest failed
+
+iocRun: All initialization complete
+2025-05-09T17:03:32.998 No server broadcast addresses found or specified - empty address list!
+dbl > /tmp/records.dbl
+seqShow > /tmp/records.dbl.done
+Program Name        Thread ID           Thread Name         SS Name
+------------        ---------           -----------         -------
+slowmon_rate_adjust 0x114170            slowmon_rate_adjust slowmon_rate_adjust
+#  st_post.cmd
+seq calmon42x "uut=acq2106_347,site=1,verbose=0"
+sevr=info Sequencer release 2.2.9, compiled Tue Nov 28 10:26:57 2023
+sevr=info Spawning sequencer program "calmon42x", thread 0xc38530: "calmon42x"
+seq calmon42x "uut=acq2106_347,site=3,verbose=0"
+sevr=info Sequencer release 2.2.9, compiled Tue Nov 28 10:26:57 2023
+sevr=info Spawning sequencer program "calmon42x", thread 0xc3c4c0: "calmon42x"
+seq autoRepeat "uut=acq2106_347,debug=/dev/null"
+sevr=info Sequencer release 2.2.9, compiled Tue Nov 28 10:26:57 2023
+calmon42x R1000 site:1
+calmon_on_delay 1 entry
+acq400_openDoc(/dev/sites/1/caldef.xml)
+Docfile:/dev/sites/1/caldef.xml Serialnumber:E42310000 AICHAN:32
+calmon42x R1000 site:1
+calmon_on_delay 1 entry
+assign acq2106_347:1:AI:CH:01.ESLO
+assign acq2106_347:1:AI:CH:01.EOFF
+acq400_openDoc(/dev/sites/3/caldef.xml)
+Docfile:/dev/sites/3/caldef.xml Serialnumber:E42310000 AICHAN:32
+assign acq2106_347:3:AI:CH:01.ESLO
+assign acq2106_347:3:AI:CH:01.EOFF
+make_change site=1 caldef
+sevr=info calmon42x[0]: all channels connected & received 1st monitor
+sevr=info calmon42x[1]: all channels connected & received 1st monitor
+sevr=minor ca_array_get_callback( typeToCA(type), count, var->chid, pvCaGetHandler, arg): Virtual circuit disconnectmake_change site=3 caldef
+sevr=minor ca_array_get_callback( typeToCA(type), count, var->chid, pvCaGetHandler, arg): Virtual circuit disconnectsevr=info Spawning sequencer program "autoRepeat", thread 0xc3d0b8: "autoRepeat"
+seq onSetTransient "uut=acq2106_347,verbose=0"
+sevr=info Sequencer release 2.2.9, compiled Tue Nov 28 10:26:57 2023
+sevr=info autoRepeat[0]: all channels connected & received 1st monitor
+sevr=info Spawning sequencer program "onSetTransient", thread 0xc51598: "onSetTransient"
+seq setMB_ClockMonitor "uut=acq2106_347,retry=0"
+sevr=info Sequencer release 2.2.9, compiled Tue Nov 28 10:26:57 2023
+sevr=info onSetTransient[0]: all channels connected & received 1st monitor
+sevr=info Spawning sequencer program "setMB_ClockMonitor", thread 0xc51d68: "setMB_ClockMonitor"
+seq sfp_txen "uut=acq2106_347,port=1,verbose=0,remove_threshold=4"
+sevr=info Sequencer release 2.2.9, compiled Tue Nov 28 10:26:57 2023
+sevr=info Spawning sequencer program "sfp_txen", thread 0xc52750: "sfp_txen"
+seq sfp_txen "uut=acq2106_347,port=2,verbose=0,remove_threshold=4"
+sevr=info Sequencer release 2.2.9, compiled Tue Nov 28 10:26:57 2023
+sevr=info Spawning sequencer program "sfp_txen", thread 0xc52e88: "sfp_txen"
+seq sfp_txen "uut=acq2106_347,port=3,verbose=0,remove_threshold=4"
+sevr=info Sequencer release 2.2.9, compiled Tue Nov 28 10:26:57 2023
+setMB_ClockMonitor th:0.05 retry 0
+sevr=info setMB_ClockMonitor[0]: all channels connected & received 1st monitor
+sevr=info sfp_txen[0]: all channels connected & received 1st monitor
+sevr=info sfp_txen[1]: all channels connected & received 1st monitor
+sevr=info Spawning sequencer program "sfp_txen", thread 0xc53778: "sfp_txen"
+seq sfp_txen "uut=acq2106_347,port=4,verbose=0,remove_threshold=4"
+sevr=info Sequencer release 2.2.9, compiled Tue Nov 28 10:26:57 2023
+sevr=info sfp_txen[2]: all channels connected & received 1st monitor
+sevr=info Spawning sequencer program "sfp_txen", thread 0xc53e70: "sfp_txen"
+seq mgt_ssb "uut=acq2106_347,site=13,ch=A,verbose=0"
+sevr=info Sequencer release 2.2.9, compiled Tue Nov 28 10:26:57 2023
+sevr=info Spawning sequencer program "mgt_ssb", thread 0xc54b70: "mgt_ssb"
+sevr=info sfp_txen[3]: all channels connected & received 1st monitor
+sevr=info mgt_ssb[0]: all channels connected & received 1st monitor
+seq mgt_ssb "uut=acq2106_347,site=12,ch=B,verbose=0"
+sevr=info Sequencer release 2.2.9, compiled Tue Nov 28 10:26:57 2023
+sevr=info Spawning sequencer program "mgt_ssb", thread 0xc55938: "mgt_ssb"
+seq mgtStopOnLinkDown "uut=acq2106_347,port=A"
+sevr=info Sequencer release 2.2.9, compiled Tue Nov 28 10:26:57 2023
+sevr=info mgt_ssb[1]: all channels connected & received 1st monitor
+sevr=info Spawning sequencer program "mgtStopOnLinkDown", thread 0xc56680: "mgtStopOnLinkDown"
+seq mgtStopOnLinkDown "uut=acq2106_347,port=B"
+sevr=info Sequencer release 2.2.9, compiled Tue Nov 28 10:26:57 2023
+sevr=info Spawning sequencer program "mgtStopOnLinkDown", thread 0xc56f48: "mgtStopOnLinkDown"
+seq shotBusy "uut=acq2106_347,verbose=0"
+sevr=info Sequencer release 2.2.9, compiled Tue Nov 28 10:26:57 2023
+sevr=info Spawning sequencer program "shotBusy", thread 0xc57808: "shotBusy"
+sevr=info mgtStopOnLinkDown[0]: all channels connected & received 1st monitor
+sevr=info mgtStopOnLinkDown[1]: all channels connected & received 1st monitor
+sevr=info shotBusy[0]: all channels connected & received 1st monitor
+dbpf acq2106_347:0:SIG:SRC:CLK:0 INT01M
+DBF_STRING:         "INT01M"  
+dbpf acq2106_347:LIVE:PREPCT 50
+DBF_LONG:           50 = 0x32 
+seq on_delay "pv=acq2106_347:IOC_READY,val=1,delay=3,priority=0"
+sevr=info Sequencer release 2.2.9, compiled Tue Nov 28 10:26:57 2023
+sevr=info Spawning sequencer program "on_delay", thread 0xc58388: "on_delay"
+seq continuous_wdg "uut=acq2106_347,verbose=0"
+sevr=info Sequencer release 2.2.9, compiled Tue Nov 28 10:26:57 2023
+sevr=info Spawning sequencer program "continuous_wdg", thread 0xc58b28: "continuous_wdg"
+system(/usr/local/epics/scripts/onIocReady)
+sevr=info on_delay[0]: all channels connected & received 1st monitor
+sevr=info continuous_wdg[0]: all channels connected & received 1st monitor
+continuous_wdg::init rev:1 verbose:0
+sevr=minor slowmon_rate_adjust[0](after 0 sec): assigned=11, connected=0, monitored=4, got monitor=0
+epics> calmon_on_delay 1 calmon_on_delay_done
+calmon_on_delay 3 calmon_on_delay_done
+set acq2106_347:IOC_READY to 1
+sevr=info slowmon_rate_adjust[0]: all channels connected & received 1st monitor
+sync_role "master 200000"
+WARNING: pvGet() ch:1 not OK 10
+NOTE: pvGet() ch:1 OK on retry value 6
+site:1 g:6 ch: 1 eslo:3.051758e-04 eoff:0.000000e+00
+WARNING: pvGet() ch:1 not OK 10
+NOTE: pvGet() ch:1 OK on retry value 6
+site:3 g:6 ch: 1 eslo:3.051758e-04 eoff:0.000000e+00
+site:1 Compare: set:"66666666666666666666666666666666" act:"66666666666666666666666666666666" OK
+gain change 32
+site:3 Compare: set:"66666666666666666666666666666666" act:"66666666666666666666666666666666" OK
+gain change 32
+make_change site=1 caldef
+site:1 g:6 ch: 1 eslo:3.051758e-04 eoff:0.000000e+00
+make_change site=3 caldef
+site:3 g:6 ch: 1 eslo:3.051758e-04 eoff:0.000000e+00
+site:1 Compare: set:"66666666666666666666666666666666" act:"66666666666666666666666666666666" OK
+site:3 Compare: set:"66666666666666666666666666666666" act:"66666666666666666666666666666666" OK
+2025/05/09 17:03:49.194 NP -1 queueRequest failed.

@@ -1,7 +1,7 @@
 from java.util.logging import Logger
 from org.csstudio.display.builder.runtime.script import PVUtil
 
-""" Hide or show traces from checkboxes """
+""" Hide or show traces from checkboxe widget """
 
 # Startup
 logger = Logger.getLogger('handle_trace_visibility')

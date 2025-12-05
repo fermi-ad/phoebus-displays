@@ -1,0 +1,1065 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>AWG$(MUUT)</name>
+  <macros>
+    <SITE>$(DIST_FIRST_SITE=1)</SITE>
+  </macros>
+  <width>670</width>
+  <height>920</height>
+  <background_color>
+    <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+    </color>
+  </background_color>
+  <widget type="group" version="3.0.0">
+    <name>AWG</name>
+    <width>670</width>
+    <height>920</height>
+    <style>3</style>
+    <background_color>
+      <color red="255" green="230" blue="128">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <widget type="group" version="3.0.0">
+      <name>AWG INNER</name>
+      <x>10</x>
+      <y>10</y>
+      <width>650</width>
+      <height>900</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>TITLE</name>
+        <text>$(UUT) AWG Status</text>
+        <width>400</width>
+        <height>30</height>
+        <font>
+          <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+          </font>
+        </font>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>STATUS</name>
+        <y>70</y>
+        <width>650</width>
+        <height>80</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="led" version="2.0.0">
+          <name>LED_GOOD_5</name>
+          <pv_name>${UUT}:${SITE}:AWG:ACTIVE</pv_name>
+          <off_color>
+            <color red="51" green="102" blue="51">
+            </color>
+          </off_color>
+          <line_color>
+            <color name="Text" red="0" green="0" blue="0">
+            </color>
+          </line_color>
+          <square>true</square>
+          <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>LABEL_1</name>
+          <text>Active</text>
+          <x>30</x>
+          <width>50</width>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="led" version="2.0.0">
+          <name>LED_WARN_3</name>
+          <pv_name>${UUT}:${SITE}:AWG:ARM</pv_name>
+          <x>80</x>
+          <off_color>
+            <color red="153" green="77" blue="0">
+            </color>
+          </off_color>
+          <on_color>
+            <color name="MINOR" red="255" green="128" blue="0">
+            </color>
+          </on_color>
+          <line_color>
+            <color name="Text" red="0" green="0" blue="0">
+            </color>
+          </line_color>
+          <square>true</square>
+          <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>LABEL_2</name>
+          <text>Arm</text>
+          <x>110</x>
+          <width>30</width>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>LABEL_3</name>
+          <text>Complete</text>
+          <x>180</x>
+          <width>70</width>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="led" version="2.0.0">
+          <name>LED_GOOD_6</name>
+          <pv_name>${UUT}:${SITE}:AWG:SHOT_COMPLETE</pv_name>
+          <x>150</x>
+          <off_color>
+            <color red="51" green="102" blue="51">
+            </color>
+          </off_color>
+          <line_color>
+            <color name="Text" red="0" green="0" blue="0">
+            </color>
+          </line_color>
+          <square>true</square>
+          <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>UPDATE_1</name>
+          <pv_name>${UUT}:${SITE}:AWG:LENGTH</pv_name>
+          <y>60</y>
+          <horizontal_alignment>2</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>LABEL_1</name>
+          <text>Length</text>
+          <y>40</y>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>LABEL_4</name>
+          <text>Mode</text>
+          <x>110</x>
+          <y>40</y>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>UPDATE_3</name>
+          <pv_name>${UUT}:${SITE}:AWG:MODE</pv_name>
+          <x>110</x>
+          <y>60</y>
+          <horizontal_alignment>2</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>LABEL_5</name>
+          <text>Shot</text>
+          <x>220</x>
+          <y>40</y>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>UPDATE_4</name>
+          <pv_name>${UUT}:${SITE}:SHOT</pv_name>
+          <x>220</x>
+          <y>60</y>
+          <horizontal_alignment>2</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>LABEL_6</name>
+          <text>Cursor</text>
+          <x>330</x>
+          <y>40</y>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>UPDATE_5</name>
+          <pv_name>${UUT}:${SITE}:AWG:CURSOR</pv_name>
+          <x>330</x>
+          <y>60</y>
+          <horizontal_alignment>2</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>LABEL_7</name>
+          <text>Cycles</text>
+          <x>440</x>
+          <y>40</y>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>UPDATE_6</name>
+          <pv_name>${UUT}:${SITE}:AWG:REPS:COUNT</pv_name>
+          <x>440</x>
+          <y>60</y>
+          <horizontal_alignment>2</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>LABEL_9</name>
+          <text>Cycles/s</text>
+          <x>550</x>
+          <y>40</y>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>UPDATE_7</name>
+          <pv_name>${UUT}:${SITE}:AWG:REPS:FREQ</pv_name>
+          <x>550</x>
+          <y>60</y>
+          <horizontal_alignment>2</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>STREAM</name>
+        <y>430</y>
+        <width>650</width>
+        <height>130</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="label" version="2.0.0">
+          <name>LABEL_5</name>
+          <text>STREAM</text>
+          <width>120</width>
+          <font>
+            <font name="Header 2" family="Liberation Sans" style="BOLD" size="18.0">
+            </font>
+          </font>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="group" version="3.0.0">
+          <name>BAR LOAD</name>
+          <macros>
+            <title>Load Buffer</title>
+            <pvname0>${UUT}:${SITE}:AWG:CURSOR:PUSH</pvname0>
+          </macros>
+          <y>20</y>
+          <width>650</width>
+          <height>50</height>
+          <style>3</style>
+          <transparent>true</transparent>
+          <widget type="progressbar" version="2.0.0">
+            <name>BAR_1</name>
+            <pv_name>$(pvname0)</pv_name>
+            <y>20</y>
+            <width>650</width>
+            <height>30</height>
+            <fill_color>
+              <color red="128" green="153" blue="255">
+              </color>
+            </fill_color>
+            <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>LABEL_14</name>
+            <text>$(title)</text>
+            <x>10</x>
+            <width>630</width>
+            <font>
+              <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+              </font>
+            </font>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>UPDATE_10</name>
+            <pv_name>$(pvname0)</pv_name>
+            <y>20</y>
+            <width>650</width>
+            <height>30</height>
+            <transparent>true</transparent>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+          </widget>
+        </widget>
+        <widget type="group" version="3.0.0">
+          <name>BAR PLAY</name>
+          <macros>
+            <title>Play Buffer</title>
+            <pvname0>${UUT}:${SITE}:AWG:CURSOR:PULL</pvname0>
+          </macros>
+          <y>80</y>
+          <width>650</width>
+          <height>50</height>
+          <style>3</style>
+          <transparent>true</transparent>
+          <widget type="progressbar" version="2.0.0">
+            <name>BAR_2</name>
+            <pv_name>$(pvname0)</pv_name>
+            <y>20</y>
+            <width>650</width>
+            <height>30</height>
+            <fill_color>
+              <color red="128" green="153" blue="255">
+              </color>
+            </fill_color>
+            <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>LABEL_15</name>
+            <text>$(title)</text>
+            <x>10</x>
+            <width>630</width>
+            <font>
+              <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+              </font>
+            </font>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>UPDATE_11</name>
+            <pv_name>$(pvname0)</pv_name>
+            <y>20</y>
+            <width>650</width>
+            <height>30</height>
+            <transparent>true</transparent>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+          </widget>
+        </widget>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>ONESHOT</name>
+        <y>580</y>
+        <width>650</width>
+        <height>180</height>
+        <style>3</style>
+        <background_color>
+          <color name="Read_Background" red="240" green="240" blue="240">
+          </color>
+        </background_color>
+        <transparent>true</transparent>
+        <widget type="label" version="2.0.0">
+          <name>LABEL_6</name>
+          <text>ONE SHOT</text>
+          <width>120</width>
+          <font>
+            <font name="Header 2" family="Liberation Sans" style="BOLD" size="18.0">
+            </font>
+          </font>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="group" version="3.0.0">
+          <name>LOADING BAR</name>
+          <macros>
+            <title>Loading %</title>
+            <pvname0>${UUT}:${SITE}:AWG:LENGTH:PCT</pvname0>
+          </macros>
+          <y>70</y>
+          <width>650</width>
+          <height>50</height>
+          <style>3</style>
+          <transparent>true</transparent>
+          <widget type="progressbar" version="2.0.0">
+            <name>BAR_3</name>
+            <pv_name>$(pvname0)</pv_name>
+            <y>20</y>
+            <width>650</width>
+            <height>30</height>
+            <fill_color>
+              <color red="128" green="153" blue="255">
+              </color>
+            </fill_color>
+            <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>LABEL_16</name>
+            <text>$(title)</text>
+            <x>10</x>
+            <width>630</width>
+            <font>
+              <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+              </font>
+            </font>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>UPDATE_12</name>
+            <pv_name>$(pvname0)</pv_name>
+            <y>20</y>
+            <width>650</width>
+            <height>30</height>
+            <transparent>true</transparent>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+          </widget>
+        </widget>
+        <widget type="group" version="3.0.0">
+          <name>PLAYBACK BAR</name>
+          <macros>
+            <title>Playback %</title>
+            <pvname0>${UUT}:${SITE}:AWG:CURSOR:PCT</pvname0>
+          </macros>
+          <y>130</y>
+          <width>650</width>
+          <height>50</height>
+          <style>3</style>
+          <transparent>true</transparent>
+          <widget type="progressbar" version="2.0.0">
+            <name>BAR_4</name>
+            <pv_name>$(pvname0)</pv_name>
+            <y>20</y>
+            <width>650</width>
+            <height>30</height>
+            <fill_color>
+              <color red="128" green="153" blue="255">
+              </color>
+            </fill_color>
+            <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>LABEL_17</name>
+            <text>$(title)</text>
+            <x>10</x>
+            <width>630</width>
+            <font>
+              <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+              </font>
+            </font>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>UPDATE_13</name>
+            <pv_name>$(pvname0)</pv_name>
+            <y>20</y>
+            <width>650</width>
+            <height>30</height>
+            <transparent>true</transparent>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+          </widget>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>UPDATE_14</name>
+          <pv_name>${UUT}:${SITE}:AWG:MAXLEN</pv_name>
+          <y>50</y>
+          <horizontal_alignment>2</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>LABEL_18</name>
+          <text>MAXLEN</text>
+          <y>30</y>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>LABEL_19</name>
+          <text>BUFFER</text>
+          <x>110</x>
+          <y>30</y>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>UPDATE_15</name>
+          <pv_name>${UUT}:${SITE}:AWG:CURSOR:PULL</pv_name>
+          <x>110</x>
+          <y>50</y>
+          <horizontal_alignment>2</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>Group</name>
+        <y>180</y>
+        <width>650</width>
+        <height>150</height>
+        <style>3</style>
+        <background_color>
+          <color red="230" green="230" blue="230">
+          </color>
+        </background_color>
+        <widget type="group" version="3.0.0">
+          <name>SIGNALS</name>
+          <x>10</x>
+          <y>10</y>
+          <width>600</width>
+          <height>130</height>
+          <style>3</style>
+          <transparent>true</transparent>
+          <widget type="action_button" version="3.0.0">
+            <name>Pulse Soft Button</name>
+            <actions execute_as_one="true">
+              <action type="write_pv">
+                <pv_name>${UUT}:SIG:SOFT_TRIGGER</pv_name>
+                <value>1</value>
+                <description>PULSE SOFT TRG</description>
+              </action>
+            </actions>
+            <text>PULSE</text>
+            <x>120</x>
+            <y>25</y>
+            <width>110</width>
+            <height>20</height>
+            <font>
+              <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+              </font>
+            </font>
+            <tooltip>$(actions)</tooltip>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>Set Soft Button</name>
+            <actions execute_as_one="true">
+              <action type="write_pv">
+                <pv_name>${UUT}:1:TRG:DX</pv_name>
+                <value>1</value>
+                <description>SET SOFT</description>
+              </action>
+              <action type="write_pv">
+                <pv_name>${UUT}:1:TRG:SENSE</pv_name>
+                <value>1</value>
+                <description>SET RISING</description>
+              </action>
+            </actions>
+            <text>SELECT</text>
+            <y>25</y>
+            <width>110</width>
+            <height>20</height>
+            <font>
+              <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+              </font>
+            </font>
+            <tooltip>$(actions)</tooltip>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>LABEL_3</name>
+            <text>SOFT TRIGGER</text>
+            <width>230</width>
+            <font>
+              <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+              </font>
+            </font>
+            <transparent>false</transparent>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+          </widget>
+          <widget type="group" version="3.0.0">
+            <name>CLKDIV</name>
+            <y>60</y>
+            <width>230</width>
+            <height>30</height>
+            <style>3</style>
+            <transparent>true</transparent>
+            <widget type="label" version="2.0.0">
+              <name>LABEL_9</name>
+              <text>CLKDIV</text>
+              <width>120</width>
+              <height>30</height>
+              <transparent>false</transparent>
+              <horizontal_alignment>1</horizontal_alignment>
+              <vertical_alignment>1</vertical_alignment>
+            </widget>
+            <widget type="spinner" version="2.0.0">
+              <name>INPUT_9</name>
+              <pv_name>${UUT}:${SITE}:CLKDIV</pv_name>
+              <x>130</x>
+              <height>30</height>
+              <precision>0</precision>
+              <background_color>
+                <color name="Header_ForeGround" red="255" green="255" blue="255">
+                </color>
+              </background_color>
+              <horizontal_alignment>1</horizontal_alignment>
+              <vertical_alignment>1</vertical_alignment>
+              <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+            </widget>
+          </widget>
+          <widget type="group" version="3.0.0">
+            <name>BURSTLEN</name>
+            <y>100</y>
+            <width>230</width>
+            <height>30</height>
+            <style>3</style>
+            <transparent>true</transparent>
+            <widget type="label" version="2.0.0">
+              <name>LABEL_10</name>
+              <text>BURSTLEN</text>
+              <width>120</width>
+              <height>30</height>
+              <transparent>false</transparent>
+              <horizontal_alignment>1</horizontal_alignment>
+              <vertical_alignment>1</vertical_alignment>
+            </widget>
+            <widget type="spinner" version="2.0.0">
+              <name>INPUT_10</name>
+              <pv_name>${UUT}:${SITE}:AWG:BURSTLEN</pv_name>
+              <x>130</x>
+              <height>30</height>
+              <precision>0</precision>
+              <background_color>
+                <color name="Header_ForeGround" red="255" green="255" blue="255">
+                </color>
+              </background_color>
+              <horizontal_alignment>1</horizontal_alignment>
+              <vertical_alignment>1</vertical_alignment>
+              <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+            </widget>
+          </widget>
+        </widget>
+        <widget type="group" version="3.0.0">
+          <name>TRG</name>
+          <macros>
+            <sig>TRG</sig>
+            <site>$(SITE)</site>
+          </macros>
+          <x>270</x>
+          <y>10</y>
+          <width>370</width>
+          <height>30</height>
+          <style>3</style>
+          <transparent>true</transparent>
+          <widget type="label" version="2.0.0">
+            <name>LABEL_1</name>
+            <text>$(sig)</text>
+            <width>70</width>
+            <height>30</height>
+            <font>
+              <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+              </font>
+            </font>
+            <transparent>false</transparent>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+          </widget>
+          <widget type="combo" version="2.0.0">
+            <name>Sig En_1</name>
+            <pv_name>${UUT}:$(site):${sig}</pv_name>
+            <x>80</x>
+            <width>90</width>
+            <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+          </widget>
+          <widget type="combo" version="2.0.0">
+            <name>Sig Src_1</name>
+            <pv_name>${UUT}:$(site):${sig}:DX</pv_name>
+            <x>180</x>
+            <width>90</width>
+            <rules>
+              <rule name="DISABLE" prop_id="enabled" out_exp="false">
+                <exp bool_exp="pv0==0">
+                  <value>false</value>
+                </exp>
+                <exp bool_exp="true">
+                  <value>true</value>
+                </exp>
+                <pv_name>${UUT}:$(site):${sig}</pv_name>
+              </rule>
+            </rules>
+            <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+          </widget>
+          <widget type="combo" version="2.0.0">
+            <name>Sig Sens_1</name>
+            <pv_name>${UUT}:$(site):${sig}:SENSE</pv_name>
+            <x>280</x>
+            <width>90</width>
+            <rules>
+              <rule name="DISABLE" prop_id="enabled" out_exp="false">
+                <exp bool_exp="pv0==0">
+                  <value>false</value>
+                </exp>
+                <exp bool_exp="true">
+                  <value>true</value>
+                </exp>
+                <pv_name>${UUT}:$(site):${sig}</pv_name>
+              </rule>
+            </rules>
+            <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+          </widget>
+        </widget>
+        <widget type="group" version="3.0.0">
+          <name>CLK</name>
+          <macros>
+            <sig>CLK</sig>
+            <site>$(SITE)</site>
+          </macros>
+          <x>270</x>
+          <y>60</y>
+          <width>370</width>
+          <height>30</height>
+          <style>3</style>
+          <transparent>true</transparent>
+          <widget type="label" version="2.0.0">
+            <name>LABEL_2</name>
+            <text>$(sig)</text>
+            <width>70</width>
+            <height>30</height>
+            <font>
+              <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+              </font>
+            </font>
+            <transparent>false</transparent>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+          </widget>
+          <widget type="combo" version="2.0.0">
+            <name>Sig En_2</name>
+            <pv_name>${UUT}:$(site):${sig}</pv_name>
+            <x>80</x>
+            <width>90</width>
+            <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+          </widget>
+          <widget type="combo" version="2.0.0">
+            <name>Sig Src_2</name>
+            <pv_name>${UUT}:$(site):${sig}:DX</pv_name>
+            <x>180</x>
+            <width>90</width>
+            <rules>
+              <rule name="DISABLE" prop_id="enabled" out_exp="false">
+                <exp bool_exp="pv0==0">
+                  <value>false</value>
+                </exp>
+                <exp bool_exp="true">
+                  <value>true</value>
+                </exp>
+                <pv_name>${UUT}:$(site):${sig}</pv_name>
+              </rule>
+            </rules>
+            <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+          </widget>
+          <widget type="combo" version="2.0.0">
+            <name>Sig Sens_2</name>
+            <pv_name>${UUT}:$(site):${sig}:SENSE</pv_name>
+            <x>280</x>
+            <width>90</width>
+            <rules>
+              <rule name="DISABLE" prop_id="enabled" out_exp="false">
+                <exp bool_exp="pv0==0">
+                  <value>false</value>
+                </exp>
+                <exp bool_exp="true">
+                  <value>true</value>
+                </exp>
+                <pv_name>${UUT}:$(site):${sig}</pv_name>
+              </rule>
+            </rules>
+            <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+          </widget>
+        </widget>
+        <widget type="group" version="3.0.0">
+          <name>RGM</name>
+          <macros>
+            <sig>RGM</sig>
+            <site>$(SITE)</site>
+          </macros>
+          <x>270</x>
+          <y>110</y>
+          <width>370</width>
+          <height>30</height>
+          <style>3</style>
+          <transparent>true</transparent>
+          <widget type="label" version="2.0.0">
+            <name>LABEL_4</name>
+            <text>$(sig)</text>
+            <width>70</width>
+            <height>30</height>
+            <font>
+              <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+              </font>
+            </font>
+            <transparent>false</transparent>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+          </widget>
+          <widget type="combo" version="2.0.0">
+            <name>Sig En_3</name>
+            <pv_name>${UUT}:$(site):${sig}</pv_name>
+            <x>80</x>
+            <width>90</width>
+            <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+          </widget>
+          <widget type="combo" version="2.0.0">
+            <name>Sig Src_3</name>
+            <pv_name>${UUT}:$(site):${sig}:DX</pv_name>
+            <x>180</x>
+            <width>90</width>
+            <rules>
+              <rule name="DISABLE" prop_id="enabled" out_exp="false">
+                <exp bool_exp="pv0==0">
+                  <value>false</value>
+                </exp>
+                <exp bool_exp="true">
+                  <value>true</value>
+                </exp>
+                <pv_name>${UUT}:$(site):${sig}</pv_name>
+              </rule>
+            </rules>
+            <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+          </widget>
+          <widget type="combo" version="2.0.0">
+            <name>Sig Sens_3</name>
+            <pv_name>${UUT}:$(site):${sig}:SENSE</pv_name>
+            <x>280</x>
+            <width>90</width>
+            <rules>
+              <rule name="DISABLE" prop_id="enabled" out_exp="false">
+                <exp bool_exp="pv0==0">
+                  <value>false</value>
+                </exp>
+                <exp bool_exp="true">
+                  <value>true</value>
+                </exp>
+                <pv_name>${UUT}:$(site):${sig}</pv_name>
+              </rule>
+            </rules>
+            <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+          </widget>
+        </widget>
+      </widget>
+      <widget type="embedded" version="2.0.0">
+        <name>SAMPLE COUNT</name>
+        <macros>
+          <func>SIG:sample_count</func>
+          <label>sample_count</label>
+          <site>$(SITE)</site>
+        </macros>
+        <file>components/func_counter.bob</file>
+        <y>850</y>
+        <width>530</width>
+        <height>50</height>
+        <resize>2</resize>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>WF STATE</name>
+        <y>370</y>
+        <width>650</width>
+        <height>40</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="bool_button" version="2.0.0">
+          <name>Action Button</name>
+          <pv_name>${UUT}:${SITE}:AWG:MODE:ABO</pv_name>
+          <x>520</x>
+          <width>130</width>
+          <height>40</height>
+          <off_label>ABORT</off_label>
+          <on_label>ABORT</on_label>
+          <background_color>
+            <color red="255" green="102" blue="102">
+            </color>
+          </background_color>
+          <actions>
+          </actions>
+          <tooltip></tooltip>
+          <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+          <mode>1</mode>
+          <show_confirm_dialog>false</show_confirm_dialog>
+        </widget>
+        <widget type="combo" version="2.0.0">
+          <name>UPDATE_17</name>
+          <pv_name>${UUT}:${SITE}:AWG:DIST</pv_name>
+          <x>410</x>
+          <y>20</y>
+          <height>20</height>
+          <background_color>
+            <color name="Read_Background" red="240" green="240" blue="240">
+            </color>
+          </background_color>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>LABEL_21</name>
+          <text>Source</text>
+          <x>410</x>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>LABEL_20</name>
+          <text>Duty Cycle</text>
+          <x>320</x>
+          <width>80</width>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>UPDATE_16</name>
+          <pv_name>${UUT}:${SITE}:AWG:DUTY</pv_name>
+          <x>320</x>
+          <y>20</y>
+          <width>80</width>
+          <horizontal_alignment>2</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>UPDATE_9</name>
+          <pv_name>${UUT}:${SITE}:AWG:SEG</pv_name>
+          <x>240</x>
+          <y>20</y>
+          <width>70</width>
+          <horizontal_alignment>2</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>LABEL_13</name>
+          <text>Segment</text>
+          <x>240</x>
+          <width>70</width>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>LABEL_12</name>
+          <text>DSSB</text>
+          <x>130</x>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>UPDATE_8</name>
+          <pv_name>${UUT}:0:DSSB</pv_name>
+          <x>130</x>
+          <y>20</y>
+          <horizontal_alignment>2</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>LABEL_11</name>
+          <text>Distributor Sites</text>
+          <width>120</width>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>UPDATE_2</name>
+          <pv_name>${UUT}:0:DISTRIBUTOR:SITES</pv_name>
+          <y>20</y>
+          <width>120</width>
+          <horizontal_alignment>2</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>Group</name>
+        <y>800</y>
+        <width>650</width>
+        <height>50</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="embedded" version="2.0.0">
+          <name>CLK COUNT </name>
+          <macros>
+            <func>SIG:clk_count</func>
+            <label>clk_count</label>
+            <site>$(SITE)</site>
+          </macros>
+          <file>components/func_counter.bob</file>
+          <width>530</width>
+          <height>50</height>
+          <resize>2</resize>
+        </widget>
+        <widget type="group" version="3.0.0">
+          <name>Group</name>
+          <x>530</x>
+          <width>120</width>
+          <height>50</height>
+          <style>3</style>
+          <background_color>
+            <color name="Read_Background" red="240" green="240" blue="240">
+            </color>
+          </background_color>
+          <widget type="combo" version="2.0.0">
+            <name>MENU_2</name>
+            <pv_name>${UUT}:${SITE}:SIG:clk_counter_src</pv_name>
+            <x>10</x>
+            <y>10</y>
+            <background_color>
+              <color name="Read_Background" red="240" green="240" blue="240">
+              </color>
+            </background_color>
+          </widget>
+        </widget>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>DOC_LINK_1</name>
+        <macros>
+          <TARGET>14.4 AWG Modes</TARGET>
+          <URL>${USER_GUIDE}#${TARGET}</URL>
+        </macros>
+        <x>620</x>
+        <width>25</width>
+        <height>25</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="picture" version="2.0.0">
+          <name>LINK_SYMBOL_1</name>
+          <file>../images/doc_link.png</file>
+          <width>25</width>
+          <height>25</height>
+        </widget>
+        <widget type="action_button" version="3.0.0">
+          <name>OPEN_LINK_BUTTON_1</name>
+          <actions>
+            <action type="open_webpage">
+              <description>Open Web Page</description>
+              <url>$(URL)</url>
+            </action>
+          </actions>
+          <text></text>
+          <width>25</width>
+          <height>25</height>
+          <transparent>true</transparent>
+          <tooltip>$(URL)</tooltip>
+          <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+        </widget>
+      </widget>
+    </widget>
+  </widget>
+</display>

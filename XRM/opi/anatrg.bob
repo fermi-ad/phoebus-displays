@@ -1,0 +1,823 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>ANATRG$(MUUT):$(SITE)</name>
+  <width>820</width>
+  <height>1152</height>
+  <widget type="label" version="2.0.0">
+    <name>OPI TITLE</name>
+    <text>ANALOGUE THRESHOLD CONFIG</text>
+    <x>10</x>
+    <y>10</y>
+    <width>800</width>
+    <height>30</height>
+    <font>
+      <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>OPI SITE INFO</name>
+    <text>$(UUT):$(SITE) $(SITE_MODEL)</text>
+    <x>10</x>
+    <y>40</y>
+    <width>800</width>
+    <font>
+      <font name="Header 3" family="Liberation Sans" style="BOLD" size="16.0">
+      </font>
+    </font>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>THRESHOLDS</name>
+    <macros>
+      <id>ALL</id>
+    </macros>
+    <x>680</x>
+    <y>140</y>
+    <width>130</width>
+    <height>420</height>
+    <style>3</style>
+    <background_color>
+      <color name="Read_Background" red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <widget type="label" version="2.0.0">
+      <name>THRESHOLD LABEL</name>
+      <text>Thresholds</text>
+      <x>10</x>
+      <width>110</width>
+      <height>30</height>
+      <font>
+        <font name="Header 3" family="Liberation Sans" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="combo" version="2.0.0">
+      <name>MODE INPUT</name>
+      <pv_name>${UUT}:${SITE}:ANATRG:ALL:M</pv_name>
+      <x>10</x>
+      <y>50</y>
+      <width>110</width>
+      <height>20</height>
+      <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+      <items>
+        <item>item 0</item>
+        <item>Item 1</item>
+      </items>
+    </widget>
+    <widget type="combo" version="2.0.0">
+      <name>HYSTERISIS INPUT</name>
+      <pv_name>${UUT}:${SITE}:ANATRG:$(id):H</pv_name>
+      <x>10</x>
+      <y>100</y>
+      <width>110</width>
+      <height>20</height>
+      <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+      <items>
+        <item>item 0</item>
+        <item>Item 1</item>
+      </items>
+    </widget>
+    <widget type="spinner" version="2.0.0">
+      <name>L1 INPUT</name>
+      <pv_name>${UUT}:${SITE}:ANATRG:$(id):L1</pv_name>
+      <x>10</x>
+      <y>150</y>
+      <width>110</width>
+      <format>0</format>
+      <precision>2</precision>
+      <show_units>true</show_units>
+      <background_color>
+        <color name="Background" red="255" green="255" blue="255">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+      <maximum>10.0</maximum>
+    </widget>
+    <widget type="spinner" version="2.0.0">
+      <name>L2 INPUT</name>
+      <pv_name>${UUT}:${SITE}:ANATRG:$(id):L2</pv_name>
+      <x>10</x>
+      <y>200</y>
+      <width>110</width>
+      <format>0</format>
+      <precision>2</precision>
+      <show_units>true</show_units>
+      <background_color>
+        <color name="Background" red="255" green="255" blue="255">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+      <maximum>10.0</maximum>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>SET ALL BUTTON</name>
+      <actions>
+        <action type="write_pv">
+          <description>Write PV</description>
+          <pv_name>${UUT}:${SITE}:ANATRG:ALL:SET</pv_name>
+          <value>1</value>
+        </action>
+      </actions>
+      <text>SET ALL</text>
+      <x>10</x>
+      <y>240</y>
+      <width>110</width>
+      <height>20</height>
+      <font>
+        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <tooltip></tooltip>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>RESET BUTTON</name>
+      <actions>
+        <action type="write_pv">
+          <description>Write PV</description>
+          <pv_name>${UUT}:${SITE}:ANATRG:RESET</pv_name>
+          <value>1</value>
+        </action>
+      </actions>
+      <text>RESET</text>
+      <x>10</x>
+      <y>270</y>
+      <width>110</width>
+      <height>20</height>
+      <font>
+        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <tooltip></tooltip>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>MODE LABEL</name>
+      <text>Mode</text>
+      <x>10</x>
+      <y>30</y>
+      <width>120</width>
+      <font>
+        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>HYSTERISIS LABEL</name>
+      <text>Hysteresis %</text>
+      <x>10</x>
+      <y>80</y>
+      <width>120</width>
+      <font>
+        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>L1 LABEL</name>
+      <text>Level 1</text>
+      <x>10</x>
+      <y>130</y>
+      <width>110</width>
+      <font>
+        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>L2 LABEl</name>
+      <text>Level 2</text>
+      <x>10</x>
+      <y>180</y>
+      <width>110</width>
+      <font>
+        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>SCALE LABEL</name>
+      <text>Scale</text>
+      <x>10</x>
+      <y>300</y>
+      <width>110</width>
+      <font>
+        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <background_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </background_color>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+    </widget>
+    <widget type="combo" version="2.0.0">
+      <name>SCALE INPUT</name>
+      <pv_name>${UUT}:${SITE}:ANATRG:SCALE</pv_name>
+      <x>10</x>
+      <y>320</y>
+      <width>110</width>
+      <font>
+        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+      <items>
+        <item>item 0</item>
+        <item>Item 1</item>
+      </items>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>EVENT LABEL</name>
+      <text>Event</text>
+      <x>10</x>
+      <y>360</y>
+      <width>110</width>
+      <font>
+        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <background_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </background_color>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+    </widget>
+    <widget type="combo" version="2.0.0">
+      <name>EVENT INPUT</name>
+      <pv_name>${UUT}:${SITE}:ANATRG:SRC_SEL</pv_name>
+      <x>10</x>
+      <y>380</y>
+      <width>110</width>
+      <font>
+        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+      <items>
+        <item>item 0</item>
+        <item>Item 1</item>
+      </items>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>GROUPS</name>
+    <x>680</x>
+    <y>570</y>
+    <width>130</width>
+    <height>210</height>
+    <style>3</style>
+    <background_color>
+      <color name="Read_Background" red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <widget type="label" version="2.0.0">
+      <name>MODE LABEL</name>
+      <text>Mode</text>
+      <x>10</x>
+      <y>30</y>
+      <width>110</width>
+      <font>
+        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <background_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </background_color>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+    </widget>
+    <widget type="combo" version="2.0.0">
+      <name>GROUP MODE MENU</name>
+      <pv_name>${UUT}:${SITE}:ANATRG:GROUP_MODE</pv_name>
+      <x>10</x>
+      <y>50</y>
+      <width>110</width>
+      <font>
+        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+      <items>
+        <item>item 0</item>
+        <item>Item 1</item>
+      </items>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>GROUP SET BUTTON</name>
+      <actions>
+        <action type="write_pv">
+          <description>Write PV</description>
+          <pv_name>${UUT}:${SITE}:ANATRG:GROUP:ALL:SET</pv_name>
+          <value>1</value>
+        </action>
+      </actions>
+      <text>SET ALL</text>
+      <x>10</x>
+      <y>150</y>
+      <width>110</width>
+      <height>20</height>
+      <font>
+        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>GROUP CLEAR BUTTON</name>
+      <actions>
+        <action type="write_pv">
+          <description>Write PV</description>
+          <pv_name>${UUT}:${SITE}:ANATRG:GROUP:ALL:CLR</pv_name>
+          <value>1</value>
+        </action>
+      </actions>
+      <text>CLEAR ALL</text>
+      <x>10</x>
+      <y>180</y>
+      <width>110</width>
+      <height>20</height>
+      <font>
+        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="spinner" version="2.0.0">
+      <name>GROUP FIRSTN INPUT</name>
+      <pv_name>${UUT}:${SITE}:ANATRG:GROUP:FIRST_N</pv_name>
+      <x>10</x>
+      <y>110</y>
+      <width>110</width>
+      <height>30</height>
+      <format>0</format>
+      <precision>2</precision>
+      <show_units>true</show_units>
+      <background_color>
+        <color name="Background" red="255" green="255" blue="255">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+      <maximum>10.0</maximum>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>FIRSTN LABEL</name>
+      <text>FirstN</text>
+      <x>10</x>
+      <y>90</y>
+      <width>110</width>
+      <font>
+        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <background_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </background_color>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>GROUPS LABEL</name>
+      <text>Groups</text>
+      <x>10</x>
+      <width>110</width>
+      <height>30</height>
+      <font>
+        <font name="Header 3" family="Liberation Sans" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>THRESHOLD CHANS</name>
+    <x>10</x>
+    <y>80</y>
+    <width>650</width>
+    <height>1062</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="group" version="3.0.0">
+      <name>CHANS TITLE</name>
+      <width>550</width>
+      <height>30</height>
+      <style>3</style>
+      <background_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </background_color>
+      <rules>
+        <rule name="HIDE_EMPTY" prop_id="visible" out_exp="true">
+          <exp bool_exp="true">
+            <expression>true</expression>
+          </exp>
+          <exp bool_exp="pv0&gt;=int(&quot;$(id)&quot;)">
+            <expression>true</expression>
+          </exp>
+          <exp bool_exp="true">
+            <expression>false</expression>
+          </exp>
+          <pv_name>$(UUT):$(SITE):NCHAN</pv_name>
+        </rule>
+      </rules>
+      <widget type="label" version="2.0.0">
+        <name>CHAN TITLE</name>
+        <text>CH</text>
+        <x>10</x>
+        <width>30</width>
+        <height>30</height>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>MODE TITLE</name>
+        <text>Mode</text>
+        <x>50</x>
+        <width>120</width>
+        <height>30</height>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <background_color>
+          <color name="Button_Background" red="210" green="210" blue="210">
+          </color>
+        </background_color>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>HYSTERESIS TITLE</name>
+        <text>Hysteresis %</text>
+        <x>180</x>
+        <width>120</width>
+        <height>30</height>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <background_color>
+          <color name="Button_Background" red="210" green="210" blue="210">
+          </color>
+        </background_color>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>L1 TITLE</name>
+        <text>Level 1</text>
+        <x>310</x>
+        <height>30</height>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>L2 TITLE</name>
+        <text>Level 2</text>
+        <x>430</x>
+        <height>30</height>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+      </widget>
+    </widget>
+    <widget type="template" version="2.0.0">
+      <name>CHANS ARRAY</name>
+      <file>components/anatrg/anatrg_single.bob</file>
+      <instances>
+        <instance>
+          <macros>
+            <id>01</id>
+          </macros>
+        </instance>
+        <instance>
+          <macros>
+            <id>02</id>
+          </macros>
+        </instance>
+        <instance>
+          <macros>
+            <id>03</id>
+          </macros>
+        </instance>
+        <instance>
+          <macros>
+            <id>04</id>
+          </macros>
+        </instance>
+        <instance>
+          <macros>
+            <id>05</id>
+          </macros>
+        </instance>
+        <instance>
+          <macros>
+            <id>06</id>
+          </macros>
+        </instance>
+        <instance>
+          <macros>
+            <id>07</id>
+          </macros>
+        </instance>
+        <instance>
+          <macros>
+            <id>08</id>
+          </macros>
+        </instance>
+        <instance>
+          <macros>
+            <id>09</id>
+          </macros>
+        </instance>
+        <instance>
+          <macros>
+            <id>10</id>
+          </macros>
+        </instance>
+        <instance>
+          <macros>
+            <id>11</id>
+          </macros>
+        </instance>
+        <instance>
+          <macros>
+            <id>12</id>
+          </macros>
+        </instance>
+        <instance>
+          <macros>
+            <id>13</id>
+          </macros>
+        </instance>
+        <instance>
+          <macros>
+            <id>14</id>
+          </macros>
+        </instance>
+        <instance>
+          <macros>
+            <id>15</id>
+          </macros>
+        </instance>
+        <instance>
+          <macros>
+            <id>16</id>
+          </macros>
+        </instance>
+        <instance>
+          <macros>
+            <id>17</id>
+          </macros>
+        </instance>
+        <instance>
+          <macros>
+            <id>18</id>
+          </macros>
+        </instance>
+        <instance>
+          <macros>
+            <id>19</id>
+          </macros>
+        </instance>
+        <instance>
+          <macros>
+            <id>20</id>
+          </macros>
+        </instance>
+        <instance>
+          <macros>
+            <id>21</id>
+          </macros>
+        </instance>
+        <instance>
+          <macros>
+            <id>22</id>
+          </macros>
+        </instance>
+        <instance>
+          <macros>
+            <id>23</id>
+          </macros>
+        </instance>
+        <instance>
+          <macros>
+            <id>24</id>
+          </macros>
+        </instance>
+        <instance>
+          <macros>
+            <id>25</id>
+          </macros>
+        </instance>
+        <instance>
+          <macros>
+            <id>26</id>
+          </macros>
+        </instance>
+        <instance>
+          <macros>
+            <id>27</id>
+          </macros>
+        </instance>
+        <instance>
+          <macros>
+            <id>28</id>
+          </macros>
+        </instance>
+        <instance>
+          <macros>
+            <id>29</id>
+          </macros>
+        </instance>
+        <instance>
+          <macros>
+            <id>30</id>
+          </macros>
+        </instance>
+        <instance>
+          <macros>
+            <id>31</id>
+          </macros>
+        </instance>
+        <instance>
+          <macros>
+            <id>32</id>
+          </macros>
+        </instance>
+      </instances>
+      <y>40</y>
+      <width>650</width>
+      <height>1022</height>
+      <gap>2</gap>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>TRG TITLE</name>
+      <text>TRG</text>
+      <x>560</x>
+      <width>40</width>
+      <height>30</height>
+      <font>
+        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <background_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>GRP TITLE</name>
+      <text>GRP</text>
+      <x>610</x>
+      <width>40</width>
+      <height>30</height>
+      <font>
+        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <background_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>ANY TRG</name>
+    <x>680</x>
+    <y>80</y>
+    <width>130</width>
+    <height>20</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="led" version="2.0.0">
+      <name>ANY TRG LED</name>
+      <pv_name>${UUT}:0:SIG:EVT_EXT:ACTIVE</pv_name>
+      <width>130</width>
+      <square>true</square>
+      <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>ANY TRG TITLE</name>
+      <text>ANY TRG</text>
+      <width>130</width>
+      <font>
+        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="Background" red="255" green="255" blue="255">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>GRP TRG</name>
+    <x>680</x>
+    <y>110</y>
+    <width>130</width>
+    <height>20</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="led" version="2.0.0">
+      <name>GRP TRG LED</name>
+      <pv_name>${UUT}:0:SIG:EVT_MB:ACTIVE</pv_name>
+      <width>130</width>
+      <square>true</square>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>GRP TRG TITLE</name>
+      <text>GRP TRG</text>
+      <width>130</width>
+      <font>
+        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="Background" red="255" green="255" blue="255">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>DOC_LINK_1</name>
+    <macros>
+      <URL>https://d-tacq.co.uk/resources/ATD_Guide.pdf</URL>
+    </macros>
+    <x>380</x>
+    <y>10</y>
+    <width>25</width>
+    <height>25</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="picture" version="2.0.0">
+      <name>LINK_SYMBOL_1</name>
+      <file>../images/doc_link.png</file>
+      <width>25</width>
+      <height>25</height>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>OPEN_LINK_BUTTON_1</name>
+      <actions>
+        <action type="open_webpage">
+          <description>Open Web Page</description>
+          <url>$(URL)</url>
+        </action>
+      </actions>
+      <text></text>
+      <width>25</width>
+      <height>25</height>
+      <transparent>true</transparent>
+      <tooltip>$(URL)</tooltip>
+      <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+    </widget>
+  </widget>
+</display>
