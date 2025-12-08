@@ -3,7 +3,8 @@
   <name>Cryo Purifier</name>
   <macros>
     <complex>PIP2CP</complex>
-    <sys>$(complex):RCVRY_CRYO_</sys>
+    <system>$(complex):RCVRY_$(group)_</system>
+    <group>CRYO</group>
   </macros>
   <width>1600</width>
   <height>900</height>
@@ -129,6 +130,7 @@ $(actions)</tooltip>
     <transparent>true</transparent>
     <widget type="tank" version="2.0.0">
       <name>Tank_1</name>
+      <pv_name>$(system)DPT2115:Pressure</pv_name>
       <x>4</x>
       <y>25</y>
       <width>131</width>
@@ -146,6 +148,7 @@ $(actions)</tooltip>
         </color>
       </empty_color>
       <scale_visible>false</scale_visible>
+      <maximum>50.0</maximum>
     </widget>
     <widget type="polyline" version="2.0.0">
       <name>Polyline_318</name>
@@ -775,7 +778,7 @@ $(actions)</tooltip>
   <widget type="led" version="2.0.0">
     <name>LED_7</name>
     <pv_name>$(system)S7PLC:HBstatus</pv_name>
-    <x>106</x>
+    <x>112</x>
     <y>8</y>
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
@@ -1090,17 +1093,29 @@ $(actions)</tooltip>
   </widget>
   <widget type="symbol" version="2.0.0">
     <name>Symbol_38</name>
+    <pv_name>$(system)PV2011:VLVstat</pv_name>
     <symbols>
       <symbol>../Images/Cryo/Controlvalvegray.svg</symbol>
       <symbol>../Images/Cryo/Controlvalvegreen.svg</symbol>
       <symbol>../Images/Cryo/Controlvalvered.svg</symbol>
     </symbols>
-    <x>791</x>
+    <x>793</x>
     <y>388</y>
     <width>58</width>
     <height>70</height>
     <initial_index>2</initial_index>
     <rotation>270.0</rotation>
+    <actions>
+      <action type="open_display">
+        <description>Open Display</description>
+        <file>ValveControlPIDSimple.bob</file>
+        <macros>
+          <dev>PV2015</dev>
+        </macros>
+        <target>tab</target>
+      </action>
+    </actions>
+    <run_actions_on_mouse_click>true</run_actions_on_mouse_click>
     <tooltip>$(pv_name)
 $(pv_value)
 $(actions)</tooltip>
@@ -1676,6 +1691,7 @@ $(actions)</tooltip>
   </widget>
   <widget type="symbol" version="2.0.0">
     <name>Symbol_27</name>
+    <pv_name>$(system)PV1407:VLVstat</pv_name>
     <symbols>
       <symbol>../Images/Cryo/on_off_valve_Gray.svg</symbol>
       <symbol>../Images/Cryo/on_off_valve_Green.svg</symbol>
@@ -1687,12 +1703,24 @@ $(actions)</tooltip>
     <height>70</height>
     <initial_index>1</initial_index>
     <rotation>90.0</rotation>
+    <actions>
+      <action type="open_display">
+        <description>Open Display</description>
+        <file>ValveControlOnOffSimple.bob</file>
+        <macros>
+          <dev>PV1407</dev>
+        </macros>
+        <target>tab</target>
+      </action>
+    </actions>
+    <run_actions_on_mouse_click>true</run_actions_on_mouse_click>
     <tooltip>$(pv_name)
 $(pv_value)
 $(actions)</tooltip>
   </widget>
   <widget type="symbol" version="2.0.0">
     <name>Symbol_28</name>
+    <pv_name>$(system)PV1401:VLVstat</pv_name>
     <symbols>
       <symbol>../Images/Cryo/on_off_valve_Gray.svg</symbol>
       <symbol>../Images/Cryo/on_off_valve_Green.svg</symbol>
@@ -1704,12 +1732,24 @@ $(actions)</tooltip>
     <height>70</height>
     <initial_index>1</initial_index>
     <rotation>90.0</rotation>
+    <actions>
+      <action type="open_display">
+        <description>Open Display</description>
+        <file>ValveControlOnOffSimple.bob</file>
+        <macros>
+          <dev>PV1401</dev>
+        </macros>
+        <target>tab</target>
+      </action>
+    </actions>
+    <run_actions_on_mouse_click>true</run_actions_on_mouse_click>
     <tooltip>$(pv_name)
 $(pv_value)
 $(actions)</tooltip>
   </widget>
   <widget type="symbol" version="2.0.0">
     <name>Symbol_29</name>
+    <pv_name>$(system)PV1404:VLVstat</pv_name>
     <symbols>
       <symbol>../Images/Cryo/on_off_valve_Gray.svg</symbol>
       <symbol>../Images/Cryo/on_off_valve_Green.svg</symbol>
@@ -1721,6 +1761,17 @@ $(actions)</tooltip>
     <height>70</height>
     <initial_index>1</initial_index>
     <rotation>90.0</rotation>
+    <actions>
+      <action type="open_display">
+        <description>Open Display</description>
+        <file>ValveControlOnOffSimple.bob</file>
+        <macros>
+          <dev>PV1404</dev>
+        </macros>
+        <target>tab</target>
+      </action>
+    </actions>
+    <run_actions_on_mouse_click>true</run_actions_on_mouse_click>
     <tooltip>$(pv_name)
 $(pv_value)
 $(actions)</tooltip>
@@ -2445,7 +2496,7 @@ Helium Clean</text>
   </widget>
   <widget type="symbol" version="2.0.0">
     <name>Symbol_40</name>
-    <pv_name>$(sys)EV2003:VLVstat</pv_name>
+    <pv_name>$(system)EV2003:VLVstat</pv_name>
     <symbols>
       <symbol>../Images/Cryo/Controlvalvegray.svg</symbol>
       <symbol>../Images/Cryo/Controlvalvegreen.svg</symbol>
@@ -2503,7 +2554,7 @@ $(actions)</tooltip>
   </widget>
   <widget type="symbol" version="2.0.0">
     <name>Symbol_39</name>
-    <pv_name>$(sys)EV2008:VLVstat</pv_name>
+    <pv_name>$(system)EV2008:VLVstat</pv_name>
     <symbols>
       <symbol>../Images/Cryo/Controlvalvegray.svg</symbol>
       <symbol>../Images/Cryo/Controlvalvegreen.svg</symbol>
@@ -2523,6 +2574,7 @@ $(actions)</tooltip>
         <target>tab</target>
       </action>
     </actions>
+    <run_actions_on_mouse_click>true</run_actions_on_mouse_click>
     <tooltip>$(pv_name)
 $(pv_value)
 $(actions)</tooltip>
@@ -2786,7 +2838,7 @@ $(actions)</tooltip>
   </widget>
   <widget type="led" version="2.0.0">
     <name>LED_14</name>
-    <pv_name>$(sys)EV2008:ManualAuto</pv_name>
+    <pv_name>$(system)EV2008:ManualAuto</pv_name>
     <bit>0</bit>
     <x>258</x>
     <y>808</y>
@@ -2804,7 +2856,7 @@ $(actions)</tooltip>
   </widget>
   <widget type="led" version="2.0.0">
     <name>LED_20</name>
-    <pv_name>$(sys)EV2003:ManualAuto</pv_name>
+    <pv_name>$(system)EV2003:ManualAuto</pv_name>
     <bit>0</bit>
     <x>168</x>
     <y>357</y>
@@ -2856,7 +2908,7 @@ $(actions)</tooltip>
   </widget>
   <widget type="symbol" version="2.0.0">
     <name>Symbol_30</name>
-    <pv_name>$(sys)PV2011:VLVstat</pv_name>
+    <pv_name>$(system)PV2011:VLVstat</pv_name>
     <symbols>
       <symbol>../Images/Cryo/on_off_valve_Gray.svg</symbol>
       <symbol>../Images/Cryo/on_off_valve_Green.svg</symbol>
@@ -2868,13 +2920,24 @@ $(actions)</tooltip>
     <height>70</height>
     <initial_index>1</initial_index>
     <rotation>90.0</rotation>
+    <actions>
+      <action type="open_display">
+        <description>Open Display</description>
+        <file>ValveControlOnOffSimple.bob</file>
+        <macros>
+          <dev>PV2011</dev>
+        </macros>
+        <target>tab</target>
+      </action>
+    </actions>
+    <run_actions_on_mouse_click>true</run_actions_on_mouse_click>
     <tooltip>$(pv_name)
 $(pv_value)
 $(actions)</tooltip>
   </widget>
   <widget type="symbol" version="2.0.0">
     <name>Symbol_31</name>
-    <pv_name>$(sys)PV2020:VLVstat</pv_name>
+    <pv_name>$(system)PV2020:VLVstat</pv_name>
     <symbols>
       <symbol>../Images/Cryo/on_off_valve_Gray.svg</symbol>
       <symbol>../Images/Cryo/on_off_valve_Green.svg</symbol>
@@ -2886,6 +2949,16 @@ $(actions)</tooltip>
     <height>70</height>
     <initial_index>1</initial_index>
     <rotation>90.0</rotation>
+    <actions>
+      <action type="open_display">
+        <description>Open Display</description>
+        <file>ValveControlOnOffSimple.bob</file>
+        <macros>
+          <dev>PV2020</dev>
+        </macros>
+        <target>tab</target>
+      </action>
+    </actions>
     <tooltip>$(pv_name)
 $(pv_value)
 $(actions)</tooltip>
@@ -3107,5 +3180,39 @@ $(actions)</tooltip>
       </color>
     </line_color>
     <arrows>2</arrows>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_13</name>
+    <bit>0</bit>
+    <x>620</x>
+    <y>620</y>
+    <off_label>M</off_label>
+    <off_color>
+      <color name="fgs.Gray-45" red="167" green="168" blue="170">
+      </color>
+    </off_color>
+    <on_label>A</on_label>
+    <on_color>
+      <color name="acorn.Green" red="82" green="171" blue="90">
+      </color>
+    </on_color>
+    <square>true</square>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_15</name>
+    <bit>0</bit>
+    <x>508</x>
+    <y>620</y>
+    <off_label>M</off_label>
+    <off_color>
+      <color name="fgs.Gray-45" red="167" green="168" blue="170">
+      </color>
+    </off_color>
+    <on_label>A</on_label>
+    <on_color>
+      <color name="acorn.Green" red="82" green="171" blue="90">
+      </color>
+    </on_color>
+    <square>true</square>
   </widget>
 </display>

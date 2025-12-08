@@ -3,7 +3,8 @@
   <name>Cryo storage and recovery</name>
   <macros>
     <complex>PIP2CP</complex>
-    <sys>$(complex):RCVRY_CRYO_</sys>
+    <group>CRYO</group>
+    <system>$(complex):RCVRY_$(group)_</system>
   </macros>
   <width>1980</width>
   <height>960</height>
@@ -176,7 +177,7 @@
     <name>Cryo Storage and Recovery</name>
     <text>GHe Storage and Recovery</text>
     <width>1980</width>
-    <height>36</height>
+    <height>40</height>
     <font>
       <font family="Liberation Sans" style="BOLD" size="22.0">
       </font>
@@ -216,10 +217,10 @@ Distribution</text>
   <widget type="label" version="2.0.0">
     <name>Label_75</name>
     <text>PLC Heartbeat</text>
-    <width>108</width>
-    <height>35</height>
+    <width>135</width>
+    <height>40</height>
     <font>
-      <font family="Liberation Sans" style="BOLD" size="14.0">
+      <font family="Liberation Sans" style="BOLD" size="18.0">
       </font>
     </font>
     <foreground_color>
@@ -236,8 +237,10 @@ Distribution</text>
   <widget type="led" version="2.0.0">
     <name>LED_7</name>
     <pv_name>$(system)S7PLC:HBstatus</pv_name>
-    <x>106</x>
+    <x>141</x>
     <y>8</y>
+    <width>25</width>
+    <height>25</height>
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="polyline" version="2.0.0">
@@ -1453,23 +1456,6 @@ $(actions)</tooltip>
       </line_color>
       <transparent>true</transparent>
     </widget>
-    <widget type="polyline" version="2.0.0">
-      <name>Polyline_295</name>
-      <x>6</x>
-      <y>5</y>
-      <width>1</width>
-      <points>
-        <point x="0.0" y="20.0">
-        </point>
-        <point x="0.0" y="0.0">
-        </point>
-      </points>
-      <line_width>1</line_width>
-      <line_color>
-        <color red="0" green="0" blue="0">
-        </color>
-      </line_color>
-    </widget>
   </widget>
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display_194</name>
@@ -1477,8 +1463,8 @@ $(actions)</tooltip>
       <dev>TT1379</dev>
     </macros>
     <file>../Common/cryo-embedded-displays/TempSensorUp.bob</file>
-    <x>728</x>
-    <y>920</y>
+    <x>731</x>
+    <y>838</y>
     <width>65</width>
     <height>35</height>
   </widget>
@@ -1730,7 +1716,7 @@ $(actions)</tooltip>
     <name>Action Button_2</name>
     <text>HOME</text>
     <x>1884</x>
-    <y>2</y>
+    <y>4</y>
     <width>89</width>
     <font>
       <font family="Liberation Sans" style="BOLD" size="14.0">
@@ -1741,7 +1727,7 @@ $(actions)</tooltip>
   <widget type="digital_clock" version="2.0.0">
     <name>DigitalClock</name>
     <lcd_design>30</lcd_design>
-    <lcd_font>3</lcd_font>
+    <lcd_font>2</lcd_font>
     <x>1824</x>
     <y>918</y>
     <width>154</width>
@@ -1771,7 +1757,7 @@ Distribution</text>
   </widget>
   <widget type="tank" version="2.0.0">
     <name>Tank</name>
-    <pv_name>$(sys)DPT2115:Pressure</pv_name>
+    <pv_name>$(system)DPT2115:Pressure</pv_name>
     <x>170</x>
     <y>490</y>
     <width>110</width>
@@ -2321,7 +2307,7 @@ $(actions)</tooltip>
   </widget>
   <widget type="led" version="2.0.0">
     <name>LED_8</name>
-    <pv_name>$(sys)PV1426:ManualAuto</pv_name>
+    <pv_name>$(system)PV1426:ManualAuto</pv_name>
     <bit>0</bit>
     <x>713</x>
     <y>391</y>
@@ -2339,7 +2325,7 @@ $(actions)</tooltip>
   </widget>
   <widget type="led" version="2.0.0">
     <name>LED_14</name>
-    <pv_name>$(sys)PV1426:ManualAuto</pv_name>
+    <pv_name>$(system)PV1426:ManualAuto</pv_name>
     <bit>0</bit>
     <x>750</x>
     <y>698</y>
@@ -2633,5 +2619,22 @@ $(actions)</tooltip>
       <color red="143" green="106" blue="35">
       </color>
     </border_color>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_295</name>
+    <x>762</x>
+    <y>878</y>
+    <width>1</width>
+    <points>
+      <point x="0.0" y="20.0">
+      </point>
+      <point x="0.0" y="0.0">
+      </point>
+    </points>
+    <line_width>1</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
   </widget>
 </display>
