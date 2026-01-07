@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2025-07-23 08:13:05 by pratik-->
 <display version="2.0.0">
   <name>Mycomwatervalve</name>
   <macros>
     <dev>PIP2CP:MYCOM_CRYO_</dev>
-    <enum>CMPRSR</enum>
+    <enum>HEATX</enum>
     <sig>TempC</sig>
   </macros>
-  <width>700</width>
-  <height>450</height>
+  <width>680</width>
+  <height>400</height>
   <background_color>
-    <color red="217" green="217" blue="217">
+    <color name="cryo.PrimaryBackground" red="217" green="217" blue="217">
     </color>
   </background_color>
   <widget type="polyline" version="2.0.0">
@@ -105,8 +104,8 @@
   </widget>
   <widget type="label" version="2.0.0">
     <name>HB650-$(cm) $(view)_1</name>
-    <text>$(enum): Valve Control</text>
-    <width>700</width>
+    <text>Mycom Water Valve Control</text>
+    <width>680</width>
     <height>36</height>
     <font>
       <font family="Liberation Sans" style="BOLD" size="22.0">
@@ -117,7 +116,7 @@
       </color>
     </foreground_color>
     <background_color>
-      <color red="0" green="149" blue="255">
+      <color name="fgs.NAL-Blue" red="0" green="76" blue="151">
       </color>
     </background_color>
     <transparent>false</transparent>
@@ -126,100 +125,26 @@
     <wrap_words>false</wrap_words>
     <border_width>1</border_width>
   </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label_76</name>
-    <text>PLC Heartbeat</text>
-    <width>108</width>
-    <height>35</height>
-    <font>
-      <font family="Liberation Sans" style="BOLD" size="14.0">
-      </font>
-    </font>
-    <foreground_color>
-      <color red="255" green="255" blue="0">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color name="Button_Background" red="210" green="210" blue="210">
-      </color>
-    </background_color>
-    <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-  </widget>
-  <widget type="led" version="2.0.0">
-    <name>LED_8</name>
-    <pv_name>$(system)PLC080:rBIT</pv_name>
-    <x>106</x>
-    <y>8</y>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
   <widget type="action_button" version="3.0.0">
     <name>Action Button_3</name>
     <text>HOME</text>
-    <x>605</x>
+    <x>585</x>
     <y>4</y>
     <width>89</width>
     <tooltip>$(actions)</tooltip>
   </widget>
-  <widget type="progressbar" version="2.0.0">
-    <name>Progress Bar</name>
-    <pv_name>$(system)$(enum):H2OPos</pv_name>
-    <x>30</x>
-    <y>121</y>
-    <width>31</width>
-    <height>225</height>
-    <background_color>
-      <color red="179" green="179" blue="179">
-      </color>
-    </background_color>
-  </widget>
-  <widget type="progressbar" version="2.0.0">
-    <name>Progress Bar_1</name>
-    <pv_name>$(system)$(enum):$(sig)</pv_name>
-    <x>108</x>
-    <y>121</y>
-    <width>31</width>
-    <height>225</height>
-    <fill_color>
-      <color red="0" green="149" blue="255">
-      </color>
-    </fill_color>
-    <background_color>
-      <color red="179" green="179" blue="179">
-      </color>
-    </background_color>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label_77</name>
-    <text>ReadBack</text>
-    <x>11</x>
-    <y>363</y>
-    <width>65</width>
-    <height>16</height>
-    <auto_size>true</auto_size>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label_78</name>
-    <text>Command 
-Output %</text>
-    <x>92</x>
-    <y>353</y>
-    <width>69</width>
-    <height>35</height>
-    <auto_size>true</auto_size>
-  </widget>
   <widget type="scrollbar" version="2.0.0">
     <name>Scrollbar_1</name>
-    <pv_name>$(system)$(enum):s$(setpoint)</pv_name>
-    <x>392</x>
+    <pv_name>$(system)$(enum):sTempC</pv_name>
+    <x>352</x>
     <y>200</y>
     <width>200</width>
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textentry" version="3.0.0">
     <name>Text Entry_3</name>
-    <pv_name>$(system)$(enum):s$(setpoint)</pv_name>
-    <x>597</x>
+    <pv_name>$(system)$(enum):sTempC</pv_name>
+    <x>557</x>
     <y>200</y>
     <width>80</width>
     <format>1</format>
@@ -229,7 +154,7 @@ Output %</text>
   <widget type="scrollbar" version="2.0.0">
     <name>Scrollbar_7</name>
     <pv_name>$(system)$(enum):sMinLim</pv_name>
-    <x>392</x>
+    <x>352</x>
     <y>260</y>
     <width>200</width>
     <border_alarm_sensitive>false</border_alarm_sensitive>
@@ -237,7 +162,7 @@ Output %</text>
   <widget type="textentry" version="3.0.0">
     <name>Text Entry_4</name>
     <pv_name>$(system)$(enum):sMinLim</pv_name>
-    <x>597</x>
+    <x>557</x>
     <y>260</y>
     <width>80</width>
     <format>1</format>
@@ -247,7 +172,7 @@ Output %</text>
   <widget type="scrollbar" version="2.0.0">
     <name>Scrollbar_8</name>
     <pv_name>$(system)$(enum):sMaxLim</pv_name>
-    <x>392</x>
+    <x>352</x>
     <y>290</y>
     <width>200</width>
     <border_alarm_sensitive>false</border_alarm_sensitive>
@@ -255,7 +180,7 @@ Output %</text>
   <widget type="textentry" version="3.0.0">
     <name>Text Entry_5</name>
     <pv_name>$(system)$(enum):sMaxLim</pv_name>
-    <x>597</x>
+    <x>557</x>
     <y>290</y>
     <width>80</width>
     <format>1</format>
@@ -264,8 +189,8 @@ Output %</text>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_37</name>
-    <pv_name>$(system)$(enum):$(sig)</pv_name>
-    <x>302</x>
+    <pv_name>$(system)$(enum):TempC</pv_name>
+    <x>262</x>
     <y>200</y>
     <width>80</width>
     <format>1</format>
@@ -278,7 +203,7 @@ Output %</text>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_38</name>
     <pv_name>$(system)$(enum):MinLim</pv_name>
-    <x>302</x>
+    <x>262</x>
     <y>260</y>
     <width>80</width>
     <format>1</format>
@@ -291,7 +216,7 @@ Output %</text>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_39</name>
     <pv_name>$(system)$(enum):MaxLim</pv_name>
-    <x>302</x>
+    <x>262</x>
     <y>290</y>
     <width>80</width>
     <format>1</format>
@@ -304,7 +229,7 @@ Output %</text>
   <widget type="label" version="2.0.0">
     <name>Label_79</name>
     <text>Readings</text>
-    <x>302</x>
+    <x>262</x>
     <y>175</y>
     <width>80</width>
     <font>
@@ -316,7 +241,7 @@ Output %</text>
       </color>
     </foreground_color>
     <background_color>
-      <color red="0" green="149" blue="255">
+      <color name="fgs.NAL-Blue" red="0" green="76" blue="151">
       </color>
     </background_color>
     <transparent>false</transparent>
@@ -328,7 +253,7 @@ Output %</text>
   <widget type="label" version="2.0.0">
     <name>Label_80</name>
     <text>Set Point</text>
-    <x>177</x>
+    <x>137</x>
     <y>200</y>
     <width>115</width>
     <horizontal_alignment>2</horizontal_alignment>
@@ -338,7 +263,7 @@ Output %</text>
   <widget type="label" version="2.0.0">
     <name>Label_81</name>
     <text>Minimum Limit</text>
-    <x>177</x>
+    <x>137</x>
     <y>260</y>
     <width>115</width>
     <horizontal_alignment>2</horizontal_alignment>
@@ -348,7 +273,7 @@ Output %</text>
   <widget type="label" version="2.0.0">
     <name>Label_82</name>
     <text>Maximum Limit</text>
-    <x>177</x>
+    <x>137</x>
     <y>290</y>
     <width>115</width>
     <horizontal_alignment>2</horizontal_alignment>
@@ -358,7 +283,7 @@ Output %</text>
   <widget type="label" version="2.0.0">
     <name>Label_83</name>
     <text>Settings</text>
-    <x>392</x>
+    <x>352</x>
     <y>175</y>
     <width>285</width>
     <font>
@@ -370,7 +295,7 @@ Output %</text>
       </color>
     </foreground_color>
     <background_color>
-      <color red="0" green="149" blue="255">
+      <color name="fgs.NAL-Blue" red="0" green="76" blue="151">
       </color>
     </background_color>
     <transparent>false</transparent>
@@ -382,7 +307,7 @@ Output %</text>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_41</name>
     <pv_name>$(system)$(enum):H2OPos</pv_name>
-    <x>302</x>
+    <x>262</x>
     <y>230</y>
     <width>80</width>
     <format>1</format>
@@ -395,7 +320,7 @@ Output %</text>
   <widget type="label" version="2.0.0">
     <name>Label_84</name>
     <text>Current Position</text>
-    <x>177</x>
+    <x>137</x>
     <y>230</y>
     <width>115</width>
     <horizontal_alignment>2</horizontal_alignment>
@@ -405,8 +330,8 @@ Output %</text>
   <widget type="label" version="2.0.0">
     <name>Label_89</name>
     <text>Valve PV Select</text>
-    <x>302</x>
-    <y>60</y>
+    <x>260</x>
+    <y>70</y>
     <width>373</width>
     <font>
       <font family="Liberation Sans" style="BOLD" size="14.0">
@@ -417,7 +342,7 @@ Output %</text>
       </color>
     </foreground_color>
     <background_color>
-      <color red="0" green="149" blue="255">
+      <color name="fgs.NAL-Blue" red="0" green="76" blue="151">
       </color>
     </background_color>
     <transparent>false</transparent>
@@ -426,25 +351,10 @@ Output %</text>
     <wrap_words>false</wrap_words>
     <border_width>1</border_width>
   </widget>
-  <widget type="choice" version="2.0.0">
-    <name>Choice Button_2</name>
-    <x>302</x>
-    <y>90</y>
-    <width>378</width>
-    <height>60</height>
-    <selected_color>
-      <color red="102" green="153" blue="153">
-      </color>
-    </selected_color>
-    <items>
-      <item>Mainifold</item>
-      <item>Heat Exchanger</item>
-    </items>
-  </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_42</name>
     <pv_name>$(system)TP31:TempC</pv_name>
-    <x>302</x>
+    <x>262</x>
     <y>320</y>
     <width>80</width>
     <format>1</format>
@@ -457,7 +367,7 @@ Output %</text>
   <widget type="label" version="2.0.0">
     <name>Label_85</name>
     <text>HX Oil Temp</text>
-    <x>177</x>
+    <x>137</x>
     <y>320</y>
     <width>115</width>
     <horizontal_alignment>2</horizontal_alignment>
@@ -467,7 +377,7 @@ Output %</text>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_43</name>
     <pv_name>$(system)TP32:TempC</pv_name>
-    <x>302</x>
+    <x>262</x>
     <y>350</y>
     <width>80</width>
     <format>1</format>
@@ -480,11 +390,141 @@ Output %</text>
   <widget type="label" version="2.0.0">
     <name>Label_86</name>
     <text>Oil Manifold Temp</text>
-    <x>177</x>
+    <x>137</x>
     <y>350</y>
     <width>115</width>
     <horizontal_alignment>2</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
     <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Close</name>
+    <actions>
+      <action type="write_pv">
+        <description>Switch to HEATX</description>
+        <pv_name>$(pv_name)</pv_name>
+        <value>0</value>
+      </action>
+    </actions>
+    <pv_name>$(system)MNFLD:Select</pv_name>
+    <text>HEATX</text>
+    <x>280</x>
+    <y>100</y>
+    <width>160</width>
+    <height>64</height>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>OPEN</name>
+    <actions>
+      <action type="write_pv">
+        <description>Switch to MNFLD</description>
+        <pv_name>$(pv_name)</pv_name>
+        <value>1</value>
+      </action>
+    </actions>
+    <pv_name>$(system)MNFLD:Select</pv_name>
+    <text>MNFLD</text>
+    <x>450</x>
+    <y>100</y>
+    <width>160</width>
+    <height>64</height>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_2</name>
+    <pv_name>$(system)MNFLD:Select</pv_name>
+    <x>419</x>
+    <y>104</y>
+    <width>15</width>
+    <height>15</height>
+    <off_color>
+      <color name="acorn.Green" red="82" green="171" blue="90">
+      </color>
+    </off_color>
+    <on_color>
+      <color name="fgs.Gray-45" red="167" green="168" blue="170">
+      </color>
+    </on_color>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_3</name>
+    <pv_name>$(system)MNFLD:Select</pv_name>
+    <x>591</x>
+    <y>104</y>
+    <width>15</width>
+    <height>15</height>
+    <off_color>
+      <color name="fgs.Gray-45" red="167" green="168" blue="170">
+      </color>
+    </off_color>
+    <on_color>
+      <color name="acorn.Green" red="82" green="171" blue="90">
+      </color>
+    </on_color>
+  </widget>
+  <widget type="progressbar" version="2.0.0">
+    <name>Progress Bar</name>
+    <pv_name>$(system)$(enum):H2OPos</pv_name>
+    <x>18</x>
+    <y>110</y>
+    <width>25</width>
+    <height>225</height>
+    <fill_color>
+      <color name="acorn.Green" red="82" green="171" blue="90">
+      </color>
+    </fill_color>
+    <background_color>
+      <color red="179" green="179" blue="179">
+      </color>
+    </background_color>
+    <horizontal>false</horizontal>
+  </widget>
+  <widget type="progressbar" version="2.0.0">
+    <name>Progress Bar_1</name>
+    <pv_name>$(system)$(enum):TempC</pv_name>
+    <x>82</x>
+    <y>110</y>
+    <width>25</width>
+    <height>225</height>
+    <fill_color>
+      <color name="acorn.Green" red="82" green="171" blue="90">
+      </color>
+    </fill_color>
+    <background_color>
+      <color red="179" green="179" blue="179">
+      </color>
+    </background_color>
+    <horizontal>false</horizontal>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <text>Current
+Position</text>
+    <x>6</x>
+    <y>339</y>
+    <width>50</width>
+    <height>35</height>
+    <horizontal_alignment>1</horizontal_alignment>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_1</name>
+    <text>Set 
+Point</text>
+    <x>78</x>
+    <y>338</y>
+    <width>32</width>
+    <height>35</height>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="digital_clock" version="2.0.0">
+    <name>DigitalClock</name>
+    <x>540</x>
+    <y>370</y>
+    <width>140</width>
+    <height>30</height>
+    <date_visible>true</date_visible>
+    <lcd_crystal_enabled>true</lcd_crystal_enabled>
   </widget>
 </display>
