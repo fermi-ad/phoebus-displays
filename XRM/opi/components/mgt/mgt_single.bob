@@ -1,0 +1,1120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2025-06-02 11:00:14 by dt100-->
+<display version="2.0.0">
+  <name>Mgt Single</name>
+  <width>650</width>
+  <height>610</height>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle</name>
+    <width>650</width>
+    <height>610</height>
+    <line_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="Read_Background" red="240" green="240" blue="240">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>MGT SINGLE</name>
+    <macros>
+      <CH>$(CH=A)</CH>
+      <idx>$(idx=0)</idx>
+    </macros>
+    <width>650</width>
+    <height>610</height>
+    <visible>false</visible>
+    <style>3</style>
+    <background_color>
+      <color name="Read_Background" red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <rules>
+      <rule name="HIDE_EMPTY" prop_id="visible" out_exp="true">
+        <exp bool_exp="pv0&gt;int(&quot;$(idx)&quot;)">
+          <expression>true</expression>
+        </exp>
+        <exp bool_exp="true">
+          <expression>false</expression>
+        </exp>
+        <pv_name>${UUT}:MGTPORTS</pv_name>
+      </rule>
+    </rules>
+    <widget type="group" version="3.0.0">
+      <name>MGT SINGLE INNER</name>
+      <x>10</x>
+      <y>10</y>
+      <width>630</width>
+      <height>590</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="group" version="3.0.0">
+        <name>DMA</name>
+        <y>40</y>
+        <width>320</width>
+        <height>330</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="group" version="3.0.0">
+          <name>DMA STATS</name>
+          <y>120</y>
+          <width>320</width>
+          <height>210</height>
+          <style>3</style>
+          <transparent>true</transparent>
+          <widget type="group" version="3.0.0">
+            <name>DMA HEARTBEAT</name>
+            <macros>
+              <label>Heartbeat</label>
+              <pvname0>${UUT}:${CH}:SIG:MGT:HB:COUNT</pvname0>
+              <pvname1>${UUT}:${CH}:SIG:MGT:HB:FREQ</pvname1>
+            </macros>
+            <y>20</y>
+            <width>320</width>
+            <height>30</height>
+            <style>3</style>
+            <transparent>true</transparent>
+            <widget type="label" version="2.0.0">
+              <name>LABEL_5</name>
+              <text>$(label)</text>
+              <height>30</height>
+              <font>
+                <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+                </font>
+              </font>
+              <horizontal_alignment>2</horizontal_alignment>
+              <vertical_alignment>1</vertical_alignment>
+            </widget>
+            <widget type="textupdate" version="2.0.0">
+              <name>UPDATE_4</name>
+              <pv_name>$(pvname0)</pv_name>
+              <x>110</x>
+              <height>30</height>
+              <background_color>
+                <color name="Background" red="255" green="255" blue="255">
+                </color>
+              </background_color>
+              <format>1</format>
+              <show_units>false</show_units>
+              <horizontal_alignment>1</horizontal_alignment>
+              <vertical_alignment>1</vertical_alignment>
+              <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+            </widget>
+            <widget type="textupdate" version="2.0.0">
+              <name>UPDATE_5</name>
+              <pv_name>$(pvname1)</pv_name>
+              <x>220</x>
+              <height>30</height>
+              <background_color>
+                <color name="Background" red="255" green="255" blue="255">
+                </color>
+              </background_color>
+              <format>2</format>
+              <precision>2</precision>
+              <show_units>false</show_units>
+              <horizontal_alignment>1</horizontal_alignment>
+              <vertical_alignment>1</vertical_alignment>
+              <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+            </widget>
+          </widget>
+          <widget type="group" version="3.0.0">
+            <name>DMA PUSH BUFFERS</name>
+            <macros>
+              <label>Push Buffers</label>
+              <pvname0>${UUT}:${CH}:SIG:MGT:PUSH:BUFS:COUNT</pvname0>
+              <pvname1>${UUT}:${CH}:SIG:MGT:PUSH:BUFS:FREQ</pvname1>
+            </macros>
+            <y>60</y>
+            <width>320</width>
+            <height>30</height>
+            <style>3</style>
+            <transparent>true</transparent>
+            <widget type="label" version="2.0.0">
+              <name>LABEL_6</name>
+              <text>$(label)</text>
+              <height>30</height>
+              <font>
+                <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+                </font>
+              </font>
+              <horizontal_alignment>2</horizontal_alignment>
+              <vertical_alignment>1</vertical_alignment>
+            </widget>
+            <widget type="textupdate" version="2.0.0">
+              <name>UPDATE_6</name>
+              <pv_name>$(pvname0)</pv_name>
+              <x>110</x>
+              <height>30</height>
+              <background_color>
+                <color name="Background" red="255" green="255" blue="255">
+                </color>
+              </background_color>
+              <format>1</format>
+              <show_units>false</show_units>
+              <horizontal_alignment>1</horizontal_alignment>
+              <vertical_alignment>1</vertical_alignment>
+              <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+            </widget>
+            <widget type="textupdate" version="2.0.0">
+              <name>UPDATE_7</name>
+              <pv_name>$(pvname1)</pv_name>
+              <x>220</x>
+              <height>30</height>
+              <background_color>
+                <color name="Background" red="255" green="255" blue="255">
+                </color>
+              </background_color>
+              <format>2</format>
+              <precision>2</precision>
+              <show_units>false</show_units>
+              <horizontal_alignment>1</horizontal_alignment>
+              <vertical_alignment>1</vertical_alignment>
+              <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+            </widget>
+          </widget>
+          <widget type="group" version="3.0.0">
+            <name>DMA PUSH BYTES</name>
+            <macros>
+              <label>Push Bytes</label>
+              <pvname0>${UUT}:${CH}:SIG:MGT:PUSH:BYTES:COUNT</pvname0>
+              <pvname1>${UUT}:${CH}:SIG:MGT:PUSH:BYTES:FREQ</pvname1>
+            </macros>
+            <y>100</y>
+            <width>320</width>
+            <height>30</height>
+            <style>3</style>
+            <transparent>true</transparent>
+            <widget type="label" version="2.0.0">
+              <name>LABEL_7</name>
+              <text>$(label)</text>
+              <height>30</height>
+              <font>
+                <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+                </font>
+              </font>
+              <horizontal_alignment>2</horizontal_alignment>
+              <vertical_alignment>1</vertical_alignment>
+            </widget>
+            <widget type="textupdate" version="2.0.0">
+              <name>UPDATE_8</name>
+              <pv_name>$(pvname0)</pv_name>
+              <x>110</x>
+              <height>30</height>
+              <background_color>
+                <color name="Background" red="255" green="255" blue="255">
+                </color>
+              </background_color>
+              <format>1</format>
+              <show_units>false</show_units>
+              <horizontal_alignment>1</horizontal_alignment>
+              <vertical_alignment>1</vertical_alignment>
+              <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+            </widget>
+            <widget type="textupdate" version="2.0.0">
+              <name>UPDATE_9</name>
+              <pv_name>$(pvname1)</pv_name>
+              <x>220</x>
+              <height>30</height>
+              <background_color>
+                <color name="Background" red="255" green="255" blue="255">
+                </color>
+              </background_color>
+              <format>2</format>
+              <precision>2</precision>
+              <show_units>false</show_units>
+              <horizontal_alignment>1</horizontal_alignment>
+              <vertical_alignment>1</vertical_alignment>
+              <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+            </widget>
+          </widget>
+          <widget type="group" version="3.0.0">
+            <name>DMA PULL BUFFERS</name>
+            <macros>
+              <label>Pull Buffers</label>
+              <pvname0>${UUT}:${CH}:SIG:MGT:PULL:BUFS:COUNT</pvname0>
+              <pvname1>${UUT}:${CH}:SIG:MGT:PULL:BUFS:FREQ</pvname1>
+            </macros>
+            <y>140</y>
+            <width>320</width>
+            <height>30</height>
+            <style>3</style>
+            <transparent>true</transparent>
+            <widget type="label" version="2.0.0">
+              <name>LABEL_8</name>
+              <text>$(label)</text>
+              <height>30</height>
+              <font>
+                <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+                </font>
+              </font>
+              <horizontal_alignment>2</horizontal_alignment>
+              <vertical_alignment>1</vertical_alignment>
+            </widget>
+            <widget type="textupdate" version="2.0.0">
+              <name>UPDATE_10</name>
+              <pv_name>$(pvname0)</pv_name>
+              <x>110</x>
+              <height>30</height>
+              <background_color>
+                <color name="Background" red="255" green="255" blue="255">
+                </color>
+              </background_color>
+              <format>1</format>
+              <show_units>false</show_units>
+              <horizontal_alignment>1</horizontal_alignment>
+              <vertical_alignment>1</vertical_alignment>
+              <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+            </widget>
+            <widget type="textupdate" version="2.0.0">
+              <name>UPDATE_11</name>
+              <pv_name>$(pvname1)</pv_name>
+              <x>220</x>
+              <height>30</height>
+              <background_color>
+                <color name="Background" red="255" green="255" blue="255">
+                </color>
+              </background_color>
+              <format>2</format>
+              <precision>2</precision>
+              <show_units>false</show_units>
+              <horizontal_alignment>1</horizontal_alignment>
+              <vertical_alignment>1</vertical_alignment>
+              <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+            </widget>
+          </widget>
+          <widget type="group" version="3.0.0">
+            <name>DMA PULL BYTES</name>
+            <macros>
+              <label>Pull Bytes</label>
+              <pvname0>${UUT}:${CH}:SIG:MGT:PULL:BYTES:COUNT</pvname0>
+              <pvname1>${UUT}:${CH}:SIG:MGT:PULL:BYTES:FREQ</pvname1>
+            </macros>
+            <y>180</y>
+            <width>320</width>
+            <height>30</height>
+            <style>3</style>
+            <transparent>true</transparent>
+            <widget type="label" version="2.0.0">
+              <name>LABEL_9</name>
+              <text>$(label)</text>
+              <height>30</height>
+              <font>
+                <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+                </font>
+              </font>
+              <horizontal_alignment>2</horizontal_alignment>
+              <vertical_alignment>1</vertical_alignment>
+            </widget>
+            <widget type="textupdate" version="2.0.0">
+              <name>UPDATE_12</name>
+              <pv_name>$(pvname0)</pv_name>
+              <x>110</x>
+              <height>30</height>
+              <background_color>
+                <color name="Background" red="255" green="255" blue="255">
+                </color>
+              </background_color>
+              <format>1</format>
+              <show_units>false</show_units>
+              <horizontal_alignment>1</horizontal_alignment>
+              <vertical_alignment>1</vertical_alignment>
+              <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+            </widget>
+            <widget type="textupdate" version="2.0.0">
+              <name>UPDATE_13</name>
+              <pv_name>$(pvname1)</pv_name>
+              <x>220</x>
+              <height>30</height>
+              <background_color>
+                <color name="Background" red="255" green="255" blue="255">
+                </color>
+              </background_color>
+              <format>2</format>
+              <precision>2</precision>
+              <show_units>false</show_units>
+              <horizontal_alignment>1</horizontal_alignment>
+              <vertical_alignment>1</vertical_alignment>
+              <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+            </widget>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>LABEL_10</name>
+            <text>Count</text>
+            <x>110</x>
+            <font>
+              <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+              </font>
+            </font>
+            <vertical_alignment>1</vertical_alignment>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>LABEL_11</name>
+            <text>Freq</text>
+            <x>220</x>
+            <font>
+              <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+              </font>
+            </font>
+            <vertical_alignment>1</vertical_alignment>
+          </widget>
+        </widget>
+        <widget type="group" version="3.0.0">
+          <name>PUSH STATE</name>
+          <width>240</width>
+          <height>30</height>
+          <style>3</style>
+          <transparent>true</transparent>
+          <widget type="led" version="2.0.0">
+            <name>LED_1</name>
+            <pv_name>${UUT}:${CH}:AGGREGATOR:ON</pv_name>
+            <x>220</x>
+            <y>5</y>
+            <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>UPDATE_1</name>
+            <pv_name>${UUT}:${CH}:AGGREGATOR:SITES</pv_name>
+            <x>110</x>
+            <height>30</height>
+            <background_color>
+              <color name="Background" red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>LABEL_13</name>
+            <text>Push</text>
+            <height>30</height>
+            <font>
+              <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+              </font>
+            </font>
+            <horizontal_alignment>2</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+          </widget>
+        </widget>
+        <widget type="group" version="3.0.0">
+          <name>DIST SOURCE</name>
+          <y>80</y>
+          <width>210</width>
+          <height>30</height>
+          <style>3</style>
+          <transparent>true</transparent>
+          <widget type="textupdate" version="2.0.0">
+            <name>UPDATE_3</name>
+            <pv_name>${UUT}:0:DISTRIBUTOR:COMMS</pv_name>
+            <x>110</x>
+            <height>30</height>
+            <background_color>
+              <color name="Background" red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>LABEL_14</name>
+            <text>Dist Source</text>
+            <height>30</height>
+            <font>
+              <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+              </font>
+            </font>
+            <horizontal_alignment>2</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+          </widget>
+        </widget>
+        <widget type="group" version="3.0.0">
+          <name>PULL STATE</name>
+          <y>40</y>
+          <width>240</width>
+          <height>30</height>
+          <style>3</style>
+          <transparent>true</transparent>
+          <widget type="led" version="2.0.0">
+            <name>LED_2</name>
+            <pv_name>${UUT}:0:DISTRIBUTOR:ON</pv_name>
+            <x>220</x>
+            <y>5</y>
+            <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>UPDATE_2</name>
+            <pv_name>${UUT}:0:DISTRIBUTOR:SITES</pv_name>
+            <x>110</x>
+            <height>30</height>
+            <background_color>
+              <color name="Background" red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>LABEL_12</name>
+            <text>Pull</text>
+            <x>10</x>
+            <width>90</width>
+            <height>30</height>
+            <font>
+              <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+              </font>
+            </font>
+            <horizontal_alignment>2</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+          </widget>
+        </widget>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>AURORA</name>
+        <x>320</x>
+        <y>60</y>
+        <width>310</width>
+        <height>310</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="label" version="2.0.0">
+          <name>LABEL_15</name>
+          <text>Aurora</text>
+          <width>320</width>
+          <font>
+            <font name="Header 2" family="Liberation Sans" style="BOLD" size="18.0">
+            </font>
+          </font>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="group" version="3.0.0">
+          <name>LANE STATUS</name>
+          <x>10</x>
+          <y>30</y>
+          <width>160</width>
+          <height>30</height>
+          <style>3</style>
+          <transparent>true</transparent>
+          <widget type="textupdate" version="2.0.0">
+            <name>UPDATE_14</name>
+            <pv_name>${UUT}:${CH}:AURORA:UP</pv_name>
+            <x>60</x>
+            <height>30</height>
+            <background_color>
+              <color name="Background" red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <rules>
+              <rule name="GREEN_IF_UP" prop_id="background_color" out_exp="false">
+                <exp bool_exp="pv0==3">
+                  <value>
+                    <color name="OK" red="0" green="255" blue="0">
+                    </color>
+                  </value>
+                </exp>
+                <exp bool_exp="true">
+                  <value>
+                    <color name="STOP" red="255" green="0" blue="0">
+                    </color>
+                  </value>
+                </exp>
+                <pv_name>${UUT}:${CH}:AURORA:UP</pv_name>
+              </rule>
+            </rules>
+            <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>LABEL_16</name>
+            <text>Lane</text>
+            <width>50</width>
+            <height>30</height>
+            <font>
+              <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+              </font>
+            </font>
+            <horizontal_alignment>2</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+          </widget>
+        </widget>
+        <widget type="group" version="3.0.0">
+          <name>ERROR STATUS</name>
+          <x>10</x>
+          <y>70</y>
+          <width>250</width>
+          <height>30</height>
+          <style>3</style>
+          <transparent>true</transparent>
+          <widget type="textupdate" version="2.0.0">
+            <name>UPDATE_15</name>
+            <pv_name>${UUT}:${CH}:AURORA:ERR</pv_name>
+            <x>60</x>
+            <height>30</height>
+            <background_color>
+              <color name="Background" red="255" green="255" blue="255">
+              </color>
+            </background_color>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>LABEL_17</name>
+            <text>Error</text>
+            <width>50</width>
+            <height>30</height>
+            <font>
+              <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+              </font>
+            </font>
+            <horizontal_alignment>2</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+          </widget>
+          <widget type="action_button" version="3.0.0">
+            <name>BUTTON_1</name>
+            <actions>
+              <action type="write_pv">
+                <description>CLEAR</description>
+                <pv_name>$(pv_name)</pv_name>
+                <value>0</value>
+              </action>
+            </actions>
+            <pv_name>${UUT}:MGT:SFP:${CH}:CLRSTATS</pv_name>
+            <text>CLR</text>
+            <x>200</x>
+            <width>50</width>
+            <font>
+              <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+              </font>
+            </font>
+            <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+          </widget>
+        </widget>
+        <widget type="group" version="3.0.0">
+          <name>AURORA LESSER</name>
+          <x>30</x>
+          <y>220</y>
+          <width>280</width>
+          <height>90</height>
+          <style>3</style>
+          <transparent>true</transparent>
+          <widget type="group" version="3.0.0">
+            <name>AURORA UPC</name>
+            <macros>
+              <label>UPC</label>
+              <pvname0>${UUT}:${CH}:AS:UPC:rc</pvname0>
+              <pvname1>${UUT}:${CH}:AS:UPC:COUNT</pvname1>
+            </macros>
+            <y>20</y>
+            <width>140</width>
+            <height>30</height>
+            <style>3</style>
+            <transparent>true</transparent>
+            <widget type="label" version="2.0.0">
+              <name>LABEL_22</name>
+              <text>$(label)</text>
+              <width>30</width>
+              <height>30</height>
+              <font>
+                <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+                </font>
+              </font>
+              <horizontal_alignment>2</horizontal_alignment>
+              <vertical_alignment>1</vertical_alignment>
+            </widget>
+            <widget type="textupdate" version="2.0.0">
+              <name>UPDATE_20</name>
+              <pv_name>$(pvname0)</pv_name>
+              <x>40</x>
+              <width>45</width>
+              <height>30</height>
+              <background_color>
+                <color name="Background" red="255" green="255" blue="255">
+                </color>
+              </background_color>
+              <precision>0</precision>
+              <show_units>false</show_units>
+              <horizontal_alignment>1</horizontal_alignment>
+              <vertical_alignment>1</vertical_alignment>
+              <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+            </widget>
+            <widget type="textupdate" version="2.0.0">
+              <name>UPDATE_21</name>
+              <pv_name>$(pvname1)</pv_name>
+              <x>95</x>
+              <width>45</width>
+              <height>30</height>
+              <background_color>
+                <color name="Background" red="255" green="255" blue="255">
+                </color>
+              </background_color>
+              <precision>0</precision>
+              <show_units>false</show_units>
+              <horizontal_alignment>1</horizontal_alignment>
+              <vertical_alignment>1</vertical_alignment>
+              <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+            </widget>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>LABEL_23</name>
+            <text>Raw</text>
+            <x>40</x>
+            <width>45</width>
+            <font>
+              <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+              </font>
+            </font>
+            <vertical_alignment>1</vertical_alignment>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>LABEL_24</name>
+            <text>Count</text>
+            <x>95</x>
+            <width>45</width>
+            <font>
+              <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+              </font>
+            </font>
+            <vertical_alignment>1</vertical_alignment>
+          </widget>
+          <widget type="group" version="3.0.0">
+            <name>AURORA HE</name>
+            <macros>
+              <label>HE</label>
+              <pvname0>${UUT}:${CH}:AS:HE:rc</pvname0>
+              <pvname1>${UUT}:${CH}:AS:HE:COUNT</pvname1>
+            </macros>
+            <x>140</x>
+            <y>20</y>
+            <width>140</width>
+            <height>30</height>
+            <style>3</style>
+            <transparent>true</transparent>
+            <widget type="label" version="2.0.0">
+              <name>LABEL_25</name>
+              <text>$(label)</text>
+              <width>30</width>
+              <height>30</height>
+              <font>
+                <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+                </font>
+              </font>
+              <horizontal_alignment>2</horizontal_alignment>
+              <vertical_alignment>1</vertical_alignment>
+            </widget>
+            <widget type="textupdate" version="2.0.0">
+              <name>UPDATE_22</name>
+              <pv_name>$(pvname0)</pv_name>
+              <x>40</x>
+              <width>45</width>
+              <height>30</height>
+              <background_color>
+                <color name="Background" red="255" green="255" blue="255">
+                </color>
+              </background_color>
+              <precision>0</precision>
+              <show_units>false</show_units>
+              <horizontal_alignment>1</horizontal_alignment>
+              <vertical_alignment>1</vertical_alignment>
+              <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+            </widget>
+            <widget type="textupdate" version="2.0.0">
+              <name>UPDATE_23</name>
+              <pv_name>$(pvname1)</pv_name>
+              <x>95</x>
+              <width>45</width>
+              <height>30</height>
+              <background_color>
+                <color name="Background" red="255" green="255" blue="255">
+                </color>
+              </background_color>
+              <precision>0</precision>
+              <show_units>false</show_units>
+              <horizontal_alignment>1</horizontal_alignment>
+              <vertical_alignment>1</vertical_alignment>
+              <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+            </widget>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>LABEL_26</name>
+            <text>Raw</text>
+            <x>180</x>
+            <width>45</width>
+            <font>
+              <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+              </font>
+            </font>
+            <vertical_alignment>1</vertical_alignment>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>LABEL_27</name>
+            <text>Count</text>
+            <x>235</x>
+            <width>45</width>
+            <font>
+              <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+              </font>
+            </font>
+            <vertical_alignment>1</vertical_alignment>
+          </widget>
+          <widget type="group" version="3.0.0">
+            <name>AURORA SE</name>
+            <macros>
+              <label>SE</label>
+              <pvname0>${UUT}:${CH}:AS:SE:rc</pvname0>
+              <pvname1>${UUT}:${CH}:AS:SE:COUNT</pvname1>
+            </macros>
+            <y>60</y>
+            <width>140</width>
+            <height>30</height>
+            <style>3</style>
+            <transparent>true</transparent>
+            <widget type="label" version="2.0.0">
+              <name>LABEL_28</name>
+              <text>$(label)</text>
+              <width>30</width>
+              <height>30</height>
+              <font>
+                <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+                </font>
+              </font>
+              <horizontal_alignment>2</horizontal_alignment>
+              <vertical_alignment>1</vertical_alignment>
+            </widget>
+            <widget type="textupdate" version="2.0.0">
+              <name>UPDATE_24</name>
+              <pv_name>$(pvname0)</pv_name>
+              <x>40</x>
+              <width>45</width>
+              <height>30</height>
+              <background_color>
+                <color name="Background" red="255" green="255" blue="255">
+                </color>
+              </background_color>
+              <precision>0</precision>
+              <show_units>false</show_units>
+              <horizontal_alignment>1</horizontal_alignment>
+              <vertical_alignment>1</vertical_alignment>
+              <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+            </widget>
+            <widget type="textupdate" version="2.0.0">
+              <name>UPDATE_25</name>
+              <pv_name>$(pvname1)</pv_name>
+              <x>95</x>
+              <width>45</width>
+              <height>30</height>
+              <background_color>
+                <color name="Background" red="255" green="255" blue="255">
+                </color>
+              </background_color>
+              <precision>0</precision>
+              <show_units>false</show_units>
+              <horizontal_alignment>1</horizontal_alignment>
+              <vertical_alignment>1</vertical_alignment>
+              <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+            </widget>
+          </widget>
+          <widget type="group" version="3.0.0">
+            <name>AURORA FE</name>
+            <macros>
+              <label>FE</label>
+              <pvname0>${UUT}:${CH}:AS:FE:rc</pvname0>
+              <pvname1>${UUT}:${CH}:AS:FE:COUNT</pvname1>
+            </macros>
+            <x>140</x>
+            <y>60</y>
+            <width>140</width>
+            <height>30</height>
+            <style>3</style>
+            <transparent>true</transparent>
+            <widget type="label" version="2.0.0">
+              <name>LABEL_29</name>
+              <text>$(label)</text>
+              <width>30</width>
+              <height>30</height>
+              <font>
+                <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+                </font>
+              </font>
+              <horizontal_alignment>2</horizontal_alignment>
+              <vertical_alignment>1</vertical_alignment>
+            </widget>
+            <widget type="textupdate" version="2.0.0">
+              <name>UPDATE_26</name>
+              <pv_name>$(pvname0)</pv_name>
+              <x>40</x>
+              <width>45</width>
+              <height>30</height>
+              <background_color>
+                <color name="Background" red="255" green="255" blue="255">
+                </color>
+              </background_color>
+              <precision>0</precision>
+              <show_units>false</show_units>
+              <horizontal_alignment>1</horizontal_alignment>
+              <vertical_alignment>1</vertical_alignment>
+              <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+            </widget>
+            <widget type="textupdate" version="2.0.0">
+              <name>UPDATE_27</name>
+              <pv_name>$(pvname1)</pv_name>
+              <x>95</x>
+              <width>45</width>
+              <height>30</height>
+              <background_color>
+                <color name="Background" red="255" green="255" blue="255">
+                </color>
+              </background_color>
+              <precision>0</precision>
+              <show_units>false</show_units>
+              <horizontal_alignment>1</horizontal_alignment>
+              <vertical_alignment>1</vertical_alignment>
+              <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+            </widget>
+          </widget>
+        </widget>
+        <widget type="group" version="3.0.0">
+          <name>AURORA GREATER</name>
+          <y>120</y>
+          <width>310</width>
+          <height>90</height>
+          <style>3</style>
+          <transparent>true</transparent>
+          <widget type="group" version="3.0.0">
+            <name>AURORA CRC</name>
+            <macros>
+              <label>CRC</label>
+              <pvname0>${UUT}:${CH}:AS:CRC:rc</pvname0>
+              <pvname1>${UUT}:${CH}:AS:CRC:COUNT</pvname1>
+            </macros>
+            <y>20</y>
+            <width>310</width>
+            <height>30</height>
+            <style>3</style>
+            <transparent>true</transparent>
+            <widget type="label" version="2.0.0">
+              <name>LABEL_18</name>
+              <text>$(label)</text>
+              <width>60</width>
+              <height>30</height>
+              <font>
+                <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+                </font>
+              </font>
+              <horizontal_alignment>2</horizontal_alignment>
+              <vertical_alignment>1</vertical_alignment>
+            </widget>
+            <widget type="textupdate" version="2.0.0">
+              <name>UPDATE_16</name>
+              <pv_name>$(pvname0)</pv_name>
+              <x>70</x>
+              <height>30</height>
+              <background_color>
+                <color name="Background" red="255" green="255" blue="255">
+                </color>
+              </background_color>
+              <format>1</format>
+              <precision>0</precision>
+              <show_units>false</show_units>
+              <horizontal_alignment>1</horizontal_alignment>
+              <vertical_alignment>1</vertical_alignment>
+              <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+            </widget>
+            <widget type="textupdate" version="2.0.0">
+              <name>UPDATE_17</name>
+              <pv_name>$(pvname1)</pv_name>
+              <x>210</x>
+              <height>30</height>
+              <background_color>
+                <color name="Background" red="255" green="255" blue="255">
+                </color>
+              </background_color>
+              <format>1</format>
+              <precision>0</precision>
+              <show_units>false</show_units>
+              <horizontal_alignment>1</horizontal_alignment>
+              <vertical_alignment>1</vertical_alignment>
+              <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+            </widget>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>LABEL_19</name>
+            <text>Raw</text>
+            <x>70</x>
+            <font>
+              <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+              </font>
+            </font>
+            <vertical_alignment>1</vertical_alignment>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>LABEL_20</name>
+            <text>Count</text>
+            <x>210</x>
+            <font>
+              <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+              </font>
+            </font>
+            <vertical_alignment>1</vertical_alignment>
+          </widget>
+          <widget type="group" version="3.0.0">
+            <name>AURORA RTY</name>
+            <macros>
+              <label>RTY</label>
+              <pvname0>${UUT}:${CH}:AS:RTY:rc</pvname0>
+              <pvname1>${UUT}:${CH}:AS:RTY:COUNT</pvname1>
+            </macros>
+            <y>60</y>
+            <width>310</width>
+            <height>30</height>
+            <style>3</style>
+            <transparent>true</transparent>
+            <widget type="label" version="2.0.0">
+              <name>LABEL_21</name>
+              <text>$(label)</text>
+              <width>60</width>
+              <height>30</height>
+              <font>
+                <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+                </font>
+              </font>
+              <horizontal_alignment>2</horizontal_alignment>
+              <vertical_alignment>1</vertical_alignment>
+            </widget>
+            <widget type="textupdate" version="2.0.0">
+              <name>UPDATE_18</name>
+              <pv_name>$(pvname0)</pv_name>
+              <x>70</x>
+              <height>30</height>
+              <background_color>
+                <color name="Background" red="255" green="255" blue="255">
+                </color>
+              </background_color>
+              <format>1</format>
+              <precision>0</precision>
+              <show_units>false</show_units>
+              <horizontal_alignment>1</horizontal_alignment>
+              <vertical_alignment>1</vertical_alignment>
+              <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+            </widget>
+            <widget type="textupdate" version="2.0.0">
+              <name>UPDATE_19</name>
+              <pv_name>$(pvname1)</pv_name>
+              <x>210</x>
+              <height>30</height>
+              <background_color>
+                <color name="Background" red="255" green="255" blue="255">
+                </color>
+              </background_color>
+              <format>1</format>
+              <precision>0</precision>
+              <show_units>false</show_units>
+              <horizontal_alignment>1</horizontal_alignment>
+              <vertical_alignment>1</vertical_alignment>
+              <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+            </widget>
+          </widget>
+        </widget>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>LABEL_1</name>
+        <text>DMA Channel $(CH)</text>
+        <width>170</width>
+        <height>30</height>
+        <font>
+          <font name="Header 2" family="Liberation Sans" style="BOLD" size="18.0">
+          </font>
+        </font>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="xyplot" version="3.0.0">
+        <name>DATA/DESC PLOT</name>
+        <y>390</y>
+        <width>630</width>
+        <height>200</height>
+        <x_axis>
+          <title>Bin</title>
+          <autoscale>true</autoscale>
+          <log_scale>false</log_scale>
+          <minimum>0.0</minimum>
+          <maximum>100.0</maximum>
+          <show_grid>true</show_grid>
+          <title_font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </title_font>
+          <scale_font>
+            <font name="Default" family="Liberation Sans" style="REGULAR" size="14.0">
+            </font>
+          </scale_font>
+          <visible>false</visible>
+        </x_axis>
+        <y_axes>
+          <y_axis>
+            <title>Freq</title>
+            <autoscale>true</autoscale>
+            <log_scale>false</log_scale>
+            <minimum>0.0</minimum>
+            <maximum>100.0</maximum>
+            <show_grid>true</show_grid>
+            <title_font>
+              <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+              </font>
+            </title_font>
+            <scale_font>
+              <font name="Default" family="Liberation Sans" style="REGULAR" size="14.0">
+              </font>
+            </scale_font>
+            <on_right>false</on_right>
+            <visible>true</visible>
+            <color>
+              <color name="Text" red="0" green="0" blue="0">
+              </color>
+            </color>
+          </y_axis>
+        </y_axes>
+        <traces>
+          <trace>
+            <name>$(traces[0].y_pv)</name>
+            <x_pv></x_pv>
+            <y_pv>${UUT}:MGT:HG:${CH}:PUSH_DATA</y_pv>
+            <err_pv></err_pv>
+            <axis>0</axis>
+            <trace_type>1</trace_type>
+            <color>
+              <color red="0" green="0" blue="255">
+              </color>
+            </color>
+            <line_width>1</line_width>
+            <line_style>0</line_style>
+            <point_type>0</point_type>
+            <point_size>10</point_size>
+            <visible>true</visible>
+          </trace>
+          <trace>
+            <name>$(traces[1].y_pv)</name>
+            <x_pv></x_pv>
+            <y_pv>${UUT}:MGT:HG:${CH}:PUSH_DESC</y_pv>
+            <err_pv></err_pv>
+            <axis>0</axis>
+            <trace_type>1</trace_type>
+            <color>
+              <color red="255" green="0" blue="0">
+              </color>
+            </color>
+            <line_width>1</line_width>
+            <line_style>0</line_style>
+            <point_type>0</point_type>
+            <point_size>10</point_size>
+            <visible>true</visible>
+          </trace>
+        </traces>
+      </widget>
+    </widget>
+  </widget>
+</display>

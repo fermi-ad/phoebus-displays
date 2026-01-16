@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2025-04-09 12:33:38 by dt100-->
+<display version="2.0.0">
+  <name>UUT Status</name>
+  <macros>
+    <MUUT_none>$(NULL=)</MUUT_none>
+    <MUUT>$(MUUT_$(UUT2)= $(UUT))</MUUT>
+  </macros>
+  <width>120</width>
+  <height>350</height>
+  <widget type="group" version="3.0.0">
+    <name>UUT STATUS</name>
+    <width>120</width>
+    <height>350</height>
+    <style>3</style>
+    <background_color>
+      <color red="0" green="51" blue="171">
+      </color>
+    </background_color>
+    <widget type="group" version="3.0.0">
+      <name>UUT STATUS INNER</name>
+      <x>10</x>
+      <y>10</y>
+      <width>100</width>
+      <height>330</height>
+      <style>3</style>
+      <background_color>
+        <color red="55" green="66" blue="250">
+        </color>
+      </background_color>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>LABEL_1</name>
+        <text>$(UUT)</text>
+        <height>30</height>
+        <font>
+          <font name="Header 3" family="Liberation Sans" style="BOLD" size="16.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="Background" red="255" green="255" blue="255">
+          </color>
+        </foreground_color>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>CSTATE</name>
+        <y>50</y>
+        <width>100</width>
+        <height>40</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="label" version="2.0.0">
+          <name>Cstate Label_1</name>
+          <text>CSTATE</text>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <foreground_color>
+            <color name="Background" red="255" green="255" blue="255">
+            </color>
+          </foreground_color>
+          <background_color>
+            <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+            </color>
+          </background_color>
+          <vertical_alignment>2</vertical_alignment>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>Cstate Value_1</name>
+          <pv_name>${UUT}:MODE:CONTINUOUS:STATE</pv_name>
+          <y>20</y>
+          <background_color>
+            <color name="Background" red="255" green="255" blue="255">
+            </color>
+          </background_color>
+          <format>6</format>
+          <vertical_alignment>1</vertical_alignment>
+          <rules>
+            <rule name="Cstate colors" prop_id="background_color" out_exp="false">
+              <exp bool_exp="pv1&gt;0">
+                <value>
+                  <color red="255" green="0" blue="0">
+                  </color>
+                </value>
+              </exp>
+              <exp bool_exp="pv0==0">
+                <value>
+                  <color red="255" green="0" blue="0">
+                  </color>
+                </value>
+              </exp>
+              <exp bool_exp="pv0==1">
+                <value>
+                  <color red="255" green="127" blue="0">
+                  </color>
+                </value>
+              </exp>
+              <exp bool_exp="pv0==2">
+                <value>
+                  <color red="0" green="255" blue="0">
+                  </color>
+                </value>
+              </exp>
+              <exp bool_exp="pv0==5">
+                <value>
+                  <color red="0" green="234" blue="255">
+                  </color>
+                </value>
+              </exp>
+              <pv_name>${UUT}:MODE:CONTINUOUS:STATE</pv_name>
+              <pv_name>${UUT}:MODE:TRANS_ACT:STATE</pv_name>
+            </rule>
+          </rules>
+        </widget>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>RUNTIME</name>
+        <y>90</y>
+        <width>100</width>
+        <height>40</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="label" version="2.0.0">
+          <name>Runtime Label</name>
+          <text>RUNTIME</text>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <foreground_color>
+            <color name="Background" red="255" green="255" blue="255">
+            </color>
+          </foreground_color>
+          <background_color>
+            <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+            </color>
+          </background_color>
+          <vertical_alignment>2</vertical_alignment>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>Runtime Value</name>
+          <pv_name>${UUT}:1:SIG:sample_count:nzcount</pv_name>
+          <y>20</y>
+          <format>1</format>
+          <precision>0</precision>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>SHOT</name>
+        <y>130</y>
+        <width>100</width>
+        <height>40</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="label" version="2.0.0">
+          <name>Shot Label</name>
+          <text>SHOT</text>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <foreground_color>
+            <color name="Background" red="255" green="255" blue="255">
+            </color>
+          </foreground_color>
+          <background_color>
+            <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+            </color>
+          </background_color>
+          <vertical_alignment>2</vertical_alignment>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>Shot Value</name>
+          <pv_name>${UUT}:1:SHOT</pv_name>
+          <y>20</y>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+      </widget>
+      <widget type="action_button" version="3.0.0">
+        <name>OPEN LAUNCHER</name>
+        <actions>
+          <action type="execute">
+            <script file="../../../scripts/handle_action_button.py">
+            </script>
+            <description>open acq400_launcher.bob</description>
+          </action>
+        </actions>
+        <text>Launcher</text>
+        <y>180</y>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <tooltip>$(actions)</tooltip>
+      </widget>
+      <widget type="action_button" version="3.0.0">
+        <name>Clocktree Button</name>
+        <actions>
+          <action type="execute">
+            <script file="../../../scripts/handle_action_button.py">
+            </script>
+            <description>open opi/clocktree.bob</description>
+          </action>
+        </actions>
+        <text>Clocktree</text>
+        <y>260</y>
+        <font>
+          <font family="Ubuntu" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <tooltip>$(actions)</tooltip>
+      </widget>
+      <widget type="action_button" version="3.0.0">
+        <name>Sync Button</name>
+        <actions>
+          <action type="execute">
+            <script file="../../../scripts/handle_action_button.py">
+            </script>
+            <description>open opi/sync.bob</description>
+          </action>
+        </actions>
+        <text>Sync</text>
+        <y>300</y>
+        <font>
+          <font family="Ubuntu" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <tooltip>$(actions)</tooltip>
+      </widget>
+      <widget type="action_button" version="3.0.0">
+        <name>Capture Button</name>
+        <actions>
+          <action type="execute">
+            <script file="../../../scripts/handle_action_button.py">
+            </script>
+            <description>open opi/capture.bob</description>
+          </action>
+        </actions>
+        <text>Capture</text>
+        <y>220</y>
+        <font>
+          <font family="Ubuntu" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <tooltip>$(actions)</tooltip>
+      </widget>
+      <widget type="led" version="2.0.0">
+        <name>LED</name>
+        <pv_name>${UUT}:IOC_READY</pv_name>
+        <y>30</y>
+        <line_color>
+          <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+          </color>
+        </line_color>
+        <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+      </widget>
+    </widget>
+  </widget>
+</display>
