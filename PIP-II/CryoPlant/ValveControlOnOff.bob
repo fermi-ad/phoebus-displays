@@ -222,10 +222,10 @@
       <symbol>../Images/Cryo/OnOffValveGreen.svg</symbol>
       <symbol>../Images/Cryo/OnOffValveRed.svg</symbol>
     </symbols>
-    <x>152</x>
-    <y>221</y>
-    <width>170</width>
-    <height>150</height>
+    <x>347</x>
+    <y>155</y>
+    <width>118</width>
+    <height>81</height>
     <tooltip>$(pv_name)
 $(pv_value)
 $(actions)</tooltip>
@@ -233,8 +233,8 @@ $(actions)</tooltip>
   <widget type="led" version="2.0.0">
     <name>LED</name>
     <pv_name>$(system)$(dev):LimOpen</pv_name>
-    <x>311</x>
-    <y>172</y>
+    <x>275</x>
+    <y>163</y>
     <width>30</width>
     <height>30</height>
     <off_color>
@@ -249,8 +249,8 @@ $(actions)</tooltip>
   <widget type="label" version="2.0.0">
     <name>Label</name>
     <text>VALVE OPEN LIMIT SWITCH</text>
-    <x>111</x>
-    <y>178</y>
+    <x>75</x>
+    <y>169</y>
     <width>190</width>
     <font>
       <font family="Liberation Sans" style="BOLD" size="14.0">
@@ -262,8 +262,8 @@ $(actions)</tooltip>
   <widget type="led" version="2.0.0">
     <name>LED_1</name>
     <pv_name>$(system)$(dev):LimClosed</pv_name>
-    <x>311</x>
-    <y>212</y>
+    <x>275</x>
+    <y>203</y>
     <width>30</width>
     <height>30</height>
     <off_color>
@@ -278,8 +278,8 @@ $(actions)</tooltip>
   <widget type="label" version="2.0.0">
     <name>Label_1</name>
     <text>VALVE CLOSED LIMIT SWITCH</text>
-    <x>87</x>
-    <y>218</y>
+    <x>51</x>
+    <y>209</y>
     <width>214</width>
     <font>
       <font family="Liberation Sans" style="BOLD" size="14.0">
@@ -306,8 +306,8 @@ $(actions)</tooltip>
     </actions>
     <pv_name>$(system)$(dev):sOpen</pv_name>
     <text>CLOSE $(dev)</text>
-    <x>94</x>
-    <y>79</y>
+    <x>58</x>
+    <y>70</y>
     <width>122</width>
     <height>64</height>
   </widget>
@@ -322,16 +322,16 @@ $(actions)</tooltip>
     </actions>
     <pv_name>$(system)$(dev):sOpen</pv_name>
     <text>OPEN $(dev)</text>
-    <x>241</x>
-    <y>78</y>
+    <x>205</x>
+    <y>69</y>
     <width>122</width>
     <height>64</height>
   </widget>
   <widget type="led" version="2.0.0">
     <name>LED_2</name>
     <pv_name>$(system)$(dev):Open</pv_name>
-    <x>199</x>
-    <y>82</y>
+    <x>163</x>
+    <y>73</y>
     <width>15</width>
     <height>15</height>
     <off_color>
@@ -346,8 +346,8 @@ $(actions)</tooltip>
   <widget type="led" version="2.0.0">
     <name>LED_3</name>
     <pv_name>$(system)$(dev):Open</pv_name>
-    <x>345</x>
-    <y>82</y>
+    <x>309</x>
+    <y>73</y>
     <width>15</width>
     <height>15</height>
     <off_color>
@@ -380,5 +380,31 @@ $(actions)</tooltip>
     <transparent>true</transparent>
     <horizontal_alignment>1</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="byte_monitor" version="2.0.0">
+    <name>Byte Monitor</name>
+    <pv_name>$(system)$(dev):AlmStat</pv_name>
+    <y>261</y>
+    <width>167</width>
+    <height>111</height>
+    <numBits>6</numBits>
+    <bitReverse>true</bitReverse>
+    <horizontal>false</horizontal>
+    <off_color>
+      <color name="cryo.Off" red="150" green="150" blue="150">
+      </color>
+    </off_color>
+    <on_color>
+      <color name="cryo.Heater.On" red="229" green="56" blue="35">
+      </color>
+    </on_color>
+    <labels>
+      <text>Controller Fault</text>
+      <text>Failed to Open</text>
+      <text>Failed to Close</text>
+      <text>Unexpected Movement</text>
+      <text>Feedback Lost</text>
+      <text>Valve Pos. Mismatch</text>
+    </labels>
   </widget>
 </display>
