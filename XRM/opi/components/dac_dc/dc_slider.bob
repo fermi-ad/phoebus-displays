@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2025-06-19 16:52:04 by dt100-->
+<display version="2.0.0">
+  <name>DC Slider</name>
+  <width>120</width>
+  <height>250</height>
+  <widget type="group" version="3.0.0">
+    <name>DC SLIDER</name>
+    <width>120</width>
+    <height>250</height>
+    <visible>false</visible>
+    <style>3</style>
+    <background_color>
+      <color red="230" green="230" blue="230">
+      </color>
+    </background_color>
+    <rules>
+      <rule name="HIDE_EMPTY" prop_id="visible" out_exp="true">
+        <exp bool_exp="&quot;$(id)&quot;==&quot;ALL&quot;">
+          <expression>true</expression>
+        </exp>
+        <exp bool_exp="pv0&gt;=int(&quot;$(id)&quot;)">
+          <expression>true</expression>
+        </exp>
+        <exp bool_exp="true">
+          <expression>false</expression>
+        </exp>
+        <pv_name>$(UUT):$(SITE):NCHAN</pv_name>
+      </rule>
+    </rules>
+    <widget type="group" version="3.0.0">
+      <name>DC SLIDER INNER</name>
+      <x>10</x>
+      <y>10</y>
+      <width>100</width>
+      <height>230</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>Label</name>
+        <text>CH:$(id)</text>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>SLIDER CENTER</name>
+        <y>30</y>
+        <width>100</width>
+        <height>120</height>
+        <style>3</style>
+        <transparent>true</transparent>
+      </widget>
+      <widget type="spinner" version="2.0.0">
+        <name>Spinner</name>
+        <pv_name>${UUT}:${SITE}:AO:SLOW_SET:CH:${id}</pv_name>
+        <y>150</y>
+        <format>0</format>
+        <precision>2</precision>
+        <show_units>true</show_units>
+        <background_color>
+          <color name="Background" red="255" green="255" blue="255">
+          </color>
+        </background_color>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+        <maximum>10.0</maximum>
+      </widget>
+      <widget type="combo" version="2.0.0">
+        <name>Combo Box</name>
+        <pv_name>${UUT}:${SITE}:$(GAIN):${id}</pv_name>
+        <y>210</y>
+        <height>20</height>
+        <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update</name>
+        <pv_name>${UUT}:${SITE}:AO:SLOW_SET:CH:${id}.RVAL</pv_name>
+        <y>180</y>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+      </widget>
+      <widget type="scaledslider" version="2.0.0">
+        <name>Scaled Slider_1</name>
+        <pv_name>${UUT}:${SITE}:AO:SLOW_SET:CH:${id}</pv_name>
+        <x>42</x>
+        <y>30</y>
+        <width>58</width>
+        <height>120</height>
+        <horizontal>false</horizontal>
+        <major_tick_step_hint>20</major_tick_step_hint>
+        <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+      </widget>
+    </widget>
+  </widget>
+</display>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2025-04-09 15:12:01 by dt100-->
+<display version="2.0.0">
+  <name>MGT Status</name>
+  <width>60</width>
+  <height>20</height>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle</name>
+    <width>60</width>
+    <line_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="Read_Background" red="240" green="240" blue="240">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>SFP STATUS</name>
+    <macros>
+      <num>$(num=1)</num>
+    </macros>
+    <width>60</width>
+    <height>20</height>
+    <visible>false</visible>
+    <style>3</style>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="HIDE_EMPTY" prop_id="visible" out_exp="true">
+        <exp bool_exp="pv0&gt;=int(&quot;$(num)&quot;)">
+          <expression>true</expression>
+        </exp>
+        <exp bool_exp="true">
+          <expression>false</expression>
+        </exp>
+        <pv_name>${UUT}:MGTPORTS</pv_name>
+      </rule>
+    </rules>
+    <widget type="led" version="2.0.0">
+      <name>LED_2</name>
+      <pv_name>${UUT}:MGT:SFP:$(num):PRESENT</pv_name>
+      <x>20</x>
+      <square>true</square>
+      <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_3</name>
+      <pv_name>${UUT}:MGT:SFP:$(num):LOS</pv_name>
+      <x>40</x>
+      <off_color>
+        <color red="153" green="0" blue="0">
+        </color>
+      </off_color>
+      <on_color>
+        <color name="STOP" red="255" green="0" blue="0">
+        </color>
+      </on_color>
+      <square>true</square>
+      <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>LABEL_7</name>
+      <text>$(num)</text>
+      <width>20</width>
+      <font>
+        <font name="Header 2" family="Liberation Sans" style="BOLD" size="18.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+  </widget>
+</display>
