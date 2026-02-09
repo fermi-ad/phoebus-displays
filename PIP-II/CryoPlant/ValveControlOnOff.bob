@@ -222,8 +222,8 @@
       <symbol>../Images/Cryo/OnOffValveGreen.svg</symbol>
       <symbol>../Images/Cryo/OnOffValveRed.svg</symbol>
     </symbols>
-    <x>347</x>
-    <y>155</y>
+    <x>95</x>
+    <y>249</y>
     <width>118</width>
     <height>81</height>
     <tooltip>$(pv_name)
@@ -233,7 +233,7 @@ $(actions)</tooltip>
   <widget type="led" version="2.0.0">
     <name>LED</name>
     <pv_name>$(system)$(dev):LimOpen</pv_name>
-    <x>275</x>
+    <x>232</x>
     <y>163</y>
     <width>30</width>
     <height>30</height>
@@ -249,9 +249,9 @@ $(actions)</tooltip>
   <widget type="label" version="2.0.0">
     <name>Label</name>
     <text>VALVE OPEN LIMIT SWITCH</text>
-    <x>75</x>
+    <x>11</x>
     <y>169</y>
-    <width>190</width>
+    <width>214</width>
     <font>
       <font family="Liberation Sans" style="BOLD" size="14.0">
       </font>
@@ -262,8 +262,8 @@ $(actions)</tooltip>
   <widget type="led" version="2.0.0">
     <name>LED_1</name>
     <pv_name>$(system)$(dev):LimClosed</pv_name>
-    <x>275</x>
-    <y>203</y>
+    <x>232</x>
+    <y>208</y>
     <width>30</width>
     <height>30</height>
     <off_color>
@@ -278,7 +278,7 @@ $(actions)</tooltip>
   <widget type="label" version="2.0.0">
     <name>Label_1</name>
     <text>VALVE CLOSED LIMIT SWITCH</text>
-    <x>51</x>
+    <x>11</x>
     <y>209</y>
     <width>214</width>
     <font>
@@ -306,7 +306,7 @@ $(actions)</tooltip>
     </actions>
     <pv_name>$(system)$(dev):sOpen</pv_name>
     <text>CLOSE $(dev)</text>
-    <x>58</x>
+    <x>18</x>
     <y>70</y>
     <width>122</width>
     <height>64</height>
@@ -322,7 +322,7 @@ $(actions)</tooltip>
     </actions>
     <pv_name>$(system)$(dev):sOpen</pv_name>
     <text>OPEN $(dev)</text>
-    <x>205</x>
+    <x>165</x>
     <y>69</y>
     <width>122</width>
     <height>64</height>
@@ -330,7 +330,7 @@ $(actions)</tooltip>
   <widget type="led" version="2.0.0">
     <name>LED_2</name>
     <pv_name>$(system)$(dev):Open</pv_name>
-    <x>163</x>
+    <x>123</x>
     <y>73</y>
     <width>15</width>
     <height>15</height>
@@ -346,7 +346,7 @@ $(actions)</tooltip>
   <widget type="led" version="2.0.0">
     <name>LED_3</name>
     <pv_name>$(system)$(dev):Open</pv_name>
-    <x>309</x>
+    <x>269</x>
     <y>73</y>
     <width>15</width>
     <height>15</height>
@@ -381,14 +381,37 @@ $(actions)</tooltip>
     <horizontal_alignment>1</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
   </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle</name>
+    <x>297</x>
+    <y>231</y>
+    <width>200</width>
+    <height>142</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="fgs.Gray-45" red="167" green="168" blue="170">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="scrollbar" version="2.0.0">
+    <name>Scrollbar</name>
+    <x>374</x>
+    <y>423</y>
+    <width>1</width>
+    <height>1</height>
+  </widget>
   <widget type="byte_monitor" version="2.0.0">
     <name>Byte Monitor</name>
-    <pv_name>$(system)$(dev):AlmStat</pv_name>
+    <pv_name>$(system)$(dev):VLVfault</pv_name>
+    <x>297</x>
     <y>261</y>
     <width>167</width>
     <height>111</height>
     <numBits>6</numBits>
-    <bitReverse>true</bitReverse>
     <horizontal>false</horizontal>
     <off_color>
       <color name="cryo.Off" red="150" green="150" blue="150">
@@ -406,5 +429,29 @@ $(actions)</tooltip>
       <text>Feedback Lost</text>
       <text>Valve Pos. Mismatch</text>
     </labels>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_103</name>
+    <text>Valve Faults</text>
+    <x>297</x>
+    <y>230</y>
+    <width>200</width>
+    <height>22</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="255" green="255" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="cryo.Heater.On" red="229" green="56" blue="35">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <border_width>1</border_width>
   </widget>
 </display>
