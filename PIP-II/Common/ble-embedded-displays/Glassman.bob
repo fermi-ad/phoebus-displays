@@ -11,16 +11,28 @@
   </actions>
   <grid_step_x>5</grid_step_x>
   <grid_step_y>5</grid_step_y>
-  <widget type="label" version="2.0.0">
-    <name>Label_7</name>
-    <text>	Voltage Control</text>
-    <x>320</x>
-    <y>205</y>
-    <width>140</width>
-    <height>30</height>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <border_width>1</border_width>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_1</name>
+    <macros>
+      <pv_name></pv_name>
+    </macros>
+    <x>5</x>
+    <y>55</y>
+    <width>310</width>
+    <height>100</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label</name>
@@ -31,6 +43,10 @@
       <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
       </font>
     </font>
+    <background_color>
+      <color red="230" green="77" blue="77">
+      </color>
+    </background_color>
     <transparent>false</transparent>
     <horizontal_alignment>1</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
@@ -44,8 +60,8 @@
   </widget>
   <widget type="group" version="3.0.0">
     <name>Grouping Container_1</name>
-    <x>72</x>
-    <y>336</y>
+    <x>5</x>
+    <y>345</y>
     <width>355</width>
     <height>91</height>
     <style>3</style>
@@ -143,34 +159,325 @@ $(pv_value)</tooltip>
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
   </widget>
-  <widget type="group" version="3.0.0">
-    <name>Grouping Container_2</name>
-    <x>2</x>
-    <y>45</y>
-    <width>355</width>
-    <height>103</height>
-    <style>3</style>
-    <foreground_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </foreground_color>
-    <line_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </line_color>
+  <widget type="picture" version="2.0.0">
+    <name>Picture</name>
+    <file>../../../images/XPGlassmanEJ-logo.png</file>
+    <x>5</x>
+    <y>455</y>
+    <width>190</width>
+    <height>40</height>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_2</name>
+    <actions>
+      <action type="write_pv">
+        <description>WritePV</description>
+        <pv_name>$(pv_name)</pv_name>
+        <value>4</value>
+      </action>
+    </actions>
+    <pv_name>$(system)$(dev):OnOff</pv_name>
+    <text>Reset</text>
+    <x>185</x>
+    <y>65</y>
+    <height>20</height>
     <background_color>
       <color red="240" green="240" blue="240">
       </color>
     </background_color>
+    <rules>
+      <rule name="Show On Button" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0=0">
+          <value>true</value>
+        </exp>
+        <pv_name>$(system)$(dev):OnOffMonitor</pv_name>
+      </rule>
+    </rules>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <x>330</x>
+    <y>95</y>
+    <width>140</width>
+    <height>60</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>Label_7</name>
+      <text>	Voltage Control</text>
+      <width>140</width>
+      <height>30</height>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_1</name>
+      <pv_name>$(system)$(dev):ModeMonitor</pv_name>
+      <x>5</x>
+      <y>5</y>
+      <width>23</width>
+      <height>23</height>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_3</name>
+      <pv_name>$(system)$(dev):ModeMonitor</pv_name>
+      <x>5</x>
+      <y>35</y>
+      <width>23</width>
+      <height>23</height>
+      <off_color>
+        <color name="On" red="0" green="255" blue="0">
+        </color>
+      </off_color>
+      <on_color>
+        <color name="Off" red="60" green="100" blue="60">
+        </color>
+      </on_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_8</name>
+      <text>	Current Control</text>
+      <y>30</y>
+      <width>140</width>
+      <height>30</height>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_width>1</border_width>
+    </widget>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_3</name>
+    <text>IDN :</text>
+    <x>275</x>
+    <y>470</y>
+    <width>43</width>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
     <actions>
     </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_2</name>
+    <pv_name>$(system)$(dev):Version</pv_name>
+    <x>330</x>
+    <y>470</y>
+    <width>160</width>
+    <background_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_31</name>
+    <text>Control</text>
+    <x>5</x>
+    <y>35</y>
+    <width>310</width>
+    <background_color>
+      <color red="230" green="77" blue="77">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button</name>
+    <actions>
+      <action type="write_pv">
+        <description>WritePV</description>
+        <pv_name>$(pv_name)</pv_name>
+        <value>0</value>
+      </action>
+    </actions>
+    <pv_name>$(system)$(dev):OnOff</pv_name>
+    <text>Set Off</text>
+    <x>120</x>
+    <y>95</y>
+    <width>50</width>
+    <height>20</height>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <rules>
+      <rule name="Show Off Button" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0=1">
+          <value>true</value>
+        </exp>
+        <pv_name>$(system)$(dev):OnOffMonitor</pv_name>
+      </rule>
+    </rules>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_1</name>
+    <actions>
+      <action type="write_pv">
+        <description>WritePV</description>
+        <pv_name>$(pv_name)</pv_name>
+        <value>1</value>
+      </action>
+    </actions>
+    <pv_name>$(system)$(dev):OnOff</pv_name>
+    <text>Set On</text>
+    <x>120</x>
+    <y>95</y>
+    <width>50</width>
+    <height>20</height>
+    <visible>false</visible>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <rules>
+      <rule name="Show On Button" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0=0">
+          <value>true</value>
+        </exp>
+        <pv_name>$(system)$(dev):OnOffMonitor</pv_name>
+      </rule>
+    </rules>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED</name>
+    <pv_name>$(system)$(dev):OnOffMonitor</pv_name>
+    <x>15</x>
+    <y>95</y>
+    <off_label>0</off_label>
+    <on_label>1</on_label>
+    <foreground_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </foreground_color>
+    <actions>
+    </actions>
+  </widget>
+  <widget type="byte_monitor" version="2.0.0">
+    <name>Byte Monitor_21</name>
+    <pv_name>$(system)EXTRCT:Status</pv_name>
+    <x>15</x>
+    <y>65</y>
+    <width>20</width>
+    <numBits>1</numBits>
+    <bitReverse>true</bitReverse>
+    <horizontal>false</horizontal>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>Boolean Button_9</name>
+    <pv_name>$(system)PLC2W5:wBIT</pv_name>
+    <x>120</x>
+    <y>65</y>
+    <width>50</width>
+    <height>20</height>
+    <off_label>Enable</off_label>
+    <off_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </off_color>
+    <on_label>Disable Extractor</on_label>
+    <on_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </on_color>
+    <show_led>false</show_led>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <show_confirm_dialog>2</show_confirm_dialog>
+    <confirm_message>Are your sure you want to Enable Extractor Supply?</confirm_message>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_13</name>
+    <text>Output</text>
+    <x>45</x>
+    <y>95</y>
+    <width>65</width>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_14</name>
+    <text>Enable</text>
+    <x>45</x>
+    <y>65</y>
+    <width>65</width>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <x>5</x>
+    <y>165</y>
+    <width>400</width>
+    <height>170</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>Label_32</name>
+      <text>Settings</text>
+      <width>400</width>
+      <background_color>
+        <color red="230" green="77" blue="77">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
     <widget type="rectangle" version="2.0.0">
-      <name>Rectangle_1</name>
+      <name>Rectangle_2</name>
       <macros>
         <pv_name></pv_name>
       </macros>
-      <width>355</width>
-      <height>103</height>
+      <y>20</y>
+      <width>400</width>
+      <height>150</height>
       <line_width>0</line_width>
       <line_color>
         <color red="0" green="128" blue="255">
@@ -185,38 +492,22 @@ $(pv_value)</tooltip>
       <tooltip>$(pv_name)
 $(pv_value)</tooltip>
     </widget>
-    <widget type="action_button" version="3.0.0">
-      <name>Action Button</name>
-      <actions>
-        <action type="write_pv">
-          <description>WritePV</description>
-          <pv_name>$(pv_name)</pv_name>
-          <value>0</value>
-        </action>
-      </actions>
-      <pv_name>$(system)$(dev):OnOff</pv_name>
-      <text>Set Off</text>
-      <x>123</x>
-      <y>48</y>
-      <width>55</width>
-      <height>31</height>
-      <visible>false</visible>
-      <background_color>
-        <color red="240" green="240" blue="240">
-        </color>
-      </background_color>
-      <rules>
-        <rule name="Show Off Button" prop_id="visible" out_exp="false">
-          <exp bool_exp="pv0=1">
-            <value>true</value>
-          </exp>
-          <pv_name>$(system)$(dev):OnOffMonitor</pv_name>
-        </rule>
-      </rules>
+    <widget type="scrollbar" version="2.0.0">
+      <name>Scrollbar</name>
+      <pv_name>$(system)$(dev):VoltageSetpoint</pv_name>
+      <x>80</x>
+      <y>110</y>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="scrollbar" version="2.0.0">
+      <name>Scrollbar_2</name>
+      <pv_name>$(system)$(dev):CurrentSetpoint</pv_name>
+      <x>200</x>
+      <y>110</y>
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="action_button" version="3.0.0">
-      <name>Action Button_1</name>
+      <name>Action Button_3</name>
       <actions>
         <action type="write_pv">
           <description>WritePV</description>
@@ -225,11 +516,10 @@ $(pv_value)</tooltip>
         </action>
       </actions>
       <pv_name>$(system)$(dev):OnOff</pv_name>
-      <text>Set On</text>
-      <x>189</x>
-      <y>48</y>
-      <width>55</width>
-      <height>31</height>
+      <text>Set Value</text>
+      <x>310</x>
+      <y>70</y>
+      <width>73</width>
       <background_color>
         <color red="240" green="240" blue="240">
         </color>
@@ -244,155 +534,11 @@ $(pv_value)</tooltip>
       </rules>
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
-    <widget type="led" version="2.0.0">
-      <name>LED</name>
-      <pv_name>$(system)$(dev):OnOffMonitor</pv_name>
-      <x>83</x>
-      <y>52</y>
-      <width>24</width>
-      <height>24</height>
-      <off_color>
-        <color name="Major" red="255" green="0" blue="0">
-        </color>
-      </off_color>
-      <foreground_color>
-        <color red="192" green="192" blue="192">
-        </color>
-      </foreground_color>
-      <actions>
-      </actions>
-    </widget>
-    <widget type="label" version="2.0.0">
-      <name>Label_3</name>
-      <text>IDN :</text>
-      <x>6</x>
-      <y>12</y>
-      <width>43</width>
-      <horizontal_alignment>2</horizontal_alignment>
-      <vertical_alignment>1</vertical_alignment>
-      <wrap_words>false</wrap_words>
-      <actions>
-      </actions>
-      <border_color>
-        <color red="0" green="128" blue="255">
-        </color>
-      </border_color>
-    </widget>
-    <widget type="textupdate" version="2.0.0">
-      <name>Text Update_2</name>
-      <pv_name>$(system)$(dev):Version</pv_name>
-      <x>54</x>
-      <y>12</y>
-      <width>277</width>
-      <background_color>
-        <color red="255" green="255" blue="255">
-        </color>
-      </background_color>
-      <vertical_alignment>1</vertical_alignment>
-      <wrap_words>false</wrap_words>
-      <actions>
-      </actions>
-      <border_color>
-        <color red="0" green="128" blue="255">
-        </color>
-      </border_color>
-    </widget>
-  </widget>
-  <widget type="led" version="2.0.0">
-    <name>LED_1</name>
-    <pv_name>$(system)$(dev):ModeMonitor</pv_name>
-    <x>325</x>
-    <y>210</y>
-    <width>23</width>
-    <height>23</height>
-    <foreground_color>
-      <color red="192" green="192" blue="192">
-      </color>
-    </foreground_color>
-    <actions>
-    </actions>
-  </widget>
-  <widget type="led" version="2.0.0">
-    <name>LED_3</name>
-    <pv_name>$(system)$(dev):ModeMonitor</pv_name>
-    <x>325</x>
-    <y>240</y>
-    <width>23</width>
-    <height>23</height>
-    <off_color>
-      <color name="On" red="0" green="255" blue="0">
-      </color>
-    </off_color>
-    <on_color>
-      <color name="Off" red="60" green="100" blue="60">
-      </color>
-    </on_color>
-    <foreground_color>
-      <color red="192" green="192" blue="192">
-      </color>
-    </foreground_color>
-    <actions>
-    </actions>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label_8</name>
-    <text>	Current Control</text>
-    <x>320</x>
-    <y>235</y>
-    <width>140</width>
-    <height>30</height>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <border_width>1</border_width>
-  </widget>
-  <widget type="scrollbar" version="2.0.0">
-    <name>Scrollbar</name>
-    <pv_name>$(system)$(dev):VoltageSetpoint</pv_name>
-    <x>286</x>
-    <y>435</y>
-    <width>200</width>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
-  <widget type="scrollbar" version="2.0.0">
-    <name>Scrollbar_2</name>
-    <pv_name>$(system)$(dev):CurrentSetpoint</pv_name>
-    <x>286</x>
-    <y>465</y>
-    <width>200</width>
-  </widget>
-  <widget type="group" version="3.0.0">
-    <name>Group</name>
-    <y>164</y>
-    <width>310</width>
-    <height>120</height>
-    <style>3</style>
-    <transparent>true</transparent>
-    <widget type="rectangle" version="2.0.0">
-      <name>Rectangle_3</name>
-      <macros>
-        <pv_name></pv_name>
-      </macros>
-      <width>310</width>
-      <height>120</height>
-      <line_width>0</line_width>
-      <line_color>
-        <color red="0" green="128" blue="255">
-        </color>
-      </line_color>
-      <background_color>
-        <color red="240" green="240" blue="240">
-        </color>
-      </background_color>
-      <actions>
-      </actions>
-      <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-    </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_9</name>
       <pv_name>$(system)$(dev):VoltageMonitor</pv_name>
       <x>80</x>
-      <y>35</y>
+      <y>60</y>
       <background_color>
         <color red="255" green="255" blue="255">
         </color>
@@ -410,7 +556,7 @@ $(pv_value)</tooltip>
       <name>Text Update_10</name>
       <pv_name>$(system)$(dev):CurrentMonitor</pv_name>
       <x>200</x>
-      <y>35</y>
+      <y>60</y>
       <background_color>
         <color red="255" green="255" blue="255">
         </color>
@@ -428,7 +574,7 @@ $(pv_value)</tooltip>
       <name>Label_15</name>
       <text>Voltage</text>
       <x>80</x>
-      <y>5</y>
+      <y>30</y>
       <background_color>
         <color name="Button_Background" red="210" green="210" blue="210">
         </color>
@@ -448,7 +594,7 @@ $(pv_value)</tooltip>
       <name>Label_16</name>
       <text>Current</text>
       <x>200</x>
-      <y>5</y>
+      <y>30</y>
       <background_color>
         <color name="Button_Background" red="210" green="210" blue="210">
         </color>
@@ -467,7 +613,7 @@ $(pv_value)</tooltip>
     <widget type="label" version="2.0.0">
       <name>Label_17</name>
       <text>Output: </text>
-      <y>35</y>
+      <y>60</y>
       <width>80</width>
       <horizontal_alignment>2</horizontal_alignment>
       <vertical_alignment>1</vertical_alignment>
@@ -482,7 +628,7 @@ $(pv_value)</tooltip>
     <widget type="label" version="2.0.0">
       <name>Label_19</name>
       <text>Set Point: </text>
-      <y>65</y>
+      <y>90</y>
       <width>80</width>
       <horizontal_alignment>2</horizontal_alignment>
       <vertical_alignment>1</vertical_alignment>
@@ -497,8 +643,8 @@ $(pv_value)</tooltip>
     <widget type="textentry" version="3.0.0">
       <name>Text Input_4</name>
       <pv_name>$(system)$(dev):VoltageSetpoint</pv_name>
-      <x>81</x>
-      <y>65</y>
+      <x>80</x>
+      <y>90</y>
       <actions>
       </actions>
       <border_alarm_sensitive>false</border_alarm_sensitive>
@@ -511,7 +657,7 @@ $(pv_value)</tooltip>
       <name>Text Input_5</name>
       <pv_name>$(system)$(dev):CurrentSetpoint</pv_name>
       <x>200</x>
-      <y>65</y>
+      <y>90</y>
       <actions>
       </actions>
       <border_alarm_sensitive>false</border_alarm_sensitive>
@@ -524,7 +670,7 @@ $(pv_value)</tooltip>
       <name>Text Update_13</name>
       <pv_name>$(system)$(dev):PowerMonitor</pv_name>
       <x>155</x>
-      <y>95</y>
+      <y>140</y>
       <background_color>
         <color red="255" green="255" blue="255">
         </color>
@@ -542,7 +688,7 @@ $(pv_value)</tooltip>
       <name>Label_20</name>
       <text>Power: </text>
       <x>75</x>
-      <y>95</y>
+      <y>140</y>
       <width>80</width>
       <horizontal_alignment>2</horizontal_alignment>
       <vertical_alignment>1</vertical_alignment>
@@ -554,13 +700,5 @@ $(pv_value)</tooltip>
         </color>
       </border_color>
     </widget>
-  </widget>
-  <widget type="picture" version="2.0.0">
-    <name>Picture</name>
-    <file>../../../images/XPGlassmanEJ-logo.png</file>
-    <x>5</x>
-    <y>455</y>
-    <width>190</width>
-    <height>40</height>
   </widget>
 </display>
