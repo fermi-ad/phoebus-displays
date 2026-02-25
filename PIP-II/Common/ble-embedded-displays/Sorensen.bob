@@ -1,0 +1,881 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>GlassmanEJ</name>
+  <width>500</width>
+  <height>500</height>
+  <background_color>
+    <color red="240" green="240" blue="240">
+    </color>
+  </background_color>
+  <actions>
+  </actions>
+  <grid_step_x>5</grid_step_x>
+  <grid_step_y>5</grid_step_y>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_1</name>
+    <macros>
+      <pv_name></pv_name>
+    </macros>
+    <x>5</x>
+    <y>55</y>
+    <width>310</width>
+    <height>100</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <text>Sorensen Power Supply</text>
+    <width>500</width>
+    <height>30</height>
+    <font>
+      <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="acorn.White" red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="acorn.Black" red="38" green="38" blue="38">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Grouping Container_1</name>
+    <x>5</x>
+    <y>345</y>
+    <width>355</width>
+    <height>91</height>
+    <style>3</style>
+    <foreground_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </foreground_color>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle</name>
+      <macros>
+        <pv_name></pv_name>
+      </macros>
+      <width>355</width>
+      <height>91</height>
+      <line_width>0</line_width>
+      <line_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </line_color>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED</name>
+      <pv_name>$(system)$(dev):FaultMonitor</pv_name>
+      <x>14</x>
+      <y>14</y>
+      <width>23</width>
+      <height>23</height>
+      <off_color>
+        <color name="Major" red="255" green="0" blue="0">
+        </color>
+      </off_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <actions>
+      </actions>
+      <rules>
+        <rule name="Visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pvStr0 = &quot;YES&quot;">
+            <value>false</value>
+          </exp>
+          <pv_name>loc://widget_disable</pv_name>
+        </rule>
+      </rules>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update</name>
+      <pv_name>$(system)$(dev):ERR</pv_name>
+      <x>48</x>
+      <y>16</y>
+      <width>271</width>
+      <background_color>
+        <color red="255" green="255" blue="255">
+        </color>
+      </background_color>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <rules>
+        <rule name="Visibilty" prop_id="visible" out_exp="false">
+          <exp bool_exp="pvStr0 = &quot;YES&quot;">
+            <value>false</value>
+          </exp>
+          <pv_name>loc://widget_disable</pv_name>
+        </rule>
+      </rules>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Action Button_4</name>
+      <actions>
+        <action type="write_pv">
+          <description>WritePV</description>
+          <pv_name>$(pv_name)</pv_name>
+          <value>1</value>
+        </action>
+      </actions>
+      <pv_name>$(PVprefix):CERR</pv_name>
+      <text>Clear Errors</text>
+      <x>180</x>
+      <y>48</y>
+      <width>103</width>
+      <height>31</height>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <rules>
+        <rule name="Visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pvStr0 = &quot;YES&quot;">
+            <value>false</value>
+          </exp>
+          <pv_name>loc://widget_disable</pv_name>
+        </rule>
+      </rules>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+  </widget>
+  <widget type="picture" version="2.0.0">
+    <name>Picture</name>
+    <file>../../../images/Sorensen.png</file>
+    <x>5</x>
+    <y>434</y>
+    <width>190</width>
+    <height>75</height>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_2</name>
+    <actions>
+      <action type="write_pv">
+        <description>WritePV</description>
+        <pv_name>$(pv_name)</pv_name>
+        <value>4</value>
+      </action>
+    </actions>
+    <pv_name>$(system)$(dev):OnOff</pv_name>
+    <text>Reset</text>
+    <x>185</x>
+    <y>65</y>
+    <height>20</height>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <rules>
+      <rule name="Show On Button" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0=0">
+          <value>true</value>
+        </exp>
+        <pv_name>$(system)$(dev):OnOffMonitor</pv_name>
+      </rule>
+      <rule name="Visibilitiy" prop_id="visible" out_exp="false">
+        <exp bool_exp="pvStr0 = &quot;YES&quot;">
+          <value>false</value>
+        </exp>
+        <pv_name>loc://widget_disable</pv_name>
+      </rule>
+    </rules>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <x>330</x>
+    <y>95</y>
+    <width>140</width>
+    <height>60</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>Label_8</name>
+      <text>Current Control</text>
+      <x>28</x>
+      <y>20</y>
+      <width>104</width>
+      <height>30</height>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <rules>
+        <rule name="Visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pvStr0 = &quot;YES&quot;">
+            <value>false</value>
+          </exp>
+          <pv_name>loc://widget_disable</pv_name>
+        </rule>
+      </rules>
+      <border_width>1</border_width>
+    </widget>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_3</name>
+    <text>IDN :</text>
+    <x>275</x>
+    <y>470</y>
+    <width>43</width>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="Visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pvStr0 = &quot;YES&quot;">
+          <value>false</value>
+        </exp>
+        <pv_name>loc://widget_disable</pv_name>
+      </rule>
+    </rules>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_2</name>
+    <pv_name>$(system)$(dev):Version</pv_name>
+    <x>330</x>
+    <y>470</y>
+    <width>160</width>
+    <background_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="Visibilty" prop_id="visible" out_exp="false">
+        <exp bool_exp="pvStr0 = &quot;YES&quot;">
+          <value>false</value>
+        </exp>
+        <pv_name>loc://widget_disable</pv_name>
+      </rule>
+    </rules>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_31</name>
+    <text>Control</text>
+    <x>5</x>
+    <y>35</y>
+    <width>310</width>
+    <foreground_color>
+      <color name="acorn.White" red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="acorn.Black" red="38" green="38" blue="38">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button</name>
+    <actions>
+      <action type="write_pv">
+        <description>WritePV</description>
+        <pv_name>$(pv_name)</pv_name>
+        <value>0</value>
+      </action>
+    </actions>
+    <pv_name>$(system)$(dev):OnOff</pv_name>
+    <text>Set Off</text>
+    <x>120</x>
+    <y>95</y>
+    <width>50</width>
+    <height>20</height>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <rules>
+      <rule name="Show Off Button" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0=1">
+          <value>true</value>
+        </exp>
+        <pv_name>$(system)$(dev):OnOffMonitor</pv_name>
+      </rule>
+      <rule name="Visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pvStr0 = &quot;YES&quot;">
+          <value>false</value>
+        </exp>
+        <pv_name>loc://widget_disable</pv_name>
+      </rule>
+    </rules>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_1</name>
+    <actions>
+      <action type="write_pv">
+        <description>WritePV</description>
+        <pv_name>$(pv_name)</pv_name>
+        <value>1</value>
+      </action>
+    </actions>
+    <pv_name>$(system)$(dev):OnOff</pv_name>
+    <text>Set On</text>
+    <x>120</x>
+    <y>95</y>
+    <width>50</width>
+    <height>20</height>
+    <visible>false</visible>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <rules>
+      <rule name="Show On Button" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0=0">
+          <value>true</value>
+        </exp>
+        <pv_name>$(system)$(dev):OnOffMonitor</pv_name>
+      </rule>
+    </rules>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED</name>
+    <pv_name>$(system)$(dev):OnOffMonitor</pv_name>
+    <x>15</x>
+    <y>95</y>
+    <off_label>0</off_label>
+    <on_label>1</on_label>
+    <foreground_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </foreground_color>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="Visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pvStr0 = &quot;YES&quot;">
+          <value>false</value>
+        </exp>
+        <pv_name>loc://widget_disable</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="byte_monitor" version="2.0.0">
+    <name>Byte Monitor_21</name>
+    <pv_name>$(system)FLMNT:Status</pv_name>
+    <x>15</x>
+    <y>65</y>
+    <width>20</width>
+    <numBits>1</numBits>
+    <bitReverse>true</bitReverse>
+    <horizontal>false</horizontal>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>Boolean Button_9</name>
+    <pv_name>$(system)PLC2W2:wBIT</pv_name>
+    <x>120</x>
+    <y>65</y>
+    <width>50</width>
+    <height>20</height>
+    <off_label>Enable</off_label>
+    <off_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </off_color>
+    <on_label>Disable Extractor</on_label>
+    <on_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </on_color>
+    <show_led>false</show_led>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <show_confirm_dialog>2</show_confirm_dialog>
+    <confirm_message>Are your sure you want to Enable Extractor Supply?</confirm_message>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_13</name>
+    <text>Output</text>
+    <x>45</x>
+    <y>95</y>
+    <width>65</width>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="Visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pvStr0 = &quot;YES&quot;">
+          <value>false</value>
+        </exp>
+        <pv_name>loc://widget_disable</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_14</name>
+    <text>Enable</text>
+    <x>45</x>
+    <y>65</y>
+    <width>65</width>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <x>5</x>
+    <y>165</y>
+    <width>400</width>
+    <height>170</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>Label_32</name>
+      <text>Settings</text>
+      <width>400</width>
+      <foreground_color>
+        <color name="acorn.White" red="255" green="255" blue="255">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="acorn.Black" red="38" green="38" blue="38">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle_2</name>
+      <macros>
+        <pv_name></pv_name>
+      </macros>
+      <y>20</y>
+      <width>400</width>
+      <height>150</height>
+      <line_width>0</line_width>
+      <line_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </line_color>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget type="scrollbar" version="2.0.0">
+      <name>Scrollbar</name>
+      <pv_name>$(system)$(dev):VoltageSetpoint</pv_name>
+      <x>80</x>
+      <y>110</y>
+      <rules>
+        <rule name="Visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pvStr0 = &quot;YES&quot;">
+            <value>false</value>
+          </exp>
+          <pv_name>loc://widget_disable</pv_name>
+        </rule>
+      </rules>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="scrollbar" version="2.0.0">
+      <name>Scrollbar_2</name>
+      <pv_name>$(system)$(dev):CurrentSetpoint</pv_name>
+      <x>200</x>
+      <y>110</y>
+      <rules>
+        <rule name="Visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pvStr0 = &quot;YES&quot;">
+            <value>false</value>
+          </exp>
+          <pv_name>loc://widget_disable</pv_name>
+        </rule>
+      </rules>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Action Button_3</name>
+      <actions>
+        <action type="write_pv">
+          <description>WritePV</description>
+          <pv_name>$(pv_name)</pv_name>
+          <value>1</value>
+        </action>
+      </actions>
+      <pv_name>$(system)$(dev):OnOff</pv_name>
+      <text>Set Value</text>
+      <x>310</x>
+      <y>70</y>
+      <width>73</width>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <rules>
+        <rule name="Show On Button" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0=0">
+            <value>true</value>
+          </exp>
+          <pv_name>$(system)$(dev):OnOffMonitor</pv_name>
+        </rule>
+        <rule name="Visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pvStr0 = &quot;YES&quot;">
+            <value>false</value>
+          </exp>
+          <pv_name>loc://widget_disable</pv_name>
+        </rule>
+      </rules>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_9</name>
+      <pv_name>A0TST:IS_BLE_FLMNT:Voltage</pv_name>
+      <x>80</x>
+      <y>60</y>
+      <background_color>
+        <color red="255" green="255" blue="255">
+        </color>
+      </background_color>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_10</name>
+      <pv_name>A0TST:IS_BLE_FLMNT:Current</pv_name>
+      <x>200</x>
+      <y>60</y>
+      <background_color>
+        <color red="255" green="255" blue="255">
+        </color>
+      </background_color>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_15</name>
+      <text>Voltage</text>
+      <x>80</x>
+      <y>30</y>
+      <background_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_16</name>
+      <text>Current</text>
+      <x>200</x>
+      <y>30</y>
+      <background_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_17</name>
+      <text>Output: </text>
+      <y>60</y>
+      <width>80</width>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_19</name>
+      <text>Set Point: </text>
+      <y>90</y>
+      <width>80</width>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Text Input_4</name>
+      <pv_name>A0TST:IS_BLE_FLMNT:sVoltage</pv_name>
+      <x>80</x>
+      <y>90</y>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Text Input_5</name>
+      <pv_name>A0TST:IS_BLE_FLMNT:sCurrent</pv_name>
+      <x>200</x>
+      <y>90</y>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_13</name>
+      <pv_name>$(system)$(dev):PowerMonitor</pv_name>
+      <x>155</x>
+      <y>140</y>
+      <background_color>
+        <color red="255" green="255" blue="255">
+        </color>
+      </background_color>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <rules>
+        <rule name="Visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pvStr0 = &quot;YES&quot;">
+            <value>false</value>
+          </exp>
+          <pv_name>loc://widget_disable</pv_name>
+        </rule>
+      </rules>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_20</name>
+      <text>Power: </text>
+      <x>75</x>
+      <y>140</y>
+      <width>80</width>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <rules>
+        <rule name="Visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pvStr0 = &quot;YES&quot;">
+            <value>false</value>
+          </exp>
+          <pv_name>loc://widget_disable</pv_name>
+        </rule>
+      </rules>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_18</name>
+    <text>Disable Widets :</text>
+    <x>320</x>
+    <y>33</y>
+    <width>102</width>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+  </widget>
+  <widget type="combo" version="2.0.0">
+    <name>Combo Box</name>
+    <pv_name>loc://widget_disable&lt;STRING&gt;("YES")</pv_name>
+    <x>422</x>
+    <y>33</y>
+    <width>68</width>
+    <height>32</height>
+    <items>
+      <item>YES</item>
+      <item>NO</item>
+    </items>
+    <confirm_message></confirm_message>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_1</name>
+    <pv_name>$(system)$(dev):ModeMonitor</pv_name>
+    <x>324</x>
+    <y>80</y>
+    <width>23</width>
+    <height>23</height>
+    <foreground_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </foreground_color>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="Visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pvStr0 = &quot;YES&quot;">
+          <value>false</value>
+        </exp>
+        <pv_name>loc://widget_disable</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_7</name>
+    <text>Voltage Control</text>
+    <x>359</x>
+    <y>78</y>
+    <width>103</width>
+    <height>30</height>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <rules>
+      <rule name="Visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pvStr0 = &quot;YES&quot;">
+          <value>false</value>
+        </exp>
+        <pv_name>loc://widget_disable</pv_name>
+      </rule>
+    </rules>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_3</name>
+    <pv_name>$(system)$(dev):ModeMonitor</pv_name>
+    <x>324</x>
+    <y>117</y>
+    <width>23</width>
+    <height>23</height>
+    <off_color>
+      <color name="On" red="0" green="255" blue="0">
+      </color>
+    </off_color>
+    <on_color>
+      <color name="Off" red="60" green="100" blue="60">
+      </color>
+    </on_color>
+    <foreground_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </foreground_color>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="Visitbility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pvStr0 = &quot;YES&quot;">
+          <value>false</value>
+        </exp>
+        <pv_name>loc://widget_disable</pv_name>
+      </rule>
+    </rules>
+  </widget>
+</display>
