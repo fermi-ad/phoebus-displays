@@ -1,0 +1,1453 @@
+#h 175
+#x 581
+4 0 1
+beginScreenProperties
+major 4
+minor 0
+release 1
+x 444
+y 138
+w 1116
+h 420
+font "helvetica-medium-r-12.0"
+ctlFont "helvetica-medium-r-12.0"
+btnFont "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 5
+textColor index 14
+ctlFgColor1 index 16
+ctlFgColor2 index 14
+ctlBgColor1 index 4
+ctlBgColor2 index 12
+topShadowColor index 1
+botShadowColor index 11
+title "SRF Phase Reference Line Tracking - $(CM)"
+showGrid
+snapToGrid
+gridSize 4
+endScreenProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 4
+y 12
+w 1032
+h 396
+lineColor index 14
+fill
+fillColor index 3
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 16
+y 4
+w 80
+h 20
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 2
+value {
+  "Rack $(R)"
+}
+border
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 280
+y 48
+w 88
+h 24
+controlPv "$(CM)00:RACK$(R):PRL_MODE"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+fgAlarm
+bgColor index 5
+limitsFromDb
+nullColor index 18
+nullCondition "disabled"
+useAlarmBorder
+newPos
+objType "controls"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 200
+y 48
+w 68
+h 24
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 4
+useDisplayBg
+value {
+  "Inputs"
+}
+endObjectProperties
+
+# (Choice Button)
+object activeChoiceButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 384
+y 48
+w 268
+h 24
+fgColor index 14
+bgColor index 4
+selectColor index 3
+inconsistentColor index 12
+topShadowColor index 1
+botShadowColor index 11
+controlPv "$(CM)00:RACK$(R):PRL_MODE"
+font "helvetica-medium-r-12.0"
+orientation "horizontal"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 576
+y 204
+w 100
+h 24
+controlPv "$(CM)00:RACK$(R):PRL_OFFSET_NOM"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+fgAlarm
+bgColor index 5
+limitsFromDb
+nullColor index 18
+nullCondition "disabled"
+useAlarmBorder
+newPos
+objType "controls"
+endObjectProperties
+
+# (Choice Button)
+object activeChoiceButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 384
+y 84
+w 120
+h 24
+fgColor index 14
+bgColor index 4
+selectColor index 3
+inconsistentColor index 12
+topShadowColor index 1
+botShadowColor index 11
+controlPv "$(CM)00:RACK$(R):PRL_ENABLE"
+font "helvetica-medium-r-12.0"
+orientation "horizontal"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 280
+y 84
+w 88
+h 24
+controlPv "$(CM)00:RACK$(R):PRL_ENABLE_RBV"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+fgAlarm
+bgColor index 5
+limitsFromDb
+nullColor index 18
+nullCondition "disabled"
+useAlarmBorder
+newPos
+objType "controls"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 200
+y 84
+w 68
+h 24
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 4
+useDisplayBg
+value {
+  "Tracking"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 864
+y 164
+w 84
+h 36
+font "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 4
+useDisplayBg
+value {
+  "Difference from"
+  "Last Accepted"
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 856
+y 200
+w 108
+h 24
+controlPv "$(CM)00:RACK$(R):PRL_OFFSET_DIFF"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+fgAlarm
+bgColor index 5
+limitsFromDb
+nullColor index 18
+nullCondition "disabled"
+showUnits
+useAlarmBorder
+newPos
+objType "controls"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 800
+y 236
+w 148
+h 24
+fgColor index 14
+onColor index 4
+offColor index 4
+topShadowColor index 1
+botShadowColor index 11
+controlPv "$(CM)00:RACK$(R):PRL_OFFSET_RESET"
+pressValue "1"
+onLabel "Accept Current Offset"
+offLabel "Accept Current Offset"
+3d
+useEnumNumeric
+font "helvetica-medium-r-12.0"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 576
+y 236
+w 100
+h 24
+controlPv "$(CM)00:RACK$(R):PRL_OFFSET_INIT"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+fgAlarm
+bgColor index 5
+limitsFromDb
+nullColor index 18
+nullCondition "disabled"
+useAlarmBorder
+newPos
+objType "controls"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 816
+y 140
+w 192
+h 24
+
+beginGroup
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 816
+y 140
+w 192
+h 24
+controlPv "$(CM)00:RACK$(R):PRL_OFFSET_MSG"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 36
+bgColor index 7
+limitsFromDb
+nullColor index 18
+nullCondition "disabled"
+newPos
+objType "controls"
+endObjectProperties
+
+endGroup
+
+visPv "$(CM)00:RACK$(R):PRL_OFFSET_STAT.SEVR"
+visMin "1"
+visMax "2"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 576
+y 172
+w 100
+h 24
+
+beginGroup
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 576
+y 172
+w 100
+h 24
+controlPv "$(CM)00:RACK$(R):PRL_OFFSET_RAW"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+fgAlarm
+bgColor index 5
+precision 2
+nullColor index 18
+nullCondition "disabled"
+useAlarmBorder
+newPos
+objType "controls"
+endObjectProperties
+
+endGroup
+
+visPv "$(CM)00:RACK$(R):PRL_OFFSET_STAT"
+visInvert
+visMin "2"
+visMax "3"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 576
+y 172
+w 100
+h 24
+
+beginGroup
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 576
+y 172
+w 100
+h 24
+controlPv "$(CM)00:RACK$(R):PRL_OFFSET_RAW"
+font "helvetica-medium-i-12.0"
+fontAlign "center"
+fgColor index 14
+fgAlarm
+bgColor index 5
+precision 2
+nullColor index 18
+nullCondition "disabled"
+useAlarmBorder
+newPos
+objType "controls"
+endObjectProperties
+
+endGroup
+
+visPv "$(CM)00:RACK$(R):PRL_OFFSET_STAT"
+visMin "2"
+visMax "3"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 680
+y 172
+w 120
+h 24
+controlPv "$(CM)00:RACK$(R):PRL_OFFSET_TS"
+font "helvetica-medium-r-12.0"
+fgColor index 14
+fgAlarm
+bgColor index 5
+useDisplayBg
+limitsFromDb
+nullColor index 18
+nullCondition "disabled"
+useAlarmBorder
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 680
+y 204
+w 120
+h 24
+controlPv "$(CM)00:RACK$(R):PRL_OFFSET_NOM_TS"
+font "helvetica-medium-r-12.0"
+fgColor index 14
+fgAlarm
+bgColor index 5
+useDisplayBg
+limitsFromDb
+nullColor index 18
+nullCondition "disabled"
+useAlarmBorder
+newPos
+objType "controls"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 704
+y 136
+w 304
+h 32
+
+beginGroup
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 816
+y 140
+w 192
+h 24
+controlPv "$(CM)00:RACK$(R):PRL_OFFSET_MSG"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 22
+bgColor index 5
+limitsFromDb
+nullColor index 18
+nullCondition "disabled"
+newPos
+objType "controls"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 704
+y 136
+w 104
+h 32
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 22
+bgColor index 5
+useDisplayBg
+value {
+  "Unable to   "
+  "calculate offset:  "
+}
+endObjectProperties
+
+endGroup
+
+visPv "$(CM)00:RACK$(R):PRL_OFFSET_STAT.SEVR"
+visMin "2"
+visMax "3"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 96
+y 64
+w 88
+h 24
+controlPv "$(CM)00:PRC$(R):PRLFLT"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+fgAlarm
+bgColor index 5
+limitsFromDb
+nullColor index 18
+nullCondition "disabled"
+useAlarmBorder
+newPos
+objType "controls"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 16
+y 64
+w 68
+h 24
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 4
+useDisplayBg
+value {
+  "PRL Fault"
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 576
+y 344
+w 100
+h 24
+controlPv "$(CM)00:RACK$(R):PRL_ZERO"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+fgAlarm
+bgColor index 5
+precision 2
+nullColor index 18
+nullCondition "disabled"
+useAlarmBorder
+newPos
+objType "controls"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 796
+y 264
+w 196
+h 44
+font "helvetica-medium-i-12.0"
+fgColor index 14
+bgColor index 4
+useDisplayBg
+value {
+  "Pushes 'Current' to 'Last Accepted',"
+  "clears PRL alarm,"
+  "and sets CKP"
+}
+endObjectProperties
+
+# (X-Y Graph)
+object xyGraphClass
+beginObjectProperties
+major 4
+minor 10
+release 0
+# Geometry
+x 20
+y 148
+w 292
+h 244
+# Appearance
+plotAreaBorder
+graphTitle "PRL Phases"
+fgColor index 13
+bgColor index 1
+gridColor index 6
+font "helvetica-medium-r-12.0"
+# Operating Modes
+nPts 0
+# X axis properties
+showXAxis
+xAxisSrc "fromUser"
+xMin -1.2
+xMax 1.2
+# Y axis properties
+showYAxis
+yAxisSrc "fromUser"
+yMin -1.2
+yMax 1.2
+yAxisFormat "g"
+yAxisPrecision 1
+# Y2 axis properties
+y2AxisSrc "AutoScale"
+y2Max 1
+# Trace Properties
+numTraces 10
+xPv {
+  0 "$(CM)00:RACK$(R):PRL_OFFSET_DIAGSUB.VALA"
+  1 "$(CM)00:RACK$(R):PRL_OFFSET_DIAGSUB.VALC"
+  2 "$(CM)00:RACK$(R):PRL_OFFSET_DIAGSUB.VALE"
+  3 "$(CM)00:RACK$(R):PRL_OFFSET_DIAGSUB.VALG"
+  4 "$(CM)00:RACK$(R):PRL_OFFSET_DIAGSUB.VALI"
+  5 "$(CM)00:RACK$(R):PRL_OFFSET_DIAGSUB.VALL"
+  6 "$(CM)00:RACK$(R):PRL_OFFSET_DIAGSUB.VALK"
+  7 "$(CM)00:RACK$(R):PRL_OFFSET_DIAGSUB.VALN"
+  8 "$(CM)00:RACK$(R):PRL_OFFSET_DIAGSUB.VALP"
+  9 "$(CM)00:RACK$(R):PRL_OFFSET_DIAGSUB.VALR"
+}
+yPv {
+  0 "$(CM)00:RACK$(R):PRL_OFFSET_DIAGSUB.VALB"
+  1 "$(CM)00:RACK$(R):PRL_OFFSET_DIAGSUB.VALD"
+  2 "$(CM)00:RACK$(R):PRL_OFFSET_DIAGSUB.VALF"
+  3 "$(CM)00:RACK$(R):PRL_OFFSET_DIAGSUB.VALH"
+  4 "$(CM)00:RACK$(R):PRL_OFFSET_DIAGSUB.VALJ"
+  5 "$(CM)00:RACK$(R):PRL_OFFSET_DIAGSUB.VALK"
+  6 "$(CM)00:RACK$(R):PRL_OFFSET_DIAGSUB.VALM"
+  7 "$(CM)00:RACK$(R):PRL_OFFSET_DIAGSUB.VALO"
+  8 "$(CM)00:RACK$(R):PRL_OFFSET_DIAGSUB.VALQ"
+  9 "$(CM)00:RACK$(R):PRL_OFFSET_DIAGSUB.VALS"
+}
+nPv {
+  0 "2"
+  1 "2"
+  2 "2"
+  3 "2"
+  4 "2"
+  5 "2"
+  6 "2"
+  7 "$(CM)00:RACK$(R):PRL_OFFSET_DIAGSUB.NOVN"
+}
+lineThickness {
+  0 2
+  1 2
+  2 2
+  3 2
+  7 2
+  8 2
+  9 2
+}
+lineStyle {
+  1 "dash"
+  7 "dash"
+}
+plotUpdateMode {
+  0 "xOrY"
+  1 "xOrY"
+  2 "xOrY"
+  3 "xOrY"
+  4 "xOrY"
+  5 "xOrY"
+  6 "xOrY"
+  7 "xOrY"
+  8 "xOrY"
+  9 "xOrY"
+}
+xSigned {
+  0 1
+}
+ySigned {
+  0 1
+}
+plotColor {
+  0 index 26
+  1 index 26
+  2 index 5
+  3 index 17
+  4 index 22
+  5 index 14
+  6 index 14
+  7 index 14
+  8 index 40
+  9 index 46
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 664
+y 48
+w 88
+h 24
+controlPv "$(CM)00:RACK$(R):PRL_MODE_CON"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+fgAlarm
+bgColor index 5
+limitsFromDb
+nullColor index 18
+nullCondition "disabled"
+useAlarmBorder
+newPos
+objType "controls"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 676
+y 28
+w 68
+h 20
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 4
+useDisplayBg
+value {
+  "Expected"
+}
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 280
+y 48
+w 92
+h 26
+lineColor index 35
+fillColor index 4
+lineWidth 2
+visPv "$(CM)00:RACK$(R):PRL_MODE_STAT.SEVR"
+visMin "1"
+visMax "5"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 336
+y 172
+w 60
+h 64
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 4
+useDisplayBg
+value {
+  "PRL"
+  "Offset"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 484
+y 176
+w 88
+h 16
+font "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 4
+useDisplayBg
+value {
+  "Current"
+}
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 436
+y 184
+w 40
+h 0
+lineColor index 25
+fillColor index 4
+lineWidth 2
+numPoints 2
+xPoints {
+  0 436
+  1 476
+}
+yPoints {
+  0 184
+  1 184
+}
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 436
+y 216
+w 40
+h 0
+lineColor index 25
+fillColor index 4
+lineWidth 2
+lineStyle "dash"
+numPoints 2
+xPoints {
+  0 436
+  1 476
+}
+yPoints {
+  0 216
+  1 216
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 484
+y 208
+w 88
+h 16
+font "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 4
+useDisplayBg
+value {
+  "Last 'Accepted'"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 484
+y 240
+w 88
+h 16
+font "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 4
+useDisplayBg
+value {
+  "Last HW Init"
+}
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 436
+y 248
+w 40
+h 0
+lineColor index 5
+fillColor index 4
+lineWidth 2
+numPoints 2
+xPoints {
+  0 436
+  1 476
+}
+yPoints {
+  0 248
+  1 248
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 324
+y 224
+w 80
+h 16
+font "helvetica-medium-i-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 4
+useDisplayBg
+value {
+  "(fwd-rev) / 2"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 484
+y 284
+w 88
+h 16
+font "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 4
+useDisplayBg
+value {
+  "Forward"
+}
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 436
+y 292
+w 40
+h 0
+lineColor index 17
+fillColor index 4
+lineWidth 2
+numPoints 2
+xPoints {
+  0 436
+  1 476
+}
+yPoints {
+  0 292
+  1 292
+}
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 436
+y 328
+w 40
+h 0
+lineColor index 22
+fillColor index 4
+lineWidth 2
+numPoints 2
+xPoints {
+  0 436
+  1 476
+}
+yPoints {
+  0 328
+  1 328
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 484
+y 320
+w 88
+h 16
+font "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 4
+useDisplayBg
+value {
+  "Reverse"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 484
+y 352
+w 88
+h 16
+font "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 4
+useDisplayBg
+value {
+  "Tracking 'Zero'"
+}
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 436
+y 360
+w 40
+h 0
+lineColor index 40
+fillColor index 4
+lineWidth 2
+numPoints 2
+xPoints {
+  0 436
+  1 476
+}
+yPoints {
+  0 360
+  1 360
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 484
+y 380
+w 88
+h 16
+font "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 4
+useDisplayBg
+value {
+  "LO Drift"
+}
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 436
+y 388
+w 40
+h 0
+lineColor index 46
+fillColor index 4
+lineWidth 2
+numPoints 2
+xPoints {
+  0 436
+  1 476
+}
+yPoints {
+  0 388
+  1 388
+}
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 4
+release 0
+x 924
+y 52
+w 76
+h 24
+fgColor index 14
+bgColor index 3
+topShadowColor index 1
+botShadowColor index 11
+font "helvetica-medium-r-12.0"
+buttonLabel "More..."
+numPvs 4
+numDsps 1
+displayFileName {
+  0 "rf_srf_prl_rack_more"
+}
+setPosition {
+  0 "parentWindow"
+}
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 924
+y 52
+w 76
+h 24
+lineColor index 35
+lineAlarm
+fillColor index 4
+lineWidth 2
+alarmPv "$(CM)00:RACK$(R):PRLSUM_RFS.SEVR"
+visPv "$(CM)00:RACK$(R):PRLSUM_RFS.SEVR"
+visMin "1"
+visMax "4"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 576
+y 280
+w 100
+h 24
+controlPv "$(CM)00:RACK$(R):PRLFWD:PMEAN"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+fgAlarm
+bgColor index 5
+precision 2
+nullColor index 18
+nullCondition "disabled"
+useAlarmBorder
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 576
+y 312
+w 100
+h 24
+controlPv "$(CM)00:RACK$(R):PRLREV:PMEAN"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+fgAlarm
+bgColor index 5
+precision 2
+nullColor index 18
+nullCondition "disabled"
+useAlarmBorder
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 576
+y 376
+w 100
+h 24
+controlPv "$(CM)00:RACK$(R):PRL_ZERO_OFFSET_DIFF"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+fgAlarm
+bgColor index 5
+precision 2
+nullColor index 18
+nullCondition "disabled"
+useAlarmBorder
+newPos
+objType "controls"
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 808
+y 176
+w 24
+h 44
+lineColor index 8
+fillColor index 4
+lineWidth 2
+numPoints 4
+xPoints {
+  0 808
+  1 832
+  2 832
+  3 808
+}
+yPoints {
+  0 176
+  1 176
+  2 220
+  3 220
+}
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 832
+y 196
+w 20
+h 0
+lineColor index 8
+fillColor index 4
+lineWidth 2
+numPoints 2
+xPoints {
+  0 832
+  1 852
+}
+yPoints {
+  0 196
+  1 196
+}
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 12
+y 128
+w 1016
+h 276
+lineColor index 10
+fillColor index 2
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 684
+y 348
+w 284
+h 16
+font "helvetica-medium-i-12.0"
+fgColor index 14
+bgColor index 4
+useDisplayBg
+value {
+  "PRL and LO drift combined"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 576
+y 148
+w 100
+h 16
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 4
+useDisplayBg
+value {
+  "degrees"
+}
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 408
+y 164
+w 44
+h 100
+lineColor index 6
+fillColor index 4
+lineWidth 2
+numPoints 4
+xPoints {
+  0 452
+  1 408
+  2 408
+  3 452
+}
+yPoints {
+  0 164
+  1 164
+  2 264
+  3 264
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 24
+y 116
+w 120
+h 20
+font "helvetica-bold-i-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 1
+value {
+  "PRL Phases"
+}
+border
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 684
+y 380
+w 284
+h 16
+font "helvetica-medium-i-12.0"
+fgColor index 14
+bgColor index 4
+useDisplayBg
+value {
+  "Difference between Zero and Offset phases"
+}
+endObjectProperties
+
