@@ -1,0 +1,1115 @@
+4 0 1
+beginScreenProperties
+major 4
+minor 0
+release 1
+x 570
+y 100
+w 872
+h 800
+font "helvetica-medium-r-12.0"
+ctlFont "helvetica-medium-r-12.0"
+btnFont "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 3
+textColor index 14
+ctlFgColor1 index 14
+ctlFgColor2 index 14
+ctlBgColor1 index 3
+ctlBgColor2 index 5
+topShadowColor index 1
+botShadowColor index 11
+title "RF Rack Diagnostics - $(CM)00 - Rack $(R)"
+snapToGrid
+gridSize 4
+endScreenProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 0
+y 0
+w 980
+h 40
+lineColor index 63
+fill
+fillColor index 63
+lineWidth 0
+endObjectProperties
+
+# (Exit Button)
+object activeExitButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 800
+y 8
+w 48
+h 24
+fgColor index 14
+bgColor index 3
+topShadowColor index 1
+botShadowColor index 11
+label "Exit"
+font "helvetica-medium-r-12.0"
+3d
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 8
+y 0
+w 340
+h 40
+font "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 53
+useDisplayBg
+value {
+  "RF Hardware Expert"
+  "Cryomodule $(CM)00 - Rack $(R)"
+}
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 668
+y 776
+w 168
+h 16
+controlPv "SIOC:SYS0:AL00:TOD"
+precision 1
+fgColor index 14
+bgColor index 12
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 32
+y 776
+w 120
+h 16
+controlPv "SIOC:SYS0:AL00:MODE"
+precision 1
+fgColor index 14
+bgColor index 12
+font "helvetica-medium-r-12.0"
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 20
+y 356
+w 836
+h 168
+lineColor index 14
+fill
+fillColor index 6
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 228
+y 20
+w 8
+h 8
+lineColor index 14
+fill
+fillColor index 16
+fillAlarm
+alarmPv "$(CM)00:RACK$(R):HWSTATSUM"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 212
+y 408
+w 100
+h 28
+controlPv "$(CM)00:RACK$(R):FIBERINITSTS"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 16
+fgAlarm
+bgColor index 12
+precision 3
+nullColor index 14
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 148
+y 408
+w 48
+h 28
+fgColor index 14
+onColor index 3
+offColor index 3
+topShadowColor index 1
+botShadowColor index 11
+controlPv "$(CM)00:RACK$(R):FIBERINITSTRT"
+pressValue "1"
+onLabel "Go"
+offLabel "Go"
+3d
+useEnumNumeric
+font "helvetica-medium-r-12.0"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 12
+y 408
+w 128
+h 24
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Kintex fiber"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 232
+y 364
+w 420
+h 28
+font "helvetica-medium-i-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 3
+useDisplayBg
+value {
+  "These are all included in the standard and abbreviated Rack Checkout"
+}
+endObjectProperties
+
+# (Shell Command)
+object shellCmdClass
+beginObjectProperties
+major 4
+minor 3
+release 0
+x 328
+y 408
+w 40
+h 24
+fgColor index 14
+bgColor index 4
+topShadowColor index 1
+botShadowColor index 11
+font "helvetica-medium-r-12.0"
+buttonLabel "Log..."
+multipleInstances
+numCmds 1
+command {
+  0 "xterm -hold -sb -rightbar -sl 10000 -geometry 130x30 -T \"LLRF Daemon Log File\" -e rfViewLauncherLog.bash $LCLS_DATA/tools/FEED/log $(CM) 500&"
+}
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 4
+release 0
+x 600
+y 8
+w 164
+h 24
+fgColor index 14
+bgColor index 4
+topShadowColor index 1
+botShadowColor index 11
+font "helvetica-medium-r-12.0"
+buttonLabel "Main Hardware Init/Test..."
+numPvs 4
+numDsps 1
+displayFileName {
+  0 "rf_srf_rack_lcls2"
+}
+setPosition {
+  0 "parentWindow"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 428
+y 404
+w 148
+h 24
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Load RFS1$(R) firmware"
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 644
+y 404
+w 100
+h 28
+controlPv "$(CM)00:RFS1$(R):FWLOADSTS"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 16
+fgAlarm
+bgColor index 12
+precision 3
+nullColor index 14
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 580
+y 404
+w 48
+h 28
+fgColor index 14
+onColor index 3
+offColor index 3
+topShadowColor index 1
+botShadowColor index 11
+controlPv "$(CM)00:RFS1$(R):FWLOADSTRT"
+pressValue "1"
+onLabel "Go"
+offLabel "Go"
+3d
+useEnumNumeric
+font "helvetica-medium-r-12.0"
+endObjectProperties
+
+# (Shell Command)
+object shellCmdClass
+beginObjectProperties
+major 4
+minor 3
+release 0
+x 760
+y 404
+w 40
+h 24
+fgColor index 14
+bgColor index 4
+topShadowColor index 1
+botShadowColor index 11
+font "helvetica-medium-r-12.0"
+buttonLabel "Log..."
+multipleInstances
+numCmds 1
+command {
+  0 "xterm -hold -sb -rightbar -sl 10000 -geometry 130x30 -T \"LLRF Daemon Log File\" -e rfViewLauncherLog.bash $LCLS_DATA/tools/FEED/log $(CM) 500&"
+}
+endObjectProperties
+
+# (Shell Command)
+object shellCmdClass
+beginObjectProperties
+major 4
+minor 3
+release 0
+x 760
+y 444
+w 40
+h 24
+fgColor index 14
+bgColor index 4
+topShadowColor index 1
+botShadowColor index 11
+font "helvetica-medium-r-12.0"
+buttonLabel "Log..."
+multipleInstances
+numCmds 1
+command {
+  0 "xterm -hold -sb -rightbar -sl 10000 -geometry 130x30 -T \"LLRF Daemon Log File\" -e rfViewLauncherLog.bash $LCLS_DATA/tools/FEED/log $(CM) 500&"
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 644
+y 444
+w 100
+h 28
+controlPv "$(CM)00:RFS2$(R):FWLOADSTS"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 16
+fgAlarm
+bgColor index 12
+precision 3
+nullColor index 14
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 580
+y 444
+w 48
+h 28
+fgColor index 14
+onColor index 3
+offColor index 3
+topShadowColor index 1
+botShadowColor index 11
+controlPv "$(CM)00:RFS2$(R):FWLOADSTRT"
+pressValue "1"
+onLabel "Go"
+offLabel "Go"
+3d
+useEnumNumeric
+font "helvetica-medium-r-12.0"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 428
+y 444
+w 148
+h 24
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Load RFS2$(R) firmware"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 428
+y 484
+w 148
+h 24
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Load PRC$(R) firmware"
+}
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 580
+y 484
+w 48
+h 28
+fgColor index 14
+onColor index 3
+offColor index 3
+topShadowColor index 1
+botShadowColor index 11
+controlPv "$(CM)00:PRC$(R):FWLOADSTRT"
+pressValue "1"
+onLabel "Go"
+offLabel "Go"
+3d
+useEnumNumeric
+font "helvetica-medium-r-12.0"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 644
+y 484
+w 100
+h 28
+controlPv "$(CM)00:PRC$(R):FWLOADSTS"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 16
+fgAlarm
+bgColor index 12
+precision 3
+nullColor index 14
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Shell Command)
+object shellCmdClass
+beginObjectProperties
+major 4
+minor 3
+release 0
+x 760
+y 484
+w 40
+h 24
+fgColor index 14
+bgColor index 4
+topShadowColor index 1
+botShadowColor index 11
+font "helvetica-medium-r-12.0"
+buttonLabel "Log..."
+multipleInstances
+numCmds 1
+command {
+  0 "xterm -hold -sb -rightbar -sl 10000 -geometry 130x30 -T \"LLRF Daemon Log File\" -e rfViewLauncherLog.bash $LCLS_DATA/tools/FEED/log $(CM) 500&"
+}
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 16
+y 72
+w 836
+h 248
+lineColor index 14
+fill
+fillColor index 6
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 32
+y 56
+w 200
+h 28
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 2
+value {
+  "Abbreviated Rack Checkout"
+}
+border
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 44
+y 156
+w 48
+h 28
+fgColor index 14
+onColor index 3
+offColor index 3
+topShadowColor index 1
+botShadowColor index 11
+controlPv "$(CM)00:RACK$(R):TESTABBREVSTRT"
+pressValue "1"
+onLabel "Go"
+offLabel "Go"
+3d
+useEnumNumeric
+font "helvetica-medium-r-12.0"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 108
+y 156
+w 100
+h 28
+controlPv "$(CM)00:RACK$(R):TESTABBREVSTS"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 16
+fgAlarm
+bgColor index 12
+precision 3
+nullColor index 14
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 684
+y 156
+w 152
+h 24
+controlPv "$(CM)00:RACK$(R):TESTTS"
+format "exponential"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 16
+fgAlarm
+bgColor index 12
+precision 3
+nullColor index 14
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 368
+y 156
+w 304
+h 24
+controlPv "$(CM)00:RACK$(R):TESTMSG"
+format "exponential"
+font "helvetica-medium-r-12.0"
+fgColor index 16
+fgAlarm
+bgColor index 12
+precision 3
+nullColor index 14
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 276
+y 156
+w 80
+h 24
+controlPv "$(CM)00:RACK$(R):TESTSTAT"
+format "exponential"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 16
+fgAlarm
+bgColor index 12
+precision 3
+nullColor index 14
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 208
+y 92
+w 472
+h 48
+font "helvetica-medium-i-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 3
+useDisplayBg
+value {
+  "Performs subset of standard rack checkout. To be used during LLRF troubleshooting."
+  "Full rack checkout will be needed before running RF."
+}
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 20
+y 556
+w 836
+h 96
+lineColor index 14
+fill
+fillColor index 6
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 36
+y 540
+w 156
+h 28
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 2
+value {
+  "SW-FW Communication"
+}
+border
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 276
+y 616
+w 108
+h 24
+fgColor index 14
+onColor index 3
+offColor index 3
+topShadowColor index 1
+botShadowColor index 11
+controlPv "$(CM)00:RACK$(R):CTRL_HALT"
+pressValue "1"
+onLabel "Halt"
+offLabel "Halt"
+3d
+useEnumNumeric
+font "helvetica-medium-r-12.0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 500
+y 616
+w 108
+h 24
+fgColor index 14
+onColor index 3
+offColor index 3
+topShadowColor index 1
+botShadowColor index 11
+controlPv "$(CM)00:RACK$(R):CTRL_RESET"
+pressValue "1"
+onLabel "Reset"
+offLabel "Reset"
+3d
+useEnumNumeric
+font "helvetica-medium-r-12.0"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 212
+y 564
+w 191
+h 28
+font "helvetica-medium-i-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 3
+useDisplayBg
+value {
+  "Halt EPICS Communication"
+  "with all LLRF chassis in Rack $(R)"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 452
+y 564
+w 191
+h 28
+font "helvetica-medium-i-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 3
+useDisplayBg
+value {
+  "Resume EPICS Communication"
+  "with all LLRF chassis in Rack $(R)"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 40
+y 340
+w 180
+h 32
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 2
+value {
+  "Other RFS/PRC Functions"
+}
+border
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 244
+y 0
+w 92
+h 40
+font "helvetica-medium-r-18.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 53
+useDisplayBg
+value {
+  "Rack $(R)"
+}
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 20
+y 684
+w 836
+h 80
+lineColor index 14
+fill
+fillColor index 6
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 36
+y 668
+w 156
+h 28
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 2
+value {
+  "Other Displays"
+}
+border
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 4
+release 0
+x 208
+y 716
+w 124
+h 24
+fgColor index 14
+bgColor index 4
+topShadowColor index 1
+botShadowColor index 11
+font "helvetica-medium-r-12.0"
+buttonLabel "Script launcher..."
+numPvs 4
+numDsps 1
+displayFileName {
+  0 "rf_srf_daemon_expert"
+}
+setPosition {
+  0 "parentWindow"
+}
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 208
+y 716
+w 124
+h 24
+lineColor index 16
+lineAlarm
+fillColor index 4
+lineWidth 2
+alarmPv "ALRM:SYS0:RFCM$(ID)DMN:ALHBERR.SEVR"
+visPv "ALRM:SYS0:RFCM$(ID)DMN:ALHBERR.SEVR"
+visMin "1"
+visMax "10"
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 4
+release 0
+x 52
+y 716
+w 136
+h 24
+fgColor index 14
+bgColor index 4
+topShadowColor index 1
+botShadowColor index 11
+font "helvetica-medium-r-12.0"
+buttonLabel "RFS<->RES Comm..."
+numPvs 4
+numDsps 1
+displayFileName {
+  0 "rf_srf_rack_lcls2_comm"
+}
+setPosition {
+  0 "parentWindow"
+}
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 52
+y 716
+w 136
+h 24
+lineColor index 16
+lineAlarm
+fillColor index 4
+lineWidth 2
+alarmPv "$(CM)00:COMMRACK$(R):STATSUMY"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 360
+y 0
+w 176
+h 40
+font "helvetica-medium-i-18.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 53
+useDisplayBg
+value {
+  "LLRF Expert"
+}
+endObjectProperties
+
+# (Shell Command)
+object shellCmdClass
+beginObjectProperties
+major 4
+minor 3
+release 0
+x 216
+y 156
+w 48
+h 24
+fgColor index 14
+bgColor index 4
+topShadowColor index 1
+botShadowColor index 11
+font "helvetica-medium-r-12.0"
+buttonLabel "Log..."
+multipleInstances
+numCmds 1
+command {
+  0 "xterm -hold -sb -rightbar -sl 10000 -geometry 130x30 -T \"LLRF Hardware Init/Test Log File\" -e rfViewLogRecent.bash $PHYSICS_DATA/rf_lcls2/rack/$(CM)00 $(R) txt 0 &"
+}
+endObjectProperties
+
+# (Shell Command)
+object shellCmdClass
+beginObjectProperties
+major 4
+minor 3
+release 0
+x 752
+y 188
+w 84
+h 24
+fgColor index 14
+bgColor index 4
+topShadowColor index 1
+botShadowColor index 11
+font "helvetica-medium-r-12.0"
+buttonLabel "Older Logs..."
+numCmds 11
+commandLabel {
+  0 "Latest"
+  1 "-1"
+  2 "-2"
+  3 "-3"
+  4 "-4"
+  5 "-5"
+  6 "-6"
+  7 "-7"
+  8 "-8"
+  9 "-9"
+  10 "-10"
+}
+command {
+  0 "xterm -hold -sb -rightbar -sl 10000 -geometry 130x30 -T \"LLRF Cavity Calibration Log File\" -e rfViewLogRecent.bash $PHYSICS_DATA/rf_lcls2/rack/$(CM)00 $(R) txt 0 &"
+  1 "xterm -hold -sb -rightbar -sl 10000 -geometry 130x30 -T \"LLRF Cavity Calibration Log File\" -e rfViewLogRecent.bash $PHYSICS_DATA/rf_lcls2/rack/$(CM)00 $(R) txt 0 2 &"
+  2 "xterm -hold -sb -rightbar -sl 10000 -geometry 130x30 -T \"LLRF Cavity Calibration Log File\" -e rfViewLogRecent.bash $PHYSICS_DATA/rf_lcls2/rack/$(CM)00 $(R) txt 0 3 &"
+  3 "xterm -hold -sb -rightbar -sl 10000 -geometry 130x30 -T \"LLRF Cavity Calibration Log File\" -e rfViewLogRecent.bash $PHYSICS_DATA/rf_lcls2/rack/$(CM)00 $(R) txt 0 4 &"
+  4 "xterm -hold -sb -rightbar -sl 10000 -geometry 130x30 -T \"LLRF Cavity Calibration Log File\" -e rfViewLogRecent.bash $PHYSICS_DATA/rf_lcls2/rack/$(CM)00 $(R) txt 0 5 &"
+  5 "xterm -hold -sb -rightbar -sl 10000 -geometry 130x30 -T \"LLRF Cavity Calibration Log File\" -e rfViewLogRecent.bash $PHYSICS_DATA/rf_lcls2/rack/$(CM)00 $(R) txt 0 6 &"
+  6 "xterm -hold -sb -rightbar -sl 10000 -geometry 130x30 -T \"LLRF Cavity Calibration Log File\" -e rfViewLogRecent.bash $PHYSICS_DATA/rf_lcls2/rack/$(CM)00 $(R) txt 0 7 &"
+  7 "xterm -hold -sb -rightbar -sl 10000 -geometry 130x30 -T \"LLRF Cavity Calibration Log File\" -e rfViewLogRecent.bash $PHYSICS_DATA/rf_lcls2/rack/$(CM)00 $(R) txt 0 8 &"
+  8 "xterm -hold -sb -rightbar -sl 10000 -geometry 130x30 -T \"LLRF Cavity Calibration Log File\" -e rfViewLogRecent.bash $PHYSICS_DATA/rf_lcls2/rack/$(CM)00 $(R) txt 0 9 &"
+  9 "xterm -hold -sb -rightbar -sl 10000 -geometry 130x30 -T \"LLRF Cavity Calibration Log File\" -e rfViewLogRecent.bash $PHYSICS_DATA/rf_lcls2/rack/$(CM)00 $(R) txt 0 10 &"
+  10 "xterm -hold -sb -rightbar -sl 10000 -geometry 130x30 -T \"LLRF Cavity Calibration Log File\" -e rfViewLogRecent.bash $PHYSICS_DATA/rf_lcls2/rack/$(CM)00 $(R) txt 0 11 &"
+}
+endObjectProperties
+

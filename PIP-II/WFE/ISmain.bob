@@ -164,14 +164,16 @@
           <color name="Button_Background" red="210" green="210" blue="210">
           </color>
         </on_color>
+        <show_led>false</show_led>
         <border_alarm_sensitive>false</border_alarm_sensitive>
         <show_confirm_dialog>2</show_confirm_dialog>
         <confirm_message>Are your sure you want to Enable Filament Supply?</confirm_message>
       </widget>
       <widget type="textentry" version="3.0.0">
         <name>Text Entry_6</name>
-        <pv_name>A0TST:IS_BLE_FLMNT:sVoltage</pv_name>
+        <pv_name>A0TST:IS_BLE_FLMNT:sCurrent</pv_name>
         <x>125</x>
+        <y>20</y>
         <width>50</width>
         <format>1</format>
         <precision>1</precision>
@@ -230,7 +232,7 @@
         <name>Label_105</name>
         <text>set</text>
         <x>125</x>
-        <y>20</y>
+        <y>10</y>
         <width>50</width>
         <height>10</height>
         <font>
@@ -253,6 +255,10 @@
         <action type="open_display">
           <description>Open Filament Supply</description>
           <file>../Common/ble-embedded-displays/Sorensen.bob</file>
+          <macros>
+            <dev>FLMNT</dev>
+            <hvps>Filament</hvps>
+          </macros>
           <target>window</target>
         </action>
       </actions>
@@ -2204,5 +2210,26 @@
     <width>175</width>
     <tooltip>$(actions)</tooltip>
     <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>Boolean Button</name>
+    <pv_name>A0TST:IS_BLE_SMRTTRK:StreamOff</pv_name>
+    <x>665</x>
+    <y>260</y>
+    <width>120</width>
+    <height>25</height>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_21</name>
+    <pv_name>A0TST:IS_BLE_SMRTTRK:Flow</pv_name>
+    <x>665</x>
+    <y>285</y>
+    <width>120</width>
+    <format>1</format>
+    <precision>1</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
   </widget>
 </display>
