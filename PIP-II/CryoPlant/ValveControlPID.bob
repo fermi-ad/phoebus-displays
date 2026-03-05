@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <display version="2.0.0">
   <name>$(dev): Valve Control</name>
-  <width>750</width>
-  <height>550</height>
+  <width>1350</width>
   <background_color>
     <color name="cryo.PrimaryBackground" red="217" green="217" blue="217">
     </color>
@@ -498,7 +497,7 @@
   <widget type="label" version="2.0.0">
     <name>$(dev): Valve Control</name>
     <text>$(dev): Valve Control</text>
-    <width>750</width>
+    <width>1350</width>
     <height>40</height>
     <font>
       <font family="Liberation Sans" style="BOLD" size="22.0">
@@ -679,7 +678,7 @@ $(dev)</text>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_1</name>
     <pv_name>sys://time</pv_name>
-    <x>653</x>
+    <x>1243</x>
     <width>91</width>
     <height>40</height>
     <font>
@@ -905,5 +904,57 @@ $(dev)</text>
     <horizontal_alignment>1</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
     <border_width>1</border_width>
+  </widget>
+  <widget type="stripchart" version="2.1.0">
+    <name>Strip Chart</name>
+    <x>757</x>
+    <y>168</y>
+    <width>576</width>
+    <height>353</height>
+    <show_legend>true</show_legend>
+    <traces>
+      <trace>
+        <name>$(system)$(dev):rSetLoop</name>
+        <y_pv>$(system)$(dev):rSetLoop</y_pv>
+        <axis>0</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color red="0" green="0" blue="255">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name>$(system)$(PV):$(Var)</name>
+        <y_pv></y_pv>
+        <axis>$(system)$(PV):$(Var)</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color red="255" green="0" blue="0">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name>$(system)$(dev):Open</name>
+        <y_pv>$(system)$(dev):Open</y_pv>
+        <axis>0</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color red="0" green="255" blue="0">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+    </traces>
   </widget>
 </display>
