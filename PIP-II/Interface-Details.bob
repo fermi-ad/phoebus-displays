@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>System--Interface-Info-Display</name>
+  <width>420</width>
+  <height>450</height>
+  <widget type="label" version="2.0.0">
+    <name>Main-Topic-Label</name>
+    <text>Ethernet Interface Information</text>
+    <width>420</width>
+    <height>35</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <background_color>
+      <color name="Attention" red="255" green="160" blue="0">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Large-Group</name>
+    <x>11</x>
+    <y>41</y>
+    <width>401</width>
+    <height>402</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="group" version="3.0.0">
+      <name>eth0-Group</name>
+      <macros>
+        <mod_id>0</mod_id>
+        <dir_id>6800</dir_id>
+      </macros>
+      <width>230</width>
+      <height>402</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="textupdate" version="2.0.0">
+        <name>Eth-0--intr-spd-TU</name>
+        <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_8_eth_speed</pv_name>
+        <x>94</x>
+        <y>67</y>
+        <height>29</height>
+        <precision>2</precision>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Eth-0-Label</name>
+        <class>Label</class>
+        <text>Ethernet Interface 0</text>
+        <x>70</x>
+        <width>141</width>
+        <height>18</height>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="16.0">
+          </font>
+        </font>
+        <auto_size>true</auto_size>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Eth-Stat-Label</name>
+        <class>Label</class>
+        <text>Status</text>
+        <x>3</x>
+        <y>29</y>
+        <width>46</width>
+        <height>18</height>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="16.0">
+          </font>
+        </font>
+        <auto_size>true</auto_size>
+      </widget>
+      <widget type="multi_state_led" version="2.0.0">
+        <name>Eth-0--stat-LED</name>
+        <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_1_eth_status</pv_name>
+        <x>114</x>
+        <y>25</y>
+        <width>30</width>
+        <height>30</height>
+        <states>
+          <state>
+            <value>1</value>
+            <label>Ok</label>
+            <color>
+              <color name="OK" red="0" green="255" blue="0">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>2</value>
+            <label>Warning</label>
+            <color>
+              <color name="Attention" red="255" green="160" blue="0">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>3</value>
+            <label>Critical</label>
+            <color>
+              <color name="MAJOR" red="255" green="0" blue="0">
+              </color>
+            </color>
+          </state>
+        </states>
+        <fallback_label>Unknown</fallback_label>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Eth-intr-spd-Label</name>
+        <class>Label</class>
+        <text>Interface
+Speed</text>
+        <y>63</y>
+        <width>63</width>
+        <height>40</height>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="16.0">
+          </font>
+        </font>
+        <auto_size>true</auto_size>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Eth-trns-pkts-Label</name>
+        <class>Label</class>
+        <text>No. of Trans.
+Packets</text>
+        <y>109</y>
+        <width>93</width>
+        <height>40</height>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="16.0">
+          </font>
+        </font>
+        <auto_size>true</auto_size>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Eth-0--trns-pkts-TU</name>
+        <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_9_calc_eth_tx_packets</pv_name>
+        <x>94</x>
+        <y>109</y>
+        <height>29</height>
+        <precision>0</precision>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Eth-rec-pkts-Label</name>
+        <class>Label</class>
+        <text>No. of Rec.
+Packets</text>
+        <y>156</y>
+        <width>81</width>
+        <height>40</height>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="16.0">
+          </font>
+        </font>
+        <auto_size>true</auto_size>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Eth-0--rec-pkts-TU</name>
+        <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_10_calc_eth_rx_packets</pv_name>
+        <x>94</x>
+        <y>155</y>
+        <height>29</height>
+        <precision>0</precision>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Eth-trns-bytes-Label</name>
+        <class>Label</class>
+        <text>No. of Trans.
+Bytes</text>
+        <y>205</y>
+        <width>93</width>
+        <height>40</height>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="16.0">
+          </font>
+        </font>
+        <auto_size>true</auto_size>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Eth-0--trns-byt-TU</name>
+        <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_11_calc_eth_tx_bytes</pv_name>
+        <x>94</x>
+        <y>201</y>
+        <height>29</height>
+        <precision>0</precision>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Eth-rec-bytes-Label</name>
+        <class>Label</class>
+        <text>No. of Rec.
+Bytes</text>
+        <y>251</y>
+        <width>81</width>
+        <height>40</height>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="16.0">
+          </font>
+        </font>
+        <auto_size>true</auto_size>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Eth-0-rec-byt-TU</name>
+        <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_12_calc_eth_rx_bytes</pv_name>
+        <x>94</x>
+        <y>250</y>
+        <height>29</height>
+        <precision>0</precision>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Eth-trns-err-Label</name>
+        <class>Label</class>
+        <text>No. of Trns.
+Errors</text>
+        <y>298</y>
+        <width>84</width>
+        <height>40</height>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="16.0">
+          </font>
+        </font>
+        <auto_size>true</auto_size>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Eth-0-trns-err-TU</name>
+        <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_13_calc_eth_tx_errors</pv_name>
+        <x>94</x>
+        <y>297</y>
+        <height>29</height>
+        <precision>0</precision>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Eth-rec-err-Label</name>
+        <class>Label</class>
+        <text>No. of Rec.
+Errors</text>
+        <y>345</y>
+        <width>81</width>
+        <height>40</height>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="16.0">
+          </font>
+        </font>
+        <auto_size>true</auto_size>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Eth-0--rec-err-TU</name>
+        <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_14_calc_eth_rx_errors</pv_name>
+        <x>94</x>
+        <y>342</y>
+        <height>29</height>
+        <precision>0</precision>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>eth0-Group_1</name>
+      <macros>
+        <mod_id>0</mod_id>
+        <dir_id>6900</dir_id>
+      </macros>
+      <x>231</x>
+      <width>170</width>
+      <height>402</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="multi_state_led" version="2.0.0">
+        <name>Eth-0--stat-LED_1</name>
+        <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_1_eth_status</pv_name>
+        <x>63</x>
+        <y>25</y>
+        <width>30</width>
+        <height>30</height>
+        <states>
+          <state>
+            <value>1</value>
+            <label>Ok</label>
+            <color>
+              <color name="OK" red="0" green="255" blue="0">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>2</value>
+            <label>Warning</label>
+            <color>
+              <color name="Attention" red="255" green="160" blue="0">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>3</value>
+            <label>Critical</label>
+            <color>
+              <color name="MAJOR" red="255" green="0" blue="0">
+              </color>
+            </color>
+          </state>
+        </states>
+        <fallback_label>Unknown</fallback_label>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Eth-0--trns-pkts-TU_1</name>
+        <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_9_calc_eth_tx_packets</pv_name>
+        <x>31</x>
+        <y>109</y>
+        <height>29</height>
+        <precision>0</precision>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Eth-0--rec-pkts-TU_1</name>
+        <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_10_calc_eth_rx_packets</pv_name>
+        <x>31</x>
+        <y>155</y>
+        <height>29</height>
+        <precision>0</precision>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Eth-0--trns-byt-TU_1</name>
+        <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_11_calc_eth_tx_bytes</pv_name>
+        <x>31</x>
+        <y>201</y>
+        <height>29</height>
+        <precision>0</precision>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Eth-0-rec-byt-TU_1</name>
+        <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_12_calc_eth_rx_bytes</pv_name>
+        <x>31</x>
+        <y>250</y>
+        <height>29</height>
+        <precision>0</precision>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Eth-0-trns-err-TU_1</name>
+        <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_13_calc_eth_tx_errors</pv_name>
+        <x>31</x>
+        <y>297</y>
+        <height>29</height>
+        <precision>0</precision>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Eth-0--rec-err-TU_1</name>
+        <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_14_calc_eth_rx_errors</pv_name>
+        <x>31</x>
+        <y>342</y>
+        <height>29</height>
+        <precision>0</precision>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Eth-0-Label_1</name>
+        <class>Label</class>
+        <text>Ethernet Interface 1</text>
+        <x>13</x>
+        <width>141</width>
+        <height>18</height>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="16.0">
+          </font>
+        </font>
+        <auto_size>true</auto_size>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Eth-0--intr-spd-TU_1</name>
+        <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_8_eth_speed</pv_name>
+        <x>31</x>
+        <y>67</y>
+        <height>29</height>
+        <precision>2</precision>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+    </widget>
+  </widget>
+</display>

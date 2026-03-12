@@ -1,0 +1,549 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>System-Status-Display</name>
+  <width>650</width>
+  <widget type="label" version="2.0.0">
+    <name>Main-Topic-Label</name>
+    <text>System Information</text>
+    <width>650</width>
+    <height>35</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <background_color>
+      <color name="Attention" red="255" green="160" blue="0">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Hard-1-Group</name>
+    <x>12</x>
+    <y>480</y>
+    <width>509</width>
+    <height>35</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>HD-1-Use-Label</name>
+      <class>Label</class>
+      <text>Hard Disk 1 Usage (%)</text>
+      <y>8</y>
+      <width>164</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Ram-Tot-TU_3</name>
+      <pv_name>=((`PIP2:TIME_CTRL_WRSWITCH:2_1001_40_calc_hdd1_size` - `PIP2:TIME_CTRL_WRSWITCH:2_1001_41_hdd1_free`)/`PIP2:TIME_CTRL_WRSWITCH:2_1001_40_calc_hdd1_size`)*100</pv_name>
+      <x>171</x>
+      <y>2</y>
+      <height>29</height>
+      <precision>2</precision>
+      <show_units>false</show_units>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="progressbar" version="2.0.0">
+      <name>HD-1-Progress-Bar</name>
+      <pv_name>=((`PIP2:TIME_CTRL_WRSWITCH:2_1001_40_calc_hdd1_size` - `PIP2:TIME_CTRL_WRSWITCH:2_1001_41_hdd1_free`)/`PIP2:TIME_CTRL_WRSWITCH:2_1001_40_calc_hdd1_size`)*100</pv_name>
+      <x>279</x>
+      <width>230</width>
+      <height>35</height>
+      <fill_color>
+        <color name="acorn.Text.White" red="255" green="255" blue="255">
+        </color>
+      </fill_color>
+      <rules>
+        <rule name="Progess-Bar-Color" prop_id="fill_color" out_exp="false">
+          <exp bool_exp="((pv0 - pv1)/pv0)*100 &lt; 50">
+            <value>
+              <color red="60" green="255" blue="60">
+              </color>
+            </value>
+          </exp>
+          <exp bool_exp="((pv0 - pv1)/pv0)*100 &gt;= 50 &amp;&amp; ((pv0 - pv1)/pv0)*100 &lt;= 75">
+            <value>
+              <color name="Attention" red="255" green="160" blue="0">
+              </color>
+            </value>
+          </exp>
+          <exp bool_exp="((pv0 - pv1)/pv0)*100 &gt; 75">
+            <value>
+              <color name="acorn.Red" red="229" green="56" blue="35">
+              </color>
+            </value>
+          </exp>
+          <pv_name>PIP2:TIME_CTRL_WRSWITCH:2_1001_40_calc_hdd1_size</pv_name>
+          <pv_name>PIP2:TIME_CTRL_WRSWITCH:2_1001_41_calc_hdd1_free</pv_name>
+        </rule>
+      </rules>
+      <tooltip>$(pv_value)</tooltip>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Hard-2-Group</name>
+    <x>12</x>
+    <y>526</y>
+    <width>509</width>
+    <height>39</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>HD-1-Use-Label_1</name>
+      <class>Label</class>
+      <text>Hard Disk 2 Usage (%)</text>
+      <y>3</y>
+      <width>164</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Ram-Tot-TU_4</name>
+      <pv_name>=((`PIP2:TIME_CTRL_WRSWITCH:2_1001_50_calc_hdd2_size` - `PIP2:TIME_CTRL_WRSWITCH:2_1001_51_hdd2_free`)/`PIP2:TIME_CTRL_WRSWITCH:2_1001_50_calc_hdd2_size`)*100</pv_name>
+      <x>171</x>
+      <height>29</height>
+      <precision>2</precision>
+      <show_units>false</show_units>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="progressbar" version="2.0.0">
+      <name>HD-2-Progress-Bar</name>
+      <pv_name>=((`PIP2:TIME_CTRL_WRSWITCH:2_1001_50_calc_hdd2_size` - `PIP2:TIME_CTRL_WRSWITCH:2_1001_51_hdd2_free`)/`PIP2:TIME_CTRL_WRSWITCH:2_1001_50_calc_hdd2_size`)*100</pv_name>
+      <x>279</x>
+      <y>4</y>
+      <width>230</width>
+      <height>35</height>
+      <fill_color>
+        <color name="acorn.Text.White" red="255" green="255" blue="255">
+        </color>
+      </fill_color>
+      <rules>
+        <rule name="Progess-Bar-Color" prop_id="fill_color" out_exp="false">
+          <exp bool_exp="((pv0 - pv1)/pv0)*100 &lt; 50">
+            <value>
+              <color red="60" green="255" blue="60">
+              </color>
+            </value>
+          </exp>
+          <exp bool_exp="((pv0 - pv1)/pv0)*100 &gt;= 50 &amp;&amp; ((pv0 - pv1)/pv0)*100 &lt;= 75">
+            <value>
+              <color name="Attention" red="255" green="160" blue="0">
+              </color>
+            </value>
+          </exp>
+          <exp bool_exp="((pv0 - pv1)/pv0)*100 &gt; 75">
+            <value>
+              <color name="acorn.Red" red="229" green="56" blue="35">
+              </color>
+            </value>
+          </exp>
+          <pv_name>PIP2:TIME_CTRL_WRSWITCH:2_1001_50_calc_hdd2_size</pv_name>
+          <pv_name>PIP2:TIME_CTRL_WRSWITCH:2_1001_51_calc_hdd2_free</pv_name>
+        </rule>
+      </rules>
+      <tooltip>$(pv_value)</tooltip>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Ram-Group</name>
+    <x>12</x>
+    <y>440</y>
+    <width>485</width>
+    <height>35</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>RAM-Use-Label</name>
+      <class>Label</class>
+      <text>RAM Usage (%)</text>
+      <y>8</y>
+      <width>116</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Ram-Tot-TU_2</name>
+      <pv_name>=((`PIP2:TIME_CTRL_WRSWITCH:2_1001_20_calc_ram_total` - `PIP2:TIME_CTRL_WRSWITCH:2_1001_21_calc_ram_free`)/`PIP2:TIME_CTRL_WRSWITCH:2_1001_20_calc_ram_total`)*100</pv_name>
+      <x>136</x>
+      <y>1</y>
+      <height>29</height>
+      <precision>2</precision>
+      <show_units>false</show_units>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="progressbar" version="2.0.0">
+      <name>RAM-Progress-Bar</name>
+      <pv_name>=((`PIP2:TIME_CTRL_WRSWITCH:2_1001_20_calc_ram_total` - `PIP2:TIME_CTRL_WRSWITCH:2_1001_21_calc_ram_free`)/`PIP2:TIME_CTRL_WRSWITCH:2_1001_20_calc_ram_total`)*100</pv_name>
+      <x>255</x>
+      <width>230</width>
+      <height>35</height>
+      <fill_color>
+        <color name="acorn.Text.White" red="255" green="255" blue="255">
+        </color>
+      </fill_color>
+      <rules>
+        <rule name="Progess-Bar-Color" prop_id="fill_color" out_exp="false">
+          <exp bool_exp="((pv0 - pv1)/pv0)*100 &lt; 50">
+            <value>
+              <color red="60" green="255" blue="60">
+              </color>
+            </value>
+          </exp>
+          <exp bool_exp="((pv0 - pv1)/pv0)*100 &gt;= 50 &amp;&amp; ((pv0 - pv1)/pv0)*100 &lt;= 75">
+            <value>
+              <color name="Attention" red="255" green="160" blue="0">
+              </color>
+            </value>
+          </exp>
+          <exp bool_exp="((pv0 - pv1)/pv0)*100 &gt; 75">
+            <value>
+              <color name="acorn.Red" red="229" green="56" blue="35">
+              </color>
+            </value>
+          </exp>
+          <pv_name>PIP2:TIME_CTRL_WRSWITCH:2_1001_20_calc_ram_total</pv_name>
+          <pv_name>PIP2:TIME_CTRL_WRSWITCH:2_1001_21_calc_ram_free</pv_name>
+        </rule>
+      </rules>
+      <tooltip>$(pv_value)</tooltip>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>FPGA-Temp-Label</name>
+    <class>Label</class>
+    <text>FPGA Temperature</text>
+    <x>350</x>
+    <y>332</y>
+    <width>140</width>
+    <height>18</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      </font>
+    </font>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Hard-2-Use-TU_1</name>
+    <pv_name>PIP2:TIME_CTRL_WRSWITCH:2_1001_60_calc_fpga_temp</pv_name>
+    <x>505</x>
+    <y>327</y>
+    <height>29</height>
+    <precision>2</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="thermometer" version="2.0.0">
+    <name>Thermometer</name>
+    <pv_name>PIP2:TIME_CTRL_WRSWITCH:2_1001_60_calc_fpga_temp</pv_name>
+    <x>449</x>
+    <y>42</y>
+    <width>75</width>
+    <height>279</height>
+    <fill_color>
+      <color name="cryo.return.2K" red="0" green="0" blue="255">
+      </color>
+    </fill_color>
+    <rules>
+      <rule name="Fill-Color-rule" prop_id="fill_color" out_exp="false">
+        <exp bool_exp="pv0 &lt; 50">
+          <value>
+            <color red="60" green="255" blue="60">
+            </color>
+          </value>
+        </exp>
+        <exp bool_exp="pv0 &gt;= 50 &amp;&amp; pv0 &lt;= 75">
+          <value>
+            <color name="cryo.return.2K" red="0" green="0" blue="255">
+            </color>
+          </value>
+        </exp>
+        <exp bool_exp="pv0 &gt; 75">
+          <value>
+            <color name="acorn.Red" red="229" green="56" blue="35">
+            </color>
+          </value>
+        </exp>
+        <pv_name>PIP2:TIME_CTRL_WRSWITCH:2_1001_60_calc_fpga_temp</pv_name>
+      </rule>
+    </rules>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <limits_from_pv>false</limits_from_pv>
+    <maximum>120.0</maximum>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>TU-Group</name>
+    <x>12</x>
+    <y>42</y>
+    <width>305</width>
+    <height>388</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>Ram-Total-Label</name>
+      <class>Label</class>
+      <text>Ram Disk Total</text>
+      <y>2</y>
+      <width>110</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Ram-Free-Label</name>
+      <class>Label</class>
+      <text>Ram Disk Free</text>
+      <y>41</y>
+      <width>107</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>No-CUP-Label</name>
+      <class>Label</class>
+      <text>Number of CPUs</text>
+      <y>77</y>
+      <width>121</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>CPU-Ld-1-min-Label</name>
+      <class>Label</class>
+      <text>CPU Av. Load Last 1 min.</text>
+      <y>111</y>
+      <width>185</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>CPU-Ld-5-min-Label</name>
+      <class>Label</class>
+      <text>CPU Av. Load Last 5 min.</text>
+      <y>147</y>
+      <width>185</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>CPU-Ld-15-min-Label</name>
+      <class>Label</class>
+      <text>CPU Av. Load Last 15 min.</text>
+      <y>179</y>
+      <width>193</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>All-CPU-Use-Label</name>
+      <class>Label</class>
+      <text>Av. CPU Usage all Cores</text>
+      <y>215</y>
+      <width>180</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Hard-1-Use-Label</name>
+      <class>Label</class>
+      <text>Hard Disk 1 Size</text>
+      <y>253</y>
+      <width>120</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Hard-2-Use-Label</name>
+      <class>Label</class>
+      <text>Hard Disk 2 Size</text>
+      <y>290</y>
+      <width>120</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Hard-1-Free-Label</name>
+      <class>Label</class>
+      <text>Hard Disk 1 Free</text>
+      <y>326</y>
+      <width>121</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Hard-2-Free-Label</name>
+      <class>Label</class>
+      <text>Hard Disk 2 Free</text>
+      <y>361</y>
+      <width>121</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Ram-Tot-TU</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:2_1001_20_calc_ram_total</pv_name>
+      <x>148</x>
+      <height>29</height>
+      <precision>2</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Ram-Tot-TU_1</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:2_1001_21_calc_ram_free</pv_name>
+      <x>148</x>
+      <y>37</y>
+      <height>29</height>
+      <precision>2</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>CPU-Nu-TU</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:2_1001_30_cpus</pv_name>
+      <x>148</x>
+      <y>74</y>
+      <height>29</height>
+      <precision>2</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>CPU-Ld-1min-TU</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:2_1001_31_calc_cpu_load1</pv_name>
+      <x>205</x>
+      <y>110</y>
+      <height>29</height>
+      <precision>2</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>CPU-Ld-5min-TU</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:2_1001_32_calc_cpu_load5</pv_name>
+      <x>205</x>
+      <y>144</y>
+      <height>29</height>
+      <precision>2</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>CPU-Ld-15min-TU</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:2_1001_33_calc_cpu_load15</pv_name>
+      <x>205</x>
+      <y>179</y>
+      <height>29</height>
+      <precision>2</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>CPU-Use-All-Cores-TU</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:2_1001_34_calc_cpu_usage</pv_name>
+      <x>205</x>
+      <y>215</y>
+      <height>29</height>
+      <precision>2</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Hard-1-Use-TU</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:2_1001_40_calc_hdd1_size</pv_name>
+      <x>148</x>
+      <y>249</y>
+      <height>29</height>
+      <precision>2</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Hard-2-Use-TU</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:2_1001_50_calc_hdd2_size</pv_name>
+      <x>148</x>
+      <y>286</y>
+      <height>29</height>
+      <precision>2</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Hard-1-Free-TU</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:2_1001_41_calc_hdd1_free</pv_name>
+      <x>148</x>
+      <y>323</y>
+      <height>29</height>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Hard-2-Free-TU</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:2_1001_51_calc_hdd2_free</pv_name>
+      <x>148</x>
+      <y>359</y>
+      <height>29</height>
+    </widget>
+  </widget>
+</display>

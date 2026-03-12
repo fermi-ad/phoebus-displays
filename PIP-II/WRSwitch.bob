@@ -2,7 +2,7 @@
 <display version="2.0.0">
   <name>WR_Main_Display</name>
   <width>600</width>
-  <height>650</height>
+  <height>740</height>
   <background_color>
     <color name="acorn.Text.White" red="255" green="255" blue="255">
     </color>
@@ -1620,7 +1620,7 @@
       <name>WR_Switch_Action Button</name>
       <actions>
         <action type="open_display">
-          <description>Open Display</description>
+          <description>Open</description>
           <file>WRSwitch-Details.bob</file>
           <target>window</target>
         </action>
@@ -1940,7 +1940,7 @@
   </widget>
   <widget type="group" version="3.0.0">
     <name>Picture-Group</name>
-    <y>573</y>
+    <y>661</y>
     <width>597</width>
     <height>77</height>
     <style>3</style>
@@ -1998,6 +1998,13 @@
     </widget>
     <widget type="action_button" version="3.0.0">
       <name>Interface_Action Button</name>
+      <actions>
+        <action type="open_display">
+          <description>Open</description>
+          <file>Interface-Details.bob</file>
+          <target>window</target>
+        </action>
+      </actions>
       <x>246</x>
       <width>58</width>
       <height>29</height>
@@ -2005,11 +2012,233 @@
     </widget>
     <widget type="action_button" version="3.0.0">
       <name>Sys_Action Button_1</name>
+      <actions>
+        <action type="open_display">
+          <description>Open</description>
+          <file>System-Details.bob</file>
+          <target>window</target>
+        </action>
+      </actions>
       <x>246</x>
       <y>37</y>
       <width>58</width>
       <height>29</height>
       <tooltip>$(actions)</tooltip>
     </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Progess-Bar-Group</name>
+    <x>293</x>
+    <y>564</y>
+    <width>299</width>
+    <height>82</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>RAM-Use-Label</name>
+      <class>Label</class>
+      <text>RAM Usage (%)</text>
+      <x>1</x>
+      <width>116</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="progressbar" version="2.0.0">
+      <name>RAM-Progress-Bar</name>
+      <pv_name>=((`PIP2:TIME_CTRL_WRSWITCH:2_1001_20_calc_ram_total` - `PIP2:TIME_CTRL_WRSWITCH:2_1001_21_calc_ram_free`)/`PIP2:TIME_CTRL_WRSWITCH:2_1001_20_calc_ram_total`)*100</pv_name>
+      <x>129</x>
+      <y>1</y>
+      <width>170</width>
+      <fill_color>
+        <color name="acorn.Text.White" red="255" green="255" blue="255">
+        </color>
+      </fill_color>
+      <rules>
+        <rule name="Progess-Bar-Color" prop_id="fill_color" out_exp="false">
+          <exp bool_exp="((pv0 - pv1)/pv0)*100 &lt; 50">
+            <value>
+              <color red="60" green="255" blue="60">
+              </color>
+            </value>
+          </exp>
+          <exp bool_exp="((pv0 - pv1)/pv0)*100 &gt;= 50 &amp;&amp; ((pv0 - pv1)/pv0)*100 &lt;= 75">
+            <value>
+              <color name="Attention" red="255" green="160" blue="0">
+              </color>
+            </value>
+          </exp>
+          <exp bool_exp="((pv0 - pv1)/pv0)*100 &gt; 75">
+            <value>
+              <color name="acorn.Red" red="229" green="56" blue="35">
+              </color>
+            </value>
+          </exp>
+          <pv_name>PIP2:TIME_CTRL_WRSWITCH:2_1001_20_calc_ram_total</pv_name>
+          <pv_name>PIP2:TIME_CTRL_WRSWITCH:2_1001_21_calc_ram_free</pv_name>
+        </rule>
+      </rules>
+      <tooltip>$(pv_value)</tooltip>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>HD-1-Use-Label</name>
+      <class>Label</class>
+      <text>Hard Disk 1 Usage (%)</text>
+      <x>1</x>
+      <y>34</y>
+      <width>164</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>HD-2-Use-Label</name>
+      <class>Label</class>
+      <text>Hard Disk 2 Usage (%)</text>
+      <y>62</y>
+      <width>164</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="progressbar" version="2.0.0">
+      <name>HD-1-Progress-Bar</name>
+      <pv_name>=((`PIP2:TIME_CTRL_WRSWITCH:2_1001_40_calc_hdd1_size` - `PIP2:TIME_CTRL_WRSWITCH:2_1001_41_hdd1_free`)/`PIP2:TIME_CTRL_WRSWITCH:2_1001_40_calc_hdd1_size`)*100</pv_name>
+      <x>172</x>
+      <y>35</y>
+      <width>127</width>
+      <fill_color>
+        <color name="acorn.Text.White" red="255" green="255" blue="255">
+        </color>
+      </fill_color>
+      <rules>
+        <rule name="Progess-Bar-Color" prop_id="fill_color" out_exp="false">
+          <exp bool_exp="((pv0 - pv1)/pv0)*100 &lt; 50">
+            <value>
+              <color red="60" green="255" blue="60">
+              </color>
+            </value>
+          </exp>
+          <exp bool_exp="((pv0 - pv1)/pv0)*100 &gt;= 50 &amp;&amp; ((pv0 - pv1)/pv0)*100 &lt;= 75">
+            <value>
+              <color name="Attention" red="255" green="160" blue="0">
+              </color>
+            </value>
+          </exp>
+          <exp bool_exp="((pv0 - pv1)/pv0)*100 &gt; 75">
+            <value>
+              <color name="acorn.Red" red="229" green="56" blue="35">
+              </color>
+            </value>
+          </exp>
+          <pv_name>PIP2:TIME_CTRL_WRSWITCH:2_1001_40_calc_hdd1_size</pv_name>
+          <pv_name>PIP2:TIME_CTRL_WRSWITCH:2_1001_41_calc_hdd1_free</pv_name>
+        </rule>
+      </rules>
+      <tooltip>$(pv_value)</tooltip>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="progressbar" version="2.0.0">
+      <name>HD-2-Progress-Bar</name>
+      <pv_name>=((`PIP2:TIME_CTRL_WRSWITCH:2_1001_50_calc_hdd2_size` - `PIP2:TIME_CTRL_WRSWITCH:2_1001_51_hdd2_free`)/`PIP2:TIME_CTRL_WRSWITCH:2_1001_50_calc_hdd2_size`)*100</pv_name>
+      <x>172</x>
+      <y>62</y>
+      <width>127</width>
+      <fill_color>
+        <color name="acorn.Text.White" red="255" green="255" blue="255">
+        </color>
+      </fill_color>
+      <rules>
+        <rule name="Progess-Bar-Color" prop_id="fill_color" out_exp="false">
+          <exp bool_exp="((pv0 - pv1)/pv0)*100 &lt; 50">
+            <value>
+              <color red="60" green="255" blue="60">
+              </color>
+            </value>
+          </exp>
+          <exp bool_exp="((pv0 - pv1)/pv0)*100 &gt;= 50 &amp;&amp; ((pv0 - pv1)/pv0)*100 &lt;= 75">
+            <value>
+              <color name="Attention" red="255" green="160" blue="0">
+              </color>
+            </value>
+          </exp>
+          <exp bool_exp="((pv0 - pv1)/pv0)*100 &gt; 75">
+            <value>
+              <color name="acorn.Red" red="229" green="56" blue="35">
+              </color>
+            </value>
+          </exp>
+          <pv_name>PIP2:TIME_CTRL_WRSWITCH:2_1001_50_calc_hdd2_size</pv_name>
+          <pv_name>PIP2:TIME_CTRL_WRSWITCH:2_1001_51_calc_hdd2_free</pv_name>
+        </rule>
+      </rules>
+      <tooltip>$(pv_value)</tooltip>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>TEMP-Label</name>
+    <class>Label</class>
+    <text>FPGA Temperature</text>
+    <x>18</x>
+    <y>611</y>
+    <width>183</width>
+    <height>23</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="20.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="thermometer" version="2.0.0">
+    <name>Thermometer</name>
+    <pv_name>PIP2:TIME_CTRL_WRSWITCH:2_1001_60_calc_fpga_temp</pv_name>
+    <x>209</x>
+    <y>582</y>
+    <width>50</width>
+    <height>100</height>
+    <fill_color>
+      <color name="cryo.return.2K" red="0" green="0" blue="255">
+      </color>
+    </fill_color>
+    <rules>
+      <rule name="Fill-Color-rule" prop_id="fill_color" out_exp="false">
+        <exp bool_exp="pv0 &lt; 50">
+          <value>
+            <color red="60" green="255" blue="60">
+            </color>
+          </value>
+        </exp>
+        <exp bool_exp="pv0 &gt;= 50 &amp;&amp; pv0 &lt;= 75">
+          <value>
+            <color name="cryo.return.2K" red="0" green="0" blue="255">
+            </color>
+          </value>
+        </exp>
+        <exp bool_exp="pv0 &gt; 75">
+          <value>
+            <color name="acorn.Red" red="229" green="56" blue="35">
+            </color>
+          </value>
+        </exp>
+        <pv_name>PIP2:TIME_CTRL_WRSWITCH:2_1001_60_calc_fpga_temp</pv_name>
+      </rule>
+    </rules>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <limits_from_pv>false</limits_from_pv>
+    <maximum>120.0</maximum>
   </widget>
 </display>
