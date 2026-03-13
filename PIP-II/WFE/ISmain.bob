@@ -31,16 +31,16 @@
   </widget>
   <widget type="bool_button" version="2.0.0">
     <name>Boolean Button_6</name>
-    <pv_name>$(system)PLC2W7:wBIT</pv_name>
+    <pv_name>$(system)PLC2W8:wBIT</pv_name>
     <x>585</x>
     <y>130</y>
     <width>175</width>
-    <off_label>Reset All</off_label>
+    <off_label>Modulator Reset</off_label>
     <off_color>
       <color name="Button_Background" red="210" green="210" blue="210">
       </color>
     </off_color>
-    <on_label>Reset Bias</on_label>
+    <on_label>Modulator Reset</on_label>
     <on_color>
       <color name="Button_Background" red="210" green="210" blue="210">
       </color>
@@ -53,7 +53,6 @@
   <widget type="bool_button" version="2.0.0">
     <name>Boolean Button_7</name>
     <pv_name>$(system)PLC2W6:wBIT</pv_name>
-    <bit>6</bit>
     <x>585</x>
     <y>160</y>
     <width>175</width>
@@ -67,6 +66,7 @@
       <color name="Button_Background" red="210" green="210" blue="210">
       </color>
     </on_color>
+    <show_led>false</show_led>
     <border_alarm_sensitive>false</border_alarm_sensitive>
     <show_confirm_dialog>2</show_confirm_dialog>
     <confirm_message>Are your sure you want to turn on 480V?</confirm_message>
@@ -1074,7 +1074,7 @@
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_8</name>
-      <pv_name>A0TST:IS_BLE_BIAS:V</pv_name>
+      <pv_name>A0TST:IS_BLE_BIAS:Voltage</pv_name>
       <x>70</x>
       <y>300</y>
       <width>50</width>
@@ -1086,7 +1086,7 @@
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_9</name>
-      <pv_name>A0TST:IS_BLE_BIAS:I</pv_name>
+      <pv_name>A0TST:IS_BLE_BIAS:Current</pv_name>
       <x>70</x>
       <y>320</y>
       <width>50</width>
@@ -2206,7 +2206,7 @@
       </action>
     </actions>
     <x>585</x>
-    <y>190</y>
+    <y>200</y>
     <width>175</width>
     <tooltip>$(actions)</tooltip>
     <border_alarm_sensitive>false</border_alarm_sensitive>
@@ -2214,8 +2214,8 @@
   <widget type="bool_button" version="2.0.0">
     <name>Boolean Button</name>
     <pv_name>A0TST:IS_BLE_SMRTTRK:StreamOff</pv_name>
-    <x>665</x>
-    <y>260</y>
+    <x>585</x>
+    <y>280</y>
     <width>120</width>
     <height>25</height>
     <border_alarm_sensitive>false</border_alarm_sensitive>
@@ -2223,13 +2223,118 @@
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_21</name>
     <pv_name>A0TST:IS_BLE_SMRTTRK:Flow</pv_name>
-    <x>665</x>
-    <y>285</y>
+    <x>585</x>
+    <y>305</y>
     <width>120</width>
     <format>1</format>
     <precision>1</precision>
     <horizontal_alignment>1</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
     <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>Boolean Button_8</name>
+    <pv_name>$(system)PLC2W7:wBIT</pv_name>
+    <x>585</x>
+    <y>100</y>
+    <width>175</width>
+    <off_label>Reset All</off_label>
+    <off_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </off_color>
+    <on_label>Reset All</on_label>
+    <on_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </on_color>
+    <show_led>false</show_led>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <mode>1</mode>
+    <confirm_message></confirm_message>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_8</name>
+    <actions>
+      <action type="open_display">
+        <description>Open Vacuum</description>
+        <file>ISvacuum.bob</file>
+        <macros>
+          <group>VAC</group>
+          <system>$(complex):$(sys)_$(group)_</system>
+        </macros>
+        <target>window</target>
+      </action>
+    </actions>
+    <x>585</x>
+    <y>230</y>
+    <width>175</width>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>Boolean Button_10</name>
+    <pv_name>A0TST:IS_BLE_SMRTTRK:StreamOff</pv_name>
+    <x>720</x>
+    <y>280</y>
+    <width>120</width>
+    <height>25</height>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>Boolean Button_12</name>
+    <pv_name>A0TST:IS_BLE_SMRTTRK:StreamOn</pv_name>
+    <x>720</x>
+    <y>305</y>
+    <width>120</width>
+    <height>25</height>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>Boolean Button_13</name>
+    <pv_name>A0TST:IS_BLE_SMRTTRK:StreamEcho</pv_name>
+    <x>720</x>
+    <y>330</y>
+    <width>120</width>
+    <height>25</height>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_93</name>
+    <text>StreamOff</text>
+    <x>845</x>
+    <y>280</y>
+    <width>85</width>
+    <height>25</height>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_94</name>
+    <text>StreamOn</text>
+    <x>845</x>
+    <y>305</y>
+    <width>85</width>
+    <height>25</height>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_95</name>
+    <text>StreamEcho</text>
+    <x>845</x>
+    <y>330</y>
+    <width>85</width>
+    <height>25</height>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="databrowser" version="2.0.0">
+    <name>Data Browser</name>
+    <file>../../Plots/IS-PSUs.plt</file>
+    <x>10</x>
+    <y>870</y>
+    <width>925</width>
+    <height>235</height>
   </widget>
 </display>
