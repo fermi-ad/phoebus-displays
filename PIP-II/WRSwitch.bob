@@ -1,0 +1,2244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>WR_Main_Display</name>
+  <width>600</width>
+  <height>740</height>
+  <background_color>
+    <color name="acorn.Text.White" red="255" green="255" blue="255">
+    </color>
+  </background_color>
+  <widget type="label" version="2.0.0">
+    <name>Main_Topic_Label</name>
+    <text>White Rabbit Swith Status Display</text>
+    <width>600</width>
+    <height>25</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <background_color>
+      <color name="Attention" red="255" green="160" blue="0">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Sys-Info-Group</name>
+    <y>43</y>
+    <width>159</width>
+    <height>98</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>global_stat_Label</name>
+      <class>Label</class>
+      <text>Global Status</text>
+      <x>1</x>
+      <y>5</y>
+      <width>97</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>time_stat_Label_1</name>
+      <class>Label</class>
+      <text>Timing Status</text>
+      <y>40</y>
+      <width>98</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>sys_stat_Label</name>
+      <class>Label</class>
+      <text>System Status</text>
+      <y>72</y>
+      <width>104</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>global_stat_LED</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:2_1002_1_global_state</pv_name>
+      <x>129</x>
+      <width>30</width>
+      <height>30</height>
+      <states>
+        <state>
+          <value>1</value>
+          <label>Ok</label>
+          <color>
+            <color name="OK" red="0" green="255" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>2</value>
+          <label>Warning</label>
+          <color>
+            <color name="Attention" red="255" green="160" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>3</value>
+          <label>Critical</label>
+          <color>
+            <color name="MAJOR" red="255" green="0" blue="0">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label>Unknown</fallback_label>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>global_stat_LED_1</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:2_1002_2_timing_state</pv_name>
+      <x>129</x>
+      <y>34</y>
+      <width>30</width>
+      <height>30</height>
+      <states>
+        <state>
+          <value>1</value>
+          <label>Ok</label>
+          <color>
+            <color name="OK" red="0" green="255" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>2</value>
+          <label>Warning</label>
+          <color>
+            <color name="Attention" red="255" green="160" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>3</value>
+          <label>Critical</label>
+          <color>
+            <color name="MAJOR" red="255" green="0" blue="0">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label>Unknown</fallback_label>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>global_stat_LED_2</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:2_1002_3_system_state</pv_name>
+      <x>129</x>
+      <y>68</y>
+      <width>30</width>
+      <height>30</height>
+      <states>
+        <state>
+          <value>1</value>
+          <label>Ok</label>
+          <color>
+            <color name="OK" red="0" green="255" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>2</value>
+          <label>Warning</label>
+          <color>
+            <color name="Attention" red="255" green="160" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>3</value>
+          <label>Critical</label>
+          <color>
+            <color name="MAJOR" red="255" green="0" blue="0">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label>Unknown</fallback_label>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>PwrSup-Group</name>
+    <y>150</y>
+    <width>290</width>
+    <height>270</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="rectangle" version="2.0.0">
+      <name>PS-Rectangle</name>
+      <width>290</width>
+      <height>270</height>
+      <line_color>
+        <color name="acorn.Black" red="38" green="38" blue="38">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="acorn.White" red="255" green="255" blue="255">
+        </color>
+      </background_color>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>PS-Label</name>
+      <text>Power Supply Informaiton
+</text>
+      <x>7</x>
+      <y>6</y>
+      <width>277</width>
+      <height>25</height>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <background_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Stat-Label</name>
+      <class>Label</class>
+      <text>Status</text>
+      <x>8</x>
+      <y>74</y>
+      <width>46</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Tmp-Label</name>
+      <class>Label</class>
+      <text>Temperature</text>
+      <x>7</x>
+      <y>103</y>
+      <width>92</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>InptV-Label</name>
+      <class>Label</class>
+      <text>Inpt. Volt</text>
+      <x>7</x>
+      <y>134</y>
+      <width>64</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>OtptV-Label</name>
+      <class>Label</class>
+      <text>Outpt. Volt</text>
+      <x>7</x>
+      <y>167</y>
+      <width>76</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>PwrCon-Labe</name>
+      <class>Label</class>
+      <text>Pwr. Cons.</text>
+      <x>7</x>
+      <y>201</y>
+      <width>79</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Pwrgiven-Labe</name>
+      <class>Label</class>
+      <text>Pwr. Given</text>
+      <x>7</x>
+      <y>235</y>
+      <width>79</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>ps-1-Label</name>
+      <text>Supply 1
+</text>
+      <x>111</x>
+      <y>36</y>
+      <width>64</width>
+      <height>25</height>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="12.0">
+        </font>
+      </font>
+      <background_color>
+        <color name="Attention" red="255" green="160" blue="0">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>ps-2-Label</name>
+      <text>Supply 2
+</text>
+      <x>201</x>
+      <y>36</y>
+      <width>64</width>
+      <height>25</height>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="12.0">
+        </font>
+      </font>
+      <background_color>
+        <color name="Attention" red="255" green="160" blue="0">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>PS-1-stat-LED</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:0_9110_1_ps_1_status</pv_name>
+      <x>129</x>
+      <y>64</y>
+      <width>30</width>
+      <height>30</height>
+      <states>
+        <state>
+          <value>1</value>
+          <label>Ok</label>
+          <color>
+            <color name="OK" red="0" green="255" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>2</value>
+          <label>Warning</label>
+          <color>
+            <color name="Attention" red="255" green="160" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>3</value>
+          <label>Critical</label>
+          <color>
+            <color name="MAJOR" red="255" green="0" blue="0">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label>Unknown</fallback_label>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>PS-2-stat-LED</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:0_9120_1_ps_2_status</pv_name>
+      <x>217</x>
+      <y>63</y>
+      <width>30</width>
+      <height>30</height>
+      <states>
+        <state>
+          <value>1</value>
+          <label>Ok</label>
+          <color>
+            <color name="OK" red="0" green="255" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>2</value>
+          <label>Warning</label>
+          <color>
+            <color name="Attention" red="255" green="160" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>3</value>
+          <label>Critical</label>
+          <color>
+            <color name="MAJOR" red="255" green="0" blue="0">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label>Unknown</fallback_label>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>PS-1-temp-TU</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:0_9110_2_calc_ps_1_temp</pv_name>
+      <x>109</x>
+      <y>95</y>
+      <width>79</width>
+      <height>29</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>PS-2-temp-TU</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:0_9120_2_calc_ps_2_temp</pv_name>
+      <x>197</x>
+      <y>95</y>
+      <width>79</width>
+      <height>29</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>PS-1-inptV-TU_1</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:0_9110_3_calc_ps_1_inputV</pv_name>
+      <x>109</x>
+      <y>128</y>
+      <width>79</width>
+      <height>29</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>PS-2-inptV-TU</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:0_9120_3_calc_ps_2_inputV</pv_name>
+      <x>197</x>
+      <y>128</y>
+      <width>79</width>
+      <height>29</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>PS-1-outptV-TU</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:0_9110_4_calc_ps_1_outputV</pv_name>
+      <x>109</x>
+      <y>162</y>
+      <width>79</width>
+      <height>29</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>PS-2-outptV-TU</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:0_9120_4_calc_ps_2_outputV</pv_name>
+      <x>197</x>
+      <y>162</y>
+      <width>79</width>
+      <height>29</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>PS-1-pwrCon-TU</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:0_9110_5_calc_ps_1_pwrconsume</pv_name>
+      <x>109</x>
+      <y>196</y>
+      <width>79</width>
+      <height>29</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>PS-2-pwrCon-TU</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:0_9120_5_calc_ps_2_pwrconsume</pv_name>
+      <x>197</x>
+      <y>196</y>
+      <width>79</width>
+      <height>29</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>PS-1-pwrGvn-TU</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:0_9110_6_calc_ps_1_pwrgiven</pv_name>
+      <x>109</x>
+      <y>230</y>
+      <width>79</width>
+      <height>29</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>PS-2-pwrGvn-TU</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:0_9120_6_calc_ps_2_pwrgiven</pv_name>
+      <x>197</x>
+      <y>230</y>
+      <width>79</width>
+      <height>29</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Fan-Pack-Group</name>
+    <x>315</x>
+    <y>29</y>
+    <width>280</width>
+    <height>141</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="rectangle" version="2.0.0">
+      <name>Fan-Rectangle</name>
+      <width>280</width>
+      <height>141</height>
+      <line_color>
+        <color name="acorn.Black" red="38" green="38" blue="38">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="acorn.White" red="255" green="255" blue="255">
+        </color>
+      </background_color>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Fan-Label</name>
+      <text>Fan Pack Status
+</text>
+      <x>10</x>
+      <y>6</y>
+      <width>260</width>
+      <height>25</height>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <background_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Fan-1-Label</name>
+      <text>Pack 1
+</text>
+      <x>108</x>
+      <y>36</y>
+      <width>64</width>
+      <height>25</height>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="12.0">
+        </font>
+      </font>
+      <background_color>
+        <color name="Attention" red="255" green="160" blue="0">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Fan-2-Label</name>
+      <text>Pack 2
+</text>
+      <x>194</x>
+      <y>36</y>
+      <width>64</width>
+      <height>25</height>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="12.0">
+        </font>
+      </font>
+      <background_color>
+        <color name="Attention" red="255" green="160" blue="0">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>frnt-pnl-stat-Label</name>
+      <class>Label</class>
+      <text>Frnt. Panel St.</text>
+      <x>6</x>
+      <y>74</y>
+      <width>103</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>back-pnl-stat-Label</name>
+      <class>Label</class>
+      <text>Back Panel St.</text>
+      <x>6</x>
+      <y>107</y>
+      <width>105</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>Frnt-Pnl-1-stat-LED</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:0_9210_1_fanmod_1_front_status</pv_name>
+      <x>127</x>
+      <y>66</y>
+      <width>30</width>
+      <height>30</height>
+      <states>
+        <state>
+          <value>1</value>
+          <label>Ok</label>
+          <color>
+            <color name="OK" red="0" green="255" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>2</value>
+          <label>Warning</label>
+          <color>
+            <color name="Attention" red="255" green="160" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>3</value>
+          <label>Critical</label>
+          <color>
+            <color name="MAJOR" red="255" green="0" blue="0">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label>Unknown</fallback_label>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>Frnt-Pnl-2-stat-LED</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:0_9220_1_fanmod_2_front_status</pv_name>
+      <x>209</x>
+      <y>66</y>
+      <width>30</width>
+      <height>30</height>
+      <states>
+        <state>
+          <value>1</value>
+          <label>Ok</label>
+          <color>
+            <color name="OK" red="0" green="255" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>2</value>
+          <label>Warning</label>
+          <color>
+            <color name="Attention" red="255" green="160" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>3</value>
+          <label>Critical</label>
+          <color>
+            <color name="MAJOR" red="255" green="0" blue="0">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label>Unknown</fallback_label>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>Back-Pnl-1-stat-LED</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:0_9210_2_fanmod_1_back_status</pv_name>
+      <x>127</x>
+      <y>100</y>
+      <width>30</width>
+      <height>30</height>
+      <states>
+        <state>
+          <value>1</value>
+          <label>Ok</label>
+          <color>
+            <color name="OK" red="0" green="255" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>2</value>
+          <label>Warning</label>
+          <color>
+            <color name="Attention" red="255" green="160" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>3</value>
+          <label>Critical</label>
+          <color>
+            <color name="MAJOR" red="255" green="0" blue="0">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label>Unknown</fallback_label>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>Back-Pnl-2-stat-LED</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:0_9220_2_fanmod_2_back_status</pv_name>
+      <x>209</x>
+      <y>100</y>
+      <width>30</width>
+      <height>30</height>
+      <states>
+        <state>
+          <value>1</value>
+          <label>Ok</label>
+          <color>
+            <color name="OK" red="0" green="255" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>2</value>
+          <label>Warning</label>
+          <color>
+            <color name="Attention" red="255" green="160" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>3</value>
+          <label>Critical</label>
+          <color>
+            <color name="MAJOR" red="255" green="0" blue="0">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label>Unknown</fallback_label>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>WR-Switch-Group</name>
+    <x>314</x>
+    <y>173</y>
+    <width>280</width>
+    <height>287</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="rectangle" version="2.0.0">
+      <name>WR-Stat-Rectangle</name>
+      <width>280</width>
+      <height>287</height>
+      <line_color>
+        <color name="acorn.Black" red="38" green="38" blue="38">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="acorn.White" red="255" green="255" blue="255">
+        </color>
+      </background_color>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>WR-Label</name>
+      <text>WR Switch Status
+</text>
+      <x>10</x>
+      <y>6</y>
+      <width>260</width>
+      <height>25</height>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <background_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>SW-1-stat_Label</name>
+      <class>Label</class>
+      <text>Sw. 0</text>
+      <x>10</x>
+      <y>39</y>
+      <width>41</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>Sw-0-stat-LED</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:0_2010_1_status</pv_name>
+      <x>59</x>
+      <y>33</y>
+      <width>30</width>
+      <height>30</height>
+      <states>
+        <state>
+          <value>1</value>
+          <label>Ok</label>
+          <color>
+            <color name="OK" red="0" green="255" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>2</value>
+          <label>Warning</label>
+          <color>
+            <color name="Attention" red="255" green="160" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>3</value>
+          <label>Critical</label>
+          <color>
+            <color name="MAJOR" red="255" green="0" blue="0">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label>Unknown</fallback_label>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>SW-1-stat_Label</name>
+      <class>Label</class>
+      <text>Sw. 1</text>
+      <x>100</x>
+      <y>39</y>
+      <width>41</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>Sw-1-stat-LED</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:0_2110_1_status</pv_name>
+      <x>149</x>
+      <y>33</y>
+      <width>30</width>
+      <height>30</height>
+      <states>
+        <state>
+          <value>1</value>
+          <label>Ok</label>
+          <color>
+            <color name="OK" red="0" green="255" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>2</value>
+          <label>Warning</label>
+          <color>
+            <color name="Attention" red="255" green="160" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>3</value>
+          <label>Critical</label>
+          <color>
+            <color name="MAJOR" red="255" green="0" blue="0">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label>Unknown</fallback_label>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>SW-2-stat_Label</name>
+      <class>Label</class>
+      <text>Sw. 2</text>
+      <x>188</x>
+      <y>39</y>
+      <width>41</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>Sw-2-stat-LED</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:0_2210_1_status</pv_name>
+      <x>238</x>
+      <y>33</y>
+      <width>30</width>
+      <height>30</height>
+      <states>
+        <state>
+          <value>1</value>
+          <label>Ok</label>
+          <color>
+            <color name="OK" red="0" green="255" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>2</value>
+          <label>Warning</label>
+          <color>
+            <color name="Attention" red="255" green="160" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>3</value>
+          <label>Critical</label>
+          <color>
+            <color name="MAJOR" red="255" green="0" blue="0">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label>Unknown</fallback_label>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>SW-3-stat_Label</name>
+      <class>Label</class>
+      <text>Sw. 3</text>
+      <x>10</x>
+      <y>75</y>
+      <width>41</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>Sw-3-stat-LED</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:0_2310_1_status</pv_name>
+      <x>59</x>
+      <y>68</y>
+      <width>30</width>
+      <height>30</height>
+      <states>
+        <state>
+          <value>1</value>
+          <label>Ok</label>
+          <color>
+            <color name="OK" red="0" green="255" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>2</value>
+          <label>Warning</label>
+          <color>
+            <color name="Attention" red="255" green="160" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>3</value>
+          <label>Critical</label>
+          <color>
+            <color name="MAJOR" red="255" green="0" blue="0">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label>Unknown</fallback_label>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>SW-4-stat_Label</name>
+      <class>Label</class>
+      <text>Sw. 4</text>
+      <x>100</x>
+      <y>75</y>
+      <width>41</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>Sw-4-stat-LED</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:0_2410_1_status</pv_name>
+      <x>149</x>
+      <y>68</y>
+      <width>30</width>
+      <height>30</height>
+      <states>
+        <state>
+          <value>1</value>
+          <label>Ok</label>
+          <color>
+            <color name="OK" red="0" green="255" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>2</value>
+          <label>Warning</label>
+          <color>
+            <color name="Attention" red="255" green="160" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>3</value>
+          <label>Critical</label>
+          <color>
+            <color name="MAJOR" red="255" green="0" blue="0">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label>Unknown</fallback_label>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>SW-5-stat_Label</name>
+      <class>Label</class>
+      <text>Sw. 5</text>
+      <x>188</x>
+      <y>75</y>
+      <width>41</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>Sw-5-stat-LED</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:0_2510_1_status</pv_name>
+      <x>238</x>
+      <y>68</y>
+      <width>30</width>
+      <height>30</height>
+      <states>
+        <state>
+          <value>1</value>
+          <label>Ok</label>
+          <color>
+            <color name="OK" red="0" green="255" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>2</value>
+          <label>Warning</label>
+          <color>
+            <color name="Attention" red="255" green="160" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>3</value>
+          <label>Critical</label>
+          <color>
+            <color name="MAJOR" red="255" green="0" blue="0">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label>Unknown</fallback_label>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>SW-6-stat_Label</name>
+      <class>Label</class>
+      <text>Sw. 6</text>
+      <x>10</x>
+      <y>111</y>
+      <width>41</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>Sw-6-stat-LED</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:0_2610_1_status</pv_name>
+      <x>59</x>
+      <y>105</y>
+      <width>30</width>
+      <height>30</height>
+      <states>
+        <state>
+          <value>1</value>
+          <label>Ok</label>
+          <color>
+            <color name="OK" red="0" green="255" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>2</value>
+          <label>Warning</label>
+          <color>
+            <color name="Attention" red="255" green="160" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>3</value>
+          <label>Critical</label>
+          <color>
+            <color name="MAJOR" red="255" green="0" blue="0">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label>Unknown</fallback_label>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>SW-7-stat_Label</name>
+      <class>Label</class>
+      <text>Sw. 7</text>
+      <x>100</x>
+      <y>111</y>
+      <width>41</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>Sw-7-stat-LED</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:0_2710_1_status</pv_name>
+      <x>149</x>
+      <y>105</y>
+      <width>30</width>
+      <height>30</height>
+      <states>
+        <state>
+          <value>1</value>
+          <label>Ok</label>
+          <color>
+            <color name="OK" red="0" green="255" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>2</value>
+          <label>Warning</label>
+          <color>
+            <color name="Attention" red="255" green="160" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>3</value>
+          <label>Critical</label>
+          <color>
+            <color name="MAJOR" red="255" green="0" blue="0">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label>Unknown</fallback_label>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>SW-8-stat_Label</name>
+      <class>Label</class>
+      <text>Sw. 8</text>
+      <x>188</x>
+      <y>111</y>
+      <width>41</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>Sw-8-stat-LED</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:0_2810_1_status</pv_name>
+      <x>238</x>
+      <y>105</y>
+      <width>30</width>
+      <height>30</height>
+      <states>
+        <state>
+          <value>1</value>
+          <label>Ok</label>
+          <color>
+            <color name="OK" red="0" green="255" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>2</value>
+          <label>Warning</label>
+          <color>
+            <color name="Attention" red="255" green="160" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>3</value>
+          <label>Critical</label>
+          <color>
+            <color name="MAJOR" red="255" green="0" blue="0">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label>Unknown</fallback_label>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>SW-9-stat_Label</name>
+      <class>Label</class>
+      <text>Sw. 9</text>
+      <x>10</x>
+      <y>146</y>
+      <width>41</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>Sw-9-stat-LED</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:0_2910_1_status</pv_name>
+      <x>59</x>
+      <y>141</y>
+      <width>30</width>
+      <height>30</height>
+      <states>
+        <state>
+          <value>1</value>
+          <label>Ok</label>
+          <color>
+            <color name="OK" red="0" green="255" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>2</value>
+          <label>Warning</label>
+          <color>
+            <color name="Attention" red="255" green="160" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>3</value>
+          <label>Critical</label>
+          <color>
+            <color name="MAJOR" red="255" green="0" blue="0">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label>Unknown</fallback_label>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>SW-10-stat_Label</name>
+      <class>Label</class>
+      <text>Sw. 10</text>
+      <x>97</x>
+      <y>146</y>
+      <width>49</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>Sw-10-stat-LED</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:0_3010_1_status</pv_name>
+      <x>149</x>
+      <y>141</y>
+      <width>30</width>
+      <height>30</height>
+      <states>
+        <state>
+          <value>1</value>
+          <label>Ok</label>
+          <color>
+            <color name="OK" red="0" green="255" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>2</value>
+          <label>Warning</label>
+          <color>
+            <color name="Attention" red="255" green="160" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>3</value>
+          <label>Critical</label>
+          <color>
+            <color name="MAJOR" red="255" green="0" blue="0">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label>Unknown</fallback_label>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>SW-11-stat_Label</name>
+      <class>Label</class>
+      <text>Sw. 11</text>
+      <x>188</x>
+      <y>146</y>
+      <width>49</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>Sw-11-stat-LED</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:0_3110_1_status</pv_name>
+      <x>238</x>
+      <y>141</y>
+      <width>30</width>
+      <height>30</height>
+      <states>
+        <state>
+          <value>1</value>
+          <label>Ok</label>
+          <color>
+            <color name="OK" red="0" green="255" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>2</value>
+          <label>Warning</label>
+          <color>
+            <color name="Attention" red="255" green="160" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>3</value>
+          <label>Critical</label>
+          <color>
+            <color name="MAJOR" red="255" green="0" blue="0">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label>Unknown</fallback_label>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>SW-12-stat_Label</name>
+      <class>Label</class>
+      <text>Sw. 12</text>
+      <x>10</x>
+      <y>180</y>
+      <width>49</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>Sw-12-stat-LED</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:0_3210_1_status</pv_name>
+      <x>59</x>
+      <y>177</y>
+      <width>30</width>
+      <height>30</height>
+      <states>
+        <state>
+          <value>1</value>
+          <label>Ok</label>
+          <color>
+            <color name="OK" red="0" green="255" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>2</value>
+          <label>Warning</label>
+          <color>
+            <color name="Attention" red="255" green="160" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>3</value>
+          <label>Critical</label>
+          <color>
+            <color name="MAJOR" red="255" green="0" blue="0">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label>Unknown</fallback_label>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>SW-13-stat_Label</name>
+      <class>Label</class>
+      <text>Sw. 13</text>
+      <x>97</x>
+      <y>180</y>
+      <width>49</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>Sw-13-stat-LED</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:0_3310_1_status</pv_name>
+      <x>149</x>
+      <y>177</y>
+      <width>30</width>
+      <height>30</height>
+      <states>
+        <state>
+          <value>1</value>
+          <label>Ok</label>
+          <color>
+            <color name="OK" red="0" green="255" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>2</value>
+          <label>Warning</label>
+          <color>
+            <color name="Attention" red="255" green="160" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>3</value>
+          <label>Critical</label>
+          <color>
+            <color name="MAJOR" red="255" green="0" blue="0">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label>Unknown</fallback_label>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>SW-14-stat_Label</name>
+      <class>Label</class>
+      <text>Sw. 14</text>
+      <x>188</x>
+      <y>180</y>
+      <width>49</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>Sw-14-stat-LED</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:0_3410_1_status</pv_name>
+      <x>238</x>
+      <y>177</y>
+      <width>30</width>
+      <height>30</height>
+      <states>
+        <state>
+          <value>1</value>
+          <label>Ok</label>
+          <color>
+            <color name="OK" red="0" green="255" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>2</value>
+          <label>Warning</label>
+          <color>
+            <color name="Attention" red="255" green="160" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>3</value>
+          <label>Critical</label>
+          <color>
+            <color name="MAJOR" red="255" green="0" blue="0">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label>Unknown</fallback_label>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>SW-15-stat_Label</name>
+      <class>Label</class>
+      <text>Sw. 15</text>
+      <x>10</x>
+      <y>218</y>
+      <width>49</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>Sw-15-stat-LED</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:0_3510_1_status</pv_name>
+      <x>61</x>
+      <y>213</y>
+      <width>30</width>
+      <height>30</height>
+      <states>
+        <state>
+          <value>1</value>
+          <label>Ok</label>
+          <color>
+            <color name="OK" red="0" green="255" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>2</value>
+          <label>Warning</label>
+          <color>
+            <color name="Attention" red="255" green="160" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>3</value>
+          <label>Critical</label>
+          <color>
+            <color name="MAJOR" red="255" green="0" blue="0">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label>Unknown</fallback_label>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Open-WR-page_Label</name>
+      <class>Label</class>
+      <text>Get more information</text>
+      <x>10</x>
+      <y>251</y>
+      <width>184</width>
+      <height>21</height>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="18.0">
+        </font>
+      </font>
+      <background_color>
+        <color name="fgs.NAL-Green.Light" red="120" green="190" blue="32">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <auto_size>true</auto_size>
+      <wrap_words>false</wrap_words>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>WR_Switch_Action Button</name>
+      <actions>
+        <action type="open_display">
+          <description>Open</description>
+          <file>WRSwitch-Details.bob</file>
+          <target>window</target>
+        </action>
+      </actions>
+      <x>200</x>
+      <y>242</y>
+      <width>65</width>
+      <height>37</height>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>eth-stat-Group</name>
+    <x>173</x>
+    <y>43</y>
+    <width>129</width>
+    <height>65</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>eth-0_Label</name>
+      <class>Label</class>
+      <text>Eth 0 Status </text>
+      <y>4</y>
+      <width>92</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>eth-1_Label</name>
+      <class>Label</class>
+      <text>Eth 1 Status </text>
+      <y>39</y>
+      <width>92</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>eth-0-_stat_LED</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:0_6800_1_eth_status</pv_name>
+      <x>99</x>
+      <width>30</width>
+      <height>30</height>
+      <states>
+        <state>
+          <value>1</value>
+          <label>Ok</label>
+          <color>
+            <color name="OK" red="0" green="255" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>2</value>
+          <label>Warning</label>
+          <color>
+            <color name="Attention" red="255" green="160" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>3</value>
+          <label>Critical</label>
+          <color>
+            <color name="MAJOR" red="255" green="0" blue="0">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label>Unknown</fallback_label>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>eth-1-_stat_LED</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:0_6900_1_eth_status</pv_name>
+      <x>99</x>
+      <y>35</y>
+      <width>30</width>
+      <height>30</height>
+      <states>
+        <state>
+          <value>1</value>
+          <label>Ok</label>
+          <color>
+            <color name="OK" red="0" green="255" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>2</value>
+          <label>Warning</label>
+          <color>
+            <color name="Attention" red="255" green="160" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>3</value>
+          <label>Critical</label>
+          <color>
+            <color name="MAJOR" red="255" green="0" blue="0">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label>Unknown</fallback_label>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Sys-Group</name>
+    <y>424</y>
+    <width>290</width>
+    <height>152</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="rectangle" version="2.0.0">
+      <name>Sys-Info-Rectangle</name>
+      <width>290</width>
+      <height>152</height>
+      <line_color>
+        <color name="acorn.Black" red="38" green="38" blue="38">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="acorn.White" red="255" green="255" blue="255">
+        </color>
+      </background_color>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Sys-Info-Label</name>
+      <text>System Informaiton
+</text>
+      <x>6</x>
+      <y>5</y>
+      <width>277</width>
+      <height>25</height>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <background_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>serial-no-Label</name>
+      <class>Label</class>
+      <text>Product Serial No</text>
+      <x>6</x>
+      <y>35</y>
+      <width>126</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>ser-no-TU</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:0_1410_13_serial_number</pv_name>
+      <x>153</x>
+      <y>32</y>
+      <width>117</width>
+      <height>21</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>prod-ver-Labe</name>
+      <class>Label</class>
+      <text>Prod. Version</text>
+      <x>6</x>
+      <y>59</y>
+      <width>97</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>version-no-TU</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:0_1410_22_version</pv_name>
+      <x>153</x>
+      <y>56</y>
+      <width>117</width>
+      <height>21</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>SW-ver-Label</name>
+      <class>Label</class>
+      <text>Software Version</text>
+      <x>6</x>
+      <y>81</y>
+      <width>122</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>SW-TU</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:0_1200_9_sw_version</pv_name>
+      <x>153</x>
+      <y>80</y>
+      <width>117</width>
+      <height>21</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>SW-comp-date-Label</name>
+      <class>Label</class>
+      <text>SW Compile Date</text>
+      <x>6</x>
+      <y>105</y>
+      <width>128</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>SW-COMP-Date-TU</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:0_1200_7_sw_compile_date</pv_name>
+      <x>153</x>
+      <y>104</y>
+      <width>117</width>
+      <height>21</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Up-time-Label</name>
+      <class>Label</class>
+      <text>Up Time</text>
+      <x>6</x>
+      <y>125</y>
+      <width>61</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Up-Time-TU</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:2_1001_10_uptime</pv_name>
+      <x>153</x>
+      <y>128</y>
+      <width>117</width>
+      <height>21</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Sys-Time-Group</name>
+    <x>167</x>
+    <y>108</y>
+    <width>143</width>
+    <height>40</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>Sys-Time-Label</name>
+      <class>Label</class>
+      <text>System Time</text>
+      <x>15</x>
+      <width>94</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Sys-Time-TU</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:2_1001_11_local_time</pv_name>
+      <y>19</y>
+      <width>143</width>
+      <height>21</height>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="12.0">
+        </font>
+      </font>
+      <background_color>
+        <color name="OK" red="0" green="255" blue="0">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Picture-Group</name>
+    <y>661</y>
+    <width>597</width>
+    <height>77</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="picture" version="2.0.0">
+      <name>WR_Picture</name>
+      <file>../images/WR_Switch_logo.png</file>
+      <x>508</x>
+      <width>89</width>
+      <height>74</height>
+    </widget>
+    <widget type="picture" version="2.0.0">
+      <name>WR_Picture_1</name>
+      <file>../images/Safaron_logo.png</file>
+      <y>3</y>
+      <width>256</width>
+      <height>74</height>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Open-pages-Group</name>
+    <x>293</x>
+    <y>475</y>
+    <width>304</width>
+    <height>66</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>get-eth-info-Label</name>
+      <class>Label</class>
+      <text>Get more interface information</text>
+      <y>4</y>
+      <width>244</width>
+      <height>21</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="18.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+      <wrap_words>false</wrap_words>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>get-sys-info-Label</name>
+      <class>Label</class>
+      <text>Get more system information</text>
+      <y>37</y>
+      <width>232</width>
+      <height>21</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="18.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+      <wrap_words>false</wrap_words>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Interface_Action Button</name>
+      <actions>
+        <action type="open_display">
+          <description>Open</description>
+          <file>Interface-Details.bob</file>
+          <target>window</target>
+        </action>
+      </actions>
+      <x>246</x>
+      <width>58</width>
+      <height>29</height>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Sys_Action Button_1</name>
+      <actions>
+        <action type="open_display">
+          <description>Open</description>
+          <file>System-Details.bob</file>
+          <target>window</target>
+        </action>
+      </actions>
+      <x>246</x>
+      <y>37</y>
+      <width>58</width>
+      <height>29</height>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Progess-Bar-Group</name>
+    <x>293</x>
+    <y>564</y>
+    <width>299</width>
+    <height>82</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>RAM-Use-Label</name>
+      <class>Label</class>
+      <text>RAM Usage (%)</text>
+      <x>1</x>
+      <width>116</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="progressbar" version="2.0.0">
+      <name>RAM-Progress-Bar</name>
+      <pv_name>=((`PIP2:TIME_CTRL_WRSWITCH:2_1001_20_calc_ram_total` - `PIP2:TIME_CTRL_WRSWITCH:2_1001_21_calc_ram_free`)/`PIP2:TIME_CTRL_WRSWITCH:2_1001_20_calc_ram_total`)*100</pv_name>
+      <x>129</x>
+      <y>1</y>
+      <width>170</width>
+      <fill_color>
+        <color name="acorn.Text.White" red="255" green="255" blue="255">
+        </color>
+      </fill_color>
+      <rules>
+        <rule name="Progess-Bar-Color" prop_id="fill_color" out_exp="false">
+          <exp bool_exp="((pv0 - pv1)/pv0)*100 &lt; 50">
+            <value>
+              <color red="60" green="255" blue="60">
+              </color>
+            </value>
+          </exp>
+          <exp bool_exp="((pv0 - pv1)/pv0)*100 &gt;= 50 &amp;&amp; ((pv0 - pv1)/pv0)*100 &lt;= 75">
+            <value>
+              <color name="Attention" red="255" green="160" blue="0">
+              </color>
+            </value>
+          </exp>
+          <exp bool_exp="((pv0 - pv1)/pv0)*100 &gt; 75">
+            <value>
+              <color name="acorn.Red" red="229" green="56" blue="35">
+              </color>
+            </value>
+          </exp>
+          <pv_name>PIP2:TIME_CTRL_WRSWITCH:2_1001_20_calc_ram_total</pv_name>
+          <pv_name>PIP2:TIME_CTRL_WRSWITCH:2_1001_21_calc_ram_free</pv_name>
+        </rule>
+      </rules>
+      <tooltip>$(pv_value)</tooltip>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>HD-1-Use-Label</name>
+      <class>Label</class>
+      <text>Hard Disk 1 Usage (%)</text>
+      <x>1</x>
+      <y>34</y>
+      <width>164</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>HD-2-Use-Label</name>
+      <class>Label</class>
+      <text>Hard Disk 2 Usage (%)</text>
+      <y>62</y>
+      <width>164</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="progressbar" version="2.0.0">
+      <name>HD-1-Progress-Bar</name>
+      <pv_name>=((`PIP2:TIME_CTRL_WRSWITCH:2_1001_40_calc_hdd1_size` - `PIP2:TIME_CTRL_WRSWITCH:2_1001_41_hdd1_free`)/`PIP2:TIME_CTRL_WRSWITCH:2_1001_40_calc_hdd1_size`)*100</pv_name>
+      <x>172</x>
+      <y>35</y>
+      <width>127</width>
+      <fill_color>
+        <color name="acorn.Text.White" red="255" green="255" blue="255">
+        </color>
+      </fill_color>
+      <rules>
+        <rule name="Progess-Bar-Color" prop_id="fill_color" out_exp="false">
+          <exp bool_exp="((pv0 - pv1)/pv0)*100 &lt; 50">
+            <value>
+              <color red="60" green="255" blue="60">
+              </color>
+            </value>
+          </exp>
+          <exp bool_exp="((pv0 - pv1)/pv0)*100 &gt;= 50 &amp;&amp; ((pv0 - pv1)/pv0)*100 &lt;= 75">
+            <value>
+              <color name="Attention" red="255" green="160" blue="0">
+              </color>
+            </value>
+          </exp>
+          <exp bool_exp="((pv0 - pv1)/pv0)*100 &gt; 75">
+            <value>
+              <color name="acorn.Red" red="229" green="56" blue="35">
+              </color>
+            </value>
+          </exp>
+          <pv_name>PIP2:TIME_CTRL_WRSWITCH:2_1001_40_calc_hdd1_size</pv_name>
+          <pv_name>PIP2:TIME_CTRL_WRSWITCH:2_1001_41_calc_hdd1_free</pv_name>
+        </rule>
+      </rules>
+      <tooltip>$(pv_value)</tooltip>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="progressbar" version="2.0.0">
+      <name>HD-2-Progress-Bar</name>
+      <pv_name>=((`PIP2:TIME_CTRL_WRSWITCH:2_1001_50_calc_hdd2_size` - `PIP2:TIME_CTRL_WRSWITCH:2_1001_51_hdd2_free`)/`PIP2:TIME_CTRL_WRSWITCH:2_1001_50_calc_hdd2_size`)*100</pv_name>
+      <x>172</x>
+      <y>62</y>
+      <width>127</width>
+      <fill_color>
+        <color name="acorn.Text.White" red="255" green="255" blue="255">
+        </color>
+      </fill_color>
+      <rules>
+        <rule name="Progess-Bar-Color" prop_id="fill_color" out_exp="false">
+          <exp bool_exp="((pv0 - pv1)/pv0)*100 &lt; 50">
+            <value>
+              <color red="60" green="255" blue="60">
+              </color>
+            </value>
+          </exp>
+          <exp bool_exp="((pv0 - pv1)/pv0)*100 &gt;= 50 &amp;&amp; ((pv0 - pv1)/pv0)*100 &lt;= 75">
+            <value>
+              <color name="Attention" red="255" green="160" blue="0">
+              </color>
+            </value>
+          </exp>
+          <exp bool_exp="((pv0 - pv1)/pv0)*100 &gt; 75">
+            <value>
+              <color name="acorn.Red" red="229" green="56" blue="35">
+              </color>
+            </value>
+          </exp>
+          <pv_name>PIP2:TIME_CTRL_WRSWITCH:2_1001_50_calc_hdd2_size</pv_name>
+          <pv_name>PIP2:TIME_CTRL_WRSWITCH:2_1001_51_calc_hdd2_free</pv_name>
+        </rule>
+      </rules>
+      <tooltip>$(pv_value)</tooltip>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>TEMP-Label</name>
+    <class>Label</class>
+    <text>FPGA Temperature</text>
+    <x>18</x>
+    <y>611</y>
+    <width>183</width>
+    <height>23</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="20.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="thermometer" version="2.0.0">
+    <name>Thermometer</name>
+    <pv_name>PIP2:TIME_CTRL_WRSWITCH:2_1001_60_calc_fpga_temp</pv_name>
+    <x>209</x>
+    <y>582</y>
+    <width>50</width>
+    <height>100</height>
+    <fill_color>
+      <color name="cryo.return.2K" red="0" green="0" blue="255">
+      </color>
+    </fill_color>
+    <rules>
+      <rule name="Fill-Color-rule" prop_id="fill_color" out_exp="false">
+        <exp bool_exp="pv0 &lt; 50">
+          <value>
+            <color red="60" green="255" blue="60">
+            </color>
+          </value>
+        </exp>
+        <exp bool_exp="pv0 &gt;= 50 &amp;&amp; pv0 &lt;= 75">
+          <value>
+            <color name="cryo.return.2K" red="0" green="0" blue="255">
+            </color>
+          </value>
+        </exp>
+        <exp bool_exp="pv0 &gt; 75">
+          <value>
+            <color name="acorn.Red" red="229" green="56" blue="35">
+            </color>
+          </value>
+        </exp>
+        <pv_name>PIP2:TIME_CTRL_WRSWITCH:2_1001_60_calc_fpga_temp</pv_name>
+      </rule>
+    </rules>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <limits_from_pv>false</limits_from_pv>
+    <maximum>120.0</maximum>
+  </widget>
+</display>

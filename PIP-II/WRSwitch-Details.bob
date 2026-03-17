@@ -1,0 +1,2343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>WRSwitch-Details-Display</name>
+  <width>1180</width>
+  <height>840</height>
+  <widget type="label" version="2.0.0">
+    <name>Main-Topic-Label</name>
+    <text>WR Switch Details</text>
+    <width>1180</width>
+    <height>35</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <background_color>
+      <color name="Attention" red="255" green="160" blue="0">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>SW0-Group</name>
+    <macros>
+      <mod_id>0</mod_id>
+      <dir_id>2010</dir_id>
+    </macros>
+    <x>6</x>
+    <y>39</y>
+    <width>194</width>
+    <height>385</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-intr-spd-TU</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_8_calc_interface_speed</pv_name>
+      <x>94</x>
+      <y>67</y>
+      <height>29</height>
+      <precision>2</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>WRS-0-Label</name>
+      <class>Label</class>
+      <text>Sw. 0</text>
+      <x>109</x>
+      <width>41</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>WRS-0-Stat-Label</name>
+      <class>Label</class>
+      <text>Status</text>
+      <x>3</x>
+      <y>29</y>
+      <width>46</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>Sw-0-stat-LED</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_1_status</pv_name>
+      <x>114</x>
+      <y>25</y>
+      <width>30</width>
+      <height>30</height>
+      <states>
+        <state>
+          <value>1</value>
+          <label>Ok</label>
+          <color>
+            <color name="OK" red="0" green="255" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>2</value>
+          <label>Warning</label>
+          <color>
+            <color name="Attention" red="255" green="160" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>3</value>
+          <label>Critical</label>
+          <color>
+            <color name="MAJOR" red="255" green="0" blue="0">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label>Unknown</fallback_label>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>WRS-intr-spd-Label</name>
+      <class>Label</class>
+      <text>Interface
+Speed</text>
+      <y>63</y>
+      <width>63</width>
+      <height>40</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>WRS-trns-pkts-Label</name>
+      <class>Label</class>
+      <text>No. of Trans.
+Packets</text>
+      <y>109</y>
+      <width>93</width>
+      <height>40</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-trns-pkts-TU</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_9_calc_tx_packets</pv_name>
+      <x>94</x>
+      <y>109</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>WRS-rec-pkts-Label</name>
+      <class>Label</class>
+      <text>No. of Rec.
+Packets</text>
+      <y>156</y>
+      <width>81</width>
+      <height>40</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-rec-pkts-TU</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_10_calc_rx_packets</pv_name>
+      <x>94</x>
+      <y>155</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>WRS-trns-bytes-Label</name>
+      <class>Label</class>
+      <text>No. of Trans.
+Bytes</text>
+      <y>205</y>
+      <width>93</width>
+      <height>40</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-trns-byt-TU</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_11_calc_tx_bytes</pv_name>
+      <x>94</x>
+      <y>201</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>WRS-rec-bytes-Label</name>
+      <class>Label</class>
+      <text>No. of Rec.
+Bytes</text>
+      <y>251</y>
+      <width>81</width>
+      <height>40</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-rec-byt-TU</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_12_calc_rx_bytes</pv_name>
+      <x>94</x>
+      <y>250</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>WRS-trns-err-Label</name>
+      <class>Label</class>
+      <text>No. of Trns.
+Errors</text>
+      <y>298</y>
+      <width>84</width>
+      <height>40</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-trns-err-TU</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_13_calc_tx_errors</pv_name>
+      <x>94</x>
+      <y>297</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>WRS-rec-err-Label</name>
+      <class>Label</class>
+      <text>No. of Rec.
+Errors</text>
+      <y>345</y>
+      <width>81</width>
+      <height>40</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-rec-err-TU</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_14_calc_rx_errors</pv_name>
+      <x>94</x>
+      <y>342</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>SW1-Group</name>
+    <macros>
+      <mod_id>0</mod_id>
+      <dir_id>2110</dir_id>
+    </macros>
+    <x>204</x>
+    <y>39</y>
+    <width>136</width>
+    <height>385</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>WRS-1-Label</name>
+      <class>Label</class>
+      <text>Sw. 1</text>
+      <x>41</x>
+      <width>41</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>Sw-0-stat-LED_1</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_1_status</pv_name>
+      <x>46</x>
+      <y>25</y>
+      <width>30</width>
+      <height>30</height>
+      <states>
+        <state>
+          <value>1</value>
+          <label>Ok</label>
+          <color>
+            <color name="OK" red="0" green="255" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>2</value>
+          <label>Warning</label>
+          <color>
+            <color name="Attention" red="255" green="160" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>3</value>
+          <label>Critical</label>
+          <color>
+            <color name="MAJOR" red="255" green="0" blue="0">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label>Unknown</fallback_label>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-trns-pkts-TU_1</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_9_calc_tx_packets</pv_name>
+      <x>18</x>
+      <y>109</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-rec-pkts-TU_1</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_10_calc_rx_packets</pv_name>
+      <x>18</x>
+      <y>155</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-trns-byt-TU_1</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_11_calc_tx_bytes</pv_name>
+      <x>18</x>
+      <y>201</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-rec-byt-TU_1</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_12_calc_rx_bytes</pv_name>
+      <x>18</x>
+      <y>250</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-trns-err-TU_1</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_13_calc_tx_errors</pv_name>
+      <x>18</x>
+      <y>297</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-rec-err-TU_1</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_14_calc_rx_errors</pv_name>
+      <x>18</x>
+      <y>342</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-intr-spd-TU_1</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_8_calc_interface_speed</pv_name>
+      <x>18</x>
+      <y>67</y>
+      <height>29</height>
+      <precision>2</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>SW2-Group</name>
+    <macros>
+      <mod_id>0</mod_id>
+      <dir_id>2210</dir_id>
+    </macros>
+    <x>344</x>
+    <y>39</y>
+    <width>136</width>
+    <height>385</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>WRS-2-Label_1</name>
+      <class>Label</class>
+      <text>Sw. 2</text>
+      <x>41</x>
+      <width>41</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>Sw-0-stat-LED_2</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_1_status</pv_name>
+      <x>46</x>
+      <y>25</y>
+      <width>30</width>
+      <height>30</height>
+      <states>
+        <state>
+          <value>1</value>
+          <label>Ok</label>
+          <color>
+            <color name="OK" red="0" green="255" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>2</value>
+          <label>Warning</label>
+          <color>
+            <color name="Attention" red="255" green="160" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>3</value>
+          <label>Critical</label>
+          <color>
+            <color name="MAJOR" red="255" green="0" blue="0">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label>Unknown</fallback_label>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-trns-pkts-TU_2</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_9_calc_tx_packets</pv_name>
+      <x>18</x>
+      <y>109</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-rec-pkts-TU_2</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_10_calc_rx_packets</pv_name>
+      <x>18</x>
+      <y>155</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-trns-byt-TU_2</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_11_calc_tx_bytes</pv_name>
+      <x>18</x>
+      <y>201</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-rec-byt-TU_2</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_12_calc_rx_bytes</pv_name>
+      <x>18</x>
+      <y>250</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-trns-err-TU_2</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_13_calc_tx_errors</pv_name>
+      <x>18</x>
+      <y>297</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-rec-err-TU_2</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_14_calc_rx_errors</pv_name>
+      <x>18</x>
+      <y>342</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-intr-spd-TU_2</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_8_calc_interface_speed</pv_name>
+      <x>18</x>
+      <y>67</y>
+      <height>29</height>
+      <precision>2</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>SW3-Group</name>
+    <macros>
+      <mod_id>0</mod_id>
+      <dir_id>2310</dir_id>
+    </macros>
+    <x>483</x>
+    <y>39</y>
+    <width>136</width>
+    <height>385</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>WRS-3-Label</name>
+      <class>Label</class>
+      <text>Sw. 3</text>
+      <x>41</x>
+      <width>41</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>Sw-0-stat-LED_3</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_1_status</pv_name>
+      <x>46</x>
+      <y>25</y>
+      <width>30</width>
+      <height>30</height>
+      <states>
+        <state>
+          <value>1</value>
+          <label>Ok</label>
+          <color>
+            <color name="OK" red="0" green="255" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>2</value>
+          <label>Warning</label>
+          <color>
+            <color name="Attention" red="255" green="160" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>3</value>
+          <label>Critical</label>
+          <color>
+            <color name="MAJOR" red="255" green="0" blue="0">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label>Unknown</fallback_label>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-trns-pkts-TU_3</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_9_calc_tx_packets</pv_name>
+      <x>18</x>
+      <y>109</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-rec-pkts-TU_3</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_10_calc_rx_packets</pv_name>
+      <x>18</x>
+      <y>155</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-trns-byt-TU_3</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_11_calc_tx_bytes</pv_name>
+      <x>18</x>
+      <y>201</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-rec-byt-TU_3</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_12_calc_rx_bytes</pv_name>
+      <x>18</x>
+      <y>250</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-trns-err-TU_3</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_13_calc_tx_errors</pv_name>
+      <x>18</x>
+      <y>297</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-rec-err-TU_3</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_14_calc_rx_errors</pv_name>
+      <x>18</x>
+      <y>342</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-intr-spd-TU_3</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_8_calc_interface_speed</pv_name>
+      <x>18</x>
+      <y>67</y>
+      <height>29</height>
+      <precision>2</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>SW4-Group</name>
+    <macros>
+      <mod_id>0</mod_id>
+      <dir_id>2410</dir_id>
+    </macros>
+    <x>618</x>
+    <y>39</y>
+    <width>136</width>
+    <height>385</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>WRS-4-Label</name>
+      <class>Label</class>
+      <text>Sw. 4</text>
+      <x>41</x>
+      <width>41</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>Sw-0-stat-LED_4</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_1_status</pv_name>
+      <x>46</x>
+      <y>25</y>
+      <width>30</width>
+      <height>30</height>
+      <states>
+        <state>
+          <value>1</value>
+          <label>Ok</label>
+          <color>
+            <color name="OK" red="0" green="255" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>2</value>
+          <label>Warning</label>
+          <color>
+            <color name="Attention" red="255" green="160" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>3</value>
+          <label>Critical</label>
+          <color>
+            <color name="MAJOR" red="255" green="0" blue="0">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label>Unknown</fallback_label>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-trns-pkts-TU_4</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_9_calc_tx_packets</pv_name>
+      <x>18</x>
+      <y>109</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-rec-pkts-TU_4</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_10_calc_rx_packets</pv_name>
+      <x>18</x>
+      <y>155</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-trns-byt-TU_4</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_11_calc_tx_bytes</pv_name>
+      <x>18</x>
+      <y>201</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-rec-byt-TU_4</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_12_calc_rx_bytes</pv_name>
+      <x>18</x>
+      <y>250</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-trns-err-TU_4</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_13_calc_tx_errors</pv_name>
+      <x>18</x>
+      <y>297</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-rec-err-TU_4</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_14_calc_rx_errors</pv_name>
+      <x>18</x>
+      <y>342</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-intr-spd-TU_4</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_8_calc_interface_speed</pv_name>
+      <x>18</x>
+      <y>67</y>
+      <height>29</height>
+      <precision>2</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>SW5-Group</name>
+    <macros>
+      <mod_id>0</mod_id>
+      <dir_id>2510</dir_id>
+    </macros>
+    <x>756</x>
+    <y>39</y>
+    <width>136</width>
+    <height>385</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>WRS-5-Label</name>
+      <class>Label</class>
+      <text>Sw. 5</text>
+      <x>41</x>
+      <width>41</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>Sw-0-stat-LED_5</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_1_status</pv_name>
+      <x>46</x>
+      <y>25</y>
+      <width>30</width>
+      <height>30</height>
+      <states>
+        <state>
+          <value>1</value>
+          <label>Ok</label>
+          <color>
+            <color name="OK" red="0" green="255" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>2</value>
+          <label>Warning</label>
+          <color>
+            <color name="Attention" red="255" green="160" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>3</value>
+          <label>Critical</label>
+          <color>
+            <color name="MAJOR" red="255" green="0" blue="0">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label>Unknown</fallback_label>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-trns-pkts-TU_5</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_9_calc_tx_packets</pv_name>
+      <x>18</x>
+      <y>109</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-rec-pkts-TU_5</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_10_calc_rx_packets</pv_name>
+      <x>18</x>
+      <y>155</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-trns-byt-TU_5</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_11_calc_tx_bytes</pv_name>
+      <x>18</x>
+      <y>201</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-rec-byt-TU_5</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_12_calc_rx_bytes</pv_name>
+      <x>18</x>
+      <y>250</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-trns-err-TU_5</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_13_calc_tx_errors</pv_name>
+      <x>18</x>
+      <y>297</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-rec-err-TU_5</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_14_calc_rx_errors</pv_name>
+      <x>18</x>
+      <y>342</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-intr-spd-TU_5</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_8_calc_interface_speed</pv_name>
+      <x>18</x>
+      <y>67</y>
+      <height>29</height>
+      <precision>2</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>SW6-Group</name>
+    <macros>
+      <mod_id>0</mod_id>
+      <dir_id>2610</dir_id>
+    </macros>
+    <x>895</x>
+    <y>39</y>
+    <width>136</width>
+    <height>385</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>WRS-6-Label</name>
+      <class>Label</class>
+      <text>Sw. 6</text>
+      <x>41</x>
+      <width>41</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>Sw-0-stat-LED_6</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_1_status</pv_name>
+      <x>46</x>
+      <y>25</y>
+      <width>30</width>
+      <height>30</height>
+      <states>
+        <state>
+          <value>1</value>
+          <label>Ok</label>
+          <color>
+            <color name="OK" red="0" green="255" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>2</value>
+          <label>Warning</label>
+          <color>
+            <color name="Attention" red="255" green="160" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>3</value>
+          <label>Critical</label>
+          <color>
+            <color name="MAJOR" red="255" green="0" blue="0">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label>Unknown</fallback_label>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-trns-pkts-TU_6</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_9_calc_tx_packets</pv_name>
+      <x>18</x>
+      <y>109</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-rec-pkts-TU_6</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_10_calc_rx_packets</pv_name>
+      <x>18</x>
+      <y>155</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-trns-byt-TU_6</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_11_calc_tx_bytes</pv_name>
+      <x>18</x>
+      <y>201</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-rec-byt-TU_6</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_12_calc_rx_bytes</pv_name>
+      <x>18</x>
+      <y>250</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-trns-err-TU_6</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_13_calc_tx_errors</pv_name>
+      <x>18</x>
+      <y>297</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-rec-err-TU_6</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_14_calc_rx_errors</pv_name>
+      <x>18</x>
+      <y>342</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-intr-spd-TU_6</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_8_calc_interface_speed</pv_name>
+      <x>18</x>
+      <y>67</y>
+      <height>29</height>
+      <precision>2</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>SW7-Group</name>
+    <macros>
+      <mod_id>0</mod_id>
+      <dir_id>2710</dir_id>
+    </macros>
+    <x>1034</x>
+    <y>39</y>
+    <width>136</width>
+    <height>385</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>WRS-7-Label</name>
+      <class>Label</class>
+      <text>Sw. 7</text>
+      <x>41</x>
+      <width>41</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>Sw-0-stat-LED_7</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_1_status</pv_name>
+      <x>46</x>
+      <y>25</y>
+      <width>30</width>
+      <height>30</height>
+      <states>
+        <state>
+          <value>1</value>
+          <label>Ok</label>
+          <color>
+            <color name="OK" red="0" green="255" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>2</value>
+          <label>Warning</label>
+          <color>
+            <color name="Attention" red="255" green="160" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>3</value>
+          <label>Critical</label>
+          <color>
+            <color name="MAJOR" red="255" green="0" blue="0">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label>Unknown</fallback_label>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-trns-pkts-TU_7</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_9_calc_tx_packets</pv_name>
+      <x>18</x>
+      <y>109</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-rec-pkts-TU_7</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_10_calc_rx_packets</pv_name>
+      <x>18</x>
+      <y>155</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-trns-byt-TU_7</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_11_calc_tx_bytes</pv_name>
+      <x>18</x>
+      <y>201</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-rec-byt-TU_7</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_12_calc_rx_bytes</pv_name>
+      <x>18</x>
+      <y>250</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-trns-err-TU_7</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_13_calc_tx_errors</pv_name>
+      <x>18</x>
+      <y>297</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-rec-err-TU_7</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_14_calc_rx_errors</pv_name>
+      <x>18</x>
+      <y>342</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-intr-spd-TU_7</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_8_calc_interface_speed</pv_name>
+      <x>18</x>
+      <y>67</y>
+      <height>29</height>
+      <precision>2</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>SW8-Group</name>
+    <macros>
+      <mod_id>0</mod_id>
+      <dir_id>2810</dir_id>
+    </macros>
+    <x>6</x>
+    <y>445</y>
+    <width>194</width>
+    <height>385</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-intr-spd-TU_8</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_8_calc_interface_speed</pv_name>
+      <x>94</x>
+      <y>67</y>
+      <height>29</height>
+      <precision>2</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>WRS-8-Label</name>
+      <class>Label</class>
+      <text>Sw. 8</text>
+      <x>109</x>
+      <width>41</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>WRS-0-Stat-Label_2</name>
+      <class>Label</class>
+      <text>Status</text>
+      <x>3</x>
+      <y>29</y>
+      <width>46</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>Sw-0-stat-LED_8</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_1_status</pv_name>
+      <x>114</x>
+      <y>25</y>
+      <width>30</width>
+      <height>30</height>
+      <states>
+        <state>
+          <value>1</value>
+          <label>Ok</label>
+          <color>
+            <color name="OK" red="0" green="255" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>2</value>
+          <label>Warning</label>
+          <color>
+            <color name="Attention" red="255" green="160" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>3</value>
+          <label>Critical</label>
+          <color>
+            <color name="MAJOR" red="255" green="0" blue="0">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label>Unknown</fallback_label>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>WRS-intr-spd-Label_2</name>
+      <class>Label</class>
+      <text>Interface
+Speed</text>
+      <y>63</y>
+      <width>63</width>
+      <height>40</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>WRS-trns-pkts-Label_2</name>
+      <class>Label</class>
+      <text>No. of Trans.
+Packets</text>
+      <y>109</y>
+      <width>93</width>
+      <height>40</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-trns-pkts-TU_8</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_9_calc_tx_packets</pv_name>
+      <x>94</x>
+      <y>109</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>WRS-rec-pkts-Label_2</name>
+      <class>Label</class>
+      <text>No. of Rec.
+Packets</text>
+      <y>156</y>
+      <width>81</width>
+      <height>40</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-rec-pkts-TU_8</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_10_calc_rx_packets</pv_name>
+      <x>94</x>
+      <y>155</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>WRS-trns-bytes-Label_2</name>
+      <class>Label</class>
+      <text>No. of Trans.
+Bytes</text>
+      <y>205</y>
+      <width>93</width>
+      <height>40</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-trns-byt-TU_8</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_11_calc_tx_bytes</pv_name>
+      <x>94</x>
+      <y>201</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>WRS-rec-bytes-Label_2</name>
+      <class>Label</class>
+      <text>No. of Rec.
+Bytes</text>
+      <y>251</y>
+      <width>81</width>
+      <height>40</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-rec-byt-TU_8</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_12_calc_rx_bytes</pv_name>
+      <x>94</x>
+      <y>250</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>WRS-trns-err-Label_2</name>
+      <class>Label</class>
+      <text>No. of Trns.
+Errors</text>
+      <y>298</y>
+      <width>84</width>
+      <height>40</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-trns-err-TU_8</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_13_calc_tx_errors</pv_name>
+      <x>94</x>
+      <y>297</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>WRS-rec-err-Label_2</name>
+      <class>Label</class>
+      <text>No. of Rec.
+Errors</text>
+      <y>345</y>
+      <width>81</width>
+      <height>40</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-rec-err-TU_8</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_14_calc_rx_errors</pv_name>
+      <x>94</x>
+      <y>342</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>SW9-Group</name>
+    <macros>
+      <mod_id>0</mod_id>
+      <dir_id>2910</dir_id>
+    </macros>
+    <x>203</x>
+    <y>445</y>
+    <width>136</width>
+    <height>385</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>WRS-9-Label</name>
+      <class>Label</class>
+      <text>Sw. 9</text>
+      <x>41</x>
+      <width>41</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>Sw-0-stat-LED_9</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_1_status</pv_name>
+      <x>46</x>
+      <y>25</y>
+      <width>30</width>
+      <height>30</height>
+      <states>
+        <state>
+          <value>1</value>
+          <label>Ok</label>
+          <color>
+            <color name="OK" red="0" green="255" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>2</value>
+          <label>Warning</label>
+          <color>
+            <color name="Attention" red="255" green="160" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>3</value>
+          <label>Critical</label>
+          <color>
+            <color name="MAJOR" red="255" green="0" blue="0">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label>Unknown</fallback_label>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-trns-pkts-TU_9</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_9_calc_tx_packets</pv_name>
+      <x>18</x>
+      <y>109</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-rec-pkts-TU_9</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_10_calc_rx_packets</pv_name>
+      <x>18</x>
+      <y>155</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-trns-byt-TU_9</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_11_calc_tx_bytes</pv_name>
+      <x>18</x>
+      <y>201</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-rec-byt-TU_9</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_12_calc_rx_bytes</pv_name>
+      <x>18</x>
+      <y>250</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-trns-err-TU_9</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_13_calc_tx_errors</pv_name>
+      <x>18</x>
+      <y>297</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-rec-err-TU_9</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_14_calc_rx_errors</pv_name>
+      <x>18</x>
+      <y>342</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-intr-spd-TU_9</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_8_calc_interface_speed</pv_name>
+      <x>18</x>
+      <y>67</y>
+      <height>29</height>
+      <precision>2</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>SW10-Group</name>
+    <macros>
+      <mod_id>0</mod_id>
+      <dir_id>3010</dir_id>
+    </macros>
+    <x>342</x>
+    <y>445</y>
+    <width>136</width>
+    <height>385</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>WRS-10-Label</name>
+      <class>Label</class>
+      <text>Sw. 10</text>
+      <x>41</x>
+      <width>49</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>Sw-0-stat-LED_10</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_1_status</pv_name>
+      <x>46</x>
+      <y>25</y>
+      <width>30</width>
+      <height>30</height>
+      <states>
+        <state>
+          <value>1</value>
+          <label>Ok</label>
+          <color>
+            <color name="OK" red="0" green="255" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>2</value>
+          <label>Warning</label>
+          <color>
+            <color name="Attention" red="255" green="160" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>3</value>
+          <label>Critical</label>
+          <color>
+            <color name="MAJOR" red="255" green="0" blue="0">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label>Unknown</fallback_label>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-trns-pkts-TU_10</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_9_calc_tx_packets</pv_name>
+      <x>18</x>
+      <y>109</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-rec-pkts-TU_10</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_10_calc_rx_packets</pv_name>
+      <x>18</x>
+      <y>155</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-trns-byt-TU_10</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_11_calc_tx_bytes</pv_name>
+      <x>18</x>
+      <y>201</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-rec-byt-TU_10</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_12_calc_rx_bytes</pv_name>
+      <x>18</x>
+      <y>250</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-trns-err-TU_10</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_13_calc_tx_errors</pv_name>
+      <x>18</x>
+      <y>297</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-rec-err-TU_10</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_14_calc_rx_errors</pv_name>
+      <x>18</x>
+      <y>342</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-intr-spd-TU_10</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_8_calc_interface_speed</pv_name>
+      <x>18</x>
+      <y>67</y>
+      <height>29</height>
+      <precision>2</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>SW11-Group</name>
+    <macros>
+      <mod_id>0</mod_id>
+      <dir_id>3110</dir_id>
+    </macros>
+    <x>481</x>
+    <y>445</y>
+    <width>136</width>
+    <height>385</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>WRS-11-Label</name>
+      <class>Label</class>
+      <text>Sw. 11</text>
+      <x>41</x>
+      <width>49</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>Sw-0-stat-LED_11</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_1_status</pv_name>
+      <x>46</x>
+      <y>25</y>
+      <width>30</width>
+      <height>30</height>
+      <states>
+        <state>
+          <value>1</value>
+          <label>Ok</label>
+          <color>
+            <color name="OK" red="0" green="255" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>2</value>
+          <label>Warning</label>
+          <color>
+            <color name="Attention" red="255" green="160" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>3</value>
+          <label>Critical</label>
+          <color>
+            <color name="MAJOR" red="255" green="0" blue="0">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label>Unknown</fallback_label>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-trns-pkts-TU_11</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_9_calc_tx_packets</pv_name>
+      <x>18</x>
+      <y>109</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-rec-pkts-TU_11</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_10_calc_rx_packets</pv_name>
+      <x>18</x>
+      <y>155</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-trns-byt-TU_11</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_11_calc_tx_bytes</pv_name>
+      <x>18</x>
+      <y>201</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-rec-byt-TU_11</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_12_calc_rx_bytes</pv_name>
+      <x>18</x>
+      <y>250</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-trns-err-TU_11</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_13_calc_tx_errors</pv_name>
+      <x>18</x>
+      <y>297</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-rec-err-TU_11</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_14_calc_rx_errors</pv_name>
+      <x>18</x>
+      <y>342</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-intr-spd-TU_11</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_8_calc_interface_speed</pv_name>
+      <x>18</x>
+      <y>67</y>
+      <height>29</height>
+      <precision>2</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>SW12-Group</name>
+    <macros>
+      <mod_id>0</mod_id>
+      <dir_id>3210</dir_id>
+    </macros>
+    <x>620</x>
+    <y>445</y>
+    <width>136</width>
+    <height>385</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>WRS-12-Label</name>
+      <class>Label</class>
+      <text>Sw. 12</text>
+      <x>41</x>
+      <width>49</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>Sw-0-stat-LED_12</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_1_status</pv_name>
+      <x>46</x>
+      <y>25</y>
+      <width>30</width>
+      <height>30</height>
+      <states>
+        <state>
+          <value>1</value>
+          <label>Ok</label>
+          <color>
+            <color name="OK" red="0" green="255" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>2</value>
+          <label>Warning</label>
+          <color>
+            <color name="Attention" red="255" green="160" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>3</value>
+          <label>Critical</label>
+          <color>
+            <color name="MAJOR" red="255" green="0" blue="0">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label>Unknown</fallback_label>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-trns-pkts-TU_12</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_9_calc_tx_packets</pv_name>
+      <x>18</x>
+      <y>109</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-rec-pkts-TU_12</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_10_calc_rx_packets</pv_name>
+      <x>18</x>
+      <y>155</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-trns-byt-TU_12</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_11_calc_tx_bytes</pv_name>
+      <x>18</x>
+      <y>201</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-rec-byt-TU_12</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_12_calc_rx_bytes</pv_name>
+      <x>18</x>
+      <y>250</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-trns-err-TU_12</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_13_calc_tx_errors</pv_name>
+      <x>18</x>
+      <y>297</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-rec-err-TU_12</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_14_calc_rx_errors</pv_name>
+      <x>18</x>
+      <y>342</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-intr-spd-TU_12</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_8_calc_interface_speed</pv_name>
+      <x>18</x>
+      <y>67</y>
+      <height>29</height>
+      <precision>2</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>SW13-Group</name>
+    <macros>
+      <mod_id>0</mod_id>
+      <dir_id>3310</dir_id>
+    </macros>
+    <x>759</x>
+    <y>445</y>
+    <width>136</width>
+    <height>385</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>WRS-13-Label</name>
+      <class>Label</class>
+      <text>Sw. 13</text>
+      <x>41</x>
+      <width>49</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>Sw-0-stat-LED_13</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_1_status</pv_name>
+      <x>46</x>
+      <y>25</y>
+      <width>30</width>
+      <height>30</height>
+      <states>
+        <state>
+          <value>1</value>
+          <label>Ok</label>
+          <color>
+            <color name="OK" red="0" green="255" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>2</value>
+          <label>Warning</label>
+          <color>
+            <color name="Attention" red="255" green="160" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>3</value>
+          <label>Critical</label>
+          <color>
+            <color name="MAJOR" red="255" green="0" blue="0">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label>Unknown</fallback_label>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-trns-pkts-TU_13</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_9_calc_tx_packets</pv_name>
+      <x>18</x>
+      <y>109</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-rec-pkts-TU_13</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_10_calc_rx_packets</pv_name>
+      <x>18</x>
+      <y>155</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-trns-byt-TU_13</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_11_calc_tx_bytes</pv_name>
+      <x>18</x>
+      <y>201</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-rec-byt-TU_13</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_12_calc_rx_bytes</pv_name>
+      <x>18</x>
+      <y>250</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-trns-err-TU_13</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_13_calc_tx_errors</pv_name>
+      <x>18</x>
+      <y>297</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-rec-err-TU_13</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_14_calc_rx_errors</pv_name>
+      <x>18</x>
+      <y>342</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-intr-spd-TU_13</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_8_calc_interface_speed</pv_name>
+      <x>18</x>
+      <y>67</y>
+      <height>29</height>
+      <precision>2</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>SW14-Group</name>
+    <macros>
+      <mod_id>0</mod_id>
+      <dir_id>3410</dir_id>
+    </macros>
+    <x>898</x>
+    <y>445</y>
+    <width>136</width>
+    <height>385</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>WRS-14-Label</name>
+      <class>Label</class>
+      <text>Sw. 14</text>
+      <x>41</x>
+      <width>49</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>Sw-0-stat-LED_14</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_1_status</pv_name>
+      <x>46</x>
+      <y>25</y>
+      <width>30</width>
+      <height>30</height>
+      <states>
+        <state>
+          <value>1</value>
+          <label>Ok</label>
+          <color>
+            <color name="OK" red="0" green="255" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>2</value>
+          <label>Warning</label>
+          <color>
+            <color name="Attention" red="255" green="160" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>3</value>
+          <label>Critical</label>
+          <color>
+            <color name="MAJOR" red="255" green="0" blue="0">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label>Unknown</fallback_label>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-trns-pkts-TU_14</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_9_calc_tx_packets</pv_name>
+      <x>18</x>
+      <y>109</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-rec-pkts-TU_14</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_10_calc_rx_packets</pv_name>
+      <x>18</x>
+      <y>155</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-trns-byt-TU_14</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_11_calc_tx_bytes</pv_name>
+      <x>18</x>
+      <y>201</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-rec-byt-TU_14</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_12_calc_rx_bytes</pv_name>
+      <x>18</x>
+      <y>250</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-trns-err-TU_14</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_13_calc_tx_errors</pv_name>
+      <x>18</x>
+      <y>297</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-rec-err-TU_14</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_14_calc_rx_errors</pv_name>
+      <x>18</x>
+      <y>342</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-intr-spd-TU_14</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_8_calc_interface_speed</pv_name>
+      <x>18</x>
+      <y>67</y>
+      <height>29</height>
+      <precision>2</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>SW15-Group</name>
+    <macros>
+      <mod_id>0</mod_id>
+      <dir_id>3510</dir_id>
+    </macros>
+    <x>1038</x>
+    <y>445</y>
+    <width>136</width>
+    <height>385</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>WRS-15-Label</name>
+      <class>Label</class>
+      <text>Sw. 15</text>
+      <x>41</x>
+      <width>49</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>Sw-0-stat-LED_15</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_1_status</pv_name>
+      <x>46</x>
+      <y>25</y>
+      <width>30</width>
+      <height>30</height>
+      <states>
+        <state>
+          <value>1</value>
+          <label>Ok</label>
+          <color>
+            <color name="OK" red="0" green="255" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>2</value>
+          <label>Warning</label>
+          <color>
+            <color name="Attention" red="255" green="160" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>3</value>
+          <label>Critical</label>
+          <color>
+            <color name="MAJOR" red="255" green="0" blue="0">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label>Unknown</fallback_label>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-trns-pkts-TU_15</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_9_calc_tx_packets</pv_name>
+      <x>18</x>
+      <y>109</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-rec-pkts-TU_15</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_10_calc_rx_packets</pv_name>
+      <x>18</x>
+      <y>155</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-trns-byt-TU_15</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_11_calc_tx_bytes</pv_name>
+      <x>18</x>
+      <y>201</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-rec-byt-TU_15</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_12_calc_rx_bytes</pv_name>
+      <x>18</x>
+      <y>250</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-trns-err-TU_15</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_13_calc_tx_errors</pv_name>
+      <x>18</x>
+      <y>297</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-rec-err-TU_15</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_14_calc_rx_errors</pv_name>
+      <x>18</x>
+      <y>342</y>
+      <height>29</height>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>WR-intr-spd-TU_15</name>
+      <pv_name>PIP2:TIME_CTRL_WRSWITCH:$(mod_id)_$(dir_id)_8_calc_interface_speed</pv_name>
+      <x>18</x>
+      <y>67</y>
+      <height>29</height>
+      <precision>2</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+  </widget>
+</display>
