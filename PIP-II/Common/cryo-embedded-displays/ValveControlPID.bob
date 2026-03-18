@@ -907,14 +907,35 @@ $(dev)</text>
   </widget>
   <widget type="stripchart" version="2.1.0">
     <name>Strip Chart</name>
-    <x>757</x>
-    <y>168</y>
+    <x>758</x>
+    <y>169</y>
     <width>576</width>
     <height>353</height>
+    <background_color>
+      <color name="fgs.Gray-45" red="167" green="168" blue="170">
+      </color>
+    </background_color>
+    <show_grid>true</show_grid>
+    <show_toolbar>false</show_toolbar>
     <show_legend>true</show_legend>
+    <y_axes>
+      <y_axis>
+        <title>Y</title>
+        <autoscale>true</autoscale>
+        <log_scale>false</log_scale>
+        <minimum>0.0</minimum>
+        <maximum>100.0</maximum>
+        <show_grid>true</show_grid>
+        <visible>true</visible>
+        <color>
+          <color name="Text" red="0" green="0" blue="0">
+          </color>
+        </color>
+      </y_axis>
+    </y_axes>
     <traces>
       <trace>
-        <name>$(system)$(dev):rSetLoop</name>
+        <name>SP</name>
         <y_pv>$(system)$(dev):rSetLoop</y_pv>
         <axis>0</axis>
         <trace_type>2</trace_type>
@@ -928,9 +949,9 @@ $(dev)</text>
         <visible>true</visible>
       </trace>
       <trace>
-        <name>$(system)$(PV):$(Var)</name>
-        <y_pv></y_pv>
-        <axis>$(system)$(PV):$(Var)</axis>
+        <name>PV</name>
+        <y_pv>$(system)$(PV):$(Var)</y_pv>
+        <axis>0</axis>
         <trace_type>2</trace_type>
         <color>
           <color red="255" green="0" blue="0">
@@ -942,7 +963,7 @@ $(dev)</text>
         <visible>true</visible>
       </trace>
       <trace>
-        <name>$(system)$(dev):Open</name>
+        <name>Valve Open</name>
         <y_pv>$(system)$(dev):Open</y_pv>
         <axis>0</axis>
         <trace_type>2</trace_type>
