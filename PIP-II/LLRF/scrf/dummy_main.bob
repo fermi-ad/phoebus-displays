@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <display version="2.0.0">
   <name>LLRF Launcher</name>
-  <width>360</width>
+  <width>530</width>
   <height>180</height>
   <widget type="action_button" version="3.0.0">
     <name>Action Button</name>
@@ -17,6 +17,8 @@
           <CH>1</CH>
           <ID>2</ID>
           <SELCHAR>0</SELCHAR>
+          <SCRIPTDIR>/usr/local/epics/iocTops/sclLLRF/fnalRfApp/script</SCRIPTDIR>
+          <LOGDIR>/var/log/ioc/sclLLRF/rf_ppSSR2</LOGDIR>
         </macros>
         <target>tab</target>
       </action>
@@ -58,13 +60,13 @@
     <name>Action Button_2</name>
     <actions>
       <action type="open_display">
-        <description>Open Marble Monitor</description>
+        <description>RFS1A Marble Monitor</description>
         <file>../MarbleMonitor.bob</file>
         <macros>
           <P>VXI:</P>
-          <R>TEST_LLRF_SYS:</R>
+          <R>TEST_LLRF_RFS1A:</R>
         </macros>
-        <target>tab</target>
+        <target>window</target>
       </action>
     </actions>
     <x>190</x>
@@ -87,6 +89,8 @@
           <CH>1</CH>
           <ID>2</ID>
           <SELCHAR>0</SELCHAR>
+          <SCRIPTDIR>/usr/local/epics/iocTops/sclLLRF/fnalRfApp/script</SCRIPTDIR>
+          <LOGDIR>/var/log/ioc/sclLLRF/rf_stc</LOGDIR>
         </macros>
         <target>tab</target>
       </action>
@@ -96,5 +100,79 @@
     <width>160</width>
     <height>40</height>
     <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_4</name>
+    <actions>
+      <action type="open_display">
+        <description>RESA Marble Monitor</description>
+        <file>../MarbleMonitor.bob</file>
+        <macros>
+          <P>VXI:</P>
+          <R>TEST_LLRF_RESA:</R>
+        </macros>
+        <target>window</target>
+      </action>
+    </actions>
+    <x>360</x>
+    <y>70</y>
+    <width>160</width>
+    <height>40</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="combo" version="2.0.0">
+    <name>Combo Box</name>
+    <x>360</x>
+    <y>120</y>
+    <width>160</width>
+    <height>40</height>
+    <actions>
+      <action type="open_display">
+        <description>RFS1A Marble Monitor</description>
+        <file>../MarbleMonitor</file>
+        <macros>
+          <P>VXI:</P>
+          <R>TEST_LLRF_RFS1A:</R>
+        </macros>
+        <target>window</target>
+      </action>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <items>
+      <item>RFS1A Marble Monitor</item>
+      <item>RESA Marble Monitor</item>
+    </items>
+  </widget>
+  <widget type="choice" version="2.0.0">
+    <name>Choice Button</name>
+    <x>370</x>
+    <y>210</y>
+    <width>150</width>
+    <height>20</height>
+    <actions>
+      <action type="open_display">
+        <description>RFS1A Marble Monitor</description>
+        <file>../MarbleMonitor.bob</file>
+        <macros>
+          <P>VXI:</P>
+          <R>TEST_LLRF_RFS1A:</R>
+        </macros>
+        <target>window</target>
+      </action>
+      <action type="open_display">
+        <description>RESA Marble Monitor</description>
+        <file>../MarbleMonitor.bob</file>
+        <macros>
+          <P>VXI:</P>
+          <R>TEST_LLRF_RESA:</R>
+        </macros>
+        <target>window</target>
+      </action>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <items>
+      <item>RFS1A</item>
+      <item>RESA</item>
+    </items>
   </widget>
 </display>
