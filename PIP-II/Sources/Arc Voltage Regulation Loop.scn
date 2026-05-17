@@ -1,0 +1,66 @@
+<commands>
+  <comment>
+    <text>First attempt at an Arc Voltage Regulation Loop</text>
+  </comment>
+  <comment>
+    <text>The Arc Voltage is ideally a consistent 120V. This loop will work towards regulating that, by adjusting the Filament Current</text>
+  </comment>
+  <comment>
+    <text>We set the Arc Voltage Setpoint to 122V, to ensure the supply does not switch into Constant Voltage Mode</text>
+  </comment>
+  <set>
+    <device>pva://A0TST:IS_BLE_ARC:sVoltage</device>
+    <value>122.0</value>
+    <wait>false</wait>
+    <tolerance>0.1</tolerance>
+  </set>
+  <while>
+    <device>pva://A0TST:IS_BLE_ARC:Voltage</device>
+    <value>135.0</value>
+    <comparison>BELOW</comparison>
+    <tolerance>0.1</tolerance>
+    <tolerance>0.1</tolerance>
+    <body>
+      <parallel>
+        <body>
+          <if>
+            <device>pva://A0TST:IS_BLE_ARC:Voltage</device>
+            <value>120.0</value>
+            <comparison>BELOW</comparison>
+            <tolerance>10.0</tolerance>
+            <body>
+              <script>
+                <path>Increment</path>
+                <arguments>
+                  <argument>pva://A0TST:IS_BLE_FLMNT:sCurrent</argument>
+                  <argument>-0.2</argument>
+                </arguments>
+              </script>
+              <delay>
+                <seconds>3.0</seconds>
+              </delay>
+            </body>
+          </if>
+          <if>
+            <device>pva://A0TST:IS_BLE_ARC:Voltage</device>
+            <value>120.0</value>
+            <comparison>ABOVE</comparison>
+            <tolerance>10.0</tolerance>
+            <body>
+              <script>
+                <path>Increment</path>
+                <arguments>
+                  <argument>pva://A0TST:IS_BLE_FLMNT:sCurrent</argument>
+                  <argument>0.2</argument>
+                </arguments>
+              </script>
+              <delay>
+                <seconds>3.0</seconds>
+              </delay>
+            </body>
+          </if>
+        </body>
+      </parallel>
+    </body>
+  </while>
+</commands>

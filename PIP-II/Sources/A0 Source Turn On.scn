@@ -1,0 +1,82 @@
+<commands>
+  <comment>
+    <text>Turn On Script V1</text>
+  </comment>
+  <comment>
+    <text>Arc Voltage Setpoint to 122, ensure that at 120V the supply does NOT switch over into voltage regulating mode AFTER filaent current ramps up</text>
+  </comment>
+  <set>
+    <device>pva://A0TST:IS_BLE_ARC:sVoltage</device>
+    <value>122.0</value>
+    <wait>false</wait>
+    <tolerance>0.1</tolerance>
+  </set>
+  <comment>
+    <text>TDue to inconsistent timings on Arc Voltage increases, wait until reading matches 122V</text>
+  </comment>
+  <wait>
+    <device>pva://A0TST:IS_BLE_ARC:Voltage</device>
+    <value>122.0</value>
+    <comparison>EQUALS</comparison>
+    <tolerance>1.0</tolerance>
+  </wait>
+  <comment>
+    <text>Set the Plasma Lens to 1.7V</text>
+  </comment>
+  <set>
+    <device>pva://A0TST:IS_BLE_PLASMA:sVoltage</device>
+    <value>1.7</value>
+    <wait>false</wait>
+    <tolerance>0.1</tolerance>
+  </set>
+  <comment>
+    <text>Arc Current Setpoint to 5A or whatever you wish to target via filament current</text>
+  </comment>
+  <set>
+    <device>pva://A0TST:IS_BLE_ARC:sCurrent</device>
+    <value>8.0</value>
+    <wait>false</wait>
+    <tolerance>0.1</tolerance>
+  </set>
+  <comment>
+    <text>Initial ramp up of filament current to 200A</text>
+  </comment>
+  <loop>
+    <device>pva://A0TST:IS_BLE_FLMNT:sCurrent</device>
+    <start>10.0</start>
+    <end>200.0</end>
+    <step>10.0</step>
+    <wait>false</wait>
+    <tolerance>1.0</tolerance>
+    <body>
+      <delay>
+        <seconds>2.0</seconds>
+      </delay>
+    </body>
+  </loop>
+  <comment>
+    <text>Slower ramp up until Arc Current readback matches our setpoint</text>
+  </comment>
+  <while>
+    <device>pva://A0TST:IS_BLE_ARC:Current</device>
+    <value>8.0</value>
+    <comparison>BELOW</comparison>
+    <tolerance>0.1</tolerance>
+    <tolerance>0.1</tolerance>
+    <body>
+      <script>
+        <path>Increment</path>
+        <arguments>
+          <argument>pva://A0TST:IS_BLE_FLMNT:sCurrent</argument>
+          <argument>2</argument>
+        </arguments>
+      </script>
+      <delay>
+        <seconds>3.0</seconds>
+      </delay>
+    </body>
+  </while>
+  <comment>
+    <text>Plasma is now formed with your targetted Arc Current! Yay EPICS! Bow Down to AI!</text>
+  </comment>
+</commands>

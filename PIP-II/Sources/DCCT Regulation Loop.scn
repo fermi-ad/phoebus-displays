@@ -1,0 +1,60 @@
+<commands>
+  <comment>
+    <text>First Version of DCCT Regulation Loop</text>
+  </comment>
+  <comment>
+    <text>To maintain a stable beam current as measured by the DCCT, the Arc Current setpoint should be adjustted to compensate for drift</text>
+  </comment>
+  <comment>
+    <text>Force while loop into infinite persistence</text>
+  </comment>
+  <while>
+    <device>DCCT CURRENT READBACK</device>
+    <value>1000.0</value>
+    <comparison>BELOW</comparison>
+    <tolerance>0.1</tolerance>
+    <tolerance>0.1</tolerance>
+    <body>
+      <parallel>
+        <body>
+          <if>
+            <device>DCCT CURRENT READBACK</device>
+            <value>"DCCT CURRENT SETPOINT"</value>
+            <comparison>BELOW</comparison>
+            <tolerance>0.1</tolerance>
+            <body>
+              <script>
+                <path>Increment</path>
+                <arguments>
+                  <argument>ARC CURRENT SETPOINT</argument>
+                  <argument>0.1</argument>
+                </arguments>
+              </script>
+              <delay>
+                <seconds>1.0</seconds>
+              </delay>
+            </body>
+          </if>
+          <if>
+            <device>DCCT CURRENT READBACK</device>
+            <value>"DCCT CURENT SETPOINT"</value>
+            <comparison>ABOVE</comparison>
+            <tolerance>0.1</tolerance>
+            <body>
+              <script>
+                <path>Increment</path>
+                <arguments>
+                  <argument>ARC CURENT SETPOINT</argument>
+                  <argument>-0.1</argument>
+                </arguments>
+              </script>
+              <delay>
+                <seconds>1.0</seconds>
+              </delay>
+            </body>
+          </if>
+        </body>
+      </parallel>
+    </body>
+  </while>
+</commands>
