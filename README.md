@@ -2,9 +2,6 @@
 
 This repository contains the Graphical Interfaces to the EPICS IOCs consumed by Phoebus. 
 
-## Current Status
-
-Migrating existing displays to this repository.
 
 ## Directory structure
 The structure provides a system organization, grouping display files based on their purpose, while maintaining a common folder for shared resources such images. 

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>_PS_Row</name>
+  <width>600</width>
+  <height>20</height>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_4</name>
+    <actions>
+      <action type="write_pv">
+        <description>Write 0 to PV - OFF</description>
+        <pv_name>$(pv_name)</pv_name>
+        <value>0</value>
+      </action>
+    </actions>
+    <pv_name>$(acc):$(sys)_$(group)_PLC$(ONOFFn):wBIT</pv_name>
+    <text>OFF</text>
+    <x>220</x>
+    <width>36</width>
+    <height>20</height>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_5</name>
+    <actions>
+      <action type="write_pv">
+        <description>Write 1 to PV - ON</description>
+        <pv_name>$(pv_name)</pv_name>
+        <value>1</value>
+      </action>
+    </actions>
+    <pv_name>$(acc):$(sys)_$(group)_PLC$(ONOFFn):wBIT</pv_name>
+    <text>ON</text>
+    <x>262</x>
+    <width>36</width>
+    <height>20</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>ON_OFF</name>
+    <pv_name>$(acc):$(sys)_$(group)_PLC$(n):rBIT</pv_name>
+    <x>190</x>
+    <off_label use_class="true">0</off_label>
+    <off_color use_class="true">
+      <color name="Off" red="60" green="100" blue="60">
+      </color>
+    </off_color>
+    <on_label use_class="true">1</on_label>
+    <on_color use_class="true">
+      <color name="On" red="0" green="255" blue="0">
+      </color>
+    </on_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_3</name>
+    <text>$(acc):$(sys)_$(group)_$(dev)</text>
+    <width>170</width>
+  </widget>
+  <widget type="spinner" version="2.0.0">
+    <name>Spinner</name>
+    <pv_name>$(acc):$(sys)_$(group)_$(dev):s$(read)</pv_name>
+    <x>340</x>
+    <width>80</width>
+    <background_color>
+      <color name="Background" red="255" green="255" blue="255">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_1</name>
+    <pv_name>$(acc):$(sys)_$(group)_$(dev):$(read)</pv_name>
+    <x>430</x>
+    <width>70</width>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_2</name>
+    <pv_name>$(acc):$(sys)_$(group)_$(dev):$(read2)</pv_name>
+    <x>530</x>
+    <width>70</width>
+  </widget>
+  <widget type="multi_state_led" version="2.0.0">
+    <name>LED (Multi State)_1</name>
+    <pv_name>$(acc):$(sys)_$(group)_$(dev):Status</pv_name>
+    <x>306</x>
+    <states>
+      <state>
+        <value>0</value>
+        <label>State 1</label>
+        <color>
+          <color name="Off" red="60" green="100" blue="60">
+          </color>
+        </color>
+      </state>
+      <state>
+        <value>1</value>
+        <label>State 2</label>
+        <color>
+          <color name="On" red="0" green="255" blue="0">
+          </color>
+        </color>
+      </state>
+    </states>
+  </widget>
+</display>

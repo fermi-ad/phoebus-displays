@@ -47,21 +47,6 @@
       </color>
     </line_color>
   </widget>
-  <widget type="rectangle" version="2.0.0">
-    <name>Rectangle_5</name>
-    <x>147</x>
-    <y>356</y>
-    <width>90</width>
-    <height>67</height>
-    <line_color>
-      <color red="0" green="0" blue="0">
-      </color>
-    </line_color>
-    <background_color>
-      <color red="179" green="179" blue="179">
-      </color>
-    </background_color>
-  </widget>
   <widget type="tank" version="2.0.0">
     <name>Tank</name>
     <pv_name>$(system)DPT2115:Pressure</pv_name>
@@ -540,23 +525,6 @@ $(actions)</tooltip>
     <height>576</height>
     <points>
       <point x="0.0" y="576.7441935890305">
-      </point>
-      <point x="0.09214694129150303" y="0.0">
-      </point>
-    </points>
-    <line_color>
-      <color red="170" green="0" blue="255">
-      </color>
-    </line_color>
-  </widget>
-  <widget type="polyline" version="2.0.0">
-    <name>Polyline_143</name>
-    <x>909</x>
-    <y>194</y>
-    <width>1</width>
-    <height>576</height>
-    <points>
-      <point x="0.0" y="576.7441935890304">
       </point>
       <point x="0.09214694129150303" y="0.0">
       </point>
@@ -1801,10 +1769,10 @@ Distribution</text>
     <macros>
       <dev>DPT2115</dev>
     </macros>
-    <file>../Common/cryo-embedded-displays/PressureSensorUp.bob</file>
+    <file>../Common/cryo-embedded-displays/DiPressureSensorUp.bob</file>
     <x>50</x>
     <y>580</y>
-    <width>65</width>
+    <width>68</width>
     <height>35</height>
   </widget>
   <widget type="group" version="3.0.0">
@@ -2546,32 +2514,6 @@ $(actions)</tooltip>
 $(pv_value)
 $(actions)</tooltip>
   </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label_72</name>
-    <text>Instrument Air</text>
-    <x>129</x>
-    <y>326</y>
-    <width>137</width>
-    <height>23</height>
-    <font>
-      <font family="Liberation Sans" style="BOLD" size="20.0">
-      </font>
-    </font>
-    <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <auto_size>true</auto_size>
-  </widget>
-  <widget type="embedded" version="2.0.0">
-    <name>Embedded Display_219</name>
-    <macros>
-      <dev>PT1666</dev>
-    </macros>
-    <file>../Common/cryo-embedded-displays/ArcCellReadingUp.bob</file>
-    <x>161</x>
-    <y>374</y>
-    <width>65</width>
-    <height>35</height>
-  </widget>
   <widget type="group" version="3.0.0">
     <name>Group_237</name>
     <x>232</x>
@@ -2912,12 +2854,61 @@ $(actions)</tooltip>
       </line_color>
     </widget>
   </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_207</name>
+    <macros>
+      <dev>DISCH</dev>
+      <system>CP:MYCOM_CRYO_</system>
+    </macros>
+    <file>../Common/cryo-embedded-displays/PressureSensorUp.bob</file>
+    <x>669</x>
+    <y>277</y>
+    <width>65</width>
+    <height>35</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_208</name>
+    <macros>
+      <dev>INTRST</dev>
+      <system>CP:MYCOM_CRYO_</system>
+    </macros>
+    <file>../Common/cryo-embedded-displays/PressureSensorUp.bob</file>
+    <x>687</x>
+    <y>357</y>
+    <width>65</width>
+    <height>35</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_210</name>
+    <macros>
+      <dev>LSVLV</dev>
+      <system>CP:MYCOM_CRYO_</system>
+    </macros>
+    <file>../Common/cryo-embedded-displays/ValveStatusUp.bob</file>
+    <x>528</x>
+    <y>323</y>
+    <width>65</width>
+    <height>35</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_220</name>
+    <macros>
+      <dev>HSVLV</dev>
+      <system>CP:MYCOM_CRYO_</system>
+    </macros>
+    <file>../Common/cryo-embedded-displays/ValveStatusUp.bob</file>
+    <x>528</x>
+    <y>396</y>
+    <width>65</width>
+    <height>35</height>
+  </widget>
   <widget type="rectangle" version="2.0.0">
     <name>Rectangle_1</name>
-    <x>21</x>
-    <y>356</y>
-    <width>90</width>
-    <height>177</height>
+    <x>14</x>
+    <y>329</y>
+    <width>120</width>
+    <height>197</height>
+    <line_width>2</line_width>
     <line_color>
       <color red="0" green="0" blue="0">
       </color>
@@ -2930,8 +2921,8 @@ $(actions)</tooltip>
   <widget type="label" version="2.0.0">
     <name>Label_70</name>
     <text>ARC Cells</text>
-    <x>16</x>
-    <y>326</y>
+    <x>26</x>
+    <y>302</y>
     <width>97</width>
     <height>22</height>
     <font>
@@ -2943,35 +2934,121 @@ $(actions)</tooltip>
     <auto_size>true</auto_size>
   </widget>
   <widget type="embedded" version="2.0.0">
-    <name>Embedded Display_216</name>
+    <name>Embedded Display_209</name>
     <macros>
       <dev>CT1404</dev>
     </macros>
     <file>../Common/cryo-embedded-displays/ArcCellReadingUp.bob</file>
-    <x>33</x>
-    <y>380</y>
+    <x>42</x>
+    <y>357</y>
+    <width>65</width>
+    <height>35</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_216</name>
+    <macros>
+      <dev>CT1408</dev>
+    </macros>
+    <file>../Common/cryo-embedded-displays/ArcCellReadingUp.bob</file>
+    <x>42</x>
+    <y>422</y>
     <width>65</width>
     <height>35</height>
   </widget>
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display_217</name>
     <macros>
-      <dev>CT1408</dev>
-    </macros>
-    <file>../Common/cryo-embedded-displays/ArcCellReadingUp.bob</file>
-    <x>33</x>
-    <y>426</y>
-    <width>65</width>
-    <height>35</height>
-  </widget>
-  <widget type="embedded" version="2.0.0">
-    <name>Embedded Display_218</name>
-    <macros>
       <dev>CT1424</dev>
     </macros>
     <file>../Common/cryo-embedded-displays/ArcCellReadingUp.bob</file>
-    <x>33</x>
-    <y>471</y>
+    <x>42</x>
+    <y>482</y>
+    <width>65</width>
+    <height>35</height>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_73</name>
+    <text>Purifier Return</text>
+    <x>25</x>
+    <y>337</y>
+    <width>99</width>
+    <height>16</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_74</name>
+    <text>Purifier Supply</text>
+    <x>24</x>
+    <y>402</y>
+    <height>16</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_76</name>
+    <text>Storage Supply</text>
+    <x>23</x>
+    <y>462</y>
+    <width>103</width>
+    <height>16</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_77</name>
+    <text>Instrument Air</text>
+    <x>174</x>
+    <y>302</y>
+    <width>137</width>
+    <height>22</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="20.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_5</name>
+    <x>182</x>
+    <y>329</y>
+    <width>120</width>
+    <height>67</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="179" green="179" blue="179">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_219</name>
+    <macros>
+      <dev>PT1666</dev>
+    </macros>
+    <file>../Common/cryo-embedded-displays/ArcCellReadingUp.bob</file>
+    <x>210</x>
+    <y>345</y>
     <width>65</width>
     <height>35</height>
   </widget>
