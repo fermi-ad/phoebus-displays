@@ -1,0 +1,1718 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>GPS-Main-Display</name>
+  <width>850</width>
+  <height>1070</height>
+  <widget type="label" version="2.0.0">
+    <name>Main_Topic_Label</name>
+    <text>GPS Status Display</text>
+    <width>850</width>
+    <height>25</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <background_color>
+      <color name="cryo.Cooldown_Warmup" red="0" green="128" blue="128">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Sy-Obj-Group</name>
+    <y>29</y>
+    <width>400</width>
+    <height>835</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="rectangle" version="2.0.0">
+      <name>System-Obj-Rectangle</name>
+      <width>400</width>
+      <height>835</height>
+      <line_color>
+        <color name="acorn.Black" red="38" green="38" blue="38">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="acorn.White" red="255" green="255" blue="255">
+        </color>
+      </background_color>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Sys-Info-Label</name>
+      <text>System Object Informaiton
+</text>
+      <x>10</x>
+      <y>6</y>
+      <width>378</width>
+      <height>25</height>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="20.0">
+        </font>
+      </font>
+      <background_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>Group</name>
+      <x>10</x>
+      <y>39</y>
+      <width>383</width>
+      <height>30</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="textupdate" version="2.0.0">
+        <name>Sys-OBJ-Text Update</name>
+        <pv_name>PIP2:TIME_CTRL_GPS:nsSysIdentifier</pv_name>
+        <x>203</x>
+        <width>180</width>
+        <height>30</height>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>sys-Obj-Label</name>
+        <text>Systerm Identifier</text>
+        <y>6</y>
+        <width>141</width>
+        <height>21</height>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="18.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <auto_size>true</auto_size>
+        <wrap_words>false</wrap_words>
+      </widget>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>Group</name>
+      <x>10</x>
+      <y>77</y>
+      <width>383</width>
+      <height>30</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>sys-Obj-Label_3</name>
+        <text>Active PCB Assembly</text>
+        <y>6</y>
+        <width>175</width>
+        <height>21</height>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="18.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <auto_size>true</auto_size>
+        <wrap_words>false</wrap_words>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Sys-OBJ-Text Update_1</name>
+        <pv_name>PIP2:TIME_CTRL_GPS:nsSysActivePCBAssy</pv_name>
+        <x>203</x>
+        <width>180</width>
+        <height>30</height>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>Group</name>
+      <x>10</x>
+      <y>115</y>
+      <width>383</width>
+      <height>30</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>sys-Obj-Label_4</name>
+        <text>GNSS Lock</text>
+        <y>5</y>
+        <width>95</width>
+        <height>21</height>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="18.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <auto_size>true</auto_size>
+        <wrap_words>false</wrap_words>
+      </widget>
+      <widget type="multi_state_led" version="2.0.0">
+        <name>Sys-Obj-Info-LED (Multi State)</name>
+        <pv_name>PIP2:TIME_CTRL_GPS:nsSysGNSSLock</pv_name>
+        <x>203</x>
+        <width>180</width>
+        <height>30</height>
+        <square>true</square>
+        <states>
+          <state>
+            <value>0</value>
+            <label>Locked</label>
+            <color>
+              <color name="OK" red="0" green="255" blue="0">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>1</value>
+            <label>Unlocked</label>
+            <color>
+              <color name="MAJOR" red="255" green="0" blue="0">
+              </color>
+            </color>
+          </state>
+        </states>
+        <fallback_label>Unknown State</fallback_label>
+      </widget>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>Group</name>
+      <x>10</x>
+      <y>153</y>
+      <width>383</width>
+      <height>30</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>sys-Obj-Label_5</name>
+        <text>Input Error Type</text>
+        <y>4</y>
+        <width>131</width>
+        <height>21</height>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="18.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <auto_size>true</auto_size>
+        <wrap_words>false</wrap_words>
+      </widget>
+      <widget type="multi_state_led" version="2.0.0">
+        <name>Sys-Obj-Info-LED (Multi State)_1</name>
+        <pv_name>PIP2:TIME_CTRL_GPS:nsSysInputErr</pv_name>
+        <x>203</x>
+        <width>180</width>
+        <height>30</height>
+        <square>true</square>
+        <states>
+          <state>
+            <value>0</value>
+            <label>OK</label>
+            <color>
+              <color name="OK" red="0" green="255" blue="0">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>1</value>
+            <label>Errora</label>
+            <color>
+              <color name="MAJOR" red="255" green="0" blue="0">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>2</value>
+            <label>Errorb</label>
+            <color>
+              <color name="MAJOR" red="255" green="0" blue="0">
+              </color>
+            </color>
+          </state>
+        </states>
+        <fallback_label>Unknown Error</fallback_label>
+      </widget>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>Group</name>
+      <x>10</x>
+      <y>191</y>
+      <width>383</width>
+      <height>30</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>sys-Obj-Label_6</name>
+        <text>Channel Status Word</text>
+        <y>4</y>
+        <width>172</width>
+        <height>21</height>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="18.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <auto_size>true</auto_size>
+        <wrap_words>false</wrap_words>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Sys-OBJ-Text Update_2</name>
+        <pv_name>PIP2:TIME_CTRL_GPS:calc_nsSysChanStatusWord</pv_name>
+        <x>203</x>
+        <width>180</width>
+        <height>30</height>
+        <format>4</format>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>Group</name>
+      <x>10</x>
+      <y>229</y>
+      <width>385</width>
+      <height>30</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>sys-Obj-Label_7</name>
+        <text>Primary Power Supply Status</text>
+        <y>4</y>
+        <width>235</width>
+        <height>21</height>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="18.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <auto_size>true</auto_size>
+        <wrap_words>false</wrap_words>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Sys-OBJ-Text Update_3</name>
+        <pv_name>PIP2:TIME_CTRL_GPS:calc_nsSysPriPSStatus</pv_name>
+        <x>270</x>
+        <width>115</width>
+        <height>30</height>
+        <format>4</format>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>Group</name>
+      <x>10</x>
+      <y>267</y>
+      <width>385</width>
+      <height>30</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>sys-Obj-Label_8</name>
+        <text>Secondary Power Supply Status</text>
+        <y>4</y>
+        <width>259</width>
+        <height>21</height>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="18.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <auto_size>true</auto_size>
+        <wrap_words>false</wrap_words>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Sys-OBJ-Text Update_4</name>
+        <pv_name>PIP2:TIME_CTRL_GPS:calc_nsSysSecPSStatus</pv_name>
+        <x>270</x>
+        <width>115</width>
+        <height>30</height>
+        <format>4</format>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>Group</name>
+      <x>10</x>
+      <y>304</y>
+      <width>383</width>
+      <height>30</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>sys-Obj-Label_9</name>
+        <text>Active PCB Status</text>
+        <y>3</y>
+        <width>148</width>
+        <height>21</height>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="18.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <auto_size>true</auto_size>
+        <wrap_words>false</wrap_words>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Sys-OBJ-Text Update_5</name>
+        <pv_name>PIP2:TIME_CTRL_GPS:calc_nsSysActivePCBStatus</pv_name>
+        <x>203</x>
+        <width>180</width>
+        <height>30</height>
+        <format>4</format>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>Group</name>
+      <x>10</x>
+      <y>341</y>
+      <width>383</width>
+      <height>30</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>sys-Obj-Label_10</name>
+        <text>Checksum Status</text>
+        <y>3</y>
+        <width>142</width>
+        <height>21</height>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="18.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <auto_size>true</auto_size>
+        <wrap_words>false</wrap_words>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Sys-OBJ-Text Update_6</name>
+        <pv_name>PIP2:TIME_CTRL_GPS:nsSysChksumStatus</pv_name>
+        <x>203</x>
+        <width>180</width>
+        <height>30</height>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>Group</name>
+      <x>10</x>
+      <y>379</y>
+      <width>383</width>
+      <height>30</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>sys-Obj-Label_11</name>
+        <text>Channel Fault Bin</text>
+        <y>2</y>
+        <width>144</width>
+        <height>21</height>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="18.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <auto_size>true</auto_size>
+        <wrap_words>false</wrap_words>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Sys-OBJ-Text Update_7</name>
+        <pv_name>PIP2:TIME_CTRL_GPS:nsSysChanFaultBin</pv_name>
+        <x>203</x>
+        <width>180</width>
+        <height>30</height>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>Group</name>
+      <x>10</x>
+      <y>417</y>
+      <width>383</width>
+      <height>30</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>sys-Obj-Label_12</name>
+        <text>Primary PCB Amp Status</text>
+        <y>3</y>
+        <width>203</width>
+        <height>21</height>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="18.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <auto_size>true</auto_size>
+        <wrap_words>false</wrap_words>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Sys-OBJ-Text Update_8</name>
+        <pv_name>PIP2:TIME_CTRL_GPS:calc_nsSysPriPCBAmpStatus</pv_name>
+        <x>233</x>
+        <width>150</width>
+        <height>30</height>
+        <format>4</format>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>Group</name>
+      <x>10</x>
+      <y>454</y>
+      <width>383</width>
+      <height>30</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>sys-Obj-Label_13</name>
+        <text>Backup PCB Amp Status</text>
+        <y>3</y>
+        <width>201</width>
+        <height>21</height>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="18.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <auto_size>true</auto_size>
+        <wrap_words>false</wrap_words>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Sys-OBJ-Text Update_9</name>
+        <pv_name>PIP2:TIME_CTRL_GPS:calc_nsSysBkupPCBAmpStatus</pv_name>
+        <x>233</x>
+        <width>150</width>
+        <height>30</height>
+        <format>4</format>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>Group</name>
+      <x>10</x>
+      <y>492</y>
+      <width>383</width>
+      <height>30</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>sys-Obj-Label_14</name>
+        <text>GPS Lock Status</text>
+        <y>3</y>
+        <width>138</width>
+        <height>21</height>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="18.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <auto_size>true</auto_size>
+        <wrap_words>false</wrap_words>
+      </widget>
+      <widget type="multi_state_led" version="2.0.0">
+        <name>Sys-Obj-Info-LED (Multi State)_2</name>
+        <pv_name>PIP2:TIME_CTRL_GPS:nsSysGPSLock</pv_name>
+        <x>203</x>
+        <width>180</width>
+        <height>30</height>
+        <square>true</square>
+        <states>
+          <state>
+            <value>0</value>
+            <label>Valid</label>
+            <color>
+              <color name="OK" red="0" green="255" blue="0">
+              </color>
+            </color>
+          </state>
+          <state>
+            <value>1</value>
+            <label>Not Valid</label>
+            <color>
+              <color name="MAJOR" red="255" green="0" blue="0">
+              </color>
+            </color>
+          </state>
+        </states>
+        <fallback_label>Unknown State</fallback_label>
+      </widget>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>Group</name>
+      <x>5</x>
+      <y>526</y>
+      <width>385</width>
+      <height>44</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>sys-Obj-Label_15</name>
+        <text>Number of Satellites in view.
+(Greater of GPS or GNSS count)</text>
+        <width>263</width>
+        <height>44</height>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="18.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <auto_size>true</auto_size>
+        <wrap_words>false</wrap_words>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Sys-OBJ-Text Update_10</name>
+        <pv_name>PIP2:TIME_CTRL_GPS:nsSysSatView</pv_name>
+        <x>275</x>
+        <y>9</y>
+        <width>110</width>
+        <height>30</height>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>Group</name>
+      <x>10</x>
+      <y>572</y>
+      <width>383</width>
+      <height>30</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>sys-Obj-Label_16</name>
+        <text>Error Byte</text>
+        <y>8</y>
+        <width>82</width>
+        <height>21</height>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="18.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <auto_size>true</auto_size>
+        <wrap_words>false</wrap_words>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Sys-OBJ-Text Update_11</name>
+        <pv_name>PIP2:TIME_CTRL_GPS:calc_nsSysErrorByte</pv_name>
+        <x>203</x>
+        <width>180</width>
+        <height>30</height>
+        <format>4</format>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>Group</name>
+      <x>10</x>
+      <y>608</y>
+      <width>383</width>
+      <height>30</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>sys-Obj-Label_17</name>
+        <text>Frequency Differential</text>
+        <y>4</y>
+        <width>177</width>
+        <height>21</height>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="18.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <auto_size>true</auto_size>
+        <wrap_words>false</wrap_words>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Sys-OBJ-Text Update_12</name>
+        <pv_name>PIP2:TIME_CTRL_GPS:calc_nsSysFreqDiff</pv_name>
+        <x>203</x>
+        <width>180</width>
+        <height>30</height>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>Group</name>
+      <x>10</x>
+      <y>644</y>
+      <width>383</width>
+      <height>30</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>sys-Obj-Label_18</name>
+        <text>PPS Differential</text>
+        <y>4</y>
+        <width>128</width>
+        <height>21</height>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="18.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <auto_size>true</auto_size>
+        <wrap_words>false</wrap_words>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Sys-OBJ-Text Update_13</name>
+        <pv_name>PIP2:TIME_CTRL_GPS:calc_nsSysPPSDiff</pv_name>
+        <x>203</x>
+        <width>180</width>
+        <height>30</height>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>Group</name>
+      <x>10</x>
+      <y>681</y>
+      <width>383</width>
+      <height>30</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>sys-Obj-Label_19</name>
+        <text>Frequency Correction Slice</text>
+        <y>6</y>
+        <width>218</width>
+        <height>21</height>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="18.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <auto_size>true</auto_size>
+        <wrap_words>false</wrap_words>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Sys-OBJ-Text Update_14</name>
+        <pv_name>PIP2:TIME_CTRL_GPS:calc_nsSysFreqCorSlice</pv_name>
+        <x>233</x>
+        <width>150</width>
+        <height>30</height>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>Group</name>
+      <x>10</x>
+      <y>717</y>
+      <width>383</width>
+      <height>44</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>sys-Obj-Label_20</name>
+        <text>DAC Value representation
+     of n x 1/ (2^20)</text>
+        <width>210</width>
+        <height>44</height>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="18.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <auto_size>true</auto_size>
+        <wrap_words>false</wrap_words>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Sys-OBJ-Text Update_15</name>
+        <pv_name>PIP2:TIME_CTRL_GPS:nsSysDACValue</pv_name>
+        <x>233</x>
+        <y>2</y>
+        <width>150</width>
+        <height>30</height>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>Group</name>
+      <x>10</x>
+      <y>762</y>
+      <width>383</width>
+      <height>30</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>sys-Obj-Label_21</name>
+        <text>Power Supply 1 Vdc</text>
+        <y>8</y>
+        <width>163</width>
+        <height>21</height>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="18.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <auto_size>true</auto_size>
+        <wrap_words>false</wrap_words>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Sys-OBJ-Text Update_16</name>
+        <pv_name>PIP2:TIME_CTRL_GPS:calc_nsSysPS1VDC</pv_name>
+        <x>203</x>
+        <width>180</width>
+        <height>30</height>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>Group</name>
+      <x>10</x>
+      <y>798</y>
+      <width>383</width>
+      <height>30</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>sys-Obj-Label_22</name>
+        <text>Power Supply 2 Vdc</text>
+        <y>4</y>
+        <width>163</width>
+        <height>21</height>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="18.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <auto_size>true</auto_size>
+        <wrap_words>false</wrap_words>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Sys-OBJ-Text Update_17</name>
+        <pv_name>PIP2:TIME_CTRL_GPS:calc_nsSysPS2VDC</pv_name>
+        <x>203</x>
+        <width>180</width>
+        <height>30</height>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Sys-Faults-Group</name>
+    <x>445</x>
+    <y>30</y>
+    <width>400</width>
+    <height>405</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="rectangle" version="2.0.0">
+      <name>System-Obj-Rectangle_1</name>
+      <width>400</width>
+      <height>405</height>
+      <line_color>
+        <color name="acorn.Black" red="38" green="38" blue="38">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="acorn.White" red="255" green="255" blue="255">
+        </color>
+      </background_color>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Sys-Info-Label_1</name>
+      <text>System Faults</text>
+      <x>11</x>
+      <y>6</y>
+      <width>378</width>
+      <height>25</height>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="20.0">
+        </font>
+      </font>
+      <background_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>sys-Obj-Label_23</name>
+      <text>GPS 1 Lock Status</text>
+      <x>7</x>
+      <y>48</y>
+      <width>153</width>
+      <height>21</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="18.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <auto_size>true</auto_size>
+      <wrap_words>false</wrap_words>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>Sys-Obj-Info-LED (Multi State)_3</name>
+      <pv_name>PIP2:TIME_CTRL_GPS:nsFaultGPS1Lock</pv_name>
+      <x>213</x>
+      <y>44</y>
+      <width>180</width>
+      <height>30</height>
+      <square>true</square>
+      <states>
+        <state>
+          <value>0</value>
+          <label>Valid</label>
+          <color>
+            <color name="OK" red="0" green="255" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>1</value>
+          <label>Not Valid</label>
+          <color>
+            <color name="MAJOR" red="255" green="0" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>2</value>
+          <label>NA</label>
+          <color>
+            <color name="MAJOR" red="255" green="0" blue="0">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label>Unknown State</fallback_label>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>sys-Obj-Label_24</name>
+      <text>GPS 2 Lock Status</text>
+      <x>7</x>
+      <y>85</y>
+      <width>153</width>
+      <height>21</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="18.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <auto_size>true</auto_size>
+      <wrap_words>false</wrap_words>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>Sys-Obj-Info-LED (Multi State)_4</name>
+      <pv_name>PIP2:TIME_CTRL_GPS:nsFaultGPS2Lock</pv_name>
+      <x>213</x>
+      <y>82</y>
+      <width>180</width>
+      <height>30</height>
+      <square>true</square>
+      <states>
+        <state>
+          <value>0</value>
+          <label>Valid</label>
+          <color>
+            <color name="OK" red="0" green="255" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>1</value>
+          <label>Not Valid</label>
+          <color>
+            <color name="MAJOR" red="255" green="0" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>2</value>
+          <label>NA</label>
+          <color>
+            <color name="MAJOR" red="255" green="0" blue="0">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label>Unknown State</fallback_label>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>sys-Obj-Label_25</name>
+      <text>Number of Satellites in view 1.
+(Greater of GPS or GNSS count)</text>
+      <x>7</x>
+      <y>119</y>
+      <width>263</width>
+      <height>44</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="18.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <auto_size>true</auto_size>
+      <wrap_words>false</wrap_words>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Sys-OBJ-Text Update_18</name>
+      <pv_name>PIP2:TIME_CTRL_GPS:nsFaultSatView1</pv_name>
+      <x>280</x>
+      <y>122</y>
+      <width>110</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>sys-Obj-Label_26</name>
+      <text>Number of Satellites in view 2.
+(Greater of GPS or GNSS count)</text>
+      <x>7</x>
+      <y>167</y>
+      <width>263</width>
+      <height>44</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="18.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <auto_size>true</auto_size>
+      <wrap_words>false</wrap_words>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Sys-OBJ-Text Update_19</name>
+      <pv_name>PIP2:TIME_CTRL_GPS:nsFaultSatView2</pv_name>
+      <x>280</x>
+      <y>170</y>
+      <width>110</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>sys-Obj-Label_27</name>
+      <text>Channel Fault Bytes</text>
+      <x>7</x>
+      <y>222</y>
+      <width>163</width>
+      <height>21</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="18.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <auto_size>true</auto_size>
+      <wrap_words>false</wrap_words>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Sys-OBJ-Text Update_20</name>
+      <pv_name>PIP2:TIME_CTRL_GPS:calc_nsFaultChannelBytes</pv_name>
+      <x>213</x>
+      <y>214</y>
+      <width>180</width>
+      <height>30</height>
+      <format>4</format>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>sys-Obj-Label_28</name>
+      <text>Power Supply Fault Bytes</text>
+      <x>7</x>
+      <y>257</y>
+      <width>207</width>
+      <height>21</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="18.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <auto_size>true</auto_size>
+      <wrap_words>false</wrap_words>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Sys-OBJ-Text Update_21</name>
+      <pv_name>PIP2:TIME_CTRL_GPS:calc_nsFaultPowerSupplyByte</pv_name>
+      <x>243</x>
+      <y>254</y>
+      <width>150</width>
+      <height>30</height>
+      <format>4</format>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>sys-Obj-Label_29</name>
+      <text>Error Message</text>
+      <x>7</x>
+      <y>296</y>
+      <width>119</width>
+      <height>21</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="18.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <auto_size>true</auto_size>
+      <wrap_words>false</wrap_words>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Sys-OBJ-Text Update_22</name>
+      <pv_name>PIP2:TIME_CTRL_GPS:calc_nsFaultErrMsgByte</pv_name>
+      <x>213</x>
+      <y>291</y>
+      <width>180</width>
+      <height>30</height>
+      <format>4</format>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>sys-Obj-Label_30</name>
+      <text>Antenna 1 Status</text>
+      <x>7</x>
+      <y>335</y>
+      <width>139</width>
+      <height>21</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="18.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <auto_size>true</auto_size>
+      <wrap_words>false</wrap_words>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>Sys-Obj-Info-LED (Multi State)_5</name>
+      <pv_name>PIP2:TIME_CTRL_GPS:nsFaultAnt1Stat</pv_name>
+      <x>213</x>
+      <y>330</y>
+      <width>180</width>
+      <height>30</height>
+      <square>true</square>
+      <states>
+        <state>
+          <value>0</value>
+          <label>OK</label>
+          <color>
+            <color name="OK" red="0" green="255" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>1</value>
+          <label>Error</label>
+          <color>
+            <color name="MAJOR" red="255" green="0" blue="0">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label>Unknown State</fallback_label>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>sys-Obj-Label_31</name>
+      <text>Antenna 2 Status</text>
+      <x>7</x>
+      <y>371</y>
+      <width>139</width>
+      <height>21</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="18.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <auto_size>true</auto_size>
+      <wrap_words>false</wrap_words>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>Sys-Obj-Info-LED (Multi State)_6</name>
+      <pv_name>PIP2:TIME_CTRL_GPS:nsFaultAnt2Stat</pv_name>
+      <x>213</x>
+      <y>366</y>
+      <width>180</width>
+      <height>30</height>
+      <square>true</square>
+      <states>
+        <state>
+          <value>0</value>
+          <label>OK</label>
+          <color>
+            <color name="OK" red="0" green="255" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>1</value>
+          <label>Error</label>
+          <color>
+            <color name="MAJOR" red="255" green="0" blue="0">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label>Unknown State</fallback_label>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>PPS-Group</name>
+    <x>445</x>
+    <y>441</y>
+    <width>400</width>
+    <height>302</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="rectangle" version="2.0.0">
+      <name>System-Obj-Rectangle_2</name>
+      <width>400</width>
+      <height>302</height>
+      <line_color>
+        <color name="acorn.Black" red="38" green="38" blue="38">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="acorn.White" red="255" green="255" blue="255">
+        </color>
+      </background_color>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Sys-Info-Label_2</name>
+      <text>PPS Status</text>
+      <x>12</x>
+      <y>6</y>
+      <width>378</width>
+      <height>25</height>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="20.0">
+        </font>
+      </font>
+      <background_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>sys-Obj-Label_32</name>
+      <text>PPS Stability</text>
+      <x>7</x>
+      <y>41</y>
+      <width>105</width>
+      <height>21</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="18.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <auto_size>true</auto_size>
+      <wrap_words>false</wrap_words>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>Sys-Obj-Info-LED (Multi State)_7</name>
+      <pv_name>PIP2:TIME_CTRL_GPS:nsPPSStability</pv_name>
+      <x>213</x>
+      <y>36</y>
+      <width>180</width>
+      <height>30</height>
+      <square>true</square>
+      <states>
+        <state>
+          <value>0</value>
+          <label>Disabled</label>
+          <color>
+            <color name="MAJOR" red="255" green="0" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>1</value>
+          <label>Enabled</label>
+          <color>
+            <color name="OK" red="0" green="255" blue="0">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label>Unknown State</fallback_label>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>sys-Obj-Label_33</name>
+      <text>PPS Discipline to GPS</text>
+      <x>7</x>
+      <y>80</y>
+      <width>182</width>
+      <height>21</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="18.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <auto_size>true</auto_size>
+      <wrap_words>false</wrap_words>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>Sys-Obj-Info-LED (Multi State)_8</name>
+      <pv_name>PIP2:TIME_CTRL_GPS:nsPPSDiscGPS</pv_name>
+      <x>213</x>
+      <y>74</y>
+      <width>180</width>
+      <height>30</height>
+      <square>true</square>
+      <states>
+        <state>
+          <value>0</value>
+          <label>Off</label>
+          <color>
+            <color name="MAJOR" red="255" green="0" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>1</value>
+          <label>Activesync</label>
+          <color>
+            <color name="OK" red="0" green="255" blue="0">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label>Unknown State</fallback_label>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>sys-Obj-Label_34</name>
+      <text>Discipline Counter</text>
+      <x>7</x>
+      <y>117</y>
+      <width>147</width>
+      <height>21</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="18.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <auto_size>true</auto_size>
+      <wrap_words>false</wrap_words>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>Sys-Obj-Info-LED (Multi State)_9</name>
+      <pv_name>PIP2:TIME_CTRL_GPS:nsPPSOutputType</pv_name>
+      <x>213</x>
+      <y>112</y>
+      <width>180</width>
+      <height>30</height>
+      <square>true</square>
+      <states>
+        <state>
+          <value>0</value>
+          <label>Synthetic</label>
+          <color>
+            <color name="MAJOR" red="255" green="0" blue="0">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>1</value>
+          <label>GPS</label>
+          <color>
+            <color name="OK" red="0" green="255" blue="0">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label>Unknown State</fallback_label>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>sys-Obj-Label_35</name>
+      <text>PPS Difference Clock Cycles</text>
+      <x>7</x>
+      <y>155</y>
+      <width>233</width>
+      <height>21</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="18.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <auto_size>true</auto_size>
+      <wrap_words>false</wrap_words>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Sys-OBJ-Text Update_23</name>
+      <pv_name>PIP2:TIME_CTRL_GPS:calc_nsPPSDifference</pv_name>
+      <x>252</x>
+      <y>150</y>
+      <width>140</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>sys-Obj-Label_36</name>
+      <text>PPS Pull Calibration Factor</text>
+      <x>7</x>
+      <y>195</y>
+      <width>219</width>
+      <height>21</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="18.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <auto_size>true</auto_size>
+      <wrap_words>false</wrap_words>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Sys-OBJ-Text Update_24</name>
+      <pv_name>PIP2:TIME_CTRL_GPS:calc_nsPPSCalFactor</pv_name>
+      <x>252</x>
+      <y>187</y>
+      <width>140</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>sys-Obj-Label_37</name>
+      <text>PPS Time Calibration Factor</text>
+      <x>7</x>
+      <y>231</y>
+      <width>229</width>
+      <height>21</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="18.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <auto_size>true</auto_size>
+      <wrap_words>false</wrap_words>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Sys-OBJ-Text Update_25</name>
+      <pv_name>PIP2:TIME_CTRL_GPS:nsPPSTimeCalFactor</pv_name>
+      <x>252</x>
+      <y>224</y>
+      <width>140</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>sys-Obj-Label_38</name>
+      <text>PPS Frequency Variance</text>
+      <x>7</x>
+      <y>265</y>
+      <width>203</width>
+      <height>21</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="18.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <auto_size>true</auto_size>
+      <wrap_words>false</wrap_words>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Sys-OBJ-Text Update_26</name>
+      <pv_name>PIP2:TIME_CTRL_GPS:nsPPSFreqVar</pv_name>
+      <x>252</x>
+      <y>261</y>
+      <width>140</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Logo-Group</name>
+    <y>946</y>
+    <width>850</width>
+    <height>124</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="picture" version="2.0.0">
+      <name>Novus-Logo-Picture</name>
+      <file>../images/Novus-Power-Product.png</file>
+      <y>48</y>
+      <width>250</width>
+      <height>74</height>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>Module-Infor-Group</name>
+      <x>569</x>
+      <width>280</width>
+      <height>124</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>Model-Info-Label</name>
+        <text>Model # NR2310D-O/G-SQ</text>
+        <width>280</width>
+        <height>40</height>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="20.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <border_width>1</border_width>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Model-Info-Label_1</name>
+        <text>Serial # 09232122</text>
+        <y>42</y>
+        <width>280</width>
+        <height>40</height>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="20.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <border_width>1</border_width>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Model-Info-Label_2</name>
+        <text>System Identifier : Novus NR</text>
+        <y>84</y>
+        <width>280</width>
+        <height>40</height>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="20.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <border_width>1</border_width>
+      </widget>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Sensor-Group</name>
+    <x>412</x>
+    <y>755</y>
+    <width>435</width>
+    <height>180</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>sys-Obj-Label_39</name>
+      <text>Fan Sensor PWM</text>
+      <y>128</y>
+      <width>143</width>
+      <height>52</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="18.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="OK" red="0" green="255" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="Text" red="0" green="0" blue="0">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>sys-Obj-Label_40</name>
+      <text>Sensor
+Temperature (C)</text>
+      <x>146</x>
+      <y>128</y>
+      <width>143</width>
+      <height>52</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="18.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="OK" red="0" green="255" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="Text" red="0" green="0" blue="0">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>sys-Obj-Label_41</name>
+      <text>Sensor
+Potentiometer</text>
+      <x>292</x>
+      <y>127</y>
+      <width>143</width>
+      <height>52</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="18.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="OK" red="0" green="255" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="Text" red="0" green="0" blue="0">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Sys-OBJ-Text Update_27</name>
+      <pv_name>PIP2:TIME_CTRL_GPS:nsSensorFanPWM</pv_name>
+      <y>91</y>
+      <width>143</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Sys-OBJ-Text Update_28</name>
+      <pv_name>PIP2:TIME_CTRL_GPS:nsSensorTemperature</pv_name>
+      <x>146</x>
+      <y>91</y>
+      <width>143</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Sys-OBJ-Text Update_29</name>
+      <pv_name>PIP2:TIME_CTRL_GPS:nsSensorPotentiometer</pv_name>
+      <x>292</x>
+      <y>91</y>
+      <width>143</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="meter" version="3.0.0">
+      <name>Meter</name>
+      <pv_name>PIP2:TIME_CTRL_GPS:nsSensorFanPWM</pv_name>
+      <y>1</y>
+      <width>143</width>
+      <height>86</height>
+      <show_value>false</show_value>
+      <limits_from_pv>false</limits_from_pv>
+      <knob_color>
+        <color name="MAJOR" red="255" green="0" blue="0">
+        </color>
+      </knob_color>
+    </widget>
+    <widget type="meter" version="3.0.0">
+      <name>Meter_2</name>
+      <pv_name>PIP2:TIME_CTRL_GPS:nsSensorPotentiometer</pv_name>
+      <x>292</x>
+      <y>1</y>
+      <width>143</width>
+      <height>86</height>
+      <show_value>false</show_value>
+      <limits_from_pv>false</limits_from_pv>
+      <maximum>70.0</maximum>
+      <knob_color>
+        <color name="MAJOR" red="255" green="0" blue="0">
+        </color>
+      </knob_color>
+    </widget>
+    <widget type="thermometer" version="2.0.0">
+      <name>Thermometer</name>
+      <pv_name>PIP2:TIME_CTRL_GPS:nsSensorTemperature</pv_name>
+      <x>194</x>
+      <height>85</height>
+      <fill_color>
+        <color name="cryo.return.2K" red="0" green="0" blue="255">
+        </color>
+      </fill_color>
+      <limits_from_pv>false</limits_from_pv>
+      <minimum>-50.0</minimum>
+      <maximum>130.0</maximum>
+    </widget>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_2</name>
+    <actions>
+      <action type="open_display">
+        <description>Open display to get more information</description>
+        <file>GPS-Sub.bob</file>
+        <target>tab</target>
+      </action>
+    </actions>
+    <x>66</x>
+    <y>906</y>
+    <width>220</width>
+    <height>66</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="20.0">
+      </font>
+    </font>
+    <background_color>
+      <color name="MINOR" red="255" green="128" blue="0">
+      </color>
+    </background_color>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+</display>
