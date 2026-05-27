@@ -39,8 +39,8 @@ Furthermore, one must be added as a member of the phoebus-displays team; to beco
 
 You can create your own display using Phoebus, once is ready you can save it and create a Pull Request.
 
-1- Clone this repository
-2- Create a new branch, use the branch naming convention feature-abc or bugfix-xyz:
+1) Clone this repository
+2) Create a new branch, use the branch naming convention `feature-abc` or `bugfix-xyz`:
 `git checkout -b feature-abc`
 ```mermaid
     gitGraph
@@ -52,11 +52,11 @@ You can create your own display using Phoebus, once is ready you can save it and
        commit
        checkout main
 ```
-3- Copy your display to the correct sub-directory
-4- Commit and push your changes.
-<pre>
-  git add [files]
-  git -m "comments" commit
-  git push
-</pre>
-5- Create a pull request.
+3) Copy your display to the correct sub-directory
+4) Commit and push your changes.
+```shell
+  $ git add [files]
+  $ git -m "comments" commit
+  $ git push
+```
+5) Create a pull request.
