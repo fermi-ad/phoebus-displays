@@ -295,70 +295,6 @@ $(actions)</tooltip>
     <width>1</width>
     <height>1</height>
   </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Close</name>
-    <actions>
-      <action type="write_pv">
-        <description>Close Valve</description>
-        <pv_name>$(pv_name)</pv_name>
-        <value>0</value>
-      </action>
-    </actions>
-    <pv_name>$(system)$(dev):sOpen</pv_name>
-    <text>CLOSE $(dev)</text>
-    <x>18</x>
-    <y>70</y>
-    <width>122</width>
-    <height>64</height>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>OPEN</name>
-    <actions>
-      <action type="write_pv">
-        <description>Open Valve</description>
-        <pv_name>$(pv_name)</pv_name>
-        <value>1</value>
-      </action>
-    </actions>
-    <pv_name>$(system)$(dev):sOpen</pv_name>
-    <text>OPEN $(dev)</text>
-    <x>165</x>
-    <y>69</y>
-    <width>122</width>
-    <height>64</height>
-  </widget>
-  <widget type="led" version="2.0.0">
-    <name>LED_2</name>
-    <pv_name>$(system)$(dev):Open</pv_name>
-    <x>123</x>
-    <y>73</y>
-    <width>15</width>
-    <height>15</height>
-    <off_color>
-      <color name="acorn.Green" red="82" green="171" blue="90">
-      </color>
-    </off_color>
-    <on_color>
-      <color name="fgs.Gray-45" red="167" green="168" blue="170">
-      </color>
-    </on_color>
-  </widget>
-  <widget type="led" version="2.0.0">
-    <name>LED_3</name>
-    <pv_name>$(system)$(dev):Open</pv_name>
-    <x>269</x>
-    <y>73</y>
-    <width>15</width>
-    <height>15</height>
-    <off_color>
-      <color name="fgs.Gray-45" red="167" green="168" blue="170">
-      </color>
-    </off_color>
-    <on_color>
-      <color name="acorn.Green" red="82" green="171" blue="90">
-      </color>
-    </on_color>
-  </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_1</name>
     <pv_name>sys://time</pv_name>
@@ -453,5 +389,21 @@ $(actions)</tooltip>
     <horizontal_alignment>1</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
     <border_width>1</border_width>
+  </widget>
+  <widget type="choice" version="2.0.0">
+    <name>Choice Button_1</name>
+    <pv_name>$(system)$(dev):sOpen</pv_name>
+    <x>26</x>
+    <y>70</y>
+    <width>254</width>
+    <height>76</height>
+    <selected_color>
+      <color name="acorn.Green" red="82" green="171" blue="90">
+      </color>
+    </selected_color>
+    <items>
+      <item>CLOSE</item>
+      <item>OPEN</item>
+    </items>
   </widget>
 </display>

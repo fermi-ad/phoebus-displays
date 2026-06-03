@@ -416,7 +416,7 @@
   <widget type="polyline" version="2.0.0">
     <name>Polyline_112</name>
     <x>205</x>
-    <y>159</y>
+    <y>160</y>
     <width>58</width>
     <height>1</height>
     <points>
@@ -976,7 +976,7 @@ $(actions)</tooltip>
     <x>22</x>
     <y>206</y>
     <width>98</width>
-    <height>22</height>
+    <height>23</height>
     <font>
       <font family="Liberation Sans" style="BOLD" size="20.0">
       </font>
@@ -1028,6 +1028,9 @@ $(actions)</tooltip>
     <name>Embedded Display_154</name>
     <macros>
       <dev>PV1433</dev>
+      <system>$(complex):RCVRY_$(group)_</system>
+      <group>CRYO</group>
+      <complex>CP</complex>
     </macros>
     <file>../Common/cryo-embedded-displays/ValveStatusNameOnly.bob</file>
     <x>118</x>
@@ -1111,7 +1114,7 @@ $(actions)</tooltip>
   </widget>
   <widget type="symbol" version="2.0.0">
     <name>Symbol_31</name>
-    <pv_name>$(system)PV1433:VLVstat</pv_name>
+    <pv_name>CP:RCVRY_CRYO_PV1433:VLVstat</pv_name>
     <symbols>
       <symbol>../Images/Cryo/png/OnOffValveGray.png</symbol>
       <symbol>../Images/Cryo/png/OnOffValveGreen.png</symbol>
@@ -1128,6 +1131,9 @@ $(actions)</tooltip>
         <file>../Common/cryo-embedded-displays/ValveControlOnOff.bob</file>
         <macros>
           <dev>PV1433</dev>
+          <system>$(complex):RCVRY_$(group)_</system>
+          <group>CRYO</group>
+          <complex>CP</complex>
         </macros>
         <target>tab</target>
       </action>
@@ -1184,10 +1190,51 @@ Distribution</text>
       </color>
     </line_color>
   </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_117</name>
+    <x>205</x>
+    <y>94</y>
+    <width>58</width>
+    <height>1</height>
+    <points>
+      <point x="0.0" y="1.1586575189467112">
+      </point>
+      <point x="58.84134248105327" y="0.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <line_color>
+      <color name="cryo.Helium.Warm" red="170" green="0" blue="255">
+      </color>
+    </line_color>
+    <arrows>2</arrows>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_294</name>
+    <x>1234</x>
+    <y>266</y>
+    <width>1</width>
+    <height>1</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="170" green="0" blue="255">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>Ellipse_7</name>
+    <x>1271</x>
+    <y>254</y>
+    <width>1</width>
+    <height>1</height>
+  </widget>
   <widget type="led" version="2.0.0">
     <name>LED_14</name>
     <bit>0</bit>
-    <x>1244</x>
+    <x>1248</x>
     <y>235</y>
     <off_label>M</off_label>
     <off_color>
@@ -1202,25 +1249,28 @@ Distribution</text>
     <square>true</square>
   </widget>
   <widget type="embedded" version="2.0.0">
-    <name>Embedded Display_181</name>
+    <name>Embedded Display_155</name>
     <macros>
       <dev>PV1401</dev>
+      <system>$(complex):RCVRY_$(group)_</system>
+      <group>CRYO</group>
+      <complex>CP</complex>
     </macros>
     <file>../Common/cryo-embedded-displays/ValveStatusNameOnly.bob</file>
-    <x>1193</x>
-    <y>290</y>
+    <x>1191</x>
+    <y>286</y>
     <width>65</width>
     <height>20</height>
   </widget>
   <widget type="symbol" version="2.0.0">
     <name>Symbol_32</name>
-    <pv_name>$(system)PV1401:VLVstat</pv_name>
+    <pv_name>CP:RCVRY_CRYO_PV1401:VLVstat</pv_name>
     <symbols>
       <symbol>../Images/Cryo/png/OnOffValveGray.png</symbol>
       <symbol>../Images/Cryo/png/OnOffValveGreen.png</symbol>
       <symbol>../Images/Cryo/png/OnOffValveRed.png</symbol>
     </symbols>
-    <x>1200</x>
+    <x>1199</x>
     <y>245</y>
     <width>50</width>
     <height>50</height>
@@ -1231,6 +1281,163 @@ Distribution</text>
         <file>../Common/cryo-embedded-displays/ValveControlOnOff.bob</file>
         <macros>
           <dev>PV1401</dev>
+          <system>$(complex):RCVRY_$(group)_</system>
+          <group>CRYO</group>
+          <complex>CP</complex>
+        </macros>
+        <target>tab</target>
+      </action>
+    </actions>
+    <run_actions_on_mouse_click>true</run_actions_on_mouse_click>
+    <tooltip>$(pv_name)
+$(pv_value)
+$(actions)</tooltip>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_201</name>
+    <macros>
+      <dev>PT1441</dev>
+      <system>CP:RCVRY_CRYO_</system>
+    </macros>
+    <file>../Common/cryo-embedded-displays/PressureSensorUp.bob</file>
+    <x>1105</x>
+    <y>296</y>
+    <width>65</width>
+    <height>35</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_202</name>
+    <macros>
+      <dev>DPT1408</dev>
+      <system>CP:RCVRY_CRYO_</system>
+    </macros>
+    <file>../Common/cryo-embedded-displays/PressureSensorUp.bob</file>
+    <x>1105</x>
+    <y>338</y>
+    <width>65</width>
+    <height>35</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_203</name>
+    <macros>
+      <dev>CT1408</dev>
+      <system>CP:RCVRY_CRYO_</system>
+    </macros>
+    <file>../Common/cryo-embedded-displays/ArcCellReadingUp.bob</file>
+    <x>1105</x>
+    <y>216</y>
+    <width>65</width>
+    <height>35</height>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group_235</name>
+    <x>1127</x>
+    <y>264</y>
+    <width>16</width>
+    <height>20</height>
+    <style>3</style>
+    <background_color>
+      <color red="217" green="217" blue="217">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <widget type="ellipse" version="2.0.0">
+      <name>Ellipse_131</name>
+      <width>12</width>
+      <height>12</height>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_303</name>
+      <x>6</x>
+      <y>5</y>
+      <width>1</width>
+      <points>
+        <point x="0.0" y="20.0">
+        </point>
+        <point x="0.0" y="0.0">
+        </point>
+      </points>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+    </widget>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_304</name>
+    <x>1235</x>
+    <y>156</y>
+    <width>1</width>
+    <height>1</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="170" green="0" blue="255">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_16</name>
+    <bit>0</bit>
+    <x>1249</x>
+    <y>125</y>
+    <off_label>M</off_label>
+    <off_color>
+      <color name="fgs.Gray-45" red="167" green="168" blue="170">
+      </color>
+    </off_color>
+    <on_label>A</on_label>
+    <on_color>
+      <color name="acorn.Green" red="82" green="171" blue="90">
+      </color>
+    </on_color>
+    <square>true</square>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_204</name>
+    <macros>
+      <dev>PV1404</dev>
+      <system>$(complex):RCVRY_$(group)_</system>
+      <group>CRYO</group>
+      <complex>CP</complex>
+    </macros>
+    <file>../Common/cryo-embedded-displays/ValveStatusNameOnly.bob</file>
+    <x>1192</x>
+    <y>176</y>
+    <width>65</width>
+    <height>20</height>
+  </widget>
+  <widget type="symbol" version="2.0.0">
+    <name>Symbol_33</name>
+    <pv_name>CP:RCVRY_CRYO_PV1404:VLVstat</pv_name>
+    <symbols>
+      <symbol>../Images/Cryo/png/OnOffValveGray.png</symbol>
+      <symbol>../Images/Cryo/png/OnOffValveGreen.png</symbol>
+      <symbol>../Images/Cryo/png/OnOffValveRed.png</symbol>
+    </symbols>
+    <x>1200</x>
+    <y>135</y>
+    <width>50</width>
+    <height>50</height>
+    <initial_index>1</initial_index>
+    <actions>
+      <action type="open_display">
+        <description>Open Display</description>
+        <file>../Common/cryo-embedded-displays/ValveControlOnOff.bob</file>
+        <macros>
+          <dev>PV1404</dev>
+          <system>$(complex):RCVRY_$(group)_</system>
+          <group>CRYO</group>
+          <complex>CP</complex>
         </macros>
         <target>tab</target>
       </action>
