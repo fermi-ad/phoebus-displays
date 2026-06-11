@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <display version="2.0.0">
-  <name>$(dev): Heater Control </name>
+  <name>$(dev): Valve Control</name>
   <width>1075</width>
-  <height>575</height>
+  <height>650</height>
   <background_color>
     <color name="cryo.PrimaryBackground" red="217" green="217" blue="217">
     </color>
   </background_color>
   <widget type="rectangle" version="2.0.0">
     <name>Rectangle</name>
-    <x>10</x>
-    <y>424</y>
+    <x>9</x>
+    <y>494</y>
     <width>200</width>
     <height>142</height>
     <line_width>1</line_width>
@@ -25,9 +25,9 @@
   </widget>
   <widget type="textentry" version="3.0.0">
     <name>Text Entry_3</name>
-    <pv_name>$(system)$(dev):SP</pv_name>
-    <x>380</x>
-    <y>142</y>
+    <pv_name>$(system)$(dev):sSetLoop</pv_name>
+    <x>390</x>
+    <y>250</y>
     <width>80</width>
     <format>1</format>
     <precision>1</precision>
@@ -35,9 +35,9 @@
   </widget>
   <widget type="textentry" version="3.0.0">
     <name>Text Entry_4</name>
-    <pv_name>$(system)$(dev):MIN</pv_name>
-    <x>380</x>
-    <y>355</y>
+    <pv_name>$(system)$(dev):sMinLim</pv_name>
+    <x>390</x>
+    <y>473</y>
     <width>80</width>
     <format>1</format>
     <precision>1</precision>
@@ -45,39 +45,62 @@
   </widget>
   <widget type="textentry" version="3.0.0">
     <name>Text Entry_5</name>
-    <pv_name>$(system)$(dev):MAX</pv_name>
-    <x>380</x>
-    <y>385</y>
+    <pv_name>$(system)$(dev):sMaxLim</pv_name>
+    <x>390</x>
+    <y>503</y>
     <width>80</width>
     <format>1</format>
     <precision>1</precision>
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label_92</name>
-    <text>Set Point:</text>
-    <x>245</x>
-    <y>141</y>
+    <name>Label_80</name>
+    <text>Set Point :</text>
+    <x>255</x>
+    <y>251</y>
     <width>130</width>
     <horizontal_alignment>2</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
     <wrap_words>false</wrap_words>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label_93</name>
-    <text>Minimum Output:</text>
-    <x>245</x>
-    <y>354</y>
+    <name>Label_81</name>
+    <text>Minimum Output :</text>
+    <x>255</x>
+    <y>472</y>
     <width>130</width>
     <horizontal_alignment>2</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
     <wrap_words>false</wrap_words>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label_94</name>
-    <text>Maximum Output:</text>
-    <x>245</x>
-    <y>384</y>
+    <name>Label_82</name>
+    <text>Maximum Output :</text>
+    <x>255</x>
+    <y>502</y>
+    <width>130</width>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_41</name>
+    <pv_name>$(system)$(dev):Open</pv_name>
+    <x>390</x>
+    <y>193</y>
+    <width>80</width>
+    <format>1</format>
+    <precision>1</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_84</name>
+    <text>Current Position :</text>
+    <x>255</x>
+    <y>194</y>
     <width>130</width>
     <horizontal_alignment>2</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
@@ -85,19 +108,19 @@
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_98</name>
-    <text>Gain (PG):</text>
-    <x>245</x>
-    <y>168</y>
+    <text>Gain (PG) :</text>
+    <x>255</x>
+    <y>278</y>
     <width>130</width>
     <horizontal_alignment>2</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
     <wrap_words>false</wrap_words>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label_99</name>
-    <text>Intergral Time (TI):</text>
-    <x>245</x>
-    <y>196</y>
+    <name>Label_92</name>
+    <text>Intergral Time (TI) :</text>
+    <x>255</x>
+    <y>306</y>
     <width>130</width>
     <horizontal_alignment>2</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
@@ -106,8 +129,8 @@
   <widget type="led" version="2.0.0">
     <name>LED</name>
     <pv_name>$(system)$(dev):BadLim</pv_name>
-    <x>468</x>
-    <y>362</y>
+    <x>478</x>
+    <y>480</y>
     <off_label>OK</off_label>
     <off_color>
       <color name="cryo.On" red="82" green="171" blue="90">
@@ -125,9 +148,9 @@
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label_100</name>
+    <name>Label_93</name>
     <text>Auto Mode</text>
-    <x>259</x>
+    <x>269</x>
     <y>58</y>
     <width>211</width>
     <font>
@@ -149,10 +172,10 @@
     <border_width>1</border_width>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update_44</name>
-    <pv_name>$(system)$(PV):$(Var)</pv_name>
-    <x>380</x>
-    <y>88</y>
+    <name>Text Update_40</name>
+    <pv_name>$(system)$(dev):Ramp</pv_name>
+    <x>390</x>
+    <y>372</y>
     <width>80</width>
     <format>1</format>
     <precision>1</precision>
@@ -162,10 +185,34 @@
     <border_width>1</border_width>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label_102</name>
-    <text>PV ($(PV)):</text>
-    <x>245</x>
-    <y>86</y>
+    <name>Label_94</name>
+    <text>Ramp Value:</text>
+    <x>255</x>
+    <y>372</y>
+    <width>130</width>
+    <height>16</height>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_44</name>
+    <pv_name>$(system)$(PV):$(Var)</pv_name>
+    <x>390</x>
+    <y>166</y>
+    <width>80</width>
+    <format>1</format>
+    <precision>1</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_85</name>
+    <text>PV $(PV) :</text>
+    <x>255</x>
+    <y>166</y>
     <width>130</width>
     <horizontal_alignment>2</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
@@ -173,9 +220,9 @@
   </widget>
   <widget type="textentry" version="3.0.0">
     <name>Text Entry_7</name>
-    <pv_name>$(system)$(dev):PG</pv_name>
-    <x>380</x>
-    <y>169</y>
+    <pv_name>$(system)$(dev):sPG</pv_name>
+    <x>390</x>
+    <y>277</y>
     <width>80</width>
     <format>1</format>
     <precision>1</precision>
@@ -183,9 +230,9 @@
   </widget>
   <widget type="textentry" version="3.0.0">
     <name>Text Entry_8</name>
-    <pv_name>$(system)$(dev):TI</pv_name>
-    <x>380</x>
-    <y>196</y>
+    <pv_name>$(system)$(dev):sTI</pv_name>
+    <x>390</x>
+    <y>304</y>
     <width>80</width>
     <format>1</format>
     <precision>1</precision>
@@ -283,7 +330,7 @@
   </widget>
   <widget type="label" version="2.0.0">
     <name>$(dev): Valve Control</name>
-    <text>$(dev): Heater Control</text>
+    <text>$(dev): Valve Control</text>
     <width>1075</width>
     <height>40</height>
     <font>
@@ -305,10 +352,10 @@
     <border_width>1</border_width>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label_103</name>
-    <text>Heater Operation Mode</text>
+    <name>Label_90</name>
+    <text>Valve Operation Mode</text>
     <x>9</x>
-    <y>59</y>
+    <y>58</y>
     <width>220</width>
     <font>
       <font family="Liberation Sans" style="BOLD" size="14.0">
@@ -332,11 +379,11 @@
     <name>Progress Bar</name>
     <pv_name>$(system)$(PV):$(Var)</pv_name>
     <x>82</x>
-    <y>202</y>
+    <y>190</y>
     <width>25</width>
     <height>175</height>
     <fill_color>
-      <color red="0" green="0" blue="255">
+      <color red="147" green="194" blue="228">
       </color>
     </fill_color>
     <background_color>
@@ -347,13 +394,13 @@
   </widget>
   <widget type="progressbar" version="2.0.0">
     <name>Progress Bar_1</name>
-    <pv_name>$(system)$(dev):SP</pv_name>
+    <pv_name>$(system)$(dev):rSetLoop</pv_name>
     <x>153</x>
-    <y>202</y>
+    <y>190</y>
     <width>25</width>
     <height>175</height>
     <fill_color>
-      <color name="cryo.On" red="82" green="171" blue="90">
+      <color red="147" green="194" blue="228">
       </color>
     </fill_color>
     <background_color>
@@ -363,28 +410,28 @@
     <horizontal>false</horizontal>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label_104</name>
+    <name>Label</name>
     <text>PV:$(PV)</text>
     <x>64</x>
-    <y>381</y>
+    <y>368</y>
     <width>59</width>
     <height>16</height>
     <auto_size>true</auto_size>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label_105</name>
+    <name>Label_1</name>
     <text>SP</text>
     <x>157</x>
-    <y>381</y>
+    <y>368</y>
     <width>19</width>
     <height>16</height>
     <auto_size>true</auto_size>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label_106</name>
+    <name>Label_95</name>
     <text>Manual Mode</text>
-    <x>259</x>
-    <y>247</y>
+    <x>269</x>
+    <y>340</y>
     <width>211</width>
     <font>
       <font family="Liberation Sans" style="BOLD" size="14.0">
@@ -404,8 +451,18 @@
     <wrap_words>false</wrap_words>
     <border_width>1</border_width>
   </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_6</name>
+    <pv_name>$(system)$(dev):sSetManual</pv_name>
+    <x>390</x>
+    <y>400</y>
+    <width>80</width>
+    <format>1</format>
+    <precision>1</precision>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update_45</name>
+    <name>Text Update_1</name>
     <pv_name>sys://time</pv_name>
     <x>973</x>
     <width>91</width>
@@ -427,10 +484,10 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label_107</name>
-    <text>Heater Settings</text>
-    <x>259</x>
-    <y>324</y>
+    <name>Label_97</name>
+    <text>Valve Settings</text>
+    <x>269</x>
+    <y>442</y>
     <width>211</width>
     <font>
       <font family="Liberation Sans" style="BOLD" size="14.0">
@@ -450,19 +507,30 @@
     <wrap_words>false</wrap_words>
     <border_width>1</border_width>
   </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_96</name>
+    <text>Manual Output:</text>
+    <x>255</x>
+    <y>400</y>
+    <width>130</width>
+    <height>16</height>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
   <widget type="polyline" version="2.0.0">
-    <name>Polyline_112</name>
+    <name>Polyline_1</name>
     <x>4</x>
-    <y>188</y>
+    <y>160</y>
     <width>1</width>
     <height>1</height>
   </widget>
   <widget type="stripchart" version="2.1.0">
     <name>Strip Chart</name>
-    <x>516</x>
-    <y>58</y>
+    <x>520</x>
+    <y>60</y>
     <width>550</width>
-    <height>358</height>
+    <height>401</height>
     <background_color>
       <color name="fgs.Gray-45" red="167" green="168" blue="170">
       </color>
@@ -488,7 +556,7 @@
     <traces>
       <trace>
         <name>SP</name>
-        <y_pv>$(system)$(dev):SP</y_pv>
+        <y_pv>$(system)$(dev):rSetLoop</y_pv>
         <axis>0</axis>
         <trace_type>2</trace_type>
         <color>
@@ -515,8 +583,8 @@
         <visible>true</visible>
       </trace>
       <trace>
-        <name>Out Cmd</name>
-        <y_pv>$(system)$(dev):OUTcmd</y_pv>
+        <name>Valve Open</name>
+        <y_pv>$(system)$(dev):Open</y_pv>
         <axis>0</axis>
         <trace_type>2</trace_type>
         <color>
@@ -531,10 +599,10 @@
     </traces>
   </widget>
   <widget type="choice" version="2.0.0">
-    <name>Choice Button_2</name>
-    <pv_name>$(system)$(dev):AM</pv_name>
+    <name>Choice Button_1</name>
+    <pv_name>$(system)$(dev):sManualAuto</pv_name>
     <x>9</x>
-    <y>88</y>
+    <y>87</y>
     <width>220</width>
     <height>65</height>
     <selected_color>
@@ -545,12 +613,39 @@
       <item>AUTO</item>
       <item>MANUAL</item>
     </items>
+    <show_confirm_dialog>true</show_confirm_dialog>
+  </widget>
+  <widget type="byte_monitor" version="2.0.0">
+    <name>Byte Monitor</name>
+    <pv_name>$(system)$(dev):VLVfault</pv_name>
+    <x>9</x>
+    <y>507</y>
+    <width>198</width>
+    <height>126</height>
+    <numBits>6</numBits>
+    <horizontal>false</horizontal>
+    <off_color>
+      <color name="cryo.Off" red="150" green="150" blue="150">
+      </color>
+    </off_color>
+    <on_color>
+      <color name="cryo.Heater.On" red="229" green="56" blue="35">
+      </color>
+    </on_color>
+    <labels>
+      <text>Broken Wire</text>
+      <text>Failed to Open</text>
+      <text>Failed to Close</text>
+      <text>Position Deviation Critical</text>
+      <text>Position Deviation High</text>
+      <text>No Valve Movement</text>
+    </labels>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label_109</name>
-    <text>Heater Faults</text>
-    <x>10</x>
-    <y>413</y>
+    <name>Label_103</name>
+    <text>Valve Faults</text>
+    <x>9</x>
+    <y>483</y>
     <width>200</width>
     <height>22</height>
     <font>
@@ -571,10 +666,10 @@
     <border_width>1</border_width>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update_46</name>
-    <pv_name>$(system)$(dev):OUTcmd</pv_name>
-    <x>380</x>
-    <y>115</y>
+    <name>Text Update_42</name>
+    <pv_name>$(system)$(dev):rPLCout</pv_name>
+    <x>390</x>
+    <y>220</y>
     <width>80</width>
     <format>1</format>
     <precision>1</precision>
@@ -584,77 +679,19 @@
     <border_width>1</border_width>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label_110</name>
-    <text>Output CMD:</text>
-    <x>245</x>
-    <y>113</y>
+    <name>Label_86</name>
+    <text>Output CMD</text>
+    <x>255</x>
+    <y>220</y>
     <width>130</width>
     <horizontal_alignment>2</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
     <wrap_words>false</wrap_words>
   </widget>
-  <widget type="textentry" version="3.0.0">
-    <name>Text Entry_9</name>
-    <pv_name>$(system)$(dev):SM</pv_name>
-    <x>376</x>
-    <y>277</y>
-    <width>80</width>
-    <format>1</format>
-    <precision>1</precision>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label_108</name>
-    <text>Manual Output:</text>
-    <x>271</x>
-    <y>278</y>
-    <width>96</width>
-    <height>16</height>
-    <horizontal_alignment>2</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <auto_size>true</auto_size>
-    <wrap_words>false</wrap_words>
-  </widget>
-  <widget type="led" version="2.0.0">
-    <name>LED_1</name>
-    <pv_name>$(system)$(dev):STS1</pv_name>
-    <x>9</x>
-    <y>161</y>
-    <width>100</width>
-    <height>26</height>
-    <off_label>ZONE 1 OFF</off_label>
-    <off_color>
-      <color name="fgs.Gray-45" red="167" green="168" blue="170">
-      </color>
-    </off_color>
-    <on_color>
-      <color name="cryo.Heater.On" red="229" green="56" blue="35">
-      </color>
-    </on_color>
-    <square>true</square>
-  </widget>
-  <widget type="led" version="2.0.0">
-    <name>LED_2</name>
-    <pv_name>$(system)$(dev):STS2</pv_name>
-    <x>126</x>
-    <y>161</y>
-    <width>100</width>
-    <height>26</height>
-    <off_label>ZONE 2 OFF</off_label>
-    <off_color>
-      <color name="fgs.Gray-45" red="167" green="168" blue="170">
-      </color>
-    </off_color>
-    <on_color>
-      <color name="cryo.Heater.On" red="229" green="56" blue="35">
-      </color>
-    </on_color>
-    <square>true</square>
-  </widget>
   <widget type="rectangle" version="2.0.0">
-    <name>Rectangle_2</name>
-    <x>260</x>
-    <y>489</y>
+    <name>Rectangle_1</name>
+    <x>271</x>
+    <y>558</y>
     <width>200</width>
     <height>78</height>
     <line_width>1</line_width>
@@ -668,10 +705,10 @@
     </background_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label_112</name>
+    <name>Label_104</name>
     <text>Interlock</text>
-    <x>260</x>
-    <y>478</y>
+    <x>271</x>
+    <y>547</y>
     <width>200</width>
     <height>22</height>
     <font>
@@ -692,10 +729,10 @@
     <border_width>1</border_width>
   </widget>
   <widget type="led" version="2.0.0">
-    <name>LED_4</name>
+    <name>LED_3</name>
     <pv_name>$(system)$(dev):INTLK</pv_name>
-    <x>354</x>
-    <y>516</y>
+    <x>357</x>
+    <y>585</y>
     <width>25</width>
     <height>25</height>
     <off_color>
@@ -708,10 +745,10 @@
     </on_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label_115</name>
+    <name>Label_114</name>
     <text>Status:</text>
-    <x>301</x>
-    <y>520</y>
+    <x>304</x>
+    <y>589</y>
     <width>44</width>
     <height>16</height>
     <horizontal_alignment>2</horizontal_alignment>
@@ -721,9 +758,9 @@
   </widget>
   <widget type="bool_button" version="2.0.0">
     <name>Boolean Button</name>
-    <pv_name>$(system)$(dev):INTLKreset</pv_name>
-    <x>387</x>
-    <y>511</y>
+    <pv_name>$(system)$(dev):INTLK</pv_name>
+    <x>405</x>
+    <y>580</y>
     <width>49</width>
     <height>35</height>
     <off_label>Reset INTLK</off_label>
@@ -740,14 +777,33 @@
     <mode>1</mode>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label_116</name>
-    <text>Notes: $(Notes)
+    <name>Label_115</name>
+    <text>Notes:
 Interlock Condition:
 $(INTLK)</text>
-    <x>516</x>
-    <y>478</y>
-    <width>550</width>
-    <height>90</height>
+    <x>519</x>
+    <y>515</y>
+    <width>549</width>
+    <height>93</height>
     <transparent>false</transparent>
+  </widget>
+  <widget type="choice" version="2.0.0">
+    <name>Choice Button_2</name>
+    <pv_name>$(system)$(dev):PVsel</pv_name>
+    <x>269</x>
+    <y>87</y>
+    <width>211</width>
+    <height>65</height>
+    <selected_color>
+      <color name="acorn.Green" red="82" green="171" blue="90">
+      </color>
+    </selected_color>
+    <items>
+      <item>$(PV1) 
+ Selected</item>
+      <item>$(PV2) 
+ Selected</item>
+    </items>
+    <show_confirm_dialog>true</show_confirm_dialog>
   </widget>
 </display>
