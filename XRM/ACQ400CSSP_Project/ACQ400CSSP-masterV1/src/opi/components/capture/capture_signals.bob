@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>capture_signals</name>
+  <width>710</width>
+  <height>210</height>
+  <widget type="group" version="3.0.0">
+    <name>SIGNALS</name>
+    <width>710</width>
+    <height>210</height>
+    <style>3</style>
+    <background_color>
+      <color name="Read_Background" red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <widget type="group" version="3.0.0">
+      <name>SIGNALS_INNER</name>
+      <x>10</x>
+      <y>10</y>
+      <width>690</width>
+      <height>190</height>
+      <style>3</style>
+      <background_color>
+        <color name="Read_Background" red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <transparent>true</transparent>
+      <widget type="action_button" version="3.0.0">
+        <name>Set Soft Button</name>
+        <actions execute_as_one="true">
+          <action type="write_pv">
+            <description>SET SOFT</description>
+            <pv_name>${UUT}:$(SITE):TRG:DX</pv_name>
+            <value>1</value>
+          </action>
+          <action type="write_pv">
+            <description>SET RISING</description>
+            <pv_name>${UUT}:$(SITE):TRG:SENSE</pv_name>
+            <value>1</value>
+          </action>
+        </actions>
+        <text>SET SOFT TRG</text>
+        <x>370</x>
+        <y>40</y>
+        <width>130</width>
+        <tooltip>$(actions)</tooltip>
+      </widget>
+      <widget type="action_button" version="3.0.0">
+        <name>Pulse Soft Button</name>
+        <actions execute_as_one="true">
+          <action type="write_pv">
+            <description>PULSE SOFT TRG</description>
+            <pv_name>${UUT}:SIG:SOFT_TRIGGER</pv_name>
+            <value>1</value>
+          </action>
+        </actions>
+        <text>PULSE SOFT TRG</text>
+        <x>510</x>
+        <y>40</y>
+        <width>130</width>
+        <tooltip>$(actions)</tooltip>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>Find Group</name>
+        <x>370</x>
+        <y>80</y>
+        <width>320</width>
+        <height>30</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="label" version="2.0.0">
+          <name>Find Label</name>
+          <text>EVENT0</text>
+          <width>60</width>
+          <height>30</height>
+          <transparent>false</transparent>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>Find Status</name>
+          <pv_name>${UUT}:MODE:TRANS_ACT:FIND_EV:STA</pv_name>
+          <x>60</x>
+          <width>80</width>
+          <height>30</height>
+          <background_color>
+            <color name="Background" red="255" green="255" blue="255">
+            </color>
+          </background_color>
+          <format>6</format>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+          <rules>
+            <rule name="COLOR" prop_id="background_color" out_exp="false">
+              <exp bool_exp="pv0==4">
+                <value>
+                  <color red="255" green="0" blue="0">
+                  </color>
+                </value>
+              </exp>
+              <exp bool_exp="pv0==2">
+                <value>
+                  <color red="0" green="255" blue="0">
+                  </color>
+                </value>
+              </exp>
+              <exp bool_exp="pv0!=0">
+                <value>
+                  <color red="255" green="127" blue="0">
+                  </color>
+                </value>
+              </exp>
+              <pv_name>${UUT}:MODE:TRANS_ACT:FIND_EV:STA</pv_name>
+            </rule>
+          </rules>
+          <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>Find Current</name>
+          <pv_name>${UUT}:MODE:TRANS_ACT:FIND_EV:CUR</pv_name>
+          <x>141</x>
+          <width>60</width>
+          <height>30</height>
+          <background_color>
+            <color red="255" green="255" blue="255">
+            </color>
+          </background_color>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+          <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>Find Buffer</name>
+          <pv_name>${UUT}:MODE:TRANS_ACT:FIND_EV:NBU</pv_name>
+          <x>202</x>
+          <width>60</width>
+          <height>30</height>
+          <background_color>
+            <color red="255" green="255" blue="255">
+            </color>
+          </background_color>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+          <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+        </widget>
+        <widget type="bool_button" version="2.0.0">
+          <name>ES Button</name>
+          <pv_name>${UUT}:$(SITE):ES_ENABLE</pv_name>
+          <x>269</x>
+          <width>50</width>
+          <off_label>ES</off_label>
+          <on_label>ES</on_label>
+          <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+        </widget>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>Translen Group</name>
+        <x>370</x>
+        <y>160</y>
+        <width>262</width>
+        <height>30</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="label" version="2.0.0">
+          <name>Translen Label</name>
+          <text>TRANSLEN</text>
+          <height>30</height>
+          <transparent>false</transparent>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="textentry" version="3.0.0">
+          <name>Translen Input</name>
+          <pv_name>${UUT}:$(SITE):RTM_TRANSLEN</pv_name>
+          <x>102</x>
+          <width>75</width>
+          <height>30</height>
+          <background_color>
+            <color name="Header_ForeGround" red="255" green="255" blue="255">
+            </color>
+          </background_color>
+          <format>1</format>
+          <precision>0</precision>
+          <show_units>false</show_units>
+          <horizontal_alignment>1</horizontal_alignment>
+          <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>Translen Value</name>
+          <pv_name>${UUT}:$(SITE):RTM_TRANSLENp:r</pv_name>
+          <x>179</x>
+          <width>75</width>
+          <height>30</height>
+          <background_color>
+            <color red="255" green="255" blue="255">
+            </color>
+          </background_color>
+          <format>1</format>
+          <precision>0</precision>
+          <show_units>false</show_units>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+          <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+        </widget>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>Sample Size</name>
+        <x>370</x>
+        <width>130</width>
+        <height>30</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="label" version="2.0.0">
+          <name>ssb Label</name>
+          <text>Sample Size</text>
+          <width>80</width>
+          <height>30</height>
+          <background_color>
+            <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+            </color>
+          </background_color>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>ssb Value</name>
+          <pv_name>${UUT}:0:SSB</pv_name>
+          <x>84</x>
+          <width>46</width>
+          <height>30</height>
+          <background_color>
+            <color red="255" green="255" blue="255">
+            </color>
+          </background_color>
+          <precision>0</precision>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+          <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+          <border_color>
+            <color name="Grid" red="128" green="128" blue="128">
+            </color>
+          </border_color>
+        </widget>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>Agg</name>
+        <width>260</width>
+        <height>30</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="label" version="2.0.0">
+          <name>Agg Label</name>
+          <text>Aggregator Sites</text>
+          <width>120</width>
+          <height>30</height>
+          <background_color>
+            <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+            </color>
+          </background_color>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>Agg Value</name>
+          <pv_name>${UUT}:0:AGGREGATOR:SITES</pv_name>
+          <x>122</x>
+          <height>30</height>
+          <background_color>
+            <color red="255" green="255" blue="255">
+            </color>
+          </background_color>
+          <precision>0</precision>
+          <show_units>false</show_units>
+          <vertical_alignment>1</vertical_alignment>
+          <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+          <border_color>
+            <color name="Grid" red="128" green="128" blue="128">
+            </color>
+          </border_color>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>Agg Value 2</name>
+          <pv_name>${UUT}:0:AGGREGATOR:S1</pv_name>
+          <x>225</x>
+          <width>36</width>
+          <height>30</height>
+          <background_color>
+            <color red="255" green="255" blue="255">
+            </color>
+          </background_color>
+          <precision>0</precision>
+          <show_units>false</show_units>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+          <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+          <border_color>
+            <color name="Grid" red="128" green="128" blue="128">
+            </color>
+          </border_color>
+        </widget>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>Signals Group</name>
+        <macros>
+          <site>$(SITE)</site>
+        </macros>
+        <y>40</y>
+        <width>350</width>
+        <height>150</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="template" version="2.0.0">
+          <name>Signals</name>
+          <file>signal_trinary.bob</file>
+          <instances>
+            <instance>
+              <macros>
+                <sig>TRG</sig>
+              </macros>
+            </instance>
+            <instance>
+              <macros>
+                <sig>EVENT0</sig>
+              </macros>
+            </instance>
+            <instance>
+              <macros>
+                <sig>EVENT1</sig>
+              </macros>
+            </instance>
+            <instance>
+              <macros>
+                <sig>RGM</sig>
+              </macros>
+            </instance>
+          </instances>
+          <width>350</width>
+          <height>150</height>
+          <transparent>true</transparent>
+        </widget>
+        <widget type="group" version="3.0.0">
+          <name>Disable Cover</name>
+          <width>350</width>
+          <height>150</height>
+          <visible>false</visible>
+          <style>3</style>
+          <background_color>
+            <color red="240" green="240" blue="240" alpha="150">
+            </color>
+          </background_color>
+          <rules>
+            <rule name="DISABLE" prop_id="visible" out_exp="false">
+              <exp bool_exp="pv0!=0||pv1!=0">
+                <value>true</value>
+              </exp>
+              <exp bool_exp="true">
+                <value>false</value>
+              </exp>
+              <pv_name>${UUT}:MODE:TRANS_ACT:STATE</pv_name>
+              <pv_name>${UUT}:MODE:CONTINUOUS:STATE</pv_name>
+            </rule>
+          </rules>
+          <widget type="label" version="2.0.0">
+            <name>Disabled Lable</name>
+            <text>NOT IDLE</text>
+            <width>350</width>
+            <height>150</height>
+            <font>
+              <font name="Header 2" family="Liberation Sans" style="BOLD" size="18.0">
+              </font>
+            </font>
+            <background_color>
+              <color red="0" green="149" blue="255">
+              </color>
+            </background_color>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+          </widget>
+        </widget>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>STACK_GROUP</name>
+        <x>370</x>
+        <y>120</y>
+        <width>150</width>
+        <height>30</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="label" version="2.0.0">
+          <name>STACK_LABEL</name>
+          <text>Stack 480</text>
+          <width>80</width>
+          <height>30</height>
+          <transparent>false</transparent>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="combo" version="2.0.0">
+          <name>STACK_BUTTON</name>
+          <pv_name>${UUT}:0:STACK_480</pv_name>
+          <x>80</x>
+          <width>70</width>
+          <background_color>
+            <color name="Header_ForeGround" red="255" green="255" blue="255">
+            </color>
+          </background_color>
+          <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+        </widget>
+      </widget>
+    </widget>
+  </widget>
+</display>

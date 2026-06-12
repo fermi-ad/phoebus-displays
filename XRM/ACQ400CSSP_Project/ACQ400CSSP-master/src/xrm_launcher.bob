@@ -1,0 +1,564 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>XRM Launcher</name>
+  <width>820</width>
+  <height>970</height>
+  <widget type="label" version="2.0.0">
+    <name>OPI TITLE</name>
+    <text>XRM Launcher</text>
+    <x>10</x>
+    <y>10</y>
+    <width>170</width>
+    <height>30</height>
+    <font>
+      <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <vertical_alignment>2</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>UUTNAME</name>
+    <text>$(UUT)</text>
+    <x>10</x>
+    <y>40</y>
+    <width>130</width>
+    <font>
+      <font name="Header 3" family="Liberation Sans" style="BOLD" size="16.0">
+      </font>
+    </font>
+    <vertical_alignment>2</vertical_alignment>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>XRM GROUP</name>
+    <x>20</x>
+    <y>120</y>
+    <width>150</width>
+    <height>150</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="action_button" version="3.0.0">
+      <name>soe ht Button</name>
+      <actions>
+        <action type="execute">
+          <description>open opi/xrm/soe_ht.bob</description>
+          <script file="scripts/handle_action_button.py">
+          </script>
+        </action>
+      </actions>
+      <text>SOE HT</text>
+      <y>80</y>
+      <width>150</width>
+      <font>
+        <font family="Ubuntu" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <tooltip>SOE Hold Table</tooltip>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>fmt rx Button_3</name>
+      <actions>
+        <action type="execute">
+          <description>open opi/xrm/fmt_rx.bob</description>
+          <script file="scripts/handle_action_button.py">
+          </script>
+        </action>
+      </actions>
+      <text>FMT RX</text>
+      <width>150</width>
+      <font>
+        <font family="Ubuntu" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <tooltip>FMT RX</tooltip>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>soe lut Button_2</name>
+      <actions>
+        <action type="execute">
+          <description>open opi/xrm/soe_lut.bob</description>
+          <script file="scripts/handle_action_button.py">
+          </script>
+        </action>
+      </actions>
+      <text>SOE LUT</text>
+      <y>40</y>
+      <width>150</width>
+      <font>
+        <font family="Ubuntu" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <tooltip>SOE Lookup Table</tooltip>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>pm Button</name>
+      <actions>
+        <action type="execute">
+          <description>open opi/xrm/pm.bob</description>
+          <script file="scripts/handle_action_button.py">
+          </script>
+        </action>
+      </actions>
+      <text>PM</text>
+      <y>120</y>
+      <width>150</width>
+      <font>
+        <font family="Ubuntu" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <tooltip>Post Mortem</tooltip>
+    </widget>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>fmt sim Button</name>
+    <actions>
+      <action type="execute">
+        <description>open opi/xrm/fmt_sim.bob</description>
+        <script file="scripts/handle_action_button.py">
+        </script>
+      </action>
+    </actions>
+    <text>FMT SIM</text>
+    <x>340</x>
+    <y>120</y>
+    <width>150</width>
+    <font>
+      <font family="Ubuntu" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <tooltip>FMT SIM</tooltip>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <text>XRM Device
+(Controls)</text>
+    <x>20</x>
+    <y>80</y>
+    <width>150</width>
+    <height>40</height>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_1</name>
+    <text>Simulation</text>
+    <x>340</x>
+    <y>100</y>
+    <width>90</width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_2</name>
+    <text>SOE FMT RX SUCCESS</text>
+    <x>20</x>
+    <y>290</y>
+    <width>180</width>
+    <height>30</height>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update</name>
+    <pv_name>${UUT}:SOE:FMT_RX_SUCCESS</pv_name>
+    <x>200</x>
+    <y>290</y>
+    <width>150</width>
+    <height>30</height>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_3</name>
+    <text>SOE FMT RX TIMEOUTS</text>
+    <x>370</x>
+    <y>290</y>
+    <width>180</width>
+    <height>30</height>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_1</name>
+    <pv_name>${UUT}:SOE:FMT_RX_TIMEOUTS</pv_name>
+    <x>580</x>
+    <y>290</y>
+    <width>160</width>
+    <height>30</height>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_4</name>
+    <text>SOE FMT TIMEOUT REASON</text>
+    <x>370</x>
+    <y>320</y>
+    <width>200</width>
+    <height>30</height>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_2</name>
+    <pv_name>${UUT}:SOE:FMT_RX_TIMEOUT_REASON</pv_name>
+    <x>580</x>
+    <y>320</y>
+    <width>160</width>
+    <height>30</height>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_5</name>
+    <text>SOE FMT RX DELTA TS</text>
+    <x>20</x>
+    <y>320</y>
+    <width>180</width>
+    <height>30</height>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_3</name>
+    <pv_name>${UUT}:SOE:FMT:DELTA_TS</pv_name>
+    <x>200</x>
+    <y>320</y>
+    <width>150</width>
+    <height>30</height>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_6</name>
+    <text>SOE FMT EV MATCHES</text>
+    <x>20</x>
+    <y>350</y>
+    <width>180</width>
+    <height>30</height>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_4</name>
+    <pv_name>${UUT}:SOE:FMT:EV_MATCHES</pv_name>
+    <x>200</x>
+    <y>350</y>
+    <width>150</width>
+    <height>30</height>
+  </widget>
+  <widget type="combo" version="2.0.0">
+    <name>Combo Box</name>
+    <pv_name>${UUT}:SOE:STRATEGY</pv_name>
+    <x>190</x>
+    <y>120</y>
+    <width>130</width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_7</name>
+    <text>SOE FMT EV NIB</text>
+    <x>20</x>
+    <y>380</y>
+    <width>180</width>
+    <height>30</height>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_5</name>
+    <pv_name>${UUT}:SOE:FMT:EV_NIB</pv_name>
+    <x>200</x>
+    <y>380</y>
+    <width>150</width>
+    <height>30</height>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_8</name>
+    <text>XRM Device
+(Instrumentation)</text>
+    <x>510</x>
+    <y>80</y>
+    <width>150</width>
+    <height>40</height>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>stream_initButton1</name>
+    <actions>
+      <action type="open_display">
+        <description>INST 1</description>
+        <file>opi/xrm/inst.bob</file>
+        <macros>
+          <CH>1</CH>
+        </macros>
+        <target>tab</target>
+      </action>
+    </actions>
+    <text>INST1</text>
+    <x>510</x>
+    <y>120</y>
+    <width>150</width>
+    <font>
+      <font family="Ubuntu" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <tooltip>INST 1 data stream</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>stream_initButton2</name>
+    <actions>
+      <action type="open_display">
+        <description>INST2</description>
+        <file>opi/xrm/inst.bob</file>
+        <macros>
+          <CH>2</CH>
+        </macros>
+        <target>tab</target>
+      </action>
+    </actions>
+    <text>INST2</text>
+    <x>510</x>
+    <y>160</y>
+    <width>150</width>
+    <font>
+      <font family="Ubuntu" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <tooltip>INST 2 data stream</tooltip>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_6</name>
+    <pv_name>${UUT}:0:MODEL</pv_name>
+    <x>350</x>
+    <y>20</y>
+    <width>140</width>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <x>20</x>
+    <y>480</y>
+    <width>480</width>
+    <height>390</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <scripts>
+      <script file="scripts/handle_macro.py">
+        <pv_name>loc://TRACE1_$(DID)</pv_name>
+        <pv_name>loc://TRACE2_$(DID)</pv_name>
+        <pv_name>loc://TRACE3_$(DID)</pv_name>
+        <pv_name>loc://TRACE4_$(DID)</pv_name>
+        <pv_name>loc://TRACE5_$(DID)</pv_name>
+        <pv_name>loc://TRACE6_$(DID)</pv_name>
+        <pv_name>loc://TRACE7_$(DID)</pv_name>
+        <pv_name>loc://TRACE8_$(DID)</pv_name>
+      </script>
+    </scripts>
+    <widget type="action_button" version="3.0.0">
+      <name>Action Button</name>
+      <actions>
+        <action type="open_display">
+          <description>Open Display</description>
+          <file>opi/xrm/scope.bob</file>
+          <target>tab</target>
+        </action>
+      </actions>
+      <text>Plot</text>
+      <x>350</x>
+      <y>360</y>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Text Entry_1</name>
+      <pv_name>loc://TRACE1_$(DID)&lt;VString&gt;("acq1102_057:acq2206_588:PM:00:CH:01:EGU")</pv_name>
+      <x>30</x>
+      <y>40</y>
+      <width>420</width>
+      <height>30</height>
+      <background_color>
+        <color name="Read_Background" red="240" green="240" blue="240">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Text Entry_2</name>
+      <pv_name>loc://TRACE2_$(DID)&lt;VString&gt;("acq1102_057:acq2206_588:PM:00:CH:02:EGU")</pv_name>
+      <x>30</x>
+      <y>80</y>
+      <width>420</width>
+      <height>30</height>
+      <background_color>
+        <color name="Read_Background" red="240" green="240" blue="240">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Text Entry_3</name>
+      <pv_name>loc://TRACE3_$(DID)&lt;VString&gt;("acq1102_057:acq2206_588:PM:00:CH:03:EGU")</pv_name>
+      <x>30</x>
+      <y>120</y>
+      <width>420</width>
+      <height>30</height>
+      <background_color>
+        <color name="Read_Background" red="240" green="240" blue="240">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Text Entry_4</name>
+      <pv_name>loc://TRACE4_$(DID)&lt;VString&gt;("acq1102_057:acq2206_588:PM:00:CH:04:EGU")</pv_name>
+      <x>30</x>
+      <y>160</y>
+      <width>420</width>
+      <height>30</height>
+      <background_color>
+        <color name="Read_Background" red="240" green="240" blue="240">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Text Entry_5</name>
+      <pv_name>loc://TRACE5_$(DID)&lt;VString&gt;("acq1102_057:acq2206_588:PM:00:CH:05:EGU")</pv_name>
+      <x>30</x>
+      <y>200</y>
+      <width>420</width>
+      <height>30</height>
+      <background_color>
+        <color name="Read_Background" red="240" green="240" blue="240">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Text Entry_6</name>
+      <pv_name>loc://TRACE6_$(DID)&lt;VString&gt;("acq1102_057:acq2206_588:PM:00:CH:06:EGU")</pv_name>
+      <x>30</x>
+      <y>240</y>
+      <width>420</width>
+      <height>30</height>
+      <background_color>
+        <color name="Read_Background" red="240" green="240" blue="240">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Text Entry_7</name>
+      <pv_name>loc://TRACE7_$(DID)&lt;VString&gt;("acq1102_057:acq2206_588:PM:00:CH:07:EGU")</pv_name>
+      <x>30</x>
+      <y>280</y>
+      <width>420</width>
+      <height>30</height>
+      <background_color>
+        <color name="Read_Background" red="240" green="240" blue="240">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Text Entry_8</name>
+      <pv_name>loc://TRACE8_$(DID)&lt;VString&gt;("acq1102_057:acq2206_588:PM:00:CH:08:EGU")</pv_name>
+      <x>30</x>
+      <y>320</y>
+      <width>420</width>
+      <height>30</height>
+      <background_color>
+        <color name="Read_Background" red="240" green="240" blue="240">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>TRACE_ID_1</name>
+      <text>1</text>
+      <y>40</y>
+      <width>30</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>TRACE_ID_2</name>
+      <text>2</text>
+      <y>80</y>
+      <width>30</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>TRACE_ID_3</name>
+      <text>3</text>
+      <y>120</y>
+      <width>30</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>TRACE_ID_4</name>
+      <text>4</text>
+      <y>160</y>
+      <width>30</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>TRACE_ID_5</name>
+      <text>5</text>
+      <y>200</y>
+      <width>30</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>TRACE_ID_6</name>
+      <text>6</text>
+      <y>240</y>
+      <width>30</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>TRACE_ID_7</name>
+      <text>7</text>
+      <y>280</y>
+      <width>30</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>TRACE_ID_8</name>
+      <text>8</text>
+      <y>320</y>
+      <width>30</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>TRACES_TITLE</name>
+      <text>Post Mortem</text>
+      <width>130</width>
+      <font>
+        <font name="Header 3" family="Liberation Sans" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <vertical_alignment>2</vertical_alignment>
+    </widget>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_9</name>
+    <class>SECTION</class>
+    <text>xrmSlice</text>
+    <x>230</x>
+    <y>440</y>
+    <width>130</width>
+    <font use_class="true">
+      <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <foreground_color use_class="true">
+      <color name="Text" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <transparent use_class="true">true</transparent>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry</name>
+    <pv_name>loc://SLICEHOST&lt;VString&gt;("acq1102_056")</pv_name>
+    <x>560</x>
+    <y>430</y>
+    <width>130</width>
+    <height>30</height>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_1</name>
+    <actions>
+      <action type="open_display">
+        <description>Open Display</description>
+        <file>opi/xrm/soe_slice.bob</file>
+        <macros>
+          <SLICEHOST>$(loc://SLICEHOST)</SLICEHOST>
+        </macros>
+        <target>tab</target>
+      </action>
+    </actions>
+    <text>SOE</text>
+    <x>580</x>
+    <y>830</y>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+</display>

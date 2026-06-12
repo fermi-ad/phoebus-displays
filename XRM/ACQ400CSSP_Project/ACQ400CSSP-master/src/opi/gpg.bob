@@ -1,0 +1,800 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>GPG$(MUUT)</name>
+  <width>690</width>
+  <height>550</height>
+  <widget type="group" version="3.0.0">
+    <name>GPG</name>
+    <width>690</width>
+    <height>550</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="group" version="3.0.0">
+      <name>GPG INNER</name>
+      <x>10</x>
+      <y>10</y>
+      <width>670</width>
+      <height>530</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>TITLE</name>
+        <text>$(UUT) GPG</text>
+        <width>570</width>
+        <height>30</height>
+        <font>
+          <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+          </font>
+        </font>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>STATE</name>
+        <y>40</y>
+        <width>670</width>
+        <height>150</height>
+        <style>3</style>
+        <background_color>
+          <color red="0" green="149" blue="255">
+          </color>
+        </background_color>
+        <widget type="group" version="3.0.0">
+          <name>STATE INNER</name>
+          <x>10</x>
+          <y>10</y>
+          <width>650</width>
+          <height>130</height>
+          <style>3</style>
+          <transparent>true</transparent>
+          <widget type="label" version="2.0.0">
+            <name>LABEL_1</name>
+            <text>STATE</text>
+            <y>80</y>
+            <font>
+              <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+              </font>
+            </font>
+            <background_color>
+              <color name="Read_Background" red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <vertical_alignment>1</vertical_alignment>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>STATE</name>
+            <pv_name>${UUT}:0:GPG:DBG:STATE</pv_name>
+            <y>100</y>
+            <height>30</height>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+          </widget>
+          <widget type="combo" version="2.0.0">
+            <name>MODE MENU</name>
+            <pv_name>${UUT}:0:GPG:MODE</pv_name>
+            <x>90</x>
+            <y>20</y>
+            <width>130</width>
+            <background_color>
+              <color name="Read_Background" red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <rules>
+              <rule name="DISABLE_ON_ENABLE" prop_id="enabled" out_exp="false">
+                <exp bool_exp="pvInt0 &gt; 0">
+                  <value>false</value>
+                </exp>
+                <pv_name>${UUT}:0:GPG:ENABLE</pv_name>
+              </rule>
+            </rules>
+            <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>LABEL_7</name>
+            <text>MODE</text>
+            <x>90</x>
+            <width>50</width>
+            <font>
+              <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+              </font>
+            </font>
+            <background_color>
+              <color name="Read_Background" red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <vertical_alignment>1</vertical_alignment>
+          </widget>
+          <widget type="bool_button" version="2.0.0">
+            <name>ENABLE BUTTON</name>
+            <pv_name>${UUT}:0:GPG:ENABLE</pv_name>
+            <bit>-1</bit>
+            <y>20</y>
+            <width>70</width>
+            <off_label></off_label>
+            <on_label></on_label>
+            <font>
+              <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+              </font>
+            </font>
+            <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>LABEL_1</name>
+            <text>ENABLE</text>
+            <width>70</width>
+            <font>
+              <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+              </font>
+            </font>
+            <background_color>
+              <color name="Read_Background" red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <vertical_alignment>1</vertical_alignment>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>CURSOR</name>
+            <pv_name>${UUT}:0:GPG:DBG:PTR</pv_name>
+            <x>110</x>
+            <y>100</y>
+            <height>30</height>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>LABEL_2</name>
+            <text>CURSOR</text>
+            <x>110</x>
+            <y>80</y>
+            <font>
+              <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+              </font>
+            </font>
+            <background_color>
+              <color name="Read_Background" red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <vertical_alignment>1</vertical_alignment>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>TOP1</name>
+            <pv_name>${UUT}:0:GPG:DBG:GPGTOP</pv_name>
+            <x>220</x>
+            <y>100</y>
+            <height>30</height>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>LABEL_3</name>
+            <text>TOP-1</text>
+            <x>220</x>
+            <y>80</y>
+            <font>
+              <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+              </font>
+            </font>
+            <background_color>
+              <color name="Read_Background" red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <vertical_alignment>1</vertical_alignment>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>LABEL_4</name>
+            <text>COUNTER</text>
+            <x>330</x>
+            <y>80</y>
+            <font>
+              <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+              </font>
+            </font>
+            <background_color>
+              <color name="Read_Background" red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <vertical_alignment>1</vertical_alignment>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>COUNTER</name>
+            <pv_name>${UUT}:0:GPG:DBG:CTR</pv_name>
+            <x>330</x>
+            <y>100</y>
+            <height>30</height>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>LABEL_5</name>
+            <text>UNTIL</text>
+            <x>440</x>
+            <y>80</y>
+            <font>
+              <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+              </font>
+            </font>
+            <background_color>
+              <color name="Read_Background" red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <vertical_alignment>1</vertical_alignment>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>UNTIL</name>
+            <pv_name>${UUT}:0:GPG:DBG:UNTIL</pv_name>
+            <x>440</x>
+            <y>100</y>
+            <height>30</height>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>LABEL_6</name>
+            <text>OUTPUT</text>
+            <x>550</x>
+            <y>80</y>
+            <font>
+              <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+              </font>
+            </font>
+            <background_color>
+              <color name="Read_Background" red="240" green="240" blue="240">
+              </color>
+            </background_color>
+            <vertical_alignment>1</vertical_alignment>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>OUTPUT</name>
+            <pv_name>${UUT}:0:GPG:DBG:OSTATE</pv_name>
+            <x>550</x>
+            <y>100</y>
+            <height>30</height>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+          </widget>
+          <widget type="byte_monitor" version="2.0.0">
+            <name>OSTATE</name>
+            <pv_name>${UUT}:0:GPG:DBG:OSTATE</pv_name>
+            <x>400</x>
+            <y>20</y>
+            <width>240</width>
+            <height>30</height>
+            <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>DEF</name>
+            <pv_name>${UUT}:0:GPG:DBG:DEF</pv_name>
+            <x>240</x>
+            <y>20</y>
+            <width>140</width>
+            <height>30</height>
+            <horizontal_alignment>1</horizontal_alignment>
+            <vertical_alignment>1</vertical_alignment>
+            <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+          </widget>
+        </widget>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>GPG_TRG_SIG</name>
+        <macros>
+          <sig>GPG_TRG</sig>
+          <site>0</site>
+        </macros>
+        <y>210</y>
+        <width>370</width>
+        <height>30</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="label" version="2.0.0">
+          <name>LABEL_16</name>
+          <text>$(sig)</text>
+          <width>70</width>
+          <height>30</height>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <transparent>false</transparent>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="combo" version="2.0.0">
+          <name>Sig En_1</name>
+          <pv_name>${UUT}:$(site):${sig}</pv_name>
+          <x>80</x>
+          <width>90</width>
+          <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+        </widget>
+        <widget type="combo" version="2.0.0">
+          <name>Sig Src_1</name>
+          <pv_name>${UUT}:$(site):${sig}:DX</pv_name>
+          <x>180</x>
+          <width>90</width>
+          <rules>
+            <rule name="DISABLE" prop_id="enabled" out_exp="false">
+              <exp bool_exp="pv0==0">
+                <value>false</value>
+              </exp>
+              <exp bool_exp="true">
+                <value>true</value>
+              </exp>
+              <pv_name>${UUT}:$(site):${sig}</pv_name>
+            </rule>
+          </rules>
+          <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+        </widget>
+        <widget type="combo" version="2.0.0">
+          <name>Sig Sens_1</name>
+          <pv_name>${UUT}:$(site):${sig}:SENSE</pv_name>
+          <x>280</x>
+          <width>90</width>
+          <rules>
+            <rule name="DISABLE" prop_id="enabled" out_exp="false">
+              <exp bool_exp="pv0==0">
+                <value>false</value>
+              </exp>
+              <exp bool_exp="true">
+                <value>true</value>
+              </exp>
+              <pv_name>${UUT}:$(site):${sig}</pv_name>
+            </rule>
+          </rules>
+          <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+        </widget>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>GPG_CLK_SIG</name>
+        <macros>
+          <sig>GPG_CLK</sig>
+          <site>0</site>
+        </macros>
+        <y>260</y>
+        <width>370</width>
+        <height>30</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="label" version="2.0.0">
+          <name>LABEL_17</name>
+          <text>$(sig)</text>
+          <width>70</width>
+          <height>30</height>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <transparent>false</transparent>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="combo" version="2.0.0">
+          <name>Sig En_2</name>
+          <pv_name>${UUT}:$(site):${sig}</pv_name>
+          <x>80</x>
+          <width>90</width>
+          <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+        </widget>
+        <widget type="combo" version="2.0.0">
+          <name>Sig Src_2</name>
+          <pv_name>${UUT}:$(site):${sig}:DX</pv_name>
+          <x>180</x>
+          <width>90</width>
+          <rules>
+            <rule name="DISABLE" prop_id="enabled" out_exp="false">
+              <exp bool_exp="pv0==0">
+                <value>false</value>
+              </exp>
+              <exp bool_exp="true">
+                <value>true</value>
+              </exp>
+              <pv_name>${UUT}:$(site):${sig}</pv_name>
+            </rule>
+          </rules>
+          <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+        </widget>
+        <widget type="combo" version="2.0.0">
+          <name>Sig Sens_2</name>
+          <pv_name>${UUT}:$(site):${sig}:SENSE</pv_name>
+          <x>280</x>
+          <width>90</width>
+          <rules>
+            <rule name="DISABLE" prop_id="enabled" out_exp="false">
+              <exp bool_exp="pv0==0">
+                <value>false</value>
+              </exp>
+              <exp bool_exp="true">
+                <value>true</value>
+              </exp>
+              <pv_name>${UUT}:$(site):${sig}</pv_name>
+            </rule>
+          </rules>
+          <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+        </widget>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>GPG_SYNC_SIG</name>
+        <macros>
+          <sig>GPG_SYNC</sig>
+          <site>0</site>
+        </macros>
+        <y>310</y>
+        <width>370</width>
+        <height>30</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="label" version="2.0.0">
+          <name>LABEL_18</name>
+          <text>$(sig)</text>
+          <width>70</width>
+          <height>30</height>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <transparent>false</transparent>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="combo" version="2.0.0">
+          <name>Sig En_3</name>
+          <pv_name>${UUT}:$(site):${sig}</pv_name>
+          <x>80</x>
+          <width>90</width>
+          <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+        </widget>
+        <widget type="combo" version="2.0.0">
+          <name>Sig Src_3</name>
+          <pv_name>${UUT}:$(site):${sig}:DX</pv_name>
+          <x>180</x>
+          <width>90</width>
+          <rules>
+            <rule name="DISABLE" prop_id="enabled" out_exp="false">
+              <exp bool_exp="pv0==0">
+                <value>false</value>
+              </exp>
+              <exp bool_exp="true">
+                <value>true</value>
+              </exp>
+              <pv_name>${UUT}:$(site):${sig}</pv_name>
+            </rule>
+          </rules>
+          <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+        </widget>
+        <widget type="combo" version="2.0.0">
+          <name>Sig Sens_3</name>
+          <pv_name>${UUT}:$(site):${sig}:SENSE</pv_name>
+          <x>280</x>
+          <width>90</width>
+          <rules>
+            <rule name="DISABLE" prop_id="enabled" out_exp="false">
+              <exp bool_exp="pv0==0">
+                <value>false</value>
+              </exp>
+              <exp bool_exp="true">
+                <value>true</value>
+              </exp>
+              <pv_name>${UUT}:$(site):${sig}</pv_name>
+            </rule>
+          </rules>
+          <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+        </widget>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>FRONT</name>
+        <y>360</y>
+        <width>170</width>
+        <height>150</height>
+        <style>3</style>
+        <background_color>
+          <color red="255" green="165" blue="0">
+          </color>
+        </background_color>
+        <widget type="group" version="3.0.0">
+          <name>FRONT INNER</name>
+          <x>11</x>
+          <y>10</y>
+          <width>149</width>
+          <height>130</height>
+          <style>3</style>
+          <transparent>true</transparent>
+          <widget type="group" version="3.0.0">
+            <name>MENU_GROUP_8</name>
+            <macros>
+              <label>TRG</label>
+              <pvname0>${UUT}:0:SIG:FP:$(label)</pvname0>
+            </macros>
+            <y>20</y>
+            <width>149</width>
+            <height>30</height>
+            <style>3</style>
+            <transparent>true</transparent>
+            <widget type="label" version="2.0.0">
+              <name>label_19</name>
+              <text>$(label)</text>
+              <width>60</width>
+              <height>30</height>
+              <font>
+                <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+                </font>
+              </font>
+              <horizontal_alignment>2</horizontal_alignment>
+              <vertical_alignment>1</vertical_alignment>
+            </widget>
+            <widget type="combo" version="2.0.0">
+              <name>menu0_8</name>
+              <pv_name>$(pvname0)</pv_name>
+              <x>70</x>
+              <width>79</width>
+              <font>
+                <font name="Comment" family="Liberation Sans" style="ITALIC" size="14.0">
+                </font>
+              </font>
+              <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+            </widget>
+          </widget>
+          <widget type="group" version="3.0.0">
+            <name>MENU_GROUP_9</name>
+            <macros>
+              <knob>SYNC</knob>
+              <pvname0>${UUT}:0:SIG:FP:$(knob)</pvname0>
+            </macros>
+            <y>60</y>
+            <width>149</width>
+            <height>30</height>
+            <style>3</style>
+            <transparent>true</transparent>
+            <widget type="label" version="2.0.0">
+              <name>label_20</name>
+              <text>$(knob)</text>
+              <width>58</width>
+              <height>30</height>
+              <font>
+                <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+                </font>
+              </font>
+              <horizontal_alignment>2</horizontal_alignment>
+              <vertical_alignment>1</vertical_alignment>
+            </widget>
+            <widget type="combo" version="2.0.0">
+              <name>menu0_9</name>
+              <pv_name>$(pvname0)</pv_name>
+              <x>70</x>
+              <width>79</width>
+              <font>
+                <font name="Comment" family="Liberation Sans" style="ITALIC" size="14.0">
+                </font>
+              </font>
+              <rules>
+                <rule name="HIDE" prop_id="enabled" out_exp="true">
+                  <exp bool_exp="!pv0">
+                    <expression>true</expression>
+                  </exp>
+                  <exp bool_exp="true">
+                    <expression>false</expression>
+                  </exp>
+                  <pv_name>${UUT}:0:SIG:FP:$(knob).DISA</pv_name>
+                </rule>
+              </rules>
+              <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+            </widget>
+          </widget>
+          <widget type="group" version="3.0.0">
+            <name>MENU_GROUP_10</name>
+            <macros>
+              <knob>GPIO</knob>
+              <pvname0>${UUT}:0:SIG:FP:$(knob)</pvname0>
+            </macros>
+            <y>100</y>
+            <width>149</width>
+            <height>30</height>
+            <style>3</style>
+            <transparent>true</transparent>
+            <widget type="label" version="2.0.0">
+              <name>label_21</name>
+              <text>$(knob)</text>
+              <width>60</width>
+              <height>30</height>
+              <font>
+                <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+                </font>
+              </font>
+              <horizontal_alignment>2</horizontal_alignment>
+              <vertical_alignment>1</vertical_alignment>
+            </widget>
+            <widget type="combo" version="2.0.0">
+              <name>menu0_10</name>
+              <pv_name>$(pvname0)</pv_name>
+              <x>70</x>
+              <width>79</width>
+              <font>
+                <font name="Comment" family="Liberation Sans" style="ITALIC" size="14.0">
+                </font>
+              </font>
+              <rules>
+                <rule name="HIDE" prop_id="enabled" out_exp="true">
+                  <exp bool_exp="!pv0">
+                    <expression>true</expression>
+                  </exp>
+                  <exp bool_exp="true">
+                    <expression>false</expression>
+                  </exp>
+                  <pv_name>${UUT}:0:SIG:FP:$(knob).DISA</pv_name>
+                </rule>
+              </rules>
+              <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+            </widget>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>PRESENT LABEL_1</name>
+            <text>FRONT PANEL</text>
+            <width>149</width>
+            <font>
+              <font name="Header 3" family="Liberation Sans" style="BOLD" size="16.0">
+              </font>
+            </font>
+          </widget>
+        </widget>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>Disable Cover</name>
+        <x>80</x>
+        <y>220</y>
+        <width>290</width>
+        <height>130</height>
+        <visible>false</visible>
+        <style>3</style>
+        <background_color>
+          <color red="240" green="240" blue="240" alpha="150">
+          </color>
+        </background_color>
+        <rules>
+          <rule name="DISABLE" prop_id="visible" out_exp="false">
+            <exp bool_exp="pvInt0 &gt; 0">
+              <value>true</value>
+            </exp>
+            <exp bool_exp="true">
+              <value>false</value>
+            </exp>
+            <pv_name>${UUT}:0:GPG:ENABLE</pv_name>
+          </rule>
+        </rules>
+        <widget type="label" version="2.0.0">
+          <name>Disabled Lable</name>
+          <text>GPG Enabled</text>
+          <width>290</width>
+          <height>130</height>
+          <font>
+            <font name="Header 2" family="Liberation Sans" style="BOLD" size="18.0">
+            </font>
+          </font>
+          <background_color>
+            <color red="0" green="149" blue="255">
+            </color>
+          </background_color>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>DOC_LINK_1</name>
+        <macros>
+          <TARGET>12.3 Gate Pulse Generator GPG</TARGET>
+          <URL>${USER_GUIDE}#${TARGET}</URL>
+        </macros>
+        <x>640</x>
+        <width>25</width>
+        <height>25</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="picture" version="2.0.0">
+          <name>LINK_SYMBOL_1</name>
+          <file>../images/doc_link.png</file>
+          <width>25</width>
+          <height>25</height>
+        </widget>
+        <widget type="action_button" version="3.0.0">
+          <name>OPEN_LINK_BUTTON_1</name>
+          <actions>
+            <action type="open_webpage">
+              <description>Open Web Page</description>
+              <url>$(URL)</url>
+            </action>
+          </actions>
+          <text></text>
+          <width>25</width>
+          <height>25</height>
+          <transparent>true</transparent>
+          <tooltip>$(URL)</tooltip>
+          <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+        </widget>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>EVENT BUS</name>
+        <x>390</x>
+        <y>210</y>
+        <width>190</width>
+        <height>320</height>
+        <style>3</style>
+        <background_color>
+          <color red="225" green="92" blue="254">
+          </color>
+        </background_color>
+        <widget type="group" version="3.0.0">
+          <name>EVENT BUS INNER</name>
+          <macros>
+            <pvname0>${UUT}:0:SIG:EVENT_SRC:</pvname0>
+          </macros>
+          <x>10</x>
+          <y>10</y>
+          <width>170</width>
+          <height>300</height>
+          <style>3</style>
+          <transparent>true</transparent>
+          <widget type="template" version="2.0.0">
+            <name>EVENT BUS ARRAY</name>
+            <file>components/sync/bus_source.bob</file>
+            <instances>
+              <instance>
+                <macros>
+                  <num>0</num>
+                </macros>
+              </instance>
+              <instance>
+                <macros>
+                  <num>1</num>
+                </macros>
+              </instance>
+              <instance>
+                <macros>
+                  <num>2</num>
+                </macros>
+              </instance>
+              <instance>
+                <macros>
+                  <num>3</num>
+                </macros>
+              </instance>
+              <instance>
+                <macros>
+                  <num>4</num>
+                </macros>
+              </instance>
+              <instance>
+                <macros>
+                  <num>5</num>
+                </macros>
+              </instance>
+              <instance>
+                <macros>
+                  <num>6</num>
+                </macros>
+              </instance>
+              <instance>
+                <macros>
+                  <num>7</num>
+                </macros>
+              </instance>
+            </instances>
+            <y>20</y>
+            <width>160</width>
+            <height>275</height>
+            <gap>5</gap>
+            <transparent>true</transparent>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>EVENT BUS LABEL</name>
+            <text>EVENT BUS SOURCE</text>
+            <width>470</width>
+            <font>
+              <font name="Header 3" family="Liberation Sans" style="BOLD" size="16.0">
+              </font>
+            </font>
+          </widget>
+        </widget>
+      </widget>
+    </widget>
+  </widget>
+</display>
