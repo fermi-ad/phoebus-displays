@@ -1,0 +1,58 @@
+<commands>
+  <comment>
+    <text>Turn Off Script V1</text>
+  </comment>
+  <comment>
+    <text>Arc Current Setpoint to 0</text>
+  </comment>
+  <set>
+    <device>pva://A0TST:IS_BLE_ARC_sCurrent</device>
+    <value>0.0</value>
+    <readback>pva://A0TST:IS_BLE_ARC_Current</readback>
+    <tolerance>0.3</tolerance>
+  </set>
+  <comment>
+    <text>Arc Voltage Setpoint to 0</text>
+  </comment>
+  <set>
+    <device>pva://A0TST:IS_BLE_ARC_sVoltage</device>
+    <value>0.0</value>
+    <readback>pva://A0TST:IS_BLE_ARC_Voltage</readback>
+    <readback_value>0.0</readback_value>
+    <tolerance>0.3</tolerance>
+  </set>
+  <comment>
+    <text>Ramp down of Filament Current</text>
+  </comment>
+  <while>
+    <device>pva://A0TST:IS_BLE_FLMNT:Current</device>
+    <value>10.0</value>
+    <comparison>ABOVE</comparison>
+    <tolerance>0.5</tolerance>
+    <tolerance>0.5</tolerance>
+    <body>
+      <script>
+        <path>MyScanScript</path>
+        <arguments>
+          <argument>pva://A0TST:IS_BLE_FLMNT:sCurrent</argument>
+          <argument>-10</argument>
+        </arguments>
+      </script>
+      <delay>
+        <seconds>3.0</seconds>
+      </delay>
+    </body>
+  </while>
+  <comment>
+    <text>Filament Current Setpoint to 0 just to be safe</text>
+  </comment>
+  <set>
+    <device>pva://A0TST:IS_BLE_FLMNT:sCurrent</device>
+    <value>0.0</value>
+    <readback>pva://A0TST:IS_BLE_FLMNT:Current</readback>
+    <tolerance>0.1</tolerance>
+  </set>
+  <comment>
+    <text>All supplies should be at 0 now, it is up to the expert to ensure ENABLE is OFF!</text>
+  </comment>
+</commands>

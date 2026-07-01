@@ -415,7 +415,7 @@ widget.setPropertyValue('line_color', WidgetColorService.getColor(cn))]]></text>
     <name>EDM shellCmdClass</name>
     <actions>
       <action type="command">
-        <command>xterm -hold -sb -rightbar -sl 10000 -geometry 130x30 -T "Piezo Test Log File" -e rfViewLogRecent.bash $(PHYSICS_DATA)/rf_lcls2/piezo_test/$(CM)$(C)0 $(CM)$(C)0 piezo_health.log</command>
+        <command>xterm -hold -sb -rightbar -sl 10000 -geometry 130x30 -T "Piezo Test Log File" -e $(SCRIPTDIR)/rfViewLogRecent.bash $(LOGDIR)/piezo_test/$(CM)$(C)0 $(CM)$(C)0 piezo_health.log</command>
         <description>Execute Command</description>
       </action>
     </actions>
@@ -465,7 +465,7 @@ widget.setPropertyValue('line_color', WidgetColorService.getColor(cn))]]></text>
     <name>EDM shellCmdClass</name>
     <actions>
       <action type="command">
-        <command>rfViewImageRecent.bash $(PHYSICS_DATA)/rf_lcls2/piezo_test/$(CM)$(C)0 $(CM)$(C)0 piezo_health.png</command>
+        <command>$(SCRIPTDIR)/rfViewImageRecent.bash $(LOGDIR)/piezo_test/$(CM)$(C)0 $(CM)$(C)0 piezo_health.png</command>
         <description>Execute Command</description>
       </action>
     </actions>

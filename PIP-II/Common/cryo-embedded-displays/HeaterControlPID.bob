@@ -1,0 +1,972 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>$(dev): Heater Control</name>
+  <width>1350</width>
+  <background_color>
+    <color name="cryo.PrimaryBackground" red="217" green="217" blue="217">
+    </color>
+  </background_color>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle</name>
+    <x>9</x>
+    <y>445</y>
+    <width>200</width>
+    <height>142</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="fgs.Gray-45" red="167" green="168" blue="170">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="scrollbar" version="2.0.0">
+    <name>Scrollbar_1</name>
+    <pv_name>$(system)$(dev):sSetLoop</pv_name>
+    <x>434</x>
+    <y>340</y>
+    <width>200</width>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_3</name>
+    <pv_name>$(system)$(dev):sSetLoop</pv_name>
+    <x>639</x>
+    <y>340</y>
+    <width>80</width>
+    <format>1</format>
+    <precision>1</precision>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="scrollbar" version="2.0.0">
+    <name>Scrollbar_7</name>
+    <pv_name>$(system)$(dev):sMinLim</pv_name>
+    <x>434</x>
+    <y>496</y>
+    <width>200</width>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_4</name>
+    <pv_name>$(system)$(dev):sMinLim</pv_name>
+    <x>639</x>
+    <y>496</y>
+    <width>80</width>
+    <format>1</format>
+    <precision>1</precision>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="scrollbar" version="2.0.0">
+    <name>Scrollbar_8</name>
+    <pv_name>$(system)$(dev):sMaxLim</pv_name>
+    <x>434</x>
+    <y>526</y>
+    <width>200</width>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_5</name>
+    <pv_name>$(system)$(dev):sMaxLim</pv_name>
+    <x>639</x>
+    <y>526</y>
+    <width>80</width>
+    <format>1</format>
+    <precision>1</precision>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_37</name>
+    <pv_name>$(system)$(dev):rSetLoop</pv_name>
+    <x>344</x>
+    <y>340</y>
+    <width>80</width>
+    <format>1</format>
+    <precision>1</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_38</name>
+    <pv_name>$(system)$(dev):MinLim</pv_name>
+    <x>344</x>
+    <y>496</y>
+    <width>80</width>
+    <format>1</format>
+    <precision>1</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_39</name>
+    <pv_name>$(system)$(dev):sMaxLim</pv_name>
+    <x>344</x>
+    <y>526</y>
+    <width>80</width>
+    <format>1</format>
+    <precision>1</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_79</name>
+    <text>Readings</text>
+    <x>344</x>
+    <y>235</y>
+    <width>80</width>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="255" green="255" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="fgs.NAL-Blue" red="0" green="76" blue="151">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_80</name>
+    <text>Set Point</text>
+    <x>195</x>
+    <y>340</y>
+    <width>142</width>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_81</name>
+    <text>Min Output</text>
+    <x>195</x>
+    <y>496</y>
+    <width>142</width>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_82</name>
+    <text>Max Output</text>
+    <x>195</x>
+    <y>526</y>
+    <width>142</width>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_83</name>
+    <text>Settings</text>
+    <x>434</x>
+    <y>235</y>
+    <width>285</width>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="255" green="255" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="fgs.NAL-Blue" red="0" green="76" blue="151">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_41</name>
+    <pv_name>$(system)$(dev):Open</pv_name>
+    <x>344</x>
+    <y>288</y>
+    <width>80</width>
+    <format>1</format>
+    <precision>1</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_84</name>
+    <text>Current Position</text>
+    <x>195</x>
+    <y>288</y>
+    <width>142</width>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_42</name>
+    <pv_name>$(system)$(dev):PG</pv_name>
+    <x>344</x>
+    <y>370</y>
+    <width>80</width>
+    <format>1</format>
+    <precision>1</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_98</name>
+    <text>Gain (PG)</text>
+    <x>195</x>
+    <y>370</y>
+    <width>142</width>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_43</name>
+    <pv_name>$(system)$(dev):TI</pv_name>
+    <x>344</x>
+    <y>400</y>
+    <width>80</width>
+    <format>1</format>
+    <precision>1</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_99</name>
+    <text>Intergral Time (TI)</text>
+    <x>195</x>
+    <y>400</y>
+    <width>142</width>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED</name>
+    <pv_name>$(system)$(dev):BadLim</pv_name>
+    <x>724</x>
+    <y>513</y>
+    <off_label>OK</off_label>
+    <off_color>
+      <color name="cryo.On" red="82" green="171" blue="90">
+      </color>
+    </off_color>
+    <on_label>NG</on_label>
+    <on_color>
+      <color name="MAJOR" red="255" green="0" blue="0">
+      </color>
+    </on_color>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_100</name>
+    <text>Auto Operation Parameters</text>
+    <x>344</x>
+    <y>206</y>
+    <width>375</width>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="255" green="255" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="fgs.NAL-Blue" red="0" green="76" blue="151">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_44</name>
+    <pv_name>$(system)$(dev):Ramp</pv_name>
+    <x>344</x>
+    <y>158</y>
+    <width>80</width>
+    <format>1</format>
+    <precision>1</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_101</name>
+    <text>Ramp Value</text>
+    <x>240</x>
+    <y>158</y>
+    <width>97</width>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_45</name>
+    <pv_name>$(system)$(PV):$(Var)</pv_name>
+    <x>344</x>
+    <y>262</y>
+    <width>80</width>
+    <format>1</format>
+    <precision>1</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_102</name>
+    <text>PV: $(PV)</text>
+    <x>195</x>
+    <y>264</y>
+    <width>142</width>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="scrollbar" version="2.0.0">
+    <name>Scrollbar_9</name>
+    <pv_name>$(system)$(dev):sPG</pv_name>
+    <x>434</x>
+    <y>372</y>
+    <width>200</width>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_7</name>
+    <pv_name>$(system)$(dev):sPG</pv_name>
+    <x>639</x>
+    <y>372</y>
+    <width>80</width>
+    <format>1</format>
+    <precision>1</precision>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="scrollbar" version="2.0.0">
+    <name>Scrollbar_10</name>
+    <pv_name>$(system)$(dev):sTI</pv_name>
+    <x>434</x>
+    <y>402</y>
+    <width>200</width>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_8</name>
+    <pv_name>$(system)$(dev):sTI</pv_name>
+    <x>639</x>
+    <y>402</y>
+    <width>80</width>
+    <format>1</format>
+    <precision>1</precision>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_110</name>
+    <width>45</width>
+    <height>10</height>
+    <visible>false</visible>
+    <points>
+      <point x="0.0" y="5.0">
+      </point>
+      <point x="2.5" y="5.0">
+      </point>
+      <point x="5.0" y="0.0">
+      </point>
+      <point x="10.0" y="10.0">
+      </point>
+      <point x="15.0" y="0.0">
+      </point>
+      <point x="20.0" y="10.0">
+      </point>
+      <point x="25.0" y="0.0">
+      </point>
+      <point x="30.0" y="10.0">
+      </point>
+      <point x="35.0" y="0.0">
+      </point>
+      <point x="40.0" y="10.0">
+      </point>
+      <point x="42.5" y="5.0">
+      </point>
+      <point x="45.0" y="5.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="255" green="0" blue="0">
+      </color>
+    </line_color>
+    <arrow_length>10</arrow_length>
+    <rules>
+      <rule name="Heater On" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0">
+          <value>true</value>
+        </exp>
+        <pv_name>$(htr)HTRVSL:HTRON</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_111</name>
+    <width>45</width>
+    <height>10</height>
+    <visible>false</visible>
+    <points>
+      <point x="0.0" y="5.0">
+      </point>
+      <point x="2.5" y="5.0">
+      </point>
+      <point x="5.0" y="0.0">
+      </point>
+      <point x="10.0" y="10.0">
+      </point>
+      <point x="15.0" y="0.0">
+      </point>
+      <point x="20.0" y="10.0">
+      </point>
+      <point x="25.0" y="0.0">
+      </point>
+      <point x="30.0" y="10.0">
+      </point>
+      <point x="35.0" y="0.0">
+      </point>
+      <point x="40.0" y="10.0">
+      </point>
+      <point x="42.5" y="5.0">
+      </point>
+      <point x="45.0" y="5.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="255" green="0" blue="0">
+      </color>
+    </line_color>
+    <arrow_length>10</arrow_length>
+    <rules>
+      <rule name="Heater On" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0">
+          <value>true</value>
+        </exp>
+        <pv_name>$(htr)HTRVSL:HTRON</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>$(dev): Heater Control</name>
+    <text>$(dev): Heater Control</text>
+    <width>1350</width>
+    <height>40</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="255" green="255" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="fgs.NAL-Blue" red="0" green="76" blue="151">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_103</name>
+    <text>Heater Operation Mode</text>
+    <x>5</x>
+    <y>72</y>
+    <width>200</width>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="255" green="255" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="fgs.NAL-Blue" red="0" green="76" blue="151">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="progressbar" version="2.0.0">
+    <name>Progress Bar</name>
+    <pv_name>$(system)$(PV):$(Var)</pv_name>
+    <x>48</x>
+    <y>200</y>
+    <width>25</width>
+    <height>175</height>
+    <fill_color>
+      <color red="147" green="194" blue="228">
+      </color>
+    </fill_color>
+    <background_color>
+      <color name="fgs.Gray-45" red="167" green="168" blue="170">
+      </color>
+    </background_color>
+    <horizontal>false</horizontal>
+  </widget>
+  <widget type="progressbar" version="2.0.0">
+    <name>Progress Bar_1</name>
+    <pv_name>$(system)$(dev):rSetLoop</pv_name>
+    <x>119</x>
+    <y>200</y>
+    <width>25</width>
+    <height>175</height>
+    <fill_color>
+      <color name="cryo.On" red="82" green="171" blue="90">
+      </color>
+    </fill_color>
+    <background_color>
+      <color name="fgs.Gray-45" red="167" green="168" blue="170">
+      </color>
+    </background_color>
+    <horizontal>false</horizontal>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_104</name>
+    <text>PV:$(PV)</text>
+    <x>30</x>
+    <y>378</y>
+    <width>59</width>
+    <height>16</height>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_105</name>
+    <text>SP</text>
+    <x>123</x>
+    <y>378</y>
+    <width>19</width>
+    <height>16</height>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_106</name>
+    <text>Manual Operation Parameters</text>
+    <x>344</x>
+    <y>72</y>
+    <width>375</width>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="255" green="255" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="fgs.NAL-Blue" red="0" green="76" blue="151">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_9</name>
+    <pv_name>$(system)$(dev):sSetManual</pv_name>
+    <x>639</x>
+    <y>130</y>
+    <width>80</width>
+    <format>1</format>
+    <precision>1</precision>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_46</name>
+    <pv_name>sys://time</pv_name>
+    <x>1243</x>
+    <width>91</width>
+    <height>40</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="255" green="255" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="fgs.NAL-Blue" red="0" green="76" blue="151">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_107</name>
+    <text>Valve Output Settings</text>
+    <x>344</x>
+    <y>439</y>
+    <width>375</width>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="255" green="255" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="fgs.NAL-Blue" red="0" green="76" blue="151">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_108</name>
+    <text>Readings</text>
+    <x>344</x>
+    <y>466</y>
+    <width>80</width>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="255" green="255" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="fgs.NAL-Blue" red="0" green="76" blue="151">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_109</name>
+    <text>Settings</text>
+    <x>434</x>
+    <y>466</y>
+    <width>285</width>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="255" green="255" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="fgs.NAL-Blue" red="0" green="76" blue="151">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="byte_monitor" version="2.0.0">
+    <name>Byte Monitor</name>
+    <pv_name>$(system)$(dev):VLVfault</pv_name>
+    <x>9</x>
+    <y>458</y>
+    <width>198</width>
+    <height>126</height>
+    <numBits>6</numBits>
+    <horizontal>false</horizontal>
+    <off_color>
+      <color name="cryo.Off" red="150" green="150" blue="150">
+      </color>
+    </off_color>
+    <on_color>
+      <color name="cryo.Heater.On" red="229" green="56" blue="35">
+      </color>
+    </on_color>
+    <labels>
+      <text>Broken Wire</text>
+      <text>Failed to Open</text>
+      <text>Failed to Close</text>
+      <text>Position Deviation Critical</text>
+      <text>Position Deviation High</text>
+      <text>No Valve Movement</text>
+    </labels>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_110</name>
+    <text>Readings</text>
+    <x>344</x>
+    <y>100</y>
+    <width>80</width>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="255" green="255" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="fgs.NAL-Blue" red="0" green="76" blue="151">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_111</name>
+    <text>Settings</text>
+    <x>434</x>
+    <y>100</y>
+    <width>285</width>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="255" green="255" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="fgs.NAL-Blue" red="0" green="76" blue="151">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="scrollbar" version="2.0.0">
+    <name>Scrollbar_11</name>
+    <pv_name>$(system)$(dev):sSetManual</pv_name>
+    <x>434</x>
+    <y>130</y>
+    <width>200</width>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_47</name>
+    <pv_name>$(system)$(dev):sSetManual</pv_name>
+    <x>344</x>
+    <y>130</y>
+    <width>80</width>
+    <format>1</format>
+    <precision>1</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_112</name>
+    <text>Manual Output</text>
+    <x>240</x>
+    <y>133</y>
+    <width>97</width>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_112</name>
+    <x>185</x>
+    <y>198</y>
+    <width>1</width>
+    <height>1</height>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_113</name>
+    <text>Valve Faults</text>
+    <x>9</x>
+    <y>434</y>
+    <width>200</width>
+    <height>22</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="255" green="255" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="cryo.Heater.On" red="229" green="56" blue="35">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="stripchart" version="2.1.0">
+    <name>Strip Chart</name>
+    <x>768</x>
+    <y>130</y>
+    <width>576</width>
+    <height>353</height>
+    <background_color>
+      <color name="fgs.Gray-45" red="167" green="168" blue="170">
+      </color>
+    </background_color>
+    <show_grid>true</show_grid>
+    <show_toolbar>false</show_toolbar>
+    <show_legend>true</show_legend>
+    <y_axes>
+      <y_axis>
+        <title>Y</title>
+        <autoscale>true</autoscale>
+        <log_scale>false</log_scale>
+        <minimum>0.0</minimum>
+        <maximum>100.0</maximum>
+        <show_grid>true</show_grid>
+        <visible>true</visible>
+        <color>
+          <color name="Text" red="0" green="0" blue="0">
+          </color>
+        </color>
+      </y_axis>
+    </y_axes>
+    <traces>
+      <trace>
+        <name>SP</name>
+        <y_pv>$(system)$(dev):rSetLoop</y_pv>
+        <axis>0</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color red="0" green="0" blue="255">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name>PV</name>
+        <y_pv>$(system)$(PV):$(Var)</y_pv>
+        <axis>0</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color red="255" green="0" blue="0">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name>Valve Open</name>
+        <y_pv>$(system)$(dev):Open</y_pv>
+        <axis>0</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color red="0" green="255" blue="0">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name>Output CMD</name>
+        <y_pv>$(system)$(dev):rPLCout</y_pv>
+        <axis>0</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color red="170" green="0" blue="255">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+    </traces>
+  </widget>
+  <widget type="choice" version="2.0.0">
+    <name>Choice Button_2</name>
+    <pv_name>$(system)$(dev):sManualAuto</pv_name>
+    <x>5</x>
+    <y>100</y>
+    <width>200</width>
+    <height>70</height>
+    <selected_color>
+      <color name="acorn.Green" red="82" green="171" blue="90">
+      </color>
+    </selected_color>
+    <items>
+      <item>AUTO</item>
+      <item>MANUAL</item>
+    </items>
+    <show_confirm_dialog>true</show_confirm_dialog>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_48</name>
+    <pv_name>$(system)$(dev):rPLCout</pv_name>
+    <x>344</x>
+    <y>314</y>
+    <width>80</width>
+    <format>1</format>
+    <precision>1</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_114</name>
+    <text>Output CMD</text>
+    <x>195</x>
+    <y>314</y>
+    <width>142</width>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+</display>

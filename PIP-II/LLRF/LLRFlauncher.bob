@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>LLRF Launcher</name>
+  <width>530</width>
+  <height>180</height>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button</name>
+    <actions>
+      <action type="open_display">
+        <description>Open CMTF LLRF</description>
+        <file>scrf/rf_srf_cavity_main.bob</file>
+        <macros>
+          <CM>PIP2IT:PHB650:H1</CM>
+          <C>1</C>
+          <RFS>1A</RFS>
+          <R>A</R>
+          <CH>1</CH>
+          <ID>2</ID>
+          <SELCHAR>0</SELCHAR>
+          <SCRIPTDIR>/usr/local/epics/iocTops/sclLLRF/fnalRfApp/script</SCRIPTDIR>
+          <LOGDIR>/var/log/ioc/sclLLRF/rf_ppSSR2</LOGDIR>
+        </macros>
+        <target>tab</target>
+      </action>
+    </actions>
+    <x>10</x>
+    <y>10</y>
+    <width>160</width>
+    <height>40</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_1</name>
+    <actions>
+      <action type="open_display">
+        <description>Open VXI LLRF</description>
+        <file>scrf/rf_srf_cavity_main_fnal.bob</file>
+        <macros>
+          <CM>VXI:TEST_LLRF_C</CM>
+          <C>1</C>
+          <RFS>1A</RFS>
+          <R>A</R>
+          <CH>1</CH>
+          <ID>2</ID>
+          <SELCHAR>0</SELCHAR>
+          <SCRIPTDIR>/usr/local/epics/iocTops/LLRFvxi/fnalRfApp/script</SCRIPTDIR>
+          <LOGDIR>/var/log/ioc/LLRFvxi/rf_vxi</LOGDIR>
+        </macros>
+        <target>tab</target>
+      </action>
+    </actions>
+    <x>10</x>
+    <y>70</y>
+    <width>160</width>
+    <height>40</height>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_2</name>
+    <actions>
+      <action type="open_display">
+        <description>RFS1A Marble Monitor</description>
+        <file>MarbleMonitor.bob</file>
+        <macros>
+          <P>VXI:</P>
+          <R>TEST_LLRF_RFS1A:</R>
+        </macros>
+        <target>window</target>
+      </action>
+    </actions>
+    <x>190</x>
+    <y>70</y>
+    <width>160</width>
+    <height>40</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_3</name>
+    <actions>
+      <action type="open_display">
+        <description>Open STC LLRF</description>
+        <file>scrf/rf_srf_cavity_main_fnal.bob</file>
+        <macros>
+          <CM>STC:TEST_LLRF_C</CM>
+          <C>1</C>
+          <RFS>1A</RFS>
+          <R>A</R>
+          <CH>1</CH>
+          <ID>2</ID>
+          <SELCHAR>0</SELCHAR>
+          <SCRIPTDIR>/usr/local/epics/iocTops/sclLLRF/fnalRfApp/script</SCRIPTDIR>
+          <LOGDIR>/var/log/ioc/sclLLRF/rf_stc</LOGDIR>
+        </macros>
+        <target>tab</target>
+      </action>
+    </actions>
+    <x>10</x>
+    <y>130</y>
+    <width>160</width>
+    <height>40</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_4</name>
+    <actions>
+      <action type="open_display">
+        <description>RESA Marble Monitor</description>
+        <file>MarbleMonitor.bob</file>
+        <macros>
+          <P>VXI:</P>
+          <R>TEST_LLRF_RESA:</R>
+        </macros>
+        <target>window</target>
+      </action>
+    </actions>
+    <x>360</x>
+    <y>70</y>
+    <width>160</width>
+    <height>40</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="combo" version="2.0.0">
+    <name>Combo Box</name>
+    <x>360</x>
+    <y>120</y>
+    <width>160</width>
+    <height>40</height>
+    <actions>
+      <action type="open_display">
+        <description>RFS1A Marble Monitor</description>
+        <file>../MarbleMonitor</file>
+        <macros>
+          <P>VXI:</P>
+          <R>TEST_LLRF_RFS1A:</R>
+        </macros>
+        <target>window</target>
+      </action>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <items>
+      <item>RFS1A Marble Monitor</item>
+      <item>RESA Marble Monitor</item>
+    </items>
+  </widget>
+  <widget type="choice" version="2.0.0">
+    <name>Choice Button</name>
+    <x>370</x>
+    <y>210</y>
+    <width>150</width>
+    <height>20</height>
+    <actions>
+      <action type="open_display">
+        <description>RFS1A Marble Monitor</description>
+        <file>../MarbleMonitor.bob</file>
+        <macros>
+          <P>VXI:</P>
+          <R>TEST_LLRF_RFS1A:</R>
+        </macros>
+        <target>window</target>
+      </action>
+      <action type="open_display">
+        <description>RESA Marble Monitor</description>
+        <file>../MarbleMonitor.bob</file>
+        <macros>
+          <P>VXI:</P>
+          <R>TEST_LLRF_RESA:</R>
+        </macros>
+        <target>window</target>
+      </action>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <items>
+      <item>RFS1A</item>
+      <item>RESA</item>
+    </items>
+  </widget>
+</display>

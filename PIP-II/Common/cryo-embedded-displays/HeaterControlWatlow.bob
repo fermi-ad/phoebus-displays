@@ -1,0 +1,753 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>$(dev): Heater Control </name>
+  <width>1075</width>
+  <height>575</height>
+  <background_color>
+    <color name="cryo.PrimaryBackground" red="217" green="217" blue="217">
+    </color>
+  </background_color>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle</name>
+    <x>10</x>
+    <y>424</y>
+    <width>200</width>
+    <height>142</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="fgs.Gray-45" red="167" green="168" blue="170">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_3</name>
+    <pv_name>$(system)$(dev):SP</pv_name>
+    <x>380</x>
+    <y>142</y>
+    <width>80</width>
+    <format>1</format>
+    <precision>1</precision>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_4</name>
+    <pv_name>$(system)$(dev):MIN</pv_name>
+    <x>380</x>
+    <y>355</y>
+    <width>80</width>
+    <format>1</format>
+    <precision>1</precision>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_5</name>
+    <pv_name>$(system)$(dev):MAX</pv_name>
+    <x>380</x>
+    <y>385</y>
+    <width>80</width>
+    <format>1</format>
+    <precision>1</precision>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_92</name>
+    <text>Set Point:</text>
+    <x>245</x>
+    <y>141</y>
+    <width>130</width>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_93</name>
+    <text>Minimum Output:</text>
+    <x>245</x>
+    <y>354</y>
+    <width>130</width>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_94</name>
+    <text>Maximum Output:</text>
+    <x>245</x>
+    <y>384</y>
+    <width>130</width>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_98</name>
+    <text>Gain (PG):</text>
+    <x>245</x>
+    <y>168</y>
+    <width>130</width>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_99</name>
+    <text>Intergral Time (TI):</text>
+    <x>245</x>
+    <y>196</y>
+    <width>130</width>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED</name>
+    <pv_name>$(system)$(dev):BadLim</pv_name>
+    <x>468</x>
+    <y>362</y>
+    <off_label>OK</off_label>
+    <off_color>
+      <color name="cryo.On" red="82" green="171" blue="90">
+      </color>
+    </off_color>
+    <on_label>NG</on_label>
+    <on_color>
+      <color name="MAJOR" red="255" green="0" blue="0">
+      </color>
+    </on_color>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_100</name>
+    <text>Auto Mode</text>
+    <x>259</x>
+    <y>58</y>
+    <width>211</width>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="255" green="255" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="fgs.NAL-Blue" red="0" green="76" blue="151">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_44</name>
+    <pv_name>$(system)$(PV):$(Var)</pv_name>
+    <x>380</x>
+    <y>88</y>
+    <width>80</width>
+    <format>1</format>
+    <precision>1</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_102</name>
+    <text>PV ($(PV)):</text>
+    <x>245</x>
+    <y>86</y>
+    <width>130</width>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_7</name>
+    <pv_name>$(system)$(dev):PG</pv_name>
+    <x>380</x>
+    <y>169</y>
+    <width>80</width>
+    <format>1</format>
+    <precision>1</precision>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_8</name>
+    <pv_name>$(system)$(dev):TI</pv_name>
+    <x>380</x>
+    <y>196</y>
+    <width>80</width>
+    <format>1</format>
+    <precision>1</precision>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_110</name>
+    <width>45</width>
+    <height>10</height>
+    <visible>false</visible>
+    <points>
+      <point x="0.0" y="5.0">
+      </point>
+      <point x="2.5" y="5.0">
+      </point>
+      <point x="5.0" y="0.0">
+      </point>
+      <point x="10.0" y="10.0">
+      </point>
+      <point x="15.0" y="0.0">
+      </point>
+      <point x="20.0" y="10.0">
+      </point>
+      <point x="25.0" y="0.0">
+      </point>
+      <point x="30.0" y="10.0">
+      </point>
+      <point x="35.0" y="0.0">
+      </point>
+      <point x="40.0" y="10.0">
+      </point>
+      <point x="42.5" y="5.0">
+      </point>
+      <point x="45.0" y="5.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="255" green="0" blue="0">
+      </color>
+    </line_color>
+    <arrow_length>10</arrow_length>
+    <rules>
+      <rule name="Heater On" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0">
+          <value>true</value>
+        </exp>
+        <pv_name>$(htr)HTRVSL:HTRON</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_111</name>
+    <width>45</width>
+    <height>10</height>
+    <visible>false</visible>
+    <points>
+      <point x="0.0" y="5.0">
+      </point>
+      <point x="2.5" y="5.0">
+      </point>
+      <point x="5.0" y="0.0">
+      </point>
+      <point x="10.0" y="10.0">
+      </point>
+      <point x="15.0" y="0.0">
+      </point>
+      <point x="20.0" y="10.0">
+      </point>
+      <point x="25.0" y="0.0">
+      </point>
+      <point x="30.0" y="10.0">
+      </point>
+      <point x="35.0" y="0.0">
+      </point>
+      <point x="40.0" y="10.0">
+      </point>
+      <point x="42.5" y="5.0">
+      </point>
+      <point x="45.0" y="5.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="255" green="0" blue="0">
+      </color>
+    </line_color>
+    <arrow_length>10</arrow_length>
+    <rules>
+      <rule name="Heater On" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0">
+          <value>true</value>
+        </exp>
+        <pv_name>$(htr)HTRVSL:HTRON</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>$(dev): Valve Control</name>
+    <text>$(dev): Heater Control</text>
+    <width>1075</width>
+    <height>40</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="255" green="255" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="fgs.NAL-Blue" red="0" green="76" blue="151">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_103</name>
+    <text>Heater Operation Mode</text>
+    <x>9</x>
+    <y>59</y>
+    <width>220</width>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="255" green="255" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="fgs.NAL-Blue" red="0" green="76" blue="151">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="progressbar" version="2.0.0">
+    <name>Progress Bar</name>
+    <pv_name>$(system)$(PV):$(Var)</pv_name>
+    <x>82</x>
+    <y>202</y>
+    <width>25</width>
+    <height>175</height>
+    <fill_color>
+      <color red="0" green="0" blue="255">
+      </color>
+    </fill_color>
+    <background_color>
+      <color name="fgs.Gray-45" red="167" green="168" blue="170">
+      </color>
+    </background_color>
+    <horizontal>false</horizontal>
+  </widget>
+  <widget type="progressbar" version="2.0.0">
+    <name>Progress Bar_1</name>
+    <pv_name>$(system)$(dev):SP</pv_name>
+    <x>153</x>
+    <y>202</y>
+    <width>25</width>
+    <height>175</height>
+    <fill_color>
+      <color name="cryo.On" red="82" green="171" blue="90">
+      </color>
+    </fill_color>
+    <background_color>
+      <color name="fgs.Gray-45" red="167" green="168" blue="170">
+      </color>
+    </background_color>
+    <horizontal>false</horizontal>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_104</name>
+    <text>PV:$(PV)</text>
+    <x>64</x>
+    <y>381</y>
+    <width>59</width>
+    <height>16</height>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_105</name>
+    <text>SP</text>
+    <x>157</x>
+    <y>381</y>
+    <width>19</width>
+    <height>16</height>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_106</name>
+    <text>Manual Mode</text>
+    <x>259</x>
+    <y>247</y>
+    <width>211</width>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="255" green="255" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="fgs.NAL-Blue" red="0" green="76" blue="151">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_45</name>
+    <pv_name>sys://time</pv_name>
+    <x>973</x>
+    <width>91</width>
+    <height>40</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="255" green="255" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="fgs.NAL-Blue" red="0" green="76" blue="151">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_107</name>
+    <text>Heater Settings</text>
+    <x>259</x>
+    <y>324</y>
+    <width>211</width>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="255" green="255" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="fgs.NAL-Blue" red="0" green="76" blue="151">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_112</name>
+    <x>4</x>
+    <y>188</y>
+    <width>1</width>
+    <height>1</height>
+  </widget>
+  <widget type="stripchart" version="2.1.0">
+    <name>Strip Chart</name>
+    <x>516</x>
+    <y>58</y>
+    <width>550</width>
+    <height>358</height>
+    <background_color>
+      <color name="fgs.Gray-45" red="167" green="168" blue="170">
+      </color>
+    </background_color>
+    <show_grid>true</show_grid>
+    <show_toolbar>false</show_toolbar>
+    <show_legend>true</show_legend>
+    <y_axes>
+      <y_axis>
+        <title>Y</title>
+        <autoscale>true</autoscale>
+        <log_scale>false</log_scale>
+        <minimum>0.0</minimum>
+        <maximum>100.0</maximum>
+        <show_grid>true</show_grid>
+        <visible>true</visible>
+        <color>
+          <color name="Text" red="0" green="0" blue="0">
+          </color>
+        </color>
+      </y_axis>
+    </y_axes>
+    <traces>
+      <trace>
+        <name>SP</name>
+        <y_pv>$(system)$(dev):SP</y_pv>
+        <axis>0</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color red="0" green="0" blue="255">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name>PV</name>
+        <y_pv>$(system)$(PV):$(Var)</y_pv>
+        <axis>0</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color red="255" green="0" blue="0">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name>Out Cmd</name>
+        <y_pv>$(system)$(dev):OUTcmd</y_pv>
+        <axis>0</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color red="0" green="255" blue="0">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+    </traces>
+  </widget>
+  <widget type="choice" version="2.0.0">
+    <name>Choice Button_2</name>
+    <pv_name>$(system)$(dev):AM</pv_name>
+    <x>9</x>
+    <y>88</y>
+    <width>220</width>
+    <height>65</height>
+    <selected_color>
+      <color name="acorn.Green" red="82" green="171" blue="90">
+      </color>
+    </selected_color>
+    <items>
+      <item>AUTO</item>
+      <item>MANUAL</item>
+    </items>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_109</name>
+    <text>Heater Faults</text>
+    <x>10</x>
+    <y>413</y>
+    <width>200</width>
+    <height>22</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="255" green="255" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="cryo.Heater.On" red="229" green="56" blue="35">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_46</name>
+    <pv_name>$(system)$(dev):OUTcmd</pv_name>
+    <x>380</x>
+    <y>115</y>
+    <width>80</width>
+    <format>1</format>
+    <precision>1</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_110</name>
+    <text>Output CMD:</text>
+    <x>245</x>
+    <y>113</y>
+    <width>130</width>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_9</name>
+    <pv_name>$(system)$(dev):SM</pv_name>
+    <x>376</x>
+    <y>277</y>
+    <width>80</width>
+    <format>1</format>
+    <precision>1</precision>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_108</name>
+    <text>Manual Output:</text>
+    <x>271</x>
+    <y>278</y>
+    <width>96</width>
+    <height>16</height>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_1</name>
+    <pv_name>$(system)$(dev):STS1</pv_name>
+    <x>9</x>
+    <y>161</y>
+    <width>100</width>
+    <height>26</height>
+    <off_label>ZONE 1 OFF</off_label>
+    <off_color>
+      <color name="fgs.Gray-45" red="167" green="168" blue="170">
+      </color>
+    </off_color>
+    <on_color>
+      <color name="cryo.Heater.On" red="229" green="56" blue="35">
+      </color>
+    </on_color>
+    <square>true</square>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_2</name>
+    <pv_name>$(system)$(dev):STS2</pv_name>
+    <x>126</x>
+    <y>161</y>
+    <width>100</width>
+    <height>26</height>
+    <off_label>ZONE 2 OFF</off_label>
+    <off_color>
+      <color name="fgs.Gray-45" red="167" green="168" blue="170">
+      </color>
+    </off_color>
+    <on_color>
+      <color name="cryo.Heater.On" red="229" green="56" blue="35">
+      </color>
+    </on_color>
+    <square>true</square>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_2</name>
+    <x>260</x>
+    <y>489</y>
+    <width>200</width>
+    <height>78</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="fgs.Gray-45" red="167" green="168" blue="170">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_112</name>
+    <text>Interlock</text>
+    <x>260</x>
+    <y>478</y>
+    <width>200</width>
+    <height>22</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="255" green="255" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="cryo.Heater.On" red="229" green="56" blue="35">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_4</name>
+    <pv_name>$(system)$(dev):INTLK</pv_name>
+    <x>354</x>
+    <y>516</y>
+    <width>25</width>
+    <height>25</height>
+    <off_color>
+      <color name="cryo.PrimaryBackground" red="217" green="217" blue="217">
+      </color>
+    </off_color>
+    <on_color>
+      <color name="acorn.Yellow" red="255" green="249" blue="5">
+      </color>
+    </on_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_115</name>
+    <text>Status:</text>
+    <x>301</x>
+    <y>520</y>
+    <width>44</width>
+    <height>16</height>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>Boolean Button</name>
+    <pv_name>$(system)$(dev):INTLKreset</pv_name>
+    <x>387</x>
+    <y>511</y>
+    <width>49</width>
+    <height>35</height>
+    <off_label>Reset INTLK</off_label>
+    <off_color>
+      <color name="cryo.PrimaryBackground" red="217" green="217" blue="217">
+      </color>
+    </off_color>
+    <on_label>Reset INTLK</on_label>
+    <on_color>
+      <color name="acorn.Green" red="82" green="171" blue="90">
+      </color>
+    </on_color>
+    <show_led>false</show_led>
+    <mode>1</mode>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_116</name>
+    <text>Notes: $(Notes)
+Interlock Condition:
+$(INTLK)</text>
+    <x>516</x>
+    <y>478</y>
+    <width>550</width>
+    <height>90</height>
+    <transparent>false</transparent>
+  </widget>
+</display>

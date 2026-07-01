@@ -3,7 +3,7 @@
   <name>Mycomwatervalve</name>
   <macros>
     <dev>PIP2CP:MYCOM_CRYO_</dev>
-    <enum>HEATX</enum>
+    <enum>WTVLV</enum>
     <sig>TempC</sig>
   </macros>
   <width>680</width>
@@ -127,7 +127,7 @@
   </widget>
   <widget type="scrollbar" version="2.0.0">
     <name>Scrollbar_1</name>
-    <pv_name>$(system)$(enum):sTempC</pv_name>
+    <pv_name>$(system)$(enum):sSetLoop</pv_name>
     <x>352</x>
     <y>200</y>
     <width>200</width>
@@ -135,7 +135,7 @@
   </widget>
   <widget type="textentry" version="3.0.0">
     <name>Text Entry_3</name>
-    <pv_name>$(system)$(enum):sTempC</pv_name>
+    <pv_name>$(system)$(enum):sSetLoop</pv_name>
     <x>557</x>
     <y>200</y>
     <width>80</width>
@@ -181,7 +181,7 @@
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_37</name>
-    <pv_name>$(system)$(enum):TempC</pv_name>
+    <pv_name>$(system)$(enum):SetLoop</pv_name>
     <x>262</x>
     <y>200</y>
     <width>80</width>
@@ -298,7 +298,7 @@
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_41</name>
-    <pv_name>$(system)$(enum):H2OPos</pv_name>
+    <pv_name>$(system)$(enum):Open</pv_name>
     <x>262</x>
     <y>230</y>
     <width>80</width>
@@ -345,7 +345,7 @@
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_42</name>
-    <pv_name>$(system)TP31:TempC</pv_name>
+    <pv_name>$(system)TP31:Temp</pv_name>
     <x>262</x>
     <y>320</y>
     <width>80</width>
@@ -368,7 +368,7 @@
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_43</name>
-    <pv_name>$(system)TP32:TempC</pv_name>
+    <pv_name>$(system)TP32:Temp</pv_name>
     <x>262</x>
     <y>350</y>
     <width>80</width>
@@ -389,90 +389,15 @@
     <vertical_alignment>1</vertical_alignment>
     <wrap_words>false</wrap_words>
   </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Close</name>
-    <actions>
-      <action type="write_pv">
-        <description>Switch to HEATX</description>
-        <pv_name>$(pv_name)</pv_name>
-        <value>0</value>
-      </action>
-    </actions>
-    <pv_name>$(system)MNFLD:Select</pv_name>
-    <text>HEATX</text>
-    <x>280</x>
-    <y>100</y>
-    <width>160</width>
-    <height>64</height>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>OPEN</name>
-    <actions>
-      <action type="write_pv">
-        <description>Switch to MNFLD</description>
-        <pv_name>$(pv_name)</pv_name>
-        <value>1</value>
-      </action>
-    </actions>
-    <pv_name>$(system)MNFLD:Select</pv_name>
-    <text>MNFLD</text>
-    <x>450</x>
-    <y>100</y>
-    <width>160</width>
-    <height>64</height>
-    <rules>
-      <rule name="New Rule" prop_id="background_color" out_exp="false">
-        <exp bool_exp="new exp == 1">
-          <value>
-            <color name="Button_Background" red="210" green="210" blue="210">
-            </color>
-          </value>
-        </exp>
-        <pv_name>$(pv_name)</pv_name>
-      </rule>
-    </rules>
-  </widget>
-  <widget type="led" version="2.0.0">
-    <name>LED_2</name>
-    <pv_name>$(system)MNFLD:Select</pv_name>
-    <x>419</x>
-    <y>104</y>
-    <width>15</width>
-    <height>15</height>
-    <off_color>
-      <color name="acorn.Green" red="82" green="171" blue="90">
-      </color>
-    </off_color>
-    <on_color>
-      <color name="fgs.Gray-45" red="167" green="168" blue="170">
-      </color>
-    </on_color>
-  </widget>
-  <widget type="led" version="2.0.0">
-    <name>LED_3</name>
-    <pv_name>$(system)MNFLD:Select</pv_name>
-    <x>591</x>
-    <y>104</y>
-    <width>15</width>
-    <height>15</height>
-    <off_color>
-      <color name="fgs.Gray-45" red="167" green="168" blue="170">
-      </color>
-    </off_color>
-    <on_color>
-      <color name="acorn.Green" red="82" green="171" blue="90">
-      </color>
-    </on_color>
-  </widget>
   <widget type="progressbar" version="2.0.0">
     <name>Progress Bar</name>
-    <pv_name>$(system)$(enum):H2OPos</pv_name>
+    <pv_name>$(system)$(enum):Open</pv_name>
     <x>18</x>
     <y>110</y>
     <width>25</width>
     <height>225</height>
     <fill_color>
-      <color name="acorn.Green" red="82" green="171" blue="90">
+      <color red="147" green="194" blue="228">
       </color>
     </fill_color>
     <background_color>
@@ -483,7 +408,7 @@
   </widget>
   <widget type="progressbar" version="2.0.0">
     <name>Progress Bar_1</name>
-    <pv_name>$(system)$(enum):TempC</pv_name>
+    <pv_name>$(system)$(enum):SetLoop</pv_name>
     <x>82</x>
     <y>110</y>
     <width>25</width>
@@ -542,5 +467,22 @@ Point</text>
     <transparent>true</transparent>
     <horizontal_alignment>1</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="choice" version="2.0.0">
+    <name>Choice Button_1</name>
+    <pv_name>$(system)$(enum):PVSelect</pv_name>
+    <x>307</x>
+    <y>102</y>
+    <width>290</width>
+    <height>65</height>
+    <selected_color>
+      <color name="acorn.Green" red="82" green="171" blue="90">
+      </color>
+    </selected_color>
+    <items>
+      <item>HEATX</item>
+      <item>MNFLD</item>
+    </items>
+    <show_confirm_dialog>true</show_confirm_dialog>
   </widget>
 </display>
