@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2025-03-19 16:07:20 by dt100-->
+<display version="2.0.0">
+  <name>chan stats</name>
+  <width>100</width>
+  <height>210</height>
+  <widget type="group" version="3.0.0">
+    <name>CHAN STATS</name>
+    <width>100</width>
+    <height>210</height>
+    <visible>false</visible>
+    <style>3</style>
+    <background_color>
+      <color red="230" green="230" blue="230">
+      </color>
+    </background_color>
+    <rules>
+      <rule name="HIDE_EMPTY" prop_id="visible" out_exp="true">
+        <exp bool_exp="&quot;$(chan)&quot;==&quot;ALL&quot;">
+          <expression>true</expression>
+        </exp>
+        <exp bool_exp="pv0&gt;=int(&quot;$(chan)&quot;)">
+          <expression>true</expression>
+        </exp>
+        <exp bool_exp="true">
+          <expression>false</expression>
+        </exp>
+        <pv_name>$(UUT):$(SITE):NCHAN</pv_name>
+      </rule>
+    </rules>
+    <widget type="group" version="3.0.0">
+      <name>DC SLIDER INNER</name>
+      <x>10</x>
+      <y>10</y>
+      <width>80</width>
+      <height>190</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>Label</name>
+        <text>CH:$(chan)</text>
+        <width>60</width>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="led" version="2.0.0">
+        <name>LED_FAIL</name>
+        <pv_name>${UUT}:${SITE}:AI:WF:${chan}:OVER</pv_name>
+        <x>60</x>
+        <off_color>
+          <color red="76" green="0" blue="0">
+          </color>
+        </off_color>
+        <on_color>
+          <color name="MAJOR" red="255" green="0" blue="0">
+          </color>
+        </on_color>
+        <line_color>
+          <color name="Text" red="0" green="0" blue="0">
+          </color>
+        </line_color>
+        <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>MIN</name>
+        <pv_name>${UUT}:${SITE}:AI:WF:${chan}:V.VALC</pv_name>
+        <y>50</y>
+        <width>80</width>
+        <background_color>
+          <color name="Background" red="255" green="255" blue="255">
+          </color>
+        </background_color>
+        <precision>3</precision>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>MAX</name>
+        <pv_name>${UUT}:${SITE}:AI:WF:${chan}:V.VALD</pv_name>
+        <y>90</y>
+        <width>80</width>
+        <background_color>
+          <color name="Background" red="255" green="255" blue="255">
+          </color>
+        </background_color>
+        <precision>3</precision>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>MEAN</name>
+        <pv_name>${UUT}:${SITE}:AI:WF:${chan}:V.VALE</pv_name>
+        <y>130</y>
+        <width>80</width>
+        <background_color>
+          <color name="Background" red="255" green="255" blue="255">
+          </color>
+        </background_color>
+        <precision>3</precision>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>RMS</name>
+        <pv_name>${UUT}:${SITE}:AI:WF:${chan}:V.VALG</pv_name>
+        <y>170</y>
+        <width>80</width>
+        <background_color>
+          <color name="Background" red="255" green="255" blue="255">
+          </color>
+        </background_color>
+        <precision>3</precision>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>MIN LABEL</name>
+        <text>Min</text>
+        <y>30</y>
+        <width>80</width>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>MAX LABEL</name>
+        <text>Max</text>
+        <y>70</y>
+        <width>80</width>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>MEAN LABEL</name>
+        <text>Mean</text>
+        <y>110</y>
+        <width>80</width>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>RMS LABEL</name>
+        <text>RMS</text>
+        <y>150</y>
+        <width>80</width>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+    </widget>
+  </widget>
+</display>

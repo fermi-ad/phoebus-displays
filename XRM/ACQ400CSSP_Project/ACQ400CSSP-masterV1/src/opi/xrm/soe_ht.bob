@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2026-04-09 16:35:22 by pgm-->
+<display version="2.0.0">
+  <name>SOE HT $(MUUT)</name>
+  <width>750</width>
+  <height>740</height>
+  <widget type="group" version="3.0.0">
+    <name>SYSTEM</name>
+    <x>10</x>
+    <y>10</y>
+    <width>880</width>
+    <height>910</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>TITLE_1</name>
+      <text>SOE HT $(UUT)</text>
+      <width>330</width>
+      <height>50</height>
+      <font>
+        <font name="Header 2" family="Liberation Sans" style="BOLD" size="18.0">
+        </font>
+      </font>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="combo" version="2.0.0">
+      <name>Combo Box</name>
+      <pv_name>${UUT}:SOE:MON_RL</pv_name>
+      <x>50</x>
+      <y>60</y>
+      <width>110</width>
+    </widget>
+  </widget>
+  <widget type="table" version="2.0.0">
+    <name>Table</name>
+    <pv_name>${UUT}:SOE_HLD:TAB:Tbl</pv_name>
+    <x>50</x>
+    <y>120</y>
+    <width>1680</width>
+    <height>930</height>
+    <columns>
+      <column>
+        <name>Column 1</name>
+        <width>50</width>
+        <editable>true</editable>
+        <options>
+          <option>0</option>
+        </options>
+      </column>
+      <column>
+        <name>Column 2</name>
+        <width>100</width>
+        <editable>true</editable>
+      </column>
+      <column>
+        <name>Column 3</name>
+        <width>100</width>
+        <editable>true</editable>
+      </column>
+      <column>
+        <name>Column 4</name>
+        <width>200</width>
+        <editable>true</editable>
+      </column>
+      <column>
+        <name>Column 5</name>
+        <width>100</width>
+        <editable>true</editable>
+      </column>
+      <column>
+        <name>Column 6</name>
+        <width>100</width>
+        <editable>true</editable>
+      </column>
+      <column>
+        <name>Column 7</name>
+        <width>100</width>
+        <editable>true</editable>
+      </column>
+      <column>
+        <name>Column 8</name>
+        <width>100</width>
+        <editable>true</editable>
+      </column>
+      <column>
+        <name>Column 9</name>
+        <width>100</width>
+        <editable>true</editable>
+      </column>
+      <column>
+        <name>Column 10</name>
+        <width>100</width>
+        <editable>true</editable>
+      </column>
+      <column>
+        <name>Column 11</name>
+        <width>100</width>
+        <editable>true</editable>
+      </column>
+      <column>
+        <name>Column 12</name>
+        <width>100</width>
+        <editable>true</editable>
+      </column>
+      <column>
+        <name>Column 13</name>
+        <width>50</width>
+        <editable>true</editable>
+      </column>
+      <column>
+        <name>Column 14</name>
+        <width>200</width>
+        <editable>true</editable>
+      </column>
+      <column>
+        <name>Column 15</name>
+        <width>200</width>
+        <editable>true</editable>
+      </column>
+    </columns>
+    <selection_pv>TST:Tbl</selection_pv>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Control</name>
+    <x>1470</x>
+    <y>10</y>
+    <width>250</width>
+    <height>120</height>
+    <widget type="bool_button" version="2.0.0">
+      <name>Boolean Button</name>
+      <pv_name>${UUT}:SOE:RUNSTOP</pv_name>
+      <x>3</x>
+      <y>12</y>
+      <height>50</height>
+      <off_label>RUN</off_label>
+      <on_label>STOP</on_label>
+      <actions>
+        <action type="write_pv">
+          <description>Write PV</description>
+          <pv_name>$(pv_name)</pv_name>
+          <value>1</value>
+        </action>
+        <action type="write_pv">
+          <description>Write PV</description>
+          <pv_name>$(pv_name)</pv_name>
+          <value>0</value>
+        </action>
+      </actions>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update</name>
+      <pv_name>${UUT}:SOE:UPDATES</pv_name>
+      <x>103</x>
+      <y>72</y>
+      <width>111</width>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_10</name>
+      <text>UPDATES</text>
+      <x>3</x>
+      <y>72</y>
+      <width>70</width>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Latest KBUF</name>
+    <x>970</x>
+    <y>10</y>
+    <width>480</width>
+    <height>110</height>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_1</name>
+      <pv_name>${UUT}:SOE:KBUF:INDEX</pv_name>
+      <x>12</x>
+      <y>42</y>
+      <width>70</width>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label</name>
+      <text>IB</text>
+      <x>12</x>
+      <y>12</y>
+      <width>80</width>
+      <height>30</height>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_3</name>
+      <pv_name>${UUT}:SOE:KBUF:WRT0</pv_name>
+      <x>102</x>
+      <y>42</y>
+      <width>150</width>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_2</name>
+      <text>WRT0</text>
+      <x>102</x>
+      <y>12</y>
+      <width>80</width>
+      <height>30</height>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_4</name>
+      <pv_name>${UUT}:SOE:KBUF:WRT1</pv_name>
+      <x>272</x>
+      <y>42</y>
+      <width>160</width>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_3</name>
+      <text>WRT1</text>
+      <x>272</x>
+      <y>12</y>
+      <width>80</width>
+      <height>30</height>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Sample Composition</name>
+    <x>310</x>
+    <y>10</y>
+    <width>650</width>
+    <height>120</height>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_8</name>
+      <pv_name>pva://${UUT}:SMPL/SP_INDEX</pv_name>
+      <x>302</x>
+      <y>62</y>
+      <width>70</width>
+      <height>30</height>
+      <horizontal_alignment>2</horizontal_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_9</name>
+      <pv_name>pva://${UUT}:SMPL/SP_COUNT</pv_name>
+      <x>302</x>
+      <y>32</y>
+      <width>70</width>
+      <height>30</height>
+      <horizontal_alignment>2</horizontal_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_5</name>
+      <text>SP32</text>
+      <x>312</x>
+      <y>2</y>
+      <width>70</width>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_10</name>
+      <pv_name>pva://${UUT}:SMPL/AI_COUNT</pv_name>
+      <x>142</x>
+      <y>32</y>
+      <width>70</width>
+      <height>30</height>
+      <horizontal_alignment>2</horizontal_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_11</name>
+      <pv_name>pva://${UUT}:SMPL/DI_COUNT</pv_name>
+      <x>222</x>
+      <y>32</y>
+      <width>70</width>
+      <height>30</height>
+      <horizontal_alignment>2</horizontal_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_12</name>
+      <pv_name>pva://${UUT}:SMPL/DI_INDEX</pv_name>
+      <x>222</x>
+      <y>62</y>
+      <width>70</width>
+      <height>30</height>
+      <horizontal_alignment>2</horizontal_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_6</name>
+      <text>AI16</text>
+      <x>142</x>
+      <y>2</y>
+      <width>70</width>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_7</name>
+      <text>DI32</text>
+      <x>222</x>
+      <y>2</y>
+      <width>70</width>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_8</name>
+      <text>Count</text>
+      <x>32</x>
+      <y>32</y>
+      <width>70</width>
+      <height>30</height>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_9</name>
+      <text>Index</text>
+      <x>32</x>
+      <y>62</y>
+      <width>70</width>
+      <height>30</height>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_11</name>
+      <text>0</text>
+      <x>142</x>
+      <y>62</y>
+      <width>70</width>
+      <height>30</height>
+      <horizontal_alignment>2</horizontal_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_12</name>
+      <text>SSB</text>
+      <x>442</x>
+      <y>2</y>
+      <width>70</width>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_13</name>
+      <pv_name>pva://${UUT}:SMPL/SSB</pv_name>
+      <x>432</x>
+      <y>32</y>
+      <width>70</width>
+      <height>30</height>
+      <horizontal_alignment>2</horizontal_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_13</name>
+      <text>NSAM</text>
+      <x>532</x>
+      <y>2</y>
+      <width>70</width>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_14</name>
+      <pv_name>pva://${UUT}:SMPL/NSAM</pv_name>
+      <x>532</x>
+      <y>32</y>
+      <width>70</width>
+      <height>30</height>
+      <horizontal_alignment>2</horizontal_alignment>
+    </widget>
+  </widget>
+</display>

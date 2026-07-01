@@ -1,0 +1,546 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>White_Rabbit$(MUUT)</name>
+  <macros>
+    <wr_site>$(s11_WRSFP=3)</wr_site>
+  </macros>
+  <width>550</width>
+  <height>630</height>
+  <widget type="group" version="3.0.0">
+    <name>WR</name>
+    <width>550</width>
+    <height>630</height>
+    <style>3</style>
+    <background_color>
+      <color red="179" green="204" blue="255">
+      </color>
+    </background_color>
+    <widget type="group" version="3.0.0">
+      <name>WR INNER</name>
+      <x>10</x>
+      <y>10</y>
+      <width>530</width>
+      <height>610</height>
+      <style>3</style>
+      <background_color>
+        <color red="179" green="204" blue="255">
+        </color>
+      </background_color>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>TITLE</name>
+        <text>$(UUT) White Rabbit</text>
+        <width>400</width>
+        <height>30</height>
+        <font>
+          <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+          </font>
+        </font>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="picture" version="2.0.0">
+        <name>Picture</name>
+        <file>../../images/WR_logo.png</file>
+        <x>420</x>
+        <width>110</width>
+        <height>90</height>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>WR STATUS</name>
+        <y>50</y>
+        <width>400</width>
+        <height>30</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="led" version="2.0.0">
+          <name>LED_GOOD_1</name>
+          <pv_name>${UUT}:MGT:SFP:$(wr_site):PRESENT</pv_name>
+          <x>140</x>
+          <y>5</y>
+          <off_color>
+            <color red="51" green="102" blue="51">
+            </color>
+          </off_color>
+          <line_color>
+            <color name="Text" red="0" green="0" blue="0">
+            </color>
+          </line_color>
+          <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label_2</name>
+          <text>SFP $(wr_port)</text>
+          <width>60</width>
+          <height>30</height>
+          <font>
+            <font name="Header 2" family="Liberation Sans" style="BOLD" size="18.0">
+            </font>
+          </font>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>Text Update</name>
+          <pv_name>${UUT}:SFP:$(wr_site):RXPWR</pv_name>
+          <x>60</x>
+          <width>70</width>
+          <height>30</height>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+          <wrap_words>false</wrap_words>
+          <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+        </widget>
+        <widget type="led" version="2.0.0">
+          <name>LED_WARN_1</name>
+          <pv_name>${UUT}:MGT:SFP:$(wr_site):TX_ENABLED
+</pv_name>
+          <x>160</x>
+          <y>5</y>
+          <off_color>
+            <color red="153" green="77" blue="0">
+            </color>
+          </off_color>
+          <on_color>
+            <color name="MINOR" red="255" green="128" blue="0">
+            </color>
+          </on_color>
+          <line_color>
+            <color name="Text" red="0" green="0" blue="0">
+            </color>
+          </line_color>
+          <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>Text Update_1</name>
+          <pv_name>${UUT}:SFP:$(wr_site):TXPWR</pv_name>
+          <x>190</x>
+          <width>70</width>
+          <height>30</height>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+          <wrap_words>false</wrap_words>
+          <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label_3</name>
+          <text>Link Status</text>
+          <x>260</x>
+          <width>80</width>
+          <height>30</height>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <horizontal_alignment>2</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="led" version="2.0.0">
+          <name>LED_GOOD_2</name>
+          <pv_name>${UUT}:0:WR:LINK_UP</pv_name>
+          <x>350</x>
+          <y>5</y>
+          <off_color>
+            <color red="51" green="102" blue="51">
+            </color>
+          </off_color>
+          <line_color>
+            <color name="Text" red="0" green="0" blue="0">
+            </color>
+          </line_color>
+          <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+        </widget>
+        <widget type="led" version="2.0.0">
+          <name>LED_GOOD_3</name>
+          <pv_name>${UUT}:0:WR:TIME_VALID</pv_name>
+          <x>380</x>
+          <y>5</y>
+          <off_color>
+            <color red="51" green="102" blue="51">
+            </color>
+          </off_color>
+          <line_color>
+            <color name="Text" red="0" green="0" blue="0">
+            </color>
+          </line_color>
+          <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+        </widget>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>DOC_LINK_1</name>
+        <macros>
+          <TARGET>25 White Rabbit Endpoint</TARGET>
+          <URL>${USER_GUIDE}#${TARGET}</URL>
+        </macros>
+        <x>400</x>
+        <y>10</y>
+        <width>25</width>
+        <height>25</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="picture" version="2.0.0">
+          <name>LINK_SYMBOL_1</name>
+          <file>../../images/doc_link.png</file>
+          <width>25</width>
+          <height>25</height>
+        </widget>
+        <widget type="action_button" version="3.0.0">
+          <name>OPEN_LINK_BUTTON_1</name>
+          <actions>
+            <action type="open_webpage">
+              <description>Open Web Page</description>
+              <url>$(URL)</url>
+            </action>
+          </actions>
+          <text></text>
+          <width>25</width>
+          <height>25</height>
+          <transparent>true</transparent>
+          <tooltip>$(URL)</tooltip>
+          <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+        </widget>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>WR TIME</name>
+        <y>100</y>
+        <width>530</width>
+        <height>40</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="rectangle" version="2.0.0">
+          <name>Rectangle</name>
+          <width>20</width>
+          <height>40</height>
+          <line_width>0</line_width>
+          <background_color>
+            <color name="Read_Background" red="240" green="240" blue="240">
+            </color>
+          </background_color>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>WR TIME</name>
+          <pv_name>${UUT}:0:WR:TAI_DATE</pv_name>
+          <x>20</x>
+          <width>510</width>
+          <height>40</height>
+          <font>
+            <font family="Ubuntu Mono" style="REGULAR" size="16.0">
+            </font>
+          </font>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+      </widget>
+      <widget type="bool_button" version="2.0.0">
+        <name>SFT DISABLE</name>
+        <pv_name>${UUT}:MGT:SFP:$(wr_site):TX_DISABLE</pv_name>
+        <y>150</y>
+        <width>140</width>
+        <off_label>SFP DISABLE</off_label>
+        <off_color>
+          <color name="Grid" red="128" green="128" blue="128">
+          </color>
+        </off_color>
+        <on_label>SFP ENABLE</on_label>
+        <on_color>
+          <color name="MAJOR" red="255" green="0" blue="0">
+          </color>
+        </on_color>
+      </widget>
+      <widget type="bool_button" version="2.0.0">
+        <name>WR DISABLE</name>
+        <pv_name>${UUT}:11:WR_RESET</pv_name>
+        <x>150</x>
+        <y>150</y>
+        <width>140</width>
+        <off_label>WR RESET</off_label>
+        <off_color>
+          <color name="Grid" red="128" green="128" blue="128">
+          </color>
+        </off_color>
+        <on_label>WR RESET</on_label>
+        <on_color>
+          <color name="MAJOR" red="255" green="0" blue="0">
+          </color>
+        </on_color>
+        <mode>1</mode>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>TUNE</name>
+        <y>190</y>
+        <width>530</width>
+        <height>90</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="action_button" version="3.0.0">
+          <name>TUNE BUTTON</name>
+          <actions>
+            <action type="write_pv">
+              <description>TUNE</description>
+              <pv_name>${UUT}:11:Si5326:TUNEPHASE</pv_name>
+              <value>1</value>
+            </action>
+          </actions>
+          <height>40</height>
+          <tooltip>$(actions)</tooltip>
+        </widget>
+        <widget type="led" version="2.0.0">
+          <name>LED_WARN_2</name>
+          <pv_name>${UUT}:11:Si5326:TUNEPHASE:BUSY</pv_name>
+          <x>510</x>
+          <off_color>
+            <color red="153" green="77" blue="0">
+            </color>
+          </off_color>
+          <on_color>
+            <color name="MINOR" red="255" green="128" blue="0">
+            </color>
+          </on_color>
+          <line_color>
+            <color name="Text" red="0" green="0" blue="0">
+            </color>
+          </line_color>
+          <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+        </widget>
+        <widget type="led" version="2.0.0">
+          <name>LED_GOOD_4</name>
+          <pv_name>${UUT}:11:Si5326:TUNEPHASE:OK</pv_name>
+          <x>510</x>
+          <y>20</y>
+          <off_color>
+            <color red="51" green="102" blue="51">
+            </color>
+          </off_color>
+          <line_color>
+            <color name="Text" red="0" green="0" blue="0">
+            </color>
+          </line_color>
+          <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+        </widget>
+        <widget type="group" version="3.0.0">
+          <name>Group</name>
+          <y>50</y>
+          <width>530</width>
+          <height>40</height>
+          <style>3</style>
+          <transparent>true</transparent>
+          <widget type="rectangle" version="2.0.0">
+            <name>Rectangle_1</name>
+            <width>20</width>
+            <height>40</height>
+            <line_width>0</line_width>
+            <background_color>
+              <color name="Read_Background" red="240" green="240" blue="240">
+              </color>
+            </background_color>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>TUNE STATUS</name>
+            <pv_name>${UUT}:11:Si5326:TUNEPHASE:STATUS</pv_name>
+            <x>20</x>
+            <width>510</width>
+            <height>40</height>
+            <vertical_alignment>1</vertical_alignment>
+          </widget>
+        </widget>
+        <widget type="group" version="3.0.0">
+          <name>Group</name>
+          <x>110</x>
+          <width>390</width>
+          <height>40</height>
+          <style>3</style>
+          <transparent>true</transparent>
+          <widget type="rectangle" version="2.0.0">
+            <name>Rectangle_2</name>
+            <width>20</width>
+            <height>40</height>
+            <line_width>0</line_width>
+            <background_color>
+              <color name="Read_Background" red="240" green="240" blue="240">
+              </color>
+            </background_color>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>TUNE STATE</name>
+            <pv_name>${UUT}:11:Si5326:TUNEPHASE:STATE</pv_name>
+            <x>20</x>
+            <width>370</width>
+            <height>40</height>
+            <font>
+              <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+              </font>
+            </font>
+            <vertical_alignment>1</vertical_alignment>
+          </widget>
+        </widget>
+      </widget>
+      <widget type="embedded" version="2.0.0">
+        <name>PPS STATE</name>
+        <macros>
+          <func>WR:PPS</func>
+          <label>PPS</label>
+          <site>0</site>
+        </macros>
+        <file>../components/func_counter.bob</file>
+        <y>300</y>
+        <width>530</width>
+        <height>50</height>
+        <resize>2</resize>
+      </widget>
+      <widget type="embedded" version="2.0.0">
+        <name>TS STATE</name>
+        <macros>
+          <func>WR:TS</func>
+          <label>TS</label>
+          <site>0</site>
+        </macros>
+        <file>../components/func_counter.bob</file>
+        <y>350</y>
+        <width>530</width>
+        <height>50</height>
+        <resize>2</resize>
+      </widget>
+      <widget type="embedded" version="2.0.0">
+        <name>WRTT0 STATE</name>
+        <macros>
+          <func>WR:WRTT0</func>
+          <label>WRTT0</label>
+          <site>0</site>
+        </macros>
+        <file>../components/func_counter.bob</file>
+        <y>460</y>
+        <width>530</width>
+        <height>50</height>
+        <resize>2</resize>
+      </widget>
+      <widget type="embedded" version="2.0.0">
+        <name>WRTT1 STATE</name>
+        <macros>
+          <func>WR:WRTT1</func>
+          <label>WRTT1</label>
+          <site>0</site>
+        </macros>
+        <file>../components/func_counter.bob</file>
+        <y>510</y>
+        <width>530</width>
+        <height>50</height>
+        <resize>2</resize>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>WR TRG</name>
+        <macros>
+          <sig>WR:TRG</sig>
+          <site>0</site>
+        </macros>
+        <y>420</y>
+        <width>380</width>
+        <height>30</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="label" version="2.0.0">
+          <name>Sig label</name>
+          <text>$(sig)</text>
+          <width>70</width>
+          <height>30</height>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <transparent>false</transparent>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="combo" version="2.0.0">
+          <name>Sig En</name>
+          <pv_name>${UUT}:$(site):${sig}</pv_name>
+          <x>80</x>
+          <width>90</width>
+          <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+        </widget>
+        <widget type="combo" version="2.0.0">
+          <name>Sig Src</name>
+          <pv_name>${UUT}:$(site):${sig}:DX</pv_name>
+          <x>180</x>
+          <width>90</width>
+          <rules>
+            <rule name="DISABLE" prop_id="enabled" out_exp="false">
+              <exp bool_exp="pv0==0">
+                <value>false</value>
+              </exp>
+              <exp bool_exp="true">
+                <value>true</value>
+              </exp>
+              <pv_name>${UUT}:$(site):${sig}</pv_name>
+            </rule>
+          </rules>
+          <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+        </widget>
+        <widget type="combo" version="2.0.0">
+          <name>Sig Sens</name>
+          <pv_name>${UUT}:$(site):${sig}:SENSE</pv_name>
+          <x>280</x>
+          <width>90</width>
+          <rules>
+            <rule name="DISABLE" prop_id="enabled" out_exp="false">
+              <exp bool_exp="pv0==0">
+                <value>false</value>
+              </exp>
+              <exp bool_exp="true">
+                <value>true</value>
+              </exp>
+              <pv_name>${UUT}:$(site):${sig}</pv_name>
+            </rule>
+          </rules>
+          <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+        </widget>
+      </widget>
+      <widget type="action_button" version="3.0.0">
+        <name>WRTD_TXI BUTTON</name>
+        <actions>
+          <action type="write_pv">
+            <description>WRTD_TXI</description>
+            <pv_name>${UUT}:11:WRTD_TXI</pv_name>
+            <value>1</value>
+          </action>
+        </actions>
+        <x>290</x>
+        <y>570</y>
+        <width>80</width>
+        <tooltip>$(actions)</tooltip>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>WRTD_TXI INPUT</name>
+        <macros>
+          <label>WRTD_TXI ID</label>
+          <pvname0>${UUT}:11:WRTD_TXI_ID</pvname0>
+        </macros>
+        <y>570</y>
+        <width>280</width>
+        <height>30</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="label" version="2.0.0">
+          <name>LABEL_8</name>
+          <text>$(label)</text>
+          <width>90</width>
+          <height>30</height>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="textentry" version="3.0.0">
+          <name>INPUT_3</name>
+          <pv_name>$(pvname0)</pv_name>
+          <x>100</x>
+          <width>180</width>
+          <height>30</height>
+          <background_color>
+            <color name="Background" red="255" green="255" blue="255">
+            </color>
+          </background_color>
+          <wrap_words>true</wrap_words>
+          <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+        </widget>
+      </widget>
+    </widget>
+  </widget>
+</display>

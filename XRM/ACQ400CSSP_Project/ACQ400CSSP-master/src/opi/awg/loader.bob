@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>AWG$(MUUT)</name>
+  <width>670</width>
+  <height>920</height>
+  <widget type="group" version="3.0.0">
+    <name>LOADER_OUTER</name>
+    <macros>
+      <FILE>awg.bob</FILE>
+      <SITE>0</SITE>
+      <PREFIX>$(UUT):$(SITE):</PREFIX>
+    </macros>
+    <width>670</width>
+    <height>920</height>
+    <style>3</style>
+    <background_color>
+      <color name="Read_Background" red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <widget type="label" version="2.0.0">
+      <name>LOADER_PLACEHOLDER</name>
+      <text>LOAD OPI
+FILE: $(FILE)
+UUT: $(UUT)
+SITE: $(SITE)
+PREFIX $(PREFIX)</text>
+      <x>10</x>
+      <y>10</y>
+      <width>650</width>
+      <height>900</height>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <background_color>
+        <color name="Read_Background" red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>LOADER_INNER</name>
+      <file>awg.bob</file>
+      <width>670</width>
+      <height>920</height>
+      <scripts>
+        <script file="../../scripts/opi_loader.py" check_connections="false">
+          <pv_name>$(UUT):$(SITE):MODEL</pv_name>
+          <pv_name trigger="false">$(UUT):$(SITE):DISTRIBUTOR:S1</pv_name>
+        </script>
+      </scripts>
+    </widget>
+  </widget>
+</display>

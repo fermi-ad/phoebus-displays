@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2025-03-06 11:58:09 by sam-->
+<display version="2.0.0">
+  <name>Master Site</name>
+  <width>760</width>
+  <height>30</height>
+  <widget type="group" version="3.0.0">
+    <name>MASTER SITE</name>
+    <width>760</width>
+    <height>30</height>
+    <style>3</style>
+    <background_color>
+      <color name="Read_Background" red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <rules>
+      <rule name="SHOW_MASTER" prop_id="visible" out_exp="true">
+        <exp bool_exp="pvStr0 == &quot;MASTER&quot;">
+          <expression>true</expression>
+        </exp>
+        <exp bool_exp="true">
+          <expression>false</expression>
+        </exp>
+        <pv_name>${UUT}:${site}:ROLE</pv_name>
+      </rule>
+    </rules>
+    <widget type="group" version="3.0.0">
+      <name>MASTER SITE INNER</name>
+      <macros>
+        <site>$(site=1)</site>
+      </macros>
+      <x>5</x>
+      <y>5</y>
+      <width>750</width>
+      <height>20</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="group" version="3.0.0">
+        <name>Sig Group_1</name>
+        <macros>
+          <sig>CLK</sig>
+        </macros>
+        <x>110</x>
+        <width>305</width>
+        <height>20</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="label" version="2.0.0">
+          <name>Sig label_1</name>
+          <text>$(sig)</text>
+          <width>55</width>
+          <transparent>false</transparent>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="combo" version="2.0.0">
+          <name>Sig En_1</name>
+          <pv_name>${UUT}:${site}:${sig}</pv_name>
+          <x>65</x>
+          <width>90</width>
+          <height>20</height>
+          <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+        </widget>
+        <widget type="combo" version="2.0.0">
+          <name>Sig Src_1</name>
+          <pv_name>$(UUT):${site}:${sig}:DX</pv_name>
+          <x>165</x>
+          <width>50</width>
+          <height>20</height>
+          <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+        </widget>
+        <widget type="combo" version="2.0.0">
+          <name>Sig Sens_1</name>
+          <pv_name>${UUT}:${site}:${sig}:SENSE</pv_name>
+          <x>225</x>
+          <width>80</width>
+          <height>20</height>
+          <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+        </widget>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_1</name>
+        <text>Master Site</text>
+        <width>120</width>
+        <font>
+          <font name="Header 2" family="Liberation Sans" style="BOLD" size="18.0">
+          </font>
+        </font>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Div label_1</name>
+        <text>CLKDIV</text>
+        <x>455</x>
+        <width>75</width>
+        <transparent>false</transparent>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="spinner" version="2.0.0">
+        <name>Spinner_1</name>
+        <pv_name>${UUT}:${site}:CLKDIV</pv_name>
+        <x>535</x>
+        <width>80</width>
+        <background_color>
+          <color name="Background" red="255" green="255" blue="255">
+          </color>
+        </background_color>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_1</name>
+        <pv_name>${UUT}:0:SIG:CLK_S${site}:FREQ</pv_name>
+        <x>635</x>
+        <width>115</width>
+        <background_color>
+          <color name="Background" red="255" green="255" blue="255">
+          </color>
+        </background_color>
+        <format>2</format>
+        <precision>3</precision>
+        <show_units>false</show_units>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+      </widget>
+    </widget>
+  </widget>
+</display>

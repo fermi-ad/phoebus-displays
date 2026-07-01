@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2026-04-12 19:12:25 by pgm-->
+<display version="2.0.0">
+  <name>INST $(UUT):$(CH)</name>
+  <width>750</width>
+  <height>740</height>
+  <widget type="group" version="3.0.0">
+    <name>SYSTEM</name>
+    <x>10</x>
+    <y>10</y>
+    <width>690</width>
+    <height>560</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>TITLE_1</name>
+      <text>INST CH:$(CH) $(UUT)</text>
+      <width>330</width>
+      <height>50</height>
+      <font>
+        <font name="Header 2" family="Liberation Sans" style="BOLD" size="18.0">
+        </font>
+      </font>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>Control</name>
+      <x>390</x>
+      <y>60</y>
+      <width>250</width>
+      <height>120</height>
+      <widget type="bool_button" version="2.0.0">
+        <name>Boolean Button</name>
+        <pv_name>${UUT}:INST:$(CH):RUNSTOP</pv_name>
+        <x>3</x>
+        <y>12</y>
+        <height>50</height>
+        <off_label>RUN</off_label>
+        <on_label>STOP</on_label>
+        <actions>
+          <action type="write_pv">
+            <description>Write PV</description>
+            <pv_name>$(pv_name)</pv_name>
+            <value>1</value>
+          </action>
+          <action type="write_pv">
+            <description>Write PV</description>
+            <pv_name>$(pv_name)</pv_name>
+            <value>0</value>
+          </action>
+        </actions>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update</name>
+        <pv_name>${UUT}:INST:${CH}:UPDATES</pv_name>
+        <x>3</x>
+        <y>72</y>
+        <width>111</width>
+      </widget>
+    </widget>
+    <widget type="combo" version="2.0.0">
+      <name>Combo Box</name>
+      <pv_name>${UUT}:INST:${CH}:MON_RL</pv_name>
+      <x>522</x>
+      <y>10</y>
+      <width>110</width>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>Redis Settings</name>
+      <x>10</x>
+      <y>200</y>
+      <width>622</width>
+      <widget type="textentry" version="3.0.0">
+        <name>Text Entry</name>
+        <pv_name>pva://${UUT}:INST:${CH}:REDIS:SET/HOST</pv_name>
+        <x>102</x>
+        <y>22</y>
+        <width>60</width>
+      </widget>
+      <widget type="textentry" version="3.0.0">
+        <name>Text Entry_1</name>
+        <pv_name>pva://${UUT}:INST:${CH}:REDIS:SET/PORT</pv_name>
+        <x>392</x>
+        <y>22</y>
+        <width>70</width>
+      </widget>
+      <widget type="textentry" version="3.0.0">
+        <name>Text Entry_3</name>
+        <pv_name>pva://${UUT}:INST:${CH}:REDIS:SET/MKEY</pv_name>
+        <x>102</x>
+        <y>102</y>
+        <width>280</width>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label</name>
+        <text>HOST</text>
+        <x>2</x>
+        <y>22</y>
+        <width>40</width>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_1</name>
+        <text>PORT</text>
+        <x>272</x>
+        <y>22</y>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_2</name>
+        <text>MKEY</text>
+        <x>2</x>
+        <y>102</y>
+      </widget>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_1</name>
+      <pv_name>${UUT}:INST:${CH}:STRATEGY</pv_name>
+      <x>230</x>
+      <y>10</y>
+      <width>200</width>
+      <height>30</height>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>Redis Status</name>
+      <x>20</x>
+      <y>420</y>
+      <width>612</width>
+      <height>120</height>
+      <widget type="textentry" version="3.0.0">
+        <name>Text Entry_2</name>
+        <pv_name>pva://${UUT}:INST:${CH}:REDIS:STA/BCOUNT</pv_name>
+        <x>112</x>
+        <y>22</y>
+      </widget>
+      <widget type="textentry" version="3.0.0">
+        <name>Text Entry_5</name>
+        <pv_name>pva://${UUT}:INST:${CH}:REDIS:STA/MMKEY</pv_name>
+        <x>112</x>
+        <y>62</y>
+        <width>450</width>
+      </widget>
+      <widget type="textentry" version="3.0.0">
+        <name>Text Entry_6</name>
+        <pv_name>pva://${UUT}:INST:${CH}:REDIS:STA/STATUS</pv_name>
+        <x>402</x>
+        <y>22</y>
+        <width>110</width>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_4</name>
+        <text>BCOUNT</text>
+        <x>2</x>
+        <y>22</y>
+        <width>70</width>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_5</name>
+        <text>MMKEY</text>
+        <x>2</x>
+        <y>62</y>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_6</name>
+        <text>STATUS</text>
+        <x>282</x>
+        <y>22</y>
+      </widget>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>MGT STATUS</name>
+    <macros>
+      <pvname0>${UUT}:SYS:C:TEMP</pvname0>
+      <pvname1>${UUT}:A:FPGA:TEMP</pvname1>
+      <pvname2>${UUT}:SYS:MGTD:3V3</pvname2>
+      <pvname3>${UUT}:SYS:MGTD:1V8</pvname3>
+    </macros>
+    <x>490</x>
+    <y>520</y>
+    <width>140</width>
+    <visible>false</visible>
+    <style>3</style>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="HIDE_EMPTY" prop_id="visible" out_exp="true">
+        <exp bool_exp="pvStr0.find(&quot;_9501_&quot;) &gt;= 0">
+          <expression>true</expression>
+        </exp>
+        <exp bool_exp="pvStr0.find(&quot;_9511_&quot;) &gt;= 0">
+          <expression>true</expression>
+        </exp>
+        <exp bool_exp="true">
+          <expression>false</expression>
+        </exp>
+        <pv_name>${UUT}:SYS:VERSION:FPGA</pv_name>
+      </rule>
+    </rules>
+    <widget type="thermometer" version="2.0.0">
+      <name>TEMP_3</name>
+      <pv_name>$(pvname0)</pv_name>
+      <y>30</y>
+      <width>70</width>
+      <height>90</height>
+      <fill_color>
+        <color name="MAJOR" red="255" green="0" blue="0">
+        </color>
+      </fill_color>
+      <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+      <limits_from_pv>false</limits_from_pv>
+      <maximum>75.0</maximum>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>UPDATE_6</name>
+      <pv_name>$(pvname0)</pv_name>
+      <x>10</x>
+      <y>80</y>
+      <width>50</width>
+      <height>40</height>
+      <font>
+        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color red="255" green="255" blue="255">
+        </color>
+      </foreground_color>
+      <transparent>true</transparent>
+      <format>1</format>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="thermometer" version="2.0.0">
+      <name>TEMP_4</name>
+      <pv_name>$(pvname1)</pv_name>
+      <x>70</x>
+      <y>30</y>
+      <width>70</width>
+      <height>90</height>
+      <fill_color>
+        <color name="MAJOR" red="255" green="0" blue="0">
+        </color>
+      </fill_color>
+      <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+      <limits_from_pv>false</limits_from_pv>
+      <maximum>75.0</maximum>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>UPDATE_8</name>
+      <pv_name>$(pvname2)</pv_name>
+      <x>70</x>
+      <y>130</y>
+      <width>70</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>LABEL_2</name>
+      <text>3V3 </text>
+      <y>130</y>
+      <width>70</width>
+      <height>30</height>
+      <transparent>false</transparent>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>UPDATE_10</name>
+      <pv_name>$(pvname3)</pv_name>
+      <x>70</x>
+      <y>170</y>
+      <width>70</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>LABEL_3</name>
+      <text>1V8 </text>
+      <y>170</y>
+      <width>70</width>
+      <height>30</height>
+      <transparent>false</transparent>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>LABEL_4</name>
+      <text>MGT</text>
+      <width>140</width>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <border_width>1</border_width>
+    </widget>
+  </widget>
+</display>
