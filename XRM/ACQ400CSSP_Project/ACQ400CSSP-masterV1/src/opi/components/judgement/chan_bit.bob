@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2025-03-13 13:39:03 by dt100-->
+<display version="2.0.0">
+  <name>Chan Bit</name>
+  <width>20</width>
+  <height>50</height>
+  <widget type="group" version="3.0.0">
+    <name>CHAN BIT</name>
+    <width>20</width>
+    <height>50</height>
+    <visible>false</visible>
+    <style>3</style>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="HIDE_EMPTY" prop_id="visible" out_exp="true">
+        <exp bool_exp="pv0&gt;=int(&quot;$(chan)&quot;)">
+          <expression>true</expression>
+        </exp>
+        <exp bool_exp="true">
+          <expression>false</expression>
+        </exp>
+        <pv_name>$(UUT):$(SITE):NCHAN</pv_name>
+      </rule>
+    </rules>
+    <widget type="led" version="2.0.0">
+      <name>LED</name>
+      <pv_name>$(pvname0)</pv_name>
+      <bit>$(idx)</bit>
+      <y>30</y>
+      <off_color>
+        <color red="153" green="0" blue="0">
+        </color>
+      </off_color>
+      <on_color>
+        <color name="STOP" red="255" green="0" blue="0">
+        </color>
+      </on_color>
+      <square>true</square>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Action Button</name>
+      <actions>
+        <action type="write_pv">
+          <pv_name>$(pv_name)</pv_name>
+          <value>$(chan)</value>
+          <description>WritePV</description>
+        </action>
+      </actions>
+      <pv_name>$(pvname1)$(DID)</pv_name>
+      <text>$(chan)</text>
+      <width>20</width>
+      <height>20</height>
+    </widget>
+  </widget>
+</display>

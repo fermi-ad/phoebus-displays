@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2025-04-09 11:41:35 by dt100-->
+<display version="2.0.0">
+  <name>Chan Monitor</name>
+  <width>50</width>
+  <height>140</height>
+  <widget type="group" version="3.0.0">
+    <name>CHAN MON</name>
+    <width>50</width>
+    <height>140</height>
+    <visible>false</visible>
+    <style>3</style>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="HIDE_EMPTY" prop_id="visible" out_exp="true">
+        <exp bool_exp="pv0&gt;=int(&quot;$(chan)&quot;)">
+          <expression>true</expression>
+        </exp>
+        <exp bool_exp="true">
+          <expression>false</expression>
+        </exp>
+        <pv_name>$(UUT):$(SITE):NCHAN</pv_name>
+      </rule>
+    </rules>
+    <widget type="tank" version="2.0.0">
+      <name>Tank</name>
+      <pv_name>${UUT}:${SITE}:AI:CH:$(chan)</pv_name>
+      <width>50</width>
+      <height>140</height>
+      <scale_visible>false</scale_visible>
+      <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label</name>
+      <text>$(chan)</text>
+      <width>50</width>
+      <height>30</height>
+    </widget>
+  </widget>
+</display>

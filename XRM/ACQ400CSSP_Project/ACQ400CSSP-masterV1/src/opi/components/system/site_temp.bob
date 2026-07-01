@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>Site Temp</name>
+  <width>80</width>
+  <height>230</height>
+  <widget type="rectangle" version="2.0.0">
+    <name>PLACEHOLDER</name>
+    <width>80</width>
+    <height>230</height>
+    <line_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="Read_Background" red="240" green="240" blue="240">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>SITE_TEMP_1</name>
+    <macros>
+      <site>$(site=1)</site>
+      <pvname0>${UUT}:SYS:$(site):TEMP</pvname0>
+      <pvname1>${UUT}:$(site):MODEL</pvname1>
+      <pvname2>${UUT}:MOD:$(site):GOOD</pvname2>
+      <pvname3>${UUT}:MOD:$(site):FAIL</pvname3>
+    </macros>
+    <width>80</width>
+    <height>230</height>
+    <visible>false</visible>
+    <style>3</style>
+    <rules>
+      <rule name="HIDE_EMPTY" prop_id="visible" out_exp="false">
+        <exp bool_exp="true">
+          <value>true</value>
+        </exp>
+        <pv_name>${UUT}:$(site):MODEL</pv_name>
+      </rule>
+    </rules>
+    <widget type="label" version="2.0.0">
+      <name>LABEL_1</name>
+      <text>SITE $(site)</text>
+      <width>80</width>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="thermometer" version="2.0.0">
+      <name>TEMP_1</name>
+      <pv_name>$(pvname0)</pv_name>
+      <y>30</y>
+      <width>80</width>
+      <height>130</height>
+      <fill_color>
+        <color name="MAJOR" red="255" green="0" blue="0">
+        </color>
+      </fill_color>
+      <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+      <limits_from_pv>false</limits_from_pv>
+      <maximum>75.0</maximum>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>UPDATE_2</name>
+      <pv_name>$(pvname0)</pv_name>
+      <x>15</x>
+      <y>120</y>
+      <width>50</width>
+      <height>40</height>
+      <font>
+        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color red="255" green="255" blue="255">
+        </color>
+      </foreground_color>
+      <transparent>true</transparent>
+      <format>1</format>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_1</name>
+      <pv_name>$(pvname2)</pv_name>
+      <x>15</x>
+      <y>170</y>
+      <off_color>
+        <color name="Grid" red="128" green="128" blue="128">
+        </color>
+      </off_color>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_2</name>
+      <pv_name>$(pvname3)</pv_name>
+      <x>45</x>
+      <y>170</y>
+      <off_color>
+        <color name="Grid" red="128" green="128" blue="128">
+        </color>
+      </off_color>
+      <on_color>
+        <color name="MAJOR" red="255" green="0" blue="0">
+        </color>
+      </on_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>UPDATE_3</name>
+      <pv_name>$(pvname1)</pv_name>
+      <y>200</y>
+      <width>80</width>
+      <height>30</height>
+      <background_color>
+        <color red="255" green="255" blue="255">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <border_width>1</border_width>
+    </widget>
+  </widget>
+</display>

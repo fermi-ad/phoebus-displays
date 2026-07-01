@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>Site Line</name>
+  <width>960</width>
+  <height>70</height>
+  <widget type="group" version="3.0.0">
+    <name>SITE LINE</name>
+    <macros>
+      <site>$(site=1)</site>
+      <dx>$(dx=d2)</dx>
+      <pvname0>${UUT}:0:SIG:CLK_S$(site):FREQ</pvname0>
+      <pvname1>${UUT}:$(site):SIG:clk_count:ACTIVE</pvname1>
+      <label>Site $(site)</label>
+      <NSITES>$(NSITES=6)</NSITES>
+    </macros>
+    <width>960</width>
+    <height>70</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="group" version="3.0.0">
+      <name>PLACEHOLDER</name>
+      <width>960</width>
+      <height>70</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="rectangle" version="2.0.0">
+        <name>Rectangle</name>
+        <width>960</width>
+        <height>30</height>
+        <line_color>
+          <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+          </color>
+        </line_color>
+        <background_color>
+          <color name="Read_Background" red="240" green="240" blue="240">
+          </color>
+        </background_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_14</name>
+        <text>X</text>
+        <width>960</width>
+        <height>30</height>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_15</name>
+        <text>Site $(site)</text>
+        <width>80</width>
+        <height>30</height>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <background_color>
+          <color name="Button_Background" red="210" green="210" blue="210">
+          </color>
+        </background_color>
+        <transparent>false</transparent>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <tooltip>$(SITE_$(site)_MODEL)</tooltip>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_12</name>
+        <text>$(dx)</text>
+        <x>880</x>
+        <width>80</width>
+        <height>30</height>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <background_color>
+          <color name="Button_Background" red="210" green="210" blue="210">
+          </color>
+        </background_color>
+        <transparent>false</transparent>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>SITE LINE INNER</name>
+      <width>960</width>
+      <height>70</height>
+      <visible>false</visible>
+      <style>3</style>
+      <rules>
+        <rule name="HIDE_EMPTY" prop_id="visible" out_exp="true">
+          <exp bool_exp="true">
+            <expression>len(pvStr0) &gt; 0</expression>
+          </exp>
+          <pv_name>$(UUT):$(site):MODEL</pv_name>
+        </rule>
+      </rules>
+      <widget type="label" version="2.0.0">
+        <name>Label_11</name>
+        <text>$(dx)</text>
+        <x>880</x>
+        <width>80</width>
+        <height>30</height>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <background_color>
+          <color name="MAJOR" red="255" green="0" blue="0">
+          </color>
+        </background_color>
+        <transparent>false</transparent>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <rules>
+          <rule name="SITE_BG_COLOR" prop_id="background_color" out_exp="false">
+            <exp bool_exp="$(site)==-1">
+              <value>
+                <color red="0" green="0" blue="0">
+                </color>
+              </value>
+            </exp>
+            <exp bool_exp="$(site)==0">
+              <value>
+                <color red="143" green="106" blue="35">
+                </color>
+              </value>
+            </exp>
+            <exp bool_exp="$(site)==1">
+              <value>
+                <color red="255" green="0" blue="0">
+                </color>
+              </value>
+            </exp>
+            <exp bool_exp="$(site)==2">
+              <value>
+                <color red="255" green="127" blue="0">
+                </color>
+              </value>
+            </exp>
+            <exp bool_exp="$(site)==3">
+              <value>
+                <color red="255" green="255" blue="0">
+                </color>
+              </value>
+            </exp>
+            <exp bool_exp="$(site)==4">
+              <value>
+                <color red="79" green="143" blue="35">
+                </color>
+              </value>
+            </exp>
+            <exp bool_exp="$(site)==5">
+              <value>
+                <color red="0" green="149" blue="255">
+                </color>
+              </value>
+            </exp>
+            <exp bool_exp="$(site)==6">
+              <value>
+                <color red="0" green="0" blue="255">
+                </color>
+              </value>
+            </exp>
+            <pv_name>loc://UUT</pv_name>
+          </rule>
+        </rules>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_10</name>
+        <text>$(label)</text>
+        <width>80</width>
+        <height>30</height>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <background_color>
+          <color name="MAJOR" red="255" green="0" blue="0">
+          </color>
+        </background_color>
+        <transparent>false</transparent>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <rules>
+          <rule name="SITE_BG_COLOR" prop_id="background_color" out_exp="false">
+            <exp bool_exp="$(site)==-1">
+              <value>
+                <color red="0" green="0" blue="0">
+                </color>
+              </value>
+            </exp>
+            <exp bool_exp="$(site)==0">
+              <value>
+                <color red="143" green="106" blue="35">
+                </color>
+              </value>
+            </exp>
+            <exp bool_exp="$(site)==1">
+              <value>
+                <color red="255" green="0" blue="0">
+                </color>
+              </value>
+            </exp>
+            <exp bool_exp="$(site)==2">
+              <value>
+                <color red="255" green="127" blue="0">
+                </color>
+              </value>
+            </exp>
+            <exp bool_exp="$(site)==3">
+              <value>
+                <color red="255" green="255" blue="0">
+                </color>
+              </value>
+            </exp>
+            <exp bool_exp="$(site)==4">
+              <value>
+                <color red="79" green="143" blue="35">
+                </color>
+              </value>
+            </exp>
+            <exp bool_exp="$(site)==5">
+              <value>
+                <color red="0" green="149" blue="255">
+                </color>
+              </value>
+            </exp>
+            <exp bool_exp="$(site)==6">
+              <value>
+                <color red="0" green="0" blue="255">
+                </color>
+              </value>
+            </exp>
+            <pv_name>loc://UUT</pv_name>
+          </rule>
+        </rules>
+        <tooltip>$(SITE_$(site)_MODEL)</tooltip>
+      </widget>
+      <widget type="polyline" version="2.0.0">
+        <name>Polyline_11</name>
+        <x>80</x>
+        <width>800</width>
+        <height>30</height>
+        <points>
+          <point x="0.0" y="15.0">
+          </point>
+          <point x="800.0000000000001" y="15.0">
+          </point>
+        </points>
+        <line_color>
+          <color name="Text" red="0" green="0" blue="0">
+          </color>
+        </line_color>
+        <arrows>2</arrows>
+      </widget>
+      <widget type="led" version="2.0.0">
+        <name>LED_3</name>
+        <pv_name>$(pvname1)</pv_name>
+        <x>935</x>
+        <y>5</y>
+        <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+      </widget>
+      <widget type="embedded" version="2.0.0">
+        <name>MASTER SITE</name>
+        <file>master_site.bob</file>
+        <x>90</x>
+        <width>760</width>
+        <height>30</height>
+        <resize>2</resize>
+        <transparent>true</transparent>
+      </widget>
+      <widget type="embedded" version="2.0.0">
+        <name>SITE 480</name>
+        <file>480_site_bar.bob</file>
+        <x>90</x>
+        <y>40</y>
+        <width>760</width>
+        <height>30</height>
+        <resize>2</resize>
+        <transparent>true</transparent>
+      </widget>
+    </widget>
+  </widget>
+</display>

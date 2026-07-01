@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2025-03-12 11:04:58 by dt100-->
+<display version="2.0.0">
+  <name>DO Arr</name>
+  <macros>
+    <pvbase>$(pvbase=${UUT}:${SITE}:IMM:DO:BYTE1)</pvbase>
+  </macros>
+  <width>240</width>
+  <height>30</height>
+  <widget type="group" version="3.0.0">
+    <name>DO BIT ARRAY</name>
+    <macros>
+      <pvbase>${UUT}:${SITE}:IMM:DO:BYTE$(byte)</pvbase>
+      <pvname0>${UUT}:${SITE}:IMM:DO:BYTE$(byte).DISV</pvname0>
+      <pvname1>${UUT}:${SITE}:IMM:DO:BYTE$(byte).DISV</pvname1>
+    </macros>
+    <width>240</width>
+    <height>30</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="HIDE_DISABLED" prop_id="visible" out_exp="true">
+        <exp bool_exp="pv0==pv1">
+          <expression>true</expression>
+        </exp>
+        <exp bool_exp="true">
+          <expression>false</expression>
+        </exp>
+        <pv_name>$(pvname0)</pv_name>
+        <pv_name>$(pvname1)</pv_name>
+      </rule>
+    </rules>
+    <widget type="template" version="2.0.0">
+      <name>DO BUTTON ARRAY</name>
+      <file>do_button.bob</file>
+      <instances>
+        <instance>
+          <macros>
+            <bit>7</bit>
+          </macros>
+        </instance>
+        <instance>
+          <macros>
+            <bit>6</bit>
+          </macros>
+        </instance>
+        <instance>
+          <macros>
+            <bit>5</bit>
+          </macros>
+        </instance>
+        <instance>
+          <macros>
+            <bit>4</bit>
+          </macros>
+        </instance>
+        <instance>
+          <macros>
+            <bit>3</bit>
+          </macros>
+        </instance>
+        <instance>
+          <macros>
+            <bit>2</bit>
+          </macros>
+        </instance>
+        <instance>
+          <macros>
+            <bit>1</bit>
+          </macros>
+        </instance>
+        <instance>
+          <macros>
+            <bit>0</bit>
+          </macros>
+        </instance>
+      </instances>
+      <width>240</width>
+      <height>30</height>
+      <horizontal>true</horizontal>
+      <gap>0</gap>
+    </widget>
+  </widget>
+</display>
