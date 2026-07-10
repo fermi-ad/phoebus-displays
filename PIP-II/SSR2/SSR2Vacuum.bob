@@ -1,0 +1,3109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>SSR2Vacuum</name>
+  <macros>
+    <plc>PIP2IT:pSSR2_PLC_</plc>
+    <vac>PIP2IT:pSSR2_VAC_</vac>
+    <view>Vacuum</view>
+    <state>PIP2IT:pSSR2_CTRL_SM:STATE</state>
+  </macros>
+  <width>1300</width>
+  <height>830</height>
+  <grid_step_x>5</grid_step_x>
+  <grid_step_y>5</grid_step_y>
+  <widget type="picture" version="2.0.0">
+    <name>Picture</name>
+    <file>../../images/SSR2Cryostat.png</file>
+    <x>265</x>
+    <y>230</y>
+    <width>840</width>
+    <height>295</height>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_1</name>
+    <x>35</x>
+    <y>390</y>
+    <width>675</width>
+    <height>295</height>
+    <points>
+      <point x="135.0" y="0.0">
+      </point>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="0.0" y="295.0">
+      </point>
+      <point x="675.0" y="295.0">
+      </point>
+    </points>
+    <line_width>10</line_width>
+    <line_color>
+      <color red="128" green="128" blue="128">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_7</name>
+    <x>1500</x>
+    <y>40</y>
+    <width>1300</width>
+    <height>790</height>
+    <line_width>1</line_width>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="polygon" version="2.0.0">
+    <name>Polygon_4</name>
+    <x>80</x>
+    <y>350</y>
+    <width>1</width>
+    <height>35</height>
+    <points>
+      <point x="0.0" y="35.0">
+      </point>
+      <point x="0.0" y="0.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="symbol" version="2.0.0">
+    <name>Symbol_31</name>
+    <pv_name>$(system)VG201:ValveStatus</pv_name>
+    <symbols>
+      <symbol>../../images/ControlValveRed.png</symbol>
+      <symbol>../../images/ControlValveGreen.png</symbol>
+      <symbol>../../images/ControlValveYellow.png</symbol>
+      <symbol>../../images/ControlValveWhite.png</symbol>
+    </symbols>
+    <x>1200</x>
+    <y>360</y>
+    <width>40</width>
+    <height>40</height>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_4</name>
+    <x>220</x>
+    <y>320</y>
+    <width>1</width>
+    <height>70</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="0.0" y="70.0">
+      </point>
+    </points>
+    <line_width>10</line_width>
+    <line_color>
+      <color red="128" green="128" blue="128">
+      </color>
+    </line_color>
+    <line_style>2</line_style>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_5</name>
+    <x>220</x>
+    <y>180</y>
+    <width>680</width>
+    <height>140</height>
+    <points>
+      <point x="680.0" y="0.0">
+      </point>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="0.0" y="140.0">
+      </point>
+    </points>
+    <line_width>10</line_width>
+    <line_color>
+      <color red="128" green="128" blue="128">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="polygon" version="2.0.0">
+    <name>Polygon_19</name>
+    <x>360</x>
+    <y>140</y>
+    <width>1</width>
+    <height>40</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="0.0" y="40.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="symbol" version="2.0.0">
+    <name>Symbol_27</name>
+    <pv_name>$(system)VT052:ValveStatus</pv_name>
+    <symbols>
+      <symbol>../../images/ControlValveRed.png</symbol>
+      <symbol>../../images/ControlValveGreen.png</symbol>
+      <symbol>../../images/ControlValveYellow.png</symbol>
+      <symbol>../../images/ControlValveWhite.png</symbol>
+    </symbols>
+    <x>235</x>
+    <y>150</y>
+    <width>40</width>
+    <height>40</height>
+    <tooltip>$(pv_name)
+$(pv_value)
+$(actions)</tooltip>
+  </widget>
+  <widget type="polygon" version="2.0.0">
+    <name>Polygon_3</name>
+    <x>140</x>
+    <y>140</y>
+    <width>80</width>
+    <height>40</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="80.0" y="40.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <x>90</x>
+    <y>60</y>
+    <width>111</width>
+    <height>80</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="group" version="3.0.0">
+      <name>Group</name>
+      <width>100</width>
+      <height>80</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="rectangle" version="2.0.0">
+        <name>Rectangle_11</name>
+        <y>35</y>
+        <height>45</height>
+        <line_width>1</line_width>
+        <line_color>
+          <color red="0" green="0" blue="0">
+          </color>
+        </line_color>
+        <background_color>
+          <color name="Read_Background" red="240" green="240" blue="240">
+          </color>
+        </background_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_16</name>
+        <text>Insulating
+Vacuum</text>
+        <height>35</height>
+        <background_color>
+          <color name="Button_Background" red="210" green="210" blue="210">
+          </color>
+        </background_color>
+        <transparent>false</transparent>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <border_width>1</border_width>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_274</name>
+        <pv_name>$(system)PPG051:VacP</pv_name>
+        <y>35</y>
+        <height>15</height>
+        <visible>false</visible>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color red="128" green="176" blue="0">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color red="0" green="0" blue="0">
+          </color>
+        </background_color>
+        <format>2</format>
+        <precision>2</precision>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <rules>
+          <rule name="Show Value" prop_id="visible" out_exp="false">
+            <exp bool_exp="pv0&gt;2e-3">
+              <value>true</value>
+            </exp>
+            <pv_name>$(system)PPG051:VacP</pv_name>
+          </rule>
+          <rule name="Show Unit" prop_id="show_units" out_exp="false">
+            <exp bool_exp="pv0&gt;2e-3">
+              <value>true</value>
+            </exp>
+            <pv_name>$(system)PPG051:VacP</pv_name>
+          </rule>
+        </rules>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_275</name>
+        <pv_name>$(system)PPG051:VacP</pv_name>
+        <y>35</y>
+        <height>15</height>
+        <visible>false</visible>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color red="128" green="176" blue="0">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color red="0" green="0" blue="0">
+          </color>
+        </background_color>
+        <format>2</format>
+        <precision>2</precision>
+        <show_units>false</show_units>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <rules>
+          <rule name="Show Value" prop_id="visible" out_exp="false">
+            <exp bool_exp="pv0&gt;2e-3">
+              <value>true</value>
+            </exp>
+            <pv_name>$(system)PPG051:VacP</pv_name>
+          </rule>
+          <rule name="Show Unit" prop_id="show_units" out_exp="false">
+            <exp bool_exp="pv0&gt;2e-3">
+              <value>true</value>
+            </exp>
+            <pv_name>$(system)PPG051:VacP</pv_name>
+          </rule>
+        </rules>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_276</name>
+        <pv_name>$(system)PCC051:VacP</pv_name>
+        <y>65</y>
+        <height>15</height>
+        <visible>false</visible>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="12.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color red="0" green="255" blue="0">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color red="0" green="0" blue="0">
+          </color>
+        </background_color>
+        <format>2</format>
+        <precision>2</precision>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <rules>
+          <rule name="Show Value" prop_id="visible" out_exp="false">
+            <exp bool_exp="pv0&lt;=2e-3">
+              <value>true</value>
+            </exp>
+            <pv_name>$(system)PPG051:VacP</pv_name>
+          </rule>
+          <rule name="Show Units" prop_id="show_units" out_exp="false">
+            <exp bool_exp="pv0&lt;=2e-3">
+              <value>true</value>
+            </exp>
+            <pv_name>$(system)PPG051:VacP</pv_name>
+          </rule>
+        </rules>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_277</name>
+        <pv_name>$(system)PCC051:VacP</pv_name>
+        <y>65</y>
+        <height>15</height>
+        <visible>false</visible>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="12.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color red="0" green="255" blue="0">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color red="0" green="0" blue="0">
+          </color>
+        </background_color>
+        <format>2</format>
+        <precision>2</precision>
+        <show_units>false</show_units>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <rules>
+          <rule name="Show Value" prop_id="visible" out_exp="false">
+            <exp bool_exp="pv0&lt;=2e-3">
+              <value>true</value>
+            </exp>
+            <pv_name>$(system)PPG051:VacP</pv_name>
+          </rule>
+          <rule name="Show Units" prop_id="show_units" out_exp="false">
+            <exp bool_exp="pv0&lt;=2e-3">
+              <value>true</value>
+            </exp>
+            <pv_name>$(system)PPG051:VacP</pv_name>
+          </rule>
+        </rules>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_308</name>
+        <pv_name>$(system)PPG051:Name</pv_name>
+        <y>50</y>
+        <height>15</height>
+        <visible>false</visible>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="12.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="Attention" red="255" green="160" blue="0">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color red="0" green="0" blue="0">
+          </color>
+        </background_color>
+        <show_units>false</show_units>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <rules>
+          <rule name="Show Name" prop_id="visible" out_exp="false">
+            <exp bool_exp="pv0&gt;2e-3">
+              <value>true</value>
+            </exp>
+            <pv_name>$(system)PPG051:VacP</pv_name>
+          </rule>
+        </rules>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_309</name>
+        <pv_name>$(system)PCC051:Name</pv_name>
+        <y>50</y>
+        <height>15</height>
+        <visible>false</visible>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="12.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="Attention" red="255" green="160" blue="0">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color red="0" green="0" blue="0">
+          </color>
+        </background_color>
+        <show_units>false</show_units>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <rules>
+          <rule name="Show Name" prop_id="visible" out_exp="false">
+            <exp bool_exp="pv0&lt;=2e-3">
+              <value>true</value>
+            </exp>
+            <pv_name>$(system)PPG051:VacP</pv_name>
+          </rule>
+        </rules>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_6</name>
+      <x>110</x>
+      <y>40</y>
+      <width>1</width>
+      <height>25</height>
+      <visible>false</visible>
+      <points>
+        <point x="0.0" y="25.0">
+        </point>
+        <point x="0.0" y="0.0">
+        </point>
+      </points>
+      <line_color>
+        <color name="Attention" red="255" green="160" blue="0">
+        </color>
+      </line_color>
+      <arrows>2</arrows>
+      <arrow_length>10</arrow_length>
+      <rules>
+        <rule name="Show Up Arrow" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0&gt;2e-3">
+            <value>true</value>
+          </exp>
+          <pv_name>$(system)PPG051:VacP</pv_name>
+        </rule>
+      </rules>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_7</name>
+      <x>110</x>
+      <y>50</y>
+      <width>1</width>
+      <height>25</height>
+      <visible>false</visible>
+      <points>
+        <point x="0.0" y="25.0">
+        </point>
+        <point x="0.0" y="0.0">
+        </point>
+      </points>
+      <line_color>
+        <color name="Attention" red="255" green="160" blue="0">
+        </color>
+      </line_color>
+      <arrows>1</arrows>
+      <arrow_length>10</arrow_length>
+      <rules>
+        <rule name="Show Up Arrow" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0&lt;=2e-3">
+            <value>true</value>
+          </exp>
+          <pv_name>$(system)PPG051:VacP</pv_name>
+        </rule>
+      </rules>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group_1</name>
+    <x>25</x>
+    <y>270</y>
+    <width>111</width>
+    <height>80</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="group" version="3.0.0">
+      <name>Group_2</name>
+      <width>100</width>
+      <height>80</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="rectangle" version="2.0.0">
+        <name>Rectangle_12</name>
+        <y>35</y>
+        <height>45</height>
+        <line_width>1</line_width>
+        <line_color>
+          <color red="0" green="0" blue="0">
+          </color>
+        </line_color>
+        <background_color>
+          <color name="Read_Background" red="240" green="240" blue="240">
+          </color>
+        </background_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_40</name>
+        <text>US Beamline
+Vacuum</text>
+        <height>35</height>
+        <background_color>
+          <color name="Button_Background" red="210" green="210" blue="210">
+          </color>
+        </background_color>
+        <transparent>false</transparent>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <border_width>1</border_width>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_314</name>
+        <pv_name>$(system)PPG101:VacP</pv_name>
+        <y>35</y>
+        <height>15</height>
+        <visible>false</visible>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="12.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color red="0" green="128" blue="0">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color red="0" green="0" blue="0">
+          </color>
+        </background_color>
+        <format>2</format>
+        <precision>2</precision>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <rules>
+          <rule name="Show Value" prop_id="visible" out_exp="false">
+            <exp bool_exp="pv0&gt;2e-3">
+              <value>true</value>
+            </exp>
+            <pv_name>$(system)PPG101:VacP</pv_name>
+          </rule>
+          <rule name="Show Units" prop_id="show_units" out_exp="false">
+            <exp bool_exp="pv0&gt;2e-3">
+              <value>true</value>
+            </exp>
+            <pv_name>$(system)PPG101:VacP</pv_name>
+          </rule>
+        </rules>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_315</name>
+        <pv_name>$(system)PPG101:VacP</pv_name>
+        <y>35</y>
+        <height>15</height>
+        <visible>false</visible>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="12.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color red="0" green="128" blue="0">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color red="0" green="0" blue="0">
+          </color>
+        </background_color>
+        <format>2</format>
+        <precision>2</precision>
+        <show_units>false</show_units>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <rules>
+          <rule name="Show Value" prop_id="visible" out_exp="false">
+            <exp bool_exp="pv0&gt;2e-3">
+              <value>true</value>
+            </exp>
+            <pv_name>$(system)PPG101:VacP</pv_name>
+          </rule>
+          <rule name="Show Units" prop_id="show_units" out_exp="false">
+            <exp bool_exp="pv0&gt;2e-3">
+              <value>true</value>
+            </exp>
+            <pv_name>$(system)PPG101:VacP</pv_name>
+          </rule>
+        </rules>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_316</name>
+        <pv_name>$(system)PCC101:VacP</pv_name>
+        <y>65</y>
+        <height>15</height>
+        <visible>false</visible>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="12.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color red="0" green="255" blue="0">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color red="44" green="44" blue="44">
+          </color>
+        </background_color>
+        <format>2</format>
+        <precision>2</precision>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <rules>
+          <rule name="Show Value" prop_id="visible" out_exp="false">
+            <exp bool_exp="pv0&lt;=2e-3">
+              <value>true</value>
+            </exp>
+            <pv_name>$(system)PPG101:VacP</pv_name>
+          </rule>
+          <rule name="Show Units" prop_id="show_units" out_exp="false">
+            <exp bool_exp="pv0&lt;=2e-3">
+              <value>true</value>
+            </exp>
+            <pv_name>$(system)PPG101:VacP</pv_name>
+          </rule>
+        </rules>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_317</name>
+        <pv_name>$(system)PCC101:VacP</pv_name>
+        <y>65</y>
+        <height>15</height>
+        <visible>false</visible>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="12.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color red="0" green="255" blue="0">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color red="44" green="44" blue="44">
+          </color>
+        </background_color>
+        <format>2</format>
+        <precision>2</precision>
+        <show_units>false</show_units>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <rules>
+          <rule name="Show Value" prop_id="visible" out_exp="false">
+            <exp bool_exp="pv0&lt;=2e-3">
+              <value>true</value>
+            </exp>
+            <pv_name>$(system)PPG101:VacP</pv_name>
+          </rule>
+          <rule name="Show Units" prop_id="show_units" out_exp="false">
+            <exp bool_exp="pv0&lt;=2e-3">
+              <value>true</value>
+            </exp>
+            <pv_name>$(system)PPG101:VacP</pv_name>
+          </rule>
+        </rules>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_319</name>
+        <pv_name>$(system)PCC101:Name</pv_name>
+        <y>50</y>
+        <height>15</height>
+        <visible>false</visible>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="12.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="Attention" red="255" green="160" blue="0">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color red="44" green="44" blue="44">
+          </color>
+        </background_color>
+        <show_units>false</show_units>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <rules>
+          <rule name="Show Name" prop_id="visible" out_exp="false">
+            <exp bool_exp="pv0&lt;=2e-3">
+              <value>true</value>
+            </exp>
+            <pv_name>$(system)PPG101:VacP</pv_name>
+          </rule>
+        </rules>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_318</name>
+        <pv_name>$(system)PPG101:Name</pv_name>
+        <y>50</y>
+        <height>15</height>
+        <visible>false</visible>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="12.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="Attention" red="255" green="160" blue="0">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color red="44" green="44" blue="44">
+          </color>
+        </background_color>
+        <show_units>false</show_units>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <rules>
+          <rule name="Show Name" prop_id="visible" out_exp="false">
+            <exp bool_exp="pv0&gt;2e-3">
+              <value>true</value>
+            </exp>
+            <pv_name>$(system)PPG101:VacP</pv_name>
+          </rule>
+        </rules>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_8</name>
+      <x>110</x>
+      <y>40</y>
+      <width>1</width>
+      <height>25</height>
+      <visible>false</visible>
+      <points>
+        <point x="0.0" y="25.0">
+        </point>
+        <point x="0.0" y="0.0">
+        </point>
+      </points>
+      <line_color>
+        <color name="Attention" red="255" green="160" blue="0">
+        </color>
+      </line_color>
+      <arrows>2</arrows>
+      <arrow_length>10</arrow_length>
+      <rules>
+        <rule name="Show Up Arrow" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0&gt;2e-3">
+            <value>true</value>
+          </exp>
+          <pv_name>$(system)PPG101:VacP</pv_name>
+        </rule>
+      </rules>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_9</name>
+      <x>110</x>
+      <y>50</y>
+      <width>1</width>
+      <height>25</height>
+      <visible>false</visible>
+      <points>
+        <point x="0.0" y="25.0">
+        </point>
+        <point x="0.0" y="0.0">
+        </point>
+      </points>
+      <line_color>
+        <color name="Attention" red="255" green="160" blue="0">
+        </color>
+      </line_color>
+      <arrows>1</arrows>
+      <arrow_length>10</arrow_length>
+      <rules>
+        <rule name="Show Up Arrow" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0&lt;=2e-3">
+            <value>true</value>
+          </exp>
+          <pv_name>$(system)PPG101:VacP</pv_name>
+        </rule>
+      </rules>
+    </widget>
+  </widget>
+  <widget type="choice" version="2.0.0">
+    <name>Choice Button</name>
+    <pv_name>$(system)VT052:sOpen</pv_name>
+    <x>235</x>
+    <y>115</y>
+    <width>40</width>
+    <height>30</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <horizontal>false</horizontal>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <items>
+      <item>Close</item>
+      <item>Open</item>
+    </items>
+    <show_confirm_dialog>true</show_confirm_dialog>
+    <confirm_message>Are your sure you want to change IV Turbo Isolation Valve?</confirm_message>
+  </widget>
+  <widget type="symbol" version="2.0.0">
+    <name>Symbol_30</name>
+    <pv_name>$(system)PT052:PumpStatus</pv_name>
+    <symbols>
+      <symbol>../../images/TurboPumpRed.png</symbol>
+      <symbol>../../images/TurboPumpYellow.png</symbol>
+      <symbol>../../images/TurboPumpGreen.png</symbol>
+      <symbol>../../images/TurboPumpMagenta.png</symbol>
+    </symbols>
+    <x>515</x>
+    <y>155</y>
+    <width>50</width>
+    <height>50</height>
+    <background_color>
+      <color name="Grid" red="128" green="128" blue="128">
+      </color>
+    </background_color>
+    <rotation>270.0</rotation>
+    <transparent>false</transparent>
+    <tooltip>$(pv_name)
+$(pv_value)
+$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="symbol" version="2.0.0">
+    <name>Symbol_26</name>
+    <pv_name>$(system)PS053:PumpStatus</pv_name>
+    <symbols>
+      <symbol>../../images/ScrollPumpRed.png</symbol>
+      <symbol>../../images/ScrollPumpGreen.png</symbol>
+    </symbols>
+    <x>900</x>
+    <y>155</y>
+    <width>50</width>
+    <height>50</height>
+    <background_color>
+      <color name="Grid" red="128" green="128" blue="128">
+      </color>
+    </background_color>
+    <rotation>270.0</rotation>
+    <transparent>false</transparent>
+    <tooltip>$(pv_name)
+$(pv_value)
+$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="symbol" version="2.0.0">
+    <name>Symbol_32</name>
+    <pv_name>$(system)VT102:ValveStatus</pv_name>
+    <symbols>
+      <symbol>../../images/ControlValveRed.png</symbol>
+      <symbol>../../images/ControlValveGreen.png</symbol>
+      <symbol>../../images/ControlValveYellow.png</symbol>
+      <symbol>../../images/ControlValveWhite.png</symbol>
+    </symbols>
+    <x>75</x>
+    <y>655</y>
+    <width>40</width>
+    <height>40</height>
+  </widget>
+  <widget type="choice" version="2.0.0">
+    <name>Choice Button_3</name>
+    <pv_name>$(system)VT102:sOpen</pv_name>
+    <x>75</x>
+    <y>695</y>
+    <width>40</width>
+    <height>30</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <horizontal>false</horizontal>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <items>
+      <item>Close</item>
+      <item>Open</item>
+    </items>
+    <show_confirm_dialog>true</show_confirm_dialog>
+    <confirm_message>Are your sure you want to change BL Turbo Isolation Valve?</confirm_message>
+  </widget>
+  <widget type="symbol" version="2.0.0">
+    <name>Symbol_35</name>
+    <pv_name>$(system)PT102:PumpStatus</pv_name>
+    <symbols>
+      <symbol>../../images/TurboPumpRed.png</symbol>
+      <symbol>../../images/TurboPumpYellow.png</symbol>
+      <symbol>../../images/TurboPumpGreen.png</symbol>
+      <symbol>../../images/TurboPumpMagenta.png</symbol>
+    </symbols>
+    <x>340</x>
+    <y>660</y>
+    <width>50</width>
+    <height>50</height>
+    <background_color>
+      <color name="Grid" red="128" green="128" blue="128">
+      </color>
+    </background_color>
+    <rotation>270.0</rotation>
+    <transparent>false</transparent>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group_7</name>
+    <x>265</x>
+    <y>720</y>
+    <width>200</width>
+    <height>95</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle_6</name>
+      <width>200</width>
+      <height>95</height>
+      <line_width>1</line_width>
+      <background_color>
+        <color name="Read_Background" red="240" green="240" blue="240">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Action Button_8</name>
+      <actions>
+        <action type="write_pv">
+          <description>Start Turbo</description>
+          <pv_name>$(system)PT102:sStart</pv_name>
+          <value>1</value>
+        </action>
+      </actions>
+      <pv_name>$(system)PT102:sStart</pv_name>
+      <x>5</x>
+      <y>75</y>
+      <width>50</width>
+      <height>15</height>
+      <visible>false</visible>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <rules>
+        <rule name="Make Visible" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0=0&amp;&amp;pv1&lt;3e-2">
+            <value>true</value>
+          </exp>
+          <pv_name>$(system)PT102:OffOn</pv_name>
+          <pv_name>$(system)PPG103:VacP</pv_name>
+        </rule>
+      </rules>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <show_confirm_dialog>true</show_confirm_dialog>
+      <confirm_message>Are your sure you want to Start BL Turbo Pump?</confirm_message>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_49</name>
+      <text>Status</text>
+      <x>25</x>
+      <y>30</y>
+      <width>45</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="12.0">
+        </font>
+      </font>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_50</name>
+      <text>Speed</text>
+      <x>25</x>
+      <y>60</y>
+      <width>45</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="12.0">
+        </font>
+      </font>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_51</name>
+      <text>Beamline Turbo Pump</text>
+      <x>5</x>
+      <y>5</y>
+      <width>190</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_52</name>
+      <text>Off/On</text>
+      <x>25</x>
+      <y>45</y>
+      <width>45</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="12.0">
+        </font>
+      </font>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_53</name>
+      <text>Pump</text>
+      <x>65</x>
+      <y>60</y>
+      <width>60</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="12.0">
+        </font>
+      </font>
+      <horizontal_alignment>2</horizontal_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_54</name>
+      <text>Controller</text>
+      <x>65</x>
+      <y>45</y>
+      <width>60</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="12.0">
+        </font>
+      </font>
+      <horizontal_alignment>2</horizontal_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_55</name>
+      <text>Current</text>
+      <x>65</x>
+      <y>30</y>
+      <width>60</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="12.0">
+        </font>
+      </font>
+      <horizontal_alignment>2</horizontal_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_56</name>
+      <text>Frequency</text>
+      <x>65</x>
+      <y>75</y>
+      <width>60</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="12.0">
+        </font>
+      </font>
+      <horizontal_alignment>2</horizontal_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_306</name>
+      <pv_name>$(system)PTI102:Current</pv_name>
+      <x>130</x>
+      <y>30</y>
+      <width>65</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <format>1</format>
+      <precision>2</precision>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_307</name>
+      <pv_name>$(system)PTTC102:Temp</pv_name>
+      <x>130</x>
+      <y>45</y>
+      <width>65</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <format>1</format>
+      <precision>0</precision>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_310</name>
+      <pv_name>$(system)PTTP102:Temp</pv_name>
+      <x>130</x>
+      <y>60</y>
+      <width>65</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="12.0">
+        </font>
+      </font>
+      <format>1</format>
+      <precision>0</precision>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_311</name>
+      <pv_name>$(system)PTF102:Freq</pv_name>
+      <x>130</x>
+      <y>75</y>
+      <width>65</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <format>1</format>
+      <precision>2</precision>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_10</name>
+      <pv_name>$(system)PT102:OffOn</pv_name>
+      <x>5</x>
+      <y>45</y>
+      <width>15</width>
+      <height>15</height>
+      <square>true</square>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_17</name>
+      <pv_name>$(system)PT102:Fault</pv_name>
+      <x>5</x>
+      <y>30</y>
+      <width>15</width>
+      <height>15</height>
+      <off_color>
+        <color name="OK" red="0" green="255" blue="0">
+        </color>
+      </off_color>
+      <on_color>
+        <color name="MAJOR" red="255" green="0" blue="0">
+        </color>
+      </on_color>
+      <square>true</square>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_18</name>
+      <pv_name>$(system)PT102:Speed</pv_name>
+      <x>5</x>
+      <y>60</y>
+      <width>15</width>
+      <height>15</height>
+      <on_color>
+        <color name="OK" red="0" green="255" blue="0">
+        </color>
+      </on_color>
+      <square>true</square>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Action Button_7</name>
+      <actions>
+        <action type="write_pv">
+          <description>Stop Turbo</description>
+          <pv_name>$(system)PT102:sStart</pv_name>
+          <value>0</value>
+        </action>
+      </actions>
+      <pv_name>$(system)PT102:sStart</pv_name>
+      <x>5</x>
+      <y>75</y>
+      <width>50</width>
+      <height>15</height>
+      <visible>false</visible>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <rules>
+        <rule name="Make Visible" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0=1">
+            <value>true</value>
+          </exp>
+          <pv_name>$(system)PT102:OffOn</pv_name>
+        </rule>
+      </rules>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <show_confirm_dialog>true</show_confirm_dialog>
+      <confirm_message>Are your sure you want to Stop BL Turbo Pump?</confirm_message>
+    </widget>
+  </widget>
+  <widget type="polygon" version="2.0.0">
+    <name>Polygon_9</name>
+    <x>635</x>
+    <y>685</y>
+    <width>1</width>
+    <height>40</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="0.0" y="40.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="polygon" version="2.0.0">
+    <name>Polygon_1</name>
+    <x>830</x>
+    <y>125</y>
+    <width>1</width>
+    <height>55</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="0.0" y="55.00000000000001">
+      </point>
+    </points>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <x>670</x>
+    <y>105</y>
+    <width>85</width>
+    <height>105</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="symbol" version="2.0.0">
+      <name>Symbol_28</name>
+      <pv_name>$(system)VS053:ValveStatus</pv_name>
+      <symbols>
+        <symbol>../../images/EMControlValveRed.png</symbol>
+        <symbol>../../images/EMControlValveGreen.png</symbol>
+      </symbols>
+      <x>20</x>
+      <y>45</y>
+      <width>40</width>
+      <height>40</height>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>Group</name>
+      <width>85</width>
+      <height>40</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="rectangle" version="2.0.0">
+        <name>Rectangle_4</name>
+        <width>85</width>
+        <height>40</height>
+        <line_width>1</line_width>
+        <background_color>
+          <color name="Read_Background" red="240" green="240" blue="240">
+          </color>
+        </background_color>
+      </widget>
+      <widget type="led" version="2.0.0">
+        <name>LED_3</name>
+        <pv_name>$(system)VS053:ILK</pv_name>
+        <x>4</x>
+        <y>5</y>
+        <width>15</width>
+        <height>15</height>
+        <square>true</square>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="led" version="2.0.0">
+        <name>LED_11</name>
+        <pv_name>$(system)VS053:OverRide</pv_name>
+        <x>4</x>
+        <y>20</y>
+        <width>15</width>
+        <height>15</height>
+        <on_color>
+          <color name="Attention" red="255" green="160" blue="0">
+          </color>
+        </on_color>
+        <square>true</square>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_45</name>
+        <text>Interlock</text>
+        <x>30</x>
+        <y>5</y>
+        <width>55</width>
+        <height>15</height>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </font>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_46</name>
+        <text>OverRide</text>
+        <x>30</x>
+        <y>20</y>
+        <width>55</width>
+        <height>15</height>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </font>
+      </widget>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update</name>
+      <pv_name>$(system)VS053:OverRide</pv_name>
+      <x>10</x>
+      <y>85</y>
+      <width>60</width>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="12.0">
+        </font>
+      </font>
+      <show_units>false</show_units>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <x>480</x>
+    <y>630</y>
+    <width>85</width>
+    <height>110</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="symbol" version="2.0.0">
+      <name>Symbol_25</name>
+      <pv_name>$(system)VS103:ValveStatus</pv_name>
+      <symbols>
+        <symbol>../../images/EMControlValveRed.png</symbol>
+        <symbol>../../images/EMControlValveGreen.png</symbol>
+        <symbol>../../images/EMControlValveYellow.png</symbol>
+        <symbol>../../images/EMControlValveWhite.png</symbol>
+      </symbols>
+      <x>20</x>
+      <y>25</y>
+      <width>40</width>
+      <height>40</height>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>Group_8</name>
+      <y>70</y>
+      <width>85</width>
+      <height>40</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="rectangle" version="2.0.0">
+        <name>Rectangle_8</name>
+        <width>85</width>
+        <height>40</height>
+        <line_width>1</line_width>
+        <background_color>
+          <color name="Read_Background" red="240" green="240" blue="240">
+          </color>
+        </background_color>
+      </widget>
+      <widget type="led" version="2.0.0">
+        <name>LED_19</name>
+        <pv_name>$(system)VS103:ILK</pv_name>
+        <x>4</x>
+        <y>5</y>
+        <width>15</width>
+        <height>15</height>
+        <square>true</square>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="led" version="2.0.0">
+        <name>LED_20</name>
+        <pv_name>$(system)VS103:OverRide</pv_name>
+        <x>4</x>
+        <y>20</y>
+        <width>15</width>
+        <height>15</height>
+        <on_color>
+          <color name="Attention" red="255" green="160" blue="0">
+          </color>
+        </on_color>
+        <square>true</square>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_57</name>
+        <text>Interlock</text>
+        <x>30</x>
+        <y>5</y>
+        <width>55</width>
+        <height>15</height>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </font>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_58</name>
+        <text>OverRide</text>
+        <x>30</x>
+        <y>20</y>
+        <width>55</width>
+        <height>15</height>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="12.0">
+          </font>
+        </font>
+      </widget>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_2</name>
+      <pv_name>$(system)VS103:OverRide</pv_name>
+      <x>10</x>
+      <width>60</width>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="12.0">
+        </font>
+      </font>
+      <show_units>false</show_units>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+    </widget>
+  </widget>
+  <widget type="symbol" version="2.0.0">
+    <name>Symbol_29</name>
+    <pv_name>$(system)PS103:PumpStatus</pv_name>
+    <symbols>
+      <symbol>../../images/ScrollPumpRed.png</symbol>
+      <symbol>../../images/ScrollPumpGreen.png</symbol>
+    </symbols>
+    <x>710</x>
+    <y>660</y>
+    <width>50</width>
+    <height>50</height>
+    <background_color>
+      <color name="Grid" red="128" green="128" blue="128">
+      </color>
+    </background_color>
+    <rotation>270.0</rotation>
+    <transparent>false</transparent>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <x>780</x>
+    <y>60</y>
+    <width>100</width>
+    <height>65</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle_14</name>
+      <y>35</y>
+      <height>30</height>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="Read_Background" red="240" green="240" blue="240">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_265</name>
+      <pv_name>$(system)PPG053:VacP</pv_name>
+      <y>50</y>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="12.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color red="0" green="255" blue="255">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </background_color>
+      <format>2</format>
+      <precision>2</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_331</name>
+      <pv_name>$(system)PPG053:Name</pv_name>
+      <y>35</y>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="12.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="Attention" red="255" green="160" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </background_color>
+      <show_units>false</show_units>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_14</name>
+      <text>ASB
+Vacuum</text>
+      <height>35</height>
+      <background_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <border_width>1</border_width>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <x>585</x>
+    <y>720</y>
+    <width>100</width>
+    <height>65</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle_15</name>
+      <y>35</y>
+      <height>30</height>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="Read_Background" red="240" green="240" blue="240">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_18</name>
+      <text>ASB
+Vacuum</text>
+      <height>35</height>
+      <background_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_278</name>
+      <pv_name>$(system)PPG103:VacP</pv_name>
+      <y>50</y>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="12.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color red="0" green="255" blue="255">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </background_color>
+      <format>2</format>
+      <precision>2</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_332</name>
+      <pv_name>$(system)PPG103:Name</pv_name>
+      <y>35</y>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="12.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="Attention" red="255" green="160" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </background_color>
+      <show_units>false</show_units>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+  </widget>
+  <widget type="symbol" version="2.0.0">
+    <name>Symbol_36</name>
+    <pv_name>$(system)VG101:ValveStatus</pv_name>
+    <symbols>
+      <symbol>../../images/ControlValveRed.png</symbol>
+      <symbol>../../images/ControlValveGreen.png</symbol>
+      <symbol>../../images/ControlValveYellow.png</symbol>
+      <symbol>../../images/ControlValveWhite.png</symbol>
+    </symbols>
+    <x>125</x>
+    <y>360</y>
+    <width>40</width>
+    <height>40</height>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <x>1160</x>
+    <y>720</y>
+    <width>130</width>
+    <height>100</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="action_button" version="3.0.0">
+      <name>Action Button_1</name>
+      <actions>
+        <action type="open_display">
+          <description>IV Strip Charts</description>
+          <file>../../Plots/SSR2InsulatingVacuum.bob</file>
+          <target>window</target>
+        </action>
+      </actions>
+      <text>IV Strip Charts</text>
+      <y>25</y>
+      <width>130</width>
+      <height>25</height>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Action Button_4</name>
+      <actions>
+        <action type="open_display">
+          <description>Coupler Strip Charts</description>
+          <file>../../Plots/SSR2CouplerVacuum.bob</file>
+          <target>window</target>
+        </action>
+      </actions>
+      <text>Coupler Strip Charts</text>
+      <y>50</y>
+      <width>130</width>
+      <height>25</height>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Action Button_5</name>
+      <actions>
+        <action type="open_display">
+          <description>Cavity Strip Charts</description>
+          <file>../../Plots/SSR2BeamlineVacuum.bob</file>
+          <target>window</target>
+        </action>
+      </actions>
+      <text>Cavity Strip Charts</text>
+      <y>75</y>
+      <width>130</width>
+      <height>25</height>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Action Button_20</name>
+      <actions>
+        <action type="open_display">
+          <description>Vacuum Table</description>
+          <file>SSR2VacuumTable.bob</file>
+          <target>window</target>
+          <name>Temperature Table</name>
+        </action>
+      </actions>
+      <text>Vacuum Table</text>
+      <width>130</width>
+      <height>25</height>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+  </widget>
+  <widget type="choice" version="2.0.0">
+    <name>Choice Button_5</name>
+    <pv_name>$(system)VG101:sOpen</pv_name>
+    <x>125</x>
+    <y>400</y>
+    <width>40</width>
+    <height>30</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <horizontal>false</horizontal>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <items>
+      <item>Close</item>
+      <item>Open</item>
+    </items>
+    <show_confirm_dialog>true</show_confirm_dialog>
+    <confirm_message>Are your sure you want to change BL Turbo Isolation Valve?</confirm_message>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <x>1218</x>
+    <y>50</y>
+    <width>70</width>
+    <height>65</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle_5</name>
+      <width>70</width>
+      <height>65</height>
+      <line_width>1</line_width>
+      <background_color>
+        <color name="Read_Background" red="240" green="240" blue="240">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED</name>
+      <pv_name>$(system)00:Permit</pv_name>
+      <x>25</x>
+      <y>40</y>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_30</name>
+      <text>Vacuum Permit</text>
+      <width>70</width>
+      <height>35</height>
+      <background_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <border_width>1</border_width>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group_3</name>
+    <x>1190</x>
+    <y>250</y>
+    <width>100</width>
+    <height>65</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle_17</name>
+      <y>35</y>
+      <height>30</height>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="Read_Background" red="240" green="240" blue="240">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_266</name>
+      <pv_name>$(system)PCC201:VacP</pv_name>
+      <y>50</y>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="12.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color red="0" green="255" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </background_color>
+      <format>2</format>
+      <precision>2</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_333</name>
+      <pv_name>$(system)PCC201:Name</pv_name>
+      <y>35</y>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="12.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="Attention" red="255" green="160" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </background_color>
+      <show_units>false</show_units>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_74</name>
+      <text>DS Beamline
+Vacuum</text>
+      <height>35</height>
+      <background_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <border_width>1</border_width>
+    </widget>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_3</name>
+    <x>1190</x>
+    <y>315</y>
+    <width>15</width>
+    <height>70</height>
+    <points>
+      <point x="15.0" y="0.0">
+      </point>
+      <point x="15.0" y="60.0">
+      </point>
+      <point x="0.0" y="60.0">
+      </point>
+      <point x="0.0" y="70.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group_5</name>
+    <x>1135</x>
+    <y>50</y>
+    <width>70</width>
+    <height>65</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle_18</name>
+      <width>70</width>
+      <height>65</height>
+      <line_width>1</line_width>
+      <background_color>
+        <color name="Read_Background" red="240" green="240" blue="240">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_2</name>
+      <pv_name>$(acc):ppSSR2_PLC_650-plc111:HeartBeat</pv_name>
+      <x>25</x>
+      <y>40</y>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_75</name>
+      <text>PLC Heartbeat</text>
+      <width>70</width>
+      <height>35</height>
+      <background_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <border_width>1</border_width>
+    </widget>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display</name>
+    <file>SSR2banner.bob</file>
+    <width>1300</width>
+    <height>40</height>
+  </widget>
+  <widget type="symbol" version="2.0.0">
+    <name>Symbol_21</name>
+    <pv_name>$(system)PI101:rv_HVStatus</pv_name>
+    <symbols>
+      <symbol>../../images/IonPumpRed.png</symbol>
+      <symbol>../../images/IonPumpGreen.png</symbol>
+    </symbols>
+    <x>10</x>
+    <y>555</y>
+    <width>50</width>
+    <height>50</height>
+    <background_color>
+      <color name="Grid" red="128" green="128" blue="128">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_10</name>
+    <actions>
+      <action type="open_display">
+        <description>Open BL MKS937</description>
+        <file>../Common/vacuum-embedded-displays/mks937bGauge.bob</file>
+        <macros>
+          <device>PIP2IT:pSSR2_VAC_MKS937BL</device>
+        </macros>
+        <target>window</target>
+      </action>
+    </actions>
+    <text>Open
+BL MKS937</text>
+    <x>995</x>
+    <y>720</y>
+    <height>55</height>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_11</name>
+    <actions>
+      <action type="open_display">
+        <description>Open IV MKS937</description>
+        <file>../Common/vacuum-embedded-displays/mks937bGauge.bob</file>
+        <macros>
+          <device>PIP2IT:pSSR2_VAC_MKS937IV</device>
+        </macros>
+        <target>window</target>
+      </action>
+    </actions>
+    <text>Open
+IV MKS937</text>
+    <x>995</x>
+    <y>640</y>
+    <height>55</height>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_12</name>
+    <actions>
+      <action type="open_display">
+        <description>Open EdwardsXDS</description>
+        <file>../Common/vacuum-embedded-displays/EdwardsXDS15i.bob</file>
+        <macros>
+          <P>$(system)</P>
+          <R>PS053</R>
+        </macros>
+        <target>window</target>
+      </action>
+    </actions>
+    <text></text>
+    <x>900</x>
+    <y>155</y>
+    <width>50</width>
+    <height>50</height>
+    <transparent>true</transparent>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_13</name>
+    <actions>
+      <action type="open_display">
+        <description>Open EdwardsXDS</description>
+        <file>../Common/vacuum-embedded-displays/EdwardsXDS15i.bob</file>
+        <macros>
+          <P>$(system)</P>
+          <R>PS103</R>
+        </macros>
+        <target>window</target>
+      </action>
+    </actions>
+    <text></text>
+    <x>710</x>
+    <y>660</y>
+    <width>50</width>
+    <height>50</height>
+    <transparent>true</transparent>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_14</name>
+    <actions>
+      <action type="open_display">
+        <description>Open Leybold Turbovac</description>
+        <file>../Common/vacuum-embedded-displays/LeyboldTurbo.bob</file>
+        <macros>
+          <P>$(system)</P>
+          <R>TV90i</R>
+        </macros>
+        <target>window</target>
+      </action>
+    </actions>
+    <text></text>
+    <x>340</x>
+    <y>660</y>
+    <width>50</width>
+    <height>50</height>
+    <transparent>true</transparent>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_16</name>
+    <actions>
+      <action type="open_display">
+        <description>Open Leybold TD20</description>
+        <file>../Common/vacuum-embedded-displays/LeyboldTD20.bob</file>
+        <macros>
+          <P>$(system)</P>
+          <R>PT052</R>
+        </macros>
+        <target>window</target>
+      </action>
+    </actions>
+    <text></text>
+    <x>515</x>
+    <y>155</y>
+    <width>50</width>
+    <height>50</height>
+    <transparent>true</transparent>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <x>440</x>
+    <y>55</y>
+    <width>200</width>
+    <height>100</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle_2</name>
+      <width>200</width>
+      <height>100</height>
+      <line_width>1</line_width>
+      <background_color>
+        <color name="Read_Background" red="240" green="240" blue="240">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_33</name>
+      <text>Insulating Vacuum Turbo</text>
+      <width>200</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_9</name>
+      <pv_name>$(system)PT052:OffOn</pv_name>
+      <x>5</x>
+      <y>35</y>
+      <width>15</width>
+      <height>15</height>
+      <square>true</square>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_6</name>
+      <pv_name>$(sys)PT052:FAULT</pv_name>
+      <x>5</x>
+      <y>20</y>
+      <width>15</width>
+      <height>15</height>
+      <off_color>
+        <color name="OK" red="0" green="255" blue="0">
+        </color>
+      </off_color>
+      <on_color>
+        <color name="MAJOR" red="255" green="0" blue="0">
+        </color>
+      </on_color>
+      <square>true</square>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_8</name>
+      <pv_name>$(system)PT052:RAWSTA.B4</pv_name>
+      <x>5</x>
+      <y>50</y>
+      <width>15</width>
+      <height>15</height>
+      <on_color>
+        <color name="OK" red="0" green="255" blue="0">
+        </color>
+      </on_color>
+      <square>true</square>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_31</name>
+      <text>Status</text>
+      <x>25</x>
+      <y>20</y>
+      <width>50</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="12.0">
+        </font>
+      </font>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_32</name>
+      <text>AtSpeed</text>
+      <x>25</x>
+      <y>80</y>
+      <width>50</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="12.0">
+        </font>
+      </font>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_34</name>
+      <text>Off/On</text>
+      <x>25</x>
+      <y>35</y>
+      <width>50</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="12.0">
+        </font>
+      </font>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_77</name>
+      <text>RampUp</text>
+      <x>25</x>
+      <y>50</y>
+      <width>55</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="12.0">
+        </font>
+      </font>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_80</name>
+      <text>RampDn</text>
+      <x>25</x>
+      <y>65</y>
+      <width>50</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="12.0">
+        </font>
+      </font>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_35</name>
+      <text>Pump</text>
+      <x>90</x>
+      <y>65</y>
+      <width>60</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="12.0">
+        </font>
+      </font>
+      <horizontal_alignment>2</horizontal_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_36</name>
+      <text>Controller</text>
+      <x>90</x>
+      <y>50</y>
+      <width>60</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="12.0">
+        </font>
+      </font>
+      <horizontal_alignment>2</horizontal_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_37</name>
+      <text>Current</text>
+      <x>90</x>
+      <y>35</y>
+      <width>60</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="12.0">
+        </font>
+      </font>
+      <horizontal_alignment>2</horizontal_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_38</name>
+      <text>Frequency</text>
+      <x>90</x>
+      <y>80</y>
+      <width>60</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="12.0">
+        </font>
+      </font>
+      <horizontal_alignment>2</horizontal_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_297</name>
+      <pv_name>$(system)PT052:CURRENT</pv_name>
+      <x>155</x>
+      <y>35</y>
+      <width>40</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <format>1</format>
+      <precision>2</precision>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_298</name>
+      <pv_name>$(system)PT052:CTLRTEMP</pv_name>
+      <x>155</x>
+      <y>50</y>
+      <width>40</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <format>1</format>
+      <precision>0</precision>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_300</name>
+      <pv_name>$(system)PT052:PUMPTEMP</pv_name>
+      <x>155</x>
+      <y>65</y>
+      <width>40</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="12.0">
+        </font>
+      </font>
+      <format>1</format>
+      <precision>0</precision>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_301</name>
+      <pv_name>$(system)PT052:FREQ</pv_name>
+      <x>155</x>
+      <y>80</y>
+      <width>40</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <format>1</format>
+      <precision>0</precision>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_12</name>
+      <pv_name>$(system)PT052:RAWSTA.B5</pv_name>
+      <x>5</x>
+      <y>65</y>
+      <width>15</width>
+      <height>15</height>
+      <on_color>
+        <color name="OK" red="0" green="255" blue="0">
+        </color>
+      </on_color>
+      <square>true</square>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_13</name>
+      <pv_name>$(system)PT052:RAWSTA.BA</pv_name>
+      <x>5</x>
+      <y>80</y>
+      <width>15</width>
+      <height>15</height>
+      <on_color>
+        <color name="OK" red="0" green="255" blue="0">
+        </color>
+      </on_color>
+      <square>true</square>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <x>310</x>
+    <y>60</y>
+    <width>111</width>
+    <height>80</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_10</name>
+      <x>110</x>
+      <y>40</y>
+      <width>1</width>
+      <height>25</height>
+      <visible>false</visible>
+      <points>
+        <point x="0.0" y="25.0">
+        </point>
+        <point x="0.0" y="0.0">
+        </point>
+      </points>
+      <line_color>
+        <color name="Attention" red="255" green="160" blue="0">
+        </color>
+      </line_color>
+      <arrows>2</arrows>
+      <arrow_length>10</arrow_length>
+      <rules>
+        <rule name="Show Up Arrow" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0&gt;2e-3">
+            <value>true</value>
+          </exp>
+          <pv_name>$(system)PPG052:VacP</pv_name>
+        </rule>
+      </rules>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_11</name>
+      <x>110</x>
+      <y>50</y>
+      <width>1</width>
+      <height>25</height>
+      <visible>false</visible>
+      <points>
+        <point x="0.0" y="25.0">
+        </point>
+        <point x="0.0" y="0.0">
+        </point>
+      </points>
+      <line_color>
+        <color name="Attention" red="255" green="160" blue="0">
+        </color>
+      </line_color>
+      <arrows>1</arrows>
+      <arrow_length>10</arrow_length>
+      <rules>
+        <rule name="Show Up Arrow" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0&lt;=2e-3">
+            <value>true</value>
+          </exp>
+          <pv_name>$(system)PPG052:VacP</pv_name>
+        </rule>
+      </rules>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>Group</name>
+      <width>100</width>
+      <height>80</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="rectangle" version="2.0.0">
+        <name>Rectangle_10</name>
+        <y>35</y>
+        <height>45</height>
+        <line_width>1</line_width>
+        <line_color>
+          <color red="0" green="0" blue="0">
+          </color>
+        </line_color>
+        <background_color>
+          <color name="Read_Background" red="240" green="240" blue="240">
+          </color>
+        </background_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_15</name>
+        <text>IV Turbo
+Vacuum</text>
+        <height>35</height>
+        <background_color>
+          <color name="Button_Background" red="210" green="210" blue="210">
+          </color>
+        </background_color>
+        <transparent>false</transparent>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <border_width>1</border_width>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_269</name>
+        <pv_name>$(system)PPG052:VacP</pv_name>
+        <y>35</y>
+        <height>15</height>
+        <visible>false</visible>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="12.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color red="179" green="26" blue="26">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color red="0" green="0" blue="0">
+          </color>
+        </background_color>
+        <format>2</format>
+        <precision>2</precision>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <rules>
+          <rule name="Show Value" prop_id="visible" out_exp="false">
+            <exp bool_exp="pv0&gt;2e-3">
+              <value>true</value>
+            </exp>
+            <pv_name>$(system)PPG052:VacP</pv_name>
+          </rule>
+          <rule name="Show Units" prop_id="show_units" out_exp="false">
+            <exp bool_exp="pv0&gt;2e-3">
+              <value>true</value>
+            </exp>
+            <pv_name>$(system)PPG052:VacP</pv_name>
+          </rule>
+        </rules>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_270</name>
+        <pv_name>$(system)PPG052:VacP</pv_name>
+        <y>35</y>
+        <height>15</height>
+        <visible>false</visible>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="12.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color red="179" green="26" blue="26">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color red="0" green="0" blue="0">
+          </color>
+        </background_color>
+        <format>2</format>
+        <precision>2</precision>
+        <show_units>false</show_units>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <rules>
+          <rule name="Show Value" prop_id="visible" out_exp="false">
+            <exp bool_exp="pv0&gt;2e-3">
+              <value>true</value>
+            </exp>
+            <pv_name>$(system)PPG052:VacP</pv_name>
+          </rule>
+          <rule name="Show Units" prop_id="show_units" out_exp="false">
+            <exp bool_exp="pv0&gt;2e-3">
+              <value>true</value>
+            </exp>
+            <pv_name>$(system)PPG052:VacP</pv_name>
+          </rule>
+        </rules>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_271</name>
+        <pv_name>$(system)PCC052:VacP</pv_name>
+        <y>65</y>
+        <height>15</height>
+        <visible>false</visible>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="12.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color red="255" green="0" blue="0">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color red="0" green="0" blue="0">
+          </color>
+        </background_color>
+        <format>2</format>
+        <precision>2</precision>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <rules>
+          <rule name="Show Value" prop_id="visible" out_exp="false">
+            <exp bool_exp="pv0&lt;=2e-3">
+              <value>true</value>
+            </exp>
+            <pv_name>$(system)PPG052:VacP</pv_name>
+          </rule>
+          <rule name="Show Units" prop_id="show_units" out_exp="false">
+            <exp bool_exp="pv0&lt;=2e-3">
+              <value>true</value>
+            </exp>
+            <pv_name>$(system)PPG052:VacP</pv_name>
+          </rule>
+        </rules>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_272</name>
+        <pv_name>$(system)PCC052:VacP</pv_name>
+        <y>65</y>
+        <height>15</height>
+        <visible>false</visible>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="12.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color red="255" green="0" blue="0">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color red="0" green="0" blue="0">
+          </color>
+        </background_color>
+        <format>2</format>
+        <precision>2</precision>
+        <show_units>false</show_units>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <rules>
+          <rule name="Show Value" prop_id="visible" out_exp="false">
+            <exp bool_exp="pv0&lt;=2e-3">
+              <value>true</value>
+            </exp>
+            <pv_name>$(system)PPG052:VacP</pv_name>
+          </rule>
+          <rule name="Show Units" prop_id="show_units" out_exp="false">
+            <exp bool_exp="pv0&lt;=2e-3">
+              <value>true</value>
+            </exp>
+            <pv_name>$(system)PPG052:VacP</pv_name>
+          </rule>
+        </rules>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_302</name>
+        <pv_name>$(system)PPG052:Name</pv_name>
+        <y>50</y>
+        <height>15</height>
+        <visible>false</visible>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="12.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="Attention" red="255" green="160" blue="0">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color red="0" green="0" blue="0">
+          </color>
+        </background_color>
+        <show_units>false</show_units>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <rules>
+          <rule name="Show Name" prop_id="visible" out_exp="false">
+            <exp bool_exp="pv0&gt;2e-3">
+              <value>true</value>
+            </exp>
+            <pv_name>$(system)PPG052:VacP</pv_name>
+          </rule>
+        </rules>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_304</name>
+        <pv_name>$(system)PCC052:Name</pv_name>
+        <y>50</y>
+        <height>15</height>
+        <visible>false</visible>
+        <font>
+          <font family="Liberation Sans" style="BOLD" size="12.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="Attention" red="255" green="160" blue="0">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color red="0" green="0" blue="0">
+          </color>
+        </background_color>
+        <show_units>false</show_units>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <rules>
+          <rule name="Show Name" prop_id="visible" out_exp="false">
+            <exp bool_exp="pv0&lt;=2e-3">
+              <value>true</value>
+            </exp>
+            <pv_name>$(system)PPG052:VacP</pv_name>
+          </rule>
+        </rules>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <x>760</x>
+    <y>640</y>
+    <width>180</width>
+    <height>90</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle_3</name>
+      <width>180</width>
+      <height>90</height>
+      <line_width>1</line_width>
+      <background_color>
+        <color name="Read_Background" red="240" green="240" blue="240">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_68</name>
+      <text>Power</text>
+      <x>75</x>
+      <y>55</y>
+      <width>90</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="12.0">
+        </font>
+      </font>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_322</name>
+      <pv_name>$(system)PS103:W</pv_name>
+      <x>5</x>
+      <y>55</y>
+      <width>65</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <format>1</format>
+      <precision>2</precision>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_323</name>
+      <pv_name>$(system)PS103:PumpTempC</pv_name>
+      <x>5</x>
+      <y>25</y>
+      <width>65</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <format>1</format>
+      <precision>2</precision>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_324</name>
+      <pv_name>$(system)PS103:CtrlTempC</pv_name>
+      <x>5</x>
+      <y>40</y>
+      <width>65</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <format>1</format>
+      <precision>2</precision>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_69</name>
+      <text>Pump Temp.</text>
+      <x>75</x>
+      <y>25</y>
+      <width>90</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="12.0">
+        </font>
+      </font>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_70</name>
+      <text>Cntrl Temp.</text>
+      <x>75</x>
+      <y>40</y>
+      <width>90</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="12.0">
+        </font>
+      </font>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_71</name>
+      <text>Frequency</text>
+      <x>75</x>
+      <y>70</y>
+      <width>90</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="12.0">
+        </font>
+      </font>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_325</name>
+      <pv_name>$(system)PS103:MotorFrequency</pv_name>
+      <x>5</x>
+      <y>70</y>
+      <width>65</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <format>1</format>
+      <precision>2</precision>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_81</name>
+      <text>Beamline Vacuum Scroll</text>
+      <x>5</x>
+      <y>5</y>
+      <width>175</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <x>950</x>
+    <y>135</y>
+    <width>180</width>
+    <height>90</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle_1</name>
+      <width>180</width>
+      <height>90</height>
+      <line_width>1</line_width>
+      <background_color>
+        <color name="Read_Background" red="240" green="240" blue="240">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_39</name>
+      <text>Insulating Vacuum Scroll</text>
+      <y>5</y>
+      <width>180</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_42</name>
+      <text>Power</text>
+      <x>75</x>
+      <y>55</y>
+      <width>90</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="12.0">
+        </font>
+      </font>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_303</name>
+      <pv_name>$(system)PS053:W</pv_name>
+      <x>5</x>
+      <y>55</y>
+      <width>65</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <format>1</format>
+      <precision>2</precision>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_312</name>
+      <pv_name>$(system)PS053:PumpTempC</pv_name>
+      <x>5</x>
+      <y>25</y>
+      <width>65</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <format>1</format>
+      <precision>2</precision>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_313</name>
+      <pv_name>$(system)PS053:CtrlTempC</pv_name>
+      <x>5</x>
+      <y>40</y>
+      <width>65</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <format>1</format>
+      <precision>2</precision>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_47</name>
+      <text>Pump Temp.</text>
+      <x>75</x>
+      <y>25</y>
+      <width>90</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="12.0">
+        </font>
+      </font>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_48</name>
+      <text>Cntrl Temp.</text>
+      <x>75</x>
+      <y>40</y>
+      <width>90</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="12.0">
+        </font>
+      </font>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_66</name>
+      <text>Frequency</text>
+      <x>75</x>
+      <y>70</y>
+      <width>90</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="12.0">
+        </font>
+      </font>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_321</name>
+      <pv_name>$(system)PS053:MotorFrequency</pv_name>
+      <x>5</x>
+      <y>70</y>
+      <width>65</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <format>1</format>
+      <precision>2</precision>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <x>60</x>
+    <y>545</y>
+    <width>190</width>
+    <height>75</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle_19</name>
+      <width>190</width>
+      <height>75</height>
+      <line_width>1</line_width>
+      <background_color>
+        <color name="Read_Background" red="240" green="240" blue="240">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_330</name>
+      <pv_name>$(system)PI101:rv_V</pv_name>
+      <x>5</x>
+      <y>55</y>
+      <width>85</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <format>1</format>
+      <precision>2</precision>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_334</name>
+      <pv_name>$(system)PI101:VacP</pv_name>
+      <x>5</x>
+      <y>25</y>
+      <width>85</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <format>2</format>
+      <precision>2</precision>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_335</name>
+      <pv_name>$(system)PI101:rv_I</pv_name>
+      <x>5</x>
+      <y>40</y>
+      <width>85</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <format>1</format>
+      <precision>2</precision>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_86</name>
+      <text>Beamline Ion Pump</text>
+      <y>5</y>
+      <width>190</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_82</name>
+      <text>Voltage</text>
+      <x>90</x>
+      <y>55</y>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="12.0">
+        </font>
+      </font>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_83</name>
+      <text>Vacuum Pressure</text>
+      <x>90</x>
+      <y>25</y>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="12.0">
+        </font>
+      </font>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_84</name>
+      <text>Current</text>
+      <x>90</x>
+      <y>40</y>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="12.0">
+        </font>
+      </font>
+    </widget>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_15</name>
+    <actions>
+      <action type="open_display">
+        <description>Open Gamma SPCe</description>
+        <file>../Common/vacuum-embedded-displays/Gamma_SPCe.bob</file>
+        <macros>
+          <P>$(system)</P>
+          <R>PI101</R>
+        </macros>
+        <target>window</target>
+      </action>
+    </actions>
+    <text></text>
+    <x>10</x>
+    <y>555</y>
+    <width>50</width>
+    <height>50</height>
+    <transparent>true</transparent>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_1</name>
+    <pv_name>$(system)</pv_name>
+    <x>1165</x>
+    <y>650</y>
+    <width>180</width>
+    <height>30</height>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+</display>
