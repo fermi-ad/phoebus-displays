@@ -11,7 +11,6 @@
     <temp>PIP2IT:SSR1_CRYO_TEMP_</temp>
     <vac>PIP2IT:SSR1_CRYO_VAC_</vac>
     <view>Overview</view>
-    <system>PIP2IT:ppSSR2_CRYO_</system>
   </macros>
   <width>1300</width>
   <height>830</height>
@@ -108,8 +107,11 @@
         <name>Action Button_41</name>
         <actions>
           <action type="open_display">
-            <description>Open SSR1 Vacuum</description>
-            <file>SSR1Vacuum.bob</file>
+            <description>Open SSR2 Vacuum</description>
+            <file>SSR2Vacuum.bob</file>
+            <macros>
+              <system>$(acc):ppSSR2_VAC_</system>
+            </macros>
             <target>tab</target>
           </action>
         </actions>
@@ -485,6 +487,9 @@
           <action type="open_display">
             <description>Open SSR2 Cryostat</description>
             <file>SSR2cryostat.bob</file>
+            <macros>
+              <system>$(acc):ppSSR2_CRYO_</system>
+            </macros>
             <target>tab</target>
           </action>
         </actions>
@@ -1021,6 +1026,7 @@
                 <cavb>2</cavb>
                 <cavc>3</cavc>
                 <cavd>4</cavd>
+                <system>$(acc):ppSSR2_RFPI_</system>
               </macros>
               <target>window</target>
             </action>
