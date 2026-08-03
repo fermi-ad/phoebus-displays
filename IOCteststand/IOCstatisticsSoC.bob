@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2023-11-22 16:25:47 by epics-->
 <display version="2.0.0">
   <name>IOCstatistics - $(board)</name>
   <x>168</x>
@@ -129,12 +128,12 @@
     <name>EDM activeExitButtonClass</name>
     <actions>
       <action type="execute">
+        <description>close</description>
         <script file="EmbeddedPy">
           <text><![CDATA[from org.csstudio.display.builder.runtime.script import ScriptUtil
 ScriptUtil.closeDisplay(widget)
 ]]></text>
         </script>
-        <description>close</description>
       </action>
     </actions>
     <text>Exit</text>
@@ -615,9 +614,9 @@ ScriptUtil.closeDisplay(widget)
     <name>EDM relatedDisplayClass</name>
     <actions>
       <action type="open_display">
+        <description>Alarm Limits</description>
         <file>ioc_stats_limits.bob</file>
         <target>window</target>
-        <description>Alarm Limits</description>
       </action>
     </actions>
     <x>325</x>
@@ -642,9 +641,9 @@ ScriptUtil.closeDisplay(widget)
     <name>EDM relatedDisplayClass</name>
     <actions>
       <action type="open_display">
+        <description>EPICS Environment </description>
         <file>ioc_stats_epics_env.bob</file>
         <target>window</target>
-        <description>EPICS Environment </description>
       </action>
     </actions>
     <x>415</x>
@@ -669,13 +668,13 @@ ScriptUtil.closeDisplay(widget)
     <name>EDM relatedDisplayClass</name>
     <actions>
       <action type="open_display">
+        <description>Open Display</description>
         <file>ioc_stats_release.bob</file>
         <macros>
           <idx>0</idx>
           <p>1</p>
         </macros>
         <target>tab</target>
-        <description>Open Display</description>
       </action>
     </actions>
     <text>Release Versions...</text>
@@ -701,9 +700,9 @@ ScriptUtil.closeDisplay(widget)
     <name>EDM relatedDisplayClass</name>
     <actions>
       <action type="open_display">
+        <description>Open Display</description>
         <file>ioc_stats_scanmon.bob</file>
         <target>tab</target>
-        <description>Open Display</description>
       </action>
     </actions>
     <text>Scan Monitor...</text>
@@ -1165,9 +1164,9 @@ since 1990</text>
     <name>EDM activeMessageButtonClass</name>
     <actions>
       <action type="write_pv">
+        <description>Reset</description>
         <pv_name>$(dev):GTIM_RESET.PROC</pv_name>
         <value>0</value>
-        <description>Reset</description>
       </action>
     </actions>
     <text>Reset</text>
@@ -1193,9 +1192,9 @@ since 1990</text>
     <name>EDM relatedDisplayClass</name>
     <actions>
       <action type="open_display">
+        <description>Open Display</description>
         <file>ioc_stats_reloadacf_confirm.bob</file>
         <target>tab</target>
-        <description>Open Display</description>
       </action>
     </actions>
     <text>Reload Access Security Conf File...</text>
@@ -1279,9 +1278,9 @@ since 1990</text>
     <name>EDM relatedDisplayClass</name>
     <actions>
       <action type="open_display">
+        <description>Open Display</description>
         <file>ioc_stats_reboot_confirm.bob</file>
         <target>tab</target>
-        <description>Open Display</description>
       </action>
     </actions>
     <text>Reboot...</text>
@@ -1926,7 +1925,7 @@ RAM Block</text>
     <horizontal_alignment>2</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
   </widget>
-  <widget type="group" version="2.0.0">
+  <widget type="group" version="3.0.0">
     <name>Group</name>
     <x>720</x>
     <y>510</y>
@@ -1934,7 +1933,7 @@ RAM Block</text>
     <height>330</height>
     <style>3</style>
     <transparent>true</transparent>
-    <widget type="group" version="2.0.0">
+    <widget type="group" version="3.0.0">
       <name>Group</name>
       <x>10</x>
       <y>310</y>
@@ -1975,7 +1974,7 @@ RAM Block</text>
         <vertical_alignment>1</vertical_alignment>
       </widget>
     </widget>
-    <widget type="group" version="2.0.0">
+    <widget type="group" version="3.0.0">
       <name>Group</name>
       <x>380</x>
       <y>310</y>
@@ -2016,7 +2015,7 @@ RAM Block</text>
         <vertical_alignment>1</vertical_alignment>
       </widget>
     </widget>
-    <widget type="group" version="2.0.0">
+    <widget type="group" version="3.0.0">
       <name>Group</name>
       <width>700</width>
       <height>300</height>
@@ -2153,7 +2152,7 @@ RAM Block</text>
       </widget>
     </widget>
   </widget>
-  <widget type="group" version="2.0.0">
+  <widget type="group" version="3.0.0">
     <name>Group</name>
     <x>10</x>
     <y>510</y>
@@ -2204,7 +2203,7 @@ RAM Block</text>
         </trace>
       </traces>
     </widget>
-    <widget type="group" version="2.0.0">
+    <widget type="group" version="3.0.0">
       <name>Group</name>
       <x>25</x>
       <y>310</y>
@@ -2227,12 +2226,13 @@ RAM Block</text>
       </widget>
       <widget type="textentry" version="3.0.0">
         <name>Text Entry_1</name>
-        <pv_name>$(dev2)RampSlope</pv_name>
+        <pv_name>$(dev2)sRampSlope</pv_name>
         <x>370</x>
         <width>80</width>
         <format>1</format>
         <precision>0</precision>
         <horizontal_alignment>1</horizontal_alignment>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
       </widget>
       <widget type="label" version="2.0.0">
         <name>Label_1</name>
@@ -2244,7 +2244,7 @@ RAM Block</text>
       </widget>
     </widget>
   </widget>
-  <widget type="group" version="2.0.0">
+  <widget type="group" version="3.0.0">
     <name>Group</name>
     <x>850</x>
     <y>245</y>
