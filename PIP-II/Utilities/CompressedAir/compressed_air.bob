@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2025-08-22 18:31:30 by ruffatti-->
 <display version="2.0.0">
-  <name>Main</name>
+  <name>Compressed Air</name>
   <width>2000</width>
   <height>1200</height>
   <grid_color>
@@ -9,9 +8,9 @@
     </color>
   </grid_color>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse_18</name>
+    <name>Ellipse</name>
     <x>1600</x>
-    <y>314</y>
+    <y>344</y>
     <width>180</width>
     <height>120</height>
     <line_color>
@@ -24,9 +23,9 @@
     </background_color>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse_17</name>
+    <name>Ellipse_1</name>
     <x>1600</x>
-    <y>20</y>
+    <y>50</y>
     <width>180</width>
     <height>120</height>
     <line_color>
@@ -41,7 +40,7 @@
   <widget type="polygon" version="2.0.0">
     <name>Polygon</name>
     <x>80</x>
-    <y>190</y>
+    <y>220</y>
     <width>130</width>
     <height>100</height>
     <points>
@@ -62,18 +61,48 @@
       <color name="Background" red="255" green="255" blue="255">
       </color>
     </background_color>
+    <rules>
+      <rule name="Trip" prop_id="background_color" out_exp="false">
+        <exp bool_exp="pv0 == 1">
+          <value>
+            <color red="255" green="60" blue="60">
+            </color>
+          </value>
+        </exp>
+        <pv_name>LACC:UTIL_MSD_CMPR:AC1_isTripPresent</pv_name>
+      </rule>
+      <rule name="Warning" prop_id="background_color" out_exp="false">
+        <exp bool_exp="pv0 == 1">
+          <value>
+            <color red="255" green="210" blue="60">
+            </color>
+          </value>
+        </exp>
+        <pv_name>LACC:UTIL_MSD_CMPR:AC1_isWarningPresent</pv_name>
+      </rule>
+      <rule name="OK" prop_id="background_color" out_exp="false">
+        <exp bool_exp="pv0 == 0 &amp;&amp; pv1 == 0">
+          <value>
+            <color red="200" green="235" blue="200">
+            </color>
+          </value>
+        </exp>
+        <pv_name>LACC:UTIL_MSD_CMPR:AC1_isTripPresent</pv_name>
+        <pv_name>LACC:UTIL_MSD_CMPR:AC1_isWarningPresent</pv_name>
+      </rule>
+    </rules>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label</name>
     <text>AC-1</text>
     <x>120</x>
-    <y>230</y>
+    <y>260</y>
     <width>50</width>
   </widget>
   <widget type="polygon" version="2.0.0">
-    <name>Polygon_3</name>
+    <name>Polygon_1</name>
     <x>80</x>
-    <y>600</y>
+    <y>630</y>
     <width>130</width>
     <height>100</height>
     <points>
@@ -94,25 +123,48 @@
       <color name="Background" red="255" green="255" blue="255">
       </color>
     </background_color>
+    <rules>
+      <rule name="Trip" prop_id="background_color" out_exp="false">
+        <exp bool_exp="pv0 == 1">
+          <value>
+            <color red="255" green="60" blue="60">
+            </color>
+          </value>
+        </exp>
+        <pv_name>LACC:UTIL_MSD_CMPR:AC2_isTripPresent</pv_name>
+      </rule>
+      <rule name="Warning" prop_id="background_color" out_exp="false">
+        <exp bool_exp="pv0 == 1">
+          <value>
+            <color red="255" green="210" blue="60">
+            </color>
+          </value>
+        </exp>
+        <pv_name>LACC:UTIL_MSD_CMPR:AC2_isWarningPresent</pv_name>
+      </rule>
+      <rule name="OK" prop_id="background_color" out_exp="false">
+        <exp bool_exp="pv0 == 0 &amp;&amp; pv1 == 0">
+          <value>
+            <color red="200" green="235" blue="200">
+            </color>
+          </value>
+        </exp>
+        <pv_name>LACC:UTIL_MSD_CMPR:AC2_isTripPresent</pv_name>
+        <pv_name>LACC:UTIL_MSD_CMPR:AC2_isWarningPresent</pv_name>
+      </rule>
+    </rules>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label_2</name>
+    <name>Label_1</name>
     <text>AC-2</text>
     <x>120</x>
-    <y>640</y>
+    <y>670</y>
     <width>50</width>
   </widget>
   <widget type="polyline" version="2.0.0">
-    <name>Polyline_1</name>
-    <x>1080</x>
-    <y>340</y>
-    <width>1</width>
-    <height>1</height>
-  </widget>
-  <widget type="polyline" version="2.0.0">
-    <name>Polyline_2</name>
+    <name>Polyline</name>
     <x>10</x>
-    <y>560</y>
+    <y>590</y>
     <height>41</height>
     <points>
       <point x="0.0" y="0.0">
@@ -129,16 +181,16 @@
     <arrows>2</arrows>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label_3</name>
+    <name>Label_2</name>
     <text>Air From Environment</text>
-    <y>540</y>
+    <y>570</y>
     <width>141</width>
     <height>21</height>
   </widget>
   <widget type="polyline" version="2.0.0">
-    <name>Polyline_3</name>
+    <name>Polyline_1</name>
     <x>10</x>
-    <y>140</y>
+    <y>170</y>
     <height>50</height>
     <points>
       <point x="0.0" y="0.0">
@@ -155,27 +207,16 @@
     <arrows>2</arrows>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label_4</name>
+    <name>Label_3</name>
     <text>Air From Environment</text>
-    <y>120</y>
+    <y>150</y>
     <width>141</width>
     <height>21</height>
   </widget>
   <widget type="polyline" version="2.0.0">
-    <name>Polyline_4</name>
+    <name>Polyline_2</name>
     <x>110</x>
-    <y>280</y>
-    <width>1</width>
-    <height>1</height>
-    <points>
-      <point x="0.0" y="0.0">
-      </point>
-    </points>
-  </widget>
-  <widget type="polyline" version="2.0.0">
-    <name>Polyline_5</name>
-    <x>110</x>
-    <y>290</y>
+    <y>320</y>
     <width>1</width>
     <height>160</height>
     <points>
@@ -187,17 +228,65 @@
     <arrows>2</arrows>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label_5</name>
+    <name>Label_4</name>
     <text>ICW SUPPLY</text>
     <x>10</x>
-    <y>440</y>
+    <y>470</y>
     <width>141</width>
     <height>21</height>
   </widget>
   <widget type="polyline" version="2.0.0">
-    <name>Polyline_7</name>
+    <name>Polyline_3</name>
     <x>190</x>
-    <y>273</y>
+    <y>303</y>
+    <width>1</width>
+    <height>177</height>
+    <points>
+      <point x="0.0" y="177.0">
+      </point>
+      <point x="0.0" y="0.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="255" green="0" blue="0">
+      </color>
+    </line_color>
+    <arrows>1</arrows>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_5</name>
+    <text>ICW RETURN</text>
+    <x>200</x>
+    <y>470</y>
+    <width>141</width>
+    <height>21</height>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_4</name>
+    <x>110</x>
+    <y>730</y>
+    <width>1</width>
+    <height>160</height>
+    <points>
+      <point x="0.0" y="160.0">
+      </point>
+      <point x="0.0" y="0.0">
+      </point>
+    </points>
+    <arrows>2</arrows>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_6</name>
+    <text>ICW SUPPLY</text>
+    <x>10</x>
+    <y>880</y>
+    <width>141</width>
+    <height>21</height>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_5</name>
+    <x>190</x>
+    <y>713</y>
     <width>1</width>
     <height>177</height>
     <points>
@@ -216,209 +305,14 @@
     <name>Label_7</name>
     <text>ICW RETURN</text>
     <x>200</x>
-    <y>440</y>
+    <y>880</y>
     <width>141</width>
     <height>21</height>
-  </widget>
-  <widget type="polyline" version="2.0.0">
-    <name>Polyline_8</name>
-    <x>110</x>
-    <y>690</y>
-    <width>1</width>
-    <height>1</height>
-    <points>
-      <point x="0.0" y="0.0">
-      </point>
-    </points>
-  </widget>
-  <widget type="polyline" version="2.0.0">
-    <name>Polyline_9</name>
-    <x>110</x>
-    <y>700</y>
-    <width>1</width>
-    <height>160</height>
-    <points>
-      <point x="0.0" y="160.0">
-      </point>
-      <point x="0.0" y="0.0">
-      </point>
-    </points>
-    <arrows>2</arrows>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label_8</name>
-    <text>ICW SUPPLY</text>
-    <x>10</x>
-    <y>850</y>
-    <width>141</width>
-    <height>21</height>
-  </widget>
-  <widget type="polyline" version="2.0.0">
-    <name>Polyline_10</name>
-    <x>190</x>
-    <y>683</y>
-    <width>1</width>
-    <height>177</height>
-    <points>
-      <point x="0.0" y="177.0">
-      </point>
-      <point x="0.0" y="0.0">
-      </point>
-    </points>
-    <line_color>
-      <color red="255" green="0" blue="0">
-      </color>
-    </line_color>
-    <arrows>1</arrows>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label_9</name>
-    <text>ICW RETURN</text>
-    <x>200</x>
-    <y>850</y>
-    <width>141</width>
-    <height>21</height>
-  </widget>
-  <widget type="symbol" version="2.0.0">
-    <name>Symbol</name>
-    <symbols>
-      <symbol>images/sensor.svg</symbol>
-    </symbols>
-    <x>184</x>
-    <y>325</y>
-    <width>20</width>
-    <height>20</height>
-    <rotation>90.0</rotation>
-    <tooltip>$(pv_name)
-$(pv_value)
-$(actions)</tooltip>
-  </widget>
-  <widget type="symbol" version="2.0.0">
-    <name>Symbol_1</name>
-    <symbols>
-      <symbol>images/sensor.svg</symbol>
-    </symbols>
-    <x>1209</x>
-    <y>447</y>
-    <width>20</width>
-    <height>20</height>
-    <tooltip>$(pv_name)
-$(pv_value)
-$(actions)</tooltip>
-  </widget>
-  <widget type="symbol" version="2.0.0">
-    <name>Symbol_3</name>
-    <symbols>
-      <symbol>images/flow_sensor.svg</symbol>
-    </symbols>
-    <x>1280</x>
-    <y>444</y>
-    <width>20</width>
-    <height>31</height>
-    <rotation>90.0</rotation>
-    <tooltip>$(pv_name)
-$(pv_value)
-$(actions)</tooltip>
-  </widget>
-  <widget type="symbol" version="2.0.0">
-    <name>Symbol_4</name>
-    <symbols>
-      <symbol>images/sensor.svg</symbol>
-    </symbols>
-    <x>97</x>
-    <y>325</y>
-    <width>20</width>
-    <height>20</height>
-    <rotation>270.0</rotation>
-    <tooltip>$(pv_name)
-$(pv_value)
-$(actions)</tooltip>
-  </widget>
-  <widget type="symbol" version="2.0.0">
-    <name>Symbol_5</name>
-    <symbols>
-      <symbol>images/sensor.svg</symbol>
-    </symbols>
-    <x>1350</x>
-    <y>447</y>
-    <width>20</width>
-    <height>20</height>
-    <tooltip>$(pv_name)
-$(pv_value)
-$(actions)</tooltip>
-  </widget>
-  <widget type="symbol" version="2.0.0">
-    <name>Symbol_6</name>
-    <symbols>
-      <symbol>images/sensor.svg</symbol>
-    </symbols>
-    <x>184</x>
-    <y>737</y>
-    <width>20</width>
-    <height>20</height>
-    <rotation>90.0</rotation>
-    <tooltip>$(pv_name)
-$(pv_value)
-$(actions)</tooltip>
-  </widget>
-  <widget type="symbol" version="2.0.0">
-    <name>Symbol_9</name>
-    <symbols>
-      <symbol>images/sensor.svg</symbol>
-    </symbols>
-    <x>97</x>
-    <y>737</y>
-    <width>20</width>
-    <height>20</height>
-    <rotation>270.0</rotation>
-    <tooltip>$(pv_name)
-$(pv_value)
-$(actions)</tooltip>
-  </widget>
-  <widget type="polyline" version="2.0.0">
-    <name>Polyline</name>
-    <x>411</x>
-    <y>246</y>
-    <width>1</width>
-    <height>1</height>
-    <points>
-      <point x="0.0" y="0.0">
-      </point>
-    </points>
   </widget>
   <widget type="polyline" version="2.0.0">
     <name>Polyline_6</name>
-    <x>209</x>
-    <y>239</y>
-    <width>1</width>
-    <height>1</height>
-    <points>
-      <point x="0.0" y="0.0">
-      </point>
-    </points>
-  </widget>
-  <widget type="polyline" version="2.0.0">
-    <name>Polyline_11</name>
     <x>210</x>
-    <y>240</y>
-    <width>1</width>
-    <height>1</height>
-    <points>
-      <point x="0.0" y="0.0">
-      </point>
-    </points>
-  </widget>
-  <widget type="polyline" version="2.0.0">
-    <name>Polyline_12</name>
-    <x>839</x>
-    <y>567</y>
-    <width>1</width>
-    <height>1</height>
-  </widget>
-  <widget type="polyline" version="2.0.0">
-    <name>Polyline_14</name>
-    <x>210</x>
-    <y>240</y>
+    <y>270</y>
     <width>680</width>
     <height>690</height>
     <points>
@@ -437,9 +331,9 @@ $(actions)</tooltip>
     </line_color>
   </widget>
   <widget type="polyline" version="2.0.0">
-    <name>Polyline_15</name>
+    <name>Polyline_7</name>
     <x>210</x>
-    <y>650</y>
+    <y>680</y>
     <width>110</width>
     <height>1</height>
     <points>
@@ -456,7 +350,7 @@ $(actions)</tooltip>
   <widget type="rectangle" version="2.0.0">
     <name>Rectangle</name>
     <x>887</x>
-    <y>840</y>
+    <y>870</y>
     <width>130</width>
     <height>140</height>
     <line_color>
@@ -469,27 +363,16 @@ $(actions)</tooltip>
     </background_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label_6</name>
+    <name>Label_8</name>
     <text>SP-1</text>
     <x>938</x>
-    <y>900</y>
+    <y>930</y>
     <width>50</width>
   </widget>
   <widget type="polyline" version="2.0.0">
-    <name>Polyline_16</name>
-    <x>230</x>
-    <y>190</y>
-    <width>1</width>
-    <height>1</height>
-    <points>
-      <point x="0.0" y="0.0">
-      </point>
-    </points>
-  </widget>
-  <widget type="polyline" version="2.0.0">
-    <name>Polyline_17</name>
+    <name>Polyline_8</name>
     <x>190</x>
-    <y>140</y>
+    <y>170</y>
     <width>250</width>
     <height>381</height>
     <points>
@@ -506,9 +389,9 @@ $(actions)</tooltip>
     </line_color>
   </widget>
   <widget type="polyline" version="2.0.0">
-    <name>Polyline_18</name>
+    <name>Polyline_9</name>
     <x>189</x>
-    <y>520</y>
+    <y>550</y>
     <width>250</width>
     <height>1</height>
     <points>
@@ -523,9 +406,9 @@ $(actions)</tooltip>
     </line_color>
   </widget>
   <widget type="polyline" version="2.0.0">
-    <name>Polyline_20</name>
+    <name>Polyline_10</name>
     <x>189</x>
-    <y>144</y>
+    <y>174</y>
     <width>1</width>
     <height>62</height>
     <points>
@@ -541,9 +424,9 @@ $(actions)</tooltip>
     <arrows>2</arrows>
   </widget>
   <widget type="polyline" version="2.0.0">
-    <name>Polyline_21</name>
+    <name>Polyline_11</name>
     <x>189</x>
-    <y>524</y>
+    <y>554</y>
     <width>1</width>
     <height>91</height>
     <points>
@@ -559,9 +442,9 @@ $(actions)</tooltip>
     <arrows>2</arrows>
   </widget>
   <widget type="polyline" version="2.0.0">
-    <name>Polyline_22</name>
+    <name>Polyline_12</name>
     <x>440</x>
-    <y>330</y>
+    <y>360</y>
     <width>165</width>
     <height>1</height>
     <points>
@@ -577,9 +460,9 @@ $(actions)</tooltip>
     <arrows>2</arrows>
   </widget>
   <widget type="polyline" version="2.0.0">
-    <name>Polyline_23</name>
+    <name>Polyline_13</name>
     <x>952</x>
-    <y>980</y>
+    <y>1010</y>
     <width>1</width>
     <height>80</height>
     <points>
@@ -594,24 +477,17 @@ $(actions)</tooltip>
     </line_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label_1</name>
-    <x>971</x>
-    <y>1050</y>
-    <width>1</width>
-    <height>1</height>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label_10</name>
+    <name>Label_9</name>
     <text>Drain</text>
     <x>963</x>
-    <y>1092</y>
+    <y>1122</y>
     <width>66</width>
     <height>35</height>
   </widget>
   <widget type="polyline" version="2.0.0">
-    <name>Polyline_24</name>
+    <name>Polyline_14</name>
     <x>931</x>
-    <y>1079</y>
+    <y>1109</y>
     <width>40</width>
     <height>50</height>
     <points>
@@ -634,7 +510,7 @@ $(actions)</tooltip>
   <widget type="group" version="3.0.0">
     <name>Group</name>
     <x>717</x>
-    <y>60</y>
+    <y>90</y>
     <width>131</width>
     <height>173</height>
     <style>3</style>
@@ -652,9 +528,29 @@ $(actions)</tooltip>
         <color red="230" green="230" blue="230">
         </color>
       </background_color>
+      <rules>
+        <rule name="Alarm" prop_id="background_color" out_exp="false">
+          <exp bool_exp="pv0 == 1">
+            <value>
+              <color red="255" green="200" blue="200">
+              </color>
+            </value>
+          </exp>
+          <pv_name>LACC:UTIL_MSD_CMPR:AirDryer1_Alarm</pv_name>
+        </rule>
+        <rule name="OK" prop_id="background_color" out_exp="false">
+          <exp bool_exp="pv0 == 0">
+            <value>
+              <color red="220" green="235" blue="220">
+              </color>
+            </value>
+          </exp>
+          <pv_name>LACC:UTIL_MSD_CMPR:AirDryer1_Alarm</pv_name>
+        </rule>
+      </rules>
     </widget>
     <widget type="ellipse" version="2.0.0">
-      <name>Ellipse_3</name>
+      <name>Ellipse_2</name>
       <x>19</x>
       <y>25</y>
       <width>39</width>
@@ -669,7 +565,7 @@ $(actions)</tooltip>
       </background_color>
     </widget>
     <widget type="ellipse" version="2.0.0">
-      <name>Ellipse_4</name>
+      <name>Ellipse_3</name>
       <x>19</x>
       <y>106</y>
       <width>39</width>
@@ -684,7 +580,7 @@ $(actions)</tooltip>
       </background_color>
     </widget>
     <widget type="rectangle" version="2.0.0">
-      <name>Rectangle_4</name>
+      <name>Rectangle_2</name>
       <x>19</x>
       <y>43</y>
       <width>38</width>
@@ -699,7 +595,7 @@ $(actions)</tooltip>
       </background_color>
     </widget>
     <widget type="ellipse" version="2.0.0">
-      <name>Ellipse_1</name>
+      <name>Ellipse_4</name>
       <x>76</x>
       <y>24</y>
       <width>39</width>
@@ -714,7 +610,7 @@ $(actions)</tooltip>
       </background_color>
     </widget>
     <widget type="ellipse" version="2.0.0">
-      <name>Ellipse_2</name>
+      <name>Ellipse_5</name>
       <x>76</x>
       <y>105</y>
       <width>39</width>
@@ -745,9 +641,9 @@ $(actions)</tooltip>
     </widget>
   </widget>
   <widget type="polyline" version="2.0.0">
-    <name>Polyline_26</name>
+    <name>Polyline_15</name>
     <x>610</x>
-    <y>20</y>
+    <y>50</y>
     <width>175</width>
     <height>310</height>
     <points>
@@ -766,20 +662,9 @@ $(actions)</tooltip>
     </line_color>
   </widget>
   <widget type="polyline" version="2.0.0">
-    <name>Polyline_28</name>
-    <x>760</x>
-    <y>80</y>
-    <width>1</width>
-    <height>1</height>
-    <points>
-      <point x="0.0" y="0.0">
-      </point>
-    </points>
-  </widget>
-  <widget type="polyline" version="2.0.0">
-    <name>Polyline_29</name>
+    <name>Polyline_16</name>
     <x>754</x>
-    <y>60</y>
+    <y>90</y>
     <width>31</width>
     <height>25</height>
     <points>
@@ -798,9 +683,9 @@ $(actions)</tooltip>
     </line_color>
   </widget>
   <widget type="polyline" version="2.0.0">
-    <name>Polyline_30</name>
+    <name>Polyline_17</name>
     <x>786</x>
-    <y>73</y>
+    <y>103</y>
     <width>27</width>
     <height>11</height>
     <points>
@@ -817,20 +702,9 @@ $(actions)</tooltip>
     </line_color>
   </widget>
   <widget type="polyline" version="2.0.0">
-    <name>Polyline_34</name>
+    <name>Polyline_18</name>
     <x>754</x>
-    <y>209</y>
-    <width>1</width>
-    <height>1</height>
-    <points>
-      <point x="0.0" y="0.0">
-      </point>
-    </points>
-  </widget>
-  <widget type="polyline" version="2.0.0">
-    <name>Polyline_35</name>
-    <x>754</x>
-    <y>210</y>
+    <y>240</y>
     <width>31</width>
     <height>21</height>
     <points>
@@ -849,9 +723,9 @@ $(actions)</tooltip>
     </line_color>
   </widget>
   <widget type="polyline" version="2.0.0">
-    <name>Polyline_36</name>
+    <name>Polyline_19</name>
     <x>783</x>
-    <y>209</y>
+    <y>239</y>
     <width>28</width>
     <height>11</height>
     <points>
@@ -870,13 +744,13 @@ $(actions)</tooltip>
   <widget type="group" version="3.0.0">
     <name>Group_1</name>
     <x>717</x>
-    <y>391</y>
+    <y>421</y>
     <width>131</width>
     <height>173</height>
     <style>3</style>
     <transparent>true</transparent>
     <widget type="rectangle" version="2.0.0">
-      <name>Rectangle_11</name>
+      <name>Rectangle_4</name>
       <width>131</width>
       <height>173</height>
       <line_color>
@@ -888,9 +762,29 @@ $(actions)</tooltip>
         <color red="230" green="230" blue="230">
         </color>
       </background_color>
+      <rules>
+        <rule name="Alarm" prop_id="background_color" out_exp="false">
+          <exp bool_exp="pv0 == 1">
+            <value>
+              <color red="255" green="200" blue="200">
+              </color>
+            </value>
+          </exp>
+          <pv_name>LACC:UTIL_MSD_CMPR:AirDryer2_Alarm</pv_name>
+        </rule>
+        <rule name="OK" prop_id="background_color" out_exp="false">
+          <exp bool_exp="pv0 == 0">
+            <value>
+              <color red="220" green="235" blue="220">
+              </color>
+            </value>
+          </exp>
+          <pv_name>LACC:UTIL_MSD_CMPR:AirDryer2_Alarm</pv_name>
+        </rule>
+      </rules>
     </widget>
     <widget type="ellipse" version="2.0.0">
-      <name>Ellipse_13</name>
+      <name>Ellipse_6</name>
       <x>19</x>
       <y>25</y>
       <width>39</width>
@@ -905,7 +799,7 @@ $(actions)</tooltip>
       </background_color>
     </widget>
     <widget type="ellipse" version="2.0.0">
-      <name>Ellipse_14</name>
+      <name>Ellipse_7</name>
       <x>19</x>
       <y>106</y>
       <width>39</width>
@@ -920,7 +814,7 @@ $(actions)</tooltip>
       </background_color>
     </widget>
     <widget type="rectangle" version="2.0.0">
-      <name>Rectangle_12</name>
+      <name>Rectangle_5</name>
       <x>19</x>
       <y>43</y>
       <width>38</width>
@@ -935,7 +829,7 @@ $(actions)</tooltip>
       </background_color>
     </widget>
     <widget type="ellipse" version="2.0.0">
-      <name>Ellipse_15</name>
+      <name>Ellipse_8</name>
       <x>76</x>
       <y>24</y>
       <width>39</width>
@@ -950,7 +844,7 @@ $(actions)</tooltip>
       </background_color>
     </widget>
     <widget type="ellipse" version="2.0.0">
-      <name>Ellipse_16</name>
+      <name>Ellipse_9</name>
       <x>76</x>
       <y>105</y>
       <width>39</width>
@@ -965,7 +859,7 @@ $(actions)</tooltip>
       </background_color>
     </widget>
     <widget type="rectangle" version="2.0.0">
-      <name>Rectangle_13</name>
+      <name>Rectangle_6</name>
       <x>76</x>
       <y>42</y>
       <width>38</width>
@@ -981,20 +875,9 @@ $(actions)</tooltip>
     </widget>
   </widget>
   <widget type="polyline" version="2.0.0">
-    <name>Polyline_37</name>
-    <x>760</x>
-    <y>411</y>
-    <width>1</width>
-    <height>1</height>
-    <points>
-      <point x="0.0" y="0.0">
-      </point>
-    </points>
-  </widget>
-  <widget type="polyline" version="2.0.0">
-    <name>Polyline_38</name>
+    <name>Polyline_20</name>
     <x>754</x>
-    <y>391</y>
+    <y>421</y>
     <width>31</width>
     <height>25</height>
     <points>
@@ -1013,9 +896,9 @@ $(actions)</tooltip>
     </line_color>
   </widget>
   <widget type="polyline" version="2.0.0">
-    <name>Polyline_39</name>
+    <name>Polyline_21</name>
     <x>786</x>
-    <y>404</y>
+    <y>434</y>
     <width>27</width>
     <height>11</height>
     <points>
@@ -1032,20 +915,9 @@ $(actions)</tooltip>
     </line_color>
   </widget>
   <widget type="polyline" version="2.0.0">
-    <name>Polyline_40</name>
+    <name>Polyline_22</name>
     <x>754</x>
-    <y>540</y>
-    <width>1</width>
-    <height>1</height>
-    <points>
-      <point x="0.0" y="0.0">
-      </point>
-    </points>
-  </widget>
-  <widget type="polyline" version="2.0.0">
-    <name>Polyline_41</name>
-    <x>754</x>
-    <y>541</y>
+    <y>571</y>
     <width>31</width>
     <height>21</height>
     <points>
@@ -1064,9 +936,9 @@ $(actions)</tooltip>
     </line_color>
   </widget>
   <widget type="polyline" version="2.0.0">
-    <name>Polyline_42</name>
+    <name>Polyline_23</name>
     <x>783</x>
-    <y>540</y>
+    <y>570</y>
     <width>28</width>
     <height>11</height>
     <points>
@@ -1083,16 +955,9 @@ $(actions)</tooltip>
     </line_color>
   </widget>
   <widget type="polyline" version="2.0.0">
-    <name>Polyline_43</name>
-    <x>611</x>
-    <y>330</y>
-    <width>1</width>
-    <height>1</height>
-  </widget>
-  <widget type="polyline" version="2.0.0">
-    <name>Polyline_44</name>
+    <name>Polyline_24</name>
     <x>610</x>
-    <y>330</y>
+    <y>360</y>
     <width>175</width>
     <height>62</height>
     <points>
@@ -1109,16 +974,9 @@ $(actions)</tooltip>
     </line_color>
   </widget>
   <widget type="polyline" version="2.0.0">
-    <name>Polyline_45</name>
-    <x>780</x>
-    <y>570</y>
-    <width>1</width>
-    <height>1</height>
-  </widget>
-  <widget type="polyline" version="2.0.0">
-    <name>Polyline_46</name>
+    <name>Polyline_25</name>
     <x>785</x>
-    <y>460</y>
+    <y>490</y>
     <width>1135</width>
     <height>170</height>
     <points>
@@ -1140,9 +998,9 @@ $(actions)</tooltip>
     <arrows>2</arrows>
   </widget>
   <widget type="polyline" version="2.0.0">
-    <name>Polyline_47</name>
+    <name>Polyline_26</name>
     <x>785</x>
-    <y>231</y>
+    <y>261</y>
     <width>255</width>
     <height>229</height>
     <points>
@@ -1161,9 +1019,9 @@ $(actions)</tooltip>
     </line_color>
   </widget>
   <widget type="polyline" version="2.0.0">
-    <name>Polyline_48</name>
+    <name>Polyline_27</name>
     <x>1180</x>
-    <y>460</y>
+    <y>490</y>
     <width>220</width>
     <height>40</height>
     <points>
@@ -1182,9 +1040,9 @@ $(actions)</tooltip>
     </line_color>
   </widget>
   <widget type="polyline" version="2.0.0">
-    <name>Polyline_49</name>
+    <name>Polyline_28</name>
     <x>1560</x>
-    <y>330</y>
+    <y>360</y>
     <width>40</width>
     <height>130</height>
     <points>
@@ -1201,9 +1059,9 @@ $(actions)</tooltip>
     </line_color>
   </widget>
   <widget type="rectangle" version="2.0.0">
-    <name>Rectangle_14</name>
+    <name>Rectangle_7</name>
     <x>1600</x>
-    <y>73</y>
+    <y>103</y>
     <width>180</width>
     <height>300</height>
     <line_color>
@@ -1216,9 +1074,9 @@ $(actions)</tooltip>
     </background_color>
   </widget>
   <widget type="polyline" version="2.0.0">
-    <name>Polyline_50</name>
+    <name>Polyline_29</name>
     <x>1780</x>
-    <y>330</y>
+    <y>360</y>
     <width>40</width>
     <height>130</height>
     <points>
@@ -1235,33 +1093,33 @@ $(actions)</tooltip>
     </line_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label_11</name>
+    <name>Label_10</name>
     <text>T-1 1550 Gal Tank</text>
     <x>1630</x>
-    <y>209</y>
+    <y>239</y>
     <width>130</width>
     <height>50</height>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label_12</name>
+    <name>Label_11</name>
     <text>DR-2</text>
     <x>720</x>
-    <y>369</y>
+    <y>399</y>
     <width>70</width>
     <height>37</height>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label_13</name>
+    <name>Label_12</name>
     <text>DR-1</text>
     <x>717</x>
-    <y>40</y>
+    <y>70</y>
     <width>70</width>
     <height>37</height>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse</name>
+    <name>Ellipse_10</name>
     <x>925</x>
-    <y>315</y>
+    <y>345</y>
     <width>30</width>
     <height>28</height>
     <line_color>
@@ -1274,9 +1132,9 @@ $(actions)</tooltip>
     </background_color>
   </widget>
   <widget type="rectangle" version="2.0.0">
-    <name>Rectangle_2</name>
+    <name>Rectangle_8</name>
     <x>925</x>
-    <y>259</y>
+    <y>289</y>
     <width>30</width>
     <height>71</height>
     <line_color>
@@ -1289,9 +1147,9 @@ $(actions)</tooltip>
     </background_color>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse_5</name>
+    <name>Ellipse_11</name>
     <x>925</x>
-    <y>662</y>
+    <y>692</y>
     <width>30</width>
     <height>28</height>
     <line_color>
@@ -1304,9 +1162,9 @@ $(actions)</tooltip>
     </background_color>
   </widget>
   <widget type="rectangle" version="2.0.0">
-    <name>Rectangle_5</name>
+    <name>Rectangle_9</name>
     <x>925</x>
-    <y>607</y>
+    <y>637</y>
     <width>30</width>
     <height>71</height>
     <line_color>
@@ -1317,34 +1175,27 @@ $(actions)</tooltip>
       <color red="255" green="255" blue="255">
       </color>
     </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_13</name>
+    <text>Filter</text>
+    <x>890</x>
+    <y>320</y>
+    <width>40</width>
+    <height>21</height>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_14</name>
     <text>Filter</text>
-    <x>890</x>
-    <y>290</y>
-    <width>40</width>
-    <height>21</height>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label_15</name>
-    <text>Filter</text>
     <x>887</x>
-    <y>640</y>
+    <y>670</y>
     <width>40</width>
     <height>21</height>
   </widget>
   <widget type="polyline" version="2.0.0">
-    <name>Polyline_13</name>
+    <name>Polyline_30</name>
     <x>940</x>
-    <y>690</y>
-    <width>1</width>
-    <height>1</height>
-  </widget>
-  <widget type="polyline" version="2.0.0">
-    <name>Polyline_19</name>
-    <x>940</x>
-    <y>690</y>
+    <y>720</y>
     <width>1</width>
     <height>150</height>
     <points>
@@ -1359,9 +1210,9 @@ $(actions)</tooltip>
     </line_color>
   </widget>
   <widget type="polyline" version="2.0.0">
-    <name>Polyline_25</name>
+    <name>Polyline_31</name>
     <x>940</x>
-    <y>340</y>
+    <y>370</y>
     <width>50</width>
     <height>500</height>
     <points>
@@ -1380,9 +1231,9 @@ $(actions)</tooltip>
     </line_color>
   </widget>
   <widget type="polyline" version="2.0.0">
-    <name>Polyline_27</name>
+    <name>Polyline_32</name>
     <x>847</x>
-    <y>520</y>
+    <y>550</y>
     <width>93</width>
     <height>1</height>
     <points>
@@ -1397,9 +1248,9 @@ $(actions)</tooltip>
     </line_color>
   </widget>
   <widget type="polyline" version="2.0.0">
-    <name>Polyline_31</name>
+    <name>Polyline_33</name>
     <x>846</x>
-    <y>189</y>
+    <y>219</y>
     <width>34</width>
     <height>330</height>
     <points>
@@ -1414,5 +1265,502 @@ $(actions)</tooltip>
       <color red="153" green="153" blue="153">
       </color>
     </line_color>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_10</name>
+    <width>2000</width>
+    <height>35</height>
+    <line_color>
+      <color red="0" green="51" blue="102">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="0" green="51" blue="102">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_15</name>
+    <text>PIP-II Compressed Air System — Utility Building</text>
+    <x>10</x>
+    <y>3</y>
+    <width>700</width>
+    <height>30</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="16.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update</name>
+    <pv_name>LACC:UTIL_MSD_CMPR:PressureTransmitterRawValue</pv_name>
+    <x>1166</x>
+    <y>456</y>
+    <width>68</width>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="11.0">
+      </font>
+    </font>
+    <precision>1</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_1</name>
+    <pv_name>LACC:UTIL_MSD_CMPR:AirFlowMeterRawValue</pv_name>
+    <x>1256</x>
+    <y>456</y>
+    <width>68</width>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="11.0">
+      </font>
+    </font>
+    <precision>1</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_2</name>
+    <pv_name>LACC:UTIL_MSD_CMPR:DewPointReadingRawValue</pv_name>
+    <x>1346</x>
+    <y>456</y>
+    <width>68</width>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="11.0">
+      </font>
+    </font>
+    <precision>1</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_3</name>
+    <pv_name>LACC:UTIL_MSD_CMPR:AC1_OutputPressure</pv_name>
+    <x>229</x>
+    <y>287</y>
+    <width>80</width>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="11.0">
+      </font>
+    </font>
+    <precision>1</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_4</name>
+    <pv_name>LACC:UTIL_MSD_CMPR:AC2_OutputPressure</pv_name>
+    <x>231</x>
+    <y>696</y>
+    <width>80</width>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="11.0">
+      </font>
+    </font>
+    <precision>1</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_5</name>
+    <pv_name>LACC:UTIL_MSD_CMPR:CWFlowMeter1RawValue</pv_name>
+    <x>14</x>
+    <y>415</y>
+    <width>70</width>
+    <height>18</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="11.0">
+      </font>
+    </font>
+    <precision>1</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_6</name>
+    <pv_name>LACC:UTIL_MSD_CMPR:CWFlowMeter2RawValue</pv_name>
+    <x>14</x>
+    <y>831</y>
+    <width>70</width>
+    <height>18</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="11.0">
+      </font>
+    </font>
+    <precision>1</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>Ellipse_12</name>
+    <x>97</x>
+    <y>355</y>
+    <width>26</width>
+    <height>26</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_16</name>
+    <text>T</text>
+    <x>97</x>
+    <y>355</y>
+    <width>26</width>
+    <height>26</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>Ellipse_13</name>
+    <x>177</x>
+    <y>355</y>
+    <width>26</width>
+    <height>26</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_17</name>
+    <text>T</text>
+    <x>177</x>
+    <y>355</y>
+    <width>26</width>
+    <height>26</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>Ellipse_14</name>
+    <x>97</x>
+    <y>767</y>
+    <width>26</width>
+    <height>26</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_18</name>
+    <text>T</text>
+    <x>97</x>
+    <y>767</y>
+    <width>26</width>
+    <height>26</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>Ellipse_15</name>
+    <x>177</x>
+    <y>767</y>
+    <width>26</width>
+    <height>26</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_19</name>
+    <text>T</text>
+    <x>177</x>
+    <y>767</y>
+    <width>26</width>
+    <height>26</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>Ellipse_16</name>
+    <x>1188</x>
+    <y>475</y>
+    <width>26</width>
+    <height>26</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_20</name>
+    <text>P</text>
+    <x>1188</x>
+    <y>475</y>
+    <width>26</width>
+    <height>26</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>Ellipse_17</name>
+    <x>1278</x>
+    <y>475</y>
+    <width>26</width>
+    <height>26</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_21</name>
+    <text>F</text>
+    <x>1278</x>
+    <y>475</y>
+    <width>26</width>
+    <height>26</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>Ellipse_18</name>
+    <x>1368</x>
+    <y>475</y>
+    <width>26</width>
+    <height>26</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_22</name>
+    <text>DP</text>
+    <x>1368</x>
+    <y>475</y>
+    <width>26</width>
+    <height>26</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button</name>
+    <actions>
+      <action type="open_display">
+        <description>Click for AC-1 Details</description>
+        <file>ac_detail.bob</file>
+        <macros>
+          <PREFIX>LACC:UTIL_MSD_CMPR</PREFIX>
+          <UNIT>AC1</UNIT>
+          <LABEL>AC-1</LABEL>
+        </macros>
+        <target>tab</target>
+      </action>
+    </actions>
+    <text></text>
+    <x>80</x>
+    <y>220</y>
+    <width>130</width>
+    <height>100</height>
+    <transparent>true</transparent>
+    <tooltip>Click for AC-1 Details</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_1</name>
+    <actions>
+      <action type="open_display">
+        <description>Click for AC-2 Details</description>
+        <file>ac_detail.bob</file>
+        <macros>
+          <PREFIX>LACC:UTIL_MSD_CMPR</PREFIX>
+          <UNIT>AC2</UNIT>
+          <LABEL>AC-2</LABEL>
+        </macros>
+        <target>tab</target>
+      </action>
+    </actions>
+    <text></text>
+    <x>80</x>
+    <y>630</y>
+    <width>130</width>
+    <height>100</height>
+    <transparent>true</transparent>
+    <tooltip>Click for AC-2 Details</tooltip>
+  </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>Ellipse_19</name>
+    <x>97</x>
+    <y>826</y>
+    <width>26</width>
+    <height>26</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_23</name>
+    <text>F</text>
+    <x>97</x>
+    <y>826</y>
+    <width>26</width>
+    <height>26</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>Ellipse_20</name>
+    <x>96</x>
+    <y>411</y>
+    <width>26</width>
+    <height>26</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_24</name>
+    <text>F</text>
+    <x>96</x>
+    <y>411</y>
+    <width>26</width>
+    <height>26</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>Ellipse_21</name>
+    <x>280</x>
+    <y>257</y>
+    <width>26</width>
+    <height>26</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_25</name>
+    <text>P</text>
+    <x>280</x>
+    <y>257</y>
+    <width>26</width>
+    <height>26</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>Ellipse_22</name>
+    <x>279</x>
+    <y>666</y>
+    <width>26</width>
+    <height>26</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_26</name>
+    <text>P</text>
+    <x>279</x>
+    <y>666</y>
+    <width>26</width>
+    <height>26</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
   </widget>
 </display>

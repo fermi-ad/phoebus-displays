@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>$(LABEL) Detail</name>
+  <width>520</width>
+  <height>410</height>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle</name>
+    <width>520</width>
+    <height>35</height>
+    <line_color>
+      <color red="0" green="51" blue="102">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="0" green="51" blue="102">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <text>$(LABEL) — Air Compressor Detail</text>
+    <x>10</x>
+    <y>4</y>
+    <width>360</width>
+    <height>28</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_1</name>
+    <x>10</x>
+    <y>45</y>
+    <width>500</width>
+    <height>95</height>
+    <line_color>
+      <color red="200" green="200" blue="200">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="248" green="248" blue="248">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_1</name>
+    <text>Status</text>
+    <x>18</x>
+    <y>48</y>
+    <width>120</width>
+    <height>18</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="0" green="51" blue="102">
+      </color>
+    </foreground_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_2</name>
+    <text>Error</text>
+    <x>18</x>
+    <y>70</y>
+    <width>140</width>
+    <height>60</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="16.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="INVALID" red="255" green="0" blue="255">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <rules>
+      <rule name="Trip_color" prop_id="background_color" out_exp="false">
+        <exp bool_exp="pv0 == 1">
+          <value>
+            <color name="MAJOR" red="255" green="0" blue="0">
+            </color>
+          </value>
+        </exp>
+        <pv_name>$(PREFIX):$(UNIT)_isTripPresent</pv_name>
+      </rule>
+      <rule name="Trip_text" prop_id="text" out_exp="true">
+        <exp bool_exp="pv0 == 1">
+          <expression>"TRIP"</expression>
+        </exp>
+        <pv_name>$(PREFIX):$(UNIT)_isTripPresent</pv_name>
+      </rule>
+      <rule name="Warn_color" prop_id="background_color" out_exp="false">
+        <exp bool_exp="pv0 == 1">
+          <value>
+            <color name="MINOR" red="255" green="128" blue="0">
+            </color>
+          </value>
+        </exp>
+        <pv_name>$(PREFIX):$(UNIT)_isWarningPresent</pv_name>
+      </rule>
+      <rule name="Warn_text" prop_id="text" out_exp="true">
+        <exp bool_exp="pv0 == 1">
+          <expression>"WARNING"</expression>
+        </exp>
+        <pv_name>$(PREFIX):$(UNIT)_isWarningPresent</pv_name>
+      </rule>
+      <rule name="OK_color" prop_id="background_color" out_exp="false">
+        <exp bool_exp="pv0 == 0">
+          <value>
+            <color name="MAJOR" red="255" green="0" blue="0">
+            </color>
+          </value>
+        </exp>
+        <pv_name>$(PREFIX):$(UNIT)_isTripPresent</pv_name>
+      </rule>
+      <rule name="OK_text" prop_id="text" out_exp="true">
+        <exp bool_exp="pv0 == 0">
+          <expression>"OK"</expression>
+        </exp>
+        <pv_name>$(PREFIX):$(UNIT)_isTripPresent</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_3</name>
+    <text>Warning Code</text>
+    <x>180</x>
+    <y>72</y>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="11.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="80" green="80" blue="80">
+      </color>
+    </foreground_color>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update</name>
+    <pv_name>$(PREFIX):$(UNIT)_WarningCode</pv_name>
+    <x>285</x>
+    <y>72</y>
+    <width>60</width>
+    <height>22</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_4</name>
+    <text>Trip Code</text>
+    <x>180</x>
+    <y>102</y>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="11.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="80" green="80" blue="80">
+      </color>
+    </foreground_color>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_1</name>
+    <pv_name>$(PREFIX):$(UNIT)_TripCode</pv_name>
+    <x>285</x>
+    <y>102</y>
+    <width>60</width>
+    <height>22</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_5</name>
+    <text>Modbus</text>
+    <x>392</x>
+    <y>72</y>
+    <width>60</width>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="11.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="80" green="80" blue="80">
+      </color>
+    </foreground_color>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED</name>
+    <pv_name>$(PREFIX):$(UNIT)_ModbusError</pv_name>
+    <x>392</x>
+    <y>98</y>
+    <width>14</width>
+    <height>14</height>
+    <off_color>
+      <color red="0" green="180" blue="0">
+      </color>
+    </off_color>
+    <on_color>
+      <color red="255" green="0" blue="0">
+      </color>
+    </on_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_6</name>
+    <text>Err</text>
+    <x>409</x>
+    <y>96</y>
+    <width>30</width>
+    <height>18</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="9.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="120" green="120" blue="120">
+      </color>
+    </foreground_color>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_2</name>
+    <x>10</x>
+    <y>150</y>
+    <width>500</width>
+    <height>112</height>
+    <line_color>
+      <color red="200" green="200" blue="200">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="248" green="248" blue="248">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_7</name>
+    <text>Readings</text>
+    <x>18</x>
+    <y>153</y>
+    <width>120</width>
+    <height>18</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="0" green="51" blue="102">
+      </color>
+    </foreground_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_8</name>
+    <text>Output Pressure</text>
+    <x>25</x>
+    <y>172</y>
+    <width>140</width>
+    <height>22</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="11.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="60" green="60" blue="60">
+      </color>
+    </foreground_color>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_2</name>
+    <pv_name>$(PREFIX):$(UNIT)_OutputPressure</pv_name>
+    <x>180</x>
+    <y>171</y>
+    <width>90</width>
+    <height>24</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_9</name>
+    <text>Capacity</text>
+    <x>25</x>
+    <y>202</y>
+    <width>140</width>
+    <height>22</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="11.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="60" green="60" blue="60">
+      </color>
+    </foreground_color>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_3</name>
+    <pv_name>$(PREFIX):$(UNIT)_PercentageCapacity</pv_name>
+    <x>180</x>
+    <y>201</y>
+    <width>90</width>
+    <height>24</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_10</name>
+    <text>Motor Current</text>
+    <x>25</x>
+    <y>232</y>
+    <width>140</width>
+    <height>22</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="11.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="60" green="60" blue="60">
+      </color>
+    </foreground_color>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_4</name>
+    <pv_name>$(PREFIX):$(UNIT)_MotorCurrent</pv_name>
+    <x>180</x>
+    <y>231</y>
+    <width>90</width>
+    <height>24</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_3</name>
+    <x>10</x>
+    <y>270</y>
+    <width>498</width>
+    <height>138</height>
+    <line_color>
+      <color red="200" green="200" blue="200">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="248" green="248" blue="248">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_11</name>
+    <text>Controls</text>
+    <x>18</x>
+    <y>273</y>
+    <width>120</width>
+    <height>18</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="0" green="51" blue="102">
+      </color>
+    </foreground_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_12</name>
+    <text>Target Pressure</text>
+    <x>25</x>
+    <y>300</y>
+    <width>140</width>
+    <height>22</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="11.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="60" green="60" blue="60">
+      </color>
+    </foreground_color>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_5</name>
+    <pv_name>$(PREFIX):$(UNIT)_TargetPessure</pv_name>
+    <x>180</x>
+    <y>299</y>
+    <width>90</width>
+    <height>24</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_13</name>
+    <text>Set Target</text>
+    <x>25</x>
+    <y>330</y>
+    <width>140</width>
+    <height>22</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="11.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="60" green="60" blue="60">
+      </color>
+    </foreground_color>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry</name>
+    <pv_name>$(PREFIX):$(UNIT)_setTargetPessure</pv_name>
+    <x>180</x>
+    <y>329</y>
+    <width>90</width>
+    <height>24</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <background_color>
+      <color red="255" green="255" blue="230">
+      </color>
+    </background_color>
+    <horizontal_alignment>2</horizontal_alignment>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>Boolean Button</name>
+    <pv_name>$(PREFIX):$(UNIT)_setStartCommandPLC</pv_name>
+    <x>180</x>
+    <y>360</y>
+    <width>80</width>
+    <height>28</height>
+    <off_label>START</off_label>
+    <off_color>
+      <color red="200" green="200" blue="200">
+      </color>
+    </off_color>
+    <on_label>START</on_label>
+    <on_color>
+      <color red="0" green="180" blue="0">
+      </color>
+    </on_color>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="11.0">
+      </font>
+    </font>
+    <show_confirm_dialog>1</show_confirm_dialog>
+    <confirm_message>Confirm START $(LABEL)?</confirm_message>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>Boolean Button_1</name>
+    <pv_name>$(PREFIX):$(UNIT)_setStopCommandPLC</pv_name>
+    <x>270</x>
+    <y>360</y>
+    <width>80</width>
+    <height>28</height>
+    <off_label>STOP</off_label>
+    <off_color>
+      <color red="200" green="200" blue="200">
+      </color>
+    </off_color>
+    <on_label>STOP</on_label>
+    <on_color>
+      <color red="255" green="0" blue="0">
+      </color>
+    </on_color>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="11.0">
+      </font>
+    </font>
+    <show_confirm_dialog>1</show_confirm_dialog>
+    <confirm_message>Confirm STOP $(LABEL)?</confirm_message>
+  </widget>
+</display>
