@@ -2522,13 +2522,14 @@
     <x>290</x>
     <y>840</y>
     <width>460</width>
-    <height>50</height>
+    <height>70</height>
     <scripts>
       <script file="EmbeddedJs">
         <text><![CDATA[importPackage(Packages.org.csstudio.display.builder.runtime.script);
 logger = ScriptUtil.getLogger();
 
-var LocalVar2devid = PVUtil.getString(pvs[0]);
+var rawInput = PVUtil.getString(pvs[0]);
+var LocalVar2devid = rawInput ? rawInput.trim() : "00"
 var displayFile = widget.getPropertyValue("file");
 
 // Update the embedded display's macro map
@@ -2546,35 +2547,27 @@ print("Updating embedded display: devid=" + LocalVar2devid +", file=" + displayF
   </widget>
   <widget type="textentry" version="3.0.0">
     <name>Text Entry</name>
-    <pv_name>loc://devid</pv_name>
+    <pv_name>loc://devid&lt;VString&gt;("00")</pv_name>
     <x>190</x>
     <y>840</y>
-    <width>80</width>
+    <width>90</width>
+    <format>6</format>
+    <precision>2</precision>
     <show_units>false</show_units>
+    <horizontal_alignment>1</horizontal_alignment>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_105</name>
-    <text>Enter devid</text>
+    <text>Enter
+Address
+(2 hex digits)</text>
     <x>190</x>
     <y>860</y>
-    <width>80</width>
+    <width>90</width>
+    <height>60</height>
     <horizontal_alignment>1</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
     <wrap_words>false</wrap_words>
-  </widget>
-  <widget type="table" version="2.0.0">
-    <name>Table</name>
-    <pv_name>LACC:LCLK_CTRL_GEN:wfPriorityID</pv_name>
-    <x>150</x>
-    <y>940</y>
-    <width>365</width>
-    <height>100</height>
-    <columns>
-      <column>
-        <name>Column 1</name>
-        <width>100</width>
-        <editable>true</editable>
-      </column>
-    </columns>
   </widget>
 </display>
