@@ -18,15 +18,41 @@
   </widget>
   <widget type="label" version="2.0.0">
     <name>OPI SITE INFO</name>
-    <text>$(UUT):$(SITE) $(SITE_MODEL)</text>
+    <text>$(UUT):$(SITE)</text>
     <x>10</x>
     <y>40</y>
-    <width>800</width>
+    <width>160</width>
     <font>
       <font name="Header 3" family="Liberation Sans" style="BOLD" size="16.0">
       </font>
     </font>
     <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>SITE MODEL</name>
+    <pv_name>$(UUT):$(SITE):MODEL</pv_name>
+    <x>140</x>
+    <y>40</y>
+    <width>170</width>
+    <font>
+      <font name="Header 3" family="Liberation Sans" style="BOLD" size="16.0">
+      </font>
+    </font>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+    <format>6</format>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <rules>
+      <rule name="SHOW_WHEN_CONNECTED" prop_id="visible" out_exp="false">
+        <exp bool_exp="True">
+          <value>true</value>
+        </exp>
+        <pv_name>$(pv_name)</pv_name>
+      </rule>
+    </rules>
   </widget>
   <widget type="group" version="3.0.0">
     <name>THRESHOLDS</name>

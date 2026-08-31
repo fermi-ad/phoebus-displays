@@ -795,6 +795,45 @@
           </widget>
         </widget>
       </widget>
+      <widget type="action_button" version="3.0.0">
+        <name>Pulse Soft Button</name>
+        <actions execute_as_one="true">
+          <action type="write_pv">
+            <description>PULSE SOFT TRG</description>
+            <pv_name>${UUT}:SIG:SOFT_TRIGGER</pv_name>
+            <value>1</value>
+          </action>
+        </actions>
+        <text>PULSE SOFT TRG</text>
+        <x>180</x>
+        <y>360</y>
+        <width>130</width>
+        <tooltip>$(actions)</tooltip>
+      </widget>
+      <widget type="bool_button" version="2.0.0">
+        <name>GPG LIVE</name>
+        <pv_name>$(UUT):0:GPG:DBG:RSTATE.DISA</pv_name>
+        <x>180</x>
+        <y>400</y>
+        <width>130</width>
+        <height>26</height>
+        <off_label>Live Update</off_label>
+        <off_color>
+          <color name="OK" red="0" green="255" blue="0">
+          </color>
+        </off_color>
+        <on_label>Live Update</on_label>
+        <on_color>
+          <color name="Off" red="60" green="100" blue="60">
+          </color>
+        </on_color>
+        <background_color>
+          <color name="Header_ForeGround" red="255" green="255" blue="255">
+          </color>
+        </background_color>
+        <tooltip>Show GPG live status</tooltip>
+        <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+      </widget>
     </widget>
   </widget>
 </display>

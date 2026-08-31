@@ -18,6 +18,9 @@ def set_macros(widget, macros):
     widget.setPropertyValue("macros", new_macros)
 
 # Main
+# opi unique name loc://SLICEHOST_$(DID)  expands as SLICEHOST_WDnnnnnn
+# strip the unknown/variable part
+
 macros = {}
 for pv in pvs:
     key = pv.name.replace('loc://', '').split('_WD')[0]

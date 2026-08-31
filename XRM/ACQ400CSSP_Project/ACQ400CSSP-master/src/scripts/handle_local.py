@@ -22,7 +22,7 @@ def get_macros(*widgets):
 
 
 # Main
-macros = get_macros(display, widget)
+macros = get_macros(widget)
 for pv in pvs:
     key = pv.name.replace('loc://', '').split('_WD')[0]
     value = str(PVUtil.getString(pv))
@@ -30,4 +30,4 @@ for pv in pvs:
         macros[key] = value
         logger.info("Updated {} macro to {}".format(key, value))
     
-display.setPropertyValue("macros", macros)
+widget.setPropertyValue("macros", macros)

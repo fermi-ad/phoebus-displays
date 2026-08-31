@@ -531,31 +531,6 @@
               </action>
             </actions>
             <text>PULSE</text>
-            <x>120</x>
-            <y>25</y>
-            <width>110</width>
-            <height>20</height>
-            <font>
-              <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
-              </font>
-            </font>
-            <tooltip>$(actions)</tooltip>
-          </widget>
-          <widget type="action_button" version="3.0.0">
-            <name>Set Soft Button</name>
-            <actions execute_as_one="true">
-              <action type="write_pv">
-                <description>SET SOFT</description>
-                <pv_name>${UUT}:1:TRG:DX</pv_name>
-                <value>1</value>
-              </action>
-              <action type="write_pv">
-                <description>SET RISING</description>
-                <pv_name>${UUT}:1:TRG:SENSE</pv_name>
-                <value>1</value>
-              </action>
-            </actions>
-            <text>SELECT</text>
             <y>25</y>
             <width>110</width>
             <height>20</height>
@@ -638,6 +613,21 @@
               <vertical_alignment>1</vertical_alignment>
               <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
             </widget>
+          </widget>
+          <widget type="bool_button" version="2.0.0">
+            <name>SOFT TRIGGER INPUT</name>
+            <pv_name>$(UUT):MODE:TRANSIENT:SOFT_TRIGGER</pv_name>
+            <x>120</x>
+            <y>25</y>
+            <width>110</width>
+            <height>20</height>
+            <off_label>AUTO</off_label>
+            <on_label>AUTO</on_label>
+            <font>
+              <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+              </font>
+            </font>
+            <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
           </widget>
         </widget>
         <widget type="group" version="3.0.0">

@@ -58,9 +58,9 @@ def run_main(args):
     CMD = os.path.normpath(f'"{JAVA_BIN}" {JAVA_ARGS} -jar {PHOEBUS_JAR} -settings {SETTINGS} -logging {LOGGING} {TARGET}')
 
     if args.debug:
+        print("CMD", CMD)
         run(CMD, shell=True, env=ENV, text=True)
         print('END')
-        print("CMD", CMD)
         #print(globals())
         input()
         return
@@ -158,7 +158,7 @@ def init_memento(args):
 
     new_lines = []
     macros_pref = "org.csstudio.display.builder.model/macros={macros}\n"
-    new_lines.append(macros_pref.format(macros=gen_macros_pref(args.uuts, args.debug)))
+    new_lines.append(macros_pref.format(macros=gen_macros_pref(args.uuts, args.debug, args.macros)))
     if len(args.uuts) > 1:
         args.console = False
         new_lines.append("org.phoebus.ui/home_display=src/acq400_launcher_multi.bob")
@@ -169,9 +169,7 @@ def init_memento(args):
         new_lines.append(f"org.phoebus.applications.console/prompt={ID}> \\ \n")
         new_lines.append(f"org.phoebus.applications.console/shell=python3 {helper_path} {ID}\n")
 
-    if not os.path.exists(SETTINGS):
-        print(f"Creating new workspace {WORKSPACE}")
-        os.makedirs(WORKSPACE, exist_ok=True)
+    os.makedirs(WORKSPACE, exist_ok=True)
 
     try:
         with open(SETTINGS_BASE, 'r') as base_fp:
@@ -187,7 +185,7 @@ def init_memento(args):
     TARGET=f"-resource {resource} -layout null"
     print(f'init_memento() workspace {WORKSPACE} TARGET {TARGET}')
     
-def gen_macros_pref(uuts, debug):
+def gen_macros_pref(uuts, debug, user_macros):
     macros="<UUT>{uut}</UUT>".format(uut=uuts[0])
     if len(uuts) > 1:
         macros=""
@@ -196,6 +194,8 @@ def gen_macros_pref(uuts, debug):
             macros += f"<UUT{idx}>{uut}</UUT{idx}>"
     macros += f"<DEBUG>{debug}</DEBUG>"
     macros += f"<UUTS>{','.join(uuts)}</UUTS>"
+    for key, value in user_macros.items():
+         macros += f"<{key}>{value}</{key}>"
     return macros
 
 
@@ -249,15 +249,20 @@ def run_cmd(cmd):
 
 def check_uut_hostnames(hostnames):
     """Warns if suppiled hostname is not in D-tacq format"""
-    pattern = re.compile(r'^(acq1001|acq1102|acq2106|acq2206|z7io)_[0-9]{3}$')
+    pattern = re.compile(r'^(acq1001|acq1102|acq2106|acq2206|z7io|kmcuz30)_[0-9]{3}$')
     for hostname in hostnames:
         if not pattern.fullmatch(hostname):
             logging.warning(f"hostname '{hostname}' is not in expected format: <model>_<ID>")
+
+def list_of_pairs(arg):
+    """Parse pairs into a dict"""
+    return dict(pair.split('=', 1) for pair in arg.split('/') if pair)
 
 def get_parser():
     parser = argparse.ArgumentParser(description='Start script for ACQ400CSSP')
     parser.add_argument('--debug', action='store_true', help="enable debug")
     parser.add_argument('--console', action='store_true', help="enable console")
+    parser.add_argument('--macros', default={}, type=list_of_pairs, help="Macro key values key1=val1/key2=val2")
     parser.add_argument('uuts', nargs='*', help="uut hostnames")
     return parser
 
