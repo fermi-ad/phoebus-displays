@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <display version="2.0.0">
-  <name>Coupler Heater Control</name>
+  <name>Cavity Heater Control</name>
   <width>920</width>
   <height>590</height>
   <grid_step_x>5</grid_step_x>
   <grid_step_y>5</grid_step_y>
   <widget type="label" version="2.0.0">
     <name>Label</name>
-    <text>Coupler Heater Control Loop</text>
+    <text>Cavity Heater Control Loop</text>
     <width>915</width>
     <height>30</height>
     <font>
@@ -39,7 +39,7 @@
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_11</name>
-    <text>Power (30W Max)</text>
+    <text>Power (300W Max)</text>
     <x>10</x>
     <y>35</y>
     <width>270</width>
@@ -437,10 +437,57 @@
     </widget>
   </widget>
   <widget type="embedded" version="2.0.0">
-    <name>Embedded Display_4</name>
-    <file>TempSensorDown.bob</file>
-    <x>360</x>
-    <y>110</y>
+    <name>Embedded Display_5</name>
+    <macros>
+      <dev>TX101</dev>
+    </macros>
+    <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
+    <x>570</x>
+    <y>35</y>
+    <width>65</width>
+    <height>35</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_6</name>
+    <macros>
+      <dev>TX201</dev>
+    </macros>
+    <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
+    <x>570</x>
+    <y>75</y>
+    <width>65</width>
+    <height>35</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_7</name>
+    <macros>
+      <dev>TX301</dev>
+    </macros>
+    <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
+    <x>570</x>
+    <y>115</y>
+    <width>65</width>
+    <height>35</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_8</name>
+    <macros>
+      <dev>TX401</dev>
+    </macros>
+    <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
+    <x>570</x>
+    <y>155</y>
+    <width>65</width>
+    <height>35</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_9</name>
+    <macros>
+      <dev>TX501</dev>
+    </macros>
+    <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
+    <x>570</x>
+    <y>195</y>
     <width>65</width>
     <height>35</height>
   </widget>
@@ -458,7 +505,7 @@
       </color>
     </background_color>
     <show_grid>true</show_grid>
-    <title>Coupler $(cav) Heater</title>
+    <title>Cavity Heater</title>
     <scale_font>
       <font family="Liberation Sans" style="REGULAR" size="11.0">
       </font>
@@ -496,11 +543,11 @@
         <pv_name>loc://ivvacp5</pv_name>
       </rule>
     </rules>
-    <start>30 minutes</start>
+    <start>1 hour</start>
     <end>now</end>
     <y_axes>
       <y_axis>
-        <title>Window Temperature (K)</title>
+        <title>Window Temperatures (K)</title>
         <autoscale>false</autoscale>
         <log_scale>false</log_scale>
         <minimum>260.0</minimum>
@@ -517,7 +564,7 @@
         <autoscale>false</autoscale>
         <log_scale>false</log_scale>
         <minimum>0.0</minimum>
-        <maximum>25.0</maximum>
+        <maximum>100.0</maximum>
         <show_grid>false</show_grid>
         <visible>true</visible>
         <color>
@@ -528,12 +575,68 @@
     </y_axes>
     <traces>
       <trace>
-        <name>$(sensor)</name>
-        <y_pv>$(system)$(sensor):Temp</y_pv>
+        <name>TP173</name>
+        <y_pv>$(system)TP173:Temp</y_pv>
         <axis>0</axis>
         <trace_type>2</trace_type>
         <color>
           <color red="0" green="255" blue="255">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name>TP273</name>
+        <y_pv>$(system)TP273:Temp</y_pv>
+        <axis>0</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color red="255" green="0" blue="0">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name>TP373</name>
+        <y_pv>$(system)TP373:Temp</y_pv>
+        <axis>0</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color red="0" green="255" blue="0">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name>TP473</name>
+        <y_pv>$(system)TP473:Temp</y_pv>
+        <axis>0</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color red="170" green="0" blue="255">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name>TP573</name>
+        <y_pv>$(system)TP573:Temp</y_pv>
+        <axis>0</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color red="255" green="127" blue="0">
           </color>
         </color>
         <line_width>2</line_width>
@@ -547,7 +650,7 @@
         <axis>1</axis>
         <trace_type>2</trace_type>
         <color>
-          <color name="ActiveText" red="255" green="255" blue="0">
+          <color red="255" green="255" blue="0">
           </color>
         </color>
         <line_width>2</line_width>
@@ -556,5 +659,60 @@
         <visible>true</visible>
       </trace>
     </traces>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_11</name>
+    <macros>
+      <dev>TX102</dev>
+    </macros>
+    <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
+    <x>650</x>
+    <y>35</y>
+    <width>65</width>
+    <height>35</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_12</name>
+    <macros>
+      <dev>TX202</dev>
+    </macros>
+    <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
+    <x>650</x>
+    <y>75</y>
+    <width>65</width>
+    <height>35</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_13</name>
+    <macros>
+      <dev>TX302</dev>
+    </macros>
+    <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
+    <x>650</x>
+    <y>115</y>
+    <width>65</width>
+    <height>35</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_14</name>
+    <macros>
+      <dev>TX402</dev>
+    </macros>
+    <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
+    <x>650</x>
+    <y>155</y>
+    <width>65</width>
+    <height>35</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_15</name>
+    <macros>
+      <dev>TX502</dev>
+    </macros>
+    <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
+    <x>650</x>
+    <y>195</y>
+    <width>65</width>
+    <height>35</height>
   </widget>
 </display>
