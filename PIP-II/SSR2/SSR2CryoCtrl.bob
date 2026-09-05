@@ -1,17 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <display version="2.0.0">
-  <name>HB650-$(cm) Cryogenics Control</name>
+  <name>SSR2-$(cm) Cryogenics Control</name>
   <width>2110</width>
   <height>940</height>
   <grid_step_x>5</grid_step_x>
   <grid_step_y>5</grid_step_y>
+  <widget type="label" version="2.0.0">
+    <name>Label_60</name>
+    <text>After JT
+2K Line</text>
+    <x>10</x>
+    <y>475</y>
+    <width>75</width>
+    <height>100</height>
+    <background_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>2</vertical_alignment>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="picture" version="2.0.0">
+    <name>Picture</name>
+    <file>../../images/SSR2/SSR2CryoBox.png</file>
+    <x>90</x>
+    <y>500</y>
+    <width>650</width>
+    <height>310</height>
+  </widget>
   <widget type="rectangle" version="2.0.0">
     <name>Rectangle_3</name>
+    <x>1000</x>
     <y>40</y>
     <width>1400</width>
     <height>900</height>
     <line_width>1</line_width>
     <transparent>true</transparent>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <x>675</x>
+    <y>790</y>
+    <width>75</width>
+    <height>100</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>Label_24</name>
+      <text>LTTS Outlet</text>
+      <width>75</width>
+      <height>100</height>
+      <background_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>2</vertical_alignment>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Embedded Display_11</name>
+      <macros>
+        <dev>TX034A</dev>
+      </macros>
+      <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
+      <x>5</x>
+      <width>65</width>
+      <height>35</height>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Embedded Display_32</name>
+      <macros>
+        <dev>TX034B</dev>
+      </macros>
+      <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
+      <x>5</x>
+      <y>35</y>
+      <width>65</width>
+      <height>35</height>
+    </widget>
   </widget>
   <widget type="group" version="3.0.0">
     <name>Group</name>
@@ -363,32 +433,32 @@
     </widget>
   </widget>
   <widget type="navtabs" version="2.0.0">
-    <name>HB650CryoCircuitSelect</name>
+    <name>SSR2CryoCircuitSelect</name>
     <tabs>
       <tab>
         <name>Shield Circuit</name>
-        <file>HB650CircuitShield_ctrl.bob</file>
+        <file>SSR2CircuitShield_ctrl.bob</file>
         <macros>
         </macros>
         <group_name></group_name>
       </tab>
       <tab>
         <name>Coupler Circuit</name>
-        <file>HB650CircuitCplr_ctrl.bob</file>
+        <file>SSR2CircuitCplr_ctrl.bob</file>
         <macros>
         </macros>
         <group_name></group_name>
       </tab>
       <tab>
         <name>Cool Down Circuit</name>
-        <file>HB650CircuitCD_ctrl.bob</file>
+        <file>SSR2CircuitCD_ctrl.bob</file>
         <macros>
         </macros>
         <group_name></group_name>
       </tab>
       <tab>
         <name>JT Operation Circuit</name>
-        <file>HB650CircuitJT_ctrl.bob</file>
+        <file>SSR2CircuitJT_ctrl.bob</file>
         <macros>
         </macros>
         <group_name></group_name>
@@ -399,1324 +469,6 @@
     <height>415</height>
     <direction>0</direction>
     <tab_width>130</tab_width>
-  </widget>
-  <widget type="group" version="3.0.0">
-    <name>Group</name>
-    <x>5</x>
-    <y>470</y>
-    <width>835</width>
-    <height>460</height>
-    <style>3</style>
-    <transparent>true</transparent>
-    <widget type="rectangle" version="2.0.0">
-      <name>Rectangle</name>
-      <width>835</width>
-      <height>460</height>
-      <line_width>1</line_width>
-      <transparent>true</transparent>
-    </widget>
-    <widget type="picture" version="2.0.0">
-      <name>Picture</name>
-      <file>../../images/HB650/HB650CryoBox.png</file>
-      <x>103</x>
-      <y>30</y>
-      <width>630</width>
-      <height>310</height>
-    </widget>
-    <widget type="label" version="2.0.0">
-      <name>Label_27</name>
-      <text>JT Valve Inlet</text>
-      <x>295</x>
-      <y>322</y>
-      <width>55</width>
-      <height>100</height>
-      <background_color>
-        <color name="Button_Background" red="210" green="210" blue="210">
-        </color>
-      </background_color>
-      <transparent>false</transparent>
-      <horizontal_alignment>1</horizontal_alignment>
-      <vertical_alignment>2</vertical_alignment>
-      <border_width>1</border_width>
-    </widget>
-    <widget type="label" version="2.0.0">
-      <name>Label_26</name>
-      <text>5K Inlet</text>
-      <x>148</x>
-      <y>322</y>
-      <width>55</width>
-      <height>100</height>
-      <background_color>
-        <color name="Button_Background" red="210" green="210" blue="210">
-        </color>
-      </background_color>
-      <transparent>false</transparent>
-      <horizontal_alignment>1</horizontal_alignment>
-      <vertical_alignment>2</vertical_alignment>
-      <border_width>1</border_width>
-    </widget>
-    <widget type="label" version="2.0.0">
-      <name>Label_33</name>
-      <text>Bayonet Box</text>
-      <x>10</x>
-      <y>428</y>
-      <width>815</width>
-      <height>30</height>
-      <font>
-        <font family="Liberation Sans" style="BOLD" size="20.0">
-        </font>
-      </font>
-      <background_color>
-        <color name="Button_Background" red="210" green="210" blue="210">
-        </color>
-      </background_color>
-      <transparent>false</transparent>
-      <horizontal_alignment>1</horizontal_alignment>
-      <vertical_alignment>1</vertical_alignment>
-    </widget>
-    <widget type="label" version="2.0.0">
-      <name>Label_29</name>
-      <text>JT Valve Outlet</text>
-      <x>34</x>
-      <y>198</y>
-      <width>55</width>
-      <height>100</height>
-      <background_color>
-        <color name="Button_Background" red="210" green="210" blue="210">
-        </color>
-      </background_color>
-      <transparent>false</transparent>
-      <horizontal_alignment>1</horizontal_alignment>
-      <vertical_alignment>2</vertical_alignment>
-      <border_width>1</border_width>
-    </widget>
-    <widget type="label" version="2.0.0">
-      <name>Label_24</name>
-      <text>LTTS Outlet</text>
-      <x>740</x>
-      <y>322</y>
-      <width>85</width>
-      <height>50</height>
-      <background_color>
-        <color name="Button_Background" red="210" green="210" blue="210">
-        </color>
-      </background_color>
-      <transparent>false</transparent>
-      <horizontal_alignment>1</horizontal_alignment>
-      <vertical_alignment>2</vertical_alignment>
-      <border_width>1</border_width>
-    </widget>
-    <widget type="ellipse" version="2.0.0">
-      <name>Ellipse_51</name>
-      <x>250</x>
-      <y>193</y>
-      <width>10</width>
-      <height>10</height>
-      <line_width>2</line_width>
-      <line_color>
-        <color name="OK" red="0" green="255" blue="0">
-        </color>
-      </line_color>
-      <background_color>
-        <color red="255" green="255" blue="255">
-        </color>
-      </background_color>
-    </widget>
-    <widget type="polyline" version="2.0.0">
-      <name>Polyline_30</name>
-      <x>390</x>
-      <y>265</y>
-      <width>10</width>
-      <height>65</height>
-      <points>
-        <point x="10.0" y="65.0">
-        </point>
-        <point x="0.0" y="0.0">
-        </point>
-      </points>
-      <line_color>
-        <color red="0" green="255" blue="0">
-        </color>
-      </line_color>
-      <arrows>2</arrows>
-      <arrow_length>7</arrow_length>
-    </widget>
-    <widget type="ellipse" version="2.0.0">
-      <name>Ellipse_54</name>
-      <x>465</x>
-      <y>195</y>
-      <width>10</width>
-      <height>10</height>
-      <line_width>2</line_width>
-      <line_color>
-        <color name="OK" red="0" green="255" blue="0">
-        </color>
-      </line_color>
-      <background_color>
-        <color red="255" green="255" blue="255">
-        </color>
-      </background_color>
-    </widget>
-    <widget type="ellipse" version="2.0.0">
-      <name>Ellipse_55</name>
-      <x>385</x>
-      <y>245</y>
-      <width>10</width>
-      <height>10</height>
-      <line_width>2</line_width>
-      <line_color>
-        <color name="OK" red="0" green="255" blue="0">
-        </color>
-      </line_color>
-      <background_color>
-        <color red="255" green="255" blue="255">
-        </color>
-      </background_color>
-    </widget>
-    <widget type="polyline" version="2.0.0">
-      <name>Polyline_32</name>
-      <x>470</x>
-      <y>210</y>
-      <width>20</width>
-      <height>120</height>
-      <points>
-        <point x="20.0" y="120.0">
-        </point>
-        <point x="0.0" y="0.0">
-        </point>
-      </points>
-      <line_color>
-        <color red="0" green="255" blue="0">
-        </color>
-      </line_color>
-      <arrows>2</arrows>
-      <arrow_length>7</arrow_length>
-    </widget>
-    <widget type="ellipse" version="2.0.0">
-      <name>Ellipse_56</name>
-      <x>550</x>
-      <y>245</y>
-      <width>10</width>
-      <height>10</height>
-      <line_width>2</line_width>
-      <line_color>
-        <color name="OK" red="0" green="255" blue="0">
-        </color>
-      </line_color>
-      <background_color>
-        <color red="255" green="255" blue="255">
-        </color>
-      </background_color>
-    </widget>
-    <widget type="ellipse" version="2.0.0">
-      <name>Ellipse_57</name>
-      <x>610</x>
-      <y>205</y>
-      <width>10</width>
-      <height>10</height>
-      <line_width>2</line_width>
-      <line_color>
-        <color name="OK" red="0" green="255" blue="0">
-        </color>
-      </line_color>
-      <background_color>
-        <color red="255" green="255" blue="255">
-        </color>
-      </background_color>
-    </widget>
-    <widget type="polyline" version="2.0.0">
-      <name>Polyline_35</name>
-      <x>85</x>
-      <y>198</y>
-      <width>155</width>
-      <height>22</height>
-      <points>
-        <point x="0.0" y="22.0">
-        </point>
-        <point x="155.0" y="0.0">
-        </point>
-      </points>
-      <line_color>
-        <color red="0" green="255" blue="0">
-        </color>
-      </line_color>
-      <arrows>2</arrows>
-      <arrow_length>7</arrow_length>
-    </widget>
-    <widget type="polyline" version="2.0.0">
-      <name>Polyline_36</name>
-      <x>95</x>
-      <y>243</y>
-      <width>50</width>
-      <height>92</height>
-      <points>
-        <point x="0.0" y="92.0">
-        </point>
-        <point x="50.0" y="0.0">
-        </point>
-      </points>
-      <line_color>
-        <color red="0" green="255" blue="0">
-        </color>
-      </line_color>
-      <arrows>2</arrows>
-      <arrow_length>7</arrow_length>
-    </widget>
-    <widget type="polyline" version="2.0.0">
-      <name>Polyline_37</name>
-      <x>245</x>
-      <y>265</y>
-      <width>30</width>
-      <height>65</height>
-      <points>
-        <point x="0.0" y="65.0">
-        </point>
-        <point x="30.0" y="0.0">
-        </point>
-      </points>
-      <line_color>
-        <color red="0" green="255" blue="0">
-        </color>
-      </line_color>
-      <arrows>2</arrows>
-      <arrow_length>7</arrow_length>
-    </widget>
-    <widget type="polyline" version="2.0.0">
-      <name>Polyline_38</name>
-      <x>325</x>
-      <y>230</y>
-      <width>20</width>
-      <height>130</height>
-      <points>
-        <point x="0.0" y="130.0">
-        </point>
-        <point x="20.0" y="0.0">
-        </point>
-      </points>
-      <line_color>
-        <color red="0" green="255" blue="0">
-        </color>
-      </line_color>
-      <arrows>2</arrows>
-      <arrow_length>7</arrow_length>
-    </widget>
-    <widget type="polyline" version="2.0.0">
-      <name>Polyline_39</name>
-      <x>560</x>
-      <y>265</y>
-      <width>25</width>
-      <height>65</height>
-      <points>
-        <point x="25.0" y="65.0">
-        </point>
-        <point x="0.0" y="0.0">
-        </point>
-      </points>
-      <line_color>
-        <color red="0" green="255" blue="0">
-        </color>
-      </line_color>
-      <arrows>2</arrows>
-      <arrow_length>7</arrow_length>
-    </widget>
-    <widget type="polyline" version="2.0.0">
-      <name>Polyline_40</name>
-      <x>623</x>
-      <y>220</y>
-      <width>117</width>
-      <height>120</height>
-      <points>
-        <point x="117.0" y="120.0">
-        </point>
-        <point x="0.0" y="0.0">
-        </point>
-      </points>
-      <line_color>
-        <color red="0" green="255" blue="0">
-        </color>
-      </line_color>
-      <arrows>2</arrows>
-      <arrow_length>7</arrow_length>
-    </widget>
-    <widget type="ellipse" version="2.0.0">
-      <name>Ellipse_59</name>
-      <x>655</x>
-      <y>175</y>
-      <width>10</width>
-      <height>10</height>
-      <line_width>2</line_width>
-      <line_color>
-        <color name="OK" red="0" green="255" blue="0">
-        </color>
-      </line_color>
-      <background_color>
-        <color red="255" green="255" blue="255">
-        </color>
-      </background_color>
-    </widget>
-    <widget type="polyline" version="2.0.0">
-      <name>Polyline_42</name>
-      <x>175</x>
-      <y>270</y>
-      <width>10</width>
-      <height>60</height>
-      <points>
-        <point x="0.0" y="60.0">
-        </point>
-        <point x="10.0" y="0.0">
-        </point>
-      </points>
-      <line_color>
-        <color red="0" green="255" blue="0">
-        </color>
-      </line_color>
-      <line_style>1</line_style>
-      <arrows>2</arrows>
-      <arrow_length>7</arrow_length>
-    </widget>
-    <widget type="ellipse" version="2.0.0">
-      <name>Ellipse_48</name>
-      <x>300</x>
-      <y>153</y>
-      <width>10</width>
-      <height>10</height>
-      <line_width>2</line_width>
-      <line_color>
-        <color name="OK" red="0" green="255" blue="0">
-        </color>
-      </line_color>
-      <background_color>
-        <color red="255" green="255" blue="255">
-        </color>
-      </background_color>
-    </widget>
-    <widget type="ellipse" version="2.0.0">
-      <name>Ellipse_49</name>
-      <x>240</x>
-      <y>173</y>
-      <width>10</width>
-      <height>10</height>
-      <line_width>2</line_width>
-      <line_color>
-        <color name="OK" red="0" green="255" blue="0">
-        </color>
-      </line_color>
-      <background_color>
-        <color red="255" green="255" blue="255">
-        </color>
-      </background_color>
-    </widget>
-    <widget type="polyline" version="2.0.0">
-      <name>Polyline_50</name>
-      <x>90</x>
-      <y>128</y>
-      <width>145</width>
-      <height>50</height>
-      <points>
-        <point x="0.0" y="0.0">
-        </point>
-        <point x="145.0" y="50.0">
-        </point>
-      </points>
-      <line_color>
-        <color red="0" green="255" blue="0">
-        </color>
-      </line_color>
-      <arrows>2</arrows>
-      <arrow_length>7</arrow_length>
-    </widget>
-    <widget type="polyline" version="2.0.0">
-      <name>Polyline_51</name>
-      <x>95</x>
-      <y>48</y>
-      <width>195</width>
-      <height>105</height>
-      <points>
-        <point x="0.0" y="0.0">
-        </point>
-        <point x="195.0" y="105.0">
-        </point>
-      </points>
-      <line_color>
-        <color red="0" green="255" blue="0">
-        </color>
-      </line_color>
-      <arrows>2</arrows>
-      <arrow_length>7</arrow_length>
-    </widget>
-    <widget type="group" version="3.0.0">
-      <name>Group_1</name>
-      <x>20</x>
-      <y>113</y>
-      <width>75</width>
-      <height>65</height>
-      <style>3</style>
-      <transparent>true</transparent>
-      <widget type="label" version="2.0.0">
-        <name>Label_58</name>
-        <text>G10 Spprt. 5K Line</text>
-        <width>75</width>
-        <height>65</height>
-        <background_color>
-          <color name="Button_Background" red="210" green="210" blue="210">
-          </color>
-        </background_color>
-        <transparent>false</transparent>
-        <horizontal_alignment>1</horizontal_alignment>
-        <vertical_alignment>2</vertical_alignment>
-        <border_width>1</border_width>
-      </widget>
-      <widget type="embedded" version="2.0.0">
-        <name>Embedded Display_23</name>
-        <macros>
-          <sensor>TX011</sensor>
-        </macros>
-        <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
-        <x>20</x>
-        <width>55</width>
-        <height>35</height>
-      </widget>
-    </widget>
-    <widget type="group" version="3.0.0">
-      <name>Group_2</name>
-      <x>20</x>
-      <y>30</y>
-      <width>75</width>
-      <height>65</height>
-      <style>3</style>
-      <transparent>true</transparent>
-      <widget type="label" version="2.0.0">
-        <name>Label_60</name>
-        <text>G10 Spprt. Pump Line</text>
-        <width>75</width>
-        <height>65</height>
-        <background_color>
-          <color name="Button_Background" red="210" green="210" blue="210">
-          </color>
-        </background_color>
-        <transparent>false</transparent>
-        <horizontal_alignment>1</horizontal_alignment>
-        <vertical_alignment>2</vertical_alignment>
-        <border_width>1</border_width>
-      </widget>
-      <widget type="embedded" version="2.0.0">
-        <name>Embedded Display_24</name>
-        <macros>
-          <sensor>TX012</sensor>
-        </macros>
-        <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
-        <x>20</x>
-        <width>55</width>
-        <height>35</height>
-      </widget>
-    </widget>
-    <widget type="label" version="2.0.0">
-      <name>Label_17</name>
-      <text>5K
-Inlet</text>
-      <x>175</x>
-      <width>40</width>
-      <height>35</height>
-      <background_color>
-        <color name="Button_Background" red="210" green="210" blue="210">
-        </color>
-      </background_color>
-      <transparent>false</transparent>
-      <horizontal_alignment>1</horizontal_alignment>
-      <vertical_alignment>1</vertical_alignment>
-    </widget>
-    <widget type="label" version="2.0.0">
-      <name>Label_18</name>
-      <text>HTTS Inlet</text>
-      <x>260</x>
-      <width>40</width>
-      <height>35</height>
-      <background_color>
-        <color name="Button_Background" red="210" green="210" blue="210">
-        </color>
-      </background_color>
-      <transparent>false</transparent>
-      <horizontal_alignment>1</horizontal_alignment>
-      <vertical_alignment>1</vertical_alignment>
-    </widget>
-    <widget type="ellipse" version="2.0.0">
-      <name>Ellipse_45</name>
-      <x>148</x>
-      <y>230</y>
-      <width>10</width>
-      <height>10</height>
-      <line_width>2</line_width>
-      <line_color>
-        <color name="OK" red="0" green="255" blue="0">
-        </color>
-      </line_color>
-      <background_color>
-        <color red="255" green="255" blue="255">
-        </color>
-      </background_color>
-    </widget>
-    <widget type="ellipse" version="2.0.0">
-      <name>Ellipse_46</name>
-      <x>183</x>
-      <y>248</y>
-      <width>10</width>
-      <height>10</height>
-      <line_width>2</line_width>
-      <line_color>
-        <color name="OK" red="0" green="255" blue="0">
-        </color>
-      </line_color>
-      <background_color>
-        <color red="255" green="255" blue="255">
-        </color>
-      </background_color>
-    </widget>
-    <widget type="ellipse" version="2.0.0">
-      <name>Ellipse_47</name>
-      <x>275</x>
-      <y>248</y>
-      <width>10</width>
-      <height>10</height>
-      <line_width>2</line_width>
-      <line_color>
-        <color name="OK" red="0" green="255" blue="0">
-        </color>
-      </line_color>
-      <background_color>
-        <color red="255" green="255" blue="255">
-        </color>
-      </background_color>
-    </widget>
-    <widget type="ellipse" version="2.0.0">
-      <name>Ellipse_50</name>
-      <x>340</x>
-      <y>215</y>
-      <width>10</width>
-      <height>10</height>
-      <line_width>2</line_width>
-      <line_color>
-        <color name="OK" red="0" green="255" blue="0">
-        </color>
-      </line_color>
-      <background_color>
-        <color red="255" green="255" blue="255">
-        </color>
-      </background_color>
-    </widget>
-    <widget type="label" version="2.0.0">
-      <name>Label_19</name>
-      <text>JT Valve</text>
-      <x>325</x>
-      <width>40</width>
-      <height>35</height>
-      <background_color>
-        <color name="Button_Background" red="210" green="210" blue="210">
-        </color>
-      </background_color>
-      <transparent>false</transparent>
-      <horizontal_alignment>1</horizontal_alignment>
-      <vertical_alignment>1</vertical_alignment>
-    </widget>
-    <widget type="label" version="2.0.0">
-      <name>Label_20</name>
-      <text>Pump Line</text>
-      <x>400</x>
-      <width>40</width>
-      <height>35</height>
-      <background_color>
-        <color name="Button_Background" red="210" green="210" blue="210">
-        </color>
-      </background_color>
-      <transparent>false</transparent>
-      <horizontal_alignment>1</horizontal_alignment>
-      <vertical_alignment>1</vertical_alignment>
-    </widget>
-    <widget type="label" version="2.0.0">
-      <name>Label_21</name>
-      <text>CD Valve</text>
-      <x>470</x>
-      <width>40</width>
-      <height>35</height>
-      <background_color>
-        <color name="Button_Background" red="210" green="210" blue="210">
-        </color>
-      </background_color>
-      <transparent>false</transparent>
-      <horizontal_alignment>1</horizontal_alignment>
-      <vertical_alignment>1</vertical_alignment>
-    </widget>
-    <widget type="label" version="2.0.0">
-      <name>Label_22</name>
-      <text>HTTS Outlet</text>
-      <x>535</x>
-      <width>40</width>
-      <height>35</height>
-      <background_color>
-        <color name="Button_Background" red="210" green="210" blue="210">
-        </color>
-      </background_color>
-      <transparent>false</transparent>
-      <horizontal_alignment>1</horizontal_alignment>
-      <vertical_alignment>1</vertical_alignment>
-    </widget>
-    <widget type="label" version="2.0.0">
-      <name>Label_23</name>
-      <text>LTTS Outlet</text>
-      <x>595</x>
-      <width>40</width>
-      <height>35</height>
-      <background_color>
-        <color name="Button_Background" red="210" green="210" blue="210">
-        </color>
-      </background_color>
-      <transparent>false</transparent>
-      <horizontal_alignment>1</horizontal_alignment>
-      <vertical_alignment>1</vertical_alignment>
-    </widget>
-    <widget type="polyline" version="2.0.0">
-      <name>Polyline_41</name>
-      <x>670</x>
-      <y>190</y>
-      <width>70</width>
-      <height>65</height>
-      <points>
-        <point x="70.0" y="65.0">
-        </point>
-        <point x="0.0" y="0.0">
-        </point>
-      </points>
-      <line_color>
-        <color red="0" green="255" blue="0">
-        </color>
-      </line_color>
-      <arrows>2</arrows>
-      <arrow_length>7</arrow_length>
-    </widget>
-    <widget type="group" version="3.0.0">
-      <name>Group_105</name>
-      <x>647</x>
-      <y>8</y>
-      <width>75</width>
-      <height>65</height>
-      <style>3</style>
-      <transparent>true</transparent>
-      <widget type="label" version="2.0.0">
-        <name>Label_139</name>
-        <text>JT Valve Intercept</text>
-        <width>75</width>
-        <height>65</height>
-        <background_color>
-          <color name="Button_Background" red="210" green="210" blue="210">
-          </color>
-        </background_color>
-        <transparent>false</transparent>
-        <horizontal_alignment>1</horizontal_alignment>
-        <border_width>1</border_width>
-      </widget>
-    </widget>
-    <widget type="group" version="3.0.0">
-      <name>Group_106</name>
-      <x>739</x>
-      <y>8</y>
-      <width>75</width>
-      <height>65</height>
-      <style>3</style>
-      <transparent>true</transparent>
-      <widget type="label" version="2.0.0">
-        <name>Label_140</name>
-        <text>CD Valve Intercept</text>
-        <width>75</width>
-        <height>65</height>
-        <background_color>
-          <color name="Button_Background" red="210" green="210" blue="210">
-          </color>
-        </background_color>
-        <transparent>false</transparent>
-        <horizontal_alignment>1</horizontal_alignment>
-        <border_width>1</border_width>
-      </widget>
-      <widget type="embedded" version="2.0.0">
-        <name>Embedded Display_125</name>
-        <macros>
-          <sensor>TX960A</sensor>
-        </macros>
-        <file>../Common/cryo-embedded-displays/TempSensorUp.bob</file>
-        <y>30</y>
-        <width>55</width>
-        <height>35</height>
-      </widget>
-    </widget>
-    <widget type="embedded" version="2.0.0">
-      <name>Embedded Display_11</name>
-      <macros>
-        <sensor>TX034</sensor>
-      </macros>
-      <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
-      <x>740</x>
-      <y>322</y>
-      <width>55</width>
-      <height>35</height>
-    </widget>
-    <widget type="group" version="3.0.0">
-      <name>Group_6</name>
-      <x>740</x>
-      <y>322</y>
-      <width>85</width>
-      <height>50</height>
-      <style>3</style>
-      <transparent>true</transparent>
-      <widget type="group" version="3.0.0">
-        <name>Group</name>
-        <width>85</width>
-        <height>50</height>
-        <style>3</style>
-        <transparent>true</transparent>
-      </widget>
-    </widget>
-    <widget type="embedded" version="2.0.0">
-      <name>Embedded Display_123</name>
-      <macros>
-        <sensor>TX970</sensor>
-      </macros>
-      <file>../Common/cryo-embedded-displays/TempSensorUp.bob</file>
-      <x>647</x>
-      <y>39</y>
-      <width>55</width>
-      <height>35</height>
-    </widget>
-    <widget type="group" version="3.0.0">
-      <name>Group_107</name>
-      <x>739</x>
-      <y>78</y>
-      <width>75</width>
-      <height>65</height>
-      <style>3</style>
-      <transparent>true</transparent>
-      <widget type="label" version="2.0.0">
-        <name>Label_141</name>
-        <text>CD Valve Intercept</text>
-        <width>75</width>
-        <height>65</height>
-        <background_color>
-          <color name="Button_Background" red="210" green="210" blue="210">
-          </color>
-        </background_color>
-        <transparent>false</transparent>
-        <horizontal_alignment>1</horizontal_alignment>
-        <border_width>1</border_width>
-      </widget>
-    </widget>
-    <widget type="embedded" version="2.0.0">
-      <name>Embedded Display_126</name>
-      <macros>
-        <sensor>TX960B</sensor>
-      </macros>
-      <file>../Common/cryo-embedded-displays/TempSensorUp.bob</file>
-      <x>739</x>
-      <y>109</y>
-      <width>55</width>
-      <height>35</height>
-    </widget>
-    <widget type="ellipse" version="2.0.0">
-      <name>Ellipse_109</name>
-      <x>478</x>
-      <y>143</y>
-      <width>10</width>
-      <height>10</height>
-      <line_width>2</line_width>
-      <line_color>
-        <color name="OK" red="0" green="255" blue="0">
-        </color>
-      </line_color>
-      <background_color>
-        <color red="255" green="255" blue="255">
-        </color>
-      </background_color>
-    </widget>
-    <widget type="ellipse" version="2.0.0">
-      <name>Ellipse_110</name>
-      <x>491</x>
-      <y>143</y>
-      <width>10</width>
-      <height>10</height>
-      <line_width>2</line_width>
-      <line_color>
-        <color name="OK" red="0" green="255" blue="0">
-        </color>
-      </line_color>
-      <background_color>
-        <color red="255" green="255" blue="255">
-        </color>
-      </background_color>
-    </widget>
-    <widget type="ellipse" version="2.0.0">
-      <name>Ellipse_111</name>
-      <x>485</x>
-      <y>165</y>
-      <width>10</width>
-      <height>10</height>
-      <line_width>2</line_width>
-      <line_color>
-        <color name="OK" red="0" green="255" blue="0">
-        </color>
-      </line_color>
-      <background_color>
-        <color red="255" green="255" blue="255">
-        </color>
-      </background_color>
-    </widget>
-    <widget type="polyline" version="2.0.0">
-      <name>Polyline_190</name>
-      <x>360</x>
-      <y>55</y>
-      <width>290</width>
-      <height>85</height>
-      <points>
-        <point x="290.0" y="0.0">
-        </point>
-        <point x="0.0" y="85.0">
-        </point>
-      </points>
-      <line_color>
-        <color red="0" green="255" blue="0">
-        </color>
-      </line_color>
-      <arrows>2</arrows>
-      <arrow_length>7</arrow_length>
-    </widget>
-    <widget type="polyline" version="2.0.0">
-      <name>Polyline_191</name>
-      <x>495</x>
-      <y>70</y>
-      <width>250</width>
-      <height>70</height>
-      <points>
-        <point x="250.0" y="0.0">
-        </point>
-        <point x="0.0" y="70.0">
-        </point>
-      </points>
-      <line_color>
-        <color red="0" green="255" blue="0">
-        </color>
-      </line_color>
-      <arrows>2</arrows>
-      <arrow_length>7</arrow_length>
-    </widget>
-    <widget type="xyplot" version="3.0.0">
-      <name>X/Y Plot</name>
-      <x>749</x>
-      <y>205</y>
-      <width>1</width>
-      <height>1</height>
-    </widget>
-    <widget type="group" version="3.0.0">
-      <name>Group_110</name>
-      <x>739</x>
-      <y>151</y>
-      <width>75</width>
-      <height>65</height>
-      <style>3</style>
-      <transparent>true</transparent>
-      <widget type="label" version="2.0.0">
-        <name>Label_142</name>
-        <text>CD Valve Stem</text>
-        <width>75</width>
-        <height>65</height>
-        <background_color>
-          <color name="Button_Background" red="210" green="210" blue="210">
-          </color>
-        </background_color>
-        <transparent>false</transparent>
-        <horizontal_alignment>1</horizontal_alignment>
-        <vertical_alignment>2</vertical_alignment>
-        <border_width>1</border_width>
-      </widget>
-      <widget type="embedded" version="2.0.0">
-        <name>Embedded Display_128</name>
-        <macros>
-          <sensor>TX960C</sensor>
-        </macros>
-        <file>../Common/cryo-embedded-displays/TempSensorUp.bob</file>
-        <width>55</width>
-        <height>35</height>
-      </widget>
-    </widget>
-    <widget type="ellipse" version="2.0.0">
-      <name>Ellipse_112</name>
-      <x>341</x>
-      <y>142</y>
-      <width>10</width>
-      <height>10</height>
-      <line_width>2</line_width>
-      <line_color>
-        <color name="OK" red="0" green="255" blue="0">
-        </color>
-      </line_color>
-      <background_color>
-        <color red="255" green="255" blue="255">
-        </color>
-      </background_color>
-    </widget>
-    <widget type="polyline" version="2.0.0">
-      <name>Polyline_192</name>
-      <x>510</x>
-      <y>125</y>
-      <width>230</width>
-      <height>23</height>
-      <points>
-        <point x="230.0" y="0.0">
-        </point>
-        <point x="0.0" y="23.0">
-        </point>
-      </points>
-      <line_color>
-        <color red="0" green="255" blue="0">
-        </color>
-      </line_color>
-      <arrows>2</arrows>
-      <arrow_length>7</arrow_length>
-    </widget>
-    <widget type="group" version="3.0.0">
-      <name>Group</name>
-      <x>740</x>
-      <y>237</y>
-      <width>75</width>
-      <height>65</height>
-      <style>3</style>
-      <transparent>true</transparent>
-      <widget type="label" version="2.0.0">
-        <name>Label_32</name>
-        <text>Bayonet Box Wall</text>
-        <width>75</width>
-        <height>65</height>
-        <background_color>
-          <color name="Button_Background" red="210" green="210" blue="210">
-          </color>
-        </background_color>
-        <transparent>false</transparent>
-        <horizontal_alignment>1</horizontal_alignment>
-        <vertical_alignment>2</vertical_alignment>
-        <border_width>1</border_width>
-      </widget>
-      <widget type="embedded" version="2.0.0">
-        <name>Embedded Display_1</name>
-        <macros>
-          <sensor>TX069</sensor>
-        </macros>
-        <file>../Common/cryo-embedded-displays/TempSensorUp.bob</file>
-        <width>55</width>
-        <height>35</height>
-      </widget>
-    </widget>
-    <widget type="polyline" version="2.0.0">
-      <name>Polyline_193</name>
-      <x>503</x>
-      <y>166</y>
-      <width>236</width>
-      <height>3</height>
-      <points>
-        <point x="236.0" y="0.0">
-        </point>
-        <point x="0.0" y="3.0">
-        </point>
-      </points>
-      <line_color>
-        <color red="0" green="255" blue="0">
-        </color>
-      </line_color>
-      <arrows>2</arrows>
-      <arrow_length>7</arrow_length>
-    </widget>
-    <widget type="embedded" version="2.0.0">
-      <name>Embedded Display_10</name>
-      <macros>
-        <sensor>TX033A</sensor>
-      </macros>
-      <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
-      <x>34</x>
-      <y>198</y>
-      <width>55</width>
-      <height>35</height>
-    </widget>
-    <widget type="embedded" version="2.0.0">
-      <name>Embedded Display_131</name>
-      <macros>
-        <sensor>TX033B</sensor>
-      </macros>
-      <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
-      <x>34</x>
-      <y>233</y>
-      <width>55</width>
-      <height>35</height>
-    </widget>
-    <widget type="group" version="3.0.0">
-      <name>Group</name>
-      <x>34</x>
-      <y>198</y>
-      <width>55</width>
-      <height>100</height>
-      <style>3</style>
-      <transparent>true</transparent>
-    </widget>
-    <widget type="group" version="3.0.0">
-      <name>Group</name>
-      <x>20</x>
-      <y>317</y>
-      <width>75</width>
-      <height>65</height>
-      <style>3</style>
-      <transparent>true</transparent>
-      <widget type="label" version="2.0.0">
-        <name>Label_34</name>
-        <text>Bayonet Box Wall</text>
-        <width>75</width>
-        <height>65</height>
-        <background_color>
-          <color name="Button_Background" red="210" green="210" blue="210">
-          </color>
-        </background_color>
-        <transparent>false</transparent>
-        <horizontal_alignment>1</horizontal_alignment>
-        <vertical_alignment>2</vertical_alignment>
-        <border_width>1</border_width>
-      </widget>
-      <widget type="embedded" version="2.0.0">
-        <name>Embedded Display_9</name>
-        <macros>
-          <sensor>TX068</sensor>
-        </macros>
-        <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
-        <x>20</x>
-        <width>55</width>
-        <height>35</height>
-      </widget>
-    </widget>
-    <widget type="embedded" version="2.0.0">
-      <name>Embedded Display_3</name>
-      <macros>
-        <sensor>TX030</sensor>
-      </macros>
-      <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
-      <x>148</x>
-      <y>322</y>
-      <width>55</width>
-      <height>70</height>
-    </widget>
-    <widget type="label" version="2.0.0">
-      <name>Label_28</name>
-      <text>HTTS Inlet</text>
-      <x>220</x>
-      <y>322</y>
-      <width>55</width>
-      <height>100</height>
-      <background_color>
-        <color name="Button_Background" red="210" green="210" blue="210">
-        </color>
-      </background_color>
-      <transparent>false</transparent>
-      <horizontal_alignment>1</horizontal_alignment>
-      <vertical_alignment>2</vertical_alignment>
-      <border_width>1</border_width>
-    </widget>
-    <widget type="embedded" version="2.0.0">
-      <name>Embedded Display_16</name>
-      <macros>
-        <sensor>TX035B</sensor>
-      </macros>
-      <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
-      <x>220</x>
-      <y>357</y>
-      <width>55</width>
-      <height>35</height>
-    </widget>
-    <widget type="embedded" version="2.0.0">
-      <name>Embedded Display_4</name>
-      <macros>
-        <sensor>TX035A</sensor>
-      </macros>
-      <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
-      <x>220</x>
-      <y>322</y>
-      <width>55</width>
-      <height>35</height>
-    </widget>
-    <widget type="embedded" version="2.0.0">
-      <name>Embedded Display_148</name>
-      <macros>
-        <sensor>TX030B</sensor>
-      </macros>
-      <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
-      <x>148</x>
-      <y>357</y>
-      <width>55</width>
-      <height>35</height>
-      <transparent>true</transparent>
-    </widget>
-    <widget type="group" version="3.0.0">
-      <name>Group</name>
-      <x>295</x>
-      <y>322</y>
-      <width>55</width>
-      <height>35</height>
-      <style>3</style>
-      <transparent>true</transparent>
-      <widget type="embedded" version="2.0.0">
-        <name>Embedded Display_5</name>
-        <macros>
-          <sensor>TX032A</sensor>
-        </macros>
-        <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
-        <width>55</width>
-        <height>35</height>
-      </widget>
-    </widget>
-    <widget type="embedded" version="2.0.0">
-      <name>Embedded Display_20</name>
-      <macros>
-        <sensor>TX032B</sensor>
-      </macros>
-      <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
-      <x>295</x>
-      <y>357</y>
-      <width>55</width>
-      <height>35</height>
-    </widget>
-    <widget type="group" version="3.0.0">
-      <name>Group_114</name>
-      <x>148</x>
-      <y>322</y>
-      <width>55</width>
-      <height>100</height>
-      <style>3</style>
-      <transparent>true</transparent>
-    </widget>
-    <widget type="group" version="3.0.0">
-      <name>Group_115</name>
-      <x>220</x>
-      <y>322</y>
-      <width>55</width>
-      <height>100</height>
-      <style>3</style>
-      <transparent>true</transparent>
-    </widget>
-    <widget type="group" version="3.0.0">
-      <name>Group_116</name>
-      <x>295</x>
-      <y>322</y>
-      <width>55</width>
-      <height>100</height>
-      <style>3</style>
-      <transparent>true</transparent>
-    </widget>
-    <widget type="label" version="2.0.0">
-      <name>Label_30</name>
-      <text>CD Valve</text>
-      <x>465</x>
-      <y>322</y>
-      <width>55</width>
-      <height>100</height>
-      <background_color>
-        <color name="Button_Background" red="210" green="210" blue="210">
-        </color>
-      </background_color>
-      <transparent>false</transparent>
-      <horizontal_alignment>1</horizontal_alignment>
-      <vertical_alignment>2</vertical_alignment>
-      <border_width>1</border_width>
-    </widget>
-    <widget type="group" version="3.0.0">
-      <name>Group</name>
-      <x>465</x>
-      <y>322</y>
-      <width>55</width>
-      <height>35</height>
-      <style>3</style>
-      <transparent>true</transparent>
-      <widget type="embedded" version="2.0.0">
-        <name>Embedded Display_7</name>
-        <macros>
-          <sensor>TX031A</sensor>
-        </macros>
-        <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
-        <width>55</width>
-        <height>35</height>
-      </widget>
-    </widget>
-    <widget type="embedded" version="2.0.0">
-      <name>Embedded Display_27</name>
-      <macros>
-        <sensor>TX031B</sensor>
-      </macros>
-      <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
-      <x>465</x>
-      <y>357</y>
-      <width>55</width>
-      <height>35</height>
-    </widget>
-    <widget type="group" version="3.0.0">
-      <name>Group_118</name>
-      <x>465</x>
-      <y>322</y>
-      <width>55</width>
-      <height>100</height>
-      <style>3</style>
-      <transparent>true</transparent>
-    </widget>
-    <widget type="label" version="2.0.0">
-      <name>Label_31</name>
-      <text>HTTS Outlet</text>
-      <x>560</x>
-      <y>322</y>
-      <width>55</width>
-      <height>100</height>
-      <background_color>
-        <color name="Button_Background" red="210" green="210" blue="210">
-        </color>
-      </background_color>
-      <transparent>false</transparent>
-      <horizontal_alignment>1</horizontal_alignment>
-      <vertical_alignment>2</vertical_alignment>
-      <border_width>1</border_width>
-    </widget>
-    <widget type="group" version="3.0.0">
-      <name>Group</name>
-      <x>560</x>
-      <y>322</y>
-      <width>55</width>
-      <height>35</height>
-      <style>3</style>
-      <transparent>true</transparent>
-      <widget type="embedded" version="2.0.0">
-        <name>Embedded Display_8</name>
-        <macros>
-          <sensor>TX036A</sensor>
-        </macros>
-        <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
-        <width>55</width>
-        <height>35</height>
-      </widget>
-    </widget>
-    <widget type="embedded" version="2.0.0">
-      <name>Embedded Display_30</name>
-      <macros>
-        <sensor>TX036B</sensor>
-      </macros>
-      <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
-      <x>560</x>
-      <y>357</y>
-      <width>55</width>
-      <height>35</height>
-    </widget>
-    <widget type="group" version="3.0.0">
-      <name>Group_117</name>
-      <x>560</x>
-      <y>322</y>
-      <width>55</width>
-      <height>100</height>
-      <style>3</style>
-      <transparent>true</transparent>
-    </widget>
   </widget>
   <widget type="group" version="3.0.0">
     <name>Group_3</name>
@@ -2880,7 +1632,7 @@ Pressure</text>
       <widget type="embedded" version="2.0.0">
         <name>Embedded Display_89</name>
         <macros>
-          <sensor>TX913A</sensor>
+          <dev>TX913A</dev>
         </macros>
         <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
         <x>20</x>
@@ -2913,7 +1665,7 @@ Pressure</text>
       <widget type="embedded" version="2.0.0">
         <name>Embedded Display_90</name>
         <macros>
-          <sensor>TX912B</sensor>
+          <dev>TX912B</dev>
         </macros>
         <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
         <x>20</x>
@@ -2946,7 +1698,7 @@ Pressure</text>
       <widget type="embedded" version="2.0.0">
         <name>Embedded Display_91</name>
         <macros>
-          <sensor>TX912A</sensor>
+          <dev>TX912A</dev>
         </macros>
         <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
         <x>20</x>
@@ -3071,7 +1823,7 @@ Pressure</text>
       <widget type="embedded" version="2.0.0">
         <name>Embedded Display_29</name>
         <macros>
-          <sensor>TX913B</sensor>
+          <dev>TX913B</dev>
         </macros>
         <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
         <x>20</x>
@@ -3210,7 +1962,7 @@ Pressure</text>
     <widget type="embedded" version="2.0.0">
       <name>Embedded Display_95</name>
       <macros>
-        <sensor>TX911B</sensor>
+        <dev>TX911B</dev>
       </macros>
       <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
       <x>350</x>
@@ -3221,7 +1973,7 @@ Pressure</text>
     <widget type="embedded" version="2.0.0">
       <name>Embedded Display_92</name>
       <macros>
-        <sensor>TX911A</sensor>
+        <dev>TX911A</dev>
       </macros>
       <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
       <x>431</x>
@@ -3232,7 +1984,7 @@ Pressure</text>
     <widget type="embedded" version="2.0.0">
       <name>Embedded Display_93</name>
       <macros>
-        <sensor>TX910B</sensor>
+        <dev>TX910B</dev>
       </macros>
       <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
       <x>520</x>
@@ -3243,7 +1995,7 @@ Pressure</text>
     <widget type="embedded" version="2.0.0">
       <name>Embedded Display_94</name>
       <macros>
-        <sensor>TX910A</sensor>
+        <dev>TX910A</dev>
       </macros>
       <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
       <x>601</x>
@@ -3519,7 +2271,7 @@ Pressure</text>
     <widget type="embedded" version="2.0.0">
       <name>Embedded Display_130</name>
       <macros>
-        <sensor>TX950</sensor>
+        <dev>TX950</dev>
       </macros>
       <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
       <x>600</x>
@@ -3655,7 +2407,7 @@ Stack</text>
       <widget type="embedded" version="2.0.0">
         <name>Embedded Display_98</name>
         <macros>
-          <sensor>TX922</sensor>
+          <dev>TX922</dev>
         </macros>
         <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
         <width>55</width>
@@ -3690,7 +2442,7 @@ Stack</text>
       <widget type="embedded" version="2.0.0">
         <name>Embedded Display_99</name>
         <macros>
-          <sensor>TX921</sensor>
+          <dev>TX921</dev>
         </macros>
         <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
         <width>55</width>
@@ -3725,7 +2477,7 @@ Stack</text>
       <widget type="embedded" version="2.0.0">
         <name>Embedded Display_100</name>
         <macros>
-          <sensor>TX920</sensor>
+          <dev>TX920</dev>
         </macros>
         <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
         <width>55</width>
@@ -3760,7 +2512,7 @@ Stack</text>
       <widget type="embedded" version="2.0.0">
         <name>Embedded Display_28</name>
         <macros>
-          <sensor>TX923</sensor>
+          <dev>TX923</dev>
         </macros>
         <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
         <width>55</width>
@@ -3819,7 +2571,7 @@ Stack</text>
       <widget type="embedded" version="2.0.0">
         <name>Embedded Display_117</name>
         <macros>
-          <sensor>TX931</sensor>
+          <dev>TX931</dev>
         </macros>
         <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
         <x>19</x>
@@ -3855,7 +2607,7 @@ Stack</text>
       <widget type="embedded" version="2.0.0">
         <name>Embedded Display_118</name>
         <macros>
-          <sensor>TX930</sensor>
+          <dev>TX930</dev>
         </macros>
         <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
         <x>20</x>
@@ -3890,7 +2642,7 @@ Stack</text>
       <widget type="embedded" version="2.0.0">
         <name>Embedded Display_119</name>
         <macros>
-          <sensor>TX940</sensor>
+          <dev>TX940</dev>
         </macros>
         <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
         <x>19</x>
@@ -3926,7 +2678,7 @@ Stack</text>
       <widget type="embedded" version="2.0.0">
         <name>Embedded Display_120</name>
         <macros>
-          <sensor>TX932</sensor>
+          <dev>TX932</dev>
         </macros>
         <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
         <x>19</x>
@@ -4244,38 +2996,6 @@ Stack</text>
       <arrow_length>7</arrow_length>
     </widget>
   </widget>
-  <widget type="group" version="3.0.0">
-    <name>Group</name>
-    <x>380</x>
-    <y>792</y>
-    <width>55</width>
-    <height>80</height>
-    <style>3</style>
-    <transparent>true</transparent>
-    <widget type="label" version="2.0.0">
-      <name>Label_25</name>
-      <text>Pump Line</text>
-      <width>55</width>
-      <height>100</height>
-      <background_color>
-        <color name="Button_Background" red="210" green="210" blue="210">
-        </color>
-      </background_color>
-      <transparent>false</transparent>
-      <horizontal_alignment>1</horizontal_alignment>
-      <vertical_alignment>2</vertical_alignment>
-      <border_width>1</border_width>
-    </widget>
-    <widget type="embedded" version="2.0.0">
-      <name>Embedded Display_6</name>
-      <macros>
-        <sensor>TX043</sensor>
-      </macros>
-      <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
-      <width>55</width>
-      <height>35</height>
-    </widget>
-  </widget>
   <widget type="polyline" version="2.0.0">
     <name>Polyline_54</name>
     <x>1145</x>
@@ -4455,7 +3175,7 @@ Stack</text>
     </widget>
     <widget type="picture" version="2.0.0">
       <name>Picture_2</name>
-      <file>../../images/HB650/2K_ReturnTopHat.png</file>
+      <file>../../images/SSR2/SSR2TopHat.png</file>
       <x>42</x>
       <y>50</y>
       <width>460</width>
@@ -4518,7 +3238,7 @@ Stack</text>
       <widget type="embedded" version="2.0.0">
         <name>Embedded Display_19</name>
         <macros>
-          <sensor>TX403B</sensor>
+          <dev>TX403B</dev>
         </macros>
         <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
         <x>1</x>
@@ -4551,7 +3271,7 @@ Stack</text>
       <widget type="embedded" version="2.0.0">
         <name>Embedded Display_79</name>
         <macros>
-          <sensor>TX043</sensor>
+          <dev>TX043</dev>
         </macros>
         <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
         <x>20</x>
@@ -4570,7 +3290,7 @@ Stack</text>
       <widget type="embedded" version="2.0.0">
         <name>Embedded Display_15</name>
         <macros>
-          <sensor>TX042A</sensor>
+          <dev>TX042A</dev>
         </macros>
         <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
         <width>55</width>
@@ -4605,7 +3325,7 @@ Stack</text>
     <widget type="embedded" version="2.0.0">
       <name>Embedded Display_21</name>
       <macros>
-        <sensor>TX901B</sensor>
+        <dev>TX901B</dev>
       </macros>
       <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
       <x>482</x>
@@ -4616,7 +3336,7 @@ Stack</text>
     <widget type="embedded" version="2.0.0">
       <name>Embedded Display_22</name>
       <macros>
-        <sensor>TX901A</sensor>
+        <dev>TX901A</dev>
       </macros>
       <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
       <x>412</x>
@@ -4652,7 +3372,7 @@ Stack</text>
     <widget type="embedded" version="2.0.0">
       <name>Embedded Display_25</name>
       <macros>
-        <sensor>TX902B</sensor>
+        <dev>TX902B</dev>
       </macros>
       <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
       <x>482</x>
@@ -4663,7 +3383,7 @@ Stack</text>
     <widget type="embedded" version="2.0.0">
       <name>Embedded Display_26</name>
       <macros>
-        <sensor>TX902A</sensor>
+        <dev>TX902A</dev>
       </macros>
       <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
       <x>412</x>
@@ -4674,7 +3394,7 @@ Stack</text>
     <widget type="embedded" version="2.0.0">
       <name>Embedded Display_31</name>
       <macros>
-        <sensor>TX042B</sensor>
+        <dev>TX042B</dev>
       </macros>
       <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
       <x>482</x>
@@ -4850,7 +3570,7 @@ Stack</text>
     <widget type="embedded" version="2.0.0">
       <name>Embedded Display_14</name>
       <macros>
-        <sensor>TX041A</sensor>
+        <dev>TX041A</dev>
       </macros>
       <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
       <x>352</x>
@@ -4861,7 +3581,7 @@ Stack</text>
     <widget type="embedded" version="2.0.0">
       <name>Embedded Display_17</name>
       <macros>
-        <sensor>TX041B</sensor>
+        <dev>TX041B</dev>
       </macros>
       <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
       <x>417</x>
@@ -4872,7 +3592,7 @@ Stack</text>
     <widget type="embedded" version="2.0.0">
       <name>Embedded Display_18</name>
       <macros>
-        <sensor>TX041C</sensor>
+        <dev>TX041C</dev>
       </macros>
       <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
       <x>482</x>
@@ -4946,7 +3666,7 @@ Stack</text>
         <widget type="embedded" version="2.0.0">
           <name>Embedded Display_2</name>
           <macros>
-            <sensor>TX046</sensor>
+            <dev>TX046</dev>
           </macros>
           <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
           <x>20</x>
@@ -4982,7 +3702,7 @@ Stack</text>
       <widget type="embedded" version="2.0.0">
         <name>Embedded Display_12</name>
         <macros>
-          <sensor>TX047</sensor>
+          <dev>TX047</dev>
         </macros>
         <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
         <x>20</x>
@@ -5015,7 +3735,7 @@ Stack</text>
       <widget type="embedded" version="2.0.0">
         <name>Embedded Display_13</name>
         <macros>
-          <sensor>TX045</sensor>
+          <dev>TX045</dev>
         </macros>
         <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
         <x>20</x>
@@ -5299,7 +4019,7 @@ Stack</text>
     <macros>
       <view>Cryostat</view>
     </macros>
-    <file>HB650banner.bob</file>
+    <file>SSR2banner.bob</file>
     <width>1300</width>
     <height>40</height>
   </widget>
@@ -5578,5 +4298,1263 @@ Stack</text>
       </line_color>
       <transparent>true</transparent>
     </widget>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle</name>
+    <x>5</x>
+    <y>470</y>
+    <width>835</width>
+    <height>460</height>
+    <line_width>1</line_width>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_33</name>
+    <text>Bayonet Box</text>
+    <x>15</x>
+    <y>898</y>
+    <width>815</width>
+    <height>30</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="20.0">
+      </font>
+    </font>
+    <background_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>Ellipse_51</name>
+    <x>255</x>
+    <y>663</y>
+    <width>10</width>
+    <height>10</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color name="OK" red="0" green="255" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_30</name>
+    <x>395</x>
+    <y>735</y>
+    <width>25</width>
+    <height>55</height>
+    <points>
+      <point x="25.0" y="55.0">
+      </point>
+      <point x="0.0" y="0.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="0" green="255" blue="0">
+      </color>
+    </line_color>
+    <arrows>2</arrows>
+    <arrow_length>7</arrow_length>
+  </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>Ellipse_54</name>
+    <x>470</x>
+    <y>665</y>
+    <width>10</width>
+    <height>10</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color name="OK" red="0" green="255" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>Ellipse_55</name>
+    <x>390</x>
+    <y>715</y>
+    <width>10</width>
+    <height>10</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color name="OK" red="0" green="255" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_32</name>
+    <x>475</x>
+    <y>680</y>
+    <width>30</width>
+    <height>110</height>
+    <points>
+      <point x="30.0" y="110.0">
+      </point>
+      <point x="0.0" y="0.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="0" green="255" blue="0">
+      </color>
+    </line_color>
+    <arrows>2</arrows>
+    <arrow_length>7</arrow_length>
+  </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>Ellipse_56</name>
+    <x>550</x>
+    <y>675</y>
+    <width>10</width>
+    <height>10</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color name="OK" red="0" green="255" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>Ellipse_57</name>
+    <x>618</x>
+    <y>660</y>
+    <width>10</width>
+    <height>10</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color name="OK" red="0" green="255" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_35</name>
+    <x>90</x>
+    <y>668</y>
+    <width>155</width>
+    <height>22</height>
+    <points>
+      <point x="0.0" y="22.0">
+      </point>
+      <point x="155.0" y="0.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="0" green="255" blue="0">
+      </color>
+    </line_color>
+    <arrows>2</arrows>
+    <arrow_length>7</arrow_length>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_36</name>
+    <x>160</x>
+    <y>695</y>
+    <width>40</width>
+    <height>95</height>
+    <points>
+      <point x="0.0" y="95.0">
+      </point>
+      <point x="40.0" y="0.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="0" green="255" blue="0">
+      </color>
+    </line_color>
+    <arrows>2</arrows>
+    <arrow_length>7</arrow_length>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_37</name>
+    <x>250</x>
+    <y>690</y>
+    <width>20</width>
+    <height>100</height>
+    <points>
+      <point x="0.0" y="100.0">
+      </point>
+      <point x="20.0" y="0.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="0" green="255" blue="0">
+      </color>
+    </line_color>
+    <arrows>2</arrows>
+    <arrow_length>7</arrow_length>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_38</name>
+    <x>330</x>
+    <y>700</y>
+    <width>15</width>
+    <height>90</height>
+    <points>
+      <point x="0.0" y="90.0">
+      </point>
+      <point x="15.0" y="0.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="0" green="255" blue="0">
+      </color>
+    </line_color>
+    <arrows>2</arrows>
+    <arrow_length>7</arrow_length>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_39</name>
+    <x>560</x>
+    <y>690</y>
+    <width>40</width>
+    <height>100</height>
+    <points>
+      <point x="40.0" y="100.0">
+      </point>
+      <point x="0.0" y="0.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="0" green="255" blue="0">
+      </color>
+    </line_color>
+    <arrows>2</arrows>
+    <arrow_length>7</arrow_length>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_40</name>
+    <x>630</x>
+    <y>680</y>
+    <width>75</width>
+    <height>110</height>
+    <points>
+      <point x="75.0" y="110.0">
+      </point>
+      <point x="0.0" y="0.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="0" green="255" blue="0">
+      </color>
+    </line_color>
+    <arrows>2</arrows>
+    <arrow_length>7</arrow_length>
+  </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>Ellipse_59</name>
+    <x>660</x>
+    <y>645</y>
+    <width>10</width>
+    <height>10</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color name="OK" red="0" green="255" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_42</name>
+    <x>100</x>
+    <y>713</y>
+    <width>10</width>
+    <height>60</height>
+    <points>
+      <point x="0.0" y="60.0">
+      </point>
+      <point x="10.0" y="0.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="0" green="255" blue="0">
+      </color>
+    </line_color>
+    <line_style>1</line_style>
+    <arrows>2</arrows>
+    <arrow_length>7</arrow_length>
+  </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>Ellipse_48</name>
+    <x>300</x>
+    <y>653</y>
+    <width>10</width>
+    <height>10</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color name="OK" red="0" green="255" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>Ellipse_49</name>
+    <x>245</x>
+    <y>643</y>
+    <width>10</width>
+    <height>10</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color name="OK" red="0" green="255" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_50</name>
+    <x>95</x>
+    <y>598</y>
+    <width>145</width>
+    <height>50</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="145.0" y="50.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="0" green="255" blue="0">
+      </color>
+    </line_color>
+    <arrows>2</arrows>
+    <arrow_length>7</arrow_length>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_51</name>
+    <x>85</x>
+    <y>520</y>
+    <width>210</width>
+    <height>130</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="210.0" y="130.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="0" green="255" blue="0">
+      </color>
+    </line_color>
+    <arrows>2</arrows>
+    <arrow_length>7</arrow_length>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_17</name>
+    <text>LTTS
+Inlet</text>
+    <x>182</x>
+    <y>470</y>
+    <width>40</width>
+    <height>35</height>
+    <background_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_18</name>
+    <text>HTTS Inlet</text>
+    <x>260</x>
+    <y>470</y>
+    <width>40</width>
+    <height>35</height>
+    <background_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>Ellipse_45</name>
+    <x>153</x>
+    <y>700</y>
+    <width>10</width>
+    <height>10</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color name="OK" red="0" green="255" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>Ellipse_46</name>
+    <x>195</x>
+    <y>680</y>
+    <width>10</width>
+    <height>10</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color name="OK" red="0" green="255" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>Ellipse_47</name>
+    <x>270</x>
+    <y>673</y>
+    <width>10</width>
+    <height>10</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color name="OK" red="0" green="255" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>Ellipse_50</name>
+    <x>340</x>
+    <y>685</y>
+    <width>10</width>
+    <height>10</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color name="OK" red="0" green="255" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_19</name>
+    <text>JT Valve</text>
+    <x>323</x>
+    <y>470</y>
+    <width>40</width>
+    <height>35</height>
+    <background_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_20</name>
+    <text>Pump Line</text>
+    <x>398</x>
+    <y>470</y>
+    <width>40</width>
+    <height>35</height>
+    <background_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_21</name>
+    <text>CD Valve</text>
+    <x>470</x>
+    <y>470</y>
+    <width>40</width>
+    <height>35</height>
+    <background_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_22</name>
+    <text>HTTS Outlet</text>
+    <x>536</x>
+    <y>470</y>
+    <width>40</width>
+    <height>35</height>
+    <background_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_23</name>
+    <text>LTTS Outlet</text>
+    <x>603</x>
+    <y>470</y>
+    <width>40</width>
+    <height>35</height>
+    <background_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_41</name>
+    <x>675</x>
+    <y>660</y>
+    <width>70</width>
+    <height>65</height>
+    <points>
+      <point x="70.0" y="65.0">
+      </point>
+      <point x="0.0" y="0.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="0" green="255" blue="0">
+      </color>
+    </line_color>
+    <arrows>2</arrows>
+    <arrow_length>7</arrow_length>
+  </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>Ellipse_109</name>
+    <x>483</x>
+    <y>613</y>
+    <width>10</width>
+    <height>10</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color name="OK" red="0" green="255" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>Ellipse_110</name>
+    <x>496</x>
+    <y>613</y>
+    <width>10</width>
+    <height>10</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color name="OK" red="0" green="255" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>Ellipse_111</name>
+    <x>490</x>
+    <y>635</y>
+    <width>10</width>
+    <height>10</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color name="OK" red="0" green="255" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_190</name>
+    <x>365</x>
+    <y>525</y>
+    <width>290</width>
+    <height>85</height>
+    <points>
+      <point x="290.0" y="0.0">
+      </point>
+      <point x="0.0" y="85.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="0" green="255" blue="0">
+      </color>
+    </line_color>
+    <arrows>2</arrows>
+    <arrow_length>7</arrow_length>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_191</name>
+    <x>500</x>
+    <y>540</y>
+    <width>250</width>
+    <height>70</height>
+    <points>
+      <point x="250.0" y="0.0">
+      </point>
+      <point x="0.0" y="70.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="0" green="255" blue="0">
+      </color>
+    </line_color>
+    <arrows>2</arrows>
+    <arrow_length>7</arrow_length>
+  </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>Ellipse_112</name>
+    <x>346</x>
+    <y>612</y>
+    <width>10</width>
+    <height>10</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color name="OK" red="0" green="255" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_192</name>
+    <x>515</x>
+    <y>595</y>
+    <width>230</width>
+    <height>23</height>
+    <points>
+      <point x="230.0" y="0.0">
+      </point>
+      <point x="0.0" y="23.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="0" green="255" blue="0">
+      </color>
+    </line_color>
+    <arrows>2</arrows>
+    <arrow_length>7</arrow_length>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_193</name>
+    <x>508</x>
+    <y>636</y>
+    <width>236</width>
+    <height>3</height>
+    <points>
+      <point x="236.0" y="0.0">
+      </point>
+      <point x="0.0" y="3.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="0" green="255" blue="0">
+      </color>
+    </line_color>
+    <arrows>2</arrows>
+    <arrow_length>7</arrow_length>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <x>120</x>
+    <y>790</y>
+    <width>75</width>
+    <height>100</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>Label_26</name>
+      <text>LTTS Inlet</text>
+      <width>75</width>
+      <height>100</height>
+      <background_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>2</vertical_alignment>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Embedded Display_3</name>
+      <macros>
+        <dev>TX030A</dev>
+      </macros>
+      <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
+      <x>5</x>
+      <width>65</width>
+      <height>35</height>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Embedded Display_148</name>
+      <macros>
+        <dev>TX030B</dev>
+      </macros>
+      <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
+      <x>5</x>
+      <y>35</y>
+      <width>65</width>
+      <height>35</height>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <x>205</x>
+    <y>790</y>
+    <width>75</width>
+    <height>100</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>Label_28</name>
+      <text>HTTS Inlet</text>
+      <width>75</width>
+      <height>100</height>
+      <background_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>2</vertical_alignment>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Embedded Display_16</name>
+      <macros>
+        <dev>TX037B</dev>
+      </macros>
+      <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
+      <x>5</x>
+      <y>35</y>
+      <width>65</width>
+      <height>35</height>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Embedded Display_4</name>
+      <macros>
+        <dev>TX037A</dev>
+      </macros>
+      <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
+      <x>5</x>
+      <width>65</width>
+      <height>35</height>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <x>290</x>
+    <y>790</y>
+    <width>75</width>
+    <height>100</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>Label_27</name>
+      <text>JT Valve Inlet</text>
+      <width>75</width>
+      <height>100</height>
+      <background_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>2</vertical_alignment>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Embedded Display_20</name>
+      <macros>
+        <dev>TX035B</dev>
+      </macros>
+      <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
+      <x>5</x>
+      <y>35</y>
+      <width>65</width>
+      <height>35</height>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Embedded Display_5</name>
+      <macros>
+        <dev>TX035A</dev>
+      </macros>
+      <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
+      <x>5</x>
+      <width>65</width>
+      <height>35</height>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <x>380</x>
+    <y>790</y>
+    <width>75</width>
+    <height>100</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>Label_25</name>
+      <text>Pump Line</text>
+      <width>75</width>
+      <height>100</height>
+      <background_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>2</vertical_alignment>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Embedded Display_6</name>
+      <macros>
+        <dev>TX043</dev>
+      </macros>
+      <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
+      <x>5</x>
+      <width>65</width>
+      <height>35</height>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <x>10</x>
+    <y>787</y>
+    <width>75</width>
+    <height>65</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>Label_34</name>
+      <text>Bayonet Box Wall</text>
+      <width>75</width>
+      <height>65</height>
+      <background_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>2</vertical_alignment>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Embedded Display_9</name>
+      <macros>
+        <dev>TX068</dev>
+      </macros>
+      <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
+      <x>5</x>
+      <width>65</width>
+      <height>35</height>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <x>10</x>
+    <y>585</y>
+    <width>75</width>
+    <height>65</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>Label_58</name>
+      <text>G10 Spprt. 5K Line</text>
+      <width>75</width>
+      <height>65</height>
+      <background_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>2</vertical_alignment>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Embedded Display_23</name>
+      <macros>
+        <dev>TX011</dev>
+      </macros>
+      <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
+      <x>5</x>
+      <width>65</width>
+      <height>35</height>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <x>10</x>
+    <y>670</y>
+    <width>75</width>
+    <height>100</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>Label_29</name>
+      <text>JT Valve Outlet</text>
+      <width>75</width>
+      <height>100</height>
+      <background_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>2</vertical_alignment>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Embedded Display_10</name>
+      <macros>
+        <dev>TX033A</dev>
+      </macros>
+      <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
+      <x>5</x>
+      <width>65</width>
+      <height>35</height>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Embedded Display_131</name>
+      <macros>
+        <dev>TX033B</dev>
+      </macros>
+      <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
+      <x>5</x>
+      <width>65</width>
+      <height>35</height>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <x>470</x>
+    <y>790</y>
+    <width>75</width>
+    <height>100</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>Label_30</name>
+      <text>CD Valve</text>
+      <width>75</width>
+      <height>100</height>
+      <background_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>2</vertical_alignment>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Embedded Display_27</name>
+      <macros>
+        <dev>TX031B</dev>
+      </macros>
+      <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
+      <x>5</x>
+      <y>35</y>
+      <width>65</width>
+      <height>35</height>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Embedded Display_7</name>
+      <macros>
+        <dev>TX031A</dev>
+      </macros>
+      <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
+      <x>5</x>
+      <width>65</width>
+      <height>35</height>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <x>565</x>
+    <y>790</y>
+    <width>75</width>
+    <height>100</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>Label_31</name>
+      <text>HTTS Outlet</text>
+      <width>75</width>
+      <height>100</height>
+      <background_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>2</vertical_alignment>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Embedded Display_30</name>
+      <macros>
+        <dev>TP038B</dev>
+      </macros>
+      <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
+      <x>5</x>
+      <y>35</y>
+      <width>65</width>
+      <height>35</height>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Embedded Display_8</name>
+      <macros>
+        <dev>TP038A</dev>
+      </macros>
+      <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
+      <x>5</x>
+      <width>65</width>
+      <height>35</height>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <x>745</x>
+    <y>700</y>
+    <width>75</width>
+    <height>65</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>Label_32</name>
+      <text>Bayonet Box Wall</text>
+      <width>75</width>
+      <height>65</height>
+      <background_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>2</vertical_alignment>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Embedded Display_1</name>
+      <macros>
+        <dev>TX069</dev>
+      </macros>
+      <file>../Common/cryo-embedded-displays/TempSensorUp.bob</file>
+      <x>5</x>
+      <width>65</width>
+      <height>35</height>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <x>745</x>
+    <y>625</y>
+    <width>75</width>
+    <height>65</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="group" version="3.0.0">
+      <name>Group_110</name>
+      <width>75</width>
+      <height>65</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>Label_142</name>
+        <text>CD Valve Stem</text>
+        <width>75</width>
+        <height>65</height>
+        <background_color>
+          <color name="Button_Background" red="210" green="210" blue="210">
+          </color>
+        </background_color>
+        <transparent>false</transparent>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>2</vertical_alignment>
+        <border_width>1</border_width>
+      </widget>
+      <widget type="embedded" version="2.0.0">
+        <name>Embedded Display_128</name>
+        <macros>
+          <dev>TX960C</dev>
+        </macros>
+        <file>../Common/cryo-embedded-displays/TempSensorUp.bob</file>
+        <x>5</x>
+        <width>65</width>
+        <height>35</height>
+      </widget>
+    </widget>
+  </widget>
+  <widget type="xyplot" version="3.0.0">
+    <name>X/Y Plot_1</name>
+    <x>1277</x>
+    <y>1024</y>
+    <width>1</width>
+    <height>1</height>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <x>745</x>
+    <y>550</y>
+    <width>75</width>
+    <height>65</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>Label_141</name>
+      <text>CD Valve Intercept</text>
+      <width>75</width>
+      <height>65</height>
+      <background_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>2</vertical_alignment>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Embedded Display_126</name>
+      <macros>
+        <dev>TX960B</dev>
+      </macros>
+      <file>../Common/cryo-embedded-displays/TempSensorUp.bob</file>
+      <x>5</x>
+      <width>65</width>
+      <height>35</height>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <x>745</x>
+    <y>475</y>
+    <width>75</width>
+    <height>65</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>Label_140</name>
+      <text>CD Valve Intercept</text>
+      <width>75</width>
+      <height>65</height>
+      <background_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>2</vertical_alignment>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Embedded Display_125</name>
+      <macros>
+        <dev>TX960A</dev>
+      </macros>
+      <file>../Common/cryo-embedded-displays/TempSensorUp.bob</file>
+      <x>5</x>
+      <width>65</width>
+      <height>35</height>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <x>660</x>
+    <y>475</y>
+    <width>75</width>
+    <height>65</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>Label_139</name>
+      <text>JT Valve Intercept</text>
+      <width>75</width>
+      <height>65</height>
+      <background_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>2</vertical_alignment>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Embedded Display_123</name>
+      <macros>
+        <dev>TX970</dev>
+      </macros>
+      <file>../Common/cryo-embedded-displays/TempSensorUp.bob</file>
+      <x>5</x>
+      <width>65</width>
+      <height>35</height>
+    </widget>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_33</name>
+    <macros>
+      <dev>TX036A</dev>
+    </macros>
+    <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
+    <x>15</x>
+    <y>475</y>
+    <width>65</width>
+    <height>35</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_24</name>
+    <macros>
+      <dev>TX036B</dev>
+    </macros>
+    <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
+    <x>15</x>
+    <y>510</y>
+    <width>65</width>
+    <height>35</height>
   </widget>
 </display>
