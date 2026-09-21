@@ -675,7 +675,6 @@
     <symbols>
       <symbol>../Images/Cryo/png/ControlValveGray.png</symbol>
       <symbol>../Images/Cryo/png/ControlValveGreen.png</symbol>
-      <symbol>../Images/Cryo/png/ControlValveRed.png</symbol>
     </symbols>
     <x>888</x>
     <y>453</y>
@@ -689,6 +688,17 @@
       </action>
     </actions>
     <run_actions_on_mouse_click>true</run_actions_on_mouse_click>
+    <rules>
+      <rule name="Symbol change" prop_id="symbols[0]" out_exp="false">
+        <exp bool_exp="pv0 &lt; 0.5">
+          <value>../Images/Cryo/png/ControlValveGray.png</value>
+        </exp>
+        <exp bool_exp="pv0 &gt; 0.5">
+          <value>../Images/Cryo/png/ControlValveGreen.png</value>
+        </exp>
+        <pv_name>CP:MYCOM_CRYO_WTVLV:Open</pv_name>
+      </rule>
+    </rules>
     <tooltip>$(pv_name)
 $(pv_value)
 $(actions)</tooltip>
@@ -827,7 +837,7 @@ $(actions)</tooltip>
   <widget type="led" version="2.0.0">
     <name>LED_13</name>
     <bit>0</bit>
-    <x>175</x>
+    <x>169</x>
     <y>264</y>
     <off_label>M</off_label>
     <off_color>
@@ -1013,7 +1023,7 @@ $(actions)</tooltip>
   <widget type="led" version="2.0.0">
     <name>LED_14</name>
     <bit>0</bit>
-    <x>1248</x>
+    <x>1243</x>
     <y>265</y>
     <off_label>M</off_label>
     <off_color>
@@ -1167,8 +1177,8 @@ $(actions)</tooltip>
   <widget type="led" version="2.0.0">
     <name>LED_16</name>
     <bit>0</bit>
-    <x>1249</x>
-    <y>155</y>
+    <x>1244</x>
+    <y>156</y>
     <off_label>M</off_label>
     <off_color>
       <color name="fgs.Gray-45" red="167" green="168" blue="170">
@@ -1857,8 +1867,8 @@ $(actions)</tooltip>
     <name>Polyline_344</name>
     <x>282</x>
     <y>195</y>
-    <width>0</width>
-    <height>0</height>
+    <width>1</width>
+    <height>1</height>
     <points>
       <point x="0.0" y="0.0">
       </point>
@@ -1999,5 +2009,104 @@ $(actions)</tooltip>
     <y>127</y>
     <width>1</width>
     <height>1</height>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_28</name>
+    <pv_name>$(system)PV1433:INTLK</pv_name>
+    <bit>0</bit>
+    <x>121</x>
+    <y>264</y>
+    <off_label>I</off_label>
+    <off_color>
+      <color name="acorn.Yellow" red="255" green="249" blue="5">
+      </color>
+    </off_color>
+    <on_label>I</on_label>
+    <on_color>
+      <color name="acorn.Yellow" red="255" green="249" blue="5">
+      </color>
+    </on_color>
+    <line_color>
+      <color name="acorn.Red" red="229" green="56" blue="35">
+      </color>
+    </line_color>
+    <square>true</square>
+    <rules>
+      <rule name="Visibilty" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0 == 1">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="pv0 == 0">
+          <value>false</value>
+        </exp>
+        <pv_name>$(pv_name)</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_29</name>
+    <pv_name>$(system)PV1404:INTLK</pv_name>
+    <bit>0</bit>
+    <x>1191</x>
+    <y>156</y>
+    <off_label>I</off_label>
+    <off_color>
+      <color name="acorn.Yellow" red="255" green="249" blue="5">
+      </color>
+    </off_color>
+    <on_label>I</on_label>
+    <on_color>
+      <color name="acorn.Yellow" red="255" green="249" blue="5">
+      </color>
+    </on_color>
+    <line_color>
+      <color name="acorn.Red" red="229" green="56" blue="35">
+      </color>
+    </line_color>
+    <square>true</square>
+    <rules>
+      <rule name="Visibilty" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0 == 1">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="pv0 == 0">
+          <value>false</value>
+        </exp>
+        <pv_name>$(pv_name)</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_30</name>
+    <pv_name>$(system)PV1401:INTLK</pv_name>
+    <bit>0</bit>
+    <x>1191</x>
+    <y>265</y>
+    <off_label>I</off_label>
+    <off_color>
+      <color name="acorn.Yellow" red="255" green="249" blue="5">
+      </color>
+    </off_color>
+    <on_label>I</on_label>
+    <on_color>
+      <color name="acorn.Yellow" red="255" green="249" blue="5">
+      </color>
+    </on_color>
+    <line_color>
+      <color name="acorn.Red" red="229" green="56" blue="35">
+      </color>
+    </line_color>
+    <square>true</square>
+    <rules>
+      <rule name="Visibilty" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0 == 1">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="pv0 == 0">
+          <value>false</value>
+        </exp>
+        <pv_name>$(pv_name)</pv_name>
+      </rule>
+    </rules>
   </widget>
 </display>
