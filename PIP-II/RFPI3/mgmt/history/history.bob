@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2025-10-21 09:37:25 by kacpe-->
+<display version="2.0.0">
+  <name>System History</name>
+  <width>580</width>
+  <height>820</height>
+  <widget type="rectangle" version="2.0.0">
+    <name>Titlebar</name>
+    <width>580</width>
+    <height>50</height>
+    <line_width>0</line_width>
+    <background_color>
+      <color name="PRIMARY-HEADER-BACKGROUND" red="151" green="188" blue="202">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Title</name>
+    <text>RFPI Management</text>
+    <x>20</x>
+    <width>290</width>
+    <height>50</height>
+    <font>
+      <font name="Header 1" family="Source Sans Pro" style="BOLD_ITALIC" size="36.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="HEADER-TEXT" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Versions_subtitle</name>
+    <text>System Events History</text>
+    <x>350</x>
+    <y>20</y>
+    <width>210</width>
+    <height>30</height>
+    <font>
+      <font name="Header 2" family="Source Sans Pro" style="BOLD_ITALIC" size="21.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="HEADER-TEXT" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>2</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>History_group</name>
+    <x>20</x>
+    <y>70</y>
+    <width>540</width>
+    <height>250</height>
+    <style>3</style>
+    <background_color>
+      <color name="BACKGROUND" red="220" green="225" blue="221">
+      </color>
+    </background_color>
+    <widget type="rectangle" version="2.0.0">
+      <name>History_background</name>
+      <width>540</width>
+      <height>250</height>
+      <line_width>2</line_width>
+      <line_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="GROUP-BACKGROUND" red="200" green="205" blue="201">
+        </color>
+      </background_color>
+      <corner_width>10</corner_width>
+      <corner_height>10</corner_height>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num_gen):SystemHistory_r</pv_name>
+      <x>20</x>
+      <y>40</y>
+      <width>500</width>
+      <height>190</height>
+      <format>6</format>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_1</name>
+      <text>Management System Runtime Events</text>
+      <width>540</width>
+      <height>40</height>
+      <font>
+        <font family="Source Sans Pro" style="BOLD" size="18.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>PermanentHistory_group</name>
+    <x>20</x>
+    <y>340</y>
+    <width>540</width>
+    <height>460</height>
+    <style>3</style>
+    <background_color>
+      <color name="BACKGROUND" red="220" green="225" blue="221">
+      </color>
+    </background_color>
+    <widget type="rectangle" version="2.0.0">
+      <name>PermanentHistory_background</name>
+      <width>540</width>
+      <height>460</height>
+      <line_width>2</line_width>
+      <line_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="GROUP-BACKGROUND" red="200" green="205" blue="201">
+        </color>
+      </background_color>
+      <corner_width>10</corner_width>
+      <corner_height>10</corner_height>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num_gen):PermanentSystemHistory_r</pv_name>
+      <x>20</x>
+      <y>40</y>
+      <width>500</width>
+      <height>360</height>
+      <format>6</format>
+      <interactive>true</interactive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label</name>
+      <text>IOC Session Events</text>
+      <width>540</width>
+      <height>40</height>
+      <font>
+        <font family="Source Sans Pro" style="BOLD" size="18.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Action Button</name>
+      <actions>
+        <action type="write_pv">
+          <pv_name>$(pv_name)</pv_name>
+          <value>1</value>
+          <description>WritePV</description>
+        </action>
+      </actions>
+      <pv_name>$(acc):$(sys)_$(group)_$(num_gen):ClearPermSystemHistory_s</pv_name>
+      <text>Clear</text>
+      <x>420</x>
+      <y>410</y>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+  </widget>
+</display>

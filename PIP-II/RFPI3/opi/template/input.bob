@@ -1,0 +1,773 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2025-10-27 09:57:19 by kacpe-->
+<display version="2.0.0">
+  <name>RFPI Logic</name>
+  <width>300</width>
+  <height>770</height>
+  <widget type="group" version="3.0.0">
+    <name>Cavity_group</name>
+    <height>470</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="rectangle" version="2.0.0">
+      <name>Cavity_rectangle</name>
+      <width>300</width>
+      <height>470</height>
+      <line_width>2</line_width>
+      <line_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="GROUP-BACKGROUND" red="200" green="205" blue="201">
+        </color>
+      </background_color>
+      <corner_width>10</corner_width>
+      <corner_height>10</corner_height>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>FieldEmission_LED</name>
+      <pv_name>$(acc):$(sys)_$(group)_FEP_C$(CAVITY):Status_r</pv_name>
+      <x>20</x>
+      <y>50</y>
+      <width>30</width>
+      <height>30</height>
+      <states>
+        <state>
+          <value>0</value>
+          <label></label>
+          <color>
+            <color name="ON" red="70" green="255" blue="70">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>1</value>
+          <label></label>
+          <color>
+            <color name="MAJOR" red="252" green="13" blue="27">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>2</value>
+          <label></label>
+          <color>
+            <color name="WARNING" red="252" green="242" blue="17">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label></fallback_label>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>FieldEmission_button</name>
+      <actions>
+        <action type="open_display">
+          <file>../expert/analog_input.bob</file>
+          <macros>
+            <CHANNEL_NAME>Field Emission Probe C$(CAVITY)</CHANNEL_NAME>
+            <num>FEP_C$(CAVITY)</num>
+            <adc>FEP</adc>
+          </macros>
+          <target>tab</target>
+          <description>Open Display</description>
+        </action>
+      </actions>
+      <text>Field Emission Probe</text>
+      <x>60</x>
+      <y>50</y>
+      <width>210</width>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>Temperature1_LED</name>
+      <pv_name>$(acc):$(sys)_$(group)_TEMP0_C$(CAVITY):Status_r</pv_name>
+      <x>20</x>
+      <y>90</y>
+      <width>30</width>
+      <height>30</height>
+      <states>
+        <state>
+          <value>0</value>
+          <label></label>
+          <color>
+            <color name="ON" red="70" green="255" blue="70">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>1</value>
+          <label></label>
+          <color>
+            <color name="MAJOR" red="252" green="13" blue="27">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>2</value>
+          <label></label>
+          <color>
+            <color name="WARNING" red="252" green="242" blue="17">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label></fallback_label>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Temperature1_button</name>
+      <actions>
+        <action type="open_display">
+          <file>../expert/analog_input.bob</file>
+          <macros>
+            <CHANNEL_NAME>Temperature Sensor RTD1 C$(CAVITY)</CHANNEL_NAME>
+            <num>TEMP0_C$(CAVITY)</num>
+            <adc>RTD</adc>
+          </macros>
+          <target>tab</target>
+          <description>Open Display</description>
+        </action>
+      </actions>
+      <text>Temperature Sensor RTD1</text>
+      <x>60</x>
+      <y>90</y>
+      <width>210</width>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>HVCouplerBiasVolt_button</name>
+      <actions>
+        <action type="open_display">
+          <file>../expert/analog_input.bob</file>
+          <macros>
+            <CHANNEL_NAME>HV Coupler Bias Voltage C$(CAVITY)</CHANNEL_NAME>
+            <num>HVVOLT_C$(CAVITY)</num>
+            <adc>RTD</adc>
+          </macros>
+          <target>tab</target>
+          <description>Open Display</description>
+        </action>
+      </actions>
+      <text>HV Coupler Bias Voltage</text>
+      <x>60</x>
+      <y>170</y>
+      <width>210</width>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>HVCouplerBiasVolt_LED</name>
+      <pv_name>$(acc):$(sys)_$(group)_HVVOLT_C$(CAVITY):Status_r</pv_name>
+      <x>20</x>
+      <y>170</y>
+      <width>30</width>
+      <height>30</height>
+      <states>
+        <state>
+          <value>0</value>
+          <label></label>
+          <color>
+            <color name="ON" red="70" green="255" blue="70">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>1</value>
+          <label></label>
+          <color>
+            <color name="MAJOR" red="252" green="13" blue="27">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>2</value>
+          <label></label>
+          <color>
+            <color name="WARNING" red="252" green="242" blue="17">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label></fallback_label>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>HVCouplerBiasCurrent_button</name>
+      <actions>
+        <action type="open_display">
+          <file>../expert/analog_input.bob</file>
+          <macros>
+            <CHANNEL_NAME>HV Coupler Bias Current C$(CAVITY)</CHANNEL_NAME>
+            <num>HVCURR_C$(CAVITY)</num>
+            <adc>RTD</adc>
+          </macros>
+          <target>tab</target>
+          <description>Open Display</description>
+        </action>
+      </actions>
+      <text>HV Coupler Bias Curr</text>
+      <x>60</x>
+      <y>210</y>
+      <width>210</width>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>HVCouplerBiasCurr_LED</name>
+      <pv_name>$(acc):$(sys)_$(group)_HVCURR_C$(CAVITY):Status_r</pv_name>
+      <x>20</x>
+      <y>210</y>
+      <width>30</width>
+      <height>30</height>
+      <states>
+        <state>
+          <value>0</value>
+          <label></label>
+          <color>
+            <color name="ON" red="70" green="255" blue="70">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>1</value>
+          <label></label>
+          <color>
+            <color name="MAJOR" red="252" green="13" blue="27">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>2</value>
+          <label></label>
+          <color>
+            <color name="WARNING" red="252" green="242" blue="17">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label></fallback_label>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>SSAReady_LED</name>
+      <pv_name>$(acc):$(sys)_$(group)_SSA_C$(CAVITY):Status_r</pv_name>
+      <x>20</x>
+      <y>370</y>
+      <width>30</width>
+      <height>30</height>
+      <states>
+        <state>
+          <value>0</value>
+          <label></label>
+          <color>
+            <color name="ON" red="70" green="255" blue="70">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>1</value>
+          <label></label>
+          <color>
+            <color name="MAJOR" red="252" green="13" blue="27">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>2</value>
+          <label></label>
+          <color>
+            <color name="WARNING" red="252" green="242" blue="17">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label></fallback_label>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>SSAReady_button</name>
+      <actions>
+        <action type="open_display">
+          <file>../expert/ssa_ready_binary_input.bob</file>
+          <macros>
+            <CHANNEL_NAME>SSA ready C$(CAVITY)</CHANNEL_NAME>
+            <num>SSA_C$(CAVITY)</num>
+          </macros>
+          <target>tab</target>
+          <description>Open Display</description>
+        </action>
+      </actions>
+      <text>SSA Ready</text>
+      <x>60</x>
+      <y>370</y>
+      <width>210</width>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Inputs_label</name>
+      <text>Inputs</text>
+      <width>300</width>
+      <height>40</height>
+      <font>
+        <font name="Header 2" family="Source Sans Pro" style="BOLD_ITALIC" size="21.0">
+        </font>
+      </font>
+      <background_color>
+        <color name="RED-BORDER" red="150" green="8" blue="16">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>PersonnelSafety_button</name>
+      <actions>
+        <action type="open_display">
+          <file>../expert/binary_input_expert.bob</file>
+          <macros>
+            <CHANNEL_NAME>Personnel Safety Permit C$(CAVITY)</CHANNEL_NAME>
+            <num>PSP_C$(CAVITY)</num>
+          </macros>
+          <target>tab</target>
+          <description>Open Display</description>
+        </action>
+      </actions>
+      <text>Personnel Safety Permit</text>
+      <x>60</x>
+      <y>250</y>
+      <width>210</width>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>CouplerVacuum_button</name>
+      <actions>
+        <action type="open_display">
+          <file>../expert/binary_input_expert.bob</file>
+          <macros>
+            <CHANNEL_NAME>Coupler Vacuum Permit C$(CAVITY)</CHANNEL_NAME>
+            <num>CVP_C$(CAVITY)</num>
+          </macros>
+          <target>tab</target>
+          <description>Open Display</description>
+        </action>
+      </actions>
+      <text>Coupler Vacuum Permit</text>
+      <x>60</x>
+      <y>330</y>
+      <width>210</width>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>PersonelSafety_LED</name>
+      <pv_name>$(acc):$(sys)_$(group)_PSP_C$(CAVITY):Status_r</pv_name>
+      <x>20</x>
+      <y>250</y>
+      <width>30</width>
+      <height>30</height>
+      <states>
+        <state>
+          <value>0</value>
+          <label></label>
+          <color>
+            <color name="ON" red="70" green="255" blue="70">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>1</value>
+          <label></label>
+          <color>
+            <color name="MAJOR" red="252" green="13" blue="27">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>2</value>
+          <label></label>
+          <color>
+            <color name="WARNING" red="252" green="242" blue="17">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label></fallback_label>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>CouplerVacuum_LED</name>
+      <pv_name>$(acc):$(sys)_$(group)_CVP_C$(CAVITY):Status_r</pv_name>
+      <x>20</x>
+      <y>330</y>
+      <width>30</width>
+      <height>30</height>
+      <states>
+        <state>
+          <value>0</value>
+          <label></label>
+          <color>
+            <color name="ON" red="70" green="255" blue="70">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>1</value>
+          <label></label>
+          <color>
+            <color name="MAJOR" red="252" green="13" blue="27">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>2</value>
+          <label></label>
+          <color>
+            <color name="WARNING" red="252" green="242" blue="17">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label></fallback_label>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>CouplerAirflow_LED</name>
+      <pv_name>$(acc):$(sys)_$(group)_CAS_C$(CAVITY):Status_r</pv_name>
+      <x>20</x>
+      <y>290</y>
+      <width>30</width>
+      <height>30</height>
+      <states>
+        <state>
+          <value>0</value>
+          <label></label>
+          <color>
+            <color name="ON" red="70" green="255" blue="70">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>1</value>
+          <label></label>
+          <color>
+            <color name="MAJOR" red="252" green="13" blue="27">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>2</value>
+          <label></label>
+          <color>
+            <color name="WARNING" red="252" green="242" blue="17">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label></fallback_label>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>CouplerAirflow_button</name>
+      <actions>
+        <action type="open_display">
+          <file>../expert/binary_input_expert.bob</file>
+          <macros>
+            <CHANNEL_NAME>Cupler Airflow Sensor C$(CAVITY)</CHANNEL_NAME>
+            <num>CAS_C$(CAVITY)</num>
+          </macros>
+          <target>tab</target>
+          <description>Open Display</description>
+        </action>
+      </actions>
+      <text>Coupler Airflow sens</text>
+      <x>60</x>
+      <y>290</y>
+      <width>210</width>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Temperature2_button</name>
+      <actions>
+        <action type="open_display">
+          <file>../expert/analog_input.bob</file>
+          <macros>
+            <num>TEMP1_C$(CAVITY)</num>
+            <CHANNEL_NAME>Temperature Sensor RTD2 C$(CAVITY)</CHANNEL_NAME>
+            <adc>RTD</adc>
+          </macros>
+          <target>tab</target>
+          <description>Open Display</description>
+        </action>
+      </actions>
+      <text>Temperature Sensor RTD2</text>
+      <x>60</x>
+      <y>130</y>
+      <width>210</width>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>Temperature2_LED</name>
+      <pv_name>$(acc):$(sys)_$(group)_TEMP1_C$(CAVITY):Status_r</pv_name>
+      <x>20</x>
+      <y>130</y>
+      <width>30</width>
+      <height>30</height>
+      <states>
+        <state>
+          <value>0</value>
+          <label></label>
+          <color>
+            <color name="ON" red="70" green="255" blue="70">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>1</value>
+          <label></label>
+          <color>
+            <color name="MAJOR" red="252" green="13" blue="27">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>2</value>
+          <label></label>
+          <color>
+            <color name="WARNING" red="252" green="242" blue="17">
+            </color>
+          </color>
+        </state>
+      </states>
+      <fallback_label></fallback_label>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Reset_button</name>
+      <actions execute_as_one="true">
+        <action type="write_pv">
+          <pv_name>$(acc):$(sys)_$(group)_CAS_C$(CAVITY):Reset_s</pv_name>
+          <value>1</value>
+          <description>CAS</description>
+        </action>
+        <action type="write_pv">
+          <pv_name>$(acc):$(sys)_$(group)_FEP_C$(CAVITY):Rst_s</pv_name>
+          <value>1</value>
+          <description>FEP</description>
+        </action>
+        <action type="write_pv">
+          <pv_name>$(acc):$(sys)_$(group)_SSA_C$(CAVITY):Reset_s</pv_name>
+          <value>1</value>
+          <description>SSA</description>
+        </action>
+        <action type="write_pv">
+          <pv_name>$(acc):$(sys)_$(group)_PSP_C$(CAVITY):Reset_s</pv_name>
+          <value>1</value>
+          <description>PSP</description>
+        </action>
+        <action type="write_pv">
+          <pv_name>$(acc):$(sys)_$(group)_CVP_C$(CAVITY):Reset_s</pv_name>
+          <value>1</value>
+          <description>CVP</description>
+        </action>
+        <action type="write_pv">
+          <pv_name>$(acc):$(sys)_$(group)_TEMP1_C$(CAVITY):Rst_s</pv_name>
+          <value>1</value>
+          <description>TEMP1</description>
+        </action>
+        <action type="write_pv">
+          <pv_name>$(acc):$(sys)_$(group)_TEMP0_C$(CAVITY):Rst_s</pv_name>
+          <value>1</value>
+          <description>TEMP0</description>
+        </action>
+        <action type="write_pv">
+          <pv_name>$(acc):$(sys)_$(group)_HVVOLT_C$(CAVITY):Rst_s</pv_name>
+          <value>1</value>
+          <description>HVVOLT</description>
+        </action>
+        <action type="write_pv">
+          <pv_name>$(acc):$(sys)_$(group)_HVCURR_C$(CAVITY):Rst_s</pv_name>
+          <value>1</value>
+          <description>HVCURR</description>
+        </action>
+      </actions>
+      <text>Reset</text>
+      <x>110</x>
+      <y>420</y>
+      <font>
+        <font name="Default Bold" family="Source Sans Pro" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Permits_group</name>
+    <y>490</y>
+    <height>280</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="rectangle" version="2.0.0">
+      <name>Permits_rectangle</name>
+      <width>300</width>
+      <height>280</height>
+      <line_width>2</line_width>
+      <line_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="GROUP-BACKGROUND" red="200" green="205" blue="201">
+        </color>
+      </background_color>
+      <corner_width>10</corner_width>
+      <corner_height>10</corner_height>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Permits_label</name>
+      <text>Permits</text>
+      <width>300</width>
+      <height>50</height>
+      <font>
+        <font name="Header 2" family="Source Sans Pro" style="BOLD_ITALIC" size="21.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>LLRFPermit_button</name>
+      <actions>
+        <action type="open_display">
+          <file>../expert/output_expert.bob</file>
+          <macros>
+            <CHANNEL_NAME>LLRF Permit C$(CAVITY)</CHANNEL_NAME>
+            <num>LLRF_PERM_C$(CAVITY)</num>
+          </macros>
+          <target>tab</target>
+          <description>Open Display</description>
+        </action>
+      </actions>
+      <text>LLRF</text>
+      <x>70</x>
+      <y>50</y>
+      <width>210</width>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>SSAPermit_button</name>
+      <actions>
+        <action type="open_display">
+          <file>../expert/output_expert.bob</file>
+          <macros>
+            <CHANNEL_NAME>SSA Permit C$(CAVITY)</CHANNEL_NAME>
+            <num>SSA_PERM_C$(CAVITY)</num>
+          </macros>
+          <target>tab</target>
+          <description>Open Display</description>
+        </action>
+      </actions>
+      <text>SSA</text>
+      <x>70</x>
+      <y>90</y>
+      <width>210</width>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>SSADCPermit_button</name>
+      <actions>
+        <action type="open_display">
+          <file>../expert/output_expert.bob</file>
+          <macros>
+            <CHANNEL_NAME>SSA DC Permit C$(CAVITY)</CHANNEL_NAME>
+            <num>SSADC_PERM_C$(CAVITY)</num>
+          </macros>
+          <target>tab</target>
+          <description>Open Display</description>
+        </action>
+      </actions>
+      <text>SSA DC</text>
+      <x>70</x>
+      <y>130</y>
+      <width>210</width>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LLRFPermit_LED</name>
+      <pv_name>$(acc):$(sys)_$(group)_LLRF_PERM_C$(CAVITY):Status_r</pv_name>
+      <x>30</x>
+      <y>50</y>
+      <width>30</width>
+      <height>30</height>
+      <off_color>
+        <color name="MAJOR" red="252" green="13" blue="27">
+        </color>
+      </off_color>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>SSAPermit_LED</name>
+      <pv_name>$(acc):$(sys)_$(group)_SSA_PERM_C$(CAVITY):Status_r</pv_name>
+      <x>30</x>
+      <y>92</y>
+      <width>30</width>
+      <height>30</height>
+      <off_color>
+        <color name="MAJOR" red="252" green="13" blue="27">
+        </color>
+      </off_color>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>SSADCPermit_LED</name>
+      <pv_name>$(acc):$(sys)_$(group)_SSADC_PERM_C$(CAVITY):Status_r</pv_name>
+      <x>30</x>
+      <y>130</y>
+      <width>30</width>
+      <height>30</height>
+      <off_color>
+        <color name="MAJOR" red="252" green="13" blue="27">
+        </color>
+      </off_color>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>MPSPermit_button</name>
+      <actions>
+        <action type="open_display">
+          <file>../expert/output_expert.bob</file>
+          <macros>
+            <CHANNEL_NAME>MPS Permit C$(CAVITY)</CHANNEL_NAME>
+            <num>MPS_PERM_C$(CAVITY)</num>
+          </macros>
+          <target>tab</target>
+          <description>Open Display</description>
+        </action>
+      </actions>
+      <text>MPS</text>
+      <x>70</x>
+      <y>170</y>
+      <width>210</width>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>MPSPermit_LED</name>
+      <pv_name>$(acc):$(sys)_$(group)_MPS_PERM_C$(CAVITY):Status_r</pv_name>
+      <x>30</x>
+      <y>170</y>
+      <width>30</width>
+      <height>30</height>
+      <off_color>
+        <color name="MAJOR" red="252" green="13" blue="27">
+        </color>
+      </off_color>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>ResetPermits_button</name>
+      <actions execute_as_one="true">
+        <action type="write_pv">
+          <pv_name>$(acc):$(sys)_$(group)_LLRF_PERM_C$(CAVITY):Reset_s</pv_name>
+          <value>1</value>
+          <description>WritePV</description>
+        </action>
+      </actions>
+      <text>Reset</text>
+      <x>120</x>
+      <y>220</y>
+      <width>110</width>
+      <height>40</height>
+      <font>
+        <font family="Source Sans Pro" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+  </widget>
+</display>
