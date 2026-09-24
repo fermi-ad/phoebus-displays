@@ -1,0 +1,1370 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <width>850</width>
+  <height>1250</height>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_11</name>
+    <x>780</x>
+    <y>280</y>
+    <width>246</width>
+    <height>99</height>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_9</name>
+    <x>520</x>
+    <y>257</y>
+    <width>246</width>
+    <height>128</height>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_4</name>
+    <x>350</x>
+    <y>286</y>
+    <width>140</width>
+    <height>85</height>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_3</name>
+    <x>170</x>
+    <y>286</y>
+    <width>90</width>
+    <height>60</height>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <text>Enable HV</text>
+    <x>180</x>
+    <y>296</y>
+    <width>70</width>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_5</name>
+    <text>HVPS Slot prototype Expert</text>
+    <x>40</x>
+    <y>236</y>
+    <width>340</width>
+    <height>21</height>
+    <font>
+      <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_4</name>
+    <pv_name>DMCS:HVPS:$(DEV_NAME):SET_WFM_DC_HV_SP</pv_name>
+    <x>360</x>
+    <y>316</y>
+    <width>120</width>
+    <format>1</format>
+    <precision>2</precision>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_8</name>
+    <text>Set HV level [kV]</text>
+    <x>350</x>
+    <y>296</y>
+    <width>140</width>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_6</name>
+    <text>HV voltage [kV]</text>
+    <x>320</x>
+    <y>470</y>
+    <width>280</width>
+    <height>21</height>
+    <font>
+      <font name="Header 3" family="Liberation Sans" style="BOLD" size="16.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="xyplot" version="3.0.0">
+    <name>X/Y Plot_1</name>
+    <x>60</x>
+    <y>490</y>
+    <width>770</width>
+    <height>320</height>
+    <show_toolbar>true</show_toolbar>
+    <rules>
+      <rule name="Show_trace_raw" prop_id="traces[0].visible" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="pv0&gt;0">
+          <value>false</value>
+        </exp>
+        <pv_name>DEVD:DATA_CTRL:PROCESSING$(CH_NB):CONTROL</pv_name>
+      </rule>
+      <rule name="Show_trace_min" prop_id="traces[1].visible" out_exp="false">
+        <exp bool_exp="pv0&gt;3">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="pv0&lt;4">
+          <value>false</value>
+        </exp>
+        <pv_name>DEVD:DATA_CTRL:PROCESSING$(CH_NB):CONTROL</pv_name>
+      </rule>
+      <rule name="Show_trace_max" prop_id="traces[2].visible" out_exp="false">
+        <exp bool_exp="pv0&gt;3">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="pv0&lt;4">
+          <value>false</value>
+        </exp>
+        <pv_name>DEVD:DATA_CTRL:PROCESSING$(CH_NB):CONTROL</pv_name>
+      </rule>
+      <rule name="Show_trace_avg" prop_id="traces[3].visible" out_exp="false">
+        <exp bool_exp="pv0&gt;3">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="pv0&lt;4">
+          <value>false</value>
+        </exp>
+        <pv_name>DEVD:DATA_CTRL:PROCESSING$(CH_NB):CONTROL</pv_name>
+      </rule>
+    </rules>
+    <x_axis>
+      <title>time [ms]</title>
+      <autoscale>true</autoscale>
+      <log_scale>false</log_scale>
+      <minimum>0.0</minimum>
+      <maximum>65000.0</maximum>
+      <show_grid>true</show_grid>
+      <title_font>
+        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </title_font>
+      <scale_font>
+        <font name="Default" family="Liberation Sans" style="REGULAR" size="14.0">
+        </font>
+      </scale_font>
+      <visible>true</visible>
+    </x_axis>
+    <y_axes>
+      <y_axis>
+        <title>Voltage [kV]</title>
+        <autoscale>true</autoscale>
+        <log_scale>false</log_scale>
+        <minimum>0.0</minimum>
+        <maximum>1000.0</maximum>
+        <show_grid>true</show_grid>
+        <title_font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </title_font>
+        <scale_font>
+          <font name="Default" family="Liberation Sans" style="REGULAR" size="14.0">
+          </font>
+        </scale_font>
+        <on_right>false</on_right>
+        <visible>true</visible>
+        <color>
+          <color name="Text" red="0" green="0" blue="0">
+          </color>
+        </color>
+      </y_axis>
+    </y_axes>
+    <traces>
+      <trace>
+        <name>HV Voltage</name>
+        <x_pv></x_pv>
+        <y_pv>DMCS:HVPS:$(DEV_NAME):HV_VOLTAGE</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color red="0" green="0" blue="255">
+          </color>
+        </color>
+        <line_width>3</line_width>
+        <line_style>0</line_style>
+        <point_type>2</point_type>
+        <point_size>5</point_size>
+        <visible>true</visible>
+      </trace>
+    </traces>
+    <marker>
+      <marker>
+        <color>
+          <color red="204" green="128" blue="153">
+          </color>
+        </color>
+        <pv_name>loc://pos(50)</pv_name>
+        <interactive>true</interactive>
+        <visible>true</visible>
+      </marker>
+    </marker>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_10</name>
+    <text>HV current [mA]</text>
+    <x>310</x>
+    <y>819</y>
+    <width>280</width>
+    <height>21</height>
+    <font>
+      <font name="Header 3" family="Liberation Sans" style="BOLD" size="16.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="xyplot" version="3.0.0">
+    <name>X/Y Plot</name>
+    <x>60</x>
+    <y>840</y>
+    <width>770</width>
+    <height>320</height>
+    <show_toolbar>true</show_toolbar>
+    <rules>
+      <rule name="Show_trace_raw" prop_id="traces[0].visible" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="pv0&gt;0">
+          <value>false</value>
+        </exp>
+        <pv_name>DEVD:DATA_CTRL:PROCESSING$(CH_NB):CONTROL</pv_name>
+      </rule>
+      <rule name="Show_trace_min" prop_id="traces[1].visible" out_exp="false">
+        <exp bool_exp="pv0&gt;3">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="pv0&lt;4">
+          <value>false</value>
+        </exp>
+        <pv_name>DEVD:DATA_CTRL:PROCESSING$(CH_NB):CONTROL</pv_name>
+      </rule>
+      <rule name="Show_trace_max" prop_id="traces[2].visible" out_exp="false">
+        <exp bool_exp="pv0&gt;3">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="pv0&lt;4">
+          <value>false</value>
+        </exp>
+        <pv_name>DEVD:DATA_CTRL:PROCESSING$(CH_NB):CONTROL</pv_name>
+      </rule>
+      <rule name="Show_trace_avg" prop_id="traces[3].visible" out_exp="false">
+        <exp bool_exp="pv0&gt;3">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="pv0&lt;4">
+          <value>false</value>
+        </exp>
+        <pv_name>DEVD:DATA_CTRL:PROCESSING$(CH_NB):CONTROL</pv_name>
+      </rule>
+    </rules>
+    <x_axis>
+      <title>time[ms]</title>
+      <autoscale>true</autoscale>
+      <log_scale>false</log_scale>
+      <minimum>0.0</minimum>
+      <maximum>65000.0</maximum>
+      <show_grid>true</show_grid>
+      <title_font>
+        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </title_font>
+      <scale_font>
+        <font name="Default" family="Liberation Sans" style="REGULAR" size="14.0">
+        </font>
+      </scale_font>
+      <visible>true</visible>
+    </x_axis>
+    <y_axes>
+      <y_axis>
+        <title>Current [mA]</title>
+        <autoscale>true</autoscale>
+        <log_scale>false</log_scale>
+        <minimum>0.0</minimum>
+        <maximum>1000.0</maximum>
+        <show_grid>true</show_grid>
+        <title_font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </title_font>
+        <scale_font>
+          <font name="Default" family="Liberation Sans" style="REGULAR" size="14.0">
+          </font>
+        </scale_font>
+        <on_right>false</on_right>
+        <visible>true</visible>
+        <color>
+          <color name="Text" red="0" green="0" blue="0">
+          </color>
+        </color>
+      </y_axis>
+    </y_axes>
+    <traces>
+      <trace>
+        <name>HV Current [mA]</name>
+        <x_pv></x_pv>
+        <y_pv>DMCS:HVPS:$(DEV_NAME):HV_CURRENT</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color red="0" green="0" blue="255">
+          </color>
+        </color>
+        <line_width>3</line_width>
+        <line_style>0</line_style>
+        <point_type>2</point_type>
+        <point_size>5</point_size>
+        <visible>true</visible>
+      </trace>
+    </traces>
+    <marker>
+      <marker>
+        <color>
+          <color red="204" green="128" blue="153">
+          </color>
+        </color>
+        <pv_name>loc://pos(50)</pv_name>
+        <interactive>true</interactive>
+        <visible>true</visible>
+      </marker>
+    </marker>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_5</name>
+    <x>60</x>
+    <y>286</y>
+    <width>80</width>
+    <height>60</height>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_11</name>
+    <text>Power</text>
+    <x>80</x>
+    <y>296</y>
+    <width>50</width>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_6</name>
+    <x>70</x>
+    <y>385</y>
+    <width>110</width>
+    <height>85</height>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_5</name>
+    <pv_name>DMCS:HVPS:$(DEV_NAME):SET_VTH_SP</pv_name>
+    <x>80</x>
+    <y>415</y>
+    <width>90</width>
+    <format>1</format>
+    <precision>2</precision>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_9</name>
+    <text>Set voltage th.</text>
+    <x>60</x>
+    <y>395</y>
+    <width>130</width>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_7</name>
+    <x>190</x>
+    <y>385</y>
+    <width>120</width>
+    <height>85</height>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_6</name>
+    <pv_name>DMCS:HVPS:$(DEV_NAME):SET_ITH_SP</pv_name>
+    <x>200</x>
+    <y>415</y>
+    <format>1</format>
+    <precision>2</precision>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_12</name>
+    <text>Set current th. [mA]</text>
+    <x>190</x>
+    <y>395</y>
+    <width>120</width>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_13</name>
+    <text>Drive</text>
+    <x>310</x>
+    <y>1159</y>
+    <width>280</width>
+    <height>21</height>
+    <font>
+      <font name="Header 3" family="Liberation Sans" style="BOLD" size="16.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="xyplot" version="3.0.0">
+    <name>X/Y Plot_2</name>
+    <x>60</x>
+    <y>1147</y>
+    <width>770</width>
+    <height>320</height>
+    <show_toolbar>true</show_toolbar>
+    <rules>
+      <rule name="Show_trace_raw" prop_id="traces[0].visible" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="pv0&gt;0">
+          <value>false</value>
+        </exp>
+        <pv_name>DEVD:DATA_CTRL:PROCESSING$(CH_NB):CONTROL</pv_name>
+      </rule>
+      <rule name="Show_trace_min" prop_id="traces[1].visible" out_exp="false">
+        <exp bool_exp="pv0&gt;3">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="pv0&lt;4">
+          <value>false</value>
+        </exp>
+        <pv_name>DEVD:DATA_CTRL:PROCESSING$(CH_NB):CONTROL</pv_name>
+      </rule>
+      <rule name="Show_trace_max" prop_id="traces[2].visible" out_exp="false">
+        <exp bool_exp="pv0&gt;3">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="pv0&lt;4">
+          <value>false</value>
+        </exp>
+        <pv_name>DEVD:DATA_CTRL:PROCESSING$(CH_NB):CONTROL</pv_name>
+      </rule>
+      <rule name="Show_trace_avg" prop_id="traces[3].visible" out_exp="false">
+        <exp bool_exp="pv0&gt;3">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="pv0&lt;4">
+          <value>false</value>
+        </exp>
+        <pv_name>DEVD:DATA_CTRL:PROCESSING$(CH_NB):CONTROL</pv_name>
+      </rule>
+    </rules>
+    <x_axis>
+      <title>time [ms]</title>
+      <autoscale>true</autoscale>
+      <log_scale>false</log_scale>
+      <minimum>0.0</minimum>
+      <maximum>65000.0</maximum>
+      <show_grid>true</show_grid>
+      <title_font>
+        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </title_font>
+      <scale_font>
+        <font name="Default" family="Liberation Sans" style="REGULAR" size="14.0">
+        </font>
+      </scale_font>
+      <visible>true</visible>
+    </x_axis>
+    <y_axes>
+      <y_axis>
+        <title>Voltage [V]</title>
+        <autoscale>true</autoscale>
+        <log_scale>false</log_scale>
+        <minimum>0.0</minimum>
+        <maximum>1000.0</maximum>
+        <show_grid>true</show_grid>
+        <title_font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </title_font>
+        <scale_font>
+          <font name="Default" family="Liberation Sans" style="REGULAR" size="14.0">
+          </font>
+        </scale_font>
+        <on_right>false</on_right>
+        <visible>true</visible>
+        <color>
+          <color name="Text" red="0" green="0" blue="0">
+          </color>
+        </color>
+      </y_axis>
+    </y_axes>
+    <traces>
+      <trace>
+        <name>Drive [V]</name>
+        <x_pv></x_pv>
+        <y_pv>DMCS:HVPS:$(DEV_NAME):INPUT_VOLTAGE</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color red="0" green="0" blue="255">
+          </color>
+        </color>
+        <line_width>3</line_width>
+        <line_style>0</line_style>
+        <point_type>2</point_type>
+        <point_size>5</point_size>
+        <visible>true</visible>
+      </trace>
+    </traces>
+    <marker>
+      <marker>
+        <color>
+          <color red="204" green="128" blue="153">
+          </color>
+        </color>
+        <pv_name>loc://pos(50)</pv_name>
+        <interactive>true</interactive>
+        <visible>true</visible>
+      </marker>
+    </marker>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_10</name>
+    <x>533</x>
+    <y>388</y>
+    <width>200</width>
+    <height>60</height>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_16</name>
+    <text>Set PGA gain (curr. readout)</text>
+    <x>533</x>
+    <y>398</y>
+    <width>200</width>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="combo" version="2.0.0">
+    <name>Combo Box</name>
+    <pv_name>DMCS:HVPS:$(DEV_NAME):SET_GAIN_SP</pv_name>
+    <x>572</x>
+    <y>418</y>
+    <width>50</width>
+    <height>20</height>
+    <actions>
+      <action type="write_pv">
+        <description>Write PV</description>
+        <pv_name>$(pv_name)</pv_name>
+        <value>$(item)</value>
+      </action>
+    </actions>
+    <items>
+      <item>1</item>
+      <item>2</item>
+      <item>4</item>
+      <item>5</item>
+      <item>8</item>
+      <item>10</item>
+      <item>16</item>
+      <item>32</item>
+    </items>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button</name>
+    <x>790</x>
+    <y>296</y>
+    <width>1</width>
+    <height>1</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED</name>
+    <x>660</x>
+    <y>256</y>
+    <width>1</width>
+    <height>1</height>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_1</name>
+    <x>680</x>
+    <y>256</y>
+    <width>1</width>
+    <height>1</height>
+  </widget>
+  <widget type="byte_monitor" version="2.0.0">
+    <name>Byte Monitor</name>
+    <pv_name>DMCS:HVPS:$(DEV_NAME):HVPS_STATUS</pv_name>
+    <x>228</x>
+    <y>200</y>
+    <width>452</width>
+    <height>14</height>
+    <numBits>15</numBits>
+    <bitReverse>true</bitReverse>
+    <off_color>
+      <color name="MAJOR" red="255" green="0" blue="0">
+      </color>
+    </off_color>
+    <on_color>
+      <color name="OK" red="0" green="255" blue="0">
+      </color>
+    </on_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_1</name>
+    <text>OV  OC  IFD   NP                                12V  HV  DAC ADC DC RMP SIN</text>
+    <x>234</x>
+    <y>183</y>
+    <width>466</width>
+    <height>31</height>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry</name>
+    <pv_name>DMCS:HVPS:$(DEV_NAME):AVG_HV</pv_name>
+    <x>842</x>
+    <y>609</y>
+    <width>130</width>
+    <height>21</height>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_1</name>
+    <pv_name>DMCS:HVPS:$(DEV_NAME):AVG_I</pv_name>
+    <x>842</x>
+    <y>959</y>
+    <width>130</width>
+    <height>21</height>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_2</name>
+    <pv_name>DMCS:HVPS:$(DEV_NAME):AVG_IV</pv_name>
+    <x>842</x>
+    <y>1266</y>
+    <width>130</width>
+    <height>21</height>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_3</name>
+    <pv_name>DMCS:HVPS:$(DEV_NAME):RMS_HV</pv_name>
+    <x>842</x>
+    <y>649</y>
+    <width>130</width>
+    <height>21</height>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_7</name>
+    <pv_name>DMCS:HVPS:$(DEV_NAME):RMS_I</pv_name>
+    <x>842</x>
+    <y>999</y>
+    <width>130</width>
+    <height>21</height>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_8</name>
+    <pv_name>DMCS:HVPS:$(DEV_NAME):RMS_IV</pv_name>
+    <x>842</x>
+    <y>1306</y>
+    <width>130</width>
+    <height>21</height>
+    <precision>4</precision>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_9</name>
+    <pv_name>DMCS:HVPS:$(DEV_NAME):SET_WFM_SIN_HV_SP</pv_name>
+    <x>530</x>
+    <y>286</y>
+    <width>110</width>
+    <height>26</height>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_10</name>
+    <pv_name>DMCS:HVPS:$(DEV_NAME):SET_WFM_SIN_AMP_SP</pv_name>
+    <x>530</x>
+    <y>314</y>
+    <width>110</width>
+    <height>26</height>
+    <precision>2</precision>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_11</name>
+    <pv_name>DMCS:HVPS:$(DEV_NAME):SET_WFM_SIN_FREQ_SP</pv_name>
+    <x>530</x>
+    <y>342</y>
+    <width>110</width>
+    <height>26</height>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_12</name>
+    <pv_name>DMCS:HVPS:$(DEV_NAME):SET_WFM_RAMP_INC_SP</pv_name>
+    <x>790</x>
+    <y>306</y>
+    <width>110</width>
+    <height>26</height>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_13</name>
+    <pv_name>DMCS:HVPS:$(DEV_NAME):SET_WFM_RAMP_DELAY_SP</pv_name>
+    <x>790</x>
+    <y>335</y>
+    <width>110</width>
+    <height>26</height>
+    <precision>2</precision>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_15</name>
+    <pv_name>DMCS:HVPS:$(DEV_NAME):SET_WFM_DC_HV_SP_RBV</pv_name>
+    <x>360</x>
+    <y>341</y>
+    <width>120</width>
+    <format>1</format>
+    <precision>2</precision>
+    <enabled>false</enabled>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_16</name>
+    <pv_name>DMCS:HVPS:$(DEV_NAME):SET_VTH_SP_RBV</pv_name>
+    <x>80</x>
+    <y>442</y>
+    <width>90</width>
+    <format>1</format>
+    <precision>2</precision>
+    <enabled>false</enabled>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_17</name>
+    <pv_name>DMCS:HVPS:$(DEV_NAME):SET_ITH_SP_RBV</pv_name>
+    <x>200</x>
+    <y>442</y>
+    <format>1</format>
+    <precision>2</precision>
+    <enabled>false</enabled>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_18</name>
+    <pv_name>DMCS:HVPS:$(DEV_NAME):SET_WFM_SIN_HV_SP_RBV</pv_name>
+    <x>643</x>
+    <y>286</y>
+    <width>110</width>
+    <height>26</height>
+    <enabled>false</enabled>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_19</name>
+    <pv_name>DMCS:HVPS:$(DEV_NAME):SET_WFM_SIN_AMP_SP_RBV</pv_name>
+    <x>643</x>
+    <y>315</y>
+    <width>110</width>
+    <height>26</height>
+    <precision>2</precision>
+    <enabled>false</enabled>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_20</name>
+    <pv_name>DMCS:HVPS:$(DEV_NAME):SET_WFM_SIN_FREQ_SP_RBV</pv_name>
+    <x>643</x>
+    <y>342</y>
+    <width>110</width>
+    <height>26</height>
+    <enabled>false</enabled>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_15</name>
+    <text>Sinus Mode</text>
+    <x>572</x>
+    <y>263</y>
+    <width>140</width>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_1</name>
+    <x>926</x>
+    <y>316</y>
+    <width>1</width>
+    <height>1</height>
+    <tooltip>$(actions)</tooltip>
+    <enabled>false</enabled>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_21</name>
+    <pv_name>DMCS:HVPS:$(DEV_NAME):SET_WFM_RAMP_INC_SP_RBV</pv_name>
+    <x>906</x>
+    <y>306</y>
+    <width>110</width>
+    <height>26</height>
+    <enabled>false</enabled>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_22</name>
+    <pv_name>DMCS:HVPS:$(DEV_NAME):SET_WFM_RAMP_DELAY_SP_RBV</pv_name>
+    <x>906</x>
+    <y>334</y>
+    <width>110</width>
+    <height>26</height>
+    <precision>2</precision>
+    <enabled>false</enabled>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_17</name>
+    <text>Ramp Mode</text>
+    <x>833</x>
+    <y>287</y>
+    <width>140</width>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_23</name>
+    <pv_name>DMCS:HVPS:$(DEV_NAME):SET_GAIN_SP_RBV</pv_name>
+    <x>645</x>
+    <y>415</y>
+    <width>69</width>
+    <height>26</height>
+    <enabled>false</enabled>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_24</name>
+    <pv_name>DMCS:HVPS:$(DEV_NAME):DBG_BOARD_UPTIME</pv_name>
+    <x>370</x>
+    <y>406</y>
+    <width>90</width>
+    <format>1</format>
+    <precision>2</precision>
+    <enabled>false</enabled>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_2</name>
+    <actions>
+      <action type="write_pv">
+        <description>Write PV</description>
+        <pv_name>DMCS:HVPS:$(DEV_NAME):ENA_HV</pv_name>
+        <value>1</value>
+      </action>
+    </actions>
+    <pv_name>DMCS:HVPS:$(DEV_NAME):ENA_HV</pv_name>
+    <text>HV  </text>
+    <x>186</x>
+    <y>316</y>
+    <width>58</width>
+    <height>20</height>
+    <horizontal_alignment>2</horizontal_alignment>
+  </widget>
+  <widget type="byte_monitor" version="2.0.0">
+    <name>Byte Monitor_1</name>
+    <pv_name>DMCS:HVPS:$(DEV_NAME):HVPS_STATUS</pv_name>
+    <x>195</x>
+    <y>321</y>
+    <width>12</width>
+    <height>12</height>
+    <startBit>9</startBit>
+    <numBits>1</numBits>
+    <off_color>
+      <color name="MAJOR" red="255" green="0" blue="0">
+      </color>
+    </off_color>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_3</name>
+    <actions>
+      <action type="write_pv">
+        <description>Write PV</description>
+        <pv_name>DMCS:HVPS:$(DEV_NAME):ENA_12V</pv_name>
+        <value>1</value>
+      </action>
+    </actions>
+    <pv_name>DMCS:HVPS:$(DEV_NAME):ENA_12V</pv_name>
+    <text>12V  </text>
+    <x>70</x>
+    <y>316</y>
+    <width>58</width>
+    <height>18</height>
+    <horizontal_alignment>2</horizontal_alignment>
+  </widget>
+  <widget type="byte_monitor" version="2.0.0">
+    <name>Byte Monitor_2</name>
+    <pv_name>DMCS:HVPS:$(DEV_NAME):HVPS_STATUS</pv_name>
+    <x>75</x>
+    <y>320</y>
+    <width>12</width>
+    <height>12</height>
+    <startBit>8</startBit>
+    <numBits>1</numBits>
+    <off_color>
+      <color name="MAJOR" red="255" green="0" blue="0">
+      </color>
+    </off_color>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_4</name>
+    <actions>
+      <action type="open_display">
+        <description>DEV0</description>
+        <file>PIP_II_HVPS_slot_proto_expert-macro.bob</file>
+        <macros>
+          <DEV_NAME>DEV0</DEV_NAME>
+        </macros>
+        <target>replace</target>
+      </action>
+    </actions>
+    <text>DEV0</text>
+    <x>350</x>
+    <y>20</y>
+    <width>116</width>
+    <height>34</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_5</name>
+    <actions>
+      <action type="open_display">
+        <description>DEV1</description>
+        <file>PIP_II_HVPS_slot_proto_expert-macro.bob</file>
+        <macros>
+          <DEV_NAME>DEV1</DEV_NAME>
+        </macros>
+        <target>replace</target>
+      </action>
+    </actions>
+    <text>DEV1</text>
+    <x>350</x>
+    <y>54</y>
+    <width>116</width>
+    <height>34</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="xyplot" version="3.0.0">
+    <name>X/Y Plot_4</name>
+    <x>60</x>
+    <y>1467</y>
+    <width>770</width>
+    <height>320</height>
+    <show_toolbar>true</show_toolbar>
+    <rules>
+      <rule name="Show_trace_raw" prop_id="traces[0].visible" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="pv0&gt;0">
+          <value>false</value>
+        </exp>
+        <pv_name>DEVD:DATA_CTRL:PROCESSING$(CH_NB):CONTROL</pv_name>
+      </rule>
+      <rule name="Show_trace_min" prop_id="traces[1].visible" out_exp="false">
+        <exp bool_exp="pv0&gt;3">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="pv0&lt;4">
+          <value>false</value>
+        </exp>
+        <pv_name>DEVD:DATA_CTRL:PROCESSING$(CH_NB):CONTROL</pv_name>
+      </rule>
+      <rule name="Show_trace_max" prop_id="traces[2].visible" out_exp="false">
+        <exp bool_exp="pv0&gt;3">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="pv0&lt;4">
+          <value>false</value>
+        </exp>
+        <pv_name>DEVD:DATA_CTRL:PROCESSING$(CH_NB):CONTROL</pv_name>
+      </rule>
+      <rule name="Show_trace_avg" prop_id="traces[3].visible" out_exp="false">
+        <exp bool_exp="pv0&gt;3">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="pv0&lt;4">
+          <value>false</value>
+        </exp>
+        <pv_name>DEVD:DATA_CTRL:PROCESSING$(CH_NB):CONTROL</pv_name>
+      </rule>
+    </rules>
+    <x_axis>
+      <title>time [ms]</title>
+      <autoscale>true</autoscale>
+      <log_scale>false</log_scale>
+      <minimum>0.0</minimum>
+      <maximum>65000.0</maximum>
+      <show_grid>true</show_grid>
+      <title_font>
+        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </title_font>
+      <scale_font>
+        <font name="Default" family="Liberation Sans" style="REGULAR" size="14.0">
+        </font>
+      </scale_font>
+      <visible>true</visible>
+    </x_axis>
+    <y_axes>
+      <y_axis>
+        <title>N</title>
+        <autoscale>true</autoscale>
+        <log_scale>false</log_scale>
+        <minimum>0.0</minimum>
+        <maximum>1000.0</maximum>
+        <show_grid>true</show_grid>
+        <title_font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </title_font>
+        <scale_font>
+          <font name="Default" family="Liberation Sans" style="REGULAR" size="14.0">
+          </font>
+        </scale_font>
+        <on_right>false</on_right>
+        <visible>true</visible>
+        <color>
+          <color name="Text" red="0" green="0" blue="0">
+          </color>
+        </color>
+      </y_axis>
+    </y_axes>
+    <traces>
+      <trace>
+        <name>HV Voltage Raw</name>
+        <x_pv></x_pv>
+        <y_pv>DMCS:HVPS:$(DEV_NAME):HV_VOLTAGE_RAW</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color red="0" green="0" blue="255">
+          </color>
+        </color>
+        <line_width>3</line_width>
+        <line_style>0</line_style>
+        <point_type>2</point_type>
+        <point_size>5</point_size>
+        <visible>true</visible>
+      </trace>
+    </traces>
+    <marker>
+      <marker>
+        <color>
+          <color red="204" green="128" blue="153">
+          </color>
+        </color>
+        <pv_name>loc://pos(50)</pv_name>
+        <interactive>true</interactive>
+        <visible>true</visible>
+      </marker>
+    </marker>
+  </widget>
+  <widget type="xyplot" version="3.0.0">
+    <name>X/Y Plot_5</name>
+    <x>60</x>
+    <y>1798</y>
+    <width>770</width>
+    <height>320</height>
+    <show_toolbar>true</show_toolbar>
+    <rules>
+      <rule name="Show_trace_raw" prop_id="traces[0].visible" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="pv0&gt;0">
+          <value>false</value>
+        </exp>
+        <pv_name>DEVD:DATA_CTRL:PROCESSING$(CH_NB):CONTROL</pv_name>
+      </rule>
+      <rule name="Show_trace_min" prop_id="traces[1].visible" out_exp="false">
+        <exp bool_exp="pv0&gt;3">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="pv0&lt;4">
+          <value>false</value>
+        </exp>
+        <pv_name>DEVD:DATA_CTRL:PROCESSING$(CH_NB):CONTROL</pv_name>
+      </rule>
+      <rule name="Show_trace_max" prop_id="traces[2].visible" out_exp="false">
+        <exp bool_exp="pv0&gt;3">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="pv0&lt;4">
+          <value>false</value>
+        </exp>
+        <pv_name>DEVD:DATA_CTRL:PROCESSING$(CH_NB):CONTROL</pv_name>
+      </rule>
+      <rule name="Show_trace_avg" prop_id="traces[3].visible" out_exp="false">
+        <exp bool_exp="pv0&gt;3">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="pv0&lt;4">
+          <value>false</value>
+        </exp>
+        <pv_name>DEVD:DATA_CTRL:PROCESSING$(CH_NB):CONTROL</pv_name>
+      </rule>
+    </rules>
+    <x_axis>
+      <title>time[ms]</title>
+      <autoscale>true</autoscale>
+      <log_scale>false</log_scale>
+      <minimum>0.0</minimum>
+      <maximum>65000.0</maximum>
+      <show_grid>true</show_grid>
+      <title_font>
+        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </title_font>
+      <scale_font>
+        <font name="Default" family="Liberation Sans" style="REGULAR" size="14.0">
+        </font>
+      </scale_font>
+      <visible>true</visible>
+    </x_axis>
+    <y_axes>
+      <y_axis>
+        <title>N</title>
+        <autoscale>true</autoscale>
+        <log_scale>false</log_scale>
+        <minimum>0.0</minimum>
+        <maximum>1000.0</maximum>
+        <show_grid>true</show_grid>
+        <title_font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </title_font>
+        <scale_font>
+          <font name="Default" family="Liberation Sans" style="REGULAR" size="14.0">
+          </font>
+        </scale_font>
+        <on_right>false</on_right>
+        <visible>true</visible>
+        <color>
+          <color name="Text" red="0" green="0" blue="0">
+          </color>
+        </color>
+      </y_axis>
+    </y_axes>
+    <traces>
+      <trace>
+        <name>HV Current Raw</name>
+        <x_pv></x_pv>
+        <y_pv>DMCS:HVPS:$(DEV_NAME):HV_CURRENT_RAW</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color red="0" green="0" blue="255">
+          </color>
+        </color>
+        <line_width>3</line_width>
+        <line_style>0</line_style>
+        <point_type>2</point_type>
+        <point_size>5</point_size>
+        <visible>true</visible>
+      </trace>
+    </traces>
+    <marker>
+      <marker>
+        <color>
+          <color red="204" green="128" blue="153">
+          </color>
+        </color>
+        <pv_name>loc://pos(50)</pv_name>
+        <interactive>true</interactive>
+        <visible>true</visible>
+      </marker>
+    </marker>
+  </widget>
+  <widget type="xyplot" version="3.0.0">
+    <name>X/Y Plot_6</name>
+    <x>60</x>
+    <y>2128</y>
+    <width>770</width>
+    <height>320</height>
+    <show_toolbar>true</show_toolbar>
+    <rules>
+      <rule name="Show_trace_raw" prop_id="traces[0].visible" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="pv0&gt;0">
+          <value>false</value>
+        </exp>
+        <pv_name>DEVD:DATA_CTRL:PROCESSING$(CH_NB):CONTROL</pv_name>
+      </rule>
+      <rule name="Show_trace_min" prop_id="traces[1].visible" out_exp="false">
+        <exp bool_exp="pv0&gt;3">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="pv0&lt;4">
+          <value>false</value>
+        </exp>
+        <pv_name>DEVD:DATA_CTRL:PROCESSING$(CH_NB):CONTROL</pv_name>
+      </rule>
+      <rule name="Show_trace_max" prop_id="traces[2].visible" out_exp="false">
+        <exp bool_exp="pv0&gt;3">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="pv0&lt;4">
+          <value>false</value>
+        </exp>
+        <pv_name>DEVD:DATA_CTRL:PROCESSING$(CH_NB):CONTROL</pv_name>
+      </rule>
+      <rule name="Show_trace_avg" prop_id="traces[3].visible" out_exp="false">
+        <exp bool_exp="pv0&gt;3">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="pv0&lt;4">
+          <value>false</value>
+        </exp>
+        <pv_name>DEVD:DATA_CTRL:PROCESSING$(CH_NB):CONTROL</pv_name>
+      </rule>
+    </rules>
+    <x_axis>
+      <title>time [ms]</title>
+      <autoscale>true</autoscale>
+      <log_scale>false</log_scale>
+      <minimum>0.0</minimum>
+      <maximum>65000.0</maximum>
+      <show_grid>true</show_grid>
+      <title_font>
+        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </title_font>
+      <scale_font>
+        <font name="Default" family="Liberation Sans" style="REGULAR" size="14.0">
+        </font>
+      </scale_font>
+      <visible>true</visible>
+    </x_axis>
+    <y_axes>
+      <y_axis>
+        <title>N</title>
+        <autoscale>true</autoscale>
+        <log_scale>false</log_scale>
+        <minimum>0.0</minimum>
+        <maximum>1000.0</maximum>
+        <show_grid>true</show_grid>
+        <title_font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </title_font>
+        <scale_font>
+          <font name="Default" family="Liberation Sans" style="REGULAR" size="14.0">
+          </font>
+        </scale_font>
+        <on_right>false</on_right>
+        <visible>true</visible>
+        <color>
+          <color name="Text" red="0" green="0" blue="0">
+          </color>
+        </color>
+      </y_axis>
+    </y_axes>
+    <traces>
+      <trace>
+        <name>Drive Raw</name>
+        <x_pv></x_pv>
+        <y_pv>DMCS:HVPS:$(DEV_NAME):INPUT_VOLTAGE_RAW</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color red="0" green="0" blue="255">
+          </color>
+        </color>
+        <line_width>3</line_width>
+        <line_style>0</line_style>
+        <point_type>2</point_type>
+        <point_size>5</point_size>
+        <visible>true</visible>
+      </trace>
+    </traces>
+    <marker>
+      <marker>
+        <color>
+          <color red="204" green="128" blue="153">
+          </color>
+        </color>
+        <pv_name>loc://pos(50)</pv_name>
+        <interactive>true</interactive>
+        <visible>true</visible>
+      </marker>
+    </marker>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_14</name>
+    <pv_name>DMCS:HVPS:$(DEV_NAME):AVG_HV_RAW</pv_name>
+    <x>850</x>
+    <y>1604</y>
+    <width>130</width>
+    <height>21</height>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_25</name>
+    <pv_name>DMCS:HVPS:$(DEV_NAME):AVG_I_RAW</pv_name>
+    <x>850</x>
+    <y>1934</y>
+    <width>130</width>
+    <height>21</height>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_26</name>
+    <pv_name>DMCS:HVPS:$(DEV_NAME):AVG_IV_RAW</pv_name>
+    <x>850</x>
+    <y>2264</y>
+    <width>130</width>
+    <height>21</height>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_2</name>
+    <text>$(DEV_NAME)</text>
+    <x>350</x>
+    <y>100</y>
+    <width>120</width>
+    <height>30</height>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_27</name>
+    <pv_name>DMCS:HVPS:$(DEV_NAME):FRU_BOARD_MANUFACTURER</pv_name>
+    <x>20</x>
+    <y>20</y>
+    <width>300</width>
+    <height>30</height>
+    <enabled>false</enabled>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_28</name>
+    <pv_name>DMCS:HVPS:$(DEV_NAME):FRU_BOARD_PRODUCT_NAME</pv_name>
+    <x>20</x>
+    <y>50</y>
+    <width>300</width>
+    <height>30</height>
+    <enabled>false</enabled>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_29</name>
+    <pv_name>DMCS:HVPS:$(DEV_NAME):FRU_BOARD_SERIAL_NUMBER</pv_name>
+    <x>20</x>
+    <y>80</y>
+    <width>300</width>
+    <height>30</height>
+    <enabled>false</enabled>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_30</name>
+    <pv_name>DMCS:HVPS:$(DEV_NAME):FRU_BOARD_PART_NUMBER</pv_name>
+    <x>20</x>
+    <y>110</y>
+    <width>300</width>
+    <height>30</height>
+    <enabled>false</enabled>
+  </widget>
+</display>
