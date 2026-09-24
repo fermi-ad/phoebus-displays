@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>PLC Status</name>
+  <width>280</width>
+  <height>96</height>
+  <widget type="rectangle" version="2.0.0">
+    <name>Frame</name>
+    <width>280</width>
+    <height>96</height>
+    <line_color>
+      <color red="120" green="120" blue="120">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="245" green="245" blue="245">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Title</name>
+    <text>PLC</text>
+    <x>8</x>
+    <y>4</y>
+    <width>60</width>
+    <height>20</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>State</name>
+    <text>NO DATA</text>
+    <x>100</x>
+    <y>5</y>
+    <width>170</width>
+    <height>18</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="11.0">
+      </font>
+    </font>
+    <background_color>
+      <color red="220" green="185" blue="235">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <rules>
+      <rule name="Color" prop_id="background_color" out_exp="false">
+        <exp bool_exp="pv0 &gt;= 0">
+          <value>
+            <color red="225" green="225" blue="225">
+            </color>
+          </value>
+        </exp>
+        <pv_name>LACC:UTIL_MSD_PLC:CurrentState</pv_name>
+      </rule>
+      <rule name="Text" prop_id="text" out_exp="true">
+        <exp bool_exp="pv0 == 0">
+          <expression>"Compressors off"</expression>
+        </exp>
+        <exp bool_exp="pv0 == 1">
+          <expression>"AC-1 startup"</expression>
+        </exp>
+        <exp bool_exp="pv0 == 2">
+          <expression>"AC-1 running"</expression>
+        </exp>
+        <exp bool_exp="pv0 == 3">
+          <expression>"AC-2 startup"</expression>
+        </exp>
+        <exp bool_exp="pv0 == 4">
+          <expression>"AC-2 running"</expression>
+        </exp>
+        <exp bool_exp="pv0 &gt; 4">
+          <expression>"State " + pvInt0</expression>
+        </exp>
+        <pv_name>LACC:UTIL_MSD_PLC:CurrentState</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>L_HB</name>
+    <text>Heartbeat</text>
+    <x>8</x>
+    <y>30</y>
+    <width>80</width>
+    <height>20</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="11.0">
+      </font>
+    </font>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>HB</name>
+    <pv_name>LACC:UTIL_MSD_PLC:HBStatus</pv_name>
+    <x>100</x>
+    <y>30</y>
+    <width>70</width>
+    <height>20</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="11.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>Critical</name>
+    <pv_name>LACC:UTIL_MSD_PLC:CritcalErrorStatus</pv_name>
+    <x>10</x>
+    <y>62</y>
+    <width>14</width>
+    <height>14</height>
+    <off_color>
+      <color red="0" green="180" blue="0">
+      </color>
+    </off_color>
+    <on_color>
+      <color name="MAJOR" red="255" green="0" blue="0">
+      </color>
+    </on_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>L_Critical</name>
+    <text>Critical</text>
+    <x>28</x>
+    <y>59</y>
+    <width>60</width>
+    <height>20</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="11.0">
+      </font>
+    </font>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>IO</name>
+    <pv_name>LACC:UTIL_MSD_PLC:IOError</pv_name>
+    <x>100</x>
+    <y>62</y>
+    <width>14</width>
+    <height>14</height>
+    <off_color>
+      <color red="0" green="180" blue="0">
+      </color>
+    </off_color>
+    <on_color>
+      <color name="MAJOR" red="255" green="0" blue="0">
+      </color>
+    </on_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>L_IO</name>
+    <text>I/O</text>
+    <x>118</x>
+    <y>59</y>
+    <width>50</width>
+    <height>20</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="11.0">
+      </font>
+    </font>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>Battery</name>
+    <pv_name>LACC:UTIL_MSD_PLC:BatteryStatus</pv_name>
+    <x>180</x>
+    <y>62</y>
+    <width>14</width>
+    <height>14</height>
+    <off_color>
+      <color red="0" green="180" blue="0">
+      </color>
+    </off_color>
+    <on_color>
+      <color name="MAJOR" red="255" green="0" blue="0">
+      </color>
+    </on_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>L_Battery</name>
+    <text>Battery</text>
+    <x>198</x>
+    <y>59</y>
+    <width>60</width>
+    <height>20</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="11.0">
+      </font>
+    </font>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+</display>

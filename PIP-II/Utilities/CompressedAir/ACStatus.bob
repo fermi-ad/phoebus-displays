@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>$(LABEL) Status</name>
+  <width>280</width>
+  <height>150</height>
+  <widget type="rectangle" version="2.0.0">
+    <name>Frame</name>
+    <width>280</width>
+    <height>150</height>
+    <line_color>
+      <color red="120" green="120" blue="120">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="245" green="245" blue="245">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Title</name>
+    <text>$(LABEL)</text>
+    <x>10</x>
+    <y>6</y>
+    <width>80</width>
+    <height>20</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>State</name>
+    <text>NO DATA</text>
+    <x>110</x>
+    <y>6</y>
+    <width>160</width>
+    <height>20</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="11.0">
+      </font>
+    </font>
+    <background_color>
+      <color red="220" green="185" blue="235">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <rules>
+      <rule name="StateColor" prop_id="background_color" out_exp="false">
+        <exp bool_exp="pv0 == 1">
+          <value>
+            <color red="190" green="140" blue="220">
+            </color>
+          </value>
+        </exp>
+        <exp bool_exp="pv1 == 1">
+          <value>
+            <color red="255" green="60" blue="60">
+            </color>
+          </value>
+        </exp>
+        <exp bool_exp="pv2 == 1">
+          <value>
+            <color red="255" green="60" blue="60">
+            </color>
+          </value>
+        </exp>
+        <exp bool_exp="pv3 == 1">
+          <value>
+            <color name="MINOR" red="255" green="128" blue="0">
+            </color>
+          </value>
+        </exp>
+        <exp bool_exp="pv4 == 1">
+          <value>
+            <color red="0" green="180" blue="0">
+            </color>
+          </value>
+        </exp>
+        <exp bool_exp="pv0 == 0 &amp;&amp; pv1 == 0 &amp;&amp; pv2 == 0 &amp;&amp; pv3 == 0 &amp;&amp; pv4 == 0">
+          <value>
+            <color red="200" green="200" blue="200">
+            </color>
+          </value>
+        </exp>
+        <pv_name>$(PREFIX)$(UNIT):IsOffline</pv_name>
+        <pv_name>$(PREFIX)$(UNIT):TripStatus</pv_name>
+        <pv_name>$(PREFIX)$(UNIT):LLTrip</pv_name>
+        <pv_name>$(PREFIX)$(UNIT):WarningStatus</pv_name>
+        <pv_name>$(PREFIX)$(UNIT):IsActive</pv_name>
+      </rule>
+      <rule name="StateText" prop_id="text" out_exp="true">
+        <exp bool_exp="pv0 == 1">
+          <expression>"OFFLINE"</expression>
+        </exp>
+        <exp bool_exp="pv1 == 1">
+          <expression>"TRIP"</expression>
+        </exp>
+        <exp bool_exp="pv2 == 1">
+          <expression>"LL TRIP"</expression>
+        </exp>
+        <exp bool_exp="pv3 == 1">
+          <expression>"WARNING"</expression>
+        </exp>
+        <exp bool_exp="pv4 == 1">
+          <expression>"ACTIVE"</expression>
+        </exp>
+        <exp bool_exp="pv0 == 0 &amp;&amp; pv1 == 0 &amp;&amp; pv2 == 0 &amp;&amp; pv3 == 0 &amp;&amp; pv4 == 0">
+          <expression>"OFF"</expression>
+        </exp>
+        <pv_name>$(PREFIX)$(UNIT):IsOffline</pv_name>
+        <pv_name>$(PREFIX)$(UNIT):TripStatus</pv_name>
+        <pv_name>$(PREFIX)$(UNIT):LLTrip</pv_name>
+        <pv_name>$(PREFIX)$(UNIT):WarningStatus</pv_name>
+        <pv_name>$(PREFIX)$(UNIT):IsActive</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>L_Capacity</name>
+    <text>Capacity</text>
+    <x>10</x>
+    <y>34</y>
+    <width>90</width>
+    <height>20</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="11.0">
+      </font>
+    </font>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Capacity</name>
+    <pv_name>$(PREFIX)$(UNIT):PercentageCapacity</pv_name>
+    <x>110</x>
+    <y>34</y>
+    <width>60</width>
+    <height>20</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="11.0">
+      </font>
+    </font>
+    <precision>0</precision>
+    <horizontal_alignment>2</horizontal_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>U_Capacity</name>
+    <text>%</text>
+    <x>174</x>
+    <y>34</y>
+    <width>20</width>
+    <height>20</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="11.0">
+      </font>
+    </font>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>Offline</name>
+    <pv_name>$(PREFIX)$(UNIT):IsOffline</pv_name>
+    <x>210</x>
+    <y>37</y>
+    <width>14</width>
+    <height>14</height>
+    <off_color>
+      <color red="0" green="180" blue="0">
+      </color>
+    </off_color>
+    <on_color>
+      <color name="MAJOR" red="255" green="0" blue="0">
+      </color>
+    </on_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>L_Offline</name>
+    <text>Modbus</text>
+    <x>228</x>
+    <y>34</y>
+    <width>50</width>
+    <height>20</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="11.0">
+      </font>
+    </font>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>L_Current</name>
+    <text>Motor current</text>
+    <x>10</x>
+    <y>58</y>
+    <width>90</width>
+    <height>20</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="11.0">
+      </font>
+    </font>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Current</name>
+    <pv_name>$(PREFIX)$(UNIT):MotorCurrent</pv_name>
+    <x>110</x>
+    <y>58</y>
+    <width>60</width>
+    <height>20</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="11.0">
+      </font>
+    </font>
+    <precision>0</precision>
+    <horizontal_alignment>2</horizontal_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>U_Current</name>
+    <text>A</text>
+    <x>174</x>
+    <y>58</y>
+    <width>20</width>
+    <height>20</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="11.0">
+      </font>
+    </font>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LLTrip</name>
+    <pv_name>$(PREFIX)$(UNIT):LLTrip</pv_name>
+    <x>78</x>
+    <y>89</y>
+    <width>14</width>
+    <height>14</height>
+    <off_color>
+      <color red="160" green="160" blue="160">
+      </color>
+    </off_color>
+    <on_color>
+      <color name="MAJOR" red="255" green="0" blue="0">
+      </color>
+    </on_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>L_LLTrip</name>
+    <text>LL trip</text>
+    <x>96</x>
+    <y>86</y>
+    <width>100</width>
+    <height>20</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="11.0">
+      </font>
+    </font>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>LLReset</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(PREFIX)$(UNIT):LLTripReset</pv_name>
+        <value>1</value>
+        <description>RESET $(LABEL)</description>
+      </action>
+    </actions>
+    <text>RESET</text>
+    <x>200</x>
+    <y>83</y>
+    <width>70</width>
+    <height>26</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="11.0">
+      </font>
+    </font>
+    <background_color>
+      <color red="255" green="210" blue="60">
+      </color>
+    </background_color>
+    <tooltip>$(actions)</tooltip>
+    <confirm_dialog>true</confirm_dialog>
+    <confirm_message>Reset $(LABEL) low-low trip?</confirm_message>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Start</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(PREFIX)$(UNIT):setActivateCommand</pv_name>
+        <value>1</value>
+        <description>START $(LABEL)</description>
+      </action>
+    </actions>
+    <text>START</text>
+    <x>10</x>
+    <y>116</y>
+    <width>85</width>
+    <height>26</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="11.0">
+      </font>
+    </font>
+    <background_color>
+      <color red="0" green="180" blue="0">
+      </color>
+    </background_color>
+    <tooltip>$(actions)</tooltip>
+    <confirm_dialog>true</confirm_dialog>
+    <confirm_message>Activate $(LABEL)?</confirm_message>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Stop</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(PREFIX)$(UNIT):setActivateCommand</pv_name>
+        <value>0</value>
+        <description>STOP $(LABEL)</description>
+      </action>
+    </actions>
+    <text>STOP</text>
+    <x>105</x>
+    <y>116</y>
+    <width>85</width>
+    <height>26</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="11.0">
+      </font>
+    </font>
+    <background_color>
+      <color red="255" green="80" blue="80">
+      </color>
+    </background_color>
+    <tooltip>$(actions)</tooltip>
+    <confirm_dialog>true</confirm_dialog>
+    <confirm_message>Stop $(LABEL)?</confirm_message>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Open</name>
+    <actions>
+      <action type="open_display">
+        <description>Open $(LABEL) details</description>
+        <file>ACDetails.bob</file>
+        <macros>
+          <PREFIX>$(PREFIX)</PREFIX>
+          <UNIT>$(UNIT)</UNIT>
+          <LABEL>$(LABEL)</LABEL>
+        </macros>
+        <target>tab</target>
+      </action>
+    </actions>
+    <text>Details</text>
+    <x>200</x>
+    <y>116</y>
+    <width>70</width>
+    <height>26</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="11.0">
+      </font>
+    </font>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>TripLED</name>
+    <pv_name>$(PREFIX)$(UNIT):TripStatus</pv_name>
+    <x>12</x>
+    <y>89</y>
+    <width>14</width>
+    <height>14</height>
+    <off_color>
+      <color red="160" green="160" blue="160">
+      </color>
+    </off_color>
+    <on_color>
+      <color name="MAJOR" red="255" green="0" blue="0">
+      </color>
+    </on_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>L_Trip</name>
+    <text>Trip</text>
+    <x>30</x>
+    <y>86</y>
+    <width>45</width>
+    <height>20</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="11.0">
+      </font>
+    </font>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+</display>
