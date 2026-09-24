@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <display version="2.0.0">
   <name>Compressed Air</name>
-  <width>2000</width>
-  <height>1200</height>
+  <width>1800</width>
+  <height>960</height>
   <grid_color>
     <color red="127" green="127" blue="127">
     </color>
   </grid_color>
   <widget type="ellipse" version="2.0.0">
     <name>Ellipse</name>
-    <x>1600</x>
+    <x>1260</x>
     <y>344</y>
     <width>180</width>
     <height>120</height>
@@ -24,7 +24,7 @@
   </widget>
   <widget type="ellipse" version="2.0.0">
     <name>Ellipse_1</name>
-    <x>1600</x>
+    <x>1260</x>
     <y>50</y>
     <width>180</width>
     <height>120</height>
@@ -58,37 +58,52 @@
       </color>
     </line_color>
     <background_color>
-      <color name="Background" red="255" green="255" blue="255">
+      <color red="220" green="185" blue="235">
       </color>
     </background_color>
     <rules>
-      <rule name="Trip" prop_id="background_color" out_exp="false">
+      <rule name="StateColor" prop_id="background_color" out_exp="false">
         <exp bool_exp="pv0 == 1">
+          <value>
+            <color red="190" green="140" blue="220">
+            </color>
+          </value>
+        </exp>
+        <exp bool_exp="pv1 == 1">
           <value>
             <color red="255" green="60" blue="60">
             </color>
           </value>
         </exp>
-        <pv_name>LACC:UTIL_MSD_CMPR:AC1_isTripPresent</pv_name>
-      </rule>
-      <rule name="Warning" prop_id="background_color" out_exp="false">
-        <exp bool_exp="pv0 == 1">
+        <exp bool_exp="pv2 == 1">
           <value>
-            <color red="255" green="210" blue="60">
+            <color red="255" green="60" blue="60">
             </color>
           </value>
         </exp>
-        <pv_name>LACC:UTIL_MSD_CMPR:AC1_isWarningPresent</pv_name>
-      </rule>
-      <rule name="OK" prop_id="background_color" out_exp="false">
-        <exp bool_exp="pv0 == 0 &amp;&amp; pv1 == 0">
+        <exp bool_exp="pv3 == 1">
           <value>
-            <color red="200" green="235" blue="200">
+            <color name="MINOR" red="255" green="128" blue="0">
             </color>
           </value>
         </exp>
-        <pv_name>LACC:UTIL_MSD_CMPR:AC1_isTripPresent</pv_name>
-        <pv_name>LACC:UTIL_MSD_CMPR:AC1_isWarningPresent</pv_name>
+        <exp bool_exp="pv4 == 1">
+          <value>
+            <color red="0" green="180" blue="0">
+            </color>
+          </value>
+        </exp>
+        <exp bool_exp="pv0 == 0 &amp;&amp; pv1 == 0 &amp;&amp; pv2 == 0 &amp;&amp; pv3 == 0 &amp;&amp; pv4 == 0">
+          <value>
+            <color red="200" green="200" blue="200">
+            </color>
+          </value>
+        </exp>
+        <pv_name>LACC:UTIL_MSD_CMPRAC1:IsOffline</pv_name>
+        <pv_name>LACC:UTIL_MSD_CMPRAC1:TripStatus</pv_name>
+        <pv_name>LACC:UTIL_MSD_CMPRAC1:LLTrip</pv_name>
+        <pv_name>LACC:UTIL_MSD_CMPRAC1:WarningStatus</pv_name>
+        <pv_name>LACC:UTIL_MSD_CMPRAC1:IsActive</pv_name>
       </rule>
     </rules>
   </widget>
@@ -120,37 +135,52 @@
       </color>
     </line_color>
     <background_color>
-      <color name="Background" red="255" green="255" blue="255">
+      <color red="220" green="185" blue="235">
       </color>
     </background_color>
     <rules>
-      <rule name="Trip" prop_id="background_color" out_exp="false">
+      <rule name="StateColor" prop_id="background_color" out_exp="false">
         <exp bool_exp="pv0 == 1">
+          <value>
+            <color red="190" green="140" blue="220">
+            </color>
+          </value>
+        </exp>
+        <exp bool_exp="pv1 == 1">
           <value>
             <color red="255" green="60" blue="60">
             </color>
           </value>
         </exp>
-        <pv_name>LACC:UTIL_MSD_CMPR:AC2_isTripPresent</pv_name>
-      </rule>
-      <rule name="Warning" prop_id="background_color" out_exp="false">
-        <exp bool_exp="pv0 == 1">
+        <exp bool_exp="pv2 == 1">
           <value>
-            <color red="255" green="210" blue="60">
+            <color red="255" green="60" blue="60">
             </color>
           </value>
         </exp>
-        <pv_name>LACC:UTIL_MSD_CMPR:AC2_isWarningPresent</pv_name>
-      </rule>
-      <rule name="OK" prop_id="background_color" out_exp="false">
-        <exp bool_exp="pv0 == 0 &amp;&amp; pv1 == 0">
+        <exp bool_exp="pv3 == 1">
           <value>
-            <color red="200" green="235" blue="200">
+            <color name="MINOR" red="255" green="128" blue="0">
             </color>
           </value>
         </exp>
-        <pv_name>LACC:UTIL_MSD_CMPR:AC2_isTripPresent</pv_name>
-        <pv_name>LACC:UTIL_MSD_CMPR:AC2_isWarningPresent</pv_name>
+        <exp bool_exp="pv4 == 1">
+          <value>
+            <color red="0" green="180" blue="0">
+            </color>
+          </value>
+        </exp>
+        <exp bool_exp="pv0 == 0 &amp;&amp; pv1 == 0 &amp;&amp; pv2 == 0 &amp;&amp; pv3 == 0 &amp;&amp; pv4 == 0">
+          <value>
+            <color red="200" green="200" blue="200">
+            </color>
+          </value>
+        </exp>
+        <pv_name>LACC:UTIL_MSD_CMPRAC2:IsOffline</pv_name>
+        <pv_name>LACC:UTIL_MSD_CMPRAC2:TripStatus</pv_name>
+        <pv_name>LACC:UTIL_MSD_CMPRAC2:LLTrip</pv_name>
+        <pv_name>LACC:UTIL_MSD_CMPRAC2:WarningStatus</pv_name>
+        <pv_name>LACC:UTIL_MSD_CMPRAC2:IsActive</pv_name>
       </rule>
     </rules>
   </widget>
@@ -248,7 +278,7 @@
       </point>
     </points>
     <line_color>
-      <color red="255" green="0" blue="0">
+      <color name="MAJOR" red="255" green="0" blue="0">
       </color>
     </line_color>
     <arrows>1</arrows>
@@ -296,7 +326,7 @@
       </point>
     </points>
     <line_color>
-      <color red="255" green="0" blue="0">
+      <color name="MAJOR" red="255" green="0" blue="0">
       </color>
     </line_color>
     <arrows>1</arrows>
@@ -313,16 +343,16 @@
     <name>Polyline_6</name>
     <x>210</x>
     <y>270</y>
-    <width>680</width>
-    <height>690</height>
+    <width>310</width>
+    <height>430</height>
     <points>
       <point x="0.0" y="0.0">
       </point>
-      <point x="110.0" y="0.0">
+      <point x="170.0" y="0.0">
       </point>
-      <point x="110.0" y="690.0">
+      <point x="170.0" y="430.0">
       </point>
-      <point x="680.0" y="690.0">
+      <point x="310.0" y="430.0">
       </point>
     </points>
     <line_color>
@@ -334,12 +364,12 @@
     <name>Polyline_7</name>
     <x>210</x>
     <y>680</y>
-    <width>110</width>
+    <width>170</width>
     <height>1</height>
     <points>
       <point x="0.0" y="0.0">
       </point>
-      <point x="110.0" y="0.0">
+      <point x="170.0" y="0.0">
       </point>
     </points>
     <line_color>
@@ -349,8 +379,8 @@
   </widget>
   <widget type="rectangle" version="2.0.0">
     <name>Rectangle</name>
-    <x>887</x>
-    <y>870</y>
+    <x>520</x>
+    <y>640</y>
     <width>130</width>
     <height>140</height>
     <line_color>
@@ -365,8 +395,8 @@
   <widget type="label" version="2.0.0">
     <name>Label_8</name>
     <text>SP-1</text>
-    <x>938</x>
-    <y>930</y>
+    <x>560</x>
+    <y>700</y>
     <width>50</width>
   </widget>
   <widget type="polyline" version="2.0.0">
@@ -445,12 +475,12 @@
     <name>Polyline_12</name>
     <x>440</x>
     <y>360</y>
-    <width>165</width>
+    <width>60</width>
     <height>1</height>
     <points>
       <point x="0.0" y="0.0">
       </point>
-      <point x="165.0" y="0.5">
+      <point x="60.0" y="0.0">
       </point>
     </points>
     <line_color>
@@ -461,14 +491,14 @@
   </widget>
   <widget type="polyline" version="2.0.0">
     <name>Polyline_13</name>
-    <x>952</x>
-    <y>1010</y>
+    <x>585</x>
+    <y>780</y>
     <width>1</width>
-    <height>80</height>
+    <height>60</height>
     <points>
       <point x="0.0" y="0.0">
       </point>
-      <point x="0.0" y="80.0">
+      <point x="0.0" y="60.0">
       </point>
     </points>
     <line_color>
@@ -479,15 +509,15 @@
   <widget type="label" version="2.0.0">
     <name>Label_9</name>
     <text>Drain</text>
-    <x>963</x>
-    <y>1122</y>
+    <x>598</x>
+    <y>862</y>
     <width>66</width>
     <height>35</height>
   </widget>
   <widget type="polyline" version="2.0.0">
     <name>Polyline_14</name>
-    <x>931</x>
-    <y>1109</y>
+    <x>565</x>
+    <y>850</y>
     <width>40</width>
     <height>50</height>
     <points>
@@ -509,7 +539,7 @@
   </widget>
   <widget type="group" version="3.0.0">
     <name>Group</name>
-    <x>717</x>
+    <x>617</x>
     <y>90</y>
     <width>131</width>
     <height>173</height>
@@ -525,27 +555,24 @@
       </line_color>
       <line_style>1</line_style>
       <background_color>
-        <color red="230" green="230" blue="230">
+        <color red="220" green="185" blue="235">
         </color>
       </background_color>
       <rules>
-        <rule name="Alarm" prop_id="background_color" out_exp="false">
+        <rule name="State" prop_id="background_color" out_exp="false">
           <exp bool_exp="pv0 == 1">
             <value>
               <color red="255" green="200" blue="200">
               </color>
             </value>
           </exp>
-          <pv_name>LACC:UTIL_MSD_CMPR:AirDryer1_Alarm</pv_name>
-        </rule>
-        <rule name="OK" prop_id="background_color" out_exp="false">
           <exp bool_exp="pv0 == 0">
             <value>
               <color red="220" green="235" blue="220">
               </color>
             </value>
           </exp>
-          <pv_name>LACC:UTIL_MSD_CMPR:AirDryer1_Alarm</pv_name>
+          <pv_name>LACC:UTIL_MSD_DRYR1:alarm</pv_name>
         </rule>
       </rules>
     </widget>
@@ -642,7 +669,7 @@
   </widget>
   <widget type="polyline" version="2.0.0">
     <name>Polyline_15</name>
-    <x>610</x>
+    <x>510</x>
     <y>50</y>
     <width>175</width>
     <height>310</height>
@@ -663,7 +690,7 @@
   </widget>
   <widget type="polyline" version="2.0.0">
     <name>Polyline_16</name>
-    <x>754</x>
+    <x>654</x>
     <y>90</y>
     <width>31</width>
     <height>25</height>
@@ -684,7 +711,7 @@
   </widget>
   <widget type="polyline" version="2.0.0">
     <name>Polyline_17</name>
-    <x>786</x>
+    <x>686</x>
     <y>103</y>
     <width>27</width>
     <height>11</height>
@@ -703,7 +730,7 @@
   </widget>
   <widget type="polyline" version="2.0.0">
     <name>Polyline_18</name>
-    <x>754</x>
+    <x>654</x>
     <y>240</y>
     <width>31</width>
     <height>21</height>
@@ -724,7 +751,7 @@
   </widget>
   <widget type="polyline" version="2.0.0">
     <name>Polyline_19</name>
-    <x>783</x>
+    <x>683</x>
     <y>239</y>
     <width>28</width>
     <height>11</height>
@@ -743,7 +770,7 @@
   </widget>
   <widget type="group" version="3.0.0">
     <name>Group_1</name>
-    <x>717</x>
+    <x>617</x>
     <y>421</y>
     <width>131</width>
     <height>173</height>
@@ -759,27 +786,24 @@
       </line_color>
       <line_style>1</line_style>
       <background_color>
-        <color red="230" green="230" blue="230">
+        <color red="220" green="185" blue="235">
         </color>
       </background_color>
       <rules>
-        <rule name="Alarm" prop_id="background_color" out_exp="false">
+        <rule name="State" prop_id="background_color" out_exp="false">
           <exp bool_exp="pv0 == 1">
             <value>
               <color red="255" green="200" blue="200">
               </color>
             </value>
           </exp>
-          <pv_name>LACC:UTIL_MSD_CMPR:AirDryer2_Alarm</pv_name>
-        </rule>
-        <rule name="OK" prop_id="background_color" out_exp="false">
           <exp bool_exp="pv0 == 0">
             <value>
               <color red="220" green="235" blue="220">
               </color>
             </value>
           </exp>
-          <pv_name>LACC:UTIL_MSD_CMPR:AirDryer2_Alarm</pv_name>
+          <pv_name>LACC:UTIL_MSD_DRYR2:alarm</pv_name>
         </rule>
       </rules>
     </widget>
@@ -876,7 +900,7 @@
   </widget>
   <widget type="polyline" version="2.0.0">
     <name>Polyline_20</name>
-    <x>754</x>
+    <x>654</x>
     <y>421</y>
     <width>31</width>
     <height>25</height>
@@ -897,7 +921,7 @@
   </widget>
   <widget type="polyline" version="2.0.0">
     <name>Polyline_21</name>
-    <x>786</x>
+    <x>686</x>
     <y>434</y>
     <width>27</width>
     <height>11</height>
@@ -916,7 +940,7 @@
   </widget>
   <widget type="polyline" version="2.0.0">
     <name>Polyline_22</name>
-    <x>754</x>
+    <x>654</x>
     <y>571</y>
     <width>31</width>
     <height>21</height>
@@ -937,7 +961,7 @@
   </widget>
   <widget type="polyline" version="2.0.0">
     <name>Polyline_23</name>
-    <x>783</x>
+    <x>683</x>
     <y>570</y>
     <width>28</width>
     <height>11</height>
@@ -956,16 +980,16 @@
   </widget>
   <widget type="polyline" version="2.0.0">
     <name>Polyline_24</name>
-    <x>610</x>
+    <x>500</x>
     <y>360</y>
-    <width>175</width>
+    <width>185</width>
     <height>62</height>
     <points>
       <point x="0.0" y="0.0">
       </point>
-      <point x="175.0" y="0.0">
+      <point x="185.0" y="0.0">
       </point>
-      <point x="175.0" y="62.0">
+      <point x="185.0" y="62.0">
       </point>
     </points>
     <line_color>
@@ -975,20 +999,20 @@
   </widget>
   <widget type="polyline" version="2.0.0">
     <name>Polyline_25</name>
-    <x>785</x>
+    <x>685</x>
     <y>490</y>
-    <width>1135</width>
+    <width>815</width>
     <height>170</height>
     <points>
       <point x="0.0" y="101.0">
       </point>
-      <point x="0.0" y="169.5">
+      <point x="0.0" y="169.0">
       </point>
       <point x="255.0" y="170.0">
       </point>
       <point x="255.0" y="0.0">
       </point>
-      <point x="1135.0" y="0.0">
+      <point x="815.0" y="0.0">
       </point>
     </points>
     <line_color>
@@ -999,7 +1023,7 @@
   </widget>
   <widget type="polyline" version="2.0.0">
     <name>Polyline_26</name>
-    <x>785</x>
+    <x>685</x>
     <y>261</y>
     <width>255</width>
     <height>229</height>
@@ -1020,18 +1044,18 @@
   </widget>
   <widget type="polyline" version="2.0.0">
     <name>Polyline_27</name>
-    <x>1180</x>
+    <x>960</x>
     <y>490</y>
-    <width>220</width>
+    <width>150</width>
     <height>40</height>
     <points>
       <point x="0.0" y="0.0">
       </point>
       <point x="0.0" y="40.0">
       </point>
-      <point x="220.0" y="40.0">
+      <point x="150.0" y="40.0">
       </point>
-      <point x="220.0" y="0.0">
+      <point x="150.0" y="0.0">
       </point>
     </points>
     <line_color>
@@ -1041,7 +1065,7 @@
   </widget>
   <widget type="polyline" version="2.0.0">
     <name>Polyline_28</name>
-    <x>1560</x>
+    <x>1220</x>
     <y>360</y>
     <width>40</width>
     <height>130</height>
@@ -1060,7 +1084,7 @@
   </widget>
   <widget type="rectangle" version="2.0.0">
     <name>Rectangle_7</name>
-    <x>1600</x>
+    <x>1260</x>
     <y>103</y>
     <width>180</width>
     <height>300</height>
@@ -1075,7 +1099,7 @@
   </widget>
   <widget type="polyline" version="2.0.0">
     <name>Polyline_29</name>
-    <x>1780</x>
+    <x>1440</x>
     <y>360</y>
     <width>40</width>
     <height>130</height>
@@ -1095,7 +1119,7 @@
   <widget type="label" version="2.0.0">
     <name>Label_10</name>
     <text>T-1 1550 Gal Tank</text>
-    <x>1630</x>
+    <x>1290</x>
     <y>239</y>
     <width>130</width>
     <height>50</height>
@@ -1103,7 +1127,7 @@
   <widget type="label" version="2.0.0">
     <name>Label_11</name>
     <text>DR-2</text>
-    <x>720</x>
+    <x>620</x>
     <y>399</y>
     <width>70</width>
     <height>37</height>
@@ -1111,14 +1135,14 @@
   <widget type="label" version="2.0.0">
     <name>Label_12</name>
     <text>DR-1</text>
-    <x>717</x>
+    <x>617</x>
     <y>70</y>
     <width>70</width>
     <height>37</height>
   </widget>
   <widget type="ellipse" version="2.0.0">
     <name>Ellipse_10</name>
-    <x>925</x>
+    <x>825</x>
     <y>345</y>
     <width>30</width>
     <height>28</height>
@@ -1133,7 +1157,7 @@
   </widget>
   <widget type="rectangle" version="2.0.0">
     <name>Rectangle_8</name>
-    <x>925</x>
+    <x>825</x>
     <y>289</y>
     <width>30</width>
     <height>71</height>
@@ -1148,7 +1172,7 @@
   </widget>
   <widget type="ellipse" version="2.0.0">
     <name>Ellipse_11</name>
-    <x>925</x>
+    <x>825</x>
     <y>692</y>
     <width>30</width>
     <height>28</height>
@@ -1163,7 +1187,7 @@
   </widget>
   <widget type="rectangle" version="2.0.0">
     <name>Rectangle_9</name>
-    <x>925</x>
+    <x>825</x>
     <y>637</y>
     <width>30</width>
     <height>71</height>
@@ -1179,7 +1203,7 @@
   <widget type="label" version="2.0.0">
     <name>Label_13</name>
     <text>Filter</text>
-    <x>890</x>
+    <x>790</x>
     <y>320</y>
     <width>40</width>
     <height>21</height>
@@ -1187,21 +1211,23 @@
   <widget type="label" version="2.0.0">
     <name>Label_14</name>
     <text>Filter</text>
-    <x>887</x>
+    <x>787</x>
     <y>670</y>
     <width>40</width>
     <height>21</height>
   </widget>
   <widget type="polyline" version="2.0.0">
     <name>Polyline_30</name>
-    <x>940</x>
+    <x>840</x>
     <y>720</y>
-    <width>1</width>
-    <height>150</height>
+    <width>190</width>
+    <height>40</height>
     <points>
       <point x="0.0" y="0.0">
       </point>
-      <point x="0.0" y="150.0">
+      <point x="0.0" y="40.0">
+      </point>
+      <point x="-190.0" y="40.0">
       </point>
     </points>
     <line_color>
@@ -1211,18 +1237,18 @@
   </widget>
   <widget type="polyline" version="2.0.0">
     <name>Polyline_31</name>
-    <x>940</x>
-    <y>370</y>
-    <width>50</width>
-    <height>500</height>
+    <x>840</x>
+    <y>373</y>
+    <width>80</width>
+    <height>387</height>
     <points>
       <point x="0.0" y="0.0">
       </point>
-      <point x="0.0" y="240.0">
+      <point x="0.0" y="27.0">
       </point>
-      <point x="50.0" y="240.0">
+      <point x="-80.0" y="27.0">
       </point>
-      <point x="50.0" y="500.0">
+      <point x="-80.0" y="387.0">
       </point>
     </points>
     <line_color>
@@ -1232,14 +1258,14 @@
   </widget>
   <widget type="polyline" version="2.0.0">
     <name>Polyline_32</name>
-    <x>847</x>
-    <y>550</y>
-    <width>93</width>
+    <x>617</x>
+    <y>571</y>
+    <width>52</width>
     <height>1</height>
     <points>
       <point x="0.0" y="0.0">
       </point>
-      <point x="93.0" y="0.0">
+      <point x="-52.0" y="0.0">
       </point>
     </points>
     <line_color>
@@ -1249,16 +1275,16 @@
   </widget>
   <widget type="polyline" version="2.0.0">
     <name>Polyline_33</name>
-    <x>846</x>
-    <y>219</y>
-    <width>34</width>
-    <height>330</height>
+    <x>617</x>
+    <y>250</y>
+    <width>52</width>
+    <height>390</height>
     <points>
       <point x="0.0" y="0.0">
       </point>
-      <point x="33.5" y="0.5">
+      <point x="-52.0" y="0.0">
       </point>
-      <point x="34.0" y="330.0">
+      <point x="-52.0" y="390.0">
       </point>
     </points>
     <line_color>
@@ -1268,7 +1294,7 @@
   </widget>
   <widget type="rectangle" version="2.0.0">
     <name>Rectangle_10</name>
-    <width>2000</width>
+    <width>1800</width>
     <height>35</height>
     <line_color>
       <color red="0" green="51" blue="102">
@@ -1298,8 +1324,8 @@
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update</name>
-    <pv_name>LACC:UTIL_MSD_CMPR:PressureTransmitterRawValue</pv_name>
-    <x>1166</x>
+    <pv_name>LACC:UTIL_MSD_FT1:ScaledValue</pv_name>
+    <x>946</x>
     <y>456</y>
     <width>68</width>
     <font>
@@ -1311,8 +1337,8 @@
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_1</name>
-    <pv_name>LACC:UTIL_MSD_CMPR:AirFlowMeterRawValue</pv_name>
-    <x>1256</x>
+    <pv_name>LACC:UTIL_MSD_PT1:ScaledValue</pv_name>
+    <x>1036</x>
     <y>456</y>
     <width>68</width>
     <font>
@@ -1324,8 +1350,8 @@
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_2</name>
-    <pv_name>LACC:UTIL_MSD_CMPR:DewPointReadingRawValue</pv_name>
-    <x>1346</x>
+    <pv_name>LACC:UTIL_MSD_DW1:ScaledValue</pv_name>
+    <x>1126</x>
     <y>456</y>
     <width>68</width>
     <font>
@@ -1337,9 +1363,9 @@
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_3</name>
-    <pv_name>LACC:UTIL_MSD_CMPR:AC1_OutputPressure</pv_name>
-    <x>229</x>
-    <y>287</y>
+    <pv_name>LACC:UTIL_MSD_CMPRAC1:OutputPressure</pv_name>
+    <x>254</x>
+    <y>188</y>
     <width>80</width>
     <font>
       <font family="Liberation Sans" style="BOLD" size="11.0">
@@ -1350,9 +1376,9 @@
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_4</name>
-    <pv_name>LACC:UTIL_MSD_CMPR:AC2_OutputPressure</pv_name>
-    <x>231</x>
-    <y>696</y>
+    <pv_name>LACC:UTIL_MSD_CMPRAC2:OutputPressure</pv_name>
+    <x>254</x>
+    <y>568</y>
     <width>80</width>
     <font>
       <font family="Liberation Sans" style="BOLD" size="11.0">
@@ -1363,8 +1389,8 @@
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_5</name>
-    <pv_name>LACC:UTIL_MSD_CMPR:CWFlowMeter1RawValue</pv_name>
-    <x>14</x>
+    <pv_name>LACC:UTIL_MSD_FT2:ScaledValue</pv_name>
+    <x>210</x>
     <y>415</y>
     <width>70</width>
     <height>18</height>
@@ -1377,8 +1403,8 @@
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_6</name>
-    <pv_name>LACC:UTIL_MSD_CMPR:CWFlowMeter2RawValue</pv_name>
-    <x>14</x>
+    <pv_name>LACC:UTIL_MSD_FT3:ScaledValue</pv_name>
+    <x>210</x>
     <y>831</y>
     <width>70</width>
     <height>18</height>
@@ -1390,128 +1416,8 @@
     <horizontal_alignment>1</horizontal_alignment>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse_12</name>
-    <x>97</x>
-    <y>355</y>
-    <width>26</width>
-    <height>26</height>
-    <line_width>2</line_width>
-    <line_color>
-      <color red="0" green="0" blue="0">
-      </color>
-    </line_color>
-    <background_color>
-      <color red="255" green="255" blue="255">
-      </color>
-    </background_color>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label_16</name>
-    <text>T</text>
-    <x>97</x>
-    <y>355</y>
-    <width>26</width>
-    <height>26</height>
-    <font>
-      <font family="Liberation Sans" style="BOLD" size="12.0">
-      </font>
-    </font>
-    <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-  </widget>
-  <widget type="ellipse" version="2.0.0">
-    <name>Ellipse_13</name>
-    <x>177</x>
-    <y>355</y>
-    <width>26</width>
-    <height>26</height>
-    <line_width>2</line_width>
-    <line_color>
-      <color red="0" green="0" blue="0">
-      </color>
-    </line_color>
-    <background_color>
-      <color red="255" green="255" blue="255">
-      </color>
-    </background_color>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label_17</name>
-    <text>T</text>
-    <x>177</x>
-    <y>355</y>
-    <width>26</width>
-    <height>26</height>
-    <font>
-      <font family="Liberation Sans" style="BOLD" size="12.0">
-      </font>
-    </font>
-    <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-  </widget>
-  <widget type="ellipse" version="2.0.0">
-    <name>Ellipse_14</name>
-    <x>97</x>
-    <y>767</y>
-    <width>26</width>
-    <height>26</height>
-    <line_width>2</line_width>
-    <line_color>
-      <color red="0" green="0" blue="0">
-      </color>
-    </line_color>
-    <background_color>
-      <color red="255" green="255" blue="255">
-      </color>
-    </background_color>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label_18</name>
-    <text>T</text>
-    <x>97</x>
-    <y>767</y>
-    <width>26</width>
-    <height>26</height>
-    <font>
-      <font family="Liberation Sans" style="BOLD" size="12.0">
-      </font>
-    </font>
-    <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-  </widget>
-  <widget type="ellipse" version="2.0.0">
-    <name>Ellipse_15</name>
-    <x>177</x>
-    <y>767</y>
-    <width>26</width>
-    <height>26</height>
-    <line_width>2</line_width>
-    <line_color>
-      <color red="0" green="0" blue="0">
-      </color>
-    </line_color>
-    <background_color>
-      <color red="255" green="255" blue="255">
-      </color>
-    </background_color>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label_19</name>
-    <text>T</text>
-    <x>177</x>
-    <y>767</y>
-    <width>26</width>
-    <height>26</height>
-    <font>
-      <font family="Liberation Sans" style="BOLD" size="12.0">
-      </font>
-    </font>
-    <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-  </widget>
-  <widget type="ellipse" version="2.0.0">
     <name>Ellipse_16</name>
-    <x>1188</x>
+    <x>968</x>
     <y>475</y>
     <width>26</width>
     <height>26</height>
@@ -1527,8 +1433,8 @@
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_20</name>
-    <text>P</text>
-    <x>1188</x>
+    <text>F</text>
+    <x>968</x>
     <y>475</y>
     <width>26</width>
     <height>26</height>
@@ -1541,7 +1447,7 @@
   </widget>
   <widget type="ellipse" version="2.0.0">
     <name>Ellipse_17</name>
-    <x>1278</x>
+    <x>1058</x>
     <y>475</y>
     <width>26</width>
     <height>26</height>
@@ -1557,8 +1463,8 @@
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_21</name>
-    <text>F</text>
-    <x>1278</x>
+    <text>P</text>
+    <x>1058</x>
     <y>475</y>
     <width>26</width>
     <height>26</height>
@@ -1571,7 +1477,7 @@
   </widget>
   <widget type="ellipse" version="2.0.0">
     <name>Ellipse_18</name>
-    <x>1368</x>
+    <x>1147</x>
     <y>475</y>
     <width>26</width>
     <height>26</height>
@@ -1587,8 +1493,8 @@
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_22</name>
-    <text>DP</text>
-    <x>1368</x>
+    <text>DW</text>
+    <x>1147</x>
     <y>475</y>
     <width>26</width>
     <height>26</height>
@@ -1599,12 +1505,216 @@
     <horizontal_alignment>1</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
   </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>Ellipse_19</name>
+    <x>177</x>
+    <y>826</y>
+    <width>26</width>
+    <height>26</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_23</name>
+    <text>F</text>
+    <x>177</x>
+    <y>826</y>
+    <width>26</width>
+    <height>26</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>Ellipse_20</name>
+    <x>177</x>
+    <y>411</y>
+    <width>26</width>
+    <height>26</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_24</name>
+    <text>F</text>
+    <x>177</x>
+    <y>411</y>
+    <width>26</width>
+    <height>26</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>Ellipse_21</name>
+    <x>280</x>
+    <y>157</y>
+    <width>26</width>
+    <height>26</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_25</name>
+    <text>P</text>
+    <x>280</x>
+    <y>157</y>
+    <width>26</width>
+    <height>26</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>Ellipse_22</name>
+    <x>280</x>
+    <y>537</y>
+    <width>26</width>
+    <height>26</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_26</name>
+    <text>P</text>
+    <x>280</x>
+    <y>537</y>
+    <width>26</width>
+    <height>26</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>AC1_State</name>
+    <text>NO DATA</text>
+    <x>90</x>
+    <y>285</y>
+    <width>110</width>
+    <height>18</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="11.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <rules>
+      <rule name="StateText" prop_id="text" out_exp="true">
+        <exp bool_exp="pv0 == 1">
+          <expression>"OFFLINE"</expression>
+        </exp>
+        <exp bool_exp="pv1 == 1">
+          <expression>"TRIP"</expression>
+        </exp>
+        <exp bool_exp="pv2 == 1">
+          <expression>"LL TRIP"</expression>
+        </exp>
+        <exp bool_exp="pv3 == 1">
+          <expression>"WARNING"</expression>
+        </exp>
+        <exp bool_exp="pv4 == 1">
+          <expression>"ACTIVE"</expression>
+        </exp>
+        <exp bool_exp="pv0 == 0 &amp;&amp; pv1 == 0 &amp;&amp; pv2 == 0 &amp;&amp; pv3 == 0 &amp;&amp; pv4 == 0">
+          <expression>"OFF"</expression>
+        </exp>
+        <pv_name>LACC:UTIL_MSD_CMPRAC1:IsOffline</pv_name>
+        <pv_name>LACC:UTIL_MSD_CMPRAC1:TripStatus</pv_name>
+        <pv_name>LACC:UTIL_MSD_CMPRAC1:LLTrip</pv_name>
+        <pv_name>LACC:UTIL_MSD_CMPRAC1:WarningStatus</pv_name>
+        <pv_name>LACC:UTIL_MSD_CMPRAC1:IsActive</pv_name>
+      </rule>
+    </rules>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>AC2_State</name>
+    <text>NO DATA</text>
+    <x>90</x>
+    <y>695</y>
+    <width>110</width>
+    <height>18</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="11.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <rules>
+      <rule name="StateText" prop_id="text" out_exp="true">
+        <exp bool_exp="pv0 == 1">
+          <expression>"OFFLINE"</expression>
+        </exp>
+        <exp bool_exp="pv1 == 1">
+          <expression>"TRIP"</expression>
+        </exp>
+        <exp bool_exp="pv2 == 1">
+          <expression>"LL TRIP"</expression>
+        </exp>
+        <exp bool_exp="pv3 == 1">
+          <expression>"WARNING"</expression>
+        </exp>
+        <exp bool_exp="pv4 == 1">
+          <expression>"ACTIVE"</expression>
+        </exp>
+        <exp bool_exp="pv0 == 0 &amp;&amp; pv1 == 0 &amp;&amp; pv2 == 0 &amp;&amp; pv3 == 0 &amp;&amp; pv4 == 0">
+          <expression>"OFF"</expression>
+        </exp>
+        <pv_name>LACC:UTIL_MSD_CMPRAC2:IsOffline</pv_name>
+        <pv_name>LACC:UTIL_MSD_CMPRAC2:TripStatus</pv_name>
+        <pv_name>LACC:UTIL_MSD_CMPRAC2:LLTrip</pv_name>
+        <pv_name>LACC:UTIL_MSD_CMPRAC2:WarningStatus</pv_name>
+        <pv_name>LACC:UTIL_MSD_CMPRAC2:IsActive</pv_name>
+      </rule>
+    </rules>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
   <widget type="action_button" version="3.0.0">
-    <name>Action Button</name>
+    <name>AC1_Open</name>
     <actions>
       <action type="open_display">
         <description>Click for AC-1 Details</description>
-        <file>ac_detail.bob</file>
+        <file>ACDetails.bob</file>
         <macros>
           <PREFIX>LACC:UTIL_MSD_CMPR</PREFIX>
           <UNIT>AC1</UNIT>
@@ -1622,11 +1732,11 @@
     <tooltip>Click for AC-1 Details</tooltip>
   </widget>
   <widget type="action_button" version="3.0.0">
-    <name>Action Button_1</name>
+    <name>AC2_Open</name>
     <actions>
       <action type="open_display">
         <description>Click for AC-2 Details</description>
-        <file>ac_detail.bob</file>
+        <file>ACDetails.bob</file>
         <macros>
           <PREFIX>LACC:UTIL_MSD_CMPR</PREFIX>
           <UNIT>AC2</UNIT>
@@ -1643,40 +1753,113 @@
     <transparent>true</transparent>
     <tooltip>Click for AC-2 Details</tooltip>
   </widget>
-  <widget type="ellipse" version="2.0.0">
-    <name>Ellipse_19</name>
-    <x>97</x>
-    <y>826</y>
-    <width>26</width>
-    <height>26</height>
-    <line_width>2</line_width>
+  <widget type="polyline" version="2.0.0">
+    <name>DewPointLoop</name>
+    <x>1130</x>
+    <y>490</y>
+    <width>60</width>
+    <height>40</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="0.0" y="40.0">
+      </point>
+      <point x="60.0" y="40.0">
+      </point>
+      <point x="60.0" y="0.0">
+      </point>
+    </points>
     <line_color>
       <color red="0" green="0" blue="0">
       </color>
     </line_color>
-    <background_color>
-      <color red="255" green="255" blue="255">
-      </color>
-    </background_color>
   </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label_23</name>
-    <text>F</text>
-    <x>97</x>
-    <y>826</y>
-    <width>26</width>
-    <height>26</height>
+  <widget type="embedded" version="2.0.0">
+    <name>PLC_Status</name>
+    <file>PLCStatus.bob</file>
+    <x>1520</x>
+    <y>50</y>
+    <width>280</width>
+    <height>96</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>AC1_Status</name>
+    <macros>
+      <LABEL>AC-1</LABEL>
+      <PREFIX>LACC:UTIL_MSD_CMPR</PREFIX>
+      <UNIT>AC1</UNIT>
+    </macros>
+    <file>ACStatus.bob</file>
+    <x>1520</x>
+    <y>156</y>
+    <width>280</width>
+    <height>150</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>AC2_Status</name>
+    <macros>
+      <LABEL>AC-2</LABEL>
+      <PREFIX>LACC:UTIL_MSD_CMPR</PREFIX>
+      <UNIT>AC2</UNIT>
+    </macros>
+    <file>ACStatus.bob</file>
+    <x>1520</x>
+    <y>346</y>
+    <width>280</width>
+    <height>150</height>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>PDI</name>
+    <pv_name>LACC:UTIL_MSD_PDI:ScaledValue</pv_name>
+    <x>1040</x>
+    <y>803</y>
+    <width>68</width>
+    <height>20</height>
     <font>
-      <font family="Liberation Sans" style="BOLD" size="12.0">
+      <font family="Liberation Sans" style="BOLD" size="11.0">
       </font>
     </font>
+    <precision>2</precision>
     <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>AutoSwitchover</name>
+    <pv_name>LACC:UTIL_MSD_CMPRS:AutoSwitchOver</pv_name>
+    <x>1530</x>
+    <y>319</y>
+    <width>14</width>
+    <height>14</height>
+    <off_color>
+      <color red="160" green="160" blue="160">
+      </color>
+    </off_color>
+    <on_color>
+      <color red="0" green="180" blue="0">
+      </color>
+    </on_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>AutoSwitchover_Label</name>
+    <text>Auto-switchover possible</text>
+    <x>1550</x>
+    <y>316</y>
+    <width>200</width>
+    <height>20</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="11.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse_20</name>
-    <x>96</x>
-    <y>411</y>
+    <name>PDI_Bubble</name>
+    <x>1005</x>
+    <y>800</y>
     <width>26</width>
     <height>26</height>
     <line_width>2</line_width>
@@ -1690,74 +1873,14 @@
     </background_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label_24</name>
-    <text>F</text>
-    <x>96</x>
-    <y>411</y>
+    <name>PDI_Label</name>
+    <text>PDI</text>
+    <x>1005</x>
+    <y>800</y>
     <width>26</width>
     <height>26</height>
     <font>
-      <font family="Liberation Sans" style="BOLD" size="12.0">
-      </font>
-    </font>
-    <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-  </widget>
-  <widget type="ellipse" version="2.0.0">
-    <name>Ellipse_21</name>
-    <x>280</x>
-    <y>257</y>
-    <width>26</width>
-    <height>26</height>
-    <line_width>2</line_width>
-    <line_color>
-      <color red="0" green="0" blue="0">
-      </color>
-    </line_color>
-    <background_color>
-      <color red="255" green="255" blue="255">
-      </color>
-    </background_color>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label_25</name>
-    <text>P</text>
-    <x>280</x>
-    <y>257</y>
-    <width>26</width>
-    <height>26</height>
-    <font>
-      <font family="Liberation Sans" style="BOLD" size="12.0">
-      </font>
-    </font>
-    <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-  </widget>
-  <widget type="ellipse" version="2.0.0">
-    <name>Ellipse_22</name>
-    <x>279</x>
-    <y>666</y>
-    <width>26</width>
-    <height>26</height>
-    <line_width>2</line_width>
-    <line_color>
-      <color red="0" green="0" blue="0">
-      </color>
-    </line_color>
-    <background_color>
-      <color red="255" green="255" blue="255">
-      </color>
-    </background_color>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label_26</name>
-    <text>P</text>
-    <x>279</x>
-    <y>666</y>
-    <width>26</width>
-    <height>26</height>
-    <font>
-      <font family="Liberation Sans" style="BOLD" size="12.0">
+      <font family="Liberation Sans" style="BOLD" size="9.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
