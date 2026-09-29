@@ -4,7 +4,7 @@
   <x>597</x>
   <y>437</y>
   <width>460</width>
-  <height>480</height>
+  <height>470</height>
   <background_color>
     <color name="GLOBAL canvas" red="200" green="200" blue="200">
     </color>
@@ -398,23 +398,12 @@
       <vertical_alignment>1</vertical_alignment>
       <wrap_words>false</wrap_words>
     </widget>
-    <widget type="label" version="2.0.0">
-      <name>Label_29</name>
-      <text>Acknowledge</text>
-      <y>70</y>
-      <font>
-        <font family="Liberation Sans" style="BOLD" size="14.0">
-        </font>
-      </font>
-      <horizontal_alignment>2</horizontal_alignment>
-      <vertical_alignment>1</vertical_alignment>
-      <wrap_words>false</wrap_words>
-    </widget>
     <widget type="combo" version="2.0.0">
       <name>EDM activeMenuButtonClass</name>
-      <pv_name>$(P)$(R):Reset</pv_name>
-      <x>110</x>
+      <pv_name>$(P)$(R):ACK</pv_name>
+      <x>80</x>
       <y>70</y>
+      <width>130</width>
       <height>20</height>
       <font>
         <font family="Liberation Sans" style="BOLD" size="14.0">
@@ -430,15 +419,6 @@
       </background_color>
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label_15</name>
-    <text>Switch on Lock</text>
-    <x>315</x>
-    <y>460</y>
-    <width>150</width>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
   </widget>
   <widget type="group" version="3.0.0">
     <name>Group</name>
@@ -556,99 +536,6 @@
   </widget>
   <widget type="group" version="3.0.0">
     <name>Group</name>
-    <x>315</x>
-    <y>70</y>
-    <width>125</width>
-    <height>50</height>
-    <style>3</style>
-    <transparent>true</transparent>
-    <widget type="led" version="2.0.0">
-      <name>LED</name>
-      <pv_name>$(P)$(R):OnOff</pv_name>
-      <y>20</y>
-      <width>15</width>
-      <height>30</height>
-      <square>true</square>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-    </widget>
-    <widget type="action_button" version="3.0.0">
-      <name>Action Button_3</name>
-      <actions>
-        <action type="write_pv">
-          <description>Enable Pump</description>
-          <pv_name>$(vac)PT052:sStart</pv_name>
-          <value>1</value>
-        </action>
-      </actions>
-      <pv_name>$(vac)PT052:sStart</pv_name>
-      <x>15</x>
-      <y>20</y>
-      <width>110</width>
-      <visible>false</visible>
-      <rules>
-        <rule name="Make Visible" prop_id="visible" out_exp="false">
-          <exp bool_exp="pv0=0&amp;&amp;pv1&lt;3e-2">
-            <value>true</value>
-          </exp>
-          <pv_name>$(vac)PT052:OffOn</pv_name>
-          <pv_name>$(vac)PPG052:VacP</pv_name>
-        </rule>
-      </rules>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-      <show_confirm_dialog>true</show_confirm_dialog>
-      <confirm_message>Are your sure you want to Enable IV Turbo Pump?</confirm_message>
-    </widget>
-    <widget type="action_button" version="3.0.0">
-      <name>Action Button_2</name>
-      <actions>
-        <action type="write_pv">
-          <description>Disable Pump</description>
-          <pv_name>$(vac)PT052:sStop</pv_name>
-          <value>1</value>
-        </action>
-      </actions>
-      <pv_name>$(vac)PT052:sStop</pv_name>
-      <x>15</x>
-      <y>20</y>
-      <width>110</width>
-      <visible>false</visible>
-      <rules>
-        <rule name="Make Visible" prop_id="visible" out_exp="false">
-          <exp bool_exp="pv0=1">
-            <value>true</value>
-          </exp>
-          <pv_name>$(vac)PT052:OffOn</pv_name>
-        </rule>
-      </rules>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-      <show_confirm_dialog>true</show_confirm_dialog>
-      <confirm_message>Are your sure you want to Disable IV Turbo Pump?</confirm_message>
-    </widget>
-    <widget type="label" version="2.0.0">
-      <name>Label_20</name>
-      <text>Control</text>
-      <width>125</width>
-      <font>
-        <font family="Liberation Sans" style="BOLD" size="14.0">
-        </font>
-      </font>
-      <foreground_color>
-        <color red="255" green="255" blue="255">
-        </color>
-      </foreground_color>
-      <background_color>
-        <color red="255" green="0" blue="0">
-        </color>
-      </background_color>
-      <transparent>false</transparent>
-      <horizontal_alignment>1</horizontal_alignment>
-      <vertical_alignment>1</vertical_alignment>
-      <wrap_words>false</wrap_words>
-      <border_width>2</border_width>
-    </widget>
-  </widget>
-  <widget type="group" version="3.0.0">
-    <name>Group</name>
     <x>235</x>
     <y>260</y>
     <width>210</width>
@@ -738,7 +625,7 @@
   </widget>
   <widget type="led" version="2.0.0">
     <name>LED_1</name>
-    <pv_name>$(P)$(R):RAWSTA.BB</pv_name>
+    <pv_name>$(P)$(R):STATUS.BB</pv_name>
     <x>315</x>
     <y>120</y>
     <width>15</width>
@@ -768,13 +655,134 @@
         <exp bool_exp="p0=0">
           <value>Start Pump</value>
         </exp>
-        <pv_name>$(P)$(R):RAWSTA.BB</pv_name>
+        <pv_name>$(P)$(R):STATUS.BB</pv_name>
       </rule>
       <rule name="On Label" prop_id="on_label" out_exp="false">
         <exp bool_exp="p0=1">
           <value>Stop Pump</value>
         </exp>
-        <pv_name>$(P)$(R):RAWSTA.BB</pv_name>
+        <pv_name>$(P)$(R):STATUS.BB</pv_name>
+      </rule>
+    </rules>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <show_confirm_dialog>1</show_confirm_dialog>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED</name>
+    <pv_name>$(P)$(R):OnOff</pv_name>
+    <x>315</x>
+    <y>90</y>
+    <width>15</width>
+    <height>30</height>
+    <square>true</square>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_3</name>
+    <actions>
+      <action type="write_pv">
+        <description>Enable Pump</description>
+        <pv_name>$(vac)PT052:sStart</pv_name>
+        <value>1</value>
+      </action>
+    </actions>
+    <pv_name>$(P)$(R):Start</pv_name>
+    <x>330</x>
+    <y>90</y>
+    <width>110</width>
+    <visible>false</visible>
+    <rules>
+      <rule name="Make Visible" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0=0&amp;&amp;pv1&lt;3e-2">
+          <value>true</value>
+        </exp>
+        <pv_name>$(vac)PT052:OffOn</pv_name>
+        <pv_name>$(vac)PPG052:VacP</pv_name>
+      </rule>
+    </rules>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <show_confirm_dialog>true</show_confirm_dialog>
+    <confirm_message>Are your sure you want to Enable IV Turbo Pump?</confirm_message>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_2</name>
+    <actions>
+      <action type="write_pv">
+        <description>Disable Pump</description>
+        <pv_name>$(vac)PT052:sStop</pv_name>
+        <value>1</value>
+      </action>
+    </actions>
+    <pv_name>$(P)$(R):Start</pv_name>
+    <x>330</x>
+    <y>90</y>
+    <width>110</width>
+    <visible>false</visible>
+    <rules>
+      <rule name="Make Visible" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0=1">
+          <value>true</value>
+        </exp>
+        <pv_name>$(vac)PT052:OffOn</pv_name>
+      </rule>
+    </rules>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <show_confirm_dialog>true</show_confirm_dialog>
+    <confirm_message>Are your sure you want to Disable IV Turbo Pump?</confirm_message>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_20</name>
+    <text>Control</text>
+    <x>315</x>
+    <y>70</y>
+    <width>125</width>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="255" green="0" blue="0">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_width>2</border_width>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>Boolean Button_5</name>
+    <pv_name>$(P)$(R):ENABLE</pv_name>
+    <x>330</x>
+    <y>90</y>
+    <width>110</width>
+    <off_label>Enable</off_label>
+    <off_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </off_color>
+    <on_label>Disable</on_label>
+    <on_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </on_color>
+    <show_led>false</show_led>
+    <rules>
+      <rule name="Off Label" prop_id="off_label" out_exp="false">
+        <exp bool_exp="p0=0">
+          <value>Start Pump</value>
+        </exp>
+        <pv_name>$(P)$(R):STATUS.BB</pv_name>
+      </rule>
+      <rule name="On Label" prop_id="on_label" out_exp="false">
+        <exp bool_exp="p0=1">
+          <value>Stop Pump</value>
+        </exp>
+        <pv_name>$(P)$(R):STATUS.BB</pv_name>
       </rule>
     </rules>
     <border_alarm_sensitive>false</border_alarm_sensitive>
