@@ -2,11 +2,11 @@
 <display version="2.0.0">
   <name>PLC Status</name>
   <width>280</width>
-  <height>96</height>
+  <height>112</height>
   <widget type="rectangle" version="2.0.0">
     <name>Frame</name>
     <width>280</width>
-    <height>96</height>
+    <height>112</height>
     <line_color>
       <color red="120" green="120" blue="120">
       </color>
@@ -75,7 +75,7 @@
           <expression>"AC-2 running"</expression>
         </exp>
         <exp bool_exp="pv0 &gt; 4">
-          <expression>"State " + pvInt0</expression>
+          <expression>"State " + str(pvInt0)</expression>
         </exp>
         <pv_name>LACC:UTIL_MSD_PLC:CurrentState</pv_name>
       </rule>
@@ -109,9 +109,9 @@
   </widget>
   <widget type="led" version="2.0.0">
     <name>Critical</name>
-    <pv_name>LACC:UTIL_MSD_PLC:CritcalErrorStatus</pv_name>
+    <pv_name>LACC:UTIL_MSD_PLC:CriticalErrorStatus</pv_name>
     <x>10</x>
-    <y>62</y>
+    <y>88</y>
     <width>14</width>
     <height>14</height>
     <off_color>
@@ -128,7 +128,7 @@
     <name>L_Critical</name>
     <text>Critical</text>
     <x>28</x>
-    <y>59</y>
+    <y>85</y>
     <width>60</width>
     <height>20</height>
     <font>
@@ -141,7 +141,7 @@
     <name>IO</name>
     <pv_name>LACC:UTIL_MSD_PLC:IOError</pv_name>
     <x>100</x>
-    <y>62</y>
+    <y>88</y>
     <width>14</width>
     <height>14</height>
     <off_color>
@@ -158,7 +158,7 @@
     <name>L_IO</name>
     <text>I/O</text>
     <x>118</x>
-    <y>59</y>
+    <y>85</y>
     <width>50</width>
     <height>20</height>
     <font>
@@ -171,7 +171,7 @@
     <name>Battery</name>
     <pv_name>LACC:UTIL_MSD_PLC:BatteryStatus</pv_name>
     <x>180</x>
-    <y>62</y>
+    <y>88</y>
     <width>14</width>
     <height>14</height>
     <off_color>
@@ -188,7 +188,7 @@
     <name>L_Battery</name>
     <text>Battery</text>
     <x>198</x>
-    <y>59</y>
+    <y>85</y>
     <width>60</width>
     <height>20</height>
     <font>
@@ -196,5 +196,49 @@
       </font>
     </font>
     <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>L_FW</name>
+    <text>Firmware</text>
+    <x>8</x>
+    <y>56</y>
+    <width>80</width>
+    <height>20</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="11.0">
+      </font>
+    </font>
+    <horizontal_alignment>0</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>FW_Major</name>
+    <pv_name>LACC:UTIL_MSD_PLC:CpuMajorFirmware</pv_name>
+    <x>100</x>
+    <y>56</y>
+    <width>70</width>
+    <height>20</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="11.0">
+      </font>
+    </font>
+    <format>4</format>
+    <precision>4</precision>
+    <horizontal_alignment>2</horizontal_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>FW_Minor</name>
+    <pv_name>LACC:UTIL_MSD_PLC:CpuMinorFirmware</pv_name>
+    <x>175</x>
+    <y>56</y>
+    <width>70</width>
+    <height>20</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="11.0">
+      </font>
+    </font>
+    <format>4</format>
+    <precision>4</precision>
+    <horizontal_alignment>2</horizontal_alignment>
   </widget>
 </display>
