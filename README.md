@@ -96,6 +96,8 @@ Push your branch to your fork on GitHub:
    
 Go to your fork on GitHub. GitHub should show an option to create a Pull Request for the branch you just pushed.
 
+<img width="801" height="290" alt="Screenshot 2026-09-29 at 9 24 36 AM" src="https://github.com/user-attachments/assets/a7c1f157-1e78-432f-bf37-d4009f3935c8" />
+
 Select this repository as the base repository and your fork as the head repository.
 
 Add a short description of what you changed and why, then create the Pull Request.
