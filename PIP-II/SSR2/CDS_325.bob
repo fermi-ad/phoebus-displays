@@ -1,0 +1,3429 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>SSR2-$(cm) Cryostat</name>
+  <macros>
+    <fg>PIP2IT:ppSSR2_CTRL_</fg>
+    <flow>PIP2IT:ppSSR2_CRYO_</flow>
+    <ghe>PIP2IT:ppSSR2_CRYO_</ghe>
+    <htr>PIP2IT:ppSSR2_CRYO_</htr>
+    <jtvlv>PIP2IT:ppSSR2_CRYO_</jtvlv>
+    <lhe>PIP2IT:ppSSR2_CRYO_</lhe>
+    <opc>PIP2IT:ppSSR2_CRYO_</opc>
+    <pmt>PIP2IT:ppSSR2_CRYO_</pmt>
+    <press>PIP2IT:ppSSR2_CRYO_</press>
+    <rfpi>PIP2IT:ppSSR2_RFPI_</rfpi>
+    <temp>PIP2IT:ppSSR2_CRYO_</temp>
+    <vac>PIP2IT:ppSSR2_VAC_</vac>
+    <vlv>PIP2IT:ppSSR2_CRYO_</vlv>
+    <state>PIP2IT:ppSSR2_CTRL_SM:STATE</state>
+    <system>PIP2IT:ppSSR2_CRYO_</system>
+  </macros>
+  <x>520</x>
+  <y>235</y>
+  <width>1305</width>
+  <height>1150</height>
+  <grid_step_x>5</grid_step_x>
+  <grid_step_y>5</grid_step_y>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_11</name>
+    <x>161</x>
+    <y>46</y>
+    <width>615</width>
+    <height>630</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="Read_Background" red="240" green="240" blue="240">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_18</name>
+    <x>1600</x>
+    <y>41</y>
+    <width>1300</width>
+    <height>1100</height>
+    <line_width>1</line_width>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_7</name>
+    <x>412</x>
+    <y>477</y>
+    <width>95</width>
+    <height>55</height>
+    <points>
+      <point x="0.0" y="52.0">
+      </point>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="95.0" y="0.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="130" green="180" blue="255">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_324</name>
+    <x>225</x>
+    <y>529</y>
+    <width>565</width>
+    <height>10</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="495.0" y="0.0">
+      </point>
+      <point x="525.0" y="0.0">
+      </point>
+      <point x="565.0" y="0.0">
+      </point>
+      <point x="565.0" y="10.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="130" green="180" blue="255">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_298</name>
+    <x>225</x>
+    <y>580</y>
+    <width>565</width>
+    <height>50</height>
+    <points>
+      <point x="566.0" y="0.0">
+      </point>
+      <point x="566.0" y="49.0">
+      </point>
+      <point x="0.0" y="49.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="130" green="180" blue="255">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_56</name>
+    <macros>
+      <view>Cryostat</view>
+    </macros>
+    <file>SSR2banner.bob</file>
+    <x>1</x>
+    <y>1</y>
+    <width>1300</width>
+    <height>40</height>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <x>195</x>
+    <y>134</y>
+    <width>70</width>
+    <height>30</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_217</name>
+      <pv_name>$(flow)2FTSUMK2K3:Flow</pv_name>
+      <width>70</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="11.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="Write_Background" red="128" green="255" blue="255">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color red="44" green="44" blue="44">
+        </color>
+      </background_color>
+      <precision>3</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <rules>
+        <rule name="View Lower Range Flow" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0&lt;=10.0">
+            <value>true</value>
+          </exp>
+          <pv_name>$(flow)FT600A:GHeFlow</pv_name>
+        </rule>
+        <rule name="Show units" prop_id="show_units" out_exp="false">
+          <exp bool_exp="pv0&lt;=10.0">
+            <value>true</value>
+          </exp>
+          <pv_name>$(flow)FT600A:GHeFlow</pv_name>
+        </rule>
+      </rules>
+      <border_width>1</border_width>
+      <border_color>
+        <color name="Write_Background" red="128" green="255" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_218</name>
+      <pv_name>$(flow)2FTSUMK2K3:Name</pv_name>
+      <y>15</y>
+      <width>70</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="11.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="Write_Background" red="128" green="255" blue="255">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color red="44" green="44" blue="44">
+        </color>
+      </background_color>
+      <precision>2</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <rules>
+        <rule name="View Lower Range Flow" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0&lt;=10.0">
+            <value>true</value>
+          </exp>
+          <pv_name>$(flow)FT600A:GHeFlow</pv_name>
+        </rule>
+        <rule name="Show units" prop_id="show_units" out_exp="false">
+          <exp bool_exp="pv0&lt;=10.0">
+            <value>true</value>
+          </exp>
+          <pv_name>$(flow)FT600A:GHeFlow</pv_name>
+        </rule>
+      </rules>
+      <border_width>1</border_width>
+      <border_color>
+        <color name="Write_Background" red="128" green="255" blue="255">
+        </color>
+      </border_color>
+    </widget>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_140</name>
+    <macros>
+      <dev>PT711</dev>
+    </macros>
+    <file>../Common/cryo-embedded-displays/PressureSensorDown.bob</file>
+    <x>268</x>
+    <y>325</y>
+    <width>65</width>
+    <height>35</height>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_276</name>
+    <x>225</x>
+    <y>405</y>
+    <width>590</width>
+    <height>15</height>
+    <points>
+      <point x="0.0" y="15.0">
+      </point>
+      <point x="590.0" y="15.0">
+      </point>
+      <point x="590.0" y="0.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="255" green="0" blue="0">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group_214</name>
+    <x>276</x>
+    <y>310</y>
+    <width>10</width>
+    <height>15</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="ellipse" version="2.0.0">
+      <name>Ellipse_112</name>
+      <width>10</width>
+      <height>10</height>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_278</name>
+      <x>5</x>
+      <y>5</y>
+      <width>1</width>
+      <height>10</height>
+      <points>
+        <point x="0.0" y="10.0">
+        </point>
+        <point x="0.0" y="0.0">
+        </point>
+      </points>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+    </widget>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_281</name>
+    <x>225</x>
+    <y>245</y>
+    <width>590</width>
+    <height>120</height>
+    <points>
+      <point x="500.0" y="115.0">
+      </point>
+      <point x="365.0" y="115.0">
+      </point>
+      <point x="365.0" y="0.0">
+      </point>
+      <point x="0.0" y="0.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="255" green="0" blue="0">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_154</name>
+    <macros>
+      <dev>TO624</dev>
+    </macros>
+    <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
+    <x>267</x>
+    <y>202</y>
+    <width>65</width>
+    <height>35</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_155</name>
+    <macros>
+      <dev>PT624</dev>
+    </macros>
+    <file>../Common/cryo-embedded-displays/PressureSensorDown.bob</file>
+    <x>267</x>
+    <y>257</y>
+    <width>65</width>
+    <height>35</height>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group_218</name>
+    <x>276</x>
+    <y>242</y>
+    <width>10</width>
+    <height>15</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="ellipse" version="2.0.0">
+      <name>Ellipse_115</name>
+      <width>10</width>
+      <height>10</height>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_282</name>
+      <x>5</x>
+      <y>5</y>
+      <width>1</width>
+      <height>10</height>
+      <points>
+        <point x="0.0" y="10.0">
+        </point>
+        <point x="0.0" y="0.0">
+        </point>
+      </points>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group_219</name>
+    <x>292</x>
+    <y>237</y>
+    <width>10</width>
+    <height>15</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="ellipse" version="2.0.0">
+      <name>Ellipse_116</name>
+      <y>5</y>
+      <width>10</width>
+      <height>10</height>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_283</name>
+      <x>5</x>
+      <width>1</width>
+      <height>10</height>
+      <points>
+        <point x="0.0" y="10.0">
+        </point>
+        <point x="0.0" y="0.0">
+        </point>
+      </points>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+    </widget>
+  </widget>
+  <widget type="symbol" version="2.0.0">
+    <name>Symbol_23</name>
+    <pv_name>$(vlv)PV613:VLVstat</pv_name>
+    <symbols>
+      <symbol>../../images/CVred.png</symbol>
+      <symbol>../../images/CVgreen.png</symbol>
+      <symbol>../../images/CVwhite.png</symbol>
+    </symbols>
+    <x>352</x>
+    <y>222</y>
+    <width>30</width>
+    <height>30</height>
+    <initial_index>1</initial_index>
+    <show_index>true</show_index>
+    <tooltip>$(pv_name)
+$(pv_value)
+$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_156</name>
+    <macros>
+      <dev>PV613</dev>
+    </macros>
+    <file>../Common/cryo-embedded-displays/ValveStatusDown.bob</file>
+    <x>337</x>
+    <y>252</y>
+    <width>65</width>
+    <height>35</height>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_4</name>
+    <text>Warm He</text>
+    <x>157</x>
+    <y>302</y>
+    <width>65</width>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="255" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_52</name>
+    <x>230</x>
+    <y>315</y>
+    <width>30</width>
+    <height>1</height>
+    <points>
+      <point x="30.0" y="0.0">
+      </point>
+      <point x="0.0" y="0.0">
+      </point>
+    </points>
+    <line_color>
+      <color name="MAJOR" red="255" green="0" blue="0">
+      </color>
+    </line_color>
+    <arrows>1</arrows>
+    <arrow_length>15</arrow_length>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_12</name>
+    <text>80K Return</text>
+    <x>161</x>
+    <y>234</y>
+    <width>65</width>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="255" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <tooltip>$(pv_name)
+$(pv_value)
+$(actions)</tooltip>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_76</name>
+    <x>235</x>
+    <y>245</y>
+    <width>30</width>
+    <height>1</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="30.0" y="0.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="255" green="0" blue="0">
+      </color>
+    </line_color>
+    <arrows>1</arrows>
+    <arrow_length>15</arrow_length>
+    <tooltip>$(pv_name)
+$(pv_value)
+$(actions)</tooltip>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_275</name>
+    <x>225</x>
+    <y>313</y>
+    <width>190</width>
+    <height>16</height>
+    <points>
+      <point x="0.0" y="2.0">
+      </point>
+      <point x="186.0" y="2.0">
+      </point>
+      <point x="186.0" y="16.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="255" green="0" blue="0">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_284</name>
+    <x>411</x>
+    <y>213</y>
+    <width>1</width>
+    <height>32</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="0.0" y="32.0">
+      </point>
+    </points>
+    <line_color>
+      <color name="MAJOR" red="255" green="0" blue="0">
+      </color>
+    </line_color>
+    <arrows>1</arrows>
+    <arrow_length>15</arrow_length>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_65</name>
+    <macros>
+      <dev>PV625</dev>
+    </macros>
+    <file>../Common/cryo-embedded-displays/ValveStatusUp.bob</file>
+    <x>419</x>
+    <y>325</y>
+    <width>65</width>
+    <height>35</height>
+  </widget>
+  <widget type="symbol" version="2.0.0">
+    <name>Symbol_11</name>
+    <pv_name>$(system)PV625:VLVstat</pv_name>
+    <symbols>
+      <symbol>../../images/CVred.png</symbol>
+      <symbol>../../images/CVgreen.png</symbol>
+      <symbol>../../images/CVwhite.png</symbol>
+    </symbols>
+    <x>389</x>
+    <y>325</y>
+    <width>30</width>
+    <height>30</height>
+    <initial_index>1</initial_index>
+    <rotation>270.0</rotation>
+    <show_index>true</show_index>
+    <tooltip>$(pv_name)
+$(pv_value)
+$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="symbol" version="2.0.0">
+    <name>Symbol_10</name>
+    <pv_name>$(system)PV612:VLVstat</pv_name>
+    <symbols>
+      <symbol>../../images/CVred.png</symbol>
+      <symbol>../../images/CVgreen.png</symbol>
+      <symbol>../../images/CVwhite.png</symbol>
+    </symbols>
+    <x>352</x>
+    <y>395</y>
+    <width>30</width>
+    <height>30</height>
+    <initial_index>1</initial_index>
+    <show_index>true</show_index>
+    <tooltip>$(pv_name)
+$(pv_value)
+$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_63</name>
+    <macros>
+      <dev>PV612</dev>
+    </macros>
+    <file>../Common/cryo-embedded-displays/ValveStatusDown.bob</file>
+    <x>337</x>
+    <y>425</y>
+    <width>65</width>
+    <height>35</height>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_84</name>
+    <x>230</x>
+    <y>420</y>
+    <width>30</width>
+    <height>1</height>
+    <points>
+      <point x="30.0" y="0.0">
+      </point>
+      <point x="0.0" y="0.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="255" green="0" blue="0">
+      </color>
+    </line_color>
+    <arrows>1</arrows>
+    <arrow_length>15</arrow_length>
+    <tooltip>$(pv_name)
+$(pv_value)
+$(actions)</tooltip>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_10</name>
+    <text>40K Supply</text>
+    <x>159</x>
+    <y>408</y>
+    <width>65</width>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="255" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <tooltip>$(pv_name)
+$(pv_value)
+$(actions)</tooltip>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_150</name>
+    <macros>
+      <dev>TO623</dev>
+    </macros>
+    <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
+    <x>267</x>
+    <y>375</y>
+    <width>65</width>
+    <height>35</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_151</name>
+    <macros>
+      <dev>PT623</dev>
+    </macros>
+    <file>../Common/cryo-embedded-displays/PressureSensorDown.bob</file>
+    <x>267</x>
+    <y>430</y>
+    <width>65</width>
+    <height>35</height>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group_215</name>
+    <x>276</x>
+    <y>415</y>
+    <width>10</width>
+    <height>15</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="ellipse" version="2.0.0">
+      <name>Ellipse_113</name>
+      <width>10</width>
+      <height>10</height>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_279</name>
+      <x>5</x>
+      <y>5</y>
+      <width>1</width>
+      <height>10</height>
+      <points>
+        <point x="0.0" y="10.0">
+        </point>
+        <point x="0.0" y="0.0">
+        </point>
+      </points>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group_216</name>
+    <x>292</x>
+    <y>410</y>
+    <width>10</width>
+    <height>15</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="ellipse" version="2.0.0">
+      <name>Ellipse_114</name>
+      <y>5</y>
+      <width>10</width>
+      <height>10</height>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_280</name>
+      <x>5</x>
+      <width>1</width>
+      <height>10</height>
+      <points>
+        <point x="0.0" y="10.0">
+        </point>
+        <point x="0.0" y="0.0">
+        </point>
+      </points>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+    </widget>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_293</name>
+    <x>220</x>
+    <y>629</y>
+    <width>30</width>
+    <height>1</height>
+    <points>
+      <point x="30.0" y="0.0">
+      </point>
+      <point x="0.0" y="0.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="130" green="180" blue="255">
+      </color>
+    </line_color>
+    <arrows>1</arrows>
+    <arrow_length>15</arrow_length>
+    <tooltip>$(pv_name)
+$(pv_value)
+$(actions)</tooltip>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_71</name>
+    <text>5K Supply</text>
+    <x>159</x>
+    <y>617</y>
+    <width>65</width>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="130" green="180" blue="255">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <tooltip>$(pv_name)
+$(pv_value)
+$(actions)</tooltip>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_164</name>
+    <macros>
+      <dev>PV610</dev>
+    </macros>
+    <file>../Common/cryo-embedded-displays/ValveStatusDown.bob</file>
+    <x>337</x>
+    <y>637</y>
+    <width>65</width>
+    <height>35</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_165</name>
+    <macros>
+      <dev>TO621</dev>
+    </macros>
+    <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
+    <x>267</x>
+    <y>583</y>
+    <width>65</width>
+    <height>35</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_166</name>
+    <macros>
+      <dev>PT621</dev>
+    </macros>
+    <file>../Common/cryo-embedded-displays/PressureSensorDown.bob</file>
+    <x>267</x>
+    <y>638</y>
+    <width>65</width>
+    <height>35</height>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group_230</name>
+    <x>276</x>
+    <y>623</y>
+    <width>10</width>
+    <height>15</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="ellipse" version="2.0.0">
+      <name>Ellipse_123</name>
+      <width>10</width>
+      <height>10</height>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_294</name>
+      <x>5</x>
+      <y>5</y>
+      <width>1</width>
+      <height>10</height>
+      <points>
+        <point x="0.0" y="10.0">
+        </point>
+        <point x="0.0" y="0.0">
+        </point>
+      </points>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group_231</name>
+    <x>292</x>
+    <y>618</y>
+    <width>10</width>
+    <height>15</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="ellipse" version="2.0.0">
+      <name>Ellipse_124</name>
+      <y>5</y>
+      <width>10</width>
+      <height>10</height>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_295</name>
+      <x>5</x>
+      <width>1</width>
+      <height>10</height>
+      <points>
+        <point x="0.0" y="10.0">
+        </point>
+        <point x="0.0" y="0.0">
+        </point>
+      </points>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+    </widget>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_9</name>
+    <x>1561</x>
+    <y>945</y>
+    <width>1</width>
+    <height>55</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="0.0" y="55.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="255" green="0" blue="0">
+      </color>
+    </line_color>
+    <arrows>1</arrows>
+    <arrow_length>10</arrow_length>
+    <rules>
+      <rule name="Show Flow" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0=1">
+          <value>true</value>
+        </exp>
+        <pv_name>$(vlv)PVCD:VLVstat</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_18</name>
+    <x>1560</x>
+    <y>530</y>
+    <width>1</width>
+    <height>55</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="0.0" y="55.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="255" green="0" blue="0">
+      </color>
+    </line_color>
+    <arrows>1</arrows>
+    <arrow_length>10</arrow_length>
+    <rules>
+      <rule name="Show Flow" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0=1">
+          <value>true</value>
+        </exp>
+        <pv_name>$(vlv)PVCD:VLVstat</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_19</name>
+    <x>1561</x>
+    <y>757</y>
+    <width>1</width>
+    <height>55</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="0.0" y="55.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="255" green="0" blue="0">
+      </color>
+    </line_color>
+    <arrows>1</arrows>
+    <arrow_length>10</arrow_length>
+    <rules>
+      <rule name="Show Flow" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0=1">
+          <value>true</value>
+        </exp>
+        <pv_name>$(vlv)PVCD:VLVstat</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_20</name>
+    <x>1561</x>
+    <y>640</y>
+    <width>1</width>
+    <height>55</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="0.0" y="55.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="255" green="0" blue="0">
+      </color>
+    </line_color>
+    <arrows>1</arrows>
+    <arrow_length>10</arrow_length>
+    <rules>
+      <rule name="Show Flow" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0=1">
+          <value>true</value>
+        </exp>
+        <pv_name>$(vlv)PVCD:VLVstat</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group_7</name>
+    <x>1525</x>
+    <y>596</y>
+    <width>15</width>
+    <height>10</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="ellipse" version="2.0.0">
+      <name>Ellipse_6</name>
+      <x>5</x>
+      <width>10</width>
+      <height>10</height>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_26</name>
+      <y>5</y>
+      <width>10</width>
+      <height>1</height>
+      <points>
+        <point x="0.0" y="0.0">
+        </point>
+        <point x="10.0" y="0.0">
+        </point>
+      </points>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+    </widget>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_55</name>
+    <x>1447</x>
+    <y>675</y>
+    <width>1</width>
+    <height>70</height>
+    <points>
+      <point x="0.0" y="70.0">
+      </point>
+      <point x="0.0" y="0.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="130" green="180" blue="255">
+      </color>
+    </line_color>
+    <arrows>1</arrows>
+    <arrow_length>15</arrow_length>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_64</name>
+    <x>1403</x>
+    <y>170</y>
+    <width>130</width>
+    <height>25</height>
+    <points>
+      <point x="130.0" y="25.0">
+      </point>
+      <point x="130.0" y="0.0">
+      </point>
+      <point x="0.0" y="0.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="130" green="180" blue="255">
+      </color>
+    </line_color>
+    <arrow_length>15</arrow_length>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_72</name>
+    <x>225</x>
+    <y>123</y>
+    <width>775</width>
+    <height>267</height>
+    <points>
+      <point x="775.0" y="267.0">
+      </point>
+      <point x="775.0" y="202.0">
+      </point>
+      <point x="385.0" y="202.0">
+      </point>
+      <point x="385.0" y="0.0">
+      </point>
+      <point x="0.0" y="2.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline</name>
+    <x>530</x>
+    <y>70</y>
+    <width>170</width>
+    <height>120</height>
+    <points>
+      <point x="0.0" y="3.0">
+      </point>
+      <point x="172.0" y="3.0">
+      </point>
+      <point x="172.0" y="120.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="200" green="0" blue="200">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_10</name>
+    <x>1561</x>
+    <y>857</y>
+    <width>1</width>
+    <height>55</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="0.0" y="55.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="255" green="0" blue="0">
+      </color>
+    </line_color>
+    <arrows>1</arrows>
+    <arrow_length>10</arrow_length>
+    <rules>
+      <rule name="Show Flow" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0=1">
+          <value>true</value>
+        </exp>
+        <pv_name>$(vlv)PVCD:VLVstat</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <x>1520</x>
+    <y>557</y>
+    <width>10</width>
+    <height>15</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="ellipse" version="2.0.0">
+      <name>Ellipse_7</name>
+      <width>10</width>
+      <height>10</height>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_28</name>
+      <x>5</x>
+      <y>5</y>
+      <width>1</width>
+      <height>10</height>
+      <points>
+        <point x="0.0" y="10.0">
+        </point>
+        <point x="0.0" y="0.0">
+        </point>
+      </points>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+    </widget>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_13</name>
+    <x>407</x>
+    <y>73</y>
+    <width>99</width>
+    <height>52</height>
+    <points>
+      <point x="0.0" y="50.0">
+      </point>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="99.0" y="0.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>Ellipse_18</name>
+    <x>407</x>
+    <y>241</y>
+    <width>10</width>
+    <height>10</height>
+    <line_color>
+      <color red="255" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="255" green="0" blue="0">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>Ellipse_23</name>
+    <x>565</x>
+    <y>190</y>
+    <width>10</width>
+    <height>10</height>
+    <line_color>
+      <color red="200" green="0" blue="200">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="200" green="0" blue="200">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_93</name>
+    <x>1580</x>
+    <y>512</y>
+    <width>10</width>
+    <height>45</height>
+    <points>
+      <point x="5.0" y="0.0">
+      </point>
+      <point x="5.0" y="2.5">
+      </point>
+      <point x="0.0" y="5.0">
+      </point>
+      <point x="10.0" y="10.0">
+      </point>
+      <point x="0.0" y="15.0">
+      </point>
+      <point x="10.0" y="20.0">
+      </point>
+      <point x="0.0" y="25.0">
+      </point>
+      <point x="10.0" y="30.0">
+      </point>
+      <point x="0.0" y="35.0">
+      </point>
+      <point x="10.0" y="40.0">
+      </point>
+      <point x="5.0" y="42.5">
+      </point>
+      <point x="5.0" y="45.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="255" green="0" blue="0">
+      </color>
+    </line_color>
+    <arrow_length>10</arrow_length>
+    <rules>
+      <rule name="Heater On" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0">
+          <value>true</value>
+        </exp>
+        <pv_name>$(htr)HTRC2:HTRON</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_96</name>
+    <x>1500</x>
+    <y>630</y>
+    <width>10</width>
+    <height>45</height>
+    <points>
+      <point x="5.0" y="0.0">
+      </point>
+      <point x="5.0" y="2.5">
+      </point>
+      <point x="0.0" y="5.0">
+      </point>
+      <point x="10.0" y="10.0">
+      </point>
+      <point x="0.0" y="15.0">
+      </point>
+      <point x="10.0" y="20.0">
+      </point>
+      <point x="0.0" y="25.0">
+      </point>
+      <point x="10.0" y="30.0">
+      </point>
+      <point x="0.0" y="35.0">
+      </point>
+      <point x="10.0" y="40.0">
+      </point>
+      <point x="5.0" y="42.5">
+      </point>
+      <point x="5.0" y="45.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="255" green="0" blue="0">
+      </color>
+    </line_color>
+    <arrow_length>10</arrow_length>
+    <rules>
+      <rule name="Heater On" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0">
+          <value>true</value>
+        </exp>
+        <pv_name>$(htr)HTRC5:HTRON</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="symbol" version="2.0.0">
+    <name>Symbol_25</name>
+    <pv_name>$(system)PV610:VLVstat</pv_name>
+    <symbols>
+      <symbol>../../images/CVred.png</symbol>
+      <symbol>../../images/CVgreen.png</symbol>
+      <symbol>../../images/CVwhite.png</symbol>
+    </symbols>
+    <x>352</x>
+    <y>607</y>
+    <width>30</width>
+    <height>30</height>
+    <initial_index>1</initial_index>
+    <show_index>true</show_index>
+    <tooltip>$(pv_name)
+$(pv_value)
+$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="arc" version="2.0.0">
+    <name>Arc_2</name>
+    <x>600</x>
+    <y>185</y>
+    <width>20</width>
+    <height>20</height>
+    <total_angle>180.0</total_angle>
+    <line_color>
+      <color red="200" green="0" blue="200">
+      </color>
+    </line_color>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_171</name>
+    <macros>
+      <dev>PV611</dev>
+    </macros>
+    <file>../Common/cryo-embedded-displays/ValveStatusDown.bob</file>
+    <x>337</x>
+    <y>535</y>
+    <width>65</width>
+    <height>35</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_172</name>
+    <macros>
+      <dev>TO622</dev>
+    </macros>
+    <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
+    <x>267</x>
+    <y>485</y>
+    <width>65</width>
+    <height>35</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_173</name>
+    <macros>
+      <dev>PT622</dev>
+    </macros>
+    <file>../Common/cryo-embedded-displays/PressureSensorDown.bob</file>
+    <x>267</x>
+    <y>540</y>
+    <width>65</width>
+    <height>35</height>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group_234</name>
+    <x>276</x>
+    <y>525</y>
+    <width>10</width>
+    <height>15</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="ellipse" version="2.0.0">
+      <name>Ellipse_130</name>
+      <width>10</width>
+      <height>10</height>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_301</name>
+      <x>5</x>
+      <y>5</y>
+      <width>1</width>
+      <height>10</height>
+      <points>
+        <point x="0.0" y="10.0">
+        </point>
+        <point x="0.0" y="0.0">
+        </point>
+      </points>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group_235</name>
+    <x>292</x>
+    <y>520</y>
+    <width>10</width>
+    <height>15</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="ellipse" version="2.0.0">
+      <name>Ellipse_131</name>
+      <y>5</y>
+      <width>10</width>
+      <height>10</height>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_302</name>
+      <x>5</x>
+      <width>1</width>
+      <height>10</height>
+      <points>
+        <point x="0.0" y="10.0">
+        </point>
+        <point x="0.0" y="0.0">
+        </point>
+      </points>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+    </widget>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_61</name>
+    <x>236</x>
+    <y>529</y>
+    <width>30</width>
+    <height>1</height>
+    <points>
+      <point x="30.0" y="0.0">
+      </point>
+      <point x="0.0" y="0.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="130" green="180" blue="255">
+      </color>
+    </line_color>
+    <arrows>2</arrows>
+    <arrow_length>15</arrow_length>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_7</name>
+    <text>8K Return</text>
+    <x>162</x>
+    <y>517</y>
+    <width>65</width>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="130" green="180" blue="255">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_176</name>
+    <macros>
+      <dev>PV609</dev>
+    </macros>
+    <file>../Common/cryo-embedded-displays/ValveStatusDown.bob</file>
+    <x>337</x>
+    <y>129</y>
+    <width>65</width>
+    <height>35</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_178</name>
+    <macros>
+      <dev>PT620</dev>
+    </macros>
+    <file>../Common/cryo-embedded-displays/PressureSensorDown.bob</file>
+    <x>267</x>
+    <y>134</y>
+    <width>65</width>
+    <height>35</height>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group_239</name>
+    <x>276</x>
+    <y>119</y>
+    <width>10</width>
+    <height>15</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="ellipse" version="2.0.0">
+      <name>Ellipse_135</name>
+      <width>10</width>
+      <height>10</height>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_305</name>
+      <x>5</x>
+      <y>5</y>
+      <width>1</width>
+      <height>10</height>
+      <points>
+        <point x="0.0" y="10.0">
+        </point>
+        <point x="0.0" y="0.0">
+        </point>
+      </points>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+    </widget>
+  </widget>
+  <widget type="symbol" version="2.0.0">
+    <name>Symbol_27</name>
+    <pv_name>$(system)PV609:VLVstat</pv_name>
+    <symbols>
+      <symbol>../../images/CVred.png</symbol>
+      <symbol>../../images/CVgreen.png</symbol>
+      <symbol>../../images/CVwhite.png</symbol>
+    </symbols>
+    <x>352</x>
+    <y>99</y>
+    <width>30</width>
+    <height>30</height>
+    <initial_index>1</initial_index>
+    <show_index>true</show_index>
+    <tooltip>$(pv_name)
+$(pv_value)
+$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_24</name>
+    <text>2K Return</text>
+    <x>162</x>
+    <y>113</y>
+    <width>65</width>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="0" green="0" blue="255">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <tooltip>$(pv_name)
+$(pv_value)
+$(actions)</tooltip>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_67</name>
+    <x>236</x>
+    <y>125</y>
+    <width>30</width>
+    <height>1</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="30.0" y="0.0">
+      </point>
+    </points>
+    <arrows>1</arrows>
+    <arrow_length>15</arrow_length>
+    <tooltip>$(pv_name)
+$(pv_value)
+$(actions)</tooltip>
+  </widget>
+  <widget type="symbol" version="2.0.0">
+    <name>Symbol_26</name>
+    <pv_name>$(system)PV611:VLVstat</pv_name>
+    <symbols>
+      <symbol>../../images/CVred.png</symbol>
+      <symbol>../../images/CVgreen.png</symbol>
+      <symbol>../../images/CVwhite.png</symbol>
+    </symbols>
+    <x>352</x>
+    <y>505</y>
+    <width>30</width>
+    <height>30</height>
+    <initial_index>1</initial_index>
+    <show_index>true</show_index>
+    <tooltip>$(pv_name)
+$(pv_value)
+$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="arc" version="2.0.0">
+    <name>Arc_7</name>
+    <x>561</x>
+    <y>410</y>
+    <width>20</width>
+    <height>20</height>
+    <start_angle>90.0</start_angle>
+    <total_angle>180.0</total_angle>
+    <line_color>
+      <color red="200" green="0" blue="200">
+      </color>
+    </line_color>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>Ellipse_153</name>
+    <x>402</x>
+    <y>119</y>
+    <width>10</width>
+    <height>10</height>
+    <background_color>
+      <color red="0" green="0" blue="255">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group_243</name>
+    <x>225</x>
+    <y>119</y>
+    <width>10</width>
+    <height>15</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="ellipse" version="2.0.0">
+      <name>Ellipse_139</name>
+      <width>10</width>
+      <height>10</height>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_310</name>
+      <x>5</x>
+      <y>5</y>
+      <width>1</width>
+      <height>10</height>
+      <points>
+        <point x="0.0" y="10.0">
+        </point>
+        <point x="0.0" y="0.0">
+        </point>
+      </points>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group_19</name>
+    <x>1478</x>
+    <y>557</y>
+    <width>15</width>
+    <height>10</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="ellipse" version="2.0.0">
+      <name>Ellipse_8</name>
+      <width>10</width>
+      <height>10</height>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_29</name>
+      <x>5</x>
+      <y>5</y>
+      <width>10</width>
+      <height>1</height>
+      <points>
+        <point x="0.0" y="0.0">
+        </point>
+        <point x="10.0" y="0.0">
+        </point>
+      </points>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+    </widget>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_162</name>
+    <macros>
+      <dev>TO613H</dev>
+    </macros>
+    <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
+    <x>420</x>
+    <y>201</y>
+    <width>65</width>
+    <height>35</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_163</name>
+    <macros>
+      <dev>PT613</dev>
+    </macros>
+    <file>../Common/cryo-embedded-displays/PressureSensorDown.bob</file>
+    <x>420</x>
+    <y>257</y>
+    <width>65</width>
+    <height>35</height>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group_227</name>
+    <x>425</x>
+    <y>242</y>
+    <width>10</width>
+    <height>15</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="ellipse" version="2.0.0">
+      <name>Ellipse_121</name>
+      <width>10</width>
+      <height>10</height>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_290</name>
+      <x>5</x>
+      <y>5</y>
+      <width>1</width>
+      <height>10</height>
+      <points>
+        <point x="0.0" y="10.0">
+        </point>
+        <point x="0.0" y="0.0">
+        </point>
+      </points>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group_228</name>
+    <x>445</x>
+    <y>237</y>
+    <width>10</width>
+    <height>15</height>
+    <style>3</style>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_161</name>
+    <macros>
+      <dev>PT612</dev>
+    </macros>
+    <file>../Common/cryo-embedded-displays/PressureSensorDown.bob</file>
+    <x>420</x>
+    <y>430</y>
+    <width>65</width>
+    <height>35</height>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group_224</name>
+    <x>425</x>
+    <y>415</y>
+    <width>10</width>
+    <height>15</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="ellipse" version="2.0.0">
+      <name>Ellipse_119</name>
+      <width>10</width>
+      <height>10</height>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_288</name>
+      <x>5</x>
+      <y>5</y>
+      <width>1</width>
+      <height>10</height>
+      <points>
+        <point x="0.0" y="10.0">
+        </point>
+        <point x="0.0" y="0.0">
+        </point>
+      </points>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group_225</name>
+    <x>445</x>
+    <y>410</y>
+    <width>10</width>
+    <height>15</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="ellipse" version="2.0.0">
+      <name>Ellipse_120</name>
+      <y>5</y>
+      <width>10</width>
+      <height>10</height>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_289</name>
+      <x>5</x>
+      <width>1</width>
+      <height>10</height>
+      <points>
+        <point x="0.0" y="10.0">
+        </point>
+        <point x="0.0" y="0.0">
+        </point>
+      </points>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+    </widget>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_179</name>
+    <macros>
+      <dev>TO609</dev>
+    </macros>
+    <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
+    <x>420</x>
+    <y>79</y>
+    <width>65</width>
+    <height>35</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_180</name>
+    <macros>
+      <dev>PT609</dev>
+    </macros>
+    <file>../Common/cryo-embedded-displays/PressureSensorDown.bob</file>
+    <x>420</x>
+    <y>134</y>
+    <width>65</width>
+    <height>35</height>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group_241</name>
+    <x>425</x>
+    <y>119</y>
+    <width>10</width>
+    <height>15</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="ellipse" version="2.0.0">
+      <name>Ellipse_137</name>
+      <width>10</width>
+      <height>10</height>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_307</name>
+      <x>5</x>
+      <y>5</y>
+      <width>1</width>
+      <height>10</height>
+      <points>
+        <point x="0.0" y="10.0">
+        </point>
+        <point x="0.0" y="0.0">
+        </point>
+      </points>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group_242</name>
+    <x>445</x>
+    <y>114</y>
+    <width>10</width>
+    <height>15</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="ellipse" version="2.0.0">
+      <name>Ellipse_138</name>
+      <y>5</y>
+      <width>10</width>
+      <height>10</height>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_308</name>
+      <x>5</x>
+      <width>1</width>
+      <height>10</height>
+      <points>
+        <point x="0.0" y="10.0">
+        </point>
+        <point x="0.0" y="0.0">
+        </point>
+      </points>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+    </widget>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_174</name>
+    <macros>
+      <dev>TO611</dev>
+    </macros>
+    <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
+    <x>420</x>
+    <y>485</y>
+    <width>65</width>
+    <height>35</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_175</name>
+    <macros>
+      <dev>PT611</dev>
+    </macros>
+    <file>../Common/cryo-embedded-displays/PressureSensorDown.bob</file>
+    <x>420</x>
+    <y>540</y>
+    <width>65</width>
+    <height>35</height>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group_236</name>
+    <x>425</x>
+    <y>525</y>
+    <width>10</width>
+    <height>15</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="ellipse" version="2.0.0">
+      <name>Ellipse_132</name>
+      <width>10</width>
+      <height>10</height>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_303</name>
+      <x>5</x>
+      <y>5</y>
+      <width>1</width>
+      <height>10</height>
+      <points>
+        <point x="0.0" y="10.0">
+        </point>
+        <point x="0.0" y="0.0">
+        </point>
+      </points>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group_237</name>
+    <x>445</x>
+    <y>520</y>
+    <width>10</width>
+    <height>15</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="ellipse" version="2.0.0">
+      <name>Ellipse_133</name>
+      <y>5</y>
+      <width>10</width>
+      <height>10</height>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_304</name>
+      <x>5</x>
+      <width>1</width>
+      <height>10</height>
+      <points>
+        <point x="0.0" y="10.0">
+        </point>
+        <point x="0.0" y="0.0">
+        </point>
+      </points>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group_233</name>
+    <x>445</x>
+    <y>619</y>
+    <width>10</width>
+    <height>15</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="ellipse" version="2.0.0">
+      <name>Ellipse_126</name>
+      <y>5</y>
+      <width>10</width>
+      <height>10</height>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_297</name>
+      <x>5</x>
+      <width>1</width>
+      <height>10</height>
+      <points>
+        <point x="0.0" y="10.0">
+        </point>
+        <point x="0.0" y="0.0">
+        </point>
+      </points>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+    </widget>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_167</name>
+    <macros>
+      <dev>TO610</dev>
+    </macros>
+    <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
+    <x>420</x>
+    <y>584</y>
+    <width>65</width>
+    <height>35</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_168</name>
+    <macros>
+      <dev>PT610</dev>
+    </macros>
+    <file>../Common/cryo-embedded-displays/PressureSensorDown.bob</file>
+    <x>420</x>
+    <y>639</y>
+    <width>65</width>
+    <height>35</height>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group_232</name>
+    <x>425</x>
+    <y>624</y>
+    <width>10</width>
+    <height>15</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="ellipse" version="2.0.0">
+      <name>Ellipse_125</name>
+      <width>10</width>
+      <height>10</height>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_296</name>
+      <x>5</x>
+      <y>5</y>
+      <width>1</width>
+      <height>10</height>
+      <points>
+        <point x="0.0" y="10.0">
+        </point>
+        <point x="0.0" y="0.0">
+        </point>
+      </points>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+    </widget>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_160</name>
+    <macros>
+      <dev>TO612</dev>
+    </macros>
+    <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
+    <x>420</x>
+    <y>375</y>
+    <width>65</width>
+    <height>35</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_177</name>
+    <macros>
+      <dev>TO620</dev>
+    </macros>
+    <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
+    <x>267</x>
+    <y>79</y>
+    <width>65</width>
+    <height>35</height>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group_238</name>
+    <x>292</x>
+    <y>114</y>
+    <width>10</width>
+    <height>15</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_306</name>
+      <x>5</x>
+      <width>1</width>
+      <height>10</height>
+      <points>
+        <point x="0.0" y="10.0">
+        </point>
+        <point x="0.0" y="0.0">
+        </point>
+      </points>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+    </widget>
+    <widget type="ellipse" version="2.0.0">
+      <name>Ellipse_136</name>
+      <y>5</y>
+      <width>10</width>
+      <height>10</height>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <transparent>true</transparent>
+    </widget>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_311</name>
+    <x>412</x>
+    <y>355</y>
+    <width>3</width>
+    <height>58</height>
+    <points>
+      <point x="0.0" y="58.0">
+      </point>
+      <point x="0.0" y="0.0">
+      </point>
+    </points>
+    <line_color>
+      <color name="MAJOR" red="255" green="0" blue="0">
+      </color>
+    </line_color>
+    <arrows>1</arrows>
+    <arrow_length>15</arrow_length>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_11</name>
+    <actions>
+      <action type="open_display">
+        <description>Open PV611 Display</description>
+        <file>../Common/cryo-embedded-displays/ValveControlPID.bob</file>
+        <macros>
+          <dev>PV611</dev>
+          <PV>TO611</PV>
+          <Var>Temp</Var>
+        </macros>
+        <target>window</target>
+      </action>
+    </actions>
+    <text></text>
+    <x>337</x>
+    <y>505</y>
+    <width>65</width>
+    <height>62</height>
+    <transparent>true</transparent>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_17</name>
+    <actions>
+      <action type="open_display">
+        <description>Open PV609 Display</description>
+        <file>../Common/cryo-embedded-displays/ValveControlPID2PVs.bob</file>
+        <macros>
+          <dev>PV609</dev>
+          <PV1>TO609</PV1>
+          <PV2>$(system)blah2</PV2>
+          <Var1>Temp</Var1>
+          <Var2>Signal2</Var2>
+        </macros>
+        <target>window</target>
+      </action>
+    </actions>
+    <text></text>
+    <x>337</x>
+    <y>99</y>
+    <width>65</width>
+    <height>62</height>
+    <transparent>true</transparent>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_19</name>
+    <actions>
+      <action type="open_display">
+        <description>Open PV610 Display</description>
+        <file>../Common/cryo-embedded-displays/ValveControlPID.bob</file>
+        <macros>
+          <dev>PV610</dev>
+          <PV>TO610</PV>
+          <Var>Temp</Var>
+        </macros>
+        <target>window</target>
+      </action>
+    </actions>
+    <text></text>
+    <x>337</x>
+    <y>607</y>
+    <width>65</width>
+    <height>62</height>
+    <transparent>true</transparent>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_23</name>
+    <actions>
+      <action type="open_display">
+        <description>Open PV612 Display</description>
+        <file>../Common/cryo-embedded-displays/ValveControlPID.bob</file>
+        <macros>
+          <dev>PV612</dev>
+          <PV>TO612</PV>
+          <Var>Temp</Var>
+        </macros>
+        <target>window</target>
+      </action>
+    </actions>
+    <text></text>
+    <x>337</x>
+    <y>395</y>
+    <width>65</width>
+    <height>62</height>
+    <transparent>true</transparent>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_24</name>
+    <actions>
+      <action type="open_display">
+        <description>Open PV613 Display</description>
+        <file>../Common/cryo-embedded-displays/ValveControlPID.bob</file>
+        <macros>
+          <dev>PV613</dev>
+          <PV>TO613H</PV>
+          <Var>Temp</Var>
+        </macros>
+        <target>window</target>
+      </action>
+    </actions>
+    <text></text>
+    <x>337</x>
+    <y>222</y>
+    <width>65</width>
+    <height>62</height>
+    <transparent>true</transparent>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_39</name>
+    <macros>
+      <dev>PV617</dev>
+    </macros>
+    <file>../Common/cryo-embedded-displays/ValveStatusUp.bob</file>
+    <x>489</x>
+    <y>201</y>
+    <width>65</width>
+    <height>35</height>
+  </widget>
+  <widget type="symbol" version="2.0.0">
+    <name>Symbol_14</name>
+    <pv_name>$(system)PV617:VLVstat</pv_name>
+    <symbols>
+      <symbol>../../images/CVred.png</symbol>
+      <symbol>../../images/CVgreen.png</symbol>
+      <symbol>../../images/CVwhite.png</symbol>
+    </symbols>
+    <x>507</x>
+    <y>171</y>
+    <width>30</width>
+    <height>30</height>
+    <initial_index>1</initial_index>
+    <show_index>true</show_index>
+    <tooltip>$(pv_name)
+$(pv_value)
+$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_38</name>
+    <macros>
+      <dev>PV619</dev>
+    </macros>
+    <file>../Common/cryo-embedded-displays/ValveStatusUp.bob</file>
+    <x>487</x>
+    <y>79</y>
+    <width>65</width>
+    <height>35</height>
+  </widget>
+  <widget type="symbol" version="2.0.0">
+    <name>Symbol_13</name>
+    <pv_name>$(system)PV619:VLVstat</pv_name>
+    <symbols>
+      <symbol>../../images/CVred.png</symbol>
+      <symbol>../../images/CVgreen.png</symbol>
+      <symbol>../../images/CVwhite.png</symbol>
+    </symbols>
+    <x>505</x>
+    <y>49</y>
+    <width>30</width>
+    <height>30</height>
+    <initial_index>1</initial_index>
+    <show_index>true</show_index>
+    <tooltip>$(pv_name)
+$(pv_value)
+$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_37</name>
+    <macros>
+      <dev>PV618</dev>
+      <PV>TO611</PV>
+      <Var>Temp</Var>
+    </macros>
+    <file>../Common/cryo-embedded-displays/ValveStatusUp.bob</file>
+    <x>487</x>
+    <y>485</y>
+    <width>65</width>
+    <height>35</height>
+  </widget>
+  <widget type="symbol" version="2.0.0">
+    <name>Symbol_12</name>
+    <pv_name>$(system)PV618:VLVstat</pv_name>
+    <symbols>
+      <symbol>../../images/CVred.png</symbol>
+      <symbol>../../images/CVgreen.png</symbol>
+      <symbol>../../images/CVwhite.png</symbol>
+    </symbols>
+    <x>505</x>
+    <y>454</y>
+    <width>30</width>
+    <height>30</height>
+    <initial_index>1</initial_index>
+    <show_index>true</show_index>
+    <tooltip>$(pv_name)
+$(pv_value)
+$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_26</name>
+    <actions>
+      <action type="open_display">
+        <description>Open PV619 Display</description>
+        <file>../Common/cryo-embedded-displays/ValveControlPID.bob</file>
+        <macros>
+          <dev>PV619</dev>
+          <PV>TO609</PV>
+          <Var>Temp</Var>
+        </macros>
+        <target>window</target>
+      </action>
+    </actions>
+    <text></text>
+    <x>487</x>
+    <y>49</y>
+    <width>65</width>
+    <height>65</height>
+    <transparent>true</transparent>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_25</name>
+    <actions>
+      <action type="open_display">
+        <description>Open PV618 Display</description>
+        <file>../Common/cryo-embedded-displays/ValveControlPID.bob</file>
+        <macros>
+          <dev>PV618</dev>
+          <PV>TO611</PV>
+          <Var>Temp</Var>
+        </macros>
+        <target>window</target>
+      </action>
+    </actions>
+    <text></text>
+    <x>487</x>
+    <y>454</y>
+    <width>65</width>
+    <height>65</height>
+    <transparent>true</transparent>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_30</name>
+    <actions>
+      <action type="open_display">
+        <description>Open PV625 Display</description>
+        <file>../Common/cryo-embedded-displays/ValveControlPID.bob</file>
+        <macros>
+          <dev>PV625</dev>
+          <PV>TP1430H</PV>
+          <Var>Temp</Var>
+        </macros>
+        <target>window</target>
+      </action>
+    </actions>
+    <text></text>
+    <x>389</x>
+    <y>324</y>
+    <width>95</width>
+    <height>35</height>
+    <transparent>true</transparent>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_69</name>
+    <x>1580</x>
+    <y>890</y>
+    <width>10</width>
+    <height>45</height>
+    <visible>false</visible>
+    <points>
+      <point x="5.0" y="0.0">
+      </point>
+      <point x="5.0" y="2.5">
+      </point>
+      <point x="0.0" y="5.0">
+      </point>
+      <point x="10.0" y="10.0">
+      </point>
+      <point x="0.0" y="15.0">
+      </point>
+      <point x="10.0" y="20.0">
+      </point>
+      <point x="0.0" y="25.0">
+      </point>
+      <point x="10.0" y="30.0">
+      </point>
+      <point x="0.0" y="35.0">
+      </point>
+      <point x="10.0" y="40.0">
+      </point>
+      <point x="5.0" y="42.5">
+      </point>
+      <point x="5.0" y="45.0">
+      </point>
+    </points>
+    <line_color>
+      <color name="STOP" red="255" green="0" blue="0">
+      </color>
+    </line_color>
+    <rules>
+      <rule name="Heater On" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0">
+          <value>true</value>
+        </exp>
+        <pv_name>$(htr)HTRC4:HTRON</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group_3</name>
+    <x>1355</x>
+    <y>918</y>
+    <width>45</width>
+    <height>10</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_111</name>
+      <width>45</width>
+      <height>10</height>
+      <points>
+        <point x="0.0" y="5.0">
+        </point>
+        <point x="2.5" y="5.0">
+        </point>
+        <point x="5.0" y="0.0">
+        </point>
+        <point x="10.0" y="10.0">
+        </point>
+        <point x="15.0" y="0.0">
+        </point>
+        <point x="20.0" y="10.0">
+        </point>
+        <point x="25.0" y="0.0">
+        </point>
+        <point x="30.0" y="10.0">
+        </point>
+        <point x="35.0" y="0.0">
+        </point>
+        <point x="40.0" y="10.0">
+        </point>
+        <point x="42.5" y="5.0">
+        </point>
+        <point x="45.0" y="5.0">
+        </point>
+      </points>
+      <line_color>
+        <color red="255" green="0" blue="0">
+        </color>
+      </line_color>
+      <arrow_length>10</arrow_length>
+      <rules>
+        <rule name="Heater On" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0">
+            <value>true</value>
+          </exp>
+          <pv_name>$(system)HTRC$(cav):HTRON</pv_name>
+        </rule>
+      </rules>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <x>1400</x>
+    <y>1000</y>
+    <width>107</width>
+    <height>93</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="arc" version="2.0.0">
+      <name>Arc_8</name>
+      <x>20</x>
+      <y>24</y>
+      <width>20</width>
+      <height>20</height>
+      <start_angle>90.0</start_angle>
+      <total_angle>180.0</total_angle>
+      <background_color>
+        <color red="0" green="0" blue="255">
+        </color>
+      </background_color>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="arc" version="2.0.0">
+      <name>Arc_10</name>
+      <x>45</x>
+      <y>24</y>
+      <width>20</width>
+      <height>20</height>
+      <start_angle>90.0</start_angle>
+      <total_angle>180.0</total_angle>
+      <line_color>
+        <color red="255" green="0" blue="0">
+        </color>
+      </line_color>
+      <background_color>
+        <color red="255" green="0" blue="0">
+        </color>
+      </background_color>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="arc" version="2.0.0">
+      <name>Arc_11</name>
+      <y>24</y>
+      <width>20</width>
+      <height>20</height>
+      <start_angle>90.0</start_angle>
+      <total_angle>180.0</total_angle>
+      <line_color>
+        <color red="130" green="180" blue="255">
+        </color>
+      </line_color>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="arc" version="2.0.0">
+      <name>Arc_12</name>
+      <x>65</x>
+      <y>30</y>
+      <width>20</width>
+      <height>20</height>
+      <total_angle>180.0</total_angle>
+      <line_color>
+        <color red="130" green="180" blue="255">
+        </color>
+      </line_color>
+      <background_color>
+        <color red="130" green="180" blue="255">
+        </color>
+      </background_color>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>Group</name>
+      <y>83</y>
+      <width>107</width>
+      <height>10</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="ellipse" version="2.0.0">
+        <name>Ellipse_13</name>
+        <width>10</width>
+        <height>10</height>
+        <background_color>
+          <color red="0" green="0" blue="255">
+          </color>
+        </background_color>
+      </widget>
+      <widget type="ellipse" version="2.0.0">
+        <name>Ellipse_14</name>
+        <x>32</x>
+        <width>10</width>
+        <height>10</height>
+        <line_color>
+          <color red="130" green="180" blue="255">
+          </color>
+        </line_color>
+        <background_color>
+          <color red="130" green="180" blue="255">
+          </color>
+        </background_color>
+      </widget>
+      <widget type="ellipse" version="2.0.0">
+        <name>Ellipse_15</name>
+        <x>62</x>
+        <width>10</width>
+        <height>10</height>
+        <line_color>
+          <color red="255" green="0" blue="0">
+          </color>
+        </line_color>
+        <background_color>
+          <color red="255" green="0" blue="0">
+          </color>
+        </background_color>
+      </widget>
+      <widget type="ellipse" version="2.0.0">
+        <name>Ellipse_16</name>
+        <x>97</x>
+        <width>10</width>
+        <height>10</height>
+        <line_color>
+          <color red="200" green="0" blue="200">
+          </color>
+        </line_color>
+        <background_color>
+          <color red="200" green="0" blue="200">
+          </color>
+        </background_color>
+      </widget>
+    </widget>
+    <widget type="arc" version="2.0.0">
+      <name>Arc_3</name>
+      <x>65</x>
+      <y>10</y>
+      <width>20</width>
+      <height>20</height>
+      <total_angle>180.0</total_angle>
+      <background_color>
+        <color red="0" green="0" blue="255">
+        </color>
+      </background_color>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="arc" version="2.0.0">
+      <name>Arc_4</name>
+      <x>65</x>
+      <y>50</y>
+      <width>20</width>
+      <height>20</height>
+      <total_angle>180.0</total_angle>
+      <line_color>
+        <color red="255" green="0" blue="0">
+        </color>
+      </line_color>
+      <background_color>
+        <color red="255" green="0" blue="0">
+        </color>
+      </background_color>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_53</name>
+      <x>35</x>
+      <width>30</width>
+      <height>1</height>
+      <points>
+        <point x="30.0" y="0.0">
+        </point>
+        <point x="0.0" y="0.0">
+        </point>
+      </points>
+      <line_color>
+        <color name="MAJOR" red="255" green="0" blue="0">
+        </color>
+      </line_color>
+      <arrows>1</arrows>
+      <arrow_length>15</arrow_length>
+    </widget>
+  </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>Ellipse_22</name>
+    <x>1420</x>
+    <y>347</y>
+    <width>10</width>
+    <height>10</height>
+    <line_color>
+      <color red="130" green="180" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="130" green="180" blue="255">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>Ellipse_134</name>
+    <x>407</x>
+    <y>525</y>
+    <width>10</width>
+    <height>10</height>
+    <line_color>
+      <color red="130" green="180" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="130" green="180" blue="255">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_1</name>
+    <x>656</x>
+    <y>318</y>
+    <width>64</width>
+    <height>15</height>
+    <background_color>
+      <color red="0" green="0" blue="255">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_2</name>
+    <x>678</x>
+    <y>624</y>
+    <width>40</width>
+    <height>15</height>
+    <line_color>
+      <color red="130" green="180" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="130" green="180" blue="255">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_4</name>
+    <x>679</x>
+    <y>523</y>
+    <width>40</width>
+    <height>15</height>
+    <line_color>
+      <color red="130" green="180" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="130" green="180" blue="255">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_6</name>
+    <x>679</x>
+    <y>416</y>
+    <width>40</width>
+    <height>15</height>
+    <line_color>
+      <color red="255" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="255" green="0" blue="0">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_7</name>
+    <x>679</x>
+    <y>352</y>
+    <width>40</width>
+    <height>15</height>
+    <line_color>
+      <color red="255" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="255" green="0" blue="0">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_26</name>
+    <text>UTube</text>
+    <x>669</x>
+    <y>622</y>
+    <width>60</width>
+    <height>15</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_27</name>
+    <text>UTube</text>
+    <x>658</x>
+    <y>317</y>
+    <width>60</width>
+    <height>15</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_28</name>
+    <text>UTube</text>
+    <x>669</x>
+    <y>523</y>
+    <width>60</width>
+    <height>15</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_29</name>
+    <text>UTube</text>
+    <x>669</x>
+    <y>415</y>
+    <width>60</width>
+    <height>15</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_33</name>
+    <text>UTube</text>
+    <x>669</x>
+    <y>351</y>
+    <width>60</width>
+    <height>15</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_182</name>
+    <macros>
+      <dev>TX619A</dev>
+    </macros>
+    <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
+    <x>629</x>
+    <y>278</y>
+    <width>65</width>
+    <height>35</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_183</name>
+    <macros>
+      <dev>TO611</dev>
+    </macros>
+    <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
+    <x>709</x>
+    <y>279</y>
+    <width>65</width>
+    <height>35</height>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group_244</name>
+    <x>708</x>
+    <y>311</y>
+    <width>10</width>
+    <height>15</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="ellipse" version="2.0.0">
+      <name>Ellipse_142</name>
+      <y>5</y>
+      <width>10</width>
+      <height>10</height>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_313</name>
+      <x>5</x>
+      <y>1</y>
+      <width>1</width>
+      <height>10</height>
+      <points>
+        <point x="0.0" y="10.0">
+        </point>
+        <point x="0.0" y="0.0">
+        </point>
+      </points>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+    </widget>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_338</name>
+    <x>411</x>
+    <y>190</y>
+    <height>55</height>
+    <points>
+      <point x="0.0" y="55.0">
+      </point>
+      <point x="0.0" y="3.0">
+      </point>
+      <point x="98.0" y="3.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="255" green="0" blue="0">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_339</name>
+    <x>532</x>
+    <y>425</y>
+    <width>38</width>
+    <height>52</height>
+    <points>
+      <point x="0.0" y="52.0">
+      </point>
+      <point x="38.0" y="52.0">
+      </point>
+      <point x="38.0" y="2.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="200" green="0" blue="200">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group_9</name>
+    <x>1520</x>
+    <y>315</y>
+    <width>15</width>
+    <height>10</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="ellipse" version="2.0.0">
+      <name>Ellipse_143</name>
+      <x>5</x>
+      <width>10</width>
+      <height>10</height>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_341</name>
+      <y>5</y>
+      <width>10</width>
+      <height>1</height>
+      <points>
+        <point x="0.0" y="0.0">
+        </point>
+        <point x="10.0" y="0.0">
+        </point>
+      </points>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+    </widget>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_344</name>
+    <x>1446</x>
+    <y>303</y>
+    <width>1</width>
+    <height>205</height>
+    <points>
+      <point x="0.0" y="205.0">
+      </point>
+      <point x="0.0" y="0.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="130" green="180" blue="255">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <x>1403</x>
+    <y>240</y>
+    <width>45</width>
+    <height>26</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_346</name>
+      <y>16</y>
+      <width>45</width>
+      <height>10</height>
+      <points>
+        <point x="0.0" y="5.0">
+        </point>
+        <point x="2.5" y="5.0">
+        </point>
+        <point x="5.0" y="0.0">
+        </point>
+        <point x="10.0" y="10.0">
+        </point>
+        <point x="15.0" y="0.0">
+        </point>
+        <point x="20.0" y="10.0">
+        </point>
+        <point x="25.0" y="0.0">
+        </point>
+        <point x="30.0" y="10.0">
+        </point>
+        <point x="35.0" y="0.0">
+        </point>
+        <point x="40.0" y="10.0">
+        </point>
+        <point x="42.5" y="5.0">
+        </point>
+        <point x="45.0" y="5.0">
+        </point>
+      </points>
+      <line_color>
+        <color red="255" green="0" blue="0">
+        </color>
+      </line_color>
+      <arrow_length>10</arrow_length>
+      <rules>
+        <rule name="Heater On" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0">
+            <value>true</value>
+          </exp>
+          <pv_name>$(system)HTRC$(cav):HTRON</pv_name>
+        </rule>
+      </rules>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_35</name>
+      <text>HTTS</text>
+      <x>3</x>
+      <width>40</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="12.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group_247</name>
+    <x>658</x>
+    <y>311</y>
+    <width>10</width>
+    <height>15</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="ellipse" version="2.0.0">
+      <name>Ellipse_157</name>
+      <y>5</y>
+      <width>10</width>
+      <height>10</height>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_360</name>
+      <x>5</x>
+      <y>1</y>
+      <width>1</width>
+      <height>10</height>
+      <points>
+        <point x="0.0" y="10.0">
+        </point>
+        <point x="0.0" y="0.0">
+        </point>
+      </points>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+    </widget>
+  </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>Ellipse_158</name>
+    <x>697</x>
+    <y>189</y>
+    <width>10</width>
+    <height>10</height>
+    <line_color>
+      <color red="200" green="0" blue="200">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="200" green="0" blue="200">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_36</name>
+    <text>CDS</text>
+    <x>266</x>
+    <y>51</y>
+    <width>67</width>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <background_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_363</name>
+    <x>570</x>
+    <y>250</y>
+    <width>1</width>
+    <height>161</height>
+    <points>
+      <point x="0.0" y="161.0">
+      </point>
+      <point x="0.0" y="0.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="200" green="0" blue="200">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="arc" version="2.0.0">
+    <name>Arc_9</name>
+    <x>561</x>
+    <y>234</y>
+    <width>20</width>
+    <height>20</height>
+    <start_angle>90.0</start_angle>
+    <total_angle>180.0</total_angle>
+    <line_color>
+      <color red="200" green="0" blue="200">
+      </color>
+    </line_color>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_364</name>
+    <x>570</x>
+    <y>192</y>
+    <width>1</width>
+    <height>43</height>
+    <points>
+      <point x="0.0" y="43.0">
+      </point>
+      <point x="0.0" y="0.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="200" green="0" blue="200">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_365</name>
+    <x>535</x>
+    <y>191</y>
+    <width>50</width>
+    <height>4</height>
+    <points>
+      <point x="68.0" y="3.0">
+      </point>
+      <point x="0.0" y="3.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="200" green="0" blue="200">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_27</name>
+    <actions>
+      <action type="open_display">
+        <description>Open PV617 Display</description>
+        <file>../Common/cryo-embedded-displays/ValveControlPID.bob</file>
+        <macros>
+          <dev>PV617</dev>
+          <PV>TO613H</PV>
+          <Var>Temp</Var>
+        </macros>
+        <target>window</target>
+      </action>
+    </actions>
+    <text></text>
+    <x>490</x>
+    <y>171</y>
+    <width>62</width>
+    <height>65</height>
+    <transparent>true</transparent>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>Ellipse_122</name>
+    <x>445</x>
+    <y>240</y>
+    <width>10</width>
+    <height>10</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_291</name>
+    <x>450</x>
+    <y>235</y>
+    <width>1</width>
+    <height>10</height>
+    <points>
+      <point x="0.0" y="10.0">
+      </point>
+      <point x="0.0" y="0.0">
+      </point>
+    </points>
+    <line_width>1</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_366</name>
+    <x>620</x>
+    <y>191</y>
+    <width>110</width>
+    <height>4</height>
+    <points>
+      <point x="149.60000000000002" y="3.0">
+      </point>
+      <point x="0.0" y="3.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="200" green="0" blue="200">
+      </color>
+    </line_color>
+  </widget>
+</display>
