@@ -2,7 +2,7 @@
 <display version="2.0.0">
   <name>$(LABEL) Details</name>
   <width>520</width>
-  <height>750</height>
+  <height>800</height>
   <widget type="rectangle" version="2.0.0">
     <name>Rectangle</name>
     <width>520</width>
@@ -36,7 +36,7 @@
   <widget type="rectangle" version="2.0.0">
     <name>Rectangle_1</name>
     <x>10</x>
-    <y>45</y>
+    <y>77</y>
     <width>500</width>
     <height>125</height>
     <line_color>
@@ -52,7 +52,7 @@
     <name>Label_1</name>
     <text>Status</text>
     <x>18</x>
-    <y>48</y>
+    <y>80</y>
     <width>120</width>
     <height>18</height>
     <font>
@@ -68,7 +68,7 @@
     <name>Label_2</name>
     <text>NO DATA</text>
     <x>18</x>
-    <y>70</y>
+    <y>102</y>
     <width>140</width>
     <height>60</height>
     <font>
@@ -108,17 +108,11 @@
         </exp>
         <exp bool_exp="pv3 == 1">
           <value>
-            <color name="MINOR" red="255" green="128" blue="0">
-            </color>
-          </value>
-        </exp>
-        <exp bool_exp="pv4 == 1">
-          <value>
             <color red="0" green="180" blue="0">
             </color>
           </value>
         </exp>
-        <exp bool_exp="pv0 == 0 &amp;&amp; pv1 == 0 &amp;&amp; pv2 == 0 &amp;&amp; pv3 == 0 &amp;&amp; pv4 == 0">
+        <exp bool_exp="pv0 == 0 &amp;&amp; pv1 == 0 &amp;&amp; pv2 == 0 &amp;&amp; pv3 == 0">
           <value>
             <color red="200" green="200" blue="200">
             </color>
@@ -127,7 +121,6 @@
         <pv_name>$(PREFIX)$(UNIT):IsOffline</pv_name>
         <pv_name>$(PREFIX)$(UNIT):TripStatus</pv_name>
         <pv_name>$(PREFIX)$(UNIT):LLTrip</pv_name>
-        <pv_name>$(PREFIX)$(UNIT):WarningStatus</pv_name>
         <pv_name>$(PREFIX)$(UNIT):IsActive</pv_name>
       </rule>
       <rule name="StateText" prop_id="text" out_exp="true">
@@ -141,18 +134,14 @@
           <expression>"LL TRIP"</expression>
         </exp>
         <exp bool_exp="pv3 == 1">
-          <expression>"WARNING"</expression>
-        </exp>
-        <exp bool_exp="pv4 == 1">
           <expression>"ACTIVE"</expression>
         </exp>
-        <exp bool_exp="pv0 == 0 &amp;&amp; pv1 == 0 &amp;&amp; pv2 == 0 &amp;&amp; pv3 == 0 &amp;&amp; pv4 == 0">
-          <expression>"OFF"</expression>
+        <exp bool_exp="pv0 == 0 &amp;&amp; pv1 == 0 &amp;&amp; pv2 == 0 &amp;&amp; pv3 == 0">
+          <expression>"INACTIVE"</expression>
         </exp>
         <pv_name>$(PREFIX)$(UNIT):IsOffline</pv_name>
         <pv_name>$(PREFIX)$(UNIT):TripStatus</pv_name>
         <pv_name>$(PREFIX)$(UNIT):LLTrip</pv_name>
-        <pv_name>$(PREFIX)$(UNIT):WarningStatus</pv_name>
         <pv_name>$(PREFIX)$(UNIT):IsActive</pv_name>
       </rule>
     </rules>
@@ -162,7 +151,7 @@
     <name>Label_3</name>
     <text>Warning Code</text>
     <x>180</x>
-    <y>72</y>
+    <y>104</y>
     <font>
       <font family="Liberation Sans" style="REGULAR" size="11.0">
       </font>
@@ -177,7 +166,7 @@
     <name>Text Update</name>
     <pv_name>$(PREFIX)$(UNIT):WarningCode</pv_name>
     <x>285</x>
-    <y>72</y>
+    <y>104</y>
     <width>60</width>
     <height>22</height>
     <font>
@@ -190,7 +179,7 @@
     <name>Label_4</name>
     <text>Trip Code</text>
     <x>180</x>
-    <y>102</y>
+    <y>134</y>
     <font>
       <font family="Liberation Sans" style="REGULAR" size="11.0">
       </font>
@@ -205,7 +194,7 @@
     <name>Text Update_1</name>
     <pv_name>$(PREFIX)$(UNIT):TripCode</pv_name>
     <x>285</x>
-    <y>102</y>
+    <y>134</y>
     <width>60</width>
     <height>22</height>
     <font>
@@ -218,7 +207,7 @@
     <name>Label_5</name>
     <text>Modbus</text>
     <x>392</x>
-    <y>72</y>
+    <y>104</y>
     <width>60</width>
     <font>
       <font family="Liberation Sans" style="REGULAR" size="11.0">
@@ -234,7 +223,7 @@
     <name>LED</name>
     <pv_name>$(PREFIX)$(UNIT):IsOffline</pv_name>
     <x>392</x>
-    <y>98</y>
+    <y>130</y>
     <width>14</width>
     <height>14</height>
     <off_color>
@@ -250,7 +239,7 @@
   <widget type="rectangle" version="2.0.0">
     <name>Rectangle_2</name>
     <x>10</x>
-    <y>180</y>
+    <y>212</y>
     <width>500</width>
     <height>112</height>
     <line_color>
@@ -266,7 +255,7 @@
     <name>Label_7</name>
     <text>Readings</text>
     <x>18</x>
-    <y>183</y>
+    <y>215</y>
     <width>120</width>
     <height>18</height>
     <font>
@@ -282,7 +271,7 @@
     <name>Label_8</name>
     <text>Output Pressure</text>
     <x>25</x>
-    <y>202</y>
+    <y>234</y>
     <width>140</width>
     <height>22</height>
     <font>
@@ -299,7 +288,7 @@
     <name>Text Update_2</name>
     <pv_name>$(PREFIX)$(UNIT):OutputPressure</pv_name>
     <x>180</x>
-    <y>201</y>
+    <y>233</y>
     <width>90</width>
     <height>24</height>
     <font>
@@ -312,7 +301,7 @@
     <name>Label_9</name>
     <text>Capacity</text>
     <x>25</x>
-    <y>232</y>
+    <y>264</y>
     <width>140</width>
     <height>22</height>
     <font>
@@ -329,7 +318,7 @@
     <name>Text Update_3</name>
     <pv_name>$(PREFIX)$(UNIT):PercentageCapacity</pv_name>
     <x>180</x>
-    <y>231</y>
+    <y>263</y>
     <width>90</width>
     <height>24</height>
     <font>
@@ -342,7 +331,7 @@
     <name>Label_10</name>
     <text>Motor Current</text>
     <x>25</x>
-    <y>262</y>
+    <y>294</y>
     <width>140</width>
     <height>22</height>
     <font>
@@ -359,7 +348,7 @@
     <name>Text Update_4</name>
     <pv_name>$(PREFIX)$(UNIT):MotorCurrent</pv_name>
     <x>180</x>
-    <y>261</y>
+    <y>293</y>
     <width>90</width>
     <height>24</height>
     <font>
@@ -371,7 +360,7 @@
   <widget type="rectangle" version="2.0.0">
     <name>Rectangle_3</name>
     <x>10</x>
-    <y>300</y>
+    <y>332</y>
     <width>498</width>
     <height>160</height>
     <line_color>
@@ -387,7 +376,7 @@
     <name>Label_11</name>
     <text>Controls</text>
     <x>18</x>
-    <y>303</y>
+    <y>335</y>
     <width>120</width>
     <height>18</height>
     <font>
@@ -403,7 +392,7 @@
     <name>Label_12</name>
     <text>Target Pressure</text>
     <x>25</x>
-    <y>330</y>
+    <y>362</y>
     <width>140</width>
     <height>22</height>
     <font>
@@ -420,7 +409,7 @@
     <name>Text Update_5</name>
     <pv_name>$(PREFIX)$(UNIT):TargetPressure</pv_name>
     <x>180</x>
-    <y>329</y>
+    <y>361</y>
     <width>90</width>
     <height>24</height>
     <font>
@@ -430,38 +419,8 @@
     <horizontal_alignment>2</horizontal_alignment>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>L_MaxStop</name>
+    <name>Label_6</name>
     <text>Auto-stop Pressure</text>
-    <x>25</x>
-    <y>360</y>
-    <width>140</width>
-    <height>22</height>
-    <font>
-      <font family="Liberation Sans" style="REGULAR" size="11.0">
-      </font>
-    </font>
-    <foreground_color>
-      <color red="60" green="60" blue="60">
-      </color>
-    </foreground_color>
-    <vertical_alignment>1</vertical_alignment>
-  </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>MaxStop</name>
-    <pv_name>$(PREFIX)$(UNIT):MaxStopPressure</pv_name>
-    <x>180</x>
-    <y>359</y>
-    <width>90</width>
-    <height>24</height>
-    <font>
-      <font family="Liberation Sans" style="BOLD" size="14.0">
-      </font>
-    </font>
-    <horizontal_alignment>2</horizontal_alignment>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>L_Active</name>
-    <text>Activate command</text>
     <x>25</x>
     <y>392</y>
     <width>140</width>
@@ -476,78 +435,22 @@
     </foreground_color>
     <vertical_alignment>1</vertical_alignment>
   </widget>
-  <widget type="led" version="2.0.0">
-    <name>ActiveLED</name>
-    <pv_name>$(PREFIX)$(UNIT):ActiveStatus</pv_name>
-    <x>182</x>
-    <y>395</y>
-    <width>16</width>
-    <height>16</height>
-    <off_color>
-      <color red="160" green="160" blue="160">
-      </color>
-    </off_color>
-    <on_color>
-      <color red="0" green="180" blue="0">
-      </color>
-    </on_color>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Start</name>
-    <actions>
-      <action type="write_pv">
-        <pv_name>$(PREFIX)$(UNIT):setActivateCommand</pv_name>
-        <value>1</value>
-        <description>START</description>
-      </action>
-    </actions>
-    <text>START</text>
-    <x>270</x>
-    <y>389</y>
-    <width>80</width>
-    <height>28</height>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_6</name>
+    <pv_name>$(PREFIX)$(UNIT):MaxStopPressure</pv_name>
+    <x>180</x>
+    <y>391</y>
+    <width>90</width>
+    <height>24</height>
     <font>
-      <font family="Liberation Sans" style="BOLD" size="11.0">
+      <font family="Liberation Sans" style="BOLD" size="14.0">
       </font>
     </font>
-    <background_color>
-      <color red="0" green="180" blue="0">
-      </color>
-    </background_color>
-    <tooltip>$(actions)</tooltip>
-    <confirm_dialog>true</confirm_dialog>
-    <confirm_message>Activate $(LABEL)?</confirm_message>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Stop</name>
-    <actions>
-      <action type="write_pv">
-        <pv_name>$(PREFIX)$(UNIT):setActivateCommand</pv_name>
-        <value>0</value>
-        <description>STOP</description>
-      </action>
-    </actions>
-    <text>STOP</text>
-    <x>360</x>
-    <y>389</y>
-    <width>80</width>
-    <height>28</height>
-    <font>
-      <font family="Liberation Sans" style="BOLD" size="11.0">
-      </font>
-    </font>
-    <background_color>
-      <color red="255" green="80" blue="80">
-      </color>
-    </background_color>
-    <tooltip>$(actions)</tooltip>
-    <confirm_dialog>true</confirm_dialog>
-    <confirm_message>Stop $(LABEL)?</confirm_message>
+    <horizontal_alignment>2</horizontal_alignment>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>L_LLTrip</name>
-    <text>Low-Low Trip</text>
+    <name>Label_13</name>
+    <text>Activate command</text>
     <x>25</x>
     <y>424</y>
     <width>140</width>
@@ -563,10 +466,96 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type="led" version="2.0.0">
-    <name>LLTripLED</name>
-    <pv_name>$(PREFIX)$(UNIT):LLTrip</pv_name>
+    <name>LED_1</name>
+    <pv_name>$(PREFIX)$(UNIT):ActivateCmdStatus</pv_name>
     <x>182</x>
     <y>427</y>
+    <width>16</width>
+    <height>16</height>
+    <off_color>
+      <color red="160" green="160" blue="160">
+      </color>
+    </off_color>
+    <on_color>
+      <color red="0" green="180" blue="0">
+      </color>
+    </on_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(PREFIX)$(UNIT):setActivateCommand</pv_name>
+        <value>1</value>
+        <description>START</description>
+      </action>
+    </actions>
+    <text>START</text>
+    <x>270</x>
+    <y>421</y>
+    <width>80</width>
+    <height>28</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="11.0">
+      </font>
+    </font>
+    <background_color>
+      <color red="0" green="180" blue="0">
+      </color>
+    </background_color>
+    <tooltip>$(actions)</tooltip>
+    <confirm_dialog>true</confirm_dialog>
+    <confirm_message>Activate $(LABEL)?</confirm_message>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_1</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(PREFIX)$(UNIT):setActivateCommand</pv_name>
+        <value>0</value>
+        <description>STOP</description>
+      </action>
+    </actions>
+    <text>STOP</text>
+    <x>360</x>
+    <y>421</y>
+    <width>80</width>
+    <height>28</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="11.0">
+      </font>
+    </font>
+    <background_color>
+      <color red="255" green="80" blue="80">
+      </color>
+    </background_color>
+    <tooltip>$(actions)</tooltip>
+    <confirm_dialog>true</confirm_dialog>
+    <confirm_message>Stop $(LABEL)?</confirm_message>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_14</name>
+    <text>Low-Low Trip</text>
+    <x>25</x>
+    <y>456</y>
+    <width>140</width>
+    <height>22</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="11.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="60" green="60" blue="60">
+      </color>
+    </foreground_color>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_2</name>
+    <pv_name>$(PREFIX)$(UNIT):LLTrip</pv_name>
+    <x>182</x>
+    <y>459</y>
     <width>16</width>
     <height>16</height>
     <off_color>
@@ -580,7 +569,7 @@
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="action_button" version="3.0.0">
-    <name>LLReset</name>
+    <name>Action Button_2</name>
     <actions>
       <action type="write_pv">
         <pv_name>$(PREFIX)$(UNIT):LLTripReset</pv_name>
@@ -590,7 +579,7 @@
     </actions>
     <text>RESET</text>
     <x>270</x>
-    <y>421</y>
+    <y>453</y>
     <width>80</width>
     <height>28</height>
     <font>
@@ -608,7 +597,7 @@
   <widget type="rectangle" version="2.0.0">
     <name>Rectangle_4</name>
     <x>10</x>
-    <y>470</y>
+    <y>502</y>
     <width>498</width>
     <height>160</height>
     <line_color>
@@ -621,10 +610,10 @@
     </background_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>L_StatusWord</name>
+    <name>Label_15</name>
     <text>Status Word</text>
     <x>18</x>
-    <y>473</y>
+    <y>505</y>
     <width>120</width>
     <height>22</height>
     <font>
@@ -638,10 +627,10 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type="byte_monitor" version="2.0.0">
-    <name>Bits_0</name>
+    <name>Byte Monitor</name>
     <pv_name>$(PREFIX)$(UNIT):Status_StatusBits</pv_name>
     <x>25</x>
-    <y>498</y>
+    <y>530</y>
     <width>16</width>
     <height>96</height>
     <startBit>0</startBit>
@@ -660,10 +649,10 @@
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>L_Bit0</name>
+    <name>Label_16</name>
     <text>0: Host control</text>
     <x>47</x>
-    <y>495</y>
+    <y>527</y>
     <width>200</width>
     <height>22</height>
     <font>
@@ -677,10 +666,10 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>L_Bit1</name>
+    <name>Label_17</name>
     <text>1: Run</text>
     <x>47</x>
-    <y>519</y>
+    <y>551</y>
     <width>200</width>
     <height>22</height>
     <font>
@@ -694,10 +683,10 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>L_Bit2</name>
+    <name>Label_18</name>
     <text>2: Loaded</text>
     <x>47</x>
-    <y>543</y>
+    <y>575</y>
     <width>200</width>
     <height>22</height>
     <font>
@@ -711,10 +700,10 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>L_Bit3</name>
+    <name>Label_19</name>
     <text>3: At min speed</text>
     <x>47</x>
-    <y>567</y>
+    <y>599</y>
     <width>200</width>
     <height>22</height>
     <font>
@@ -728,10 +717,10 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type="byte_monitor" version="2.0.0">
-    <name>Bits_1</name>
+    <name>Byte Monitor_1</name>
     <pv_name>$(PREFIX)$(UNIT):Status_StatusBits</pv_name>
     <x>270</x>
-    <y>498</y>
+    <y>530</y>
     <width>16</width>
     <height>96</height>
     <startBit>4</startBit>
@@ -750,10 +739,10 @@
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>L_Bit4</name>
+    <name>Label_20</name>
     <text>4: At max speed</text>
     <x>292</x>
-    <y>495</y>
+    <y>527</y>
     <width>200</width>
     <height>22</height>
     <font>
@@ -767,10 +756,10 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>L_Bit5</name>
+    <name>Label_21</name>
     <text>5: Stopped in auto-restart</text>
     <x>292</x>
-    <y>519</y>
+    <y>551</y>
     <width>200</width>
     <height>22</height>
     <font>
@@ -784,10 +773,10 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>L_Bit6</name>
+    <name>Label_22</name>
     <text>6: Alarm</text>
     <x>292</x>
-    <y>543</y>
+    <y>575</y>
     <width>200</width>
     <height>22</height>
     <font>
@@ -801,10 +790,10 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>L_Bit7</name>
+    <name>Label_23</name>
     <text>7: Warning</text>
     <x>292</x>
-    <y>567</y>
+    <y>599</y>
     <width>200</width>
     <height>22</height>
     <font>
@@ -818,18 +807,18 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type="embedded" version="2.0.0">
-    <name>PLC_Status</name>
+    <name>Embedded Display</name>
     <file>PLCStatus.bob</file>
     <x>10</x>
-    <y>642</y>
+    <y>674</y>
     <width>280</width>
-    <height>96</height>
+    <height>112</height>
   </widget>
   <widget type="byte_monitor" version="2.0.0">
-    <name>Bits_89</name>
+    <name>Byte Monitor_2</name>
     <pv_name>$(PREFIX)$(UNIT):Status_StatusBits</pv_name>
     <x>25</x>
-    <y>597</y>
+    <y>629</y>
     <width>40</width>
     <height>18</height>
     <startBit>8</startBit>
@@ -847,10 +836,10 @@
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>L_Bit89</name>
+    <name>Label_24</name>
     <text>8-9: Operating mode (11 = normal, 00 = unloaded)</text>
     <x>72</x>
-    <y>595</y>
+    <y>627</y>
     <width>400</width>
     <height>20</height>
     <font>
@@ -860,10 +849,10 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type="led" version="2.0.0">
-    <name>AutoSwitchover</name>
+    <name>LED_3</name>
     <pv_name>LACC:UTIL_MSD_CMPRS:AutoSwitchOver</pv_name>
     <x>300</x>
-    <y>333</y>
+    <y>365</y>
     <width>14</width>
     <height>14</height>
     <off_color>
@@ -877,10 +866,10 @@
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>L_AutoSwitchover</name>
+    <name>Label_25</name>
     <text>Auto-switchover possible</text>
     <x>320</x>
-    <y>330</y>
+    <y>362</y>
     <width>170</width>
     <height>20</height>
     <font>
@@ -894,10 +883,10 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type="led" version="2.0.0">
-    <name>S_Trip</name>
+    <name>LED_4</name>
     <pv_name>$(PREFIX)$(UNIT):TripStatus</pv_name>
     <x>180</x>
-    <y>141</y>
+    <y>173</y>
     <width>14</width>
     <height>14</height>
     <off_color>
@@ -911,10 +900,10 @@
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>L_S_Trip</name>
+    <name>Label_26</name>
     <text>Trip</text>
     <x>198</x>
-    <y>138</y>
+    <y>170</y>
     <width>45</width>
     <height>20</height>
     <font>
@@ -924,10 +913,10 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type="led" version="2.0.0">
-    <name>S_Warn</name>
+    <name>LED_5</name>
     <pv_name>$(PREFIX)$(UNIT):WarningStatus</pv_name>
     <x>250</x>
-    <y>141</y>
+    <y>173</y>
     <width>14</width>
     <height>14</height>
     <off_color>
@@ -941,10 +930,10 @@
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>L_S_Warn</name>
+    <name>Label_27</name>
     <text>Warning</text>
     <x>268</x>
-    <y>138</y>
+    <y>170</y>
     <width>60</width>
     <height>20</height>
     <font>
@@ -954,10 +943,10 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type="led" version="2.0.0">
-    <name>S_Active</name>
+    <name>LED_6</name>
     <pv_name>$(PREFIX)$(UNIT):IsActive</pv_name>
     <x>335</x>
-    <y>141</y>
+    <y>173</y>
     <width>14</width>
     <height>14</height>
     <off_color>
@@ -971,10 +960,10 @@
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>L_S_Active</name>
+    <name>Label_28</name>
     <text>Active</text>
     <x>353</x>
-    <y>138</y>
+    <y>170</y>
     <width>50</width>
     <height>20</height>
     <font>
@@ -982,5 +971,92 @@
       </font>
     </font>
     <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_29</name>
+    <text> $(LABEL)</text>
+    <x>10</x>
+    <y>40</y>
+    <width>500</width>
+    <height>30</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <background_color>
+      <color red="225" green="225" blue="225">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>0</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <rules>
+      <rule name="StaleColor" prop_id="background_color" out_exp="false">
+        <exp bool_exp="pv0 == 1">
+          <value>
+            <color red="190" green="140" blue="220">
+            </color>
+          </value>
+        </exp>
+        <pv_name>$(PREFIX)$(UNIT):IsOffline</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_30</name>
+    <text>NO PLC HEARTBEAT - DATA STALE</text>
+    <x>270</x>
+    <y>2</y>
+    <width>245</width>
+    <height>31</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="13.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="MAJOR" red="255" green="0" blue="0">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <visible>false</visible>
+    <rules>
+      <rule name="NotAlive" prop_id="visible" out_exp="false">
+        <exp bool_exp="pvStr0 != &quot;Alive&quot;">
+          <value>true</value>
+        </exp>
+        <pv_name>LACC:UTIL_MSD_PLC:HBStatus</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_31</name>
+    <text>OFFLINE - DATA STALE</text>
+    <x>85</x>
+    <y>40</y>
+    <width>420</width>
+    <height>30</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="13.0">
+      </font>
+    </font>
+    <vertical_alignment>1</vertical_alignment>
+    <visible>false</visible>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <rules>
+      <rule name="Stale" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0 == 1">
+          <value>true</value>
+        </exp>
+        <pv_name>$(PREFIX)$(UNIT):IsOffline</pv_name>
+      </rule>
+    </rules>
   </widget>
 </display>
