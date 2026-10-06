@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>ValvePneumHorizIntlk</name>
+  <macros>
+    <dev>$(dev)</dev>
+  </macros>
+  <width>75</width>
+  <height>90</height>
+  <widget type="symbol" version="2.0.0">
+    <name>Symbol_29</name>
+    <pv_name>$(system)$(dev):VLVstat</pv_name>
+    <symbols>
+      <symbol>../../Images/Cryo/png/ControlValveGray.png</symbol>
+      <symbol>../../Images/Cryo/png/ControlValveGreen.png</symbol>
+      <symbol>../../Images/Cryo/png/ControlValveRed.png</symbol>
+    </symbols>
+    <x>15</x>
+    <y>4</y>
+    <width>45</width>
+    <height>45</height>
+    <actions>
+    </actions>
+    <run_actions_on_mouse_click>true</run_actions_on_mouse_click>
+    <tooltip>$(pv_name)
+$(pv_value)
+$(actions)</tooltip>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_152</name>
+    <macros>
+      <dev>$(dev)</dev>
+    </macros>
+    <file>ValveStatusUp.bob</file>
+    <x>6</x>
+    <y>54</y>
+    <width>65</width>
+    <height>35</height>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_6</name>
+    <pv_name>$(system)$(dev):ManualAuto</pv_name>
+    <bit>0</bit>
+    <x>52</x>
+    <off_label>A</off_label>
+    <off_color>
+      <color name="acorn.Green" red="82" green="171" blue="90">
+      </color>
+    </off_color>
+    <on_label>M</on_label>
+    <on_color>
+      <color name="fgs.Gray-45" red="167" green="168" blue="170">
+      </color>
+    </on_color>
+    <square>true</square>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button</name>
+    <actions>
+      <action type="open_display">
+        <description>Open Display</description>
+        <file>ValveControlPIDIntlk.bob</file>
+        <macros>
+          <dev>$(dev)</dev>
+          <PV>$(PV)</PV>
+          <Var>$(Var)</Var>
+        </macros>
+        <target>window</target>
+      </action>
+    </actions>
+    <text></text>
+    <x>1</x>
+    <width>73</width>
+    <height>90</height>
+    <transparent>true</transparent>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_25</name>
+    <pv_name>$(system)$(dev):INTLK</pv_name>
+    <bit>0</bit>
+    <x>3</x>
+    <off_label>I</off_label>
+    <off_color>
+      <color name="acorn.Yellow" red="255" green="249" blue="5">
+      </color>
+    </off_color>
+    <on_label>I</on_label>
+    <on_color>
+      <color name="acorn.Yellow" red="255" green="249" blue="5">
+      </color>
+    </on_color>
+    <line_color>
+      <color name="acorn.Red" red="229" green="56" blue="35">
+      </color>
+    </line_color>
+    <square>true</square>
+    <rules>
+      <rule name="Visibilty" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0 == 1">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="pv0 == 0">
+          <value>false</value>
+        </exp>
+        <pv_name>$(pv_name)</pv_name>
+      </rule>
+    </rules>
+  </widget>
+</display>
