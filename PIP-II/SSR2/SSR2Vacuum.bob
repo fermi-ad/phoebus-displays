@@ -11,6 +11,14 @@
   <height>740</height>
   <grid_step_x>5</grid_step_x>
   <grid_step_y>5</grid_step_y>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_7</name>
+    <y>40</y>
+    <width>1300</width>
+    <height>700</height>
+    <line_width>1</line_width>
+    <transparent>true</transparent>
+  </widget>
   <widget type="picture" version="2.0.0">
     <name>Picture</name>
     <file>../../images/SSR2Cryostat.png</file>
@@ -43,7 +51,7 @@
   </widget>
   <widget type="symbol" version="2.0.0">
     <name>Symbol_22</name>
-    <pv_name>$(system)BLDSVAC:PumpStatus</pv_name>
+    <pv_name>$(system)BLDSION:PumpStatus</pv_name>
     <symbols>
       <symbol>../../images/IonPumpRed.png</symbol>
       <symbol>../../images/IonPumpGreen.png</symbol>
@@ -60,14 +68,6 @@
     <tooltip>$(pv_name)
 $(pv_value)
 $(actions)</tooltip>
-  </widget>
-  <widget type="rectangle" version="2.0.0">
-    <name>Rectangle_7</name>
-    <y>40</y>
-    <width>1300</width>
-    <height>700</height>
-    <line_width>1</line_width>
-    <transparent>true</transparent>
   </widget>
   <widget type="polygon" version="2.0.0">
     <name>Polygon_4</name>
@@ -488,8 +488,8 @@ $(actions)</tooltip>
   </widget>
   <widget type="group" version="3.0.0">
     <name>Group</name>
-    <x>1105</x>
-    <y>600</y>
+    <x>460</x>
+    <y>570</y>
     <width>130</width>
     <height>100</height>
     <style>3</style>
@@ -625,7 +625,7 @@ $(actions)</tooltip>
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_266</name>
-      <pv_name>$(system)BLDSVAC:VacP</pv_name>
+      <pv_name>$(system)BLDSION:VacP</pv_name>
       <y>50</y>
       <height>15</height>
       <font>
@@ -648,7 +648,7 @@ $(actions)</tooltip>
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_333</name>
-      <pv_name>$(system)BLDSVAC:Name</pv_name>
+      <pv_name>$(system)BLDSION:Name</pv_name>
       <y>35</y>
       <height>15</height>
       <font>
@@ -1111,7 +1111,7 @@ IV MKS937</text>
         <file>../Common/vacuum-embedded-displays/SAESsip.bob</file>
         <macros>
           <P>$(system)</P>
-          <R>BLDSVAC</R>
+          <R>BLDSION</R>
         </macros>
         <target>window</target>
       </action>
@@ -1308,7 +1308,7 @@ Station</text>
     <transparent>true</transparent>
     <widget type="symbol" version="2.0.0">
       <name>Symbol_21</name>
-      <pv_name>$(system)BLUSION:rv_HVStatus</pv_name>
+      <pv_name>$(system)BLUSION:HVStatus</pv_name>
       <symbols>
         <symbol>../../images/IonPumpRed.png</symbol>
         <symbol>../../images/IonPumpGreen.png</symbol>
@@ -1338,6 +1338,7 @@ $(actions)</tooltip>
           <target>window</target>
         </action>
       </actions>
+      <pv_name>$(system)BLUSION:HVStatus</pv_name>
       <text></text>
       <y>10</y>
       <width>50</width>
@@ -1365,7 +1366,7 @@ $(actions)</tooltip>
       </widget>
       <widget type="textupdate" version="2.0.0">
         <name>Text Update_330</name>
-        <pv_name>$(system)BLUSION:rv_V</pv_name>
+        <pv_name>$(system)BLUSION:Voltage</pv_name>
         <x>5</x>
         <y>55</y>
         <width>85</width>
@@ -1399,7 +1400,7 @@ $(actions)</tooltip>
       </widget>
       <widget type="textupdate" version="2.0.0">
         <name>Text Update_335</name>
-        <pv_name>$(system)BLUSION:rv_I</pv_name>
+        <pv_name>$(system)BLUSION:Current</pv_name>
         <x>5</x>
         <y>40</y>
         <width>85</width>
@@ -1416,7 +1417,7 @@ $(actions)</tooltip>
       </widget>
       <widget type="label" version="2.0.0">
         <name>Label_86</name>
-        <text>Beamline Ion Pump</text>
+        <text>US Beamline Ion Pump</text>
         <y>5</y>
         <width>190</width>
         <height>15</height>
@@ -1460,6 +1461,122 @@ $(actions)</tooltip>
           </font>
         </font>
       </widget>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group_1</name>
+    <x>1090</x>
+    <y>544</y>
+    <width>190</width>
+    <height>75</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle_20</name>
+      <width>190</width>
+      <height>75</height>
+      <line_width>1</line_width>
+      <background_color>
+        <color name="Read_Background" red="240" green="240" blue="240">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_332</name>
+      <pv_name>$(system)BLDSION:Voltage</pv_name>
+      <x>5</x>
+      <y>55</y>
+      <width>85</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <format>1</format>
+      <precision>2</precision>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_336</name>
+      <pv_name>$(system)BLDSION:VacP</pv_name>
+      <x>5</x>
+      <y>25</y>
+      <width>85</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <format>2</format>
+      <precision>2</precision>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_337</name>
+      <pv_name>$(system)BLDSION:Current</pv_name>
+      <x>5</x>
+      <y>40</y>
+      <width>85</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <format>1</format>
+      <precision>2</precision>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_87</name>
+      <text>DS Beamline Ion Pump</text>
+      <y>5</y>
+      <width>190</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_88</name>
+      <text>Voltage</text>
+      <x>90</x>
+      <y>55</y>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="12.0">
+        </font>
+      </font>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_89</name>
+      <text>Vacuum Pressure</text>
+      <x>90</x>
+      <y>25</y>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="12.0">
+        </font>
+      </font>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_90</name>
+      <text>Current</text>
+      <x>90</x>
+      <y>40</y>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="12.0">
+        </font>
+      </font>
     </widget>
   </widget>
 </display>
