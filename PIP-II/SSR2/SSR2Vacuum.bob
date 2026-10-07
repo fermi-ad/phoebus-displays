@@ -292,7 +292,7 @@ $(actions)</tooltip>
     <transparent>true</transparent>
     <widget type="symbol" version="2.0.0">
       <name>Symbol_28</name>
-      <pv_name>$(system)IVASB:ValveStatus</pv_name>
+      <pv_name>$(system)IVASBVLV:ValveStatus</pv_name>
       <symbols>
         <symbol>../../images/EMControlValveRed.png</symbol>
         <symbol>../../images/EMControlValveGreen.png</symbol>
@@ -323,7 +323,7 @@ $(actions)</tooltip>
       </widget>
       <widget type="led" version="2.0.0">
         <name>LED_3</name>
-        <pv_name>$(system)IVASB:ILK</pv_name>
+        <pv_name>$(system)IVASBVLV:ILK</pv_name>
         <x>4</x>
         <y>5</y>
         <width>15</width>
@@ -333,7 +333,7 @@ $(actions)</tooltip>
       </widget>
       <widget type="led" version="2.0.0">
         <name>LED_11</name>
-        <pv_name>$(system)IVASB:OverRide</pv_name>
+        <pv_name>$(system)IVASBVLV:OverRide</pv_name>
         <x>4</x>
         <y>20</y>
         <width>15</width>
@@ -372,7 +372,7 @@ $(actions)</tooltip>
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update</name>
-      <pv_name>$(system)IVASB:OverRide</pv_name>
+      <pv_name>$(system)IVASBVLV:OverRide</pv_name>
       <x>10</x>
       <y>85</y>
       <width>60</width>
@@ -485,81 +485,6 @@ Vacuum</text>
     <tooltip>$(pv_name)
 $(pv_value)
 $(actions)</tooltip>
-  </widget>
-  <widget type="group" version="3.0.0">
-    <name>Group</name>
-    <x>460</x>
-    <y>570</y>
-    <width>130</width>
-    <height>100</height>
-    <style>3</style>
-    <transparent>true</transparent>
-    <widget type="action_button" version="3.0.0">
-      <name>Action Button_1</name>
-      <actions>
-        <action type="open_display">
-          <description>IV Strip Charts</description>
-          <file>../../Plots/SSR2/SSR2InsulatingVacuum.bob</file>
-          <target>window</target>
-        </action>
-      </actions>
-      <text>IV Strip Charts</text>
-      <y>25</y>
-      <width>130</width>
-      <height>25</height>
-      <tooltip>$(actions)</tooltip>
-    </widget>
-    <widget type="action_button" version="3.0.0">
-      <name>Action Button_4</name>
-      <actions>
-        <action type="open_display">
-          <description>Coupler Strip Charts</description>
-          <file>../../Plots/SSR2CouplerVacuum.bob</file>
-          <macros>
-            <view>Insulating</view>
-          </macros>
-          <target>window</target>
-        </action>
-      </actions>
-      <text>Coupler Strip Charts</text>
-      <y>50</y>
-      <width>130</width>
-      <height>25</height>
-      <tooltip>$(actions)</tooltip>
-    </widget>
-    <widget type="action_button" version="3.0.0">
-      <name>Action Button_5</name>
-      <actions>
-        <action type="open_display">
-          <description>Cavity Strip Charts</description>
-          <file>../../Plots/SSR2/SSR2BeamlineVacuum.bob</file>
-          <macros>
-            <view>Beamline</view>
-          </macros>
-          <target>window</target>
-        </action>
-      </actions>
-      <text>Cavity Strip Charts</text>
-      <y>75</y>
-      <width>130</width>
-      <height>25</height>
-      <tooltip>$(actions)</tooltip>
-    </widget>
-    <widget type="action_button" version="3.0.0">
-      <name>Action Button_20</name>
-      <actions>
-        <action type="open_display">
-          <description>Vacuum Table</description>
-          <file>SSR2VacuumTable.bob</file>
-          <target>window</target>
-          <name>Temperature Table</name>
-        </action>
-      </actions>
-      <text>Vacuum Table</text>
-      <width>130</width>
-      <height>25</height>
-      <tooltip>$(actions)</tooltip>
-    </widget>
   </widget>
   <widget type="group" version="3.0.0">
     <name>Group</name>
@@ -1577,6 +1502,66 @@ $(actions)</tooltip>
         <font family="Liberation Sans" style="REGULAR" size="12.0">
         </font>
       </font>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <x>460</x>
+    <y>570</y>
+    <width>130</width>
+    <height>75</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="action_button" version="3.0.0">
+      <name>Action Button_1</name>
+      <actions>
+        <action type="open_display">
+          <description>IV Strip Charts</description>
+          <file>../../Plots/SSR2/SSR2InsulatingVacuum.bob</file>
+          <macros>
+            <view>Insulating Vacuum</view>
+          </macros>
+          <target>window</target>
+        </action>
+      </actions>
+      <text>IV Strip Charts</text>
+      <y>25</y>
+      <width>130</width>
+      <height>25</height>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Action Button_5</name>
+      <actions>
+        <action type="open_display">
+          <description>Cavity Strip Charts</description>
+          <file>../../Plots/SSR2/SSR2BeamlineVacuum.bob</file>
+          <macros>
+            <view>Beamline Vacuum</view>
+          </macros>
+          <target>window</target>
+        </action>
+      </actions>
+      <text>BL Strip Charts</text>
+      <y>50</y>
+      <width>130</width>
+      <height>25</height>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Action Button_20</name>
+      <actions>
+        <action type="open_display">
+          <description>Vacuum Table</description>
+          <file>SSR2VacuumTable.bob</file>
+          <target>window</target>
+          <name>Temperature Table</name>
+        </action>
+      </actions>
+      <text>Vacuum Table</text>
+      <width>130</width>
+      <height>25</height>
+      <tooltip>$(actions)</tooltip>
     </widget>
   </widget>
 </display>
