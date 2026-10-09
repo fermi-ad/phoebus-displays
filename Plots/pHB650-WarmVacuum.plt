@@ -36,10 +36,10 @@
         <green>0</green>
         <blue>0</blue>
       </color>
-      <min>1.0E-6</min>
-      <max>10000.0</max>
+      <min>1.0E-12</min>
+      <max>100000.0</max>
       <grid>true</grid>
-      <autoscale>false</autoscale>
+      <autoscale>true</autoscale>
       <log_scale>true</log_scale>
     </axis>
   </axes>
@@ -90,11 +90,6 @@
       <period>0.0</period>
       <ring_size>5000</ring_size>
       <request>OPTIMIZED</request>
-      <archive>
-        <name>archiver1</name>
-        <url>pbraw://archiver1.fnal.gov:17668/retrieval</url>
-        <key>1</key>
-      </archive>
     </pv>
   </pvlist>
 </databrowser>
