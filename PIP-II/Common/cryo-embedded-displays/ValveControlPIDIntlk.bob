@@ -25,7 +25,7 @@
   </widget>
   <widget type="textentry" version="3.0.0">
     <name>Text Entry_3</name>
-    <pv_name>$(system)$(dev):sSetLoop</pv_name>
+    <pv_name>$(system)$(dev):SetLoop</pv_name>
     <x>390</x>
     <y>172</y>
     <width>80</width>
@@ -35,7 +35,7 @@
   </widget>
   <widget type="textentry" version="3.0.0">
     <name>Text Entry_4</name>
-    <pv_name>$(system)$(dev):sMinLim</pv_name>
+    <pv_name>$(system)$(dev):MinLim</pv_name>
     <x>390</x>
     <y>402</y>
     <width>80</width>
@@ -45,7 +45,7 @@
   </widget>
   <widget type="textentry" version="3.0.0">
     <name>Text Entry_5</name>
-    <pv_name>$(system)$(dev):sMaxLim</pv_name>
+    <pv_name>$(system)$(dev):MaxLim</pv_name>
     <x>390</x>
     <y>432</y>
     <width>80</width>
@@ -220,7 +220,7 @@
   </widget>
   <widget type="textentry" version="3.0.0">
     <name>Text Entry_7</name>
-    <pv_name>$(system)$(dev):sPG</pv_name>
+    <pv_name>$(system)$(dev):PG</pv_name>
     <x>390</x>
     <y>199</y>
     <width>80</width>
@@ -453,7 +453,7 @@
   </widget>
   <widget type="textentry" version="3.0.0">
     <name>Text Entry_6</name>
-    <pv_name>$(system)$(dev):sSetManual</pv_name>
+    <pv_name>$(system)$(dev):SetManual</pv_name>
     <x>390</x>
     <y>329</y>
     <width>80</width>
@@ -525,79 +525,6 @@
     <width>1</width>
     <height>1</height>
   </widget>
-  <widget type="stripchart" version="2.1.0">
-    <name>Strip Chart</name>
-    <x>520</x>
-    <y>60</y>
-    <width>550</width>
-    <height>401</height>
-    <background_color>
-      <color name="Read_Background" red="240" green="240" blue="240">
-      </color>
-    </background_color>
-    <show_grid>true</show_grid>
-    <show_toolbar>false</show_toolbar>
-    <show_legend>true</show_legend>
-    <y_axes>
-      <y_axis>
-        <title>Y</title>
-        <autoscale>true</autoscale>
-        <log_scale>false</log_scale>
-        <minimum>0.0</minimum>
-        <maximum>100.0</maximum>
-        <show_grid>true</show_grid>
-        <visible>true</visible>
-        <color>
-          <color name="Text" red="0" green="0" blue="0">
-          </color>
-        </color>
-      </y_axis>
-    </y_axes>
-    <traces>
-      <trace>
-        <name>SP</name>
-        <y_pv>$(system)$(dev):rSetLoop</y_pv>
-        <axis>0</axis>
-        <trace_type>2</trace_type>
-        <color>
-          <color red="0" green="0" blue="255">
-          </color>
-        </color>
-        <line_width>2</line_width>
-        <point_type>0</point_type>
-        <point_size>10</point_size>
-        <visible>true</visible>
-      </trace>
-      <trace>
-        <name>PV</name>
-        <y_pv>$(system)$(PV):$(Var)</y_pv>
-        <axis>0</axis>
-        <trace_type>2</trace_type>
-        <color>
-          <color red="255" green="0" blue="0">
-          </color>
-        </color>
-        <line_width>2</line_width>
-        <point_type>0</point_type>
-        <point_size>10</point_size>
-        <visible>true</visible>
-      </trace>
-      <trace>
-        <name>Valve Open</name>
-        <y_pv>$(system)$(dev):Open</y_pv>
-        <axis>0</axis>
-        <trace_type>2</trace_type>
-        <color>
-          <color red="0" green="255" blue="0">
-          </color>
-        </color>
-        <line_width>2</line_width>
-        <point_type>0</point_type>
-        <point_size>10</point_size>
-        <visible>true</visible>
-      </trace>
-    </traces>
-  </widget>
   <widget type="choice" version="2.0.0">
     <name>Choice Button_1</name>
     <pv_name>$(system)$(dev):sManualAuto</pv_name>
@@ -667,7 +594,7 @@
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_42</name>
-    <pv_name>$(system)$(dev):OUTcmd</pv_name>
+    <pv_name>$(system)$(dev):PLCout</pv_name>
     <x>390</x>
     <y>142</y>
     <width>80</width>
@@ -758,7 +685,7 @@
   </widget>
   <widget type="bool_button" version="2.0.0">
     <name>Boolean Button</name>
-    <pv_name>$(system)$(intlk):INTLK</pv_name>
+    <pv_name>$(system)$(dev):INTLKreset</pv_name>
     <x>405</x>
     <y>509</y>
     <width>49</width>
@@ -790,5 +717,92 @@ $(INTLK)</text>
       </color>
     </background_color>
     <transparent>false</transparent>
+  </widget>
+  <widget type="stripchart" version="2.1.0">
+    <name>Strip Chart</name>
+    <x>519</x>
+    <y>65</y>
+    <width>550</width>
+    <height>401</height>
+    <background_color>
+      <color name="Read_Background" red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <show_grid>true</show_grid>
+    <show_toolbar>false</show_toolbar>
+    <show_legend>true</show_legend>
+    <y_axes>
+      <y_axis>
+        <title>Y</title>
+        <autoscale>true</autoscale>
+        <log_scale>false</log_scale>
+        <minimum>0.0</minimum>
+        <maximum>100.0</maximum>
+        <show_grid>true</show_grid>
+        <visible>true</visible>
+        <color>
+          <color name="Text" red="0" green="0" blue="0">
+          </color>
+        </color>
+      </y_axis>
+    </y_axes>
+    <traces>
+      <trace>
+        <name>SP</name>
+        <y_pv>$(system)$(dev):SetLoop</y_pv>
+        <axis>0</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color red="0" green="0" blue="255">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name>PV</name>
+        <y_pv>$(system)$(PV):$(Var)</y_pv>
+        <axis>0</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color red="255" green="0" blue="0">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name>Open </name>
+        <y_pv>$(system)$(dev):Open</y_pv>
+        <axis>0</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color red="0" green="255" blue="0">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name>Out Cmd </name>
+        <y_pv>$(system)$(dev):PLCout</y_pv>
+        <axis>0</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color red="170" green="0" blue="255">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+    </traces>
   </widget>
 </display>
