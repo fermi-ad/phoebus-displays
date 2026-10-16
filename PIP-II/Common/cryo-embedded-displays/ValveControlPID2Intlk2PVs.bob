@@ -563,99 +563,12 @@
     <vertical_alignment>1</vertical_alignment>
     <wrap_words>false</wrap_words>
   </widget>
-  <widget type="rectangle" version="2.0.0">
-    <name>Rectangle_1</name>
-    <x>9</x>
-    <y>398</y>
-    <width>200</width>
-    <height>78</height>
-    <line_width>1</line_width>
-    <line_color>
-      <color red="0" green="0" blue="0">
-      </color>
-    </line_color>
-    <background_color>
-      <color name="fgs.Gray-45" red="167" green="168" blue="170">
-      </color>
-    </background_color>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label_104</name>
-    <text>Interlock</text>
-    <x>9</x>
-    <y>387</y>
-    <width>200</width>
-    <height>22</height>
-    <font>
-      <font family="Liberation Sans" style="BOLD" size="14.0">
-      </font>
-    </font>
-    <foreground_color>
-      <color red="255" green="255" blue="0">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color name="cryo.Heater.On" red="229" green="56" blue="35">
-      </color>
-    </background_color>
-    <transparent>false</transparent>
-    <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <border_width>1</border_width>
-  </widget>
-  <widget type="led" version="2.0.0">
-    <name>LED_3</name>
-    <pv_name>$(system)$(dev):INTLK</pv_name>
-    <x>95</x>
-    <y>425</y>
-    <width>25</width>
-    <height>25</height>
-    <off_color>
-      <color name="cryo.PrimaryBackground" red="217" green="217" blue="217">
-      </color>
-    </off_color>
-    <on_color>
-      <color name="acorn.Yellow" red="255" green="249" blue="5">
-      </color>
-    </on_color>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label_114</name>
-    <text>Status:</text>
-    <x>42</x>
-    <y>429</y>
-    <width>44</width>
-    <height>16</height>
-    <horizontal_alignment>2</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <auto_size>true</auto_size>
-    <wrap_words>false</wrap_words>
-  </widget>
-  <widget type="bool_button" version="2.0.0">
-    <name>Boolean Button</name>
-    <pv_name>$(system)$(dev):INTLKreset</pv_name>
-    <x>143</x>
-    <y>420</y>
-    <width>49</width>
-    <height>35</height>
-    <off_label>Reset INTLK</off_label>
-    <off_color>
-      <color name="cryo.PrimaryBackground" red="217" green="217" blue="217">
-      </color>
-    </off_color>
-    <on_label>Reset INTLK</on_label>
-    <on_color>
-      <color name="acorn.Green" red="82" green="171" blue="90">
-      </color>
-    </on_color>
-    <show_led>false</show_led>
-    <mode>1</mode>
-  </widget>
   <widget type="label" version="2.0.0">
     <name>Label_115</name>
     <text>Notes:
+$(Notes)
 Interlock Condition:
-$(INTLK)</text>
+$(IntlkCon)</text>
     <x>519</x>
     <y>515</y>
     <width>550</width>
@@ -812,12 +725,12 @@ $(INTLK)</text>
   <widget type="progressbar" version="2.0.0">
     <name>Progress Bar</name>
     <pv_name>$(system)$(PV2):$(Var2)</pv_name>
-    <x>120</x>
-    <y>181</y>
+    <x>160</x>
+    <y>166</y>
     <width>25</width>
     <height>175</height>
     <fill_color>
-      <color red="147" green="194" blue="228">
+      <color name="acorn.Blue" red="0" green="0" blue="238">
       </color>
     </fill_color>
     <background_color>
@@ -829,12 +742,12 @@ $(INTLK)</text>
   <widget type="progressbar" version="2.0.0">
     <name>Progress Bar_1</name>
     <pv_name>$(system)$(dev):SetLoop</pv_name>
-    <x>186</x>
-    <y>181</y>
+    <x>106</x>
+    <y>166</y>
     <width>25</width>
     <height>175</height>
     <fill_color>
-      <color red="147" green="194" blue="228">
+      <color name="cryo.On" red="82" green="171" blue="90">
       </color>
     </fill_color>
     <background_color>
@@ -846,8 +759,8 @@ $(INTLK)</text>
   <widget type="label" version="2.0.0">
     <name>Label</name>
     <text>$(PV2)</text>
-    <x>110</x>
-    <y>359</y>
+    <x>150</x>
+    <y>344</y>
     <width>44</width>
     <height>16</height>
     <auto_size>true</auto_size>
@@ -855,8 +768,8 @@ $(INTLK)</text>
   <widget type="label" version="2.0.0">
     <name>Label_1</name>
     <text>SP</text>
-    <x>190</x>
-    <y>359</y>
+    <x>110</x>
+    <y>344</y>
     <width>19</width>
     <height>16</height>
     <auto_size>true</auto_size>
@@ -872,11 +785,11 @@ $(INTLK)</text>
     <name>Progress Bar_2</name>
     <pv_name>$(system)$(PV1):$(Var1)</pv_name>
     <x>54</x>
-    <y>181</y>
+    <y>166</y>
     <width>25</width>
     <height>175</height>
     <fill_color>
-      <color red="147" green="194" blue="228">
+      <color name="acorn.Blue" red="0" green="0" blue="238">
       </color>
     </fill_color>
     <background_color>
@@ -889,9 +802,143 @@ $(INTLK)</text>
     <name>Label_2</name>
     <text>$(PV1)</text>
     <x>42</x>
-    <y>359</y>
+    <y>344</y>
     <width>44</width>
     <height>16</height>
     <auto_size>true</auto_size>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_2</name>
+    <x>9</x>
+    <y>381</y>
+    <width>200</width>
+    <height>100</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="fgs.Gray-45" red="167" green="168" blue="170">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_105</name>
+    <text>Interlock</text>
+    <x>9</x>
+    <y>370</y>
+    <width>200</width>
+    <height>22</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="255" green="255" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="cryo.Heater.On" red="229" green="56" blue="35">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_3</name>
+    <pv_name>$(system)$(Intlk1):INTLK</pv_name>
+    <x>110</x>
+    <y>404</y>
+    <width>25</width>
+    <height>25</height>
+    <off_color>
+      <color name="cryo.PrimaryBackground" red="217" green="217" blue="217">
+      </color>
+    </off_color>
+    <on_color>
+      <color name="acorn.Yellow" red="255" green="249" blue="5">
+      </color>
+    </on_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_114</name>
+    <text>$(system)$(Intlk1):Name</text>
+    <x>27</x>
+    <y>408</y>
+    <width>78</width>
+    <height>16</height>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>Boolean Button</name>
+    <pv_name>$(system)$(Intlk1):INTLKreset</pv_name>
+    <x>143</x>
+    <y>399</y>
+    <width>49</width>
+    <height>35</height>
+    <off_label>Reset INTLK</off_label>
+    <off_color>
+      <color name="cryo.PrimaryBackground" red="217" green="217" blue="217">
+      </color>
+    </off_color>
+    <on_label>Reset INTLK</on_label>
+    <on_color>
+      <color name="acorn.Green" red="82" green="171" blue="90">
+      </color>
+    </on_color>
+    <show_led>false</show_led>
+    <mode>1</mode>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_4</name>
+    <pv_name>$(system)$(Intlk2):INTLK</pv_name>
+    <x>110</x>
+    <y>447</y>
+    <width>25</width>
+    <height>25</height>
+    <off_color>
+      <color name="cryo.PrimaryBackground" red="217" green="217" blue="217">
+      </color>
+    </off_color>
+    <on_color>
+      <color name="acorn.Yellow" red="255" green="249" blue="5">
+      </color>
+    </on_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_116</name>
+    <text>$(system)$(Intlk2):Name</text>
+    <x>27</x>
+    <y>451</y>
+    <width>78</width>
+    <height>16</height>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>Boolean Button_1</name>
+    <pv_name>$(system)$(Intlk2):INTLKreset</pv_name>
+    <x>143</x>
+    <y>442</y>
+    <width>49</width>
+    <height>35</height>
+    <off_label>Reset INTLK</off_label>
+    <off_color>
+      <color name="cryo.PrimaryBackground" red="217" green="217" blue="217">
+      </color>
+    </off_color>
+    <on_label>Reset INTLK</on_label>
+    <on_color>
+      <color name="acorn.Green" red="82" green="171" blue="90">
+      </color>
+    </on_color>
+    <show_led>false</show_led>
+    <mode>1</mode>
   </widget>
 </display>
