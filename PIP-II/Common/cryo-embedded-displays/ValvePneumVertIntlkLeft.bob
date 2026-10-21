@@ -3,6 +3,92 @@
   <name>ValvePneumVertIntlkLeft</name>
   <width>100</width>
   <height>60</height>
+  <background_color>
+    <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+    </color>
+  </background_color>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <y>15</y>
+    <width>60</width>
+    <height>30</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_224</name>
+      <pv_name>$(system)$(dev):Name</pv_name>
+      <x>1</x>
+      <width>60</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <precision>2</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_width>2</border_width>
+      <border_color>
+        <color red="0" green="0" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_225</name>
+      <pv_name>$(system)$(dev):Open</pv_name>
+      <x>1</x>
+      <y>15</y>
+      <width>60</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <precision>1</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <border_width>2</border_width>
+      <border_color>
+        <color red="0" green="0" blue="255">
+        </color>
+      </border_color>
+    </widget>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_25</name>
+    <pv_name>$(system)$(dev):INTLK</pv_name>
+    <bit>0</bit>
+    <x>60</x>
+    <y>40</y>
+    <off_label>I</off_label>
+    <off_color>
+      <color red="255" green="255" blue="0">
+      </color>
+    </off_color>
+    <on_label>I</on_label>
+    <on_color>
+      <color red="255" green="255" blue="0">
+      </color>
+    </on_color>
+    <line_color>
+      <color red="153" green="51" blue="0">
+      </color>
+    </line_color>
+    <square>true</square>
+    <rules>
+      <rule name="Visibilty" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0 == 1">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="pv0 == 0">
+          <value>false</value>
+        </exp>
+        <pv_name>$(pv_name)</pv_name>
+      </rule>
+    </rules>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
   <widget type="led" version="2.0.0">
     <name>LED_8</name>
     <pv_name>$(system)$(dev):ManualAuto</pv_name>
@@ -39,46 +125,5 @@
     <tooltip>$(pv_name)
 $(pv_value)
 $(actions)</tooltip>
-  </widget>
-  <widget type="embedded" version="2.0.0">
-    <name>Embedded Display_198</name>
-    <file>ValveStatusUp.bob</file>
-    <y>15</y>
-    <width>60</width>
-    <height>30</height>
-  </widget>
-  <widget type="led" version="2.0.0">
-    <name>LED_25</name>
-    <pv_name>$(system)$(intlk):INTLK</pv_name>
-    <bit>0</bit>
-    <x>60</x>
-    <y>40</y>
-    <off_label>I</off_label>
-    <off_color>
-      <color red="255" green="255" blue="0">
-      </color>
-    </off_color>
-    <on_label>I</on_label>
-    <on_color>
-      <color red="255" green="255" blue="0">
-      </color>
-    </on_color>
-    <line_color>
-      <color red="153" green="51" blue="0">
-      </color>
-    </line_color>
-    <square>true</square>
-    <rules>
-      <rule name="Visibilty" prop_id="visible" out_exp="false">
-        <exp bool_exp="pv0 == 1">
-          <value>true</value>
-        </exp>
-        <exp bool_exp="pv0 == 0">
-          <value>false</value>
-        </exp>
-        <pv_name>$(pv_name)</pv_name>
-      </rule>
-    </rules>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
 </display>
