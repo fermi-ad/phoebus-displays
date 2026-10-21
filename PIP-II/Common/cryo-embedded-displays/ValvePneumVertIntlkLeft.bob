@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <display version="2.0.0">
   <name>ValvePneumVertIntlkLeft</name>
-  <macros>
-    <dev>$(dev)</dev>
-  </macros>
   <width>100</width>
   <height>60</height>
   <widget type="led" version="2.0.0">
@@ -38,57 +35,21 @@
     <height>30</height>
     <rotation>270.0</rotation>
     <actions>
-      <action type="open_display">
-        <description>Open Display</description>
-        <file>../Common/cryo-embedded-displays/ValveControlPID.bob</file>
-        <macros>
-          <dev>PV1422</dev>
-          <PV>PT1415</PV>
-          <Var>Pressure</Var>
-        </macros>
-        <target>tab</target>
-      </action>
     </actions>
-    <run_actions_on_mouse_click>true</run_actions_on_mouse_click>
     <tooltip>$(pv_name)
 $(pv_value)
 $(actions)</tooltip>
   </widget>
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display_198</name>
-    <macros>
-      <dev>$(dev)</dev>
-    </macros>
     <file>ValveStatusUp.bob</file>
     <y>15</y>
     <width>60</width>
     <height>30</height>
   </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Action Button</name>
-    <actions>
-      <action type="open_display">
-        <description>Open Display</description>
-        <file>ValveControlPIDIntlk2PVs.bob</file>
-        <macros>
-          <dev>$(dev)</dev>
-          <PV1>$(PV1)</PV1>
-          <Var1>$(Var1)</Var1>
-          <INTLK>$(INTLK)</INTLK>
-          <PV2>$(PV2)</PV2>
-          <Var2>$(Var2)</Var2>
-        </macros>
-        <target>window</target>
-      </action>
-    </actions>
-    <text></text>
-    <height>60</height>
-    <transparent>true</transparent>
-    <tooltip>$(actions)</tooltip>
-  </widget>
   <widget type="led" version="2.0.0">
     <name>LED_25</name>
-    <pv_name>$(system)$(dev):INTLK</pv_name>
+    <pv_name>$(system)$(intlk):INTLK</pv_name>
     <bit>0</bit>
     <x>60</x>
     <y>40</y>

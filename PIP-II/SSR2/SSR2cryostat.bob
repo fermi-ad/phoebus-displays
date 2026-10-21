@@ -1486,7 +1486,7 @@
   </widget>
   <widget type="action_button" version="3.0.0">
     <name>Action Button_8</name>
-    <actions>
+    <actions execute_as_one="true">
       <action type="open_display">
         <description>Open Magnet Details</description>
         <file>MagnetDetails.bob</file>
@@ -1494,6 +1494,11 @@
           <system>$(P)</system>
           <sol>1</sol>
         </macros>
+        <target>window</target>
+      </action>
+      <action type="open_display">
+        <description>QPM</description>
+        <file>../QPM/main.bob</file>
         <target>window</target>
       </action>
     </actions>
@@ -3161,7 +3166,7 @@ Suction</text>
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display_193</name>
     <macros>
-      <dev>TP601H</dev>
+      <dev>TP601</dev>
     </macros>
     <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
     <x>655</x>
@@ -3777,6 +3782,7 @@ $(actions)</tooltip>
     <name>Embedded Display_1</name>
     <macros>
       <dev>PVCD</dev>
+      <intlk>RD708</intlk>
     </macros>
     <file>../Common/cryo-embedded-displays/ValvePneumVertIntlkLeft.bob</file>
     <x>85</x>
@@ -4285,14 +4291,20 @@ Motors</text>
     <pv_name>$(system)PT042:INTLK</pv_name>
     <x>900</x>
     <y>105</y>
+    <off_label>0</off_label>
     <off_color>
       <color name="MAJOR" red="255" green="0" blue="0">
       </color>
     </off_color>
+    <on_label>1</on_label>
     <on_color>
       <color name="OK" red="0" green="255" blue="0">
       </color>
     </on_color>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="11.0">
+      </font>
+    </font>
     <square>true</square>
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
@@ -4315,30 +4327,42 @@ Motors</text>
     <pv_name>$(system)HTTSDT:INTLK</pv_name>
     <x>900</x>
     <y>145</y>
+    <off_label>0</off_label>
     <off_color>
       <color name="MAJOR" red="255" green="0" blue="0">
       </color>
     </off_color>
+    <on_label>1</on_label>
     <on_color>
       <color name="OK" red="0" green="255" blue="0">
       </color>
     </on_color>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="11.0">
+      </font>
+    </font>
     <square>true</square>
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="led" version="2.0.0">
     <name>LED</name>
-    <pv_name>$(system)RD708H:INTLK</pv_name>
+    <pv_name>$(system)RD708:INTLK</pv_name>
     <x>900</x>
     <y>85</y>
+    <off_label>0</off_label>
     <off_color>
-      <color name="MAJOR" red="255" green="0" blue="0">
-      </color>
-    </off_color>
-    <on_color>
       <color name="OK" red="0" green="255" blue="0">
       </color>
+    </off_color>
+    <on_label>1</on_label>
+    <on_color>
+      <color name="MAJOR" red="255" green="0" blue="0">
+      </color>
     </on_color>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="11.0">
+      </font>
+    </font>
     <square>true</square>
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
@@ -4347,14 +4371,20 @@ Motors</text>
     <pv_name>$(system)S240KDP:INTLK</pv_name>
     <x>900</x>
     <y>125</y>
+    <off_label>0</off_label>
     <off_color>
       <color name="MAJOR" red="255" green="0" blue="0">
       </color>
     </off_color>
+    <on_label>1</on_label>
     <on_color>
       <color name="OK" red="0" green="255" blue="0">
       </color>
     </on_color>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="11.0">
+      </font>
+    </font>
     <square>true</square>
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
@@ -4377,14 +4407,20 @@ Motors</text>
     <pv_name>$(system)CPRF:INTLK</pv_name>
     <x>900</x>
     <y>185</y>
+    <off_label>0</off_label>
     <off_color>
       <color name="MAJOR" red="255" green="0" blue="0">
       </color>
     </off_color>
+    <on_label>1</on_label>
     <on_color>
       <color name="OK" red="0" green="255" blue="0">
       </color>
     </on_color>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="11.0">
+      </font>
+    </font>
     <square>true</square>
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
@@ -4407,14 +4443,20 @@ Motors</text>
     <pv_name>$(system)CPMAGNET:INTLK</pv_name>
     <x>900</x>
     <y>165</y>
+    <off_label>0</off_label>
     <off_color>
       <color name="MAJOR" red="255" green="0" blue="0">
       </color>
     </off_color>
+    <on_label>1</on_label>
     <on_color>
       <color name="OK" red="0" green="255" blue="0">
       </color>
     </on_color>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="11.0">
+      </font>
+    </font>
     <square>true</square>
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
@@ -5184,5 +5226,52 @@ Motors</text>
       </font>
     </font>
     <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_11</name>
+    <actions>
+      <action type="open_display">
+        <description>Open Display</description>
+        <file>../Common/cryo-embedded-displays/ValveControlPIDIntlk2PVs.bob</file>
+        <macros>
+          <dev>PVCD</dev>
+          <PV1>LT041A</PV1>
+          <Var1>LHeLvl</Var1>
+          <Intlk>RD708</Intlk>
+          <PV2>FT600A</PV2>
+          <Var2>GHeFlow</Var2>
+        </macros>
+        <target>window</target>
+      </action>
+    </actions>
+    <text></text>
+    <x>85</x>
+    <y>756</y>
+    <height>60</height>
+    <transparent>true</transparent>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_17</name>
+    <actions>
+      <action type="open_display">
+        <description>Open Display</description>
+        <file>../Common/cryo-embedded-displays/ValveControlPID2Intlk.bob</file>
+        <macros>
+          <dev>PVJT</dev>
+          <PV>LT041A</PV>
+          <Var>LHeLvl</Var>
+          <Intlk1>RD708</Intlk1>
+          <Intlk2>PT042</Intlk2>
+        </macros>
+        <target>window</target>
+      </action>
+    </actions>
+    <text></text>
+    <x>85</x>
+    <y>856</y>
+    <height>60</height>
+    <transparent>true</transparent>
+    <tooltip>$(actions)</tooltip>
   </widget>
 </display>
