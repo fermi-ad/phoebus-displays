@@ -3,8 +3,31 @@
   <name>SSR2 Cavity Details</name>
   <width>720</width>
   <height>510</height>
+  <background_color>
+    <color name="cryo.PrimaryBackground" red="217" green="217" blue="217">
+    </color>
+  </background_color>
   <grid_step_x>5</grid_step_x>
   <grid_step_y>5</grid_step_y>
+  <widget type="label" version="2.0.0">
+    <name>Label_5</name>
+    <text>Tuner Motors</text>
+    <x>60</x>
+    <y>280</y>
+    <width>75</width>
+    <height>70</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <background_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <border_width>1</border_width>
+  </widget>
   <widget type="label" version="2.0.0">
     <name>Label</name>
     <text>PIP2IT ppSSR2 Cavity $(cav)</text>
@@ -329,7 +352,7 @@
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_166</name>
-    <pv_name>$(fg)FG$(cav)01:Name</pv_name>
+    <pv_name>$(P)CTRL_FG$(cav)01:Name</pv_name>
     <x>285</x>
     <y>80</y>
     <width>50</width>
@@ -353,7 +376,7 @@
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_167</name>
-    <pv_name>$(fg)FG$(cav)01:Flux</pv_name>
+    <pv_name>$(P)CTRL_FG$(cav)01:Flux</pv_name>
     <x>285</x>
     <y>95</y>
     <width>50</width>
@@ -514,454 +537,24 @@
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display_15</name>
     <macros>
-      <sensor>TX$(cav)02</sensor>
+      <dev>TX$(cav)02</dev>
     </macros>
     <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
     <x>385</x>
     <y>425</y>
-    <width>55</width>
+    <width>65</width>
     <height>35</height>
   </widget>
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display_16</name>
     <macros>
-      <sensor>TX$(cav)01</sensor>
+      <dev>TX$(cav)01</dev>
     </macros>
     <file>../Common/cryo-embedded-displays/TempSensorUp.bob</file>
     <x>385</x>
     <y>125</y>
-    <width>55</width>
+    <width>65</width>
     <height>35</height>
-  </widget>
-  <widget type="group" version="3.0.0">
-    <name>Group</name>
-    <x>5</x>
-    <y>50</y>
-    <width>170</width>
-    <height>445</height>
-    <style>3</style>
-    <transparent>true</transparent>
-    <widget type="group" version="3.0.0">
-      <name>Group</name>
-      <x>55</x>
-      <y>230</y>
-      <width>65</width>
-      <height>73</height>
-      <style>3</style>
-      <transparent>true</transparent>
-      <widget type="label" version="2.0.0">
-        <name>Label_5</name>
-        <text>Tuner Motors</text>
-        <width>75</width>
-        <height>75</height>
-        <font>
-          <font family="Liberation Sans" style="BOLD" size="14.0">
-          </font>
-        </font>
-        <background_color>
-          <color name="Button_Background" red="210" green="210" blue="210">
-          </color>
-        </background_color>
-        <transparent>false</transparent>
-        <horizontal_alignment>1</horizontal_alignment>
-        <border_width>1</border_width>
-      </widget>
-      <widget type="embedded" version="2.0.0">
-        <name>Embedded Display_21</name>
-        <macros>
-          <dev>TP$(sol)00</dev>
-        </macros>
-        <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
-        <x>5</x>
-        <y>35</y>
-        <width>65</width>
-        <height>35</height>
-      </widget>
-    </widget>
-    <widget type="group" version="3.0.0">
-      <name>Group</name>
-      <y>365</y>
-      <width>170</width>
-      <height>80</height>
-      <style>3</style>
-      <transparent>true</transparent>
-      <widget type="label" version="2.0.0">
-        <name>Label_75</name>
-        <text>Directional Coupler</text>
-        <width>170</width>
-        <font>
-          <font family="Liberation Sans" style="BOLD" size="11.0">
-          </font>
-        </font>
-        <transparent>false</transparent>
-        <horizontal_alignment>1</horizontal_alignment>
-        <vertical_alignment>1</vertical_alignment>
-        <border_width>1</border_width>
-      </widget>
-      <widget type="label" version="2.0.0">
-        <name>Label_74</name>
-        <text>Fwd Magnitude</text>
-        <y>20</y>
-        <width>80</width>
-        <height>15</height>
-        <font>
-          <font family="Liberation Sans" style="BOLD" size="11.0">
-          </font>
-        </font>
-        <transparent>false</transparent>
-        <horizontal_alignment>2</horizontal_alignment>
-        <vertical_alignment>1</vertical_alignment>
-        <wrap_words>false</wrap_words>
-        <border_width>1</border_width>
-      </widget>
-      <widget type="textupdate" version="2.0.0">
-        <name>Text Update_45</name>
-        <pv_name>$(llrf)C$(cav)FWMG:FwdPwr</pv_name>
-        <x>85</x>
-        <y>20</y>
-        <width>85</width>
-        <height>15</height>
-        <font>
-          <font family="Liberation Sans" style="REGULAR" size="11.0">
-          </font>
-        </font>
-        <background_color>
-          <color red="255" green="255" blue="0">
-          </color>
-        </background_color>
-        <precision>2</precision>
-        <horizontal_alignment>1</horizontal_alignment>
-        <vertical_alignment>1</vertical_alignment>
-        <wrap_words>false</wrap_words>
-        <border_alarm_sensitive>false</border_alarm_sensitive>
-        <border_width>1</border_width>
-      </widget>
-      <widget type="textupdate" version="2.0.0">
-        <name>Text Update_46</name>
-        <pv_name>$(llrf)C$(cav)FWPH:FwdPhs</pv_name>
-        <x>85</x>
-        <y>35</y>
-        <width>85</width>
-        <height>15</height>
-        <font>
-          <font family="Liberation Sans" style="REGULAR" size="11.0">
-          </font>
-        </font>
-        <background_color>
-          <color red="255" green="255" blue="0">
-          </color>
-        </background_color>
-        <precision>2</precision>
-        <horizontal_alignment>1</horizontal_alignment>
-        <vertical_alignment>1</vertical_alignment>
-        <wrap_words>false</wrap_words>
-        <border_alarm_sensitive>false</border_alarm_sensitive>
-        <border_width>1</border_width>
-      </widget>
-      <widget type="textupdate" version="2.0.0">
-        <name>Text Update_47</name>
-        <pv_name>$(llrf)C$(cav)RFMG:RefPwr</pv_name>
-        <x>85</x>
-        <y>50</y>
-        <width>85</width>
-        <height>15</height>
-        <font>
-          <font family="Liberation Sans" style="REGULAR" size="11.0">
-          </font>
-        </font>
-        <background_color>
-          <color red="255" green="255" blue="0">
-          </color>
-        </background_color>
-        <precision>2</precision>
-        <horizontal_alignment>1</horizontal_alignment>
-        <vertical_alignment>1</vertical_alignment>
-        <wrap_words>false</wrap_words>
-        <border_alarm_sensitive>false</border_alarm_sensitive>
-        <border_width>1</border_width>
-      </widget>
-      <widget type="textupdate" version="2.0.0">
-        <name>Text Update_48</name>
-        <pv_name>$(llrf)C$(cav)RFPH:RefPhs</pv_name>
-        <x>85</x>
-        <y>65</y>
-        <width>85</width>
-        <height>15</height>
-        <font>
-          <font family="Liberation Sans" style="REGULAR" size="11.0">
-          </font>
-        </font>
-        <background_color>
-          <color red="255" green="255" blue="0">
-          </color>
-        </background_color>
-        <precision>2</precision>
-        <horizontal_alignment>1</horizontal_alignment>
-        <vertical_alignment>1</vertical_alignment>
-        <wrap_words>false</wrap_words>
-        <border_alarm_sensitive>false</border_alarm_sensitive>
-        <border_width>1</border_width>
-      </widget>
-      <widget type="label" version="2.0.0">
-        <name>Label_76</name>
-        <text>Fwd Phase</text>
-        <y>35</y>
-        <width>80</width>
-        <height>15</height>
-        <font>
-          <font family="Liberation Sans" style="BOLD" size="11.0">
-          </font>
-        </font>
-        <transparent>false</transparent>
-        <horizontal_alignment>2</horizontal_alignment>
-        <vertical_alignment>1</vertical_alignment>
-        <wrap_words>false</wrap_words>
-        <border_width>1</border_width>
-      </widget>
-      <widget type="label" version="2.0.0">
-        <name>Label_77</name>
-        <text>Ref Magnitude</text>
-        <y>50</y>
-        <width>80</width>
-        <height>15</height>
-        <font>
-          <font family="Liberation Sans" style="BOLD" size="11.0">
-          </font>
-        </font>
-        <transparent>false</transparent>
-        <horizontal_alignment>2</horizontal_alignment>
-        <vertical_alignment>1</vertical_alignment>
-        <wrap_words>false</wrap_words>
-        <border_width>1</border_width>
-      </widget>
-      <widget type="label" version="2.0.0">
-        <name>Label_78</name>
-        <text>Ref Phase</text>
-        <y>65</y>
-        <width>80</width>
-        <height>15</height>
-        <font>
-          <font family="Liberation Sans" style="BOLD" size="11.0">
-          </font>
-        </font>
-        <transparent>false</transparent>
-        <horizontal_alignment>2</horizontal_alignment>
-        <vertical_alignment>1</vertical_alignment>
-        <wrap_words>false</wrap_words>
-        <border_width>1</border_width>
-      </widget>
-    </widget>
-    <widget type="group" version="3.0.0">
-      <name>Group</name>
-      <width>170</width>
-      <height>95</height>
-      <style>3</style>
-      <transparent>true</transparent>
-      <widget type="label" version="2.0.0">
-        <name>Label_57</name>
-        <text>Magnitude</text>
-        <y>20</y>
-        <width>80</width>
-        <height>15</height>
-        <font>
-          <font family="Liberation Sans" style="BOLD" size="11.0">
-          </font>
-        </font>
-        <transparent>false</transparent>
-        <horizontal_alignment>2</horizontal_alignment>
-        <vertical_alignment>1</vertical_alignment>
-        <wrap_words>false</wrap_words>
-        <border_width>1</border_width>
-      </widget>
-      <widget type="textupdate" version="2.0.0">
-        <name>Text Update_19</name>
-        <pv_name>$(llrf)C$(cav)CAVMG:CavMag</pv_name>
-        <x>85</x>
-        <y>20</y>
-        <width>85</width>
-        <height>15</height>
-        <font>
-          <font family="Liberation Sans" style="REGULAR" size="11.0">
-          </font>
-        </font>
-        <background_color>
-          <color red="255" green="255" blue="0">
-          </color>
-        </background_color>
-        <precision>2</precision>
-        <horizontal_alignment>1</horizontal_alignment>
-        <vertical_alignment>1</vertical_alignment>
-        <wrap_words>false</wrap_words>
-        <border_alarm_sensitive>false</border_alarm_sensitive>
-        <border_width>1</border_width>
-      </widget>
-      <widget type="textupdate" version="2.0.0">
-        <name>Text Update_20</name>
-        <pv_name>$(llrf)C$(cav)CAVPH:CavPhs</pv_name>
-        <x>85</x>
-        <y>35</y>
-        <width>85</width>
-        <height>15</height>
-        <font>
-          <font family="Liberation Sans" style="REGULAR" size="11.0">
-          </font>
-        </font>
-        <background_color>
-          <color red="255" green="255" blue="0">
-          </color>
-        </background_color>
-        <precision>2</precision>
-        <horizontal_alignment>1</horizontal_alignment>
-        <vertical_alignment>1</vertical_alignment>
-        <wrap_words>false</wrap_words>
-        <border_alarm_sensitive>false</border_alarm_sensitive>
-        <border_width>1</border_width>
-      </widget>
-      <widget type="textupdate" version="2.0.0">
-        <name>Text Update_21</name>
-        <pv_name>$(llrf)C$(cav)CAVPWR:CavPwr</pv_name>
-        <x>85</x>
-        <y>50</y>
-        <width>85</width>
-        <height>15</height>
-        <font>
-          <font family="Liberation Sans" style="REGULAR" size="11.0">
-          </font>
-        </font>
-        <background_color>
-          <color red="255" green="255" blue="0">
-          </color>
-        </background_color>
-        <precision>2</precision>
-        <horizontal_alignment>1</horizontal_alignment>
-        <vertical_alignment>1</vertical_alignment>
-        <wrap_words>false</wrap_words>
-        <border_alarm_sensitive>false</border_alarm_sensitive>
-        <border_width>1</border_width>
-      </widget>
-      <widget type="textupdate" version="2.0.0">
-        <name>Text Update_22</name>
-        <pv_name>$(llrf)C$(cav)CAVFT:CavFrq</pv_name>
-        <x>85</x>
-        <y>65</y>
-        <width>85</width>
-        <height>15</height>
-        <font>
-          <font family="Liberation Sans" style="REGULAR" size="11.0">
-          </font>
-        </font>
-        <background_color>
-          <color red="255" green="255" blue="0">
-          </color>
-        </background_color>
-        <precision>2</precision>
-        <horizontal_alignment>1</horizontal_alignment>
-        <vertical_alignment>1</vertical_alignment>
-        <wrap_words>false</wrap_words>
-        <border_alarm_sensitive>false</border_alarm_sensitive>
-        <border_width>1</border_width>
-      </widget>
-      <widget type="textupdate" version="2.0.0">
-        <name>Text Update_27</name>
-        <pv_name>$(llrf)C$(cav)CAVERR:CavErr</pv_name>
-        <x>85</x>
-        <y>80</y>
-        <width>85</width>
-        <height>15</height>
-        <font>
-          <font family="Liberation Sans" style="REGULAR" size="11.0">
-          </font>
-        </font>
-        <background_color>
-          <color red="255" green="255" blue="0">
-          </color>
-        </background_color>
-        <precision>2</precision>
-        <horizontal_alignment>1</horizontal_alignment>
-        <vertical_alignment>1</vertical_alignment>
-        <wrap_words>false</wrap_words>
-        <border_alarm_sensitive>false</border_alarm_sensitive>
-        <border_width>1</border_width>
-      </widget>
-      <widget type="label" version="2.0.0">
-        <name>Label_66</name>
-        <text>Cavity</text>
-        <width>170</width>
-        <font>
-          <font family="Liberation Sans" style="BOLD" size="11.0">
-          </font>
-        </font>
-        <transparent>false</transparent>
-        <horizontal_alignment>1</horizontal_alignment>
-        <vertical_alignment>1</vertical_alignment>
-        <wrap_words>false</wrap_words>
-        <border_width>1</border_width>
-      </widget>
-      <widget type="label" version="2.0.0">
-        <name>Label_69</name>
-        <text>Phase</text>
-        <y>35</y>
-        <width>80</width>
-        <height>15</height>
-        <font>
-          <font family="Liberation Sans" style="BOLD" size="11.0">
-          </font>
-        </font>
-        <transparent>false</transparent>
-        <horizontal_alignment>2</horizontal_alignment>
-        <vertical_alignment>1</vertical_alignment>
-        <wrap_words>false</wrap_words>
-        <border_width>1</border_width>
-      </widget>
-      <widget type="label" version="2.0.0">
-        <name>Label_71</name>
-        <text>Power</text>
-        <y>50</y>
-        <width>80</width>
-        <height>15</height>
-        <font>
-          <font family="Liberation Sans" style="BOLD" size="11.0">
-          </font>
-        </font>
-        <transparent>false</transparent>
-        <horizontal_alignment>2</horizontal_alignment>
-        <vertical_alignment>1</vertical_alignment>
-        <wrap_words>false</wrap_words>
-        <border_width>1</border_width>
-      </widget>
-      <widget type="label" version="2.0.0">
-        <name>Label_72</name>
-        <text>Trk Frequency</text>
-        <y>65</y>
-        <width>80</width>
-        <height>15</height>
-        <font>
-          <font family="Liberation Sans" style="BOLD" size="11.0">
-          </font>
-        </font>
-        <transparent>false</transparent>
-        <horizontal_alignment>2</horizontal_alignment>
-        <vertical_alignment>1</vertical_alignment>
-        <wrap_words>false</wrap_words>
-        <border_width>1</border_width>
-      </widget>
-      <widget type="label" version="2.0.0">
-        <name>Label_73</name>
-        <text>Error</text>
-        <y>80</y>
-        <width>80</width>
-        <height>15</height>
-        <font>
-          <font family="Liberation Sans" style="BOLD" size="11.0">
-          </font>
-        </font>
-        <transparent>false</transparent>
-        <horizontal_alignment>2</horizontal_alignment>
-        <vertical_alignment>1</vertical_alignment>
-        <wrap_words>false</wrap_words>
-        <border_width>1</border_width>
-      </widget>
-    </widget>
   </widget>
   <widget type="group" version="3.0.0">
     <name>Group_2</name>
@@ -974,7 +567,7 @@
     <widget type="label" version="2.0.0">
       <name>Label_3</name>
       <text>Couplers </text>
-      <width>130</width>
+      <width>135</width>
       <height>85</height>
       <font>
         <font family="Liberation Sans" style="BOLD" size="14.0">
@@ -991,27 +584,27 @@
     <widget type="embedded" version="2.0.0">
       <name>Embedded Display_22</name>
       <macros>
-        <sensor>TX$(cav)71</sensor>
+        <dev>TX$(cav)71</dev>
       </macros>
       <file>../Common/cryo-embedded-displays/TempSensorUp.bob</file>
       <y>45</y>
-      <width>55</width>
+      <width>65</width>
       <height>35</height>
     </widget>
     <widget type="embedded" version="2.0.0">
       <name>Embedded Display_23</name>
       <macros>
-        <sensor>TX$(cav)70</sensor>
+        <dev>TX$(cav)70</dev>
       </macros>
       <file>../Common/cryo-embedded-displays/TempSensorUp.bob</file>
       <y>5</y>
-      <width>55</width>
+      <width>65</width>
       <height>35</height>
     </widget>
     <widget type="label" version="2.0.0">
       <name>Label_6</name>
       <text>Vacuum</text>
-      <x>65</x>
+      <x>70</x>
       <y>25</y>
       <width>60</width>
       <height>15</height>
@@ -1033,27 +626,6 @@
         </color>
       </border_color>
     </widget>
-    <widget type="textupdate" version="2.0.0">
-      <name>Text Update_327</name>
-      <pv_name>$(vac)PCC371:VacP</pv_name>
-      <x>65</x>
-      <y>45</y>
-      <width>60</width>
-      <height>30</height>
-      <font>
-        <font family="Liberation Sans" style="REGULAR" size="11.0">
-        </font>
-      </font>
-      <format>2</format>
-      <precision>3</precision>
-      <horizontal_alignment>1</horizontal_alignment>
-      <vertical_alignment>1</vertical_alignment>
-      <border_width>2</border_width>
-      <border_color>
-        <color red="255" green="255" blue="0">
-        </color>
-      </border_color>
-    </widget>
   </widget>
   <widget type="group" version="3.0.0">
     <name>Group_3</name>
@@ -1066,7 +638,7 @@
     <widget type="label" version="2.0.0">
       <name>Label_16</name>
       <text> Coupler Window </text>
-      <width>130</width>
+      <width>135</width>
       <height>105</height>
       <font>
         <font family="Liberation Sans" style="BOLD" size="14.0">
@@ -1084,29 +656,29 @@
     <widget type="embedded" version="2.0.0">
       <name>Embedded Display_30</name>
       <macros>
-        <sensor>TP$(cav)72</sensor>
+        <dev>TP$(cav)72</dev>
         <temp>$(rfpi)</temp>
       </macros>
       <file>../Common/cryo-embedded-displays/TempSensorUp.bob</file>
       <y>25</y>
-      <width>55</width>
+      <width>65</width>
       <height>35</height>
     </widget>
     <widget type="embedded" version="2.0.0">
       <name>Embedded Display_31</name>
       <macros>
-        <sensor>TP$(cav)73</sensor>
+        <dev>TP$(cav)73</dev>
       </macros>
       <file>../Common/cryo-embedded-displays/TempSensorUp.bob</file>
       <y>65</y>
-      <width>55</width>
+      <width>65</width>
       <height>35</height>
     </widget>
     <widget type="label" version="2.0.0">
       <name>Label_17</name>
       <text>Htr Power</text>
-      <x>65</x>
-      <y>30</y>
+      <x>70</x>
+      <y>25</y>
       <width>60</width>
       <height>15</height>
       <font>
@@ -1130,8 +702,8 @@
     <widget type="label" version="2.0.0">
       <name>Label_18</name>
       <text>Air Flow</text>
-      <x>65</x>
-      <y>70</y>
+      <x>70</x>
+      <y>65</y>
       <width>60</width>
       <height>15</height>
       <font>
@@ -1154,9 +726,9 @@
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_334</name>
-      <pv_name>$(cry)HTRC$(cav):WATT</pv_name>
-      <x>65</x>
-      <y>45</y>
+      <pv_name>$(system)HTRC$(cav):WATT</pv_name>
+      <x>70</x>
+      <y>40</y>
       <width>60</width>
       <height>15</height>
       <font>
@@ -1176,9 +748,9 @@
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_335</name>
-      <pv_name>$(vac)AF$(cav)71:Flow</pv_name>
-      <x>65</x>
-      <y>85</y>
+      <pv_name>$(system)AF$(cav)71:Flow</pv_name>
+      <x>70</x>
+      <y>80</y>
       <width>60</width>
       <height>15</height>
       <font>
@@ -1348,6 +920,442 @@
           </color>
         </on_color>
       </widget>
+    </widget>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_224</name>
+    <pv_name>$(P)CTRL_TP$(cav)00:Name</pv_name>
+    <x>65</x>
+    <y>330</y>
+    <width>60</width>
+    <height>15</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="11.0">
+      </font>
+    </font>
+    <precision>2</precision>
+    <show_units>false</show_units>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <border_width>2</border_width>
+    <border_color>
+      <color red="0" green="255" blue="0">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_225</name>
+    <pv_name>$(P)CTRL_TP$(cav)00:RDGK</pv_name>
+    <x>65</x>
+    <y>315</y>
+    <width>60</width>
+    <height>15</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="11.0">
+      </font>
+    </font>
+    <precision>2</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <rules>
+      <rule name="show units" prop_id="show_units" out_exp="false">
+        <pv_name>$(pv_name)</pv_name>
+      </rule>
+    </rules>
+    <border_width>2</border_width>
+    <border_color>
+      <color red="0" green="255" blue="0">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <x>5</x>
+    <y>415</y>
+    <width>170</width>
+    <height>80</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>Label_75</name>
+      <text>Directional Coupler</text>
+      <width>170</width>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="11.0">
+        </font>
+      </font>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_74</name>
+      <text>Fwd Magnitude</text>
+      <y>20</y>
+      <width>80</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="11.0">
+        </font>
+      </font>
+      <transparent>false</transparent>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_45</name>
+      <pv_name>$(llrf)C$(cav)FWMG:FwdPwr</pv_name>
+      <x>85</x>
+      <y>20</y>
+      <width>85</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <background_color>
+        <color red="255" green="255" blue="0">
+        </color>
+      </background_color>
+      <precision>2</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_46</name>
+      <pv_name>$(llrf)C$(cav)FWPH:FwdPhs</pv_name>
+      <x>85</x>
+      <y>35</y>
+      <width>85</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <background_color>
+        <color red="255" green="255" blue="0">
+        </color>
+      </background_color>
+      <precision>2</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_47</name>
+      <pv_name>$(llrf)C$(cav)RFMG:RefPwr</pv_name>
+      <x>85</x>
+      <y>50</y>
+      <width>85</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <background_color>
+        <color red="255" green="255" blue="0">
+        </color>
+      </background_color>
+      <precision>2</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_48</name>
+      <pv_name>$(llrf)C$(cav)RFPH:RefPhs</pv_name>
+      <x>85</x>
+      <y>65</y>
+      <width>85</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <background_color>
+        <color red="255" green="255" blue="0">
+        </color>
+      </background_color>
+      <precision>2</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_76</name>
+      <text>Fwd Phase</text>
+      <y>35</y>
+      <width>80</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="11.0">
+        </font>
+      </font>
+      <transparent>false</transparent>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_77</name>
+      <text>Ref Magnitude</text>
+      <y>50</y>
+      <width>80</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="11.0">
+        </font>
+      </font>
+      <transparent>false</transparent>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_78</name>
+      <text>Ref Phase</text>
+      <y>65</y>
+      <width>80</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="11.0">
+        </font>
+      </font>
+      <transparent>false</transparent>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_width>1</border_width>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <x>5</x>
+    <y>50</y>
+    <width>170</width>
+    <height>95</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>Label_57</name>
+      <text>Magnitude</text>
+      <y>20</y>
+      <width>80</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="11.0">
+        </font>
+      </font>
+      <transparent>false</transparent>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_19</name>
+      <pv_name>$(llrf)C$(cav)CAVMG:CavMag</pv_name>
+      <x>85</x>
+      <y>20</y>
+      <width>85</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <background_color>
+        <color red="255" green="255" blue="0">
+        </color>
+      </background_color>
+      <precision>2</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_20</name>
+      <pv_name>$(llrf)C$(cav)CAVPH:CavPhs</pv_name>
+      <x>85</x>
+      <y>35</y>
+      <width>85</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <background_color>
+        <color red="255" green="255" blue="0">
+        </color>
+      </background_color>
+      <precision>2</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_21</name>
+      <pv_name>$(llrf)C$(cav)CAVPWR:CavPwr</pv_name>
+      <x>85</x>
+      <y>50</y>
+      <width>85</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <background_color>
+        <color red="255" green="255" blue="0">
+        </color>
+      </background_color>
+      <precision>2</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_22</name>
+      <pv_name>$(llrf)C$(cav)CAVFT:CavFrq</pv_name>
+      <x>85</x>
+      <y>65</y>
+      <width>85</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <background_color>
+        <color red="255" green="255" blue="0">
+        </color>
+      </background_color>
+      <precision>2</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_27</name>
+      <pv_name>$(llrf)C$(cav)CAVERR:CavErr</pv_name>
+      <x>85</x>
+      <y>80</y>
+      <width>85</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <background_color>
+        <color red="255" green="255" blue="0">
+        </color>
+      </background_color>
+      <precision>2</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_66</name>
+      <text>Cavity</text>
+      <width>170</width>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="11.0">
+        </font>
+      </font>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_69</name>
+      <text>Phase</text>
+      <y>35</y>
+      <width>80</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="11.0">
+        </font>
+      </font>
+      <transparent>false</transparent>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_71</name>
+      <text>Power</text>
+      <y>50</y>
+      <width>80</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="11.0">
+        </font>
+      </font>
+      <transparent>false</transparent>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_72</name>
+      <text>Trk Frequency</text>
+      <y>65</y>
+      <width>80</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="11.0">
+        </font>
+      </font>
+      <transparent>false</transparent>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_73</name>
+      <text>Error</text>
+      <y>80</y>
+      <width>80</width>
+      <height>15</height>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="11.0">
+        </font>
+      </font>
+      <transparent>false</transparent>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_width>1</border_width>
     </widget>
   </widget>
 </display>
