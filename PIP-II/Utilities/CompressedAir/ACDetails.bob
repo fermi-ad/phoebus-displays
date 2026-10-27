@@ -2,7 +2,7 @@
 <display version="2.0.0">
   <name>$(LABEL) Details</name>
   <width>520</width>
-  <height>800</height>
+  <height>830</height>
   <widget type="rectangle" version="2.0.0">
     <name>Rectangle</name>
     <width>520</width>
@@ -38,7 +38,7 @@
     <x>10</x>
     <y>77</y>
     <width>500</width>
-    <height>125</height>
+    <height>155</height>
     <line_color>
       <color red="200" green="200" blue="200">
       </color>
@@ -239,7 +239,7 @@
   <widget type="rectangle" version="2.0.0">
     <name>Rectangle_2</name>
     <x>10</x>
-    <y>212</y>
+    <y>242</y>
     <width>500</width>
     <height>112</height>
     <line_color>
@@ -255,7 +255,7 @@
     <name>Label_7</name>
     <text>Readings</text>
     <x>18</x>
-    <y>215</y>
+    <y>245</y>
     <width>120</width>
     <height>18</height>
     <font>
@@ -271,7 +271,7 @@
     <name>Label_8</name>
     <text>Output Pressure</text>
     <x>25</x>
-    <y>234</y>
+    <y>264</y>
     <width>140</width>
     <height>22</height>
     <font>
@@ -288,7 +288,7 @@
     <name>Text Update_2</name>
     <pv_name>$(PREFIX)$(UNIT):OutputPressure</pv_name>
     <x>180</x>
-    <y>233</y>
+    <y>263</y>
     <width>90</width>
     <height>24</height>
     <font>
@@ -301,7 +301,7 @@
     <name>Label_9</name>
     <text>Capacity</text>
     <x>25</x>
-    <y>264</y>
+    <y>294</y>
     <width>140</width>
     <height>22</height>
     <font>
@@ -318,7 +318,7 @@
     <name>Text Update_3</name>
     <pv_name>$(PREFIX)$(UNIT):PercentageCapacity</pv_name>
     <x>180</x>
-    <y>263</y>
+    <y>293</y>
     <width>90</width>
     <height>24</height>
     <font>
@@ -331,7 +331,7 @@
     <name>Label_10</name>
     <text>Motor Current</text>
     <x>25</x>
-    <y>294</y>
+    <y>324</y>
     <width>140</width>
     <height>22</height>
     <font>
@@ -348,7 +348,7 @@
     <name>Text Update_4</name>
     <pv_name>$(PREFIX)$(UNIT):MotorCurrent</pv_name>
     <x>180</x>
-    <y>293</y>
+    <y>323</y>
     <width>90</width>
     <height>24</height>
     <font>
@@ -360,7 +360,7 @@
   <widget type="rectangle" version="2.0.0">
     <name>Rectangle_3</name>
     <x>10</x>
-    <y>332</y>
+    <y>362</y>
     <width>498</width>
     <height>160</height>
     <line_color>
@@ -376,7 +376,7 @@
     <name>Label_11</name>
     <text>Controls</text>
     <x>18</x>
-    <y>335</y>
+    <y>365</y>
     <width>120</width>
     <height>18</height>
     <font>
@@ -392,7 +392,7 @@
     <name>Label_12</name>
     <text>Target Pressure</text>
     <x>25</x>
-    <y>362</y>
+    <y>392</y>
     <width>140</width>
     <height>22</height>
     <font>
@@ -409,7 +409,7 @@
     <name>Text Update_5</name>
     <pv_name>$(PREFIX)$(UNIT):TargetPressure</pv_name>
     <x>180</x>
-    <y>361</y>
+    <y>391</y>
     <width>90</width>
     <height>24</height>
     <font>
@@ -422,7 +422,7 @@
     <name>Label_6</name>
     <text>Auto-stop Pressure</text>
     <x>25</x>
-    <y>392</y>
+    <y>422</y>
     <width>140</width>
     <height>22</height>
     <font>
@@ -439,7 +439,7 @@
     <name>Text Update_6</name>
     <pv_name>$(PREFIX)$(UNIT):MaxStopPressure</pv_name>
     <x>180</x>
-    <y>391</y>
+    <y>421</y>
     <width>90</width>
     <height>24</height>
     <font>
@@ -452,7 +452,7 @@
     <name>Label_13</name>
     <text>Activate command</text>
     <x>25</x>
-    <y>424</y>
+    <y>454</y>
     <width>140</width>
     <height>22</height>
     <font>
@@ -469,7 +469,7 @@
     <name>LED_1</name>
     <pv_name>$(PREFIX)$(UNIT):ActivateCmdStatus</pv_name>
     <x>182</x>
-    <y>427</y>
+    <y>457</y>
     <width>16</width>
     <height>16</height>
     <off_color>
@@ -493,7 +493,7 @@
     </actions>
     <text>START</text>
     <x>270</x>
-    <y>421</y>
+    <y>451</y>
     <width>80</width>
     <height>28</height>
     <font>
@@ -501,9 +501,26 @@
       </font>
     </font>
     <background_color>
-      <color red="0" green="180" blue="0">
+      <color red="220" green="185" blue="235">
       </color>
     </background_color>
+    <rules>
+      <rule name="Commanded" prop_id="background_color" out_exp="false">
+        <exp bool_exp="pv0 == 1">
+          <value>
+            <color red="0" green="180" blue="0">
+            </color>
+          </value>
+        </exp>
+        <exp bool_exp="pv0 == 0">
+          <value>
+            <color red="175" green="225" blue="175">
+            </color>
+          </value>
+        </exp>
+        <pv_name>$(PREFIX)$(UNIT):ActivateCmdStatus</pv_name>
+      </rule>
+    </rules>
     <tooltip>$(actions)</tooltip>
     <confirm_dialog>true</confirm_dialog>
     <confirm_message>Activate $(LABEL)?</confirm_message>
@@ -519,7 +536,7 @@
     </actions>
     <text>STOP</text>
     <x>360</x>
-    <y>421</y>
+    <y>451</y>
     <width>80</width>
     <height>28</height>
     <font>
@@ -538,7 +555,7 @@
     <name>Label_14</name>
     <text>Low-Low Trip</text>
     <x>25</x>
-    <y>456</y>
+    <y>486</y>
     <width>140</width>
     <height>22</height>
     <font>
@@ -555,7 +572,7 @@
     <name>LED_2</name>
     <pv_name>$(PREFIX)$(UNIT):LLTrip</pv_name>
     <x>182</x>
-    <y>459</y>
+    <y>489</y>
     <width>16</width>
     <height>16</height>
     <off_color>
@@ -579,7 +596,7 @@
     </actions>
     <text>RESET</text>
     <x>270</x>
-    <y>453</y>
+    <y>483</y>
     <width>80</width>
     <height>28</height>
     <font>
@@ -597,7 +614,7 @@
   <widget type="rectangle" version="2.0.0">
     <name>Rectangle_4</name>
     <x>10</x>
-    <y>502</y>
+    <y>532</y>
     <width>498</width>
     <height>160</height>
     <line_color>
@@ -613,7 +630,7 @@
     <name>Label_15</name>
     <text>Status Word</text>
     <x>18</x>
-    <y>505</y>
+    <y>535</y>
     <width>120</width>
     <height>22</height>
     <font>
@@ -630,7 +647,7 @@
     <name>Byte Monitor</name>
     <pv_name>$(PREFIX)$(UNIT):Status_StatusBits</pv_name>
     <x>25</x>
-    <y>530</y>
+    <y>560</y>
     <width>16</width>
     <height>96</height>
     <startBit>0</startBit>
@@ -652,7 +669,7 @@
     <name>Label_16</name>
     <text>0: Host control</text>
     <x>47</x>
-    <y>527</y>
+    <y>557</y>
     <width>200</width>
     <height>22</height>
     <font>
@@ -669,7 +686,7 @@
     <name>Label_17</name>
     <text>1: Run</text>
     <x>47</x>
-    <y>551</y>
+    <y>581</y>
     <width>200</width>
     <height>22</height>
     <font>
@@ -686,7 +703,7 @@
     <name>Label_18</name>
     <text>2: Loaded</text>
     <x>47</x>
-    <y>575</y>
+    <y>605</y>
     <width>200</width>
     <height>22</height>
     <font>
@@ -703,7 +720,7 @@
     <name>Label_19</name>
     <text>3: At min speed</text>
     <x>47</x>
-    <y>599</y>
+    <y>629</y>
     <width>200</width>
     <height>22</height>
     <font>
@@ -720,7 +737,7 @@
     <name>Byte Monitor_1</name>
     <pv_name>$(PREFIX)$(UNIT):Status_StatusBits</pv_name>
     <x>270</x>
-    <y>530</y>
+    <y>560</y>
     <width>16</width>
     <height>96</height>
     <startBit>4</startBit>
@@ -742,7 +759,7 @@
     <name>Label_20</name>
     <text>4: At max speed</text>
     <x>292</x>
-    <y>527</y>
+    <y>557</y>
     <width>200</width>
     <height>22</height>
     <font>
@@ -759,7 +776,7 @@
     <name>Label_21</name>
     <text>5: Stopped in auto-restart</text>
     <x>292</x>
-    <y>551</y>
+    <y>581</y>
     <width>200</width>
     <height>22</height>
     <font>
@@ -776,7 +793,7 @@
     <name>Label_22</name>
     <text>6: Alarm</text>
     <x>292</x>
-    <y>575</y>
+    <y>605</y>
     <width>200</width>
     <height>22</height>
     <font>
@@ -793,7 +810,7 @@
     <name>Label_23</name>
     <text>7: Warning</text>
     <x>292</x>
-    <y>599</y>
+    <y>629</y>
     <width>200</width>
     <height>22</height>
     <font>
@@ -810,7 +827,7 @@
     <name>Embedded Display</name>
     <file>PLCStatus.bob</file>
     <x>10</x>
-    <y>674</y>
+    <y>704</y>
     <width>280</width>
     <height>112</height>
   </widget>
@@ -818,7 +835,7 @@
     <name>Byte Monitor_2</name>
     <pv_name>$(PREFIX)$(UNIT):Status_StatusBits</pv_name>
     <x>25</x>
-    <y>629</y>
+    <y>659</y>
     <width>40</width>
     <height>18</height>
     <startBit>8</startBit>
@@ -839,7 +856,7 @@
     <name>Label_24</name>
     <text>8-9: Operating mode (11 = normal, 00 = unloaded)</text>
     <x>72</x>
-    <y>627</y>
+    <y>657</y>
     <width>400</width>
     <height>20</height>
     <font>
@@ -852,7 +869,7 @@
     <name>LED_3</name>
     <pv_name>LACC:UTIL_MSD_CMPRS:AutoSwitchOver</pv_name>
     <x>300</x>
-    <y>365</y>
+    <y>395</y>
     <width>14</width>
     <height>14</height>
     <off_color>
@@ -869,7 +886,7 @@
     <name>Label_25</name>
     <text>Auto-switchover possible</text>
     <x>320</x>
-    <y>362</y>
+    <y>392</y>
     <width>170</width>
     <height>20</height>
     <font>
@@ -886,7 +903,7 @@
     <name>LED_4</name>
     <pv_name>$(PREFIX)$(UNIT):TripStatus</pv_name>
     <x>180</x>
-    <y>173</y>
+    <y>203</y>
     <width>14</width>
     <height>14</height>
     <off_color>
@@ -903,7 +920,7 @@
     <name>Label_26</name>
     <text>Trip</text>
     <x>198</x>
-    <y>170</y>
+    <y>200</y>
     <width>45</width>
     <height>20</height>
     <font>
@@ -916,7 +933,7 @@
     <name>LED_5</name>
     <pv_name>$(PREFIX)$(UNIT):WarningStatus</pv_name>
     <x>250</x>
-    <y>173</y>
+    <y>203</y>
     <width>14</width>
     <height>14</height>
     <off_color>
@@ -933,7 +950,7 @@
     <name>Label_27</name>
     <text>Warning</text>
     <x>268</x>
-    <y>170</y>
+    <y>200</y>
     <width>60</width>
     <height>20</height>
     <font>
@@ -946,7 +963,7 @@
     <name>LED_6</name>
     <pv_name>$(PREFIX)$(UNIT):IsActive</pv_name>
     <x>335</x>
-    <y>173</y>
+    <y>203</y>
     <width>14</width>
     <height>14</height>
     <off_color>
@@ -963,7 +980,7 @@
     <name>Label_28</name>
     <text>Active</text>
     <x>353</x>
-    <y>170</y>
+    <y>200</y>
     <width>50</width>
     <height>20</height>
     <font>
@@ -1058,5 +1075,36 @@
         <pv_name>$(PREFIX)$(UNIT):IsOffline</pv_name>
       </rule>
     </rules>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_32</name>
+    <text>Code description</text>
+    <x>18</x>
+    <y>168</y>
+    <width>112</width>
+    <height>22</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="11.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="60" green="60" blue="60">
+      </color>
+    </foreground_color>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_7</name>
+    <pv_name>$(PREFIX)$(UNIT):TripCodeDesc.VALA</pv_name>
+    <x>132</x>
+    <y>168</y>
+    <width>370</width>
+    <height>22</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <format>6</format>
+    <vertical_alignment>1</vertical_alignment>
   </widget>
 </display>
