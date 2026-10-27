@@ -388,9 +388,26 @@
       </font>
     </font>
     <background_color>
-      <color red="0" green="180" blue="0">
+      <color red="220" green="185" blue="235">
       </color>
     </background_color>
+    <rules>
+      <rule name="Commanded" prop_id="background_color" out_exp="false">
+        <exp bool_exp="pv0 == 1">
+          <value>
+            <color red="0" green="180" blue="0">
+            </color>
+          </value>
+        </exp>
+        <exp bool_exp="pv0 == 0">
+          <value>
+            <color red="175" green="225" blue="175">
+            </color>
+          </value>
+        </exp>
+        <pv_name>$(PREFIX)$(UNIT):ActivateCmdStatus</pv_name>
+      </rule>
+    </rules>
     <tooltip>$(actions)</tooltip>
     <confirm_dialog>true</confirm_dialog>
     <confirm_message>Activate $(LABEL)?</confirm_message>
