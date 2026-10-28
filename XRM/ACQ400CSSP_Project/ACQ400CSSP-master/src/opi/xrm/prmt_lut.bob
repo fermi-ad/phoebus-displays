@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>PRMT_LUT $(UUT)</name>
+  <width>750</width>
+  <height>740</height>
+  <widget type="group" version="3.0.0">
+    <name>SYSTEM</name>
+    <y>10</y>
+    <width>880</width>
+    <height>910</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>TITLE_1</name>
+      <text>PRMT_LUT $(UUT)</text>
+      <width>330</width>
+      <height>50</height>
+      <font>
+        <font name="Header 2" family="Liberation Sans" style="BOLD" size="18.0">
+        </font>
+      </font>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="table" version="2.0.0">
+      <name>Table</name>
+      <pv_name>${UUT}:PRMT:LUT:TAB</pv_name>
+      <x>10</x>
+      <y>50</y>
+      <width>750</width>
+      <height>700</height>
+      <columns>
+        <column>
+          <name>Column 1</name>
+          <width>60</width>
+          <editable>false</editable>
+        </column>
+        <column>
+          <name>Column 2</name>
+          <width>75</width>
+          <editable>false</editable>
+        </column>
+        <column>
+          <name>Column 3</name>
+          <width>100</width>
+          <editable>false</editable>
+        </column>
+        <column>
+          <name>Column 4</name>
+          <width>100</width>
+          <editable>false</editable>
+        </column>
+        <column>
+          <name>Column 5</name>
+          <width>100</width>
+          <editable>false</editable>
+        </column>
+        <column>
+          <name>Column 6</name>
+          <width>100</width>
+          <editable>false</editable>
+        </column>
+        <column>
+          <name>Column 7</name>
+          <width>100</width>
+          <editable>false</editable>
+        </column>
+        <column>
+          <name>Column 8</name>
+          <width>100</width>
+          <editable>false</editable>
+        </column>
+      </columns>
+      <editable>false</editable>
+      <selection_pv>TST:Tbl</selection_pv>
+    </widget>
+    <widget type="combo" version="2.0.0">
+      <name>Combo Box</name>
+      <pv_name>${UUT}:SOE:MON_RL</pv_name>
+      <x>230</x>
+      <y>10</y>
+      <width>110</width>
+    </widget>
+  </widget>
+  <widget type="text-symbol" version="2.0.0">
+    <name>Text Symbol</name>
+    <x>730</x>
+    <y>1000</y>
+    <width>1</width>
+    <height>1</height>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Control</name>
+    <x>780</x>
+    <y>90</y>
+    <width>250</width>
+    <height>120</height>
+    <widget type="bool_button" version="2.0.0">
+      <name>RUN_BUTTON</name>
+      <pv_name>${UUT}:PRMT_LUT:RUNSTOP</pv_name>
+      <x>3</x>
+      <y>12</y>
+      <height>50</height>
+      <off_label>RUN</off_label>
+      <on_label>STOP</on_label>
+      <actions>
+        <action type="write_pv">
+          <description>Write PV</description>
+          <pv_name>$(pv_name)</pv_name>
+          <value>1</value>
+        </action>
+        <action type="write_pv">
+          <description>Write PV</description>
+          <pv_name>$(pv_name)</pv_name>
+          <value>0</value>
+        </action>
+      </actions>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update</name>
+      <pv_name>${UUT}:PRMT_LUT:UPDATES</pv_name>
+      <x>3</x>
+      <y>72</y>
+      <width>111</width>
+    </widget>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_2</name>
+    <pv_name>${UUT}:PRMT:LUT:LAST_EVENT</pv_name>
+    <x>901</x>
+    <y>220</y>
+    <width>130</width>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_2</name>
+    <pv_name>${UUT}:PRMT:LUT:SOFT_EVENT</pv_name>
+    <x>901</x>
+    <y>260</y>
+    <width>120</width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_8</name>
+    <text>LAST EVENT</text>
+    <x>770</x>
+    <y>220</y>
+    <width>110</width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_9</name>
+    <text>SOFT_EVENT</text>
+    <x>770</x>
+    <y>260</y>
+  </widget>
+</display>

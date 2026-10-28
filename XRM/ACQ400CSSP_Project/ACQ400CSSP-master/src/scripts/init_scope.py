@@ -1,8 +1,6 @@
 from java.util.logging import Logger
 from org.csstudio.display.builder.runtime.script import PVUtil, ScriptUtil
 
-from pprint import pprint
-
 """ Builds and loads new scope"""
 
 # Startup
@@ -12,14 +10,17 @@ display = widget.getTopDisplayModel()
 timeout = 2000
 
 #Functions
+class DotDict(dict):
+    __delattr__ = dict.__delitem__
+    __getattr__ = dict.__getitem__
+    __setattr__ = dict.__setitem__
+
 def get_macros(*widgets):
-    class DotDict(dict):
-        __getattr__ = dict.__getitem__
-        __setattr__ = dict.__setitem__
     macros = DotDict()
-    def macro_func(key, value): macros[key] = value
     for widget in widgets:
-        widget.getEffectiveMacros().forEachSpec(macro_func)
+        m = widget.getEffectiveMacros()
+        for key in m.names:
+            macros[key] = m.getValue(key)
     return macros
 
 def string_to_channels(chanstr):

@@ -614,20 +614,49 @@
               <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
             </widget>
           </widget>
-          <widget type="bool_button" version="2.0.0">
-            <name>SOFT TRIGGER INPUT</name>
-            <pv_name>$(UUT):MODE:TRANSIENT:SOFT_TRIGGER</pv_name>
+          <widget type="group" version="3.0.0">
+            <name>SOFT_TRIGGER_GROUP</name>
             <x>120</x>
             <y>25</y>
             <width>110</width>
             <height>20</height>
-            <off_label>AUTO</off_label>
-            <on_label>AUTO</on_label>
-            <font>
-              <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            <style>3</style>
+            <transparent>true</transparent>
+            <widget type="bool_button" version="2.0.0">
+              <name>SOFT TRIGGER Transient</name>
+              <pv_name>$(UUT):MODE:TRANSIENT:SOFT_TRIGGER</pv_name>
+              <width>110</width>
+              <height>20</height>
+              <off_label>AUTO</off_label>
+              <on_label>AUTO</on_label>
+              <font>
+                <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+                </font>
               </font>
-            </font>
-            <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+              <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+            </widget>
+            <widget type="bool_button" version="2.0.0">
+              <name>SOFT TRIGGER awg</name>
+              <pv_name>$(UUT):AWG:SOFT_TRIGGER</pv_name>
+              <width>110</width>
+              <height>20</height>
+              <visible>false</visible>
+              <off_label>AUTO</off_label>
+              <on_label>AUTO</on_label>
+              <font>
+                <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+                </font>
+              </font>
+              <rules>
+                <rule name="SHOW_IF_AVAILABLE" prop_id="visible" out_exp="false">
+                  <exp bool_exp="True">
+                    <value>true</value>
+                  </exp>
+                  <pv_name>$(UUT):AWG:SOFT_TRIGGER</pv_name>
+                </rule>
+              </rules>
+              <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+            </widget>
           </widget>
         </widget>
         <widget type="group" version="3.0.0">

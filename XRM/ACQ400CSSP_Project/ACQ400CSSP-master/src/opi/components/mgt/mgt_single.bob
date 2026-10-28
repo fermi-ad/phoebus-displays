@@ -472,6 +472,26 @@
             <vertical_alignment>1</vertical_alignment>
           </widget>
         </widget>
+        <widget type="action_button" version="3.0.0">
+          <name>BUTTON_1</name>
+          <actions>
+            <action type="write_pv">
+              <description>CLEAR</description>
+              <pv_name>$(pv_name)</pv_name>
+              <value>0</value>
+            </action>
+          </actions>
+          <pv_name>${UUT}:MGT:SFP:${CH}:CLRSTATS</pv_name>
+          <text>CLR</text>
+          <x>260</x>
+          <y>80</y>
+          <width>50</width>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+        </widget>
       </widget>
       <widget type="group" version="3.0.0">
         <name>AURORA</name>
@@ -547,7 +567,6 @@
           <name>ERROR STATUS</name>
           <x>10</x>
           <y>70</y>
-          <width>250</width>
           <height>30</height>
           <style>3</style>
           <transparent>true</transparent>
@@ -576,24 +595,32 @@
             <horizontal_alignment>2</horizontal_alignment>
             <vertical_alignment>1</vertical_alignment>
           </widget>
-          <widget type="action_button" version="3.0.0">
-            <name>BUTTON_1</name>
-            <actions>
-              <action type="write_pv">
-                <description>CLEAR</description>
-                <pv_name>$(pv_name)</pv_name>
-                <value>0</value>
-              </action>
-            </actions>
-            <pv_name>${UUT}:MGT:SFP:${CH}:CLRSTATS</pv_name>
-            <text>CLR</text>
+          <widget type="led" version="2.0.0">
+            <name>LED_3</name>
+            <pv_name>${UUT}:${CH}:PCIECTRL</pv_name>
+            <x>280</x>
+            <y>5</y>
+            <off_color>
+              <color name="STOP" red="255" green="0" blue="0">
+              </color>
+            </off_color>
+            <on_color>
+              <color name="OK" red="0" green="255" blue="0">
+              </color>
+            </on_color>
+            <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>LABEL_30</name>
+            <text>Registers</text>
             <x>200</x>
-            <width>50</width>
+            <width>80</width>
+            <height>30</height>
             <font>
               <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
               </font>
             </font>
-            <border_alarm_sensitive>$(SHOW_ALARM=1)</border_alarm_sensitive>
+            <vertical_alignment>1</vertical_alignment>
           </widget>
         </widget>
         <widget type="group" version="3.0.0">

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>Display</name>
+  <widget type="byte_monitor" version="2.0.0">
+    <name>Byte Monitor</name>
+    <pv_name>${UUT}:${SITE}:PRMT:STAT:LIVE</pv_name>
+    <x>290</x>
+    <y>20</y>
+    <width>430</width>
+    <height>3</height>
+    <numBits>32</numBits>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <text>Site:${SITE} LIVE</text>
+    <x>50</x>
+    <y>20</y>
+    <width>210</width>
+    <height>30</height>
+  </widget>
+  <widget type="byte_monitor" version="2.0.0">
+    <name>Byte Monitor_1</name>
+    <pv_name>${UUT}:${SITE}:PRMT:STAT:LATCH</pv_name>
+    <x>290</x>
+    <y>50</y>
+    <width>430</width>
+    <height>3</height>
+    <numBits>32</numBits>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_1</name>
+    <text>Site:${SITE} LATCH</text>
+    <x>50</x>
+    <y>50</y>
+    <width>210</width>
+    <height>30</height>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button</name>
+    <actions>
+      <action type="write_pv">
+        <description>Write PV</description>
+        <pv_name>$(pv_name)</pv_name>
+        <value>0xffffffff</value>
+      </action>
+    </actions>
+    <pv_name>${UUT}:${SITE}:PRMT:STAT:LATCH</pv_name>
+    <text>CLEAR</text>
+    <x>190</x>
+    <y>50</y>
+    <width>80</width>
+    <height>20</height>
+  </widget>
+</display>
