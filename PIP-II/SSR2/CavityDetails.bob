@@ -1,18 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2024-05-17 09:57:25 by epics-->
 <display version="2.0.0">
-  <name>HB650 Cavity Details</name>
+  <name>SSR2 Cavity Details</name>
   <width>720</width>
   <height>510</height>
   <grid_step_x>5</grid_step_x>
   <grid_step_y>5</grid_step_y>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <text>PIP2IT ppSSR2 Cavity $(cav)</text>
+    <width>720</width>
+    <height>40</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <background_color>
+      <color name="SSR2color" red="254" green="209" blue="65">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <border_width>2</border_width>
+  </widget>
   <widget type="picture" version="2.0.0">
     <name>Picture_1</name>
-    <file>../../images/HB650CavityDetails-new.png</file>
-    <x>140</x>
-    <y>160</y>
-    <width>420</width>
-    <height>250</height>
+    <file>../../images/SSR2/SSR2Cavity.png</file>
+    <x>220</x>
+    <y>120</y>
+    <width>265</width>
+    <height>380</height>
+    <rotation>180.0</rotation>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_4</name>
@@ -32,28 +50,6 @@
     <transparent>false</transparent>
     <horizontal_alignment>1</horizontal_alignment>
     <border_width>1</border_width>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label</name>
-    <text>PIP2IT pHB650 Cavity $(cav)</text>
-    <width>720</width>
-    <height>40</height>
-    <font>
-      <font family="Liberation Sans" style="BOLD" size="22.0">
-      </font>
-    </font>
-    <foreground_color>
-      <color red="255" green="255" blue="255">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color red="175" green="39" blue="47">
-      </color>
-    </background_color>
-    <transparent>false</transparent>
-    <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <border_width>2</border_width>
   </widget>
   <widget type="polyline" version="2.0.0">
     <name>Polyline_115</name>
@@ -213,12 +209,12 @@
       <name>Action Button</name>
       <actions>
         <action type="open_display">
+          <description>Open Heater Display</description>
           <file>../Common/cryo-embedded-displays/HeaterCtrlCavities.bob</file>
           <macros>
             <dev>HTRVSL</dev>
           </macros>
           <target>window</target>
-          <description>Open Heater Display</description>
         </action>
       </actions>
       <text></text>
@@ -333,7 +329,7 @@
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_166</name>
-    <pv_name>$(fg)FG$(cav)01:Name</pv_name>
+    <pv_name>$(P)CTRL_FG$(cav)00:Name</pv_name>
     <x>285</x>
     <y>80</y>
     <width>50</width>
@@ -357,7 +353,7 @@
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_167</name>
-    <pv_name>$(fg)FG$(cav)01:Flux</pv_name>
+    <pv_name>$(P)CTRL_FG$(cav)00:Flux</pv_name>
     <x>285</x>
     <y>95</y>
     <width>50</width>
@@ -377,46 +373,6 @@
     <precision>2</precision>
     <horizontal_alignment>1</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
-  </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>Text Update_2</name>
-    <pv_name>$(opc)OPCUA_01:Time</pv_name>
-    <x>640</x>
-    <y>10</y>
-    <width>70</width>
-    <foreground_color>
-      <color red="99" green="0" blue="0">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color red="255" green="255" blue="255">
-      </color>
-    </background_color>
-    <precision>10</precision>
-    <show_units>false</show_units>
-    <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-  </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>Text Update_3</name>
-    <pv_name>$(opc)OPCUA_01:Date</pv_name>
-    <x>540</x>
-    <y>10</y>
-    <width>90</width>
-    <foreground_color>
-      <color red="128" green="0" blue="0">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color red="255" green="255" blue="255">
-      </color>
-    </background_color>
-    <precision>10</precision>
-    <show_units>false</show_units>
-    <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
   </widget>
   <widget type="group" version="3.0.0">
     <name>Group</name>
@@ -453,12 +409,12 @@
       <name>Action Button_1</name>
       <actions>
         <action type="open_display">
+          <description>Open Heater Display</description>
           <file>../Common/cryo-embedded-displays/HeaterCtrlCoupler.bob</file>
           <macros>
             <dev>HTRC$(cav)</dev>
           </macros>
           <target>window</target>
-          <description>Open Heater Display</description>
         </action>
       </actions>
       <text></text>
@@ -518,23 +474,23 @@
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display_15</name>
     <macros>
-      <sensor>TX$(cav)02</sensor>
+      <dev>CRYO_TX$(cav)02</dev>
     </macros>
     <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
     <x>385</x>
     <y>425</y>
-    <width>55</width>
+    <width>65</width>
     <height>35</height>
   </widget>
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display_16</name>
     <macros>
-      <sensor>TX$(cav)01</sensor>
+      <dev>CRYO_TX$(cav)01</dev>
     </macros>
     <file>../Common/cryo-embedded-displays/TempSensorUp.bob</file>
     <x>385</x>
     <y>125</y>
-    <width>55</width>
+    <width>65</width>
     <height>35</height>
   </widget>
   <widget type="group" version="3.0.0">
@@ -556,8 +512,8 @@
       <widget type="label" version="2.0.0">
         <name>Label_5</name>
         <text>Tuner Motors</text>
-        <width>65</width>
-        <height>73</height>
+        <width>75</width>
+        <height>75</height>
         <font>
           <font family="Liberation Sans" style="BOLD" size="14.0">
           </font>
@@ -573,12 +529,14 @@
       <widget type="embedded" version="2.0.0">
         <name>Embedded Display_21</name>
         <macros>
-          <sensor>TP$(cav)00</sensor>
+          <name>TP$(cav)00</name>
+          <dev>CTRL_$(name)</dev>
+          <sig>RDGK</sig>
         </macros>
-        <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
+        <file>../Common/cryo-embedded-displays/GenericSensorDown.bob</file>
         <x>5</x>
         <y>35</y>
-        <width>55</width>
+        <width>65</width>
         <height>35</height>
       </widget>
     </widget>
@@ -978,7 +936,7 @@
     <widget type="label" version="2.0.0">
       <name>Label_3</name>
       <text>Couplers </text>
-      <width>130</width>
+      <width>135</width>
       <height>85</height>
       <font>
         <font family="Liberation Sans" style="BOLD" size="14.0">
@@ -995,27 +953,27 @@
     <widget type="embedded" version="2.0.0">
       <name>Embedded Display_22</name>
       <macros>
-        <sensor>TX$(cav)71</sensor>
+        <dev>CRYO_TX$(cav)71</dev>
       </macros>
       <file>../Common/cryo-embedded-displays/TempSensorUp.bob</file>
       <y>45</y>
-      <width>55</width>
+      <width>65</width>
       <height>35</height>
     </widget>
     <widget type="embedded" version="2.0.0">
       <name>Embedded Display_23</name>
       <macros>
-        <sensor>TX$(cav)70</sensor>
+        <dev>CRYO_TX$(cav)70</dev>
       </macros>
       <file>../Common/cryo-embedded-displays/TempSensorUp.bob</file>
       <y>5</y>
-      <width>55</width>
+      <width>65</width>
       <height>35</height>
     </widget>
     <widget type="label" version="2.0.0">
       <name>Label_6</name>
       <text>Vacuum</text>
-      <x>65</x>
+      <x>70</x>
       <y>25</y>
       <width>60</width>
       <height>15</height>
@@ -1037,27 +995,6 @@
         </color>
       </border_color>
     </widget>
-    <widget type="textupdate" version="2.0.0">
-      <name>Text Update_327</name>
-      <pv_name>$(vac)PCC371:VacP</pv_name>
-      <x>65</x>
-      <y>45</y>
-      <width>60</width>
-      <height>30</height>
-      <font>
-        <font family="Liberation Sans" style="REGULAR" size="11.0">
-        </font>
-      </font>
-      <format>2</format>
-      <precision>3</precision>
-      <horizontal_alignment>1</horizontal_alignment>
-      <vertical_alignment>1</vertical_alignment>
-      <border_width>2</border_width>
-      <border_color>
-        <color red="255" green="255" blue="0">
-        </color>
-      </border_color>
-    </widget>
   </widget>
   <widget type="group" version="3.0.0">
     <name>Group_3</name>
@@ -1070,7 +1007,7 @@
     <widget type="label" version="2.0.0">
       <name>Label_16</name>
       <text> Coupler Window </text>
-      <width>130</width>
+      <width>135</width>
       <height>105</height>
       <font>
         <font family="Liberation Sans" style="BOLD" size="14.0">
@@ -1088,29 +1025,28 @@
     <widget type="embedded" version="2.0.0">
       <name>Embedded Display_30</name>
       <macros>
-        <sensor>TP$(cav)72</sensor>
-        <temp>$(rfpi)</temp>
+        <dev>RFPI_TP$(cav)72</dev>
       </macros>
       <file>../Common/cryo-embedded-displays/TempSensorUp.bob</file>
       <y>25</y>
-      <width>55</width>
+      <width>65</width>
       <height>35</height>
     </widget>
     <widget type="embedded" version="2.0.0">
       <name>Embedded Display_31</name>
       <macros>
-        <sensor>TP$(cav)73</sensor>
+        <dev>CRYO_TP$(cav)73</dev>
       </macros>
       <file>../Common/cryo-embedded-displays/TempSensorUp.bob</file>
       <y>65</y>
-      <width>55</width>
+      <width>65</width>
       <height>35</height>
     </widget>
     <widget type="label" version="2.0.0">
       <name>Label_17</name>
       <text>Htr Power</text>
-      <x>65</x>
-      <y>30</y>
+      <x>70</x>
+      <y>27</y>
       <width>60</width>
       <height>15</height>
       <font>
@@ -1134,8 +1070,8 @@
     <widget type="label" version="2.0.0">
       <name>Label_18</name>
       <text>Air Flow</text>
-      <x>65</x>
-      <y>70</y>
+      <x>70</x>
+      <y>67</y>
       <width>60</width>
       <height>15</height>
       <font>
@@ -1158,9 +1094,9 @@
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_334</name>
-      <pv_name>$(cry)HTRC$(cav):WATT</pv_name>
-      <x>65</x>
-      <y>45</y>
+      <pv_name>$(system)CRYO_HTRC$(cav):WATT</pv_name>
+      <x>70</x>
+      <y>42</y>
       <width>60</width>
       <height>15</height>
       <font>
@@ -1180,9 +1116,9 @@
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_335</name>
-      <pv_name>$(vac)AF$(cav)71:Flow</pv_name>
-      <x>65</x>
-      <y>85</y>
+      <pv_name>$(P)VAC_AF$(cav)71:Flow</pv_name>
+      <x>70</x>
+      <y>82</y>
       <width>60</width>
       <height>15</height>
       <font>
@@ -1353,5 +1289,33 @@
         </on_color>
       </widget>
     </widget>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_5</name>
+    <pv_name>sys://time</pv_name>
+    <x>540</x>
+    <y>10</y>
+    <width>170</width>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <background_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </background_color>
+    <show_units>false</show_units>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_1</name>
+    <text>$(P)</text>
+    <x>615</x>
+    <y>250</y>
+    <width>255</width>
+    <height>45</height>
   </widget>
 </display>

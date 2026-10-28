@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2025-04-24 12:46:20 by kacpe-->
+<display version="2.0.0">
+  <name>$(CHANNEL_NAME) Expert</name>
+  <width>510</width>
+  <height>630</height>
+  <widget type="rectangle" version="2.0.0">
+    <name>Titlebar</name>
+    <width>510</width>
+    <height>50</height>
+    <line_width>0</line_width>
+    <background_color>
+      <color name="PRIMARY-HEADER-BACKGROUND" red="151" green="188" blue="202">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Title</name>
+    <text>RFPI</text>
+    <x>20</x>
+    <width>150</width>
+    <height>50</height>
+    <font>
+      <font name="Header 1" family="Source Sans Pro" style="BOLD_ITALIC" size="36.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="HEADER-TEXT" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Subtitle</name>
+    <text>$(CHANNEL_NAME) Expert</text>
+    <x>140</x>
+    <y>20</y>
+    <width>350</width>
+    <height>30</height>
+    <font>
+      <font name="Header 2" family="Source Sans Pro" style="BOLD_ITALIC" size="21.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="HEADER-TEXT" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>2</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Status_group</name>
+    <x>20</x>
+    <y>70</y>
+    <width>220</width>
+    <height>100</height>
+    <style>3</style>
+    <background_color>
+      <color name="BACKGROUND" red="220" green="225" blue="221">
+      </color>
+    </background_color>
+    <widget type="rectangle" version="2.0.0">
+      <name>Status_rectangle</name>
+      <width>220</width>
+      <height>100</height>
+      <line_width>2</line_width>
+      <line_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="GROUP-BACKGROUND" red="200" green="205" blue="201">
+        </color>
+      </background_color>
+      <corner_width>10</corner_width>
+      <corner_height>10</corner_height>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Status_title</name>
+      <text>Status</text>
+      <width>220</width>
+      <height>40</height>
+      <font>
+        <font name="Header 2" family="Source Sans Pro" style="BOLD_ITALIC" size="21.0">
+        </font>
+      </font>
+      <background_color>
+        <color name="RED-BORDER" red="150" green="8" blue="16">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>Status_LED</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):Status_r</pv_name>
+      <x>20</x>
+      <y>50</y>
+      <width>30</width>
+      <height>30</height>
+      <off_color>
+        <color name="MAJOR" red="252" green="13" blue="27">
+        </color>
+      </off_color>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Reset_button</name>
+      <actions>
+        <action type="write_pv">
+          <pv_name>$(pv_name).PROC</pv_name>
+          <value>1</value>
+          <description>WritePV</description>
+        </action>
+      </actions>
+      <pv_name>$(acc):$(sys)_$(group)_$(num):Reset_s</pv_name>
+      <text>Reset</text>
+      <x>90</x>
+      <y>50</y>
+      <width>110</width>
+      <tooltip>$(actions)</tooltip>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Plot_group</name>
+    <x>20</x>
+    <y>190</y>
+    <width>470</width>
+    <height>420</height>
+    <style>3</style>
+    <background_color>
+      <color name="BACKGROUND" red="220" green="225" blue="221">
+      </color>
+    </background_color>
+    <widget type="rectangle" version="2.0.0">
+      <name>Plot_rectangle</name>
+      <width>470</width>
+      <height>420</height>
+      <line_width>2</line_width>
+      <line_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="BACKGROUND" red="220" green="225" blue="221">
+        </color>
+      </background_color>
+      <corner_width>10</corner_width>
+      <corner_height>10</corner_height>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Plot_title</name>
+      <text>Plot</text>
+      <width>470</width>
+      <height>40</height>
+      <font>
+        <font name="Header 2" family="Source Sans Pro" style="BOLD_ITALIC" size="21.0">
+        </font>
+      </font>
+      <background_color>
+        <color name="RED-BORDER" red="150" green="8" blue="16">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>Power_LED</name>
+    <pv_name>$(acc):$(sys)_$(group)_$(num):Power_r</pv_name>
+    <x>340</x>
+    <y>80</y>
+    <width>30</width>
+    <height>30</height>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>Enable_LED</name>
+    <pv_name>$(acc):$(sys)_$(group)_$(num):Enable_r</pv_name>
+    <x>340</x>
+    <y>130</y>
+    <width>30</width>
+    <height>30</height>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>Power_button</name>
+    <pv_name>$(acc):$(sys)_$(group)_$(num):Power_s</pv_name>
+    <x>390</x>
+    <y>80</y>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>Enable_button</name>
+    <pv_name>$(acc):$(sys)_$(group)_$(num):Enable_s</pv_name>
+    <x>390</x>
+    <y>130</y>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Power_label</name>
+    <text>Power:</text>
+    <x>250</x>
+    <y>80</y>
+    <width>80</width>
+    <height>30</height>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Enable_label</name>
+    <text>Enable:</text>
+    <x>250</x>
+    <y>130</y>
+    <width>80</width>
+    <height>30</height>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+</display>

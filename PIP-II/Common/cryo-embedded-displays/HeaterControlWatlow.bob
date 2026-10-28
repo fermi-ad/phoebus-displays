@@ -7,22 +7,6 @@
     <color name="cryo.PrimaryBackground" red="217" green="217" blue="217">
     </color>
   </background_color>
-  <widget type="rectangle" version="2.0.0">
-    <name>Rectangle</name>
-    <x>10</x>
-    <y>424</y>
-    <width>200</width>
-    <height>142</height>
-    <line_width>1</line_width>
-    <line_color>
-      <color red="0" green="0" blue="0">
-      </color>
-    </line_color>
-    <background_color>
-      <color name="fgs.Gray-45" red="167" green="168" blue="170">
-      </color>
-    </background_color>
-  </widget>
   <widget type="textentry" version="3.0.0">
     <name>Text Entry_3</name>
     <pv_name>$(system)$(dev):SP</pv_name>
@@ -35,7 +19,7 @@
   </widget>
   <widget type="textentry" version="3.0.0">
     <name>Text Entry_4</name>
-    <pv_name>$(system)$(dev):MIN</pv_name>
+    <pv_name>$(system)$(dev):MinLim</pv_name>
     <x>380</x>
     <y>355</y>
     <width>80</width>
@@ -45,7 +29,7 @@
   </widget>
   <widget type="textentry" version="3.0.0">
     <name>Text Entry_5</name>
-    <pv_name>$(system)$(dev):MAX</pv_name>
+    <pv_name>$(system)$(dev):MaxLim</pv_name>
     <x>380</x>
     <y>385</y>
     <width>80</width>
@@ -464,7 +448,7 @@
     <width>550</width>
     <height>358</height>
     <background_color>
-      <color name="fgs.Gray-45" red="167" green="168" blue="170">
+      <color red="242" green="242" blue="242">
       </color>
     </background_color>
     <show_grid>true</show_grid>
@@ -546,30 +530,6 @@
       <item>MANUAL</item>
     </items>
   </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label_109</name>
-    <text>Heater Faults</text>
-    <x>10</x>
-    <y>413</y>
-    <width>200</width>
-    <height>22</height>
-    <font>
-      <font family="Liberation Sans" style="BOLD" size="14.0">
-      </font>
-    </font>
-    <foreground_color>
-      <color red="255" green="255" blue="0">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color name="cryo.Heater.On" red="229" green="56" blue="35">
-      </color>
-    </background_color>
-    <transparent>false</transparent>
-    <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <border_width>1</border_width>
-  </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_46</name>
     <pv_name>$(system)$(dev):OUTcmd</pv_name>
@@ -581,6 +541,7 @@
     <horizontal_alignment>1</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
     <wrap_words>false</wrap_words>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
     <border_width>1</border_width>
   </widget>
   <widget type="label" version="2.0.0">
@@ -614,42 +575,6 @@
     <vertical_alignment>1</vertical_alignment>
     <auto_size>true</auto_size>
     <wrap_words>false</wrap_words>
-  </widget>
-  <widget type="led" version="2.0.0">
-    <name>LED_1</name>
-    <pv_name>$(system)$(dev):STS1</pv_name>
-    <x>9</x>
-    <y>161</y>
-    <width>100</width>
-    <height>26</height>
-    <off_label>ZONE 1 OFF</off_label>
-    <off_color>
-      <color name="fgs.Gray-45" red="167" green="168" blue="170">
-      </color>
-    </off_color>
-    <on_color>
-      <color name="cryo.Heater.On" red="229" green="56" blue="35">
-      </color>
-    </on_color>
-    <square>true</square>
-  </widget>
-  <widget type="led" version="2.0.0">
-    <name>LED_2</name>
-    <pv_name>$(system)$(dev):STS2</pv_name>
-    <x>126</x>
-    <y>161</y>
-    <width>100</width>
-    <height>26</height>
-    <off_label>ZONE 2 OFF</off_label>
-    <off_color>
-      <color name="fgs.Gray-45" red="167" green="168" blue="170">
-      </color>
-    </off_color>
-    <on_color>
-      <color name="cryo.Heater.On" red="229" green="56" blue="35">
-      </color>
-    </on_color>
-    <square>true</square>
   </widget>
   <widget type="rectangle" version="2.0.0">
     <name>Rectangle_2</name>
@@ -694,7 +619,7 @@
   <widget type="led" version="2.0.0">
     <name>LED_4</name>
     <pv_name>$(system)$(dev):INTLK</pv_name>
-    <x>354</x>
+    <x>353</x>
     <y>516</y>
     <width>25</width>
     <height>25</height>
@@ -709,10 +634,10 @@
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_115</name>
-    <text>Status:</text>
-    <x>301</x>
+    <text>Condition:</text>
+    <x>282</x>
     <y>520</y>
-    <width>44</width>
+    <width>64</width>
     <height>16</height>
     <horizontal_alignment>2</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
@@ -741,7 +666,8 @@
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_116</name>
-    <text>Notes: $(Notes)
+    <text>Notes: 
+$(Notes)
 Interlock Condition:
 $(INTLK)</text>
     <x>516</x>
@@ -749,5 +675,69 @@ $(INTLK)</text>
     <width>550</width>
     <height>90</height>
     <transparent>false</transparent>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_3</name>
+    <x>12</x>
+    <y>451</y>
+    <width>200</width>
+    <height>122</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="fgs.Gray-45" red="167" green="168" blue="170">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="byte_monitor" version="2.0.0">
+    <name>Byte Monitor</name>
+    <pv_name>$(system)$(dev):STS</pv_name>
+    <x>15</x>
+    <y>468</y>
+    <width>200</width>
+    <height>103</height>
+    <numBits>4</numBits>
+    <horizontal>false</horizontal>
+    <off_color>
+      <color name="cryo.Off" red="150" green="150" blue="150">
+      </color>
+    </off_color>
+    <on_color>
+      <color name="cryo.Heater.On" red="229" green="56" blue="35">
+      </color>
+    </on_color>
+    <labels>
+      <text>Heater OFF</text>
+      <text>ZONE 1 ON</text>
+      <text>ZONE 2 ON</text>
+      <text>BOTH ZONES ON</text>
+    </labels>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_117</name>
+    <text>Heater Status</text>
+    <x>12</x>
+    <y>444</y>
+    <width>200</width>
+    <height>22</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="255" green="255" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="cryo.Heater.On" red="229" green="56" blue="35">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <border_width>1</border_width>
   </widget>
 </display>
