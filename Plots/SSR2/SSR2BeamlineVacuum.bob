@@ -47,6 +47,12 @@
         </exp>
         <pv_name>loc://blvacp4</pv_name>
       </rule>
+      <rule name="Show Trace 5" prop_id="traces[4].visible" out_exp="false">
+        <exp bool_exp="pv0">
+          <value>true</value>
+        </exp>
+        <pv_name>loc://blvacp5</pv_name>
+      </rule>
     </rules>
     <start>-15 minutes</start>
     <end>now</end>
@@ -68,11 +74,11 @@
     <traces>
       <trace>
         <name>BL Pirani Vac.</name>
-        <y_pv>$(system)BLUSPPG1:VacP</y_pv>
+        <y_pv>$(system)BLUSPPG2:VacP</y_pv>
         <axis>0</axis>
         <trace_type>2</trace_type>
         <color>
-          <color red="0" green="234" blue="255">
+          <color red="255" green="0" blue="255">
           </color>
         </color>
         <line_width>2</line_width>
@@ -82,7 +88,7 @@
       </trace>
       <trace>
         <name>BL CC Vac.</name>
-        <y_pv>$(system)BLUSPCC1:VacP</y_pv>
+        <y_pv>$(system)BLUSPCC2:VacP</y_pv>
         <axis>0</axis>
         <trace_type>2</trace_type>
         <color>
@@ -95,12 +101,40 @@
         <visible>false</visible>
       </trace>
       <trace>
-        <name>Ion Pump Vac.</name>
-        <y_pv>$(system)BLUSION:VacP</y_pv>
+        <name>CM CC Vac</name>
+        <y_pv>$(system)BLUSPCC1:VacP</y_pv>
         <axis>0</axis>
         <trace_type>2</trace_type>
         <color>
           <color red="255" green="0" blue="0">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>false</visible>
+      </trace>
+      <trace>
+        <name>BL US Ion Vac.</name>
+        <y_pv>$(system)BLUSION:VacP</y_pv>
+        <axis>0</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color red="0" green="255" blue="0">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>false</visible>
+      </trace>
+      <trace>
+        <name>BL DS Ion Vac.</name>
+        <y_pv>$(system)BLDSION:VacP</y_pv>
+        <axis>0</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color red="0" green="255" blue="255">
           </color>
         </color>
         <line_width>2</line_width>
@@ -401,88 +435,110 @@
     <vertical_alignment>1</vertical_alignment>
     <border_width>2</border_width>
   </widget>
-  <widget type="group" version="3.0.0">
-    <name>Group</name>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_1</name>
     <x>960</x>
     <y>105</y>
     <width>130</width>
-    <height>75</height>
-    <style>3</style>
-    <transparent>true</transparent>
-    <widget type="rectangle" version="2.0.0">
-      <name>Rectangle_1</name>
-      <y>5</y>
-      <width>130</width>
-      <height>80</height>
-      <line_width>1</line_width>
-      <line_color>
-        <color red="0" green="0" blue="0">
-        </color>
-      </line_color>
-      <background_color>
-        <color red="128" green="128" blue="128">
-        </color>
-      </background_color>
-    </widget>
-    <widget type="checkbox" version="2.0.0">
-      <name>Check Box_16</name>
-      <pv_name>loc://blvacp1</pv_name>
-      <label>US BL Pirani</label>
-      <x>5</x>
-      <y>25</y>
-      <width>120</width>
-      <height>15</height>
-      <foreground_color>
-        <color red="0" green="234" blue="255">
-        </color>
-      </foreground_color>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-    </widget>
-    <widget type="checkbox" version="2.0.0">
-      <name>Check Box_17</name>
-      <pv_name>loc://blvacp2</pv_name>
-      <label>US BL CC</label>
-      <x>5</x>
-      <y>45</y>
-      <width>120</width>
-      <height>15</height>
-      <foreground_color>
-        <color red="255" green="255" blue="0">
-        </color>
-      </foreground_color>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-    </widget>
-    <widget type="label" version="2.0.0">
-      <name>Label_2</name>
-      <text>Select Traces</text>
-      <width>130</width>
-      <font>
-        <font family="Liberation Sans" style="BOLD" size="14.0">
-        </font>
+    <height>125</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="128" green="128" blue="128">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="checkbox" version="2.0.0">
+    <name>Check Box_16</name>
+    <pv_name>loc://blvacp1</pv_name>
+    <label>US-BL Pirani</label>
+    <x>965</x>
+    <y>130</y>
+    <width>120</width>
+    <height>15</height>
+    <foreground_color>
+      <color red="255" green="0" blue="255">
+      </color>
+    </foreground_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="checkbox" version="2.0.0">
+    <name>Check Box_17</name>
+    <pv_name>loc://blvacp2</pv_name>
+    <label>US-BL CC</label>
+    <x>965</x>
+    <y>150</y>
+    <width>120</width>
+    <height>15</height>
+    <foreground_color>
+      <color red="255" green="255" blue="0">
+      </color>
+    </foreground_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_2</name>
+    <text>Select Traces</text>
+    <x>960</x>
+    <y>105</y>
+    <width>130</width>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
       </font>
-      <background_color>
-        <color name="Button_Background" red="210" green="210" blue="210">
-        </color>
-      </background_color>
-      <transparent>false</transparent>
-      <horizontal_alignment>1</horizontal_alignment>
-      <vertical_alignment>1</vertical_alignment>
-      <wrap_words>false</wrap_words>
-      <border_width>1</border_width>
-    </widget>
-    <widget type="checkbox" version="2.0.0">
-      <name>Check Box_18</name>
-      <pv_name>loc://blvacp3</pv_name>
-      <label>BL Ion</label>
-      <x>5</x>
-      <y>65</y>
-      <width>120</width>
-      <height>15</height>
-      <foreground_color>
-        <color red="255" green="0" blue="0">
-        </color>
-      </foreground_color>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-    </widget>
+    </font>
+    <background_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="checkbox" version="2.0.0">
+    <name>Check Box_18</name>
+    <pv_name>loc://blvacp4</pv_name>
+    <label>US-BL Ion</label>
+    <x>965</x>
+    <y>190</y>
+    <width>120</width>
+    <height>15</height>
+    <foreground_color>
+      <color red="0" green="255" blue="0">
+      </color>
+    </foreground_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="checkbox" version="2.0.0">
+    <name>Check Box_19</name>
+    <pv_name>loc://blvacp5</pv_name>
+    <label>DS-BL Ion</label>
+    <x>965</x>
+    <y>210</y>
+    <width>120</width>
+    <height>15</height>
+    <foreground_color>
+      <color red="0" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="checkbox" version="2.0.0">
+    <name>Check Box_20</name>
+    <pv_name>loc://blvacp3</pv_name>
+    <label>US-BL CM CC</label>
+    <x>965</x>
+    <y>170</y>
+    <width>120</width>
+    <height>15</height>
+    <foreground_color>
+      <color red="255" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
 </display>
