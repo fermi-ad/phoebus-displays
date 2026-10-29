@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <display version="2.0.0">
   <name>QPM</name>
+  <macros>
+    <IOC_PREFIX>PIP2IT:QPM_PESD_</IOC_PREFIX>
+    <QPM_INITIALIZED>0</QPM_INITIALIZED>
+  </macros>
   <width>1325</width>
   <height>875</height>
   <background_color>
@@ -10,12 +14,10 @@
   <widget type="rectangle" version="2.0.0">
     <name>Rectangle</name>
     <class>EDE_Area8TitleBar</class>
-    <x use_class="true">0</x>
-    <y use_class="true">0</y>
     <width>1325</width>
-    <height use_class="true">50</height>
-    <line_width use_class="true">0</line_width>
-    <background_color use_class="true">
+    <height>50</height>
+    <line_width>0</line_width>
+    <background_color>
       <color name="EDE Area8 Color" red="170" green="210" blue="240">
       </color>
     </background_color>
@@ -24,23 +26,24 @@
     <name>Label</name>
     <class>EDE_Header</class>
     <text>$(DEV_NAME)</text>
-    <y use_class="true">0</y>
     <width>1325</width>
-    <height use_class="true">50</height>
-    <font use_class="true">
+    <height>50</height>
+    <font>
       <font name="EDE Title Bar" family="sans" style="REGULAR" size="28.0">
       </font>
     </font>
-    <foreground_color use_class="true">
+    <foreground_color>
       <color name="EDE Text Main" red="0" green="0" blue="0">
       </color>
     </foreground_color>
-    <horizontal_alignment use_class="true">1</horizontal_alignment>
-    <vertical_alignment use_class="true">1</vertical_alignment>
-    <auto_size use_class="true">false</auto_size>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display</name>
+    <macros>
+      <QPC_TAB_NUM>$(QPC_SEL)</QPC_TAB_NUM>
+    </macros>
     <file>resources/qpm_top.bob</file>
     <y>50</y>
     <width>1325</width>
@@ -51,124 +54,124 @@
     <name>Action Button</name>
     <actions>
       <action type="open_display">
-        <file>main.bob</file>
-        <macros>
-          <DEVICE>qhwr1</DEVICE>
-          <DEV_NAME>QHWR1</DEV_NAME>
-          <QPC1>Sol 1</QPC1>
-          <QPC2>Vert Corr 1</QPC2>
-          <QPC3>Horz Corr 1</QPC3>
-          <QPC4>Sol 2</QPC4>
-          <QPC5>Vert Corr 2</QPC5>
-          <QPC6>Horz Corr 2</QPC6>
-        </macros>
-        <target>replace</target>
         <description>QHWR1</description>
-      </action>
-      <action type="open_display">
         <file>main.bob</file>
         <macros>
-          <DEVICE>WFE:QPM_PESD_qhwr2</DEVICE>
-          <DEV_NAME>QHWR2</DEV_NAME>
-          <QPC1>Sol 3</QPC1>
-          <QPC2>Vert Corr 3</QPC2>
-          <QPC3>Horz Corr 3</QPC3>
-          <QPC4>Sol 4</QPC4>
-          <QPC5>Vert Corr 4</QPC5>
-          <QPC6>Horz Corr 4</QPC6>
+          <DEVICE>$(IOC_PREFIX)qhwr1</DEVICE>
+          <DEV_NAME>QHWR1</DEV_NAME>
+          <QPC1>QPC1</QPC1>
+          <QPC2>QPC2</QPC2>
+          <QPC3>QPC3</QPC3>
+          <QPC4>QPC4</QPC4>
+          <QPC5>QPC5</QPC5>
+          <QPC6>QPC6</QPC6>
         </macros>
         <target>replace</target>
+      </action>
+      <action type="open_display">
         <description>QHWR2</description>
-      </action>
-      <action type="open_display">
         <file>main.bob</file>
         <macros>
-          <DEVICE>qhwr3</DEVICE>
-          <DEV_NAME>QHWR3</DEV_NAME>
-          <QPC1>Sol 5</QPC1>
-          <QPC2>Vert Corr 5</QPC2>
-          <QPC3>Horz Corr 5</QPC3>
-          <QPC4>Sol 6</QPC4>
-          <QPC5>Vert Corr 6</QPC5>
-          <QPC6>Horz Corr 6</QPC6>
+          <DEVICE>$(IOC_PREFIX)qhwr2</DEVICE>
+          <DEV_NAME>QHWR2</DEV_NAME>
+          <QPC1>QPC1</QPC1>
+          <QPC2>QPC2</QPC2>
+          <QPC3>QPC3</QPC3>
+          <QPC4>QPC4</QPC4>
+          <QPC5>QPC5</QPC5>
+          <QPC6>QPC6</QPC6>
         </macros>
         <target>replace</target>
+      </action>
+      <action type="open_display">
         <description>QHWR3</description>
-      </action>
-      <action type="open_display">
         <file>main.bob</file>
         <macros>
-          <DEVICE>qhwr4</DEVICE>
-          <DEV_NAME>QHWR4</DEV_NAME>
-          <QPC1>Sol 7</QPC1>
-          <QPC2>Vert Corr 7</QPC2>
-          <QPC3>Horz Corr 7</QPC3>
-          <QPC4>Sol 8</QPC4>
-          <QPC5>Vert Corr 8</QPC5>
-          <QPC6>Horz Corr 8</QPC6>
+          <DEVICE>$(IOC_PREFIX)qhwr3</DEVICE>
+          <DEV_NAME>QHWR3</DEV_NAME>
+          <QPC1>QPC1</QPC1>
+          <QPC2>QPC2</QPC2>
+          <QPC3>QPC3</QPC3>
+          <QPC4>QPC4</QPC4>
+          <QPC5>QPC5</QPC5>
+          <QPC6>QPC6</QPC6>
         </macros>
         <target>replace</target>
+      </action>
+      <action type="open_display">
         <description>QHWR4</description>
-      </action>
-      <action type="open_display">
         <file>main.bob</file>
         <macros>
-          <DEVICE>qssr11</DEVICE>
-          <DEV_NAME>QSSR11</DEV_NAME>
-          <QPC1>Sol 1</QPC1>
-          <QPC2>Corr 1-1</QPC2>
-          <QPC3>Corr 1-2</QPC3>
-          <QPC4>Corr 1-3</QPC4>
-          <QPC5>Corr 1-4</QPC5>
-          <QPC6>N/A</QPC6>
+          <DEVICE>$(IOC_PREFIX)qhwr4</DEVICE>
+          <DEV_NAME>QHWR4</DEV_NAME>
+          <QPC1>QPC1</QPC1>
+          <QPC2>QPC2</QPC2>
+          <QPC3>QPC3</QPC3>
+          <QPC4>QPC4</QPC4>
+          <QPC5>QPC5</QPC5>
+          <QPC6>QPC6</QPC6>
         </macros>
         <target>replace</target>
+      </action>
+      <action type="open_display">
         <description>QSSR11</description>
-      </action>
-      <action type="open_display">
         <file>main.bob</file>
         <macros>
-          <DEVICE>qssr12</DEVICE>
-          <DEV_NAME>QSSR12</DEV_NAME>
-          <QPC1>Sol 2</QPC1>
-          <QPC2>Corr 2-1</QPC2>
-          <QPC3>Corr 2-2</QPC3>
-          <QPC4>Corr 2-3</QPC4>
-          <QPC5>Corr 2-4</QPC5>
-          <QPC6>N/A</QPC6>
+          <DEVICE>$(IOC_PREFIX)qssr11</DEVICE>
+          <DEV_NAME>QSSR11</DEV_NAME>
+          <QPC1>Sol1</QPC1>
+          <QPC2>Cor1-1</QPC2>
+          <QPC3>Cor1-2</QPC3>
+          <QPC4>QPC4</QPC4>
+          <QPC5>QPC5</QPC5>
+          <QPC6>QPC6</QPC6>
         </macros>
         <target>replace</target>
+      </action>
+      <action type="open_display">
         <description>QSSR12</description>
-      </action>
-      <action type="open_display">
         <file>main.bob</file>
         <macros>
-          <DEVICE>qssr13</DEVICE>
-          <DEV_NAME>QSSR13</DEV_NAME>
-          <QPC1>Sol 3</QPC1>
-          <QPC2>Corr 3-1</QPC2>
-          <QPC3>Corr 3-2</QPC3>
-          <QPC4>Corr 3-3</QPC4>
-          <QPC5>Corr 3-4</QPC5>
-          <QPC6>N/A</QPC6>
+          <DEVICE>$(IOC_PREFIX)qssr12</DEVICE>
+          <DEV_NAME>QSSR12</DEV_NAME>
+          <QPC1>Sol2</QPC1>
+          <QPC2>Cor2-1</QPC2>
+          <QPC3>Cor2-2</QPC3>
+          <QPC4>QPC4</QPC4>
+          <QPC5>QPC5</QPC5>
+          <QPC6>QPC6</QPC6>
         </macros>
         <target>replace</target>
+      </action>
+      <action type="open_display">
         <description>QSSR13</description>
-      </action>
-      <action type="open_display">
         <file>main.bob</file>
         <macros>
-          <DEVICE>qssr14</DEVICE>
-          <DEV_NAME>QSSR14</DEV_NAME>
-          <QPC1>Sol 4</QPC1>
-          <QPC2>Corr 4-1</QPC2>
-          <QPC3>Corr 4-2</QPC3>
-          <QPC4>Corr 4-3</QPC4>
-          <QPC5>Corr 4-4</QPC5>
-          <QPC6>N/A</QPC6>
+          <DEVICE>$(IOC_PREFIX)qssr13</DEVICE>
+          <DEV_NAME>QSSR13</DEV_NAME>
+          <QPC1>QPC1</QPC1>
+          <QPC2>QPC2</QPC2>
+          <QPC3>QPC3</QPC3>
+          <QPC4>QPC4</QPC4>
+          <QPC5>QPC5</QPC5>
+          <QPC6>QPC6</QPC6>
         </macros>
         <target>replace</target>
+      </action>
+      <action type="open_display">
         <description>QSSR14</description>
+        <file>main.bob</file>
+        <macros>
+          <DEVICE>$(IOC_PREFIX)qssr14</DEVICE>
+          <DEV_NAME>QSSR14</DEV_NAME>
+          <QPC1>Sol3</QPC1>
+          <QPC2>Cor3-1</QPC2>
+          <QPC3>Cor3-2</QPC3>
+          <QPC4>QPC4</QPC4>
+          <QPC5>QPC5</QPC5>
+          <QPC6>QPC6</QPC6>
+        </macros>
+        <target>replace</target>
       </action>
     </actions>
     <text>Select QPM...</text>
@@ -189,5 +192,19 @@
     </background_color>
     <tooltip>$(actions)</tooltip>
     <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Macro Debug</name>
+  <text>DEVICE=$(DEVICE) | QPC1=$(QPC1) | QPC2=$(QPC2)</text>
+    <visible>false</visible>
+    <x>10</x>
+    <y>900</y>
+    <width>1200</width>
+    <height>30</height>
+    <scripts>
+      <script file="initialize.py" check_connections="false">
+        <pv_name>loc://startup(1)</pv_name>
+      </script>
+    </scripts>
   </widget>
 </display>
