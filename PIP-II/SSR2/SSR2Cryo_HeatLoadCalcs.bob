@@ -5,7 +5,7 @@
     <system>PIP2IT:ppSSR2_CRYO_</system>
   </macros>
   <width>930</width>
-  <height>500</height>
+  <height>700</height>
   <widget type="navtabs" version="2.0.0">
     <name>Navigation Tabs</name>
     <tabs>
@@ -64,14 +64,14 @@
         </deselected_color>
       </tab>
     </tabs>
-    <y>204</y>
+    <y>690</y>
     <width>920</width>
     <height>460</height>
     <direction>0</direction>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_2</name>
-    <text>Temperature (acnet): </text>
+    <text>Temperature: </text>
     <x>3</x>
     <y>75</y>
     <width>150</width>
@@ -90,7 +90,7 @@
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_3</name>
-    <text>Pressure (acnet): </text>
+    <text>Pressure: </text>
     <x>3</x>
     <y>95</y>
     <width>150</width>
@@ -109,7 +109,7 @@
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_4</name>
-    <text>Pressure (converted): </text>
+    <text>Pressure (kpaa): </text>
     <x>3</x>
     <y>115</y>
     <width>150</width>
@@ -192,447 +192,114 @@
     <transparent>true</transparent>
     <widget type="combo" version="2.0.0">
       <name>Combo Box</name>
-      <pv_name>loc://HLNameSel</pv_name>
+      <pv_name>loc://sel("40KSupUT")</pv_name>
       <width>172</width>
       <height>34</height>
       <items>
-        <item>item 0</item>
-        <item>Item 1</item>
-        <item>Item 2</item>
-        <item>Item 3</item>
-        <item>Item 4</item>
-        <item>Item 5</item>
-        <item>Item 6</item>
-        <item>Item 7</item>
-        <item>Item 8</item>
-        <item>Item 9</item>
-        <item>Item 10</item>
-        <item>Item 11</item>
-        <item>Item 12</item>
-        <item>Item 13</item>
-        <item>Item 14</item>
-        <item>Item 15</item>
-        <item>Item 16</item>
-        <item>Item 17</item>
-        <item>Item 18</item>
-        <item>Item 19</item>
-        <item>Item 20</item>
-        <item>Item 21</item>
-        <item>Item 22</item>
-        <item>Item 23</item>
-        <item>Item 24</item>
+        <item>5KSupUT</item>
+        <item>8KRetUT</item>
+        <item>40KSupUT</item>
+        <item>80KRetUT</item>
+        <item>VLPUT</item>
+        <item>HTTSint</item>
+        <item>LTTSint</item>
+        <item>JTHXHP</item>
+        <item>JTHXVLP</item>
+        <item>HTTStot</item>
+        <item>LTTStot</item>
+        <item>VLPtot</item>
+        <item>CMtot</item>
+        <item>VLPout</item>
+        <item>HXVLPmax</item>
+        <item>HXHPmax</item>
+        <item>5KSupIn</item>
+        <item>CMtoHX</item>
       </items>
+      <items_from_pv>false</items_from_pv>
     </widget>
     <widget type="embedded" version="2.0.0">
       <name>Embedded Display</name>
       <macros>
-        <HLName>loc://HLNameSel</HLName>
+        <HLName>40KSupUT</HLName>
+        <TempIn>TO612</TempIn>
+        <TempOut>TX037A</TempOut>
+        <PresIn>PT612</PresIn>
+        <PresOut>PT612</PresOut>
       </macros>
       <file>SSR2Cryo_HeatLoadCalcTable.bob</file>
       <y>34</y>
       <width>173</width>
       <height>165</height>
+      <scripts>
+        <script file="EmbeddedPy" check_connections="false">
+          <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil, ScriptUtil
+from org.phoebus.framework.macros import Macros
+
+log = ScriptUtil.getLogger()
+
+# circuit : (Pin, Tin, Pout, Tout)
+TABLE = {
+    "5KSupUT":  ("PT610",  "TO610",  "PT610", "TX030A"),
+    "8KRetUT":  ("PT611",  "TX034A", "PT611", "TO611"),
+    "40KSupUT": ("PT612",  "TO612",  "PT612", "TX037A"),
+    "80KRetUT": ("PT613",  "TX038A", "PT613", "TO613"),
+    "VLPUT":    ("PT609",  "TX619",  "PT609", "TX618"),
+    "HTTSint":  ("PT612",  "TX037A", "PT613", "TX038A"),
+    "LTTSint":  ("PT610",  "TX030A", "PT611", "TX034A"),
+    "JTHXHP":   ("PT610",  "TX048",  "PT610", "TX049"),
+    "JTHXVLP":  ("PTBath", "TX041",  "PTBath", "TX042"),
+    "HTTStot":  ("PT612",  "TO612",  "PT613", "TO613H"),
+    "LTTStot":  ("PT610",  "TO610",  "PT611", "TO611"),
+    "VLPtot":   ("PT610",  "TO610",  "PT609", "TO609"),
+    "CMtot":    ("PT610",  "TX030",  "PT609", "TX043"),
+    "VLPout":   ("PTBath", "TX043",  "PT609", "TO609"),
+    "HXVLPmax": ("PTBath", "TX041",  "Bath", "TX048"),
+    "HXHPmax":  ("PT610",  "TX048",  "PT610", "TX041"),
+    "5KSupIn":  ("PT610",  "TO610",  "PT610", "TX048"),
+    "CMtoHX":   ("PT610",  "TX030A", "PT610", "TX048"),
+}
+
+managed = ["HLName", "PresIn", "TempIn", "PresOut", "TempOut"]
+
+try:
+    sel = PVUtil.getString(pvs[0])
+
+    old = widget.getPropertyValue("macros")
+    macros = Macros()
+    for name in old.getNames():
+        if name not in managed:
+            macros.add(name, old.getValue(name))
+
+    macros.add("HLName", sel)
+
+    entry = TABLE.get(sel)
+    if entry is None:
+        log.warning("no table entry for " + sel)
+    else:
+        pin, tin, pout, tout = entry
+        macros.add("PresIn", pin)
+        macros.add("TempIn", tin)
+        macros.add("PresOut", pout)
+        macros.add("TempOut", tout)
+
+    widget.setPropertyValue("macros", macros)
+    log.warning("macros set: " + str(widget.getPropertyValue("macros")))
+except Exception as e:
+    log.warning("FAILED: " + str(e))]]></text>
+          <pv_name>loc://sel</pv_name>
+        </script>
+      </scripts>
     </widget>
   </widget>
-  <widget type="group" version="3.0.0">
-    <name>Group</name>
-    <x>110</x>
-    <y>664</y>
-    <width>470</width>
-    <height>400</height>
-    <style>3</style>
-    <transparent>true</transparent>
-    <widget type="scrollbar" version="2.0.0">
-      <name>Scrollbar_1</name>
-      <x>50</x>
-      <width>20</width>
-      <height>400</height>
-      <horizontal>false</horizontal>
-    </widget>
-    <widget type="navtabs" version="2.0.0">
-      <name>Navigation Tabs_2</name>
-      <tabs>
-        <tab>
-          <name>40KSupUT</name>
-          <file>SSR2Cryo_HeatLoadCalcTable.bob</file>
-          <macros>
-            <HLName>40KSupUT</HLName>
-          </macros>
-          <group_name></group_name>
-          <selected_color>
-            <color red="236" green="236" blue="236">
-            </color>
-          </selected_color>
-          <deselected_color>
-            <color red="200" green="200" blue="200">
-            </color>
-          </deselected_color>
-        </tab>
-        <tab>
-          <name>Tab 2</name>
-          <file>SSR2Cryo_HeatLoadCalcTable.bob</file>
-          <macros>
-          </macros>
-          <group_name></group_name>
-          <selected_color>
-            <color red="236" green="236" blue="236">
-            </color>
-          </selected_color>
-          <deselected_color>
-            <color red="200" green="200" blue="200">
-            </color>
-          </deselected_color>
-        </tab>
-        <tab>
-          <name>Tab 3</name>
-          <file>SSR2Cryo_HeatLoadCalcTable.bob</file>
-          <macros>
-          </macros>
-          <group_name></group_name>
-          <selected_color>
-            <color red="236" green="236" blue="236">
-            </color>
-          </selected_color>
-          <deselected_color>
-            <color red="200" green="200" blue="200">
-            </color>
-          </deselected_color>
-        </tab>
-        <tab>
-          <name>Tab 4</name>
-          <file>SSR2Cryo_HeatLoadCalcTable.bob</file>
-          <macros>
-          </macros>
-          <group_name></group_name>
-          <selected_color>
-            <color red="236" green="236" blue="236">
-            </color>
-          </selected_color>
-          <deselected_color>
-            <color red="200" green="200" blue="200">
-            </color>
-          </deselected_color>
-        </tab>
-        <tab>
-          <name>Tab 5</name>
-          <file>SSR2Cryo_HeatLoadCalcTable.bob</file>
-          <macros>
-          </macros>
-          <group_name></group_name>
-          <selected_color>
-            <color red="236" green="236" blue="236">
-            </color>
-          </selected_color>
-          <deselected_color>
-            <color red="200" green="200" blue="200">
-            </color>
-          </deselected_color>
-        </tab>
-        <tab>
-          <name>Tab 6</name>
-          <file></file>
-          <macros>
-          </macros>
-          <group_name></group_name>
-          <selected_color>
-            <color red="236" green="236" blue="236">
-            </color>
-          </selected_color>
-          <deselected_color>
-            <color red="200" green="200" blue="200">
-            </color>
-          </deselected_color>
-        </tab>
-        <tab>
-          <name>Tab 7</name>
-          <file></file>
-          <macros>
-          </macros>
-          <group_name></group_name>
-          <selected_color>
-            <color red="236" green="236" blue="236">
-            </color>
-          </selected_color>
-          <deselected_color>
-            <color red="200" green="200" blue="200">
-            </color>
-          </deselected_color>
-        </tab>
-        <tab>
-          <name>Tab 8</name>
-          <file></file>
-          <macros>
-          </macros>
-          <group_name></group_name>
-          <selected_color>
-            <color red="236" green="236" blue="236">
-            </color>
-          </selected_color>
-          <deselected_color>
-            <color red="200" green="200" blue="200">
-            </color>
-          </deselected_color>
-        </tab>
-        <tab>
-          <name>Tab 9</name>
-          <file></file>
-          <macros>
-          </macros>
-          <group_name></group_name>
-          <selected_color>
-            <color red="236" green="236" blue="236">
-            </color>
-          </selected_color>
-          <deselected_color>
-            <color red="200" green="200" blue="200">
-            </color>
-          </deselected_color>
-        </tab>
-        <tab>
-          <name>Tab 10</name>
-          <file></file>
-          <macros>
-          </macros>
-          <group_name></group_name>
-          <selected_color>
-            <color red="236" green="236" blue="236">
-            </color>
-          </selected_color>
-          <deselected_color>
-            <color red="200" green="200" blue="200">
-            </color>
-          </deselected_color>
-        </tab>
-        <tab>
-          <name>Tab 11</name>
-          <file></file>
-          <macros>
-          </macros>
-          <group_name></group_name>
-          <selected_color>
-            <color red="236" green="236" blue="236">
-            </color>
-          </selected_color>
-          <deselected_color>
-            <color red="200" green="200" blue="200">
-            </color>
-          </deselected_color>
-        </tab>
-        <tab>
-          <name>Tab 12</name>
-          <file></file>
-          <macros>
-          </macros>
-          <group_name></group_name>
-          <selected_color>
-            <color red="236" green="236" blue="236">
-            </color>
-          </selected_color>
-          <deselected_color>
-            <color red="200" green="200" blue="200">
-            </color>
-          </deselected_color>
-        </tab>
-        <tab>
-          <name>Tab 13</name>
-          <file></file>
-          <macros>
-          </macros>
-          <group_name></group_name>
-          <selected_color>
-            <color red="236" green="236" blue="236">
-            </color>
-          </selected_color>
-          <deselected_color>
-            <color red="200" green="200" blue="200">
-            </color>
-          </deselected_color>
-        </tab>
-        <tab>
-          <name>Tab 14</name>
-          <file></file>
-          <macros>
-          </macros>
-          <group_name></group_name>
-          <selected_color>
-            <color red="236" green="236" blue="236">
-            </color>
-          </selected_color>
-          <deselected_color>
-            <color red="200" green="200" blue="200">
-            </color>
-          </deselected_color>
-        </tab>
-        <tab>
-          <name>Tab 15</name>
-          <file></file>
-          <macros>
-          </macros>
-          <group_name></group_name>
-          <selected_color>
-            <color red="236" green="236" blue="236">
-            </color>
-          </selected_color>
-          <deselected_color>
-            <color red="200" green="200" blue="200">
-            </color>
-          </deselected_color>
-        </tab>
-        <tab>
-          <name>Tab 16</name>
-          <file></file>
-          <macros>
-          </macros>
-          <group_name></group_name>
-          <selected_color>
-            <color red="236" green="236" blue="236">
-            </color>
-          </selected_color>
-          <deselected_color>
-            <color red="200" green="200" blue="200">
-            </color>
-          </deselected_color>
-        </tab>
-        <tab>
-          <name>Tab 17</name>
-          <file></file>
-          <macros>
-          </macros>
-          <group_name></group_name>
-          <selected_color>
-            <color red="236" green="236" blue="236">
-            </color>
-          </selected_color>
-          <deselected_color>
-            <color red="200" green="200" blue="200">
-            </color>
-          </deselected_color>
-        </tab>
-        <tab>
-          <name>Tab 18</name>
-          <file></file>
-          <macros>
-          </macros>
-          <group_name></group_name>
-          <selected_color>
-            <color red="236" green="236" blue="236">
-            </color>
-          </selected_color>
-          <deselected_color>
-            <color red="200" green="200" blue="200">
-            </color>
-          </deselected_color>
-        </tab>
-        <tab>
-          <name>Tab 19</name>
-          <file></file>
-          <macros>
-          </macros>
-          <group_name></group_name>
-          <selected_color>
-            <color red="236" green="236" blue="236">
-            </color>
-          </selected_color>
-          <deselected_color>
-            <color red="200" green="200" blue="200">
-            </color>
-          </deselected_color>
-        </tab>
-        <tab>
-          <name>Tab 20</name>
-          <file></file>
-          <macros>
-          </macros>
-          <group_name></group_name>
-          <selected_color>
-            <color red="236" green="236" blue="236">
-            </color>
-          </selected_color>
-          <deselected_color>
-            <color red="200" green="200" blue="200">
-            </color>
-          </deselected_color>
-        </tab>
-        <tab>
-          <name>Tab 21</name>
-          <file></file>
-          <macros>
-          </macros>
-          <group_name></group_name>
-          <selected_color>
-            <color red="236" green="236" blue="236">
-            </color>
-          </selected_color>
-          <deselected_color>
-            <color red="200" green="200" blue="200">
-            </color>
-          </deselected_color>
-        </tab>
-        <tab>
-          <name>Tab 22</name>
-          <file></file>
-          <macros>
-          </macros>
-          <group_name></group_name>
-          <selected_color>
-            <color red="236" green="236" blue="236">
-            </color>
-          </selected_color>
-          <deselected_color>
-            <color red="200" green="200" blue="200">
-            </color>
-          </deselected_color>
-        </tab>
-        <tab>
-          <name>Tab 23</name>
-          <file></file>
-          <macros>
-          </macros>
-          <group_name></group_name>
-          <selected_color>
-            <color red="236" green="236" blue="236">
-            </color>
-          </selected_color>
-          <deselected_color>
-            <color red="200" green="200" blue="200">
-            </color>
-          </deselected_color>
-        </tab>
-        <tab>
-          <name>Tab 24</name>
-          <file></file>
-          <macros>
-          </macros>
-          <group_name></group_name>
-          <selected_color>
-            <color red="236" green="236" blue="236">
-            </color>
-          </selected_color>
-          <deselected_color>
-            <color red="200" green="200" blue="200">
-            </color>
-          </deselected_color>
-        </tab>
-        <tab>
-          <name>Tab 25</name>
-          <file></file>
-          <macros>
-          </macros>
-          <group_name></group_name>
-          <selected_color>
-            <color red="236" green="236" blue="236">
-            </color>
-          </selected_color>
-          <deselected_color>
-            <color red="200" green="200" blue="200">
-            </color>
-          </deselected_color>
-        </tab>
-      </tabs>
-      <x>80</x>
-      <width>390</width>
-      <height>400</height>
-      <tab_width>200</tab_width>
-    </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_2</name>
+    <macros>
+      <circ>40KSupUT</circ>
+    </macros>
+    <file>../Common/cryo-embedded-displays/HeatLoad.bob</file>
+    <x>3</x>
+    <y>210</y>
+    <width>917</width>
+    <height>420</height>
   </widget>
 </display>
