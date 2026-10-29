@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>CDS Details</name>
+  <macros>
+    <fg>PIP2IT:ppSSR2_CTRL_</fg>
+    <flow>PIP2IT:ppSSR2_CRYO_</flow>
+    <P>PIP2IT:ppSSR2_</P>
+    <htr>PIP2IT:ppSSR2_CRYO_</htr>
+    <jtvlv>PIP2IT:ppSSR2_CRYO_</jtvlv>
+    <lhe>PIP2IT:ppSSR2_CRYO_</lhe>
+    <opc>PIP2IT:ppSSR2_CRYO_</opc>
+    <pmt>PIP2IT:ppSSR2_CRYO_</pmt>
+    <press>PIP2IT:ppSSR2_CRYO_</press>
+    <rfpi>PIP2IT:ppSSR2_RFPI_</rfpi>
+    <temp>PIP2IT:ppSSR2_CRYO_</temp>
+    <vac>PIP2IT:ppSSR2_VAC_</vac>
+    <vlv>PIP2IT:ppSSR2_CRYO_</vlv>
+    <state>PIP2IT:ppSSR2_CTRL_SM:STATE</state>
+    <system>PIP2IT:ppSSR2_CRYO_</system>
+  </macros>
+  <x>520</x>
+  <y>235</y>
+  <width>1305</width>
+  <height>1160</height>
+  <background_color>
+    <color name="cryo.PrimaryBackground" red="217" green="217" blue="217">
+    </color>
+  </background_color>
+  <grid_step_x>5</grid_step_x>
+  <grid_step_y>5</grid_step_y>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_56</name>
+    <macros>
+      <view>CDS</view>
+    </macros>
+    <file>SSR2banner.bob</file>
+    <x>1</x>
+    <y>1</y>
+    <width>1300</width>
+    <height>40</height>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group_6</name>
+    <x>60</x>
+    <y>60</y>
+    <width>225</width>
+    <height>150</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>Label_78</name>
+      <text>Interlocks</text>
+      <width>225</width>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <background_color>
+        <color red="153" green="153" blue="153">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle_20</name>
+      <y>20</y>
+      <width>225</width>
+      <height>130</height>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="bool_button" version="2.0.0">
+      <name>Boolean Button</name>
+      <pv_name>$(system)CPRF:INTLKreset</pv_name>
+      <x>165</x>
+      <y>125</y>
+      <width>55</width>
+      <height>20</height>
+      <visible>false</visible>
+      <off_label>Reset</off_label>
+      <off_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </off_color>
+      <on_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </on_color>
+      <show_led>false</show_led>
+      <rules>
+        <rule name="Show Reset" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0=1">
+            <value>true</value>
+          </exp>
+          <pv_name>$(system)CPRF:INTLK</pv_name>
+        </rule>
+      </rules>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <mode>1</mode>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_79</name>
+      <text> Cavity Burst Disc</text>
+      <x>25</x>
+      <y>27</y>
+      <width>140</width>
+      <background_color>
+        <color name="Read_Background" red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_80</name>
+      <text> HTTS GHe dP</text>
+      <x>25</x>
+      <y>67</y>
+      <width>140</width>
+      <background_color>
+        <color name="Read_Background" red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_81</name>
+      <text> HTTS dT</text>
+      <x>25</x>
+      <y>87</y>
+      <width>140</width>
+      <background_color>
+        <color name="Read_Background" red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_14</name>
+      <pv_name>$(system)PT042:INTLK</pv_name>
+      <x>5</x>
+      <y>45</y>
+      <off_label>0</off_label>
+      <off_color>
+        <color name="OK" red="0" green="255" blue="0">
+        </color>
+      </off_color>
+      <on_label>1</on_label>
+      <on_color>
+        <color name="MAJOR" red="255" green="0" blue="0">
+        </color>
+      </on_color>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <square>true</square>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_82</name>
+      <text> Cavity GHe Pressure</text>
+      <x>25</x>
+      <y>47</y>
+      <width>140</width>
+      <background_color>
+        <color name="Read_Background" red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_15</name>
+      <pv_name>$(system)HTTSDT:INTLK</pv_name>
+      <x>5</x>
+      <y>85</y>
+      <off_label>0</off_label>
+      <off_color>
+        <color name="OK" red="0" green="255" blue="0">
+        </color>
+      </off_color>
+      <on_label>1</on_label>
+      <on_color>
+        <color name="MAJOR" red="255" green="0" blue="0">
+        </color>
+      </on_color>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <square>true</square>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_16</name>
+      <pv_name>$(system)RD708:INTLK</pv_name>
+      <x>5</x>
+      <y>25</y>
+      <off_label>0</off_label>
+      <off_color>
+        <color name="OK" red="0" green="255" blue="0">
+        </color>
+      </off_color>
+      <on_label>1</on_label>
+      <on_color>
+        <color name="MAJOR" red="255" green="0" blue="0">
+        </color>
+      </on_color>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <square>true</square>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_17</name>
+      <pv_name>$(system)S240KDP:INTLK</pv_name>
+      <x>5</x>
+      <y>65</y>
+      <off_label>0</off_label>
+      <off_color>
+        <color name="OK" red="0" green="255" blue="0">
+        </color>
+      </off_color>
+      <on_label>1</on_label>
+      <on_color>
+        <color name="MAJOR" red="255" green="0" blue="0">
+        </color>
+      </on_color>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <square>true</square>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_83</name>
+      <text> RF</text>
+      <x>25</x>
+      <y>105</y>
+      <width>140</width>
+      <background_color>
+        <color name="Read_Background" red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_18</name>
+      <pv_name>$(system)CPRF:INTLK</pv_name>
+      <x>5</x>
+      <y>105</y>
+      <off_label>0</off_label>
+      <off_color>
+        <color name="OK" red="0" green="255" blue="0">
+        </color>
+      </off_color>
+      <on_label>1</on_label>
+      <on_color>
+        <color name="MAJOR" red="255" green="0" blue="0">
+        </color>
+      </on_color>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <square>true</square>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_84</name>
+      <text> SC Magnets</text>
+      <x>25</x>
+      <y>125</y>
+      <width>140</width>
+      <background_color>
+        <color name="Read_Background" red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_19</name>
+      <pv_name>$(system)CPMAGNET:INTLK</pv_name>
+      <x>5</x>
+      <y>122</y>
+      <off_label>0</off_label>
+      <off_color>
+        <color name="OK" red="0" green="255" blue="0">
+        </color>
+      </off_color>
+      <on_label>1</on_label>
+      <on_color>
+        <color name="MAJOR" red="255" green="0" blue="0">
+        </color>
+      </on_color>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <square>true</square>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="bool_button" version="2.0.0">
+      <name>Boolean Button_1</name>
+      <pv_name>$(system)RD708:INTLKreset</pv_name>
+      <x>165</x>
+      <y>25</y>
+      <width>55</width>
+      <height>20</height>
+      <visible>false</visible>
+      <off_label>Reset</off_label>
+      <off_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </off_color>
+      <on_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </on_color>
+      <show_led>false</show_led>
+      <rules>
+        <rule name="Show Reset" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0=1">
+            <value>true</value>
+          </exp>
+          <pv_name>$(system)RD708:INTLK</pv_name>
+        </rule>
+      </rules>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <mode>1</mode>
+    </widget>
+    <widget type="bool_button" version="2.0.0">
+      <name>Boolean Button_2</name>
+      <pv_name>$(system)S240KDP:INTLKreset</pv_name>
+      <x>165</x>
+      <y>65</y>
+      <width>55</width>
+      <height>20</height>
+      <visible>false</visible>
+      <off_label>Reset</off_label>
+      <off_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </off_color>
+      <on_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </on_color>
+      <show_led>false</show_led>
+      <rules>
+        <rule name="Show Reset" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0=1">
+            <value>true</value>
+          </exp>
+          <pv_name>$(system)S240KDP:INTLK</pv_name>
+        </rule>
+      </rules>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <mode>1</mode>
+    </widget>
+    <widget type="bool_button" version="2.0.0">
+      <name>Boolean Button_3</name>
+      <pv_name>$(system)HTTSDT:INTLKreset</pv_name>
+      <x>165</x>
+      <y>85</y>
+      <width>55</width>
+      <height>20</height>
+      <visible>false</visible>
+      <off_label>Reset</off_label>
+      <off_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </off_color>
+      <on_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </on_color>
+      <show_led>false</show_led>
+      <rules>
+        <rule name="Show Reset" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0=1">
+            <value>true</value>
+          </exp>
+          <pv_name>$(system)HTTSDT:INTLK</pv_name>
+        </rule>
+      </rules>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <mode>1</mode>
+    </widget>
+    <widget type="bool_button" version="2.0.0">
+      <name>Boolean Button_4</name>
+      <pv_name>$(system)CPMAGNET:INTLKreset</pv_name>
+      <x>165</x>
+      <y>105</y>
+      <width>55</width>
+      <height>20</height>
+      <visible>false</visible>
+      <off_label>Reset</off_label>
+      <off_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </off_color>
+      <on_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </on_color>
+      <show_led>false</show_led>
+      <rules>
+        <rule name="Show Reset" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0=1">
+            <value>true</value>
+          </exp>
+          <pv_name>$(system)CPMAGNET:INTLK</pv_name>
+        </rule>
+      </rules>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <mode>1</mode>
+    </widget>
+    <widget type="bool_button" version="2.0.0">
+      <name>Boolean Button_5</name>
+      <pv_name>$(system)PT042:INTLKreset</pv_name>
+      <x>165</x>
+      <y>45</y>
+      <width>55</width>
+      <height>20</height>
+      <visible>false</visible>
+      <off_label>Reset</off_label>
+      <off_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </off_color>
+      <on_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </on_color>
+      <show_led>false</show_led>
+      <rules>
+        <rule name="Show Reset" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0=1">
+            <value>true</value>
+          </exp>
+          <pv_name>$(system)PT042:INTLK</pv_name>
+        </rule>
+      </rules>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <mode>1</mode>
+    </widget>
+  </widget>
+</display>
