@@ -602,7 +602,7 @@
           <Var2>Temp</Var2>
           <Intlk1>PT623_612</Intlk1>
           <Intlk2>TEMP_MAX</Intlk2>
-          <IntlkCon>1. HTTS Diff Pressure: (PT623 - PT612 &gt; 0 psid, &amp; PV625 open)\n2. HTTS Diff Temperature: (absolute dT between max(TX037A, TX038A, TX060, TX061, TX062, TX063, TX064, TX066, TX067, TX068 and TX069) and min(TX037A, TX038A, TX060, TX061, TX062, TX063, TX064, TX066, TX067, TX068 and TX069))</IntlkCon>
+          <IntlkCon>1. HTTS Diff Pressure: (PT623 &lt; PT612, &amp; PV625 open)\n2. HTTS Diff Temperature: (absolute dT between max(TX037A, TX038A, TX060, TX061, TX062, TX063, TX064, TX066, TX067, TX068 and TX069) and min(TX037A, TX038A, TX060, TX061, TX062, TX063, TX064, TX066, TX067, TX068 and TX069))</IntlkCon>
           <Notes>80K Return (HTTS) Cooldown Valve to Compressor Suction</Notes>
         </macros>
         <target>tab</target>
@@ -1782,7 +1782,7 @@ $(actions)</tooltip>
           <Intlk2>TEMP_MAX</Intlk2>
           <Intlk1>PT623_612</Intlk1>
           <dev>PV613</dev>
-          <IntlkCon>1. HTTS Diff Pressure: (PT623 - PT612 &gt; 0 psid, &amp; PV625 open)\n2. HTTS Diff Temperature: (absolute dT between max(TX037A, TX038A, TX060, TX061, TX062, TX063, TX064, TX066, TX067, TX068 and TX069) and min(TX037A, TX038A, TX060, TX061, TX062, TX063, TX064, TX066, TX067, TX068 and TX069))</IntlkCon>
+          <IntlkCon>1. HTTS Diff Pressure: (PT623 &lt; PT612, &amp; PV625 open)\n2. HTTS Diff Temperature: (absolute dT between max(TX037A, TX038A, TX060, TX061, TX062, TX063, TX064, TX066, TX067, TX068 and TX069) and min(TX037A, TX038A, TX060, TX061, TX062, TX063, TX064, TX066, TX067, TX068 and TX069))</IntlkCon>
           <Notes>80K Return Valve (HTTS Out)</Notes>
         </macros>
         <target>tab</target>
@@ -2010,7 +2010,7 @@ $(actions)</tooltip>
           <Intlk2>TEMP_MAX</Intlk2>
           <Intlk1>PT623_612</Intlk1>
           <dev>PV612</dev>
-          <IntlkCon>1. HTTS Diff Pressure: (PT623 - PT612 &gt; 0 psid, &amp; PV625 open)\n2. HTTS Diff Temperature: (absolute dT between max(TX037A, TX038A, TX060, TX061, TX062, TX063, TX064, TX066, TX067, TX068 and TX069) and min(TX037A, TX038A, TX060, TX061, TX062, TX063, TX064, TX066, TX067, TX068 and TX069))</IntlkCon>
+          <IntlkCon>1. HTTS Diff Pressure: (PT623 &lt; PT612, &amp; PV625 open)\n2. HTTS Diff Temperature: (absolute dT between max(TX037A, TX038A, TX060, TX061, TX062, TX063, TX064, TX066, TX067, TX068 and TX069) and min(TX037A, TX038A, TX060, TX061, TX062, TX063, TX064, TX066, TX067, TX068 and TX069))</IntlkCon>
           <Notes>40K Supply Valve (HTTS In)</Notes>
         </macros>
         <target>tab</target>
@@ -2736,8 +2736,8 @@ Suction</text>
   </widget>
   <widget type="polyline" version="2.0.0">
     <name>Polyline_331</name>
-    <x>430</x>
-    <y>140</y>
+    <x>426</x>
+    <y>134</y>
     <width>80</width>
     <height>85</height>
     <points>
@@ -3445,7 +3445,7 @@ Suction</text>
           <Intlk2>TEMP_MAX</Intlk2>
           <Intlk1>PT623_612</Intlk1>
           <dev>PV625</dev>
-          <IntlkCon>1. HTTS Diff Pressure: (PT623 - PT612 &gt; 0 psid, &amp; PV625 open)\n2. HTTS Diff Temperature: (absolute dT between max(TX037A, TX038A, TX060, TX061, TX062, TX063, TX064, TX066, TX067, TX068 and TX069) and min(TX037A, TX038A, TX060, TX061, TX062, TX063, TX064, TX066, TX067, TX068 and TX069))</IntlkCon>
+          <IntlkCon>1. HTTS Diff Pressure: (PT623 &lt; PT612, &amp; PV625 open)\n2. HTTS Diff Temperature: (absolute dT between max(TX037A, TX038A, TX060, TX061, TX062, TX063, TX064, TX066, TX067, TX068 and TX069) and min(TX037A, TX038A, TX060, TX061, TX062, TX063, TX064, TX066, TX067, TX068 and TX069))</IntlkCon>
           <Notes>Warm Helium HTTS Mixing Valve</Notes>
         </macros>
         <target>tab</target>
@@ -5254,7 +5254,7 @@ $(actions)</tooltip>
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display_251</name>
     <macros>
-      <dev>PT633</dev>
+      <dev>PT633V</dev>
     </macros>
     <file>../Common/cryo-embedded-displays/PressureSensorDown.bob</file>
     <x>990</x>
@@ -5299,5 +5299,47 @@ $(actions)</tooltip>
         </color>
       </line_color>
     </widget>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_210</name>
+    <macros>
+      <dev>TO625</dev>
+    </macros>
+    <file>../Common/cryo-embedded-displays/TempSensorDown.bob</file>
+    <x>519</x>
+    <y>162</y>
+    <width>65</width>
+    <height>35</height>
+  </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>Ellipse_198</name>
+    <x>505</x>
+    <y>175</y>
+    <width>10</width>
+    <height>10</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_422</name>
+    <x>510</x>
+    <y>180</y>
+    <width>10</width>
+    <height>0</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="10.0" y="0.0">
+      </point>
+    </points>
+    <line_width>1</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
   </widget>
 </display>
