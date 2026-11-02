@@ -3,6 +3,22 @@
   <name>HTTS Strip Charts</name>
   <width>1400</width>
   <height>1000</height>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_3</name>
+    <x>1250</x>
+    <y>720</y>
+    <width>140</width>
+    <height>170</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="Grid" red="128" green="128" blue="128">
+      </color>
+    </background_color>
+  </widget>
   <widget type="stripchart" version="2.1.0">
     <name>Strip Chart_1</name>
     <x>40</x>
@@ -393,6 +409,12 @@
         </exp>
         <pv_name>loc://t8</pv_name>
       </rule>
+      <rule name="Show Trace 9" prop_id="traces[0].visible" out_exp="false">
+        <exp bool_exp="pv0">
+          <value>true</value>
+        </exp>
+        <pv_name>loc://t9</pv_name>
+      </rule>
     </rules>
     <start>-12 hour</start>
     <end>now</end>
@@ -474,7 +496,7 @@
         <axis>0</axis>
         <trace_type>2</trace_type>
         <color>
-          <color red="255" green="255" blue="0">
+          <color name="Write_Background" red="128" green="255" blue="255">
           </color>
         </color>
         <line_width>2</line_width>
@@ -488,7 +510,7 @@
         <axis>0</axis>
         <trace_type>2</trace_type>
         <color>
-          <color red="0" green="234" blue="255">
+          <color name="MINOR" red="255" green="128" blue="0">
           </color>
         </color>
         <line_width>2</line_width>
@@ -502,7 +524,7 @@
         <axis>0</axis>
         <trace_type>2</trace_type>
         <color>
-          <color red="255" green="127" blue="0">
+          <color red="191" green="255" blue="0">
           </color>
         </color>
         <line_width>2</line_width>
@@ -516,13 +538,27 @@
         <axis>0</axis>
         <trace_type>2</trace_type>
         <color>
-          <color red="191" green="255" blue="0">
+          <color name="HWRcolor" red="0" green="181" blue="226">
           </color>
         </color>
         <line_width>2</line_width>
         <point_type>0</point_type>
         <point_size>10</point_size>
         <visible>false</visible>
+      </trace>
+      <trace>
+        <name>HTTS dT</name>
+        <y_pv>$(system)S2HTTSDTMX2:Temp</y_pv>
+        <axis>0</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color name="INVALID" red="255" green="0" blue="255">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
       </trace>
     </traces>
   </widget>
@@ -756,161 +792,153 @@ Traces</text>
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
   </widget>
-  <widget type="group" version="3.0.0">
-    <name>Group</name>
+  <widget type="label" version="2.0.0">
+    <name>Label_4</name>
+    <text>Select
+Temperature
+Traces</text>
     <x>1250</x>
     <y>670</y>
     <width>140</width>
-    <height>195</height>
-    <style>3</style>
-    <transparent>true</transparent>
-    <widget type="label" version="2.0.0">
-      <name>Label_4</name>
-      <text>Select
-Temperature
-Traces</text>
-      <width>140</width>
-      <height>50</height>
-      <font>
-        <font family="Liberation Sans" style="BOLD" size="14.0">
-        </font>
+    <height>50</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
       </font>
-      <background_color>
-        <color name="Button_Background" red="210" green="210" blue="210">
-        </color>
-      </background_color>
-      <transparent>false</transparent>
-      <horizontal_alignment>1</horizontal_alignment>
-      <vertical_alignment>1</vertical_alignment>
-      <wrap_words>false</wrap_words>
-      <border_width>1</border_width>
-    </widget>
-    <widget type="rectangle" version="2.0.0">
-      <name>Rectangle_3</name>
-      <y>50</y>
-      <width>140</width>
-      <height>145</height>
-      <line_width>1</line_width>
-      <line_color>
-        <color red="0" green="0" blue="0">
-        </color>
-      </line_color>
-      <background_color>
-        <color name="Grid" red="128" green="128" blue="128">
-        </color>
-      </background_color>
-    </widget>
-    <widget type="checkbox" version="2.0.0">
-      <name>Check Box_11</name>
-      <pv_name>loc://t1</pv_name>
-      <label>TX060</label>
-      <x>5</x>
-      <y>55</y>
-      <width>130</width>
-      <height>15</height>
-      <foreground_color>
-        <color red="0" green="0" blue="255">
-        </color>
-      </foreground_color>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-    </widget>
-    <widget type="checkbox" version="2.0.0">
-      <name>Check Box_25</name>
-      <pv_name>loc://t2</pv_name>
-      <label>TX061</label>
-      <x>5</x>
-      <y>71</y>
-      <width>130</width>
-      <height>15</height>
-      <foreground_color>
-        <color red="255" green="0" blue="0">
-        </color>
-      </foreground_color>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-    </widget>
-    <widget type="checkbox" version="2.0.0">
-      <name>Check Box_26</name>
-      <pv_name>loc://t3</pv_name>
-      <label>TX063</label>
-      <x>5</x>
-      <y>86</y>
-      <width>130</width>
-      <height>15</height>
-      <foreground_color>
-        <color red="0" green="255" blue="0">
-        </color>
-      </foreground_color>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-    </widget>
-    <widget type="checkbox" version="2.0.0">
-      <name>Check Box_27</name>
-      <pv_name>loc://t4</pv_name>
-      <label>TX064</label>
-      <x>5</x>
-      <y>102</y>
-      <width>130</width>
-      <height>15</height>
-      <foreground_color>
-        <color red="170" green="0" blue="255">
-        </color>
-      </foreground_color>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-    </widget>
-    <widget type="checkbox" version="2.0.0">
-      <name>Check Box_29</name>
-      <pv_name>loc://t5</pv_name>
-      <label>TX066</label>
-      <x>5</x>
-      <y>120</y>
-      <width>130</width>
-      <height>15</height>
-      <foreground_color>
-        <color red="0" green="234" blue="255">
-        </color>
-      </foreground_color>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-    </widget>
-    <widget type="checkbox" version="2.0.0">
-      <name>Check Box_30</name>
-      <pv_name>loc://t6</pv_name>
-      <label>TX067</label>
-      <x>5</x>
-      <y>139</y>
-      <width>130</width>
-      <height>15</height>
-      <foreground_color>
-        <color red="255" green="127" blue="0">
-        </color>
-      </foreground_color>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-    </widget>
-    <widget type="checkbox" version="2.0.0">
-      <name>Check Box_31</name>
-      <pv_name>loc://t7</pv_name>
-      <label>TX068</label>
-      <x>5</x>
-      <y>156</y>
-      <width>130</width>
-      <height>15</height>
-      <foreground_color>
-        <color red="191" green="255" blue="0">
-        </color>
-      </foreground_color>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-    </widget>
-    <widget type="checkbox" version="2.0.0">
-      <name>Check Box_32</name>
-      <pv_name>loc://t8</pv_name>
-      <label>TX069</label>
-      <x>5</x>
-      <y>175</y>
-      <width>130</width>
-      <height>15</height>
-      <foreground_color>
-        <color red="0" green="149" blue="255">
-        </color>
-      </foreground_color>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-    </widget>
+    </font>
+    <background_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="checkbox" version="2.0.0">
+    <name>Check Box_11</name>
+    <pv_name>loc://t1</pv_name>
+    <label>TX060</label>
+    <x>1255</x>
+    <y>725</y>
+    <width>130</width>
+    <height>15</height>
+    <foreground_color>
+      <color red="0" green="0" blue="255">
+      </color>
+    </foreground_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="checkbox" version="2.0.0">
+    <name>Check Box_25</name>
+    <pv_name>loc://t2</pv_name>
+    <label>TX061</label>
+    <x>1255</x>
+    <y>741</y>
+    <width>130</width>
+    <height>15</height>
+    <foreground_color>
+      <color red="255" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="checkbox" version="2.0.0">
+    <name>Check Box_26</name>
+    <pv_name>loc://t3</pv_name>
+    <label>TX063</label>
+    <x>1255</x>
+    <y>757</y>
+    <width>130</width>
+    <height>15</height>
+    <foreground_color>
+      <color red="0" green="255" blue="0">
+      </color>
+    </foreground_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="checkbox" version="2.0.0">
+    <name>Check Box_27</name>
+    <pv_name>loc://t4</pv_name>
+    <label>TX064</label>
+    <x>1255</x>
+    <y>774</y>
+    <width>130</width>
+    <height>15</height>
+    <foreground_color>
+      <color red="170" green="0" blue="255">
+      </color>
+    </foreground_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="checkbox" version="2.0.0">
+    <name>Check Box_29</name>
+    <pv_name>loc://t5</pv_name>
+    <label>TX066</label>
+    <x>1255</x>
+    <y>791</y>
+    <width>130</width>
+    <height>15</height>
+    <foreground_color>
+      <color red="0" green="234" blue="255">
+      </color>
+    </foreground_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="checkbox" version="2.0.0">
+    <name>Check Box_30</name>
+    <pv_name>loc://t6</pv_name>
+    <label>TX067</label>
+    <x>1255</x>
+    <y>809</y>
+    <width>130</width>
+    <height>15</height>
+    <foreground_color>
+      <color red="255" green="127" blue="0">
+      </color>
+    </foreground_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="checkbox" version="2.0.0">
+    <name>Check Box_31</name>
+    <pv_name>loc://t7</pv_name>
+    <label>TX068</label>
+    <x>1255</x>
+    <y>828</y>
+    <width>130</width>
+    <height>15</height>
+    <foreground_color>
+      <color red="191" green="255" blue="0">
+      </color>
+    </foreground_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="checkbox" version="2.0.0">
+    <name>Check Box_32</name>
+    <pv_name>loc://t8</pv_name>
+    <label>TX069</label>
+    <x>1255</x>
+    <y>846</y>
+    <width>130</width>
+    <height>15</height>
+    <foreground_color>
+      <color red="0" green="149" blue="255">
+      </color>
+    </foreground_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="checkbox" version="2.0.0">
+    <name>Check Box_35</name>
+    <pv_name>loc://t9</pv_name>
+    <label>HTTS dT</label>
+    <x>1255</x>
+    <y>865</y>
+    <width>130</width>
+    <height>15</height>
+    <foreground_color>
+      <color name="INVALID" red="255" green="0" blue="255">
+      </color>
+    </foreground_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
 </display>
