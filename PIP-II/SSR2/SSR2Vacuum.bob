@@ -1727,7 +1727,7 @@ $(actions)</tooltip>
   </widget>
   <widget type="bool_button" version="2.0.0">
     <name>Boolean Button</name>
-    <pv_name>$(P)PLC_650-plc111:sB23000</pv_name>
+    <pv_name>$(system)IVRST:sReset</pv_name>
     <x>695</x>
     <y>80</y>
     <width>55</width>
@@ -1738,7 +1738,7 @@ $(actions)</tooltip>
       <color name="Button_Background" red="210" green="210" blue="210">
       </color>
     </off_color>
-    <on_label></on_label>
+    <on_label>Reset</on_label>
     <on_color>
       <color name="Button_Background" red="210" green="210" blue="210">
       </color>
@@ -1753,6 +1753,7 @@ $(actions)</tooltip>
       </rule>
     </rules>
     <border_alarm_sensitive>false</border_alarm_sensitive>
+    <mode>1</mode>
   </widget>
   <widget type="bool_button" version="2.0.0">
     <name>Boolean Button_2</name>
@@ -1787,54 +1788,6 @@ $(actions)</tooltip>
     </rules>
     <border_alarm_sensitive>false</border_alarm_sensitive>
     <mode>1</mode>
-  </widget>
-  <widget type="bool_button" version="2.0.0">
-    <name>Boolean Button_1</name>
-    <pv_name>$(system)IVTRBVLV:sOpen</pv_name>
-    <x>225</x>
-    <y>190</y>
-    <width>60</width>
-    <height>20</height>
-    <off_label>Set Open</off_label>
-    <off_color>
-      <color name="Button_Background" red="210" green="210" blue="210">
-      </color>
-    </off_color>
-    <on_label>Set Closed</on_label>
-    <on_color>
-      <color name="Button_Background" red="210" green="210" blue="210">
-      </color>
-    </on_color>
-    <show_led>false</show_led>
-    <font>
-      <font family="Liberation Sans" style="BOLD" size="11.0">
-      </font>
-    </font>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
-  <widget type="bool_button" version="2.0.0">
-    <name>Boolean Button_3</name>
-    <pv_name>$(system)IVSCRL:sOffOn</pv_name>
-    <x>895</x>
-    <y>205</y>
-    <width>60</width>
-    <height>20</height>
-    <off_label>Set On</off_label>
-    <off_color>
-      <color name="Button_Background" red="210" green="210" blue="210">
-      </color>
-    </off_color>
-    <on_label>Set Off</on_label>
-    <on_color>
-      <color name="Button_Background" red="210" green="210" blue="210">
-      </color>
-    </on_color>
-    <show_led>false</show_led>
-    <font>
-      <font family="Liberation Sans" style="BOLD" size="11.0">
-      </font>
-    </font>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_104</name>
@@ -2329,28 +2282,180 @@ $(actions)</tooltip>
       </color>
     </border_color>
   </widget>
-  <widget type="bool_button" version="2.0.0">
-    <name>Boolean Button_4</name>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button</name>
+    <actions>
+      <action type="write_pv">
+        <description>Set Open</description>
+        <pv_name>$(pv_name)</pv_name>
+        <value>1</value>
+      </action>
+    </actions>
+    <pv_name>$(system)IVTRBVLV:sOpen</pv_name>
+    <x>225</x>
+    <y>190</y>
+    <width>60</width>
+    <height>20</height>
+    <visible>false</visible>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="11.0">
+      </font>
+    </font>
+    <rules>
+      <rule name="Show Open" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0=0">
+          <value>true</value>
+        </exp>
+        <pv_name>$(system)IVTRBVLV:ValveStatus</pv_name>
+      </rule>
+    </rules>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_3</name>
+    <actions>
+      <action type="write_pv">
+        <description>Set Closed</description>
+        <pv_name>$(pv_name)</pv_name>
+        <value>0</value>
+      </action>
+    </actions>
+    <pv_name>$(system)IVTRBVLV:sOpen</pv_name>
+    <x>225</x>
+    <y>190</y>
+    <width>60</width>
+    <height>20</height>
+    <visible>false</visible>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="11.0">
+      </font>
+    </font>
+    <rules>
+      <rule name="Show Set Closed" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0=1">
+          <value>true</value>
+        </exp>
+        <pv_name>$(system)IVTRBVLV:ValveStatus</pv_name>
+      </rule>
+    </rules>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_4</name>
+    <actions>
+      <action type="write_pv">
+        <description>Set On</description>
+        <pv_name>$(pv_name)</pv_name>
+        <value>1</value>
+      </action>
+    </actions>
+    <pv_name>$(system)IVSCRL:sOffOn</pv_name>
+    <x>895</x>
+    <y>205</y>
+    <width>60</width>
+    <height>20</height>
+    <visible>false</visible>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="11.0">
+      </font>
+    </font>
+    <rules>
+      <rule name="Show Set On" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0=0">
+          <value>true</value>
+        </exp>
+        <pv_name>$(system)IVSCRL:PumpStatus</pv_name>
+      </rule>
+    </rules>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_6</name>
+    <actions>
+      <action type="write_pv">
+        <description>Set Off</description>
+        <pv_name>$(pv_name)</pv_name>
+        <value>0</value>
+      </action>
+    </actions>
+    <pv_name>$(system)IVSCRL:sOffOn</pv_name>
+    <x>895</x>
+    <y>205</y>
+    <width>60</width>
+    <height>20</height>
+    <visible>false</visible>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="11.0">
+      </font>
+    </font>
+    <rules>
+      <rule name="Show Set Off" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0=1">
+          <value>true</value>
+        </exp>
+        <pv_name>$(system)IVSCRL:PumpStatus</pv_name>
+      </rule>
+    </rules>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_7</name>
+    <actions>
+      <action type="write_pv">
+        <description>Set On</description>
+        <pv_name>$(pv_name)</pv_name>
+        <value>1</value>
+      </action>
+    </actions>
     <pv_name>$(system)IVTRBO:sOffOn</pv_name>
     <x>510</x>
     <y>205</y>
     <width>60</width>
     <height>20</height>
-    <off_label>Set On</off_label>
-    <off_color>
-      <color name="Button_Background" red="210" green="210" blue="210">
-      </color>
-    </off_color>
-    <on_label>Set Off</on_label>
-    <on_color>
-      <color name="Button_Background" red="210" green="210" blue="210">
-      </color>
-    </on_color>
-    <show_led>false</show_led>
+    <visible>false</visible>
     <font>
-      <font family="Liberation Sans" style="BOLD" size="11.0">
+      <font family="Liberation Sans" style="REGULAR" size="11.0">
       </font>
     </font>
+    <rules>
+      <rule name="Show Set On" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0=0 || (pv0=1 &amp;&amp; pv1=1)">
+          <value>true</value>
+        </exp>
+        <pv_name>$(system)IVTRBO:PumpStatus</pv_name>
+        <pv_name>$(system)IVTRBO:STATUS.B5</pv_name>
+      </rule>
+    </rules>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_8</name>
+    <actions>
+      <action type="write_pv">
+        <description>Set Off</description>
+        <pv_name>$(pv_name)</pv_name>
+        <value>0</value>
+      </action>
+    </actions>
+    <pv_name>$(system)IVTRBO:sOffOn</pv_name>
+    <x>510</x>
+    <y>205</y>
+    <width>60</width>
+    <height>20</height>
+    <visible>false</visible>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="11.0">
+      </font>
+    </font>
+    <rules>
+      <rule name="Show Set Off" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0=2 || (pv0=1 &amp;&amp; pv1=1)">
+          <value>true</value>
+        </exp>
+        <pv_name>$(system)IVTRBO:PumpStatus</pv_name>
+        <pv_name>$(system)IVTRBO:STATUS.B4</pv_name>
+      </rule>
+    </rules>
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
 </display>
