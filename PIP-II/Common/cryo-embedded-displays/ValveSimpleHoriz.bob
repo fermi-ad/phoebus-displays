@@ -8,11 +8,10 @@
   <height>75</height>
   <widget type="symbol" version="2.0.0">
     <name>Symbol_29</name>
-    <pv_name>$(system)$(dev):VLVstat</pv_name>
+    <pv_name>$(system)$(dev):Open</pv_name>
     <symbols>
       <symbol>../../Images/Cryo/png/OnOffValveGray.png</symbol>
       <symbol>../../Images/Cryo/png/OnOffValveGreen.png</symbol>
-      <symbol>../../Images/Cryo/png/OnOffValveRed.png</symbol>
     </symbols>
     <x>9</x>
     <width>45</width>
@@ -20,6 +19,17 @@
     <actions>
     </actions>
     <run_actions_on_mouse_click>true</run_actions_on_mouse_click>
+    <rules>
+      <rule name="New Rule" prop_id="symbols[0]" out_exp="false">
+        <exp bool_exp="pv0 == 0">
+          <value>../../Images/Cryo/png/OnOffValveGray.png</value>
+        </exp>
+        <exp bool_exp="pv0 &gt; 0">
+          <value>../../Images/Cryo/png/OnOffValveGray.png</value>
+        </exp>
+        <pv_name>$(system)$(dev):Open</pv_name>
+      </rule>
+    </rules>
     <tooltip>$(pv_name)
 $(pv_value)
 $(actions)</tooltip>
