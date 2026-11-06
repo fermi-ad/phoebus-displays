@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <display version="2.0.0">
   <name>XRM-VST-Display</name>
-  <width>1900</width>
+  <width>2225</width>
   <height>2920</height>
   <widget type="label" version="2.0.0">
     <name>Label</name>
@@ -13722,16 +13722,92 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label_15</name>
-    <text>Device Name $(Device)</text>
-    <x>607</x>
-    <y>2</y>
-    <width>420</width>
+    <name>Label_16</name>
+    <text>SOE data on XRM : $(XRM)   
+
+Type : $(Type)  
+
+Channels : $(one) - $(ten) </text>
+    <x>1898</x>
+    <y>33</y>
+    <width>320</width>
+    <height>127</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="18.0">
+      </font>
+    </font>
     <background_color>
-      <color name="Attention" red="255" green="160" blue="0">
+      <color name="acorn.plt.green" red="170" green="216" blue="74">
       </color>
     </background_color>
     <transparent>false</transparent>
-    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button</name>
+    <actions>
+      <action type="write_pv">
+        <description>Take SOE Data</description>
+        <pv_name>$(SOE-PM):SOE:RUNSTOP</pv_name>
+        <value>1</value>
+      </action>
+    </actions>
+    <x>1898</x>
+    <y>171</y>
+    <width>121</width>
+    <height>50</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="16.0">
+      </font>
+    </font>
+    <background_color>
+      <color name="STOP" red="255" green="0" blue="0">
+      </color>
+    </background_color>
+    <rules>
+      <rule name="Button_Color" prop_id="background_color" out_exp="false">
+        <exp bool_exp="pv0 == 1">
+          <value>
+            <color name="On" red="0" green="255" blue="0">
+            </color>
+          </value>
+        </exp>
+        <pv_name>$(SOE-PM):SOE:RUNSTOP</pv_name>
+      </rule>
+    </rules>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_2</name>
+    <actions>
+      <action type="write_pv">
+        <description>Stop SOE Data</description>
+        <pv_name>$(SOE-PM):SOE:RUNSTOP</pv_name>
+        <value>0</value>
+      </action>
+    </actions>
+    <x>1898</x>
+    <y>235</y>
+    <width>121</width>
+    <height>50</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="16.0">
+      </font>
+    </font>
+    <background_color>
+      <color name="STOP" red="255" green="0" blue="0">
+      </color>
+    </background_color>
+    <rules>
+      <rule name="Button_Color" prop_id="background_color" out_exp="false">
+        <exp bool_exp="pv0 == 0">
+          <value>
+            <color name="On" red="0" green="255" blue="0">
+            </color>
+          </value>
+        </exp>
+        <pv_name>$(SOE-PM):SOE:RUNSTOP</pv_name>
+      </rule>
+    </rules>
+    <tooltip>$(actions)</tooltip>
   </widget>
 </display>
