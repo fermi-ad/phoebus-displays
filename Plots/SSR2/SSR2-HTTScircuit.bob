@@ -2,7 +2,23 @@
 <display version="2.0.0">
   <name>HTTS Strip Charts</name>
   <width>1400</width>
-  <height>1000</height>
+  <height>1500</height>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_4</name>
+    <x>1256</x>
+    <y>1143</y>
+    <width>140</width>
+    <height>127</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="128" green="128" blue="128">
+      </color>
+    </background_color>
+  </widget>
   <widget type="rectangle" version="2.0.0">
     <name>Rectangle_3</name>
     <x>1256</x>
@@ -247,7 +263,7 @@
     </y_axes>
     <traces>
       <trace>
-        <name>He Flow - high</name>
+        <name>FT600A - high</name>
         <y_pv>$(system)FT600A:GHeFlow</y_pv>
         <axis>0</axis>
         <trace_type>2</trace_type>
@@ -261,7 +277,7 @@
         <visible>false</visible>
       </trace>
       <trace>
-        <name>He Flow - low</name>
+        <name>FT600B - low</name>
         <y_pv>$(system)FT600B:GHeFlow</y_pv>
         <axis>0</axis>
         <trace_type>2</trace_type>
@@ -939,6 +955,370 @@ Traces</text>
     <height>15</height>
     <foreground_color>
       <color name="STOP" red="255" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="stripchart" version="2.1.0">
+    <name>Strip Chart_4</name>
+    <x>20</x>
+    <y>1095</y>
+    <width>1230</width>
+    <height>333</height>
+    <background_color>
+      <color name="Read_Background" red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <show_grid>true</show_grid>
+    <title>Cooldown Plot</title>
+    <scale_font>
+      <font family="Liberation Sans" style="REGULAR" size="11.0">
+      </font>
+    </scale_font>
+    <show_legend>true</show_legend>
+    <rules>
+      <rule name="Show He Flow - high - trace" prop_id="traces[0].visible" out_exp="false">
+        <exp bool_exp="pv0">
+          <value>false</value>
+        </exp>
+        <pv_name>loc://CD1</pv_name>
+      </rule>
+      <rule name="Show He Flow - low - trace" prop_id="traces[1].visible" out_exp="false">
+        <exp bool_exp="pv0">
+          <value>false</value>
+        </exp>
+        <pv_name>loc://CD2</pv_name>
+      </rule>
+      <rule name="Show Flow - AXIS" prop_id="y_axes[0].visible" out_exp="false">
+        <exp bool_exp="pv0 || pv1">
+          <value>true</value>
+        </exp>
+        <pv_name>loc://CD1</pv_name>
+        <pv_name>loc://CD2</pv_name>
+      </rule>
+      <rule name="Show GHe 40K Supply pressure" prop_id="traces[2].visible" out_exp="false">
+        <exp bool_exp="pv0">
+          <value>false</value>
+        </exp>
+        <pv_name>loc://CD3</pv_name>
+      </rule>
+      <rule name="Show Pressure - AXIS" prop_id="y_axes[1].visible" out_exp="false">
+        <exp bool_exp="pv0">
+          <value>true</value>
+        </exp>
+        <pv_name>loc://CD3</pv_name>
+      </rule>
+      <rule name="Show HTTS Diff Temp" prop_id="traces[3].visible" out_exp="false">
+        <exp bool_exp="pv0">
+          <value>false</value>
+        </exp>
+        <pv_name>loc://CD4</pv_name>
+      </rule>
+      <rule name="Show 40K Temp" prop_id="traces[4].visible" out_exp="false">
+        <exp bool_exp="pv0">
+          <value>false</value>
+        </exp>
+        <pv_name>loc://CD5</pv_name>
+      </rule>
+      <rule name="Show Temp - AXIS" prop_id="y_axes[2].visible" out_exp="false">
+        <exp bool_exp="pv0 || pv1">
+          <value>true</value>
+        </exp>
+        <pv_name>loc://CD4</pv_name>
+        <pv_name>loc://CD5</pv_name>
+      </rule>
+      <rule name="Show Warm He Valve" prop_id="traces[5].visible" out_exp="false">
+        <exp bool_exp="pv0">
+          <value>false</value>
+        </exp>
+        <pv_name>loc://CD6</pv_name>
+      </rule>
+      <rule name="Show 40K Valve" prop_id="traces[6].visible" out_exp="false">
+        <exp bool_exp="pv0">
+          <value>false</value>
+        </exp>
+        <pv_name>loc://CD7</pv_name>
+      </rule>
+      <rule name="Show Valve - AXIS" prop_id="y_axes[3].visible" out_exp="false">
+        <exp bool_exp="pv0 || pv1">
+          <value>true</value>
+        </exp>
+        <pv_name>loc://CD7</pv_name>
+        <pv_name>loc://CD6</pv_name>
+      </rule>
+    </rules>
+    <start>-12 hour</start>
+    <end>now</end>
+    <y_axes>
+      <y_axis>
+        <title>He Flow (g/s)</title>
+        <autoscale>true</autoscale>
+        <log_scale>false</log_scale>
+        <minimum>-5.0</minimum>
+        <maximum>100.0</maximum>
+        <show_grid>true</show_grid>
+        <visible>false</visible>
+        <color>
+          <color name="Text" red="0" green="0" blue="0">
+          </color>
+        </color>
+      </y_axis>
+      <y_axis>
+        <title>GHe Pressure (psig)</title>
+        <autoscale>true</autoscale>
+        <log_scale>false</log_scale>
+        <minimum>0.0</minimum>
+        <maximum>250.0</maximum>
+        <show_grid>true</show_grid>
+        <visible>false</visible>
+        <color>
+          <color name="HWRcolor" red="0" green="181" blue="226">
+          </color>
+        </color>
+      </y_axis>
+      <y_axis>
+        <title>He Temp (K)</title>
+        <autoscale>true</autoscale>
+        <log_scale>false</log_scale>
+        <minimum>0.0</minimum>
+        <maximum>300.0</maximum>
+        <show_grid>true</show_grid>
+        <visible>false</visible>
+        <color>
+          <color name="Grid" red="128" green="128" blue="128">
+          </color>
+        </color>
+      </y_axis>
+      <y_axis>
+        <title>Valve Position (%)</title>
+        <autoscale>true</autoscale>
+        <log_scale>false</log_scale>
+        <minimum>0.0</minimum>
+        <maximum>100.0</maximum>
+        <show_grid>true</show_grid>
+        <visible>false</visible>
+        <color>
+          <color name="SMpurple" red="220" green="185" blue="235">
+          </color>
+        </color>
+      </y_axis>
+    </y_axes>
+    <traces>
+      <trace>
+        <name>FT600A - high</name>
+        <y_pv>$(system)FT600A:GHeFlow</y_pv>
+        <axis>0</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color red="0" green="255" blue="255">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>false</visible>
+      </trace>
+      <trace>
+        <name>FT600B - low</name>
+        <y_pv>$(system)FT600B:GHeFlow</y_pv>
+        <axis>0</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color name="Attention" red="255" green="160" blue="0">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>false</visible>
+      </trace>
+      <trace>
+        <name>40K Supply - PT612</name>
+        <y_pv>$(system)PT612:Pressure</y_pv>
+        <axis>1</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color red="0" green="0" blue="255">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>false</visible>
+      </trace>
+      <trace>
+        <name>HTTS dT</name>
+        <y_pv>$(system)S2HTTSDTMX2:Temp</y_pv>
+        <axis>2</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color red="255" green="0" blue="0">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>false</visible>
+      </trace>
+      <trace>
+        <name>40K Supply - TX037A</name>
+        <y_pv>$(system)TX037A:Temp</y_pv>
+        <axis>2</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color red="0" green="255" blue="0">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>false</visible>
+      </trace>
+      <trace>
+        <name>Warm He - PV625</name>
+        <y_pv>$(system)PV625:Open</y_pv>
+        <axis>3</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color red="170" green="0" blue="255">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>false</visible>
+      </trace>
+      <trace>
+        <name>40K - PV612</name>
+        <y_pv>$(system)PV612:Open</y_pv>
+        <axis>3</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color name="INVALID" red="255" green="0" blue="255">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>false</visible>
+      </trace>
+    </traces>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_5</name>
+    <text>Select Traces</text>
+    <x>1256</x>
+    <y>1093</y>
+    <width>140</width>
+    <height>50</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <background_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="checkbox" version="2.0.0">
+    <name>Check Box_21</name>
+    <pv_name>loc://CD1</pv_name>
+    <label>He Flow -high</label>
+    <x>1261</x>
+    <y>1148</y>
+    <width>130</width>
+    <height>15</height>
+    <foreground_color>
+      <color red="0" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="checkbox" version="2.0.0">
+    <name>Check Box_22</name>
+    <pv_name>loc://CD2</pv_name>
+    <label>He Flow - low</label>
+    <x>1261</x>
+    <y>1163</y>
+    <width>130</width>
+    <height>15</height>
+    <foreground_color>
+      <color name="Attention" red="255" green="160" blue="0">
+      </color>
+    </foreground_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="checkbox" version="2.0.0">
+    <name>Check Box_28</name>
+    <pv_name>loc://CD3</pv_name>
+    <label>40K Supply Pres</label>
+    <x>1261</x>
+    <y>1178</y>
+    <width>130</width>
+    <height>15</height>
+    <foreground_color>
+      <color red="0" green="0" blue="255">
+      </color>
+    </foreground_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="checkbox" version="2.0.0">
+    <name>Check Box_36</name>
+    <pv_name>loc://CD6</pv_name>
+    <label>Warm He Supply</label>
+    <x>1261</x>
+    <y>1223</y>
+    <width>130</width>
+    <height>15</height>
+    <foreground_color>
+      <color red="170" green="0" blue="255">
+      </color>
+    </foreground_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="checkbox" version="2.0.0">
+    <name>Check Box_37</name>
+    <pv_name>loc://CD4</pv_name>
+    <label>Shield dT</label>
+    <x>1261</x>
+    <y>1193</y>
+    <width>130</width>
+    <height>15</height>
+    <foreground_color>
+      <color red="255" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="checkbox" version="2.0.0">
+    <name>Check Box_38</name>
+    <pv_name>loc://CD5</pv_name>
+    <label>40K Supply Temp</label>
+    <x>1261</x>
+    <y>1208</y>
+    <width>130</width>
+    <height>15</height>
+    <foreground_color>
+      <color red="0" green="255" blue="0">
+      </color>
+    </foreground_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="checkbox" version="2.0.0">
+    <name>Check Box_39</name>
+    <pv_name>loc://CD7</pv_name>
+    <label>40K Supply</label>
+    <x>1261</x>
+    <y>1242</y>
+    <width>130</width>
+    <height>15</height>
+    <foreground_color>
+      <color name="INVALID" red="255" green="0" blue="255">
       </color>
     </foreground_color>
     <border_alarm_sensitive>false</border_alarm_sensitive>
