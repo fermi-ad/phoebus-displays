@@ -26,6 +26,42 @@
   </background_color>
   <grid_step_x>5</grid_step_x>
   <grid_step_y>5</grid_step_y>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_98</name>
+    <x>569</x>
+    <y>195</y>
+    <width>267</width>
+    <height>1</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="267.0" y="0.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="200" green="0" blue="200">
+      </color>
+    </line_color>
+    <arrows>2</arrows>
+    <arrow_length>15</arrow_length>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_335</name>
+    <x>787</x>
+    <y>193</y>
+    <width>1</width>
+    <points>
+      <point x="0.0" y="20.0">
+      </point>
+      <point x="0.0" y="0.0">
+      </point>
+    </points>
+    <line_width>1</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+  </widget>
   <widget type="picture" version="2.0.0">
     <name>Picture</name>
     <file>../../images/SSR2Cryostat.png</file>
@@ -1999,11 +2035,13 @@
     <widget type="polyline" version="2.0.0">
       <name>Polyline_287</name>
       <x>5</x>
-      <y>5</y>
       <width>1</width>
-      <height>10</height>
       <points>
+        <point x="0.0" y="20.0">
+        </point>
         <point x="0.0" y="10.0">
+        </point>
+        <point x="0.0" y="5.0">
         </point>
         <point x="0.0" y="0.0">
         </point>
@@ -2787,25 +2825,6 @@
       </background_color>
     </widget>
   </widget>
-  <widget type="polyline" version="2.0.0">
-    <name>Polyline_98</name>
-    <x>569</x>
-    <y>195</y>
-    <width>267</width>
-    <height>1</height>
-    <points>
-      <point x="0.0" y="0.0">
-      </point>
-      <point x="267.0" y="0.0">
-      </point>
-    </points>
-    <line_color>
-      <color red="200" green="0" blue="200">
-      </color>
-    </line_color>
-    <arrows>2</arrows>
-    <arrow_length>15</arrow_length>
-  </widget>
   <widget type="label" version="2.0.0">
     <name>Label_15</name>
     <text>To Compressor
@@ -2847,10 +2866,10 @@ Suction</text>
     <widget type="polyline" version="2.0.0">
       <name>Polyline_330</name>
       <x>5</x>
-      <y>5</y>
       <width>1</width>
-      <height>10</height>
       <points>
+        <point x="0.0" y="20.0">
+        </point>
         <point x="0.0" y="10.0">
         </point>
         <point x="0.0" y="0.0">
@@ -5020,7 +5039,7 @@ Motors</text>
     <actions>
       <action type="open_display">
         <description>5K Valve Strip Charts</description>
-        <file>../../Plots/HB650-5KPlantValves.bob</file>
+        <file>../../Plots/SSR2/SSR2-5KPlantValves.bob</file>
         <target>tab</target>
       </action>
     </actions>
@@ -5138,16 +5157,17 @@ Motors</text>
     <actions>
       <action type="open_display">
         <description>Open Display</description>
-        <file>../Common/cryo-embedded-displays/ValveControlPIDIntlk2PVs.bob</file>
+        <file>../Common/cryo-embedded-displays/ValveControlPID2Intlk2PVs.bob</file>
         <macros>
           <dev>PVCD</dev>
           <PV1>LT041A</PV1>
           <Var1>LHeLvl</Var1>
-          <Intlk>RD708</Intlk>
+          <Intlk1>RD708</Intlk1>
           <PV2>FT600A</PV2>
           <Var2>GHeFlow</Var2>
           <IntlkCon>1. Rupture Disk RD708: (41 psig)\n2. Cavity High Pressure: (PT042 &gt; 25 psia, reset at 20 psia)</IntlkCon>
           <Notes>Cooldown Valve</Notes>
+          <Intlk2>PT042</Intlk2>
         </macros>
         <target>window</target>
       </action>
@@ -5670,5 +5690,33 @@ Motors</text>
         </color>
       </line_color>
     </widget>
+  </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>Ellipse_22</name>
+    <x>782</x>
+    <y>190</y>
+    <width>10</width>
+    <height>10</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_19</name>
+    <actions>
+      <action type="open_display">
+        <description>State Machine</description>
+        <file>SSR2StateMachine.bob</file>
+        <target>tab</target>
+      </action>
+    </actions>
+    <text>State Machine</text>
+    <x>1130</x>
+    <y>615</y>
+    <width>160</width>
+    <tooltip>$(actions)</tooltip>
   </widget>
 </display>
