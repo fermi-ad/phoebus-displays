@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <display version="2.0.0">
   <width>900</width>
-  <height>1050</height>
+  <height>1070</height>
   <widget type="group" version="3.0.0">
     <name>PS-Controls</name>
     <y>59</y>
@@ -521,7 +521,7 @@
     <name>Extra-Monitoring</name>
     <y>468</y>
     <width>500</width>
-    <height>580</height>
+    <height>602</height>
     <font>
       <font family="Liberation Sans" style="BOLD" size="18.0">
       </font>
@@ -1078,13 +1078,79 @@
       <width>90</width>
       <tooltip>$(actions)</tooltip>
     </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_50</name>
+      <text>Mode</text>
+      <y>526</y>
+      <width>65</width>
+      <height>40</height>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="18.0">
+        </font>
+      </font>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_51</name>
+      <text>Safe-Start ON</text>
+      <x>65</x>
+      <y>526</y>
+      <width>120</width>
+      <height>40</height>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="18.0">
+        </font>
+      </font>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_3</name>
+      <pv_name>A0:TDKLambdaGen:AUTOSTART:RBV</pv_name>
+      <x>190</x>
+      <y>531</y>
+      <width>30</width>
+      <height>30</height>
+      <off_color>
+        <color name="On" red="0" green="255" blue="0">
+        </color>
+      </off_color>
+      <on_color>
+        <color name="STOP" red="255" green="0" blue="0">
+        </color>
+      </on_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_52</name>
+      <text>Auto-Retart ON</text>
+      <x>228</x>
+      <y>526</y>
+      <width>148</width>
+      <height>40</height>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="18.0">
+        </font>
+      </font>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_4</name>
+      <pv_name>A0:TDKLambdaGen:AUTOSTART:RBV</pv_name>
+      <x>369</x>
+      <y>531</y>
+      <width>30</width>
+      <height>30</height>
+      <off_color>
+        <color name="STOP" red="255" green="0" blue="0">
+        </color>
+      </off_color>
+    </widget>
   </widget>
   <widget type="group" version="3.0.0">
     <name>Extra-Controls</name>
     <x>636</x>
     <y>59</y>
     <width>264</width>
-    <height>250</height>
+    <height>310</height>
     <font>
       <font family="Liberation Sans" style="BOLD" size="18.0">
       </font>
@@ -1172,6 +1238,67 @@
         </color>
       </off_color>
       <on_label></on_label>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Action Button_6</name>
+      <actions>
+        <action type="write_pv">
+          <description>Safe Start ON</description>
+          <pv_name>A0:TDKLambdaGen:AUTOSTART</pv_name>
+          <value>0</value>
+        </action>
+      </actions>
+      <y>222</y>
+      <height>41</height>
+      <rules>
+        <rule name="button_color" prop_id="background_color" out_exp="false">
+          <exp bool_exp="pv0 == 0">
+            <value>
+              <color name="On" red="0" green="255" blue="0">
+              </color>
+            </value>
+          </exp>
+          <exp bool_exp="pv0 == 1">
+            <value>
+              <color name="STOP" red="255" green="0" blue="0">
+              </color>
+            </value>
+          </exp>
+          <pv_name>A0:TDKLambdaGen:AUTOSTART</pv_name>
+        </rule>
+      </rules>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Action Button_7</name>
+      <actions>
+        <action type="write_pv">
+          <description>Auto-Restart ON</description>
+          <pv_name>A0:TDKLambdaGen:AUTOSTART</pv_name>
+          <value>1</value>
+        </action>
+      </actions>
+      <x>116</x>
+      <y>221</y>
+      <height>41</height>
+      <rules>
+        <rule name="button_color" prop_id="background_color" out_exp="false">
+          <exp bool_exp="pv0 == 1">
+            <value>
+              <color name="On" red="0" green="255" blue="0">
+              </color>
+            </value>
+          </exp>
+          <exp bool_exp="pv0 == 0">
+            <value>
+              <color name="STOP" red="255" green="0" blue="0">
+              </color>
+            </value>
+          </exp>
+          <pv_name>A0:TDKLambdaGen:AUTOSTART</pv_name>
+        </rule>
+      </rules>
+      <tooltip>$(actions)</tooltip>
     </widget>
   </widget>
   <widget type="group" version="3.0.0">
@@ -1437,7 +1564,7 @@
     <name>Picture</name>
     <file>../images/TDK-Lambda-Genesys-LOGO.png</file>
     <x>494</x>
-    <y>947</y>
+    <y>965</y>
     <width>404</width>
   </widget>
 </display>
