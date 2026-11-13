@@ -351,10 +351,11 @@ $(IntlkCon)</text>
     <show_grid>true</show_grid>
     <show_toolbar>false</show_toolbar>
     <show_legend>true</show_legend>
+    <start>2 hour</start>
     <y_axes>
       <y_axis>
-        <title>Y</title>
-        <autoscale>true</autoscale>
+        <title>Valve Position</title>
+        <autoscale>false</autoscale>
         <log_scale>false</log_scale>
         <minimum>0.0</minimum>
         <maximum>100.0</maximum>
@@ -365,12 +366,25 @@ $(IntlkCon)</text>
           </color>
         </color>
       </y_axis>
+      <y_axis>
+        <title>PV</title>
+        <autoscale>true</autoscale>
+        <log_scale>false</log_scale>
+        <minimum>0.0</minimum>
+        <maximum>100.0</maximum>
+        <show_grid>false</show_grid>
+        <visible>true</visible>
+        <color>
+          <color name="Grid" red="128" green="128" blue="128">
+          </color>
+        </color>
+      </y_axis>
     </y_axes>
     <traces>
       <trace>
         <name>SP</name>
         <y_pv>$(system)$(dev):SetLoop</y_pv>
-        <axis>0</axis>
+        <axis>1</axis>
         <trace_type>2</trace_type>
         <color>
           <color red="0" green="0" blue="255">
@@ -384,7 +398,7 @@ $(IntlkCon)</text>
       <trace>
         <name>$(PV1)</name>
         <y_pv>$(system)$(PV1):$(Var1)</y_pv>
-        <axis>0</axis>
+        <axis>1</axis>
         <trace_type>2</trace_type>
         <color>
           <color red="255" green="0" blue="0">
@@ -398,7 +412,7 @@ $(IntlkCon)</text>
       <trace>
         <name>$(PV2)</name>
         <y_pv>$(system)$(PV2):$(Var2)</y_pv>
-        <axis>0</axis>
+        <axis>1</axis>
         <trace_type>2</trace_type>
         <color>
           <color red="0" green="255" blue="0">
@@ -410,7 +424,7 @@ $(IntlkCon)</text>
         <visible>true</visible>
       </trace>
       <trace>
-        <name>Open </name>
+        <name>Valve Pos.</name>
         <y_pv>$(system)$(dev):Open</y_pv>
         <axis>0</axis>
         <trace_type>2</trace_type>
@@ -806,7 +820,7 @@ $(IntlkCon)</text>
       <y>125</y>
       <width>80</width>
       <format>1</format>
-      <precision>1</precision>
+      <precision>3</precision>
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="textentry" version="3.0.0">
