@@ -1426,48 +1426,16 @@ Cryoplant</text>
     </line_color>
     <transparent>true</transparent>
   </widget>
-  <widget type="symbol" version="2.0.0">
-    <name>Symbol_28</name>
-    <symbols>
-      <symbol>../Images/Cryo/png/ControlValveGray.png</symbol>
-    </symbols>
-    <x>1191</x>
-    <y>198</y>
-    <width>45</width>
-    <height>45</height>
-    <rotation>270.0</rotation>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)
-$(actions)</tooltip>
-  </widget>
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display_198</name>
     <macros>
       <dev>HX3BPFB</dev>
     </macros>
     <file>../Common/cryo-embedded-displays/ValveStatusUp.bob</file>
-    <x>894</x>
-    <y>318</y>
+    <x>892</x>
+    <y>320</y>
     <width>65</width>
     <height>35</height>
-  </widget>
-  <widget type="symbol" version="2.0.0">
-    <name>Symbol_29</name>
-    <symbols>
-      <symbol>../Images/Cryo/png/ControlValveGray.png</symbol>
-    </symbols>
-    <x>840</x>
-    <y>314</y>
-    <width>45</width>
-    <height>45</height>
-    <rotation>270.0</rotation>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)
-$(actions)</tooltip>
   </widget>
   <widget type="polyline" version="2.0.0">
     <name>Polyline_26</name>
@@ -1587,21 +1555,6 @@ $(actions)</tooltip>
       </color>
     </line_color>
   </widget>
-  <widget type="symbol" version="2.0.0">
-    <name>Symbol_34</name>
-    <symbols>
-      <symbol>../Images/Cryo/png/ControlValveGray.png</symbol>
-    </symbols>
-    <x>714</x>
-    <y>249</y>
-    <width>45</width>
-    <height>45</height>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)
-$(actions)</tooltip>
-  </widget>
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display_200</name>
     <macros>
@@ -1693,28 +1646,24 @@ $(actions)</tooltip>
     <symbols>
       <symbol>../Images/Cryo/png/ControlValveGray.png</symbol>
     </symbols>
-    <x>916</x>
+    <x>917</x>
     <y>507</y>
     <width>45</width>
     <height>45</height>
     <rotation>270.0</rotation>
     <actions>
     </actions>
-    <tooltip>$(pv_name)
-$(pv_value)
-$(actions)</tooltip>
-  </widget>
-  <widget type="symbol" version="2.0.0">
-    <name>Symbol_38</name>
-    <symbols>
-      <symbol>../Images/Cryo/png/ControlValveGray.png</symbol>
-    </symbols>
-    <x>987</x>
-    <y>441</y>
-    <width>45</width>
-    <height>45</height>
-    <actions>
-    </actions>
+    <rules>
+      <rule name="Symbol Change" prop_id="symbols[0]" out_exp="false">
+        <exp bool_exp="pv0&gt;=0.5">
+          <value>../Images/Cryo/png/ControlValveGreen.png</value>
+        </exp>
+        <exp bool_exp="pv0&lt;=0.5">
+          <value>../Images/Cryo/png/ControlValveGray.png</value>
+        </exp>
+        <pv_name>CP:METASYS_CRYO_HX5BPFB:Open</pv_name>
+      </rule>
+    </rules>
     <tooltip>$(pv_name)
 $(pv_value)
 $(actions)</tooltip>
@@ -2076,21 +2025,6 @@ Water</text>
     <vertical_alignment>1</vertical_alignment>
     <auto_size>true</auto_size>
   </widget>
-  <widget type="symbol" version="2.0.0">
-    <name>Symbol_41</name>
-    <symbols>
-      <symbol>../Images/Cryo/png/ControlValveGray.png</symbol>
-    </symbols>
-    <x>1235</x>
-    <y>554</y>
-    <width>45</width>
-    <height>45</height>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)
-$(actions)</tooltip>
-  </widget>
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display_206</name>
     <macros>
@@ -2231,5 +2165,137 @@ $(actions)</tooltip>
       </on_color>
       <square>true</square>
     </widget>
+  </widget>
+  <widget type="symbol" version="2.0.0">
+    <name>Symbol_42</name>
+    <symbols>
+      <symbol>../Images/Cryo/png/ControlValveGray.png</symbol>
+    </symbols>
+    <x>840</x>
+    <y>318</y>
+    <width>45</width>
+    <height>45</height>
+    <rotation>270.0</rotation>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="Symbol Change" prop_id="symbols[0]" out_exp="false">
+        <exp bool_exp="pv0&gt;=0.5">
+          <value>../Images/Cryo/png/ControlValveGreen.png</value>
+        </exp>
+        <exp bool_exp="pv0&lt;=0.5">
+          <value>../Images/Cryo/png/ControlValveGray.png</value>
+        </exp>
+        <pv_name>CP:METASYS_CRYO_HX3BPFB:Open</pv_name>
+      </rule>
+    </rules>
+    <tooltip>$(pv_name)
+$(pv_value)
+$(actions)</tooltip>
+  </widget>
+  <widget type="symbol" version="2.0.0">
+    <name>Symbol_43</name>
+    <symbols>
+      <symbol>../Images/Cryo/png/ControlValveGray.png</symbol>
+    </symbols>
+    <x>1192</x>
+    <y>193</y>
+    <width>45</width>
+    <height>45</height>
+    <rotation>270.0</rotation>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="Symbol Change" prop_id="symbols[0]" out_exp="false">
+        <exp bool_exp="pv0&gt;=0.5">
+          <value>../Images/Cryo/png/ControlValveGreen.png</value>
+        </exp>
+        <exp bool_exp="pv0&lt;=0.5">
+          <value>../Images/Cryo/png/ControlValveGray.png</value>
+        </exp>
+        <pv_name>CP:METASYS_CRYO_BYPVFB:Open</pv_name>
+      </rule>
+    </rules>
+    <tooltip>$(pv_name)
+$(pv_value)
+$(actions)</tooltip>
+  </widget>
+  <widget type="symbol" version="2.0.0">
+    <name>Symbol_44</name>
+    <symbols>
+      <symbol>../Images/Cryo/png/ControlValveGray.png</symbol>
+    </symbols>
+    <x>712</x>
+    <y>250</y>
+    <width>45</width>
+    <height>45</height>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="Symbol Change" prop_id="symbols[0]" out_exp="false">
+        <exp bool_exp="pv0&gt;=0.5">
+          <value>../Images/Cryo/png/ControlValveGreen.png</value>
+        </exp>
+        <exp bool_exp="pv0&lt;=0.5">
+          <value>../Images/Cryo/png/ControlValveGray.png</value>
+        </exp>
+        <pv_name>CP:METASYS_CRYO_HX3FB:Open</pv_name>
+      </rule>
+    </rules>
+    <tooltip>$(pv_name)
+$(pv_value)
+$(actions)</tooltip>
+  </widget>
+  <widget type="symbol" version="2.0.0">
+    <name>Symbol_45</name>
+    <symbols>
+      <symbol>../Images/Cryo/png/ControlValveGray.png</symbol>
+    </symbols>
+    <x>987</x>
+    <y>442</y>
+    <width>45</width>
+    <height>45</height>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="Symbol Change" prop_id="symbols[0]" out_exp="false">
+        <exp bool_exp="pv0&gt;=0.5">
+          <value>../Images/Cryo/png/ControlValveGreen.png</value>
+        </exp>
+        <exp bool_exp="pv0&lt;=0.5">
+          <value>../Images/Cryo/png/ControlValveGray.png</value>
+        </exp>
+        <pv_name>CP:METASYS_CRYO_HX5FB:Open</pv_name>
+      </rule>
+    </rules>
+    <tooltip>$(pv_name)
+$(pv_value)
+$(actions)</tooltip>
+  </widget>
+  <widget type="symbol" version="2.0.0">
+    <name>Symbol_46</name>
+    <symbols>
+      <symbol>../Images/Cryo/png/ControlValveGray.png</symbol>
+    </symbols>
+    <x>1233</x>
+    <y>555</y>
+    <width>45</width>
+    <height>45</height>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="Symbol Change" prop_id="symbols[0]" out_exp="false">
+        <exp bool_exp="pv0&gt;=0.5">
+          <value>../Images/Cryo/png/ControlValveGreen.png</value>
+        </exp>
+        <exp bool_exp="pv0&lt;=0.5">
+          <value>../Images/Cryo/png/ControlValveGray.png</value>
+        </exp>
+        <pv_name>CP:METASYS_CRYO_ICWHX5FB:Open</pv_name>
+      </rule>
+    </rules>
+    <tooltip>$(pv_name)
+$(pv_value)
+$(actions)</tooltip>
   </widget>
 </display>
