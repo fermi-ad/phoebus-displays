@@ -1,100 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<databrowser>
-  <title>Insulating Vacuum</title>
-  <show_legend>true</show_legend>
-  <show_toolbar>true</show_toolbar>
-  <grid>true</grid>
-  <update_period>3.0</update_period>
-  <scroll_step>1</scroll_step>
-  <scroll>false</scroll>
-  <start>2023-01-31 00:00:00.000</start>
-  <end>2023-03-09 00:00:00.000</end>
-  <archive_rescale>NONE</archive_rescale>
-  <foreground>
-    <red>230</red>
-    <green>230</green>
-    <blue>230</blue>
-  </foreground>
-  <background>
-    <red>51</red>
-    <green>51</green>
-    <blue>51</blue>
-  </background>
-  <title_font>Liberation Sans|24|1</title_font>
-  <label_font>Liberation Sans|14|1</label_font>
-  <scale_font>Liberation Sans|12|0</scale_font>
-  <legend_font>Liberation Sans|14|0</legend_font>
-  <axes>
-    <axis>
-      <visible>true</visible>
-      <name>Vacuum Pressure (mbar)</name>
-      <use_axis_name>true</use_axis_name>
-      <use_trace_names>false</use_trace_names>
-      <right>false</right>
-      <color>
-        <red>230</red>
-        <green>230</green>
-        <blue>230</blue>
+<display version="2.0.0">
+  <name></name>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <class>TITLE</class>
+    <text>My Display</text>
+    <x use_class="true">0</x>
+    <y use_class="true">0</y>
+    <width>550</width>
+    <height>31</height>
+    <font use_class="true">
+      <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <foreground_color use_class="true">
+      <color name="Text" red="0" green="0" blue="0">
       </color>
-      <min>1.0E-9</min>
-      <max>10000.0</max>
-      <grid>true</grid>
-      <autoscale>false</autoscale>
-      <log_scale>true</log_scale>
-    </axis>
-  </axes>
-  <annotations>
-  </annotations>
-  <pvlist>
-    <pv>
-      <display_name>Cold Cathode Gauge</display_name>
-      <visible>true</visible>
-      <name>PIP2IT:pHB650_VAC_PCC051:VacP</name>
-      <axis>0</axis>
-      <color>
-        <red>255</red>
-        <green>0</green>
-        <blue>0</blue>
+    </foreground_color>
+    <transparent use_class="true">true</transparent>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_1</name>
+    <text>Some Value:</text>
+    <y>50</y>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update</name>
+    <pv_name>sim://sine</pv_name>
+    <x>100</x>
+    <y>50</y>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_2</name>
+    <class>COMMENT</class>
+    <text>Some comment.</text>
+    <x>220</x>
+    <y>50</y>
+    <width>140</width>
+    <font use_class="true">
+      <font name="Comment" family="Liberation Sans" style="ITALIC" size="14.0">
+      </font>
+    </font>
+    <foreground_color use_class="true">
+      <color name="Text" red="0" green="0" blue="0">
       </color>
-      <trace_type>AREA</trace_type>
-      <linewidth>1</linewidth>
-      <line_style>SOLID</line_style>
-      <point_type>NONE</point_type>
-      <point_size>1</point_size>
-      <waveform_index>0</waveform_index>
-      <period>0.0</period>
-      <ring_size>5000</ring_size>
-      <request>OPTIMIZED</request>
-      <archive>
-        <name>archiver1</name>
-        <url>pbraw://archiver1.fnal.gov:17668/retrieval</url>
-        <key>1</key>
-      </archive>
-    </pv>
-    <pv>
-      <display_name>Perani Gauge</display_name>
-      <visible>true</visible>
-      <name>PIP2IT:pHB650_VAC_PPG051:VacP</name>
-      <axis>0</axis>
-      <color>
-        <red>0</red>
-        <green>127</green>
-        <blue>255</blue>
-      </color>
-      <trace_type>AREA</trace_type>
-      <linewidth>1</linewidth>
-      <line_style>SOLID</line_style>
-      <point_type>NONE</point_type>
-      <point_size>1</point_size>
-      <waveform_index>0</waveform_index>
-      <period>0.0</period>
-      <ring_size>5000</ring_size>
-      <request>OPTIMIZED</request>
-      <archive>
-        <name>archiver1</name>
-        <url>pbraw://archiver1.fnal.gov:17668/retrieval</url>
-        <key>1</key>
-      </archive>
-    </pv>
-  </pvlist>
-</databrowser>
+    </foreground_color>
+    <transparent use_class="true">true</transparent>
+    <wrap_words use_class="true">true</wrap_words>
+  </widget>
+</display>
