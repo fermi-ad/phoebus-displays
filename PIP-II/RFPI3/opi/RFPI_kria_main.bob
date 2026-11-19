@@ -89,7 +89,7 @@
     </widget>
     <widget type="led" version="2.0.0">
       <name>Diagnostic_LED</name>
-      <pv_name>$(acc):$(sys)_$(ina_group)_$(ina_num):SystemStatus_r</pv_name>
+      <pv_name>$(acc):$(sys)_$(ina_group)_system:SystemStatus_r</pv_name>
       <x>30</x>
       <y>50</y>
       <width>40</width>
@@ -106,7 +106,7 @@
           <description>Open Display</description>
           <file>../mgmt/RFPI_main.bob</file>
           <macros>
-            <group>MGMT_system</group>
+            <group>$(ina_group)</group>
           </macros>
           <target>tab</target>
         </action>
@@ -179,7 +179,7 @@
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>AlarmsMsg_update</name>
-      <pv_name>$(acc):$(sys)_RFPI_MGMT_system:AlarmMsg_r</pv_name>
+      <pv_name>$(acc):$(sys)_$(ina_group)_system:SystemStatusStr_r</pv_name>
       <x>70</x>
       <y>50</y>
       <width>500</width>
