@@ -4,7 +4,7 @@
   <macros>
     <system>PIP2IT:ppSSR2_CRYO_</system>
   </macros>
-  <width>2000</width>
+  <width>2050</width>
   <height>1850</height>
   <widget type="label" version="2.0.0">
     <name>Label_2</name>
@@ -490,11 +490,11 @@ except Exception as e:
     <end>now</end>
     <y_axes>
       <y_axis>
-        <title>Mass Flow (g/s)</title>
+        <title>Heat Load (W)</title>
         <autoscale>true</autoscale>
         <log_scale>false</log_scale>
         <minimum>0.0</minimum>
-        <maximum>310.0</maximum>
+        <maximum>50.0</maximum>
         <show_grid>true</show_grid>
         <visible>true</visible>
         <color>
@@ -503,15 +503,15 @@ except Exception as e:
         </color>
       </y_axis>
       <y_axis>
-        <title>Heat Load (W)</title>
+        <title>Mass Flow (g/s)</title>
         <autoscale>false</autoscale>
         <log_scale>false</log_scale>
         <minimum>0.0</minimum>
-        <maximum>105.0</maximum>
+        <maximum>40.0</maximum>
         <show_grid>true</show_grid>
         <visible>true</visible>
         <color>
-          <color name="MAJOR" red="255" green="0" blue="0">
+          <color name="Grid" red="128" green="128" blue="128">
           </color>
         </color>
       </y_axis>
@@ -964,6 +964,34 @@ except Exception as e:
         <point_type>0</point_type>
         <point_size>10</point_size>
         <visible>false</visible>
+      </trace>
+      <trace>
+        <name>CD Flow</name>
+        <y_pv>$(system)FT600:HLFlow</y_pv>
+        <axis>1</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color red="0" green="149" blue="255">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name>KVS Flow</name>
+        <y_pv>$(system)KVSFlow:HLFlow</y_pv>
+        <axis>0</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color name="Header_Background" red="77" green="77" blue="77">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
       </trace>
     </traces>
   </widget>
@@ -2188,7 +2216,7 @@ Traces</text>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_43</name>
-    <text>JTHX5K + JTHXVLP</text>
+    <text>Heat load on JT heat exchanger</text>
     <x>1044</x>
     <y>709</y>
     <width>402</width>
@@ -2222,7 +2250,7 @@ Traces</text>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_44</name>
-    <text>VLPin + JTHX + VLPout</text>
+    <text>Non-isothermal heat load</text>
     <x>1044</x>
     <y>735</y>
     <width>402</width>
@@ -2256,7 +2284,7 @@ Traces</text>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_45</name>
-    <text>BathIso – (HTRCV0) – (HTR041)</text>
+    <text>Isothermal heat load without heaters</text>
     <x>1044</x>
     <y>760</y>
     <width>402</width>
@@ -2290,7 +2318,7 @@ Traces</text>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_46</name>
-    <text>5KSupUT + CMtoHX + LiqStat + NonIso </text>
+    <text>Total heat load summation</text>
     <x>1044</x>
     <y>785</y>
     <width>402</width>
@@ -2324,7 +2352,7 @@ Traces</text>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_47</name>
-    <text>VLPtot – (HTRCV0) – (HTR041)</text>
+    <text>Total 2K static heat load w/o htr pwr</text>
     <x>1044</x>
     <y>810</y>
     <width>402</width>
@@ -2358,7 +2386,7 @@ Traces</text>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_48</name>
-    <text>abs (min (HXHPmax, HXVLPmax))</text>
+    <text>Max possible heat transfer in HX</text>
     <x>1044</x>
     <y>835</y>
     <width>402</width>
@@ -2374,7 +2402,7 @@ Traces</text>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_49</name>
-    <text> – JTHXHP / JTHXmax</text>
+    <text>JT HX Effectiveness on HP Side</text>
     <x>1044</x>
     <y>860</y>
     <width>402</width>
@@ -3868,7 +3896,8 @@ Traces</text>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_52</name>
-    <text>Flow Path</text>
+    <text>Live Heat
+Load</text>
     <x>1446</x>
     <y>18</y>
     <width>75</width>
@@ -3889,11 +3918,15 @@ Traces</text>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_106</name>
-    <text>1</text>
-    <x>1446</x>
+    <text>OPEN: PV612, PV617;  CLOSED: PV613, PV618, PV619</text>
+    <x>1523</x>
     <y>303</y>
-    <width>75</width>
+    <width>527</width>
     <height>25</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
     <background_color>
       <color name="Button_Background" red="210" green="210" blue="210">
       </color>
@@ -3905,11 +3938,15 @@ Traces</text>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_107</name>
-    <text>2</text>
-    <x>1446</x>
+    <text>OPEN: PV610, PV618;  CLOSED: PV611, PV617, PV619</text>
+    <x>1523</x>
     <y>328</y>
-    <width>75</width>
+    <width>527</width>
     <height>25</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
     <background_color>
       <color name="Button_Background" red="210" green="210" blue="210">
       </color>
@@ -3921,11 +3958,15 @@ Traces</text>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_108</name>
-    <text>0</text>
-    <x>1446</x>
+    <text> PV620 closed or OPEN: PV610, PV619;  CLOSED: PV609, PV617, PV618</text>
+    <x>1523</x>
     <y>354</y>
-    <width>75</width>
+    <width>527</width>
     <height>25</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
     <background_color>
       <color name="Button_Background" red="210" green="210" blue="210">
       </color>
@@ -3937,11 +3978,15 @@ Traces</text>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_115</name>
-    <text>0</text>
-    <x>1446</x>
+    <text> PV620 closed or OPEN: PV610, PV619;  CLOSED: PV609, PV617, PV618</text>
+    <x>1523</x>
     <y>379</y>
-    <width>75</width>
+    <width>527</width>
     <height>25</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
     <background_color>
       <color name="Button_Background" red="210" green="210" blue="210">
       </color>
@@ -3953,11 +3998,15 @@ Traces</text>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_116</name>
-    <text>0</text>
-    <x>1446</x>
+    <text> PV620 closed or OPEN: PV610, PV619;  CLOSED: PV609, PV617, PV618</text>
+    <x>1523</x>
     <y>405</y>
-    <width>75</width>
+    <width>527</width>
     <height>25</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
     <background_color>
       <color name="Button_Background" red="210" green="210" blue="210">
       </color>
@@ -3969,11 +4018,15 @@ Traces</text>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_117</name>
-    <text>0</text>
-    <x>1446</x>
+    <text> PV620 closed or OPEN: PV610, PV619;  CLOSED: PV609, PV617, PV618</text>
+    <x>1523</x>
     <y>430</y>
-    <width>75</width>
+    <width>527</width>
     <height>25</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
     <background_color>
       <color name="Button_Background" red="210" green="210" blue="210">
       </color>
@@ -3985,11 +4038,15 @@ Traces</text>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_118</name>
-    <text>3</text>
-    <x>1446</x>
+    <text>JT or CD open and ( PV620 closed or OPEN: PV610, PV619;  CLOSED: PV609, PV617, PV618)</text>
+    <x>1523</x>
     <y>456</y>
-    <width>75</width>
+    <width>527</width>
     <height>25</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
     <background_color>
       <color name="Button_Background" red="210" green="210" blue="210">
       </color>
@@ -4001,11 +4058,15 @@ Traces</text>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_119</name>
-    <text>3</text>
-    <x>1446</x>
+    <text>JT or CD open and ( PV620 closed or OPEN: PV610, PV619;  CLOSED: PV609, PV617, PV618)</text>
+    <x>1523</x>
     <y>481</y>
-    <width>75</width>
+    <width>527</width>
     <height>25</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
     <background_color>
       <color name="Button_Background" red="210" green="210" blue="210">
       </color>
@@ -4017,11 +4078,15 @@ Traces</text>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_120</name>
-    <text>3</text>
-    <x>1446</x>
+    <text>JT or CD open and ( PV620 closed or OPEN: PV610, PV619;  CLOSED: PV609, PV617, PV618)</text>
+    <x>1523</x>
     <y>506</y>
-    <width>75</width>
+    <width>527</width>
     <height>25</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
     <background_color>
       <color name="Button_Background" red="210" green="210" blue="210">
       </color>
@@ -4033,11 +4098,15 @@ Traces</text>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_121</name>
-    <text>0</text>
-    <x>1446</x>
+    <text> PV620 closed or OPEN: PV610, PV619;  CLOSED: PV609, PV617, PV618</text>
+    <x>1523</x>
     <y>532</y>
-    <width>75</width>
+    <width>527</width>
     <height>25</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
     <background_color>
       <color name="Button_Background" red="210" green="210" blue="210">
       </color>
@@ -4049,11 +4118,15 @@ Traces</text>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_122</name>
-    <text>0</text>
-    <x>1446</x>
+    <text> PV620 closed or OPEN: PV610, PV619;  CLOSED: PV609, PV617, PV618</text>
+    <x>1523</x>
     <y>557</y>
-    <width>75</width>
+    <width>527</width>
     <height>25</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
     <background_color>
       <color name="Button_Background" red="210" green="210" blue="210">
       </color>
@@ -4065,11 +4138,15 @@ Traces</text>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_123</name>
-    <text>0</text>
-    <x>1446</x>
+    <text> PV620 closed or OPEN: PV610, PV619;  CLOSED: PV609, PV617, PV618</text>
+    <x>1523</x>
     <y>583</y>
-    <width>75</width>
+    <width>527</width>
     <height>25</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
     <background_color>
       <color name="Button_Background" red="210" green="210" blue="210">
       </color>
@@ -4081,11 +4158,15 @@ Traces</text>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_124</name>
-    <text>0</text>
-    <x>1446</x>
+    <text> PV620 closed or OPEN: PV610, PV619;  CLOSED: PV609, PV617, PV618</text>
+    <x>1523</x>
     <y>608</y>
-    <width>75</width>
+    <width>527</width>
     <height>25</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
     <background_color>
       <color name="Button_Background" red="210" green="210" blue="210">
       </color>
@@ -4097,11 +4178,15 @@ Traces</text>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_125</name>
-    <text>3</text>
-    <x>1446</x>
+    <text>JT or CD open and ( PV620 closed or OPEN: PV610, PV619;  CLOSED: PV609, PV617, PV618)</text>
+    <x>1523</x>
     <y>633</y>
-    <width>75</width>
+    <width>527</width>
     <height>25</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
     <background_color>
       <color name="Button_Background" red="210" green="210" blue="210">
       </color>
@@ -4113,11 +4198,15 @@ Traces</text>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_126</name>
-    <text>4</text>
-    <x>1446</x>
+    <text>OPEN: PV610, PV618;  CLOSED: PV611, PV617, PV619</text>
+    <x>1523</x>
     <y>69</y>
-    <width>75</width>
+    <width>527</width>
     <height>25</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
     <background_color>
       <color name="Button_Background" red="210" green="210" blue="210">
       </color>
@@ -4129,11 +4218,15 @@ Traces</text>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_127</name>
-    <text>2</text>
-    <x>1446</x>
+    <text>OPEN: PV610, PV618;  CLOSED: PV611, PV617, PV619</text>
+    <x>1523</x>
     <y>95</y>
-    <width>75</width>
+    <width>527</width>
     <height>25</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
     <background_color>
       <color name="Button_Background" red="210" green="210" blue="210">
       </color>
@@ -4145,11 +4238,15 @@ Traces</text>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_128</name>
-    <text>1</text>
-    <x>1446</x>
+    <text>OPEN: PV612, PV617;  CLOSED: PV613, PV618, PV619</text>
+    <x>1523</x>
     <y>121</y>
-    <width>75</width>
+    <width>527</width>
     <height>25</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
     <background_color>
       <color name="Button_Background" red="210" green="210" blue="210">
       </color>
@@ -4161,11 +4258,15 @@ Traces</text>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_129</name>
-    <text>1</text>
-    <x>1446</x>
+    <text>OPEN: PV612, PV617;  CLOSED: PV613, PV618, PV619</text>
+    <x>1523</x>
     <y>147</y>
-    <width>75</width>
+    <width>527</width>
     <height>25</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
     <background_color>
       <color name="Button_Background" red="210" green="210" blue="210">
       </color>
@@ -4177,11 +4278,15 @@ Traces</text>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_130</name>
-    <text>0</text>
-    <x>1446</x>
+    <text> PV620 closed or OPEN: PV610, PV619;  CLOSED: PV609, PV617, PV618</text>
+    <x>1523</x>
     <y>173</y>
-    <width>75</width>
+    <width>527</width>
     <height>25</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
     <background_color>
       <color name="Button_Background" red="210" green="210" blue="210">
       </color>
@@ -4193,11 +4298,15 @@ Traces</text>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_131</name>
-    <text>1</text>
-    <x>1446</x>
+    <text>OPEN: PV612, PV617;  CLOSED: PV613, PV618, PV619</text>
+    <x>1523</x>
     <y>199</y>
-    <width>75</width>
+    <width>527</width>
     <height>25</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
     <background_color>
       <color name="Button_Background" red="210" green="210" blue="210">
       </color>
@@ -4209,11 +4318,15 @@ Traces</text>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_132</name>
-    <text>2</text>
-    <x>1446</x>
+    <text>OPEN: PV610, PV618;  CLOSED: PV611, PV617, PV619</text>
+    <x>1523</x>
     <y>225</y>
-    <width>75</width>
+    <width>527</width>
     <height>25</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
     <background_color>
       <color name="Button_Background" red="210" green="210" blue="210">
       </color>
@@ -4225,11 +4338,15 @@ Traces</text>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_133</name>
-    <text>3</text>
-    <x>1446</x>
+    <text>JT or CD open and ( PV620 closed or OPEN: PV610, PV619;  CLOSED: PV609, PV617, PV618)</text>
+    <x>1523</x>
     <y>251</y>
-    <width>75</width>
+    <width>527</width>
     <height>25</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
     <background_color>
       <color name="Button_Background" red="210" green="210" blue="210">
       </color>
@@ -4241,11 +4358,15 @@ Traces</text>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_134</name>
-    <text>0</text>
-    <x>1446</x>
+    <text> PV620 closed or OPEN: PV610, PV619;  CLOSED: PV609, PV617, PV618</text>
+    <x>1523</x>
     <y>277</y>
-    <width>75</width>
+    <width>527</width>
     <height>25</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
     <background_color>
       <color name="Button_Background" red="210" green="210" blue="210">
       </color>
@@ -4257,11 +4378,15 @@ Traces</text>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_149</name>
-    <text>0</text>
-    <x>1446</x>
+    <text> PV620 closed or OPEN: PV610, PV619;  CLOSED: PV609, PV617, PV618</text>
+    <x>1523</x>
     <y>658</y>
-    <width>75</width>
+    <width>527</width>
     <height>25</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
     <background_color>
       <color name="Button_Background" red="210" green="210" blue="210">
       </color>
@@ -4273,11 +4398,15 @@ Traces</text>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_150</name>
-    <text>0</text>
-    <x>1446</x>
+    <text> PV620 closed or OPEN: PV610, PV619;  CLOSED: PV609, PV617, PV618</text>
+    <x>1523</x>
     <y>684</y>
-    <width>75</width>
+    <width>527</width>
     <height>25</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
     <background_color>
       <color name="Button_Background" red="210" green="210" blue="210">
       </color>
@@ -4289,11 +4418,15 @@ Traces</text>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_151</name>
-    <text>3</text>
-    <x>1446</x>
+    <text>JT or CD open and ( PV620 closed or OPEN: PV610, PV619;  CLOSED: PV609, PV617, PV618)</text>
+    <x>1523</x>
     <y>709</y>
-    <width>75</width>
+    <width>527</width>
     <height>25</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
     <background_color>
       <color name="Button_Background" red="210" green="210" blue="210">
       </color>
@@ -4305,11 +4438,15 @@ Traces</text>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_152</name>
-    <text>0</text>
-    <x>1446</x>
+    <text> PV620 closed or OPEN: PV610, PV619;  CLOSED: PV609, PV617, PV618</text>
+    <x>1523</x>
     <y>735</y>
-    <width>75</width>
+    <width>527</width>
     <height>25</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
     <background_color>
       <color name="Button_Background" red="210" green="210" blue="210">
       </color>
@@ -4321,11 +4458,15 @@ Traces</text>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_153</name>
-    <text>0</text>
-    <x>1446</x>
+    <text> PV620 closed or OPEN: PV610, PV619;  CLOSED: PV609, PV617, PV618</text>
+    <x>1523</x>
     <y>760</y>
-    <width>75</width>
+    <width>527</width>
     <height>25</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
     <background_color>
       <color name="Button_Background" red="210" green="210" blue="210">
       </color>
@@ -4337,11 +4478,15 @@ Traces</text>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_154</name>
-    <text>4 , 3 , 0</text>
-    <x>1446</x>
+    <text>OPEN: PV610, PV618;  CLOSED: PV611, PV617, PV619, PV620</text>
+    <x>1523</x>
     <y>785</y>
-    <width>75</width>
+    <width>527</width>
     <height>25</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
     <background_color>
       <color name="Button_Background" red="210" green="210" blue="210">
       </color>
@@ -4353,11 +4498,15 @@ Traces</text>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_155</name>
-    <text>0</text>
-    <x>1446</x>
+    <text> PV620 closed or OPEN: PV610, PV619;  CLOSED: PV609, PV617, PV618</text>
+    <x>1523</x>
     <y>810</y>
-    <width>75</width>
+    <width>527</width>
     <height>25</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
     <background_color>
       <color name="Button_Background" red="210" green="210" blue="210">
       </color>
@@ -4369,11 +4518,15 @@ Traces</text>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_156</name>
-    <text>0, 3</text>
-    <x>1446</x>
+    <text>JT or CD open and ( PV620 closed or OPEN: PV610, PV619;  CLOSED: PV609, PV617, PV618)</text>
+    <x>1523</x>
     <y>835</y>
-    <width>75</width>
+    <width>527</width>
     <height>25</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
     <background_color>
       <color name="Button_Background" red="210" green="210" blue="210">
       </color>
@@ -4385,11 +4538,15 @@ Traces</text>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_157</name>
-    <text>0, 3</text>
-    <x>1446</x>
+    <text>JT or CD open and ( PV620 closed or OPEN: PV610, PV619;  CLOSED: PV609, PV617, PV618)</text>
+    <x>1523</x>
     <y>860</y>
-    <width>75</width>
+    <width>527</width>
     <height>25</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
     <background_color>
       <color name="Button_Background" red="210" green="210" blue="210">
       </color>
@@ -4413,12 +4570,524 @@ Traces</text>
     <wrap_words>false</wrap_words>
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_135</name>
+    <text></text>
+    <x>1446</x>
+    <y>303</y>
+    <width>75</width>
+    <height>25</height>
+    <background_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_136</name>
+    <text></text>
+    <x>1446</x>
+    <y>328</y>
+    <width>75</width>
+    <height>25</height>
+    <background_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_137</name>
+    <text></text>
+    <x>1446</x>
+    <y>354</y>
+    <width>75</width>
+    <height>25</height>
+    <background_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_138</name>
+    <text></text>
+    <x>1446</x>
+    <y>379</y>
+    <width>75</width>
+    <height>25</height>
+    <background_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_139</name>
+    <text></text>
+    <x>1446</x>
+    <y>405</y>
+    <width>75</width>
+    <height>25</height>
+    <background_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_140</name>
+    <text></text>
+    <x>1446</x>
+    <y>430</y>
+    <width>75</width>
+    <height>25</height>
+    <background_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_141</name>
+    <text></text>
+    <x>1446</x>
+    <y>456</y>
+    <width>75</width>
+    <height>25</height>
+    <background_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_142</name>
+    <text></text>
+    <x>1446</x>
+    <y>481</y>
+    <width>75</width>
+    <height>25</height>
+    <background_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_143</name>
+    <text></text>
+    <x>1446</x>
+    <y>506</y>
+    <width>75</width>
+    <height>25</height>
+    <background_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_144</name>
+    <text></text>
+    <x>1446</x>
+    <y>532</y>
+    <width>75</width>
+    <height>25</height>
+    <background_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_145</name>
+    <text></text>
+    <x>1446</x>
+    <y>557</y>
+    <width>75</width>
+    <height>25</height>
+    <background_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_146</name>
+    <text></text>
+    <x>1446</x>
+    <y>583</y>
+    <width>75</width>
+    <height>25</height>
+    <background_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_147</name>
+    <text></text>
+    <x>1446</x>
+    <y>608</y>
+    <width>75</width>
+    <height>25</height>
+    <background_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_148</name>
+    <text></text>
+    <x>1446</x>
+    <y>633</y>
+    <width>75</width>
+    <height>25</height>
+    <background_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_158</name>
+    <text></text>
+    <x>1446</x>
+    <y>69</y>
+    <width>75</width>
+    <height>25</height>
+    <background_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_159</name>
+    <text></text>
+    <x>1446</x>
+    <y>95</y>
+    <width>75</width>
+    <height>25</height>
+    <background_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_160</name>
+    <text></text>
+    <x>1446</x>
+    <y>121</y>
+    <width>75</width>
+    <height>25</height>
+    <background_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_161</name>
+    <text></text>
+    <x>1446</x>
+    <y>147</y>
+    <width>75</width>
+    <height>25</height>
+    <background_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_162</name>
+    <text></text>
+    <x>1446</x>
+    <y>173</y>
+    <width>75</width>
+    <height>25</height>
+    <background_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_163</name>
+    <text></text>
+    <x>1446</x>
+    <y>199</y>
+    <width>75</width>
+    <height>25</height>
+    <background_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_164</name>
+    <text></text>
+    <x>1446</x>
+    <y>225</y>
+    <width>75</width>
+    <height>25</height>
+    <background_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_165</name>
+    <text></text>
+    <x>1446</x>
+    <y>251</y>
+    <width>75</width>
+    <height>25</height>
+    <background_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_166</name>
+    <text></text>
+    <x>1446</x>
+    <y>277</y>
+    <width>75</width>
+    <height>25</height>
+    <background_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_167</name>
+    <text></text>
+    <x>1446</x>
+    <y>658</y>
+    <width>75</width>
+    <height>25</height>
+    <background_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_168</name>
+    <text></text>
+    <x>1446</x>
+    <y>684</y>
+    <width>75</width>
+    <height>25</height>
+    <background_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_169</name>
+    <text></text>
+    <x>1446</x>
+    <y>709</y>
+    <width>75</width>
+    <height>25</height>
+    <background_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_170</name>
+    <text></text>
+    <x>1446</x>
+    <y>735</y>
+    <width>75</width>
+    <height>25</height>
+    <background_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_171</name>
+    <text></text>
+    <x>1446</x>
+    <y>760</y>
+    <width>75</width>
+    <height>25</height>
+    <background_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_172</name>
+    <text></text>
+    <x>1446</x>
+    <y>785</y>
+    <width>75</width>
+    <height>25</height>
+    <background_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_173</name>
+    <text></text>
+    <x>1446</x>
+    <y>810</y>
+    <width>75</width>
+    <height>25</height>
+    <background_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_174</name>
+    <text></text>
+    <x>1446</x>
+    <y>835</y>
+    <width>75</width>
+    <height>25</height>
+    <background_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_175</name>
+    <text></text>
+    <x>1446</x>
+    <y>860</y>
+    <width>75</width>
+    <height>25</height>
+    <background_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_width>1</border_width>
+  </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_359</name>
     <pv_name>$(system)VLPin:HeatLoad</pv_name>
-    <x>1310</x>
-    <y>661</y>
-    <width>136</width>
+    <x>1446</x>
+    <y>658</y>
+    <width>75</width>
     <transparent>true</transparent>
     <format>1</format>
     <precision>2</precision>
@@ -4430,9 +5099,9 @@ Traces</text>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_360</name>
     <pv_name>$(system)BathIso:HeatLoad</pv_name>
-    <x>1310</x>
-    <y>686</y>
-    <width>136</width>
+    <x>1446</x>
+    <y>683</y>
+    <width>75</width>
     <transparent>true</transparent>
     <format>1</format>
     <precision>2</precision>
@@ -4444,9 +5113,9 @@ Traces</text>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_361</name>
     <pv_name>$(system)JTHX:HeatLoad</pv_name>
-    <x>1310</x>
-    <y>712</y>
-    <width>136</width>
+    <x>1446</x>
+    <y>709</y>
+    <width>75</width>
     <transparent>true</transparent>
     <format>1</format>
     <precision>2</precision>
@@ -4458,9 +5127,9 @@ Traces</text>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_362</name>
     <pv_name>$(system)NonIso:HeatLoad</pv_name>
-    <x>1310</x>
-    <y>737</y>
-    <width>136</width>
+    <x>1446</x>
+    <y>734</y>
+    <width>75</width>
     <transparent>true</transparent>
     <format>1</format>
     <precision>2</precision>
@@ -4472,9 +5141,9 @@ Traces</text>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_363</name>
     <pv_name>$(system)LiqStat:HeatLoad</pv_name>
-    <x>1310</x>
-    <y>762</y>
-    <width>136</width>
+    <x>1446</x>
+    <y>759</y>
+    <width>75</width>
     <transparent>true</transparent>
     <format>1</format>
     <precision>2</precision>
@@ -4486,9 +5155,9 @@ Traces</text>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_364</name>
     <pv_name>$(system)2KTotSum:HeatLoad</pv_name>
-    <x>1310</x>
-    <y>787</y>
-    <width>136</width>
+    <x>1446</x>
+    <y>784</y>
+    <width>75</width>
     <transparent>true</transparent>
     <format>1</format>
     <precision>2</precision>
@@ -4500,9 +5169,9 @@ Traces</text>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_365</name>
     <pv_name>$(system)2KTotSta:HeatLoad</pv_name>
-    <x>1310</x>
-    <y>813</y>
-    <width>136</width>
+    <x>1446</x>
+    <y>810</y>
+    <width>75</width>
     <transparent>true</transparent>
     <format>1</format>
     <precision>2</precision>
@@ -4514,9 +5183,9 @@ Traces</text>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_366</name>
     <pv_name>$(system)JTHXmax:HeatLoad</pv_name>
-    <x>1310</x>
-    <y>838</y>
-    <width>136</width>
+    <x>1446</x>
+    <y>835</y>
+    <width>75</width>
     <transparent>true</transparent>
     <format>1</format>
     <precision>2</precision>
@@ -4528,9 +5197,9 @@ Traces</text>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_367</name>
     <pv_name>$(system)HXHPeff:HeatLoad</pv_name>
-    <x>1310</x>
-    <y>864</y>
-    <width>136</width>
+    <x>1446</x>
+    <y>861</y>
+    <width>75</width>
     <transparent>true</transparent>
     <format>1</format>
     <precision>2</precision>
@@ -4538,5 +5207,952 @@ Traces</text>
     <vertical_alignment>1</vertical_alignment>
     <wrap_words>false</wrap_words>
     <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_368</name>
+    <pv_name>$(system)HXVLPmax:HeatLoad</pv_name>
+    <x>1446</x>
+    <y>432</y>
+    <width>75</width>
+    <transparent>true</transparent>
+    <format>1</format>
+    <precision>2</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_369</name>
+    <pv_name>$(system)HXHPmax:HeatLoad</pv_name>
+    <x>1446</x>
+    <y>457</y>
+    <width>75</width>
+    <transparent>true</transparent>
+    <format>1</format>
+    <precision>2</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_370</name>
+    <pv_name>$(system)5KSupIn:HeatLoad</pv_name>
+    <x>1446</x>
+    <y>483</y>
+    <width>75</width>
+    <transparent>true</transparent>
+    <format>1</format>
+    <precision>2</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_371</name>
+    <pv_name>$(system)CMtoHX:HeatLoad</pv_name>
+    <x>1446</x>
+    <y>508</y>
+    <width>75</width>
+    <transparent>true</transparent>
+    <format>1</format>
+    <precision>2</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_372</name>
+    <pv_name>$(system)VLPdwnHX:HeatLoad</pv_name>
+    <x>1446</x>
+    <y>534</y>
+    <width>75</width>
+    <transparent>true</transparent>
+    <format>1</format>
+    <precision>2</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_373</name>
+    <pv_name>$(system)VLPCMout:HeatLoad</pv_name>
+    <x>1446</x>
+    <y>559</y>
+    <width>75</width>
+    <transparent>true</transparent>
+    <format>1</format>
+    <precision>2</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_374</name>
+    <pv_name>$(system)VLPTran:HeatLoad</pv_name>
+    <x>1446</x>
+    <y>585</y>
+    <width>75</width>
+    <transparent>true</transparent>
+    <format>1</format>
+    <precision>2</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_375</name>
+    <pv_name>$(system)VLPoutUT:HeatLoad</pv_name>
+    <x>1446</x>
+    <y>609</y>
+    <width>75</width>
+    <transparent>true</transparent>
+    <format>1</format>
+    <precision>2</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_376</name>
+    <pv_name>$(system)5KHXtoJT:HeatLoad</pv_name>
+    <x>1446</x>
+    <y>635</y>
+    <width>75</width>
+    <transparent>true</transparent>
+    <format>1</format>
+    <precision>2</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_377</name>
+    <pv_name>$(system)HTTSint:HeatLoad</pv_name>
+    <x>1446</x>
+    <y>201</y>
+    <width>75</width>
+    <transparent>true</transparent>
+    <format>1</format>
+    <precision>2</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_378</name>
+    <pv_name>$(system)LTTSint:HeatLoad</pv_name>
+    <x>1446</x>
+    <y>227</y>
+    <width>75</width>
+    <transparent>true</transparent>
+    <format>1</format>
+    <precision>2</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_379</name>
+    <pv_name>$(system)JTHXHP:HeatLoad</pv_name>
+    <x>1446</x>
+    <y>253</y>
+    <width>75</width>
+    <transparent>true</transparent>
+    <format>1</format>
+    <precision>2</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_380</name>
+    <pv_name>$(system)JTHXVLP:HeatLoad</pv_name>
+    <x>1446</x>
+    <y>279</y>
+    <width>75</width>
+    <transparent>true</transparent>
+    <format>1</format>
+    <precision>2</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_381</name>
+    <pv_name>$(system)HTTStot:HeatLoad</pv_name>
+    <x>1446</x>
+    <y>305</y>
+    <width>75</width>
+    <transparent>true</transparent>
+    <format>1</format>
+    <precision>2</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_382</name>
+    <pv_name>$(system)LTTStot:HeatLoad</pv_name>
+    <x>1446</x>
+    <y>330</y>
+    <width>75</width>
+    <transparent>true</transparent>
+    <format>1</format>
+    <precision>2</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_383</name>
+    <pv_name>$(system)VLPtot:HeatLoad</pv_name>
+    <x>1446</x>
+    <y>356</y>
+    <width>75</width>
+    <transparent>true</transparent>
+    <format>1</format>
+    <precision>2</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_384</name>
+    <pv_name>$(system)CMtot:HeatLoad</pv_name>
+    <x>1446</x>
+    <y>381</y>
+    <width>75</width>
+    <transparent>true</transparent>
+    <format>1</format>
+    <precision>2</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_385</name>
+    <pv_name>$(system)VLPout:HeatLoad</pv_name>
+    <x>1446</x>
+    <y>407</y>
+    <width>75</width>
+    <transparent>true</transparent>
+    <format>1</format>
+    <precision>2</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_386</name>
+    <pv_name>$(system)5KSupUT:HeatLoad</pv_name>
+    <x>1446</x>
+    <y>71</y>
+    <width>75</width>
+    <transparent>true</transparent>
+    <format>1</format>
+    <precision>2</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_387</name>
+    <pv_name>$(system)8KRetUT:HeatLoad</pv_name>
+    <x>1446</x>
+    <y>98</y>
+    <width>75</width>
+    <transparent>true</transparent>
+    <format>1</format>
+    <precision>2</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_388</name>
+    <pv_name>$(system)40KSupUT:HeatLoad</pv_name>
+    <x>1446</x>
+    <y>123</y>
+    <width>75</width>
+    <transparent>true</transparent>
+    <format>1</format>
+    <precision>2</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_389</name>
+    <pv_name>$(system)80KRetUT:HeatLoad</pv_name>
+    <x>1446</x>
+    <y>149</y>
+    <width>75</width>
+    <transparent>true</transparent>
+    <format>1</format>
+    <precision>2</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_390</name>
+    <pv_name>$(system)VLPUT:HeatLoad</pv_name>
+    <x>1446</x>
+    <y>176</y>
+    <width>75</width>
+    <transparent>true</transparent>
+    <format>1</format>
+    <precision>2</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_176</name>
+    <text>Conditions of Validity</text>
+    <x>1523</x>
+    <y>18</y>
+    <width>527</width>
+    <height>50</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <background_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_35</name>
+    <x>400</x>
+    <y>1340</y>
+    <width>300</width>
+    <height>1</height>
+    <visible>false</visible>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="300.0" y="0.0">
+      </point>
+    </points>
+    <line_width>20</line_width>
+    <line_color>
+      <color name="STOP" red="255" green="0" blue="0">
+      </color>
+    </line_color>
+    <rules>
+      <rule name="New Rule" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0">
+          <value>true</value>
+        </exp>
+        <pv_name>loc://t2</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_36</name>
+    <x>399</x>
+    <y>1687</y>
+    <width>300</width>
+    <height>1</height>
+    <visible>false</visible>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="300.0" y="0.0">
+      </point>
+    </points>
+    <line_width>20</line_width>
+    <line_color>
+      <color name="STOP" red="255" green="0" blue="0">
+      </color>
+    </line_color>
+    <rules>
+      <rule name="New Rule" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0">
+          <value>true</value>
+        </exp>
+        <pv_name>loc://t3</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_37</name>
+    <x>398</x>
+    <y>1455</y>
+    <width>300</width>
+    <height>1</height>
+    <visible>false</visible>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="300.0" y="0.0">
+      </point>
+    </points>
+    <line_width>20</line_width>
+    <line_color>
+      <color name="STOP" red="255" green="0" blue="0">
+      </color>
+    </line_color>
+    <rules>
+      <rule name="New Rule" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0">
+          <value>true</value>
+        </exp>
+        <pv_name>loc://t4</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_38</name>
+    <x>470</x>
+    <y>1570</y>
+    <width>170</width>
+    <height>1</height>
+    <visible>false</visible>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="170.0" y="0.0">
+      </point>
+    </points>
+    <line_width>20</line_width>
+    <line_color>
+      <color name="STOP" red="255" green="0" blue="0">
+      </color>
+    </line_color>
+    <rules>
+      <rule name="New Rule" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0">
+          <value>true</value>
+        </exp>
+        <pv_name>loc://t5</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_39</name>
+    <x>700</x>
+    <y>1456</y>
+    <width>160</width>
+    <height>234</height>
+    <visible>false</visible>
+    <points>
+      <point x="160.0" y="234.0">
+      </point>
+      <point x="0.0" y="234.0">
+      </point>
+      <point x="0.0" y="4.0">
+      </point>
+      <point x="160.0" y="0.0">
+      </point>
+    </points>
+    <line_width>20</line_width>
+    <line_color>
+      <color name="STOP" red="255" green="0" blue="0">
+      </color>
+    </line_color>
+    <rules>
+      <rule name="New Rule" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0">
+          <value>true</value>
+        </exp>
+        <pv_name>loc://t6</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_40</name>
+    <x>698</x>
+    <y>1340</y>
+    <width>182</width>
+    <height>460</height>
+    <visible>false</visible>
+    <points>
+      <point x="182.0" y="460.0">
+      </point>
+      <point x="2.0" y="460.0">
+      </point>
+      <point x="0.0" y="4.0">
+      </point>
+      <point x="182.0" y="0.0">
+      </point>
+    </points>
+    <line_width>20</line_width>
+    <line_color>
+      <color name="STOP" red="255" green="0" blue="0">
+      </color>
+    </line_color>
+    <rules>
+      <rule name="New Rule" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0">
+          <value>true</value>
+        </exp>
+        <pv_name>loc://t7</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_42</name>
+    <x>938</x>
+    <y>1456</y>
+    <width>262</width>
+    <height>1</height>
+    <visible>false</visible>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="262.0" y="0.0">
+      </point>
+    </points>
+    <line_width>20</line_width>
+    <line_color>
+      <color name="STOP" red="255" green="0" blue="0">
+      </color>
+    </line_color>
+    <rules>
+      <rule name="New Rule" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0">
+          <value>true</value>
+        </exp>
+        <pv_name>loc://t8</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_43</name>
+    <x>938</x>
+    <y>1570</y>
+    <width>262</width>
+    <height>1</height>
+    <visible>false</visible>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="262.0" y="0.0">
+      </point>
+    </points>
+    <line_width>20</line_width>
+    <line_color>
+      <color name="STOP" red="255" green="0" blue="0">
+      </color>
+    </line_color>
+    <rules>
+      <rule name="New Rule" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0">
+          <value>true</value>
+        </exp>
+        <pv_name>loc://t9</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_44</name>
+    <x>400</x>
+    <y>1456</y>
+    <width>458</width>
+    <height>234</height>
+    <visible>false</visible>
+    <points>
+      <point x="458.0" y="234.0">
+      </point>
+      <point x="0.0" y="224.0">
+      </point>
+      <point x="0.0" y="4.0">
+      </point>
+      <point x="458.0" y="0.0">
+      </point>
+    </points>
+    <line_width>20</line_width>
+    <line_color>
+      <color name="STOP" red="255" green="0" blue="0">
+      </color>
+    </line_color>
+    <rules>
+      <rule name="New Rule" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0">
+          <value>true</value>
+        </exp>
+        <pv_name>loc://t10</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_45</name>
+    <x>400</x>
+    <y>1340</y>
+    <width>482</width>
+    <height>460</height>
+    <visible>false</visible>
+    <points>
+      <point x="482.0" y="460.0">
+      </point>
+      <point x="0.0" y="460.0">
+      </point>
+      <point x="0.0" y="10.0">
+      </point>
+      <point x="482.0" y="0.0">
+      </point>
+    </points>
+    <line_width>20</line_width>
+    <line_color>
+      <color name="STOP" red="255" green="0" blue="0">
+      </color>
+    </line_color>
+    <rules>
+      <rule name="New Rule" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0">
+          <value>true</value>
+        </exp>
+        <pv_name>loc://t11</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_46</name>
+    <x>400</x>
+    <y>1460</y>
+    <width>980</width>
+    <height>340</height>
+    <visible>false</visible>
+    <points>
+      <point x="482.0" y="340.0">
+      </point>
+      <point x="0.0" y="340.0">
+      </point>
+      <point x="980.0" y="0.0">
+      </point>
+      <point x="480.0" y="0.0">
+      </point>
+      <point x="980.0" y="250.0">
+      </point>
+      <point x="730.0" y="250.0">
+      </point>
+      <point x="730.0" y="290.0">
+      </point>
+      <point x="700.0" y="290.0">
+      </point>
+      <point x="700.0" y="220.0">
+      </point>
+      <point x="870.0" y="220.0">
+      </point>
+      <point x="880.0" y="110.0">
+      </point>
+      <point x="0.0" y="110.0">
+      </point>
+    </points>
+    <line_width>20</line_width>
+    <line_color>
+      <color name="STOP" red="255" green="0" blue="0">
+      </color>
+    </line_color>
+    <rules>
+      <rule name="New Rule" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0">
+          <value>true</value>
+        </exp>
+        <pv_name>loc://t12</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_48</name>
+    <x>700</x>
+    <y>1459</y>
+    <width>678</width>
+    <height>341</height>
+    <visible>false</visible>
+    <points>
+      <point x="180.0" y="340.0">
+      </point>
+      <point x="0.0" y="341.0">
+      </point>
+      <point x="678.0" y="0.0">
+      </point>
+      <point x="178.0" y="0.0">
+      </point>
+      <point x="678.0" y="250.0">
+      </point>
+      <point x="428.0" y="250.0">
+      </point>
+      <point x="428.0" y="290.0">
+      </point>
+      <point x="398.0" y="290.0">
+      </point>
+      <point x="398.0" y="220.0">
+      </point>
+      <point x="568.0" y="220.0">
+      </point>
+      <point x="578.0" y="110.0">
+      </point>
+      <point x="0.0" y="111.0">
+      </point>
+    </points>
+    <line_width>20</line_width>
+    <line_color>
+      <color name="STOP" red="255" green="0" blue="0">
+      </color>
+    </line_color>
+    <rules>
+      <rule name="New Rule" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0">
+          <value>true</value>
+        </exp>
+        <pv_name>loc://t13</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_49</name>
+    <x>400</x>
+    <y>1570</y>
+    <width>300</width>
+    <height>1</height>
+    <visible>false</visible>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="300.0" y="0.0">
+      </point>
+    </points>
+    <line_width>20</line_width>
+    <line_color>
+      <color name="STOP" red="255" green="0" blue="0">
+      </color>
+    </line_color>
+    <rules>
+      <rule name="New Rule" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0">
+          <value>true</value>
+        </exp>
+        <pv_name>loc://t14</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_50</name>
+    <x>398</x>
+    <y>1460</y>
+    <width>542</width>
+    <height>340</height>
+    <visible>false</visible>
+    <points>
+      <point x="482.0" y="340.0">
+      </point>
+      <point x="0.0" y="340.0">
+      </point>
+      <point x="542.0" y="0.0">
+      </point>
+      <point x="482.0" y="0.0">
+      </point>
+    </points>
+    <line_width>20</line_width>
+    <line_color>
+      <color name="STOP" red="255" green="0" blue="0">
+      </color>
+    </line_color>
+    <rules>
+      <rule name="New Rule" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0">
+          <value>true</value>
+        </exp>
+        <pv_name>loc://t17</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_52</name>
+    <x>700</x>
+    <y>1461</y>
+    <width>240</width>
+    <height>340</height>
+    <visible>false</visible>
+    <points>
+      <point x="180.0" y="340.0">
+      </point>
+      <point x="0.0" y="339.0">
+      </point>
+      <point x="240.0" y="0.0">
+      </point>
+      <point x="180.0" y="0.0">
+      </point>
+    </points>
+    <line_width>20</line_width>
+    <line_color>
+      <color name="STOP" red="255" green="0" blue="0">
+      </color>
+    </line_color>
+    <rules>
+      <rule name="New Rule" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0">
+          <value>true</value>
+        </exp>
+        <pv_name>loc://t18</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_53</name>
+    <x>700</x>
+    <y>1570</y>
+    <width>230</width>
+    <height>1</height>
+    <visible>false</visible>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="230.0" y="0.0">
+      </point>
+    </points>
+    <line_width>20</line_width>
+    <line_color>
+      <color name="STOP" red="255" green="0" blue="0">
+      </color>
+    </line_color>
+    <rules>
+      <rule name="New Rule" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0">
+          <value>true</value>
+        </exp>
+        <pv_name>loc://t19</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_54</name>
+    <x>640</x>
+    <y>1570</y>
+    <width>60</width>
+    <height>1</height>
+    <visible>false</visible>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="60.0" y="0.0">
+      </point>
+    </points>
+    <line_width>20</line_width>
+    <line_color>
+      <color name="STOP" red="255" green="0" blue="0">
+      </color>
+    </line_color>
+    <rules>
+      <rule name="New Rule" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0">
+          <value>true</value>
+        </exp>
+        <pv_name>loc://t20</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_55</name>
+    <x>398</x>
+    <y>1570</y>
+    <width>72</width>
+    <height>1</height>
+    <visible>false</visible>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="72.0" y="0.0">
+      </point>
+    </points>
+    <line_width>20</line_width>
+    <line_color>
+      <color name="STOP" red="255" green="0" blue="0">
+      </color>
+    </line_color>
+    <rules>
+      <rule name="New Rule" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0">
+          <value>true</value>
+        </exp>
+        <pv_name>loc://t21</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_56</name>
+    <x>400</x>
+    <y>1570</y>
+    <width>302</width>
+    <height>1</height>
+    <visible>false</visible>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="302.0" y="0.0">
+      </point>
+    </points>
+    <line_width>20</line_width>
+    <line_color>
+      <color name="STOP" red="255" green="0" blue="0">
+      </color>
+    </line_color>
+    <rules>
+      <rule name="New Rule" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0">
+          <value>true</value>
+        </exp>
+        <pv_name>loc://t22</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_57</name>
+    <x>1200</x>
+    <y>1457</y>
+    <width>60</width>
+    <height>3</height>
+    <visible>false</visible>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="60.0" y="0.0">
+      </point>
+    </points>
+    <line_width>20</line_width>
+    <line_color>
+      <color name="STOP" red="255" green="0" blue="0">
+      </color>
+    </line_color>
+    <rules>
+      <rule name="New Rule" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0">
+          <value>true</value>
+        </exp>
+        <pv_name>loc://t23</pv_name>
+      </rule>
+    </rules>
   </widget>
 </display>
