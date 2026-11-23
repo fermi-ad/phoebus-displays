@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>SSR2-$(cm)</name>
+  <macros>
+    <P>PIP2IT:ppSSR2_</P>
+    <ghe>PIP2IT:SSR1_CRYO_GHe_</ghe>
+    <htr>PIP2IT:SSR1_CRYO_</htr>
+    <lhe>PIP2IT:SSR1_CRYO_LHe_</lhe>
+    <rf06>PIP2IT:SSR1_HPRF_PLC</rf06>
+    <safety>PIP2IT:SSR1_SAFETY_PMT_</safety>
+    <temp>PIP2IT:SSR1_CRYO_TEMP_</temp>
+    <vac>PIP2IT:SSR1_CRYO_VAC_</vac>
+    <view>Overview</view>
+    <acc>PIP2IT</acc>
+  </macros>
+  <width>1300</width>
+  <height>830</height>
+  <background_color>
+    <color name="Button_Background" red="210" green="210" blue="210">
+    </color>
+  </background_color>
+  <grid_step_x>5</grid_step_x>
+  <grid_step_y>5</grid_step_y>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_1</name>
+    <actions>
+      <action type="open_display">
+        <description>IPMS Selector</description>
+        <file>../SSAs/barc-7kw-gui/IPMSselect.bob</file>
+        <macros>
+          <acc>PIP2IT</acc>
+          <cm>ppSSR2</cm>
+          <dev>$(acc):$(cm)_HPRF_SSA$(ssa)</dev>
+        </macros>
+        <target>tab</target>
+      </action>
+    </actions>
+    <text>SSA Expert Control</text>
+    <x>50</x>
+    <y>700</y>
+    <width>130</width>
+    <height>25</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_1</name>
+    <macros>
+      <ssa>1</ssa>
+      <cav>1</cav>
+    </macros>
+    <file>../Common/ssa-embedded-displays/SSAoverviewBARC.bob</file>
+    <width>120</width>
+    <height>215</height>
+  </widget>
+</display>

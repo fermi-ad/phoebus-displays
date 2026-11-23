@@ -1499,69 +1499,6 @@ Enable</text>
       <confirm_message>Are you sure you want to Enable RF for SSR1-SSA1?</confirm_message>
     </widget>
   </widget>
-  <widget type="group" version="3.0.0">
-    <name>Group</name>
-    <x>1125</x>
-    <y>535</y>
-    <width>55</width>
-    <height>35</height>
-    <style>3</style>
-    <transparent>true</transparent>
-    <widget type="label" version="2.0.0">
-      <name>Label_1</name>
-      <text>Cplr 1</text>
-      <width>55</width>
-      <height>35</height>
-      <font>
-        <font family="Liberation Sans" style="BOLD" size="14.0">
-        </font>
-      </font>
-      <background_color>
-        <color name="Read_Background" red="240" green="240" blue="240">
-        </color>
-      </background_color>
-      <transparent>false</transparent>
-    </widget>
-    <widget type="byte_monitor" version="2.0.0">
-      <name>Byte Monitor_14</name>
-      <pv_name>$(cplr)1_00:CPLR</pv_name>
-      <x>10</x>
-      <y>20</y>
-      <width>40</width>
-      <height>10</height>
-      <numBits>4</numBits>
-      <bitReverse>true</bitReverse>
-      <square>true</square>
-      <off_color>
-        <color name="MAJOR" red="255" green="0" blue="0">
-        </color>
-      </off_color>
-      <on_color>
-        <color name="OK" red="0" green="255" blue="0">
-        </color>
-      </on_color>
-    </widget>
-    <widget type="action_button" version="3.0.0">
-      <name>Action Button_33</name>
-      <actions>
-        <action type="open_display">
-          <description>Open Coupler Display</description>
-          <file>../PIP2TS/CouplerSummary.bob</file>
-          <macros>
-            <plc>1</plc>
-            <smry>PIP2TS:SSR1_PLC$(plc)_CPLR$(ssa)</smry>
-            <ssa>1</ssa>
-          </macros>
-          <target>window</target>
-        </action>
-      </actions>
-      <text></text>
-      <width>55</width>
-      <height>35</height>
-      <transparent>true</transparent>
-      <tooltip>$(actions)</tooltip>
-    </widget>
-  </widget>
   <widget type="action_button" version="3.0.0">
     <name>Action Button_53</name>
     <actions>
@@ -1584,6 +1521,9 @@ Enable</text>
       <action type="open_display">
         <description>Radiation Detectors</description>
         <file>../CMTF-RadDetectors.bob</file>
+        <macros>
+          <system>PIP2IT:ppSSR2_HPRF_</system>
+        </macros>
         <target>window</target>
       </action>
     </actions>
@@ -1599,9 +1539,9 @@ Enable</text>
     <x>270</x>
     <y>330</y>
     <width>190</width>
-    <height>195</height>
+    <height>85</height>
     <points>
-      <point x="0.0" y="195.0">
+      <point x="0.0" y="85.0">
       </point>
       <point x="0.0" y="35.0">
       </point>
@@ -1621,9 +1561,9 @@ Enable</text>
     <x>440</x>
     <y>330</y>
     <width>75</width>
-    <height>195</height>
+    <height>85</height>
     <points>
-      <point x="0.0" y="195.0">
+      <point x="0.0" y="85.0">
       </point>
       <point x="0.0" y="50.0">
       </point>
@@ -1643,9 +1583,9 @@ Enable</text>
     <x>610</x>
     <y>330</y>
     <width>15</width>
-    <height>195</height>
+    <height>85</height>
     <points>
-      <point x="0.0" y="195.0">
+      <point x="0.0" y="85.0">
       </point>
       <point x="0.0" y="35.0">
       </point>
@@ -1664,9 +1604,9 @@ Enable</text>
     <name>Polyline_11</name>
     <x>680</x>
     <y>330</y>
-    <height>195</height>
+    <height>85</height>
     <points>
-      <point x="100.0" y="195.0">
+      <point x="100.0" y="85.0">
       </point>
       <point x="100.0" y="50.0">
       </point>
@@ -1686,9 +1626,9 @@ Enable</text>
     <x>790</x>
     <y>335</y>
     <width>160</width>
-    <height>190</height>
+    <height>80</height>
     <points>
-      <point x="160.0" y="190.0">
+      <point x="160.0" y="80.0">
       </point>
       <point x="160.0" y="30.0">
       </point>
@@ -1702,124 +1642,6 @@ Enable</text>
       <color name="Header_Background" red="77" green="77" blue="77">
       </color>
     </line_color>
-  </widget>
-  <widget type="embedded" version="2.0.0">
-    <name>Embedded Display_12</name>
-    <macros>
-      <cav>6</cav>
-    </macros>
-    <file>../Common/ssa-embedded-displays/HPRFdistribution.bob</file>
-    <x>610</x>
-    <y>400</y>
-    <width>100</width>
-    <height>100</height>
-  </widget>
-  <widget type="embedded" version="2.0.0">
-    <name>Embedded Display_14</name>
-    <macros>
-      <cav>6</cav>
-    </macros>
-    <file>../Common/ssa-embedded-displays/HPRFdistribution.bob</file>
-    <x>270</x>
-    <y>400</y>
-    <width>100</width>
-    <height>100</height>
-  </widget>
-  <widget type="embedded" version="2.0.0">
-    <name>Embedded Display_15</name>
-    <macros>
-      <cav>6</cav>
-    </macros>
-    <file>../Common/ssa-embedded-displays/HPRFdistribution.bob</file>
-    <x>440</x>
-    <y>400</y>
-    <width>100</width>
-    <height>100</height>
-  </widget>
-  <widget type="embedded" version="2.0.0">
-    <name>Embedded Display_17</name>
-    <macros>
-      <cav>6</cav>
-    </macros>
-    <file>../Common/ssa-embedded-displays/HPRFdistribution.bob</file>
-    <x>780</x>
-    <y>400</y>
-    <width>100</width>
-    <height>100</height>
-  </widget>
-  <widget type="embedded" version="2.0.0">
-    <name>Embedded Display_19</name>
-    <macros>
-      <cav>6</cav>
-    </macros>
-    <file>../Common/ssa-embedded-displays/HPRFdistribution.bob</file>
-    <x>950</x>
-    <y>400</y>
-    <width>100</width>
-    <height>100</height>
-  </widget>
-  <widget type="group" version="3.0.0">
-    <name>Group</name>
-    <x>210</x>
-    <y>525</y>
-    <width>800</width>
-    <height>215</height>
-    <style>3</style>
-    <transparent>true</transparent>
-    <widget type="embedded" version="2.0.0">
-      <name>Embedded Display_5</name>
-      <macros>
-        <ssa>5</ssa>
-        <cav>5</cav>
-      </macros>
-      <file>../Common/ssa-embedded-displays/SSAoverviewBARC.bob</file>
-      <x>680</x>
-      <width>120</width>
-      <height>215</height>
-    </widget>
-    <widget type="embedded" version="2.0.0">
-      <name>Embedded Display_4</name>
-      <macros>
-        <ssa>4</ssa>
-        <cav>4</cav>
-      </macros>
-      <file>../Common/ssa-embedded-displays/SSAoverviewBARC.bob</file>
-      <x>510</x>
-      <width>120</width>
-      <height>215</height>
-    </widget>
-    <widget type="embedded" version="2.0.0">
-      <name>Embedded Display_3</name>
-      <macros>
-        <ssa>3</ssa>
-        <cav>3</cav>
-      </macros>
-      <file>../Common/ssa-embedded-displays/SSAoverviewBARC.bob</file>
-      <x>340</x>
-      <width>120</width>
-      <height>215</height>
-    </widget>
-    <widget type="embedded" version="2.0.0">
-      <name>Embedded Display_2</name>
-      <macros>
-        <ssa>2</ssa>
-        <cav>2</cav>
-      </macros>
-      <file>../Common/ssa-embedded-displays/SSAoverviewBARC.bob</file>
-      <x>170</x>
-      <width>120</width>
-      <height>215</height>
-    </widget>
-    <widget type="embedded" version="2.0.0">
-      <name>Embedded Display_1</name>
-      <macros>
-        <ssa>1</ssa>
-        <cav>1</cav>
-      </macros>
-      <file>../Common/ssa-embedded-displays/SSAoverviewBARC.bob</file>
-      <width>120</width>
-      <height>215</height>
-    </widget>
   </widget>
   <widget type="action_button" version="3.0.0">
     <name>Action Button_3</name>
@@ -1839,9 +1661,9 @@ Enable</text>
         <target>window</target>
       </action>
     </actions>
-    <x>210</x>
-    <y>740</y>
-    <width>120</width>
+    <x>200</x>
+    <y>745</y>
+    <width>145</width>
     <height>25</height>
     <tooltip>$(actions)</tooltip>
     <border_alarm_sensitive>false</border_alarm_sensitive>
@@ -1865,8 +1687,8 @@ Enable</text>
       </action>
     </actions>
     <x>380</x>
-    <y>740</y>
-    <width>120</width>
+    <y>745</y>
+    <width>145</width>
     <height>25</height>
     <tooltip>$(actions)</tooltip>
     <border_alarm_sensitive>false</border_alarm_sensitive>
@@ -1890,8 +1712,8 @@ Enable</text>
       </action>
     </actions>
     <x>550</x>
-    <y>740</y>
-    <width>120</width>
+    <y>745</y>
+    <width>145</width>
     <height>25</height>
     <tooltip>$(actions)</tooltip>
     <border_alarm_sensitive>false</border_alarm_sensitive>
@@ -1915,8 +1737,8 @@ Enable</text>
       </action>
     </actions>
     <x>720</x>
-    <y>740</y>
-    <width>120</width>
+    <y>745</y>
+    <width>140</width>
     <height>25</height>
     <tooltip>$(actions)</tooltip>
     <border_alarm_sensitive>false</border_alarm_sensitive>
@@ -1940,8 +1762,8 @@ Enable</text>
       </action>
     </actions>
     <x>890</x>
-    <y>740</y>
-    <width>120</width>
+    <y>745</y>
+    <width>145</width>
     <height>25</height>
     <tooltip>$(actions)</tooltip>
     <border_alarm_sensitive>false</border_alarm_sensitive>
@@ -2145,5 +1967,65 @@ Enable</text>
     <y>260</y>
     <width>25</width>
     <height>25</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_5</name>
+    <macros>
+      <ssa>5</ssa>
+      <cav>5</cav>
+    </macros>
+    <file>../Common/ssa-embedded-displays/SSAoverviewBARC.bob</file>
+    <x>890</x>
+    <y>415</y>
+    <width>145</width>
+    <height>330</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_4</name>
+    <macros>
+      <ssa>4</ssa>
+      <cav>4</cav>
+    </macros>
+    <file>../Common/ssa-embedded-displays/SSAoverviewBARC.bob</file>
+    <x>720</x>
+    <y>415</y>
+    <width>145</width>
+    <height>330</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_3</name>
+    <macros>
+      <ssa>3</ssa>
+      <cav>3</cav>
+    </macros>
+    <file>../Common/ssa-embedded-displays/SSAoverviewBARC.bob</file>
+    <x>550</x>
+    <y>415</y>
+    <width>145</width>
+    <height>330</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_2</name>
+    <macros>
+      <ssa>2</ssa>
+      <cav>2</cav>
+    </macros>
+    <file>../Common/ssa-embedded-displays/SSAoverviewBARC.bob</file>
+    <x>380</x>
+    <y>415</y>
+    <width>145</width>
+    <height>330</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_1</name>
+    <macros>
+      <ssa>1</ssa>
+      <cav>1</cav>
+    </macros>
+    <file>../Common/ssa-embedded-displays/SSAoverviewBARC.bob</file>
+    <x>200</x>
+    <y>415</y>
+    <width>145</width>
+    <height>330</height>
   </widget>
 </display>
