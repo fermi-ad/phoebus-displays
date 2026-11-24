@@ -2,13 +2,13 @@
 <display version="2.0.0">
   <name>BARC - SSA Overview</name>
   <width>145</width>
-  <height>330</height>
+  <height>355</height>
   <grid_step_x>5</grid_step_x>
   <grid_step_y>5</grid_step_y>
   <widget type="rectangle" version="2.0.0">
     <name>Rectangle_11</name>
     <width>145</width>
-    <height>280</height>
+    <height>305</height>
     <line_width>1</line_width>
     <line_color>
       <color red="0" green="0" blue="0">
@@ -22,7 +22,7 @@
   <widget type="bool_button" version="2.0.0">
     <name>Boolean Button</name>
     <pv_name>$(hprf)SSA$(cav):sOUT</pv_name>
-    <y>305</y>
+    <y>330</y>
     <width>145</width>
     <height>25</height>
     <off_label>Set On</off_label>
@@ -41,17 +41,45 @@
       </action>
     </actions>
     <pv_name>$(hprf)SSA$(cav):sOUT</pv_name>
-    <y>280</y>
+    <y>305</y>
     <width>145</width>
     <height>25</height>
     <tooltip>$(actions)</tooltip>
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_93</name>
+    <text>SSA$(ssa)</text>
+    <x>5</x>
+    <y>5</y>
+    <width>132</width>
+    <height>25</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_100</name>
+    <text>CAV$(cav)</text>
+    <x>5</x>
+    <y>30</y>
+    <width>132</width>
+    <height>25</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_23</name>
     <pv_name>$(llrfo)$(cav)0:FWD:PWRMEAN</pv_name>
     <x>75</x>
-    <y>195</y>
+    <y>220</y>
     <width>65</width>
     <font>
       <font family="Liberation Sans" style="BOLD" size="12.0">
@@ -71,7 +99,7 @@
     <name>Text Update_25</name>
     <pv_name>$(llrfo)$(cav)0:REV:PWRMEAN</pv_name>
     <x>75</x>
-    <y>215</y>
+    <y>240</y>
     <width>65</width>
     <font>
       <font family="Liberation Sans" style="BOLD" size="12.0">
@@ -91,7 +119,7 @@
     <name>Label_91</name>
     <text>FwdPwr</text>
     <x>15</x>
-    <y>195</y>
+    <y>220</y>
     <width>55</width>
     <font>
       <font family="Liberation Sans" style="BOLD" size="11.0">
@@ -105,7 +133,7 @@
     <name>Label_92</name>
     <text>RefPwr</text>
     <x>15</x>
-    <y>215</y>
+    <y>240</y>
     <width>55</width>
     <font>
       <font family="Liberation Sans" style="BOLD" size="11.0">
@@ -115,24 +143,10 @@
     <vertical_alignment>1</vertical_alignment>
     <wrap_words>false</wrap_words>
   </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label_93</name>
-    <text>SSA$(cav)</text>
-    <x>5</x>
-    <y>5</y>
-    <width>132</width>
-    <height>25</height>
-    <font>
-      <font family="Liberation Sans" style="BOLD" size="22.0">
-      </font>
-    </font>
-    <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-  </widget>
   <widget type="group" version="3.0.0">
     <name>Group</name>
     <x>5</x>
-    <y>35</y>
+    <y>60</y>
     <width>135</width>
     <height>150</height>
     <style>3</style>
@@ -146,7 +160,7 @@
       <transparent>true</transparent>
       <widget type="label" version="2.0.0">
         <name>Label_87</name>
-        <text> RF Present</text>
+        <text> RF Permit</text>
         <x>20</x>
         <y>40</y>
         <width>115</width>
@@ -205,7 +219,7 @@
       <transparent>true</transparent>
       <widget type="byte_monitor" version="2.0.0">
         <name>Byte Monitor_19</name>
-        <pv_name>$(P)HPRF_SSA$(cav):Status</pv_name>
+        <pv_name>$(P)HPRF_SSA$(ssa):Status</pv_name>
         <width>20</width>
         <height>60</height>
         <numBits>3</numBits>
@@ -213,15 +227,15 @@
         <horizontal>false</horizontal>
         <square>true</square>
         <off_color>
-          <color name="MAJOR" red="255" green="0" blue="0">
+          <color name="OK" red="0" green="255" blue="0">
           </color>
         </off_color>
         <on_color>
-          <color name="OK" red="0" green="255" blue="0">
+          <color name="MAJOR" red="255" green="0" blue="0">
           </color>
         </on_color>
-        <off_label>0</off_label>
-        <on_label>1</on_label>
+        <off_label>1</off_label>
+        <on_label>0</on_label>
         <border_alarm_sensitive>false</border_alarm_sensitive>
       </widget>
       <widget type="label" version="2.0.0">
@@ -289,7 +303,7 @@
     <name>Text Update_24</name>
     <pv_name>$(llrfo)$(cav)0:FWD:PWRMEAN</pv_name>
     <x>75</x>
-    <y>235</y>
+    <y>260</y>
     <width>65</width>
     <font>
       <font family="Liberation Sans" style="BOLD" size="12.0">
@@ -309,7 +323,7 @@
     <name>Text Update_26</name>
     <pv_name>$(llrfo)$(cav)0:REV:PWRMEAN</pv_name>
     <x>75</x>
-    <y>255</y>
+    <y>280</y>
     <width>65</width>
     <font>
       <font family="Liberation Sans" style="BOLD" size="12.0">
@@ -329,7 +343,7 @@
     <name>Label_98</name>
     <text>Gradient</text>
     <x>15</x>
-    <y>235</y>
+    <y>260</y>
     <width>55</width>
     <font>
       <font family="Liberation Sans" style="BOLD" size="11.0">
@@ -343,7 +357,7 @@
     <name>Label_99</name>
     <text>Phase</text>
     <x>15</x>
-    <y>255</y>
+    <y>280</y>
     <width>55</width>
     <font>
       <font family="Liberation Sans" style="BOLD" size="11.0">

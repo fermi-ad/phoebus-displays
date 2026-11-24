@@ -163,8 +163,7 @@
   </widget>
   <widget type="rectangle" version="2.0.0">
     <name>Rectangle_18</name>
-    <x>1</x>
-    <y>41</y>
+    <y>40</y>
     <width>1300</width>
     <height>1195</height>
     <line_width>1</line_width>
@@ -577,21 +576,6 @@
     <y>590</y>
     <width>65</width>
     <height>35</height>
-  </widget>
-  <widget type="embedded" version="2.0.0">
-    <name>Embedded Display_25</name>
-    <macros>
-      <desc>US Beamline</desc>
-      <dev1>BLUSPPG2</dev1>
-      <dev2>BLUSPCC2</dev2>
-      <system>PIP2IT:ppSSR2_VAC_</system>
-      <switchlim>3e-3</switchlim>
-    </macros>
-    <file>../Common/vacuum-embedded-displays/Vacuum.bob</file>
-    <x>935</x>
-    <y>561</y>
-    <width>115</width>
-    <height>80</height>
   </widget>
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display_30</name>
@@ -5135,5 +5119,134 @@ Motors</text>
     <y>1190</y>
     <width>80</width>
     <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <x>935</x>
+    <y>560</y>
+    <width>106</width>
+    <height>30</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>Label_63</name>
+      <text>Beamline</text>
+      <height>15</height>
+      <background_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_318</name>
+      <pv_name>$(P)VAC_BLUSPCC1:VacP</pv_name>
+      <y>15</y>
+      <height>15</height>
+      <visible>false</visible>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="11.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="Attention" red="255" green="160" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color red="44" green="44" blue="44">
+        </color>
+      </background_color>
+      <format>2</format>
+      <precision>2</precision>
+      <show_units>false</show_units>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <rules>
+        <rule name="Show Value" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0&lt;=2e-3">
+            <value>true</value>
+          </exp>
+          <pv_name>$(P)VAC_BLUSPCC1:VacP</pv_name>
+        </rule>
+        <rule name="Show Units" prop_id="show_units" out_exp="false">
+          <exp bool_exp="pv0&lt;=2e-3">
+            <value>true</value>
+          </exp>
+          <pv_name>$(P)VAC_BLUSPCC1:VacP</pv_name>
+        </rule>
+      </rules>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_319</name>
+      <pv_name>$(P)VAC_BLUSPCC1:VacP</pv_name>
+      <y>15</y>
+      <height>15</height>
+      <visible>false</visible>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="11.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="Attention" red="255" green="160" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color red="44" green="44" blue="44">
+        </color>
+      </background_color>
+      <format>2</format>
+      <precision>2</precision>
+      <show_units>false</show_units>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <rules>
+        <rule name="Show Value" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0&lt;=2e-3">
+            <value>true</value>
+          </exp>
+          <pv_name>$(P)VAC_BLUSPCC1:VacP</pv_name>
+        </rule>
+        <rule name="Show Units" prop_id="show_units" out_exp="false">
+          <exp bool_exp="pv0&lt;=2e-3">
+            <value>true</value>
+          </exp>
+          <pv_name>$(P)VAC_BLUSPCC1:VacP</pv_name>
+        </rule>
+      </rules>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_21</name>
+      <x>105</x>
+      <y>5</y>
+      <width>1</width>
+      <height>25</height>
+      <points>
+        <point x="0.0" y="25.0">
+        </point>
+        <point x="0.0" y="0.0">
+        </point>
+      </points>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <arrows>1</arrows>
+      <arrow_length>10</arrow_length>
+      <rules>
+        <rule name="Show Down Arrow" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0&lt;=2e-3">
+            <value>true</value>
+          </exp>
+          <pv_name>$(P)VAC_BLUSPCC1:VacP</pv_name>
+        </rule>
+      </rules>
+    </widget>
   </widget>
 </display>
