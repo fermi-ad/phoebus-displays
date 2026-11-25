@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>RFPI System Plots</name>
+  <width>1040</width>
+  <height>765</height>
+  <widget type="rectangle" version="2.0.0">
+    <name>Titlebar</name>
+    <width>1040</width>
+    <height>50</height>
+    <line_width>0</line_width>
+    <background_color>
+      <color name="PRIMARY-HEADER-BACKGROUND" red="151" green="188" blue="202">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Title</name>
+    <text>Management processor - CPU and memory</text>
+    <x>20</x>
+    <width>700</width>
+    <height>50</height>
+    <font>
+      <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="HEADER-TEXT" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="stripchart" version="2.0.0">
+    <name>CPU_chart</name>
+    <x>20</x>
+    <y>60</y>
+    <width>1000</width>
+    <height>340</height>
+    <title>CPU load</title>
+    <show_toolbar>true</show_toolbar>
+    <show_legend>true</show_legend>
+    <start>30 minutes</start>
+    <end>now</end>
+    <y_axes>
+      <y_axis>
+        <title>CPU [%]</title>
+        <autoscale>false</autoscale>
+        <log_scale>false</log_scale>
+        <minimum>0.0</minimum>
+        <maximum>100.0</maximum>
+        <show_grid>true</show_grid>
+        <visible>true</visible>
+      </y_axis>
+    </y_axes>
+    <traces>
+      <trace>
+        <name>CPU (2 s)</name>
+        <y_pv>$(acc):$(sys)_$(group)_system:CpuLoad_r</y_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color red="0" green="90" blue="200">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name>CPU average (warning window)</name>
+        <y_pv>$(acc):$(sys)_$(group)_system:CpuLoadAvg_r</y_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color red="200" green="30" blue="30">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name>rfpi-mgmtd</name>
+        <y_pv>$(acc):$(sys)_$(group)_system:MgmtdCpu_r</y_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color red="0" green="150" blue="70">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name>rfpi-mgmt-ioc</name>
+        <y_pv>$(acc):$(sys)_$(group)_system:IocCpu_r</y_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color red="140" green="60" blue="180">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+    </traces>
+  </widget>
+  <widget type="stripchart" version="2.0.0">
+    <name>Memory_chart</name>
+    <x>20</x>
+    <y>410</y>
+    <width>1000</width>
+    <height>340</height>
+    <title>Memory</title>
+    <show_toolbar>true</show_toolbar>
+    <show_legend>true</show_legend>
+    <start>30 minutes</start>
+    <end>now</end>
+    <y_axes>
+      <y_axis>
+        <title>Used [%]</title>
+        <autoscale>false</autoscale>
+        <log_scale>false</log_scale>
+        <minimum>0.0</minimum>
+        <maximum>100.0</maximum>
+        <show_grid>true</show_grid>
+        <visible>true</visible>
+      </y_axis>
+      <y_axis>
+        <title>Memory [MB]</title>
+        <autoscale>false</autoscale>
+        <log_scale>false</log_scale>
+        <minimum>0.0</minimum>
+        <maximum>128.0</maximum>
+        <show_grid>false</show_grid>
+        <visible>true</visible>
+      </y_axis>
+    </y_axes>
+    <traces>
+      <trace>
+        <name>Memory used [%]</name>
+        <y_pv>$(acc):$(sys)_$(group)_system:MemUsed_r</y_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color red="200" green="30" blue="30">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name>Available [MB]</name>
+        <y_pv>$(acc):$(sys)_$(group)_system:MemAvailable_r</y_pv>
+        <axis>1</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color red="0" green="90" blue="200">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name>rfpi-mgmtd RSS [MB]</name>
+        <y_pv>$(acc):$(sys)_$(group)_system:MgmtdMem_r</y_pv>
+        <axis>1</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color red="0" green="150" blue="70">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name>rfpi-mgmt-ioc RSS [MB]</name>
+        <y_pv>$(acc):$(sys)_$(group)_system:IocMem_r</y_pv>
+        <axis>1</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color red="140" green="60" blue="180">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+    </traces>
+  </widget>
+</display>
