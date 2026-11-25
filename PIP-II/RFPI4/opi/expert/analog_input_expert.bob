@@ -2,7 +2,7 @@
 <display version="2.0.0">
   <name>$(CHANNEL_NAME) Expert</name>
   <width>730</width>
-  <height>1280</height>
+  <height>1390</height>
   <widget type="rectangle" version="2.0.0">
     <name>Titlebar</name>
     <width>730</width>
@@ -35,7 +35,7 @@
     <x>20</x>
     <y>330</y>
     <width>690</width>
-    <height>490</height>
+    <height>600</height>
     <style>3</style>
     <background_color>
       <color name="BACKGROUND" red="220" green="225" blue="221">
@@ -44,7 +44,7 @@
     <widget type="rectangle" version="2.0.0">
       <name>Configuration_rectangle</name>
       <width>690</width>
-      <height>490</height>
+      <height>600</height>
       <line_width>2</line_width>
       <line_color>
         <color name="GROUP-BORDER" red="150" green="155" blue="151">
@@ -75,6 +75,159 @@
       <corner_width>10</corner_width>
       <corner_height>10</corner_height>
     </widget>
+      <widget type="rectangle" version="2.0.0">
+        <name>Filter_rectangle</name>
+        <x>20</x>
+        <y>170</y>
+        <width>370</width>
+        <height>160</height>
+        <line_width>2</line_width>
+        <line_color>
+          <color name="GROUP-BORDER" red="150" green="155" blue="151">
+          </color>
+        </line_color>
+        <background_color>
+          <color name="GROUP-BACKGROUND" red="200" green="205" blue="201">
+          </color>
+        </background_color>
+        <corner_width>10</corner_width>
+        <corner_height>10</corner_height>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Filter_title</name>
+        <text>Filter (moving average)</text>
+        <x>20</x>
+        <y>170</y>
+        <width>370</width>
+        <height>40</height>
+        <font>
+          <font name="Header 3" family="Liberation Sans" style="BOLD" size="16.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>FilterOff_label</name>
+        <text>Off</text>
+        <x>70</x>
+        <y>225</y>
+        <width>40</width>
+        <height>20</height>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="slide_button" version="2.0.0">
+        <name>Filter_slide</name>
+        <pv_name>$(acc):$(sys)_$(group)_$(num):Avg_s</pv_name>
+        <label></label>
+        <x>120</x>
+        <y>225</y>
+        <width>50</width>
+        <height>20</height>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>FilterOn_label</name>
+        <text>On</text>
+        <x>180</x>
+        <y>225</y>
+        <width>40</width>
+        <height>20</height>
+        <horizontal_alignment>0</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Filter_update</name>
+        <pv_name>$(acc):$(sys)_$(group)_$(num):Avg_r</pv_name>
+        <x>250</x>
+        <y>220</y>
+        <width>120</width>
+        <height>30</height>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>FilterLen_label</name>
+        <text>Window:</text>
+        <x>30</x>
+        <y>260</y>
+        <width>80</width>
+        <height>30</height>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="textentry" version="3.0.0">
+        <name>FilterLen_entry</name>
+        <pv_name>$(acc):$(sys)_$(group)_$(gen_num):$(adc)AvgLen_s</pv_name>
+        <x>120</x>
+        <y>260</y>
+        <width>60</width>
+        <height>30</height>
+        <horizontal_alignment>1</horizontal_alignment>
+        <tooltip>Common to all $(adc) channels, 1..128 samples</tooltip>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>FilterLen_update</name>
+        <pv_name>$(acc):$(sys)_$(group)_$(gen_num):$(adc)AvgLen_r</pv_name>
+        <x>190</x>
+        <y>260</y>
+        <width>50</width>
+        <height>30</height>
+        <show_units>false</show_units>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>FilterWindow_update</name>
+        <pv_name>$(acc):$(sys)_$(group)_$(gen_num):$(adc)AvgWindow_r</pv_name>
+        <x>250</x>
+        <y>260</y>
+        <width>120</width>
+        <height>30</height>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>FilterGain_label</name>
+        <text>Gain:</text>
+        <x>30</x>
+        <y>295</y>
+        <width>80</width>
+        <height>30</height>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="textentry" version="3.0.0">
+        <name>FilterGain_entry</name>
+        <pv_name>$(acc):$(sys)_$(group)_$(gen_num):$(adc)AvgGain_s</pv_name>
+        <x>120</x>
+        <y>295</y>
+        <width>60</width>
+        <height>30</height>
+        <horizontal_alignment>1</horizontal_alignment>
+        <tooltip>Common to all $(adc) channels, 1 = plain average</tooltip>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>FilterGain_update</name>
+        <pv_name>$(acc):$(sys)_$(group)_$(gen_num):$(adc)AvgGain_r</pv_name>
+        <x>190</x>
+        <y>295</y>
+        <width>50</width>
+        <height>30</height>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>FilterCommon_label</name>
+        <text>(all $(adc) channels)</text>
+        <x>250</x>
+        <y>295</y>
+        <width>120</width>
+        <height>30</height>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
     <widget type="label" version="2.0.0">
       <name>Configuration_title</name>
       <text>Configuration</text>
@@ -94,7 +247,7 @@
     <widget type="group" version="3.0.0">
       <name>Threshold_group</name>
       <x>20</x>
-      <y>240</y>
+      <y>350</y>
       <width>370</width>
       <height>230</height>
       <style>3</style>
@@ -243,7 +396,7 @@
     <widget type="group" version="3.0.0">
       <name>Counters_group</name>
       <x>410</x>
-      <y>240</y>
+      <y>350</y>
       <width>260</width>
       <height>230</height>
       <style>3</style>
@@ -757,7 +910,7 @@ ScriptUtil.openDisplay(widget, "analog_input_expert.bob", "REPLACE", None)]]></t
   <widget type="group" version="3.0.0">
     <name>Plot_group</name>
     <x>20</x>
-    <y>840</y>
+    <y>950</y>
     <width>690</width>
     <height>420</height>
     <style>3</style>
@@ -801,7 +954,7 @@ ScriptUtil.openDisplay(widget, "analog_input_expert.bob", "REPLACE", None)]]></t
       <name>Decimation_rectangle</name>
       <x>580</x>
       <y>50</y>
-      <height>150</height>
+      <height>230</height>
       <line_width>2</line_width>
       <line_color>
         <color name="GROUP-BORDER" red="150" green="155" blue="151">
@@ -851,6 +1004,36 @@ ScriptUtil.openDisplay(widget, "analog_input_expert.bob", "REPLACE", None)]]></t
       <width>80</width>
       <height>30</height>
       <horizontal_alignment>1</horizontal_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>SpikeFilter_label</name>
+      <text>Spike filter</text>
+      <x>590</x>
+      <y>210</y>
+      <width>80</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <tooltip>FPS spike filter, common to all $(adc) channels</tooltip>
+    </widget>
+    <widget type="slide_button" version="2.0.0">
+      <name>SpikeFilter_slide</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(gen_num):$(adc)SpikeFilter_s</pv_name>
+      <label></label>
+      <x>595</x>
+      <y>245</y>
+      <width>50</width>
+      <height>20</height>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <tooltip>FPS spike filter, common to all $(adc) channels</tooltip>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>SpikeFilter_led</name>
+      <pv_name>$(acc):$(sys)_$(group)_$(gen_num):$(adc)SpikeFilter_r</pv_name>
+      <x>650</x>
+      <y>245</y>
+      <width>20</width>
+      <height>20</height>
     </widget>
     <widget type="xyplot" version="3.0.0">
       <name>X/Y Plot</name>
