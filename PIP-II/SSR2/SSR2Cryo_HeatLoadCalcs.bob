@@ -2124,7 +2124,7 @@ Traces</text>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_43</name>
-    <text>Heat load on JT heat exchanger</text>
+    <text>Heat load on JT heat exchanger: JTHXHP + JTHXVLP</text>
     <x>1044</x>
     <y>709</y>
     <width>402</width>
@@ -2158,8 +2158,8 @@ Traces</text>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_44</name>
-    <text>Non-isothermal heat load</text>
-    <x>1044</x>
+    <text>Non-isothermal heat load: VLPin + JTHX + VLPout</text>
+    <x>1043</x>
     <y>735</y>
     <width>402</width>
     <height>25</height>
@@ -2192,7 +2192,7 @@ Traces</text>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_45</name>
-    <text>Isothermal heat load without heaters</text>
+    <text>Isothermal heat load w/o heaters: BathIso - HTR041 - HTRCV0</text>
     <x>1044</x>
     <y>760</y>
     <width>402</width>
@@ -2226,11 +2226,15 @@ Traces</text>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_46</name>
-    <text>Total heat load summation</text>
+    <text>NonIso + LiqStat + 5KSupUT + CMtoHX + VLPdwnHX + 5KHXtoJT</text>
     <x>1044</x>
     <y>785</y>
     <width>402</width>
     <height>25</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
     <background_color>
       <color name="Button_Background" red="210" green="210" blue="210">
       </color>
@@ -2260,7 +2264,7 @@ Traces</text>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_47</name>
-    <text>Total 2K static heat load w/o htr pwr</text>
+    <text>Total static heat load w/o htr pwr: VLPtot  - HTR041 - HTRCV0</text>
     <x>1044</x>
     <y>810</y>
     <width>402</width>
@@ -2294,7 +2298,7 @@ Traces</text>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_48</name>
-    <text>Max possible heat transfer in HX</text>
+    <text>Max possible HX heat transfer: abs(min(HXHPmax,HXVLPmax)) </text>
     <x>1044</x>
     <y>835</y>
     <width>402</width>
@@ -2310,7 +2314,7 @@ Traces</text>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_49</name>
-    <text>JT HX Effectiveness on HP Side</text>
+    <text>JT HX HP Effectiveness: - JTHXHP / JTHXmax</text>
     <x>1044</x>
     <y>860</y>
     <width>402</width>
@@ -2517,7 +2521,7 @@ Traces</text>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_62</name>
-    <text>TX041</text>
+    <text>TX0411</text>
     <x>1295</x>
     <y>430</y>
     <width>75</width>
@@ -2810,7 +2814,7 @@ Traces</text>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_80</name>
-    <text>TX041</text>
+    <text>TX0411</text>
     <x>1295</x>
     <y>277</y>
     <width>75</width>
@@ -2922,7 +2926,7 @@ Traces</text>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_87</name>
-    <text>TX041</text>
+    <text>TX0411</text>
     <x>1371</x>
     <y>456</y>
     <width>75</width>
@@ -6046,5 +6050,176 @@ Load</text>
     <vertical_alignment>1</vertical_alignment>
     <wrap_words>false</wrap_words>
     <border_width>1</border_width>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_47</name>
+    <x>938</x>
+    <y>1570</y>
+    <width>262</width>
+    <height>1</height>
+    <visible>false</visible>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="262.0" y="0.0">
+      </point>
+    </points>
+    <line_width>20</line_width>
+    <line_color>
+      <color name="STOP" red="255" green="0" blue="0">
+      </color>
+    </line_color>
+    <rules>
+      <rule name="New Rule" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0">
+          <value>true</value>
+        </exp>
+        <pv_name>loc://t26</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_51</name>
+    <x>938</x>
+    <y>1456</y>
+    <width>262</width>
+    <height>1</height>
+    <visible>false</visible>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="262.0" y="0.0">
+      </point>
+    </points>
+    <line_width>20</line_width>
+    <line_color>
+      <color name="STOP" red="255" green="0" blue="0">
+      </color>
+    </line_color>
+    <rules>
+      <rule name="New Rule" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0">
+          <value>true</value>
+        </exp>
+        <pv_name>loc://t9</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_58</name>
+    <x>970</x>
+    <y>1760</y>
+    <width>262</width>
+    <height>1</height>
+    <visible>false</visible>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="262.0" y="0.0">
+      </point>
+    </points>
+    <line_width>20</line_width>
+    <line_color>
+      <color name="STOP" red="255" green="0" blue="0">
+      </color>
+    </line_color>
+    <rules>
+      <rule name="New Rule" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0">
+          <value>true</value>
+        </exp>
+        <pv_name>loc://t25</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_59</name>
+    <x>1104</x>
+    <y>1455</y>
+    <width>276</width>
+    <height>291</height>
+    <visible>false</visible>
+    <points>
+      <point x="210.0" y="0.0">
+      </point>
+      <point x="276.0" y="0.0">
+      </point>
+      <point x="275.0" y="255.0">
+      </point>
+      <point x="33.0" y="255.0">
+      </point>
+      <point x="33.0" y="291.0">
+      </point>
+      <point x="0.0" y="291.0">
+      </point>
+      <point x="0.0" y="221.0">
+      </point>
+      <point x="170.0" y="221.0">
+      </point>
+      <point x="170.0" y="115.0">
+      </point>
+      <point x="97.0" y="115.0">
+      </point>
+    </points>
+    <line_width>20</line_width>
+    <line_color>
+      <color name="STOP" red="255" green="0" blue="0">
+      </color>
+    </line_color>
+    <rules>
+      <rule name="New Rule" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0">
+          <value>true</value>
+        </exp>
+        <pv_name>loc://t24</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_60</name>
+    <x>399</x>
+    <y>1458</y>
+    <width>980</width>
+    <height>340</height>
+    <visible>false</visible>
+    <points>
+      <point x="0.0" y="340.0">
+      </point>
+      <point x="480.0" y="340.0">
+      </point>
+      <point x="480.0" y="0.0">
+      </point>
+      <point x="980.0" y="0.0">
+      </point>
+      <point x="980.0" y="250.0">
+      </point>
+      <point x="730.0" y="250.0">
+      </point>
+      <point x="730.0" y="290.0">
+      </point>
+      <point x="700.0" y="290.0">
+      </point>
+      <point x="700.0" y="220.0">
+      </point>
+      <point x="870.0" y="220.0">
+      </point>
+      <point x="870.0" y="110.0">
+      </point>
+      <point x="0.0" y="110.0">
+      </point>
+    </points>
+    <line_width>20</line_width>
+    <line_color>
+      <color name="STOP" red="255" green="0" blue="0">
+      </color>
+    </line_color>
+    <rules>
+      <rule name="New Rule" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0">
+          <value>true</value>
+        </exp>
+        <pv_name>loc://t29</pv_name>
+      </rule>
+    </rules>
   </widget>
 </display>
