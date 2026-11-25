@@ -2,13 +2,13 @@
 <display version="2.0.0">
   <name>BARC - SSA Overview</name>
   <width>145</width>
-  <height>355</height>
+  <height>380</height>
   <grid_step_x>5</grid_step_x>
   <grid_step_y>5</grid_step_y>
   <widget type="rectangle" version="2.0.0">
     <name>Rectangle_11</name>
     <width>145</width>
-    <height>305</height>
+    <height>330</height>
     <line_width>1</line_width>
     <line_color>
       <color red="0" green="0" blue="0">
@@ -22,7 +22,7 @@
   <widget type="bool_button" version="2.0.0">
     <name>Boolean Button</name>
     <pv_name>$(hprf)SSA$(cav):sOUT</pv_name>
-    <y>330</y>
+    <y>355</y>
     <width>145</width>
     <height>25</height>
     <off_label>Set On</off_label>
@@ -41,7 +41,7 @@
       </action>
     </actions>
     <pv_name>$(hprf)SSA$(cav):sOUT</pv_name>
-    <y>305</y>
+    <y>330</y>
     <width>145</width>
     <height>25</height>
     <tooltip>$(actions)</tooltip>
@@ -75,296 +75,294 @@
     <horizontal_alignment>1</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
   </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>Text Update_23</name>
-    <pv_name>$(llrfo)$(cav)0:FWD:PWRMEAN</pv_name>
-    <x>75</x>
-    <y>220</y>
-    <width>65</width>
+  <widget type="byte_monitor" version="2.0.0">
+    <name>Byte Monitor_20</name>
+    <pv_name>$(P)HPRF_SSA$(ssa):Permits</pv_name>
+    <x>5</x>
+    <y>150</y>
+    <width>20</width>
+    <height>80</height>
+    <numBits>4</numBits>
+    <bitReverse>true</bitReverse>
+    <horizontal>false</horizontal>
+    <square>true</square>
+    <on_color>
+      <color name="OK" red="0" green="255" blue="0">
+      </color>
+    </on_color>
+    <off_label>0</off_label>
+    <on_label>1</on_label>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="byte_monitor" version="2.0.0">
+    <name>Byte Monitor_19</name>
+    <pv_name>$(P)HPRF_SSA$(ssa):Status</pv_name>
+    <x>5</x>
+    <y>60</y>
+    <width>20</width>
+    <height>60</height>
+    <numBits>3</numBits>
+    <bitReverse>true</bitReverse>
+    <horizontal>false</horizontal>
+    <square>true</square>
+    <off_color>
+      <color name="OK" red="0" green="255" blue="0">
+      </color>
+    </off_color>
+    <on_color>
+      <color name="MAJOR" red="255" green="0" blue="0">
+      </color>
+    </on_color>
+    <off_label>1</off_label>
+    <on_label>0</on_label>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_94</name>
+    <text> Water Flow</text>
+    <x>25</x>
+    <y>60</y>
+    <width>115</width>
     <font>
       <font family="Liberation Sans" style="BOLD" size="12.0">
       </font>
     </font>
-    <background_color>
-      <color red="255" green="255" blue="0">
-      </color>
-    </background_color>
-    <format>2</format>
-    <precision>2</precision>
-    <horizontal_alignment>1</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
-    <border_width>1</border_width>
   </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>Text Update_25</name>
-    <pv_name>$(llrfo)$(cav)0:REV:PWRMEAN</pv_name>
-    <x>75</x>
-    <y>240</y>
-    <width>65</width>
+  <widget type="label" version="2.0.0">
+    <name>Label_95</name>
+    <text> Water Temperature</text>
+    <x>25</x>
+    <y>80</y>
+    <width>115</width>
     <font>
       <font family="Liberation Sans" style="BOLD" size="12.0">
       </font>
     </font>
-    <background_color>
-      <color red="255" green="255" blue="0">
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_96</name>
+    <text> Circulator/Load Flow</text>
+    <x>25</x>
+    <y>100</y>
+    <width>115</width>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_97</name>
+    <text> Window Air Flow</text>
+    <x>25</x>
+    <y>120</y>
+    <width>115</width>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED</name>
+    <pv_name>$(P)HPRF_CPLR$(cav)AF:Permit</pv_name>
+    <x>5</x>
+    <y>120</y>
+    <off_label>0</off_label>
+    <off_color>
+      <color name="MAJOR" red="255" green="0" blue="0">
       </color>
-    </background_color>
-    <format>2</format>
-    <precision>2</precision>
-    <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <border_width>1</border_width>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label_91</name>
-    <text>FwdPwr</text>
-    <x>15</x>
-    <y>220</y>
-    <width>55</width>
-    <font>
-      <font family="Liberation Sans" style="BOLD" size="11.0">
-      </font>
-    </font>
-    <horizontal_alignment>2</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label_92</name>
-    <text>RefPwr</text>
-    <x>15</x>
-    <y>240</y>
-    <width>55</width>
-    <font>
-      <font family="Liberation Sans" style="BOLD" size="11.0">
-      </font>
-    </font>
-    <horizontal_alignment>2</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
+    </off_color>
+    <on_label>1</on_label>
+    <square>true</square>
   </widget>
   <widget type="group" version="3.0.0">
     <name>Group</name>
-    <x>5</x>
-    <y>60</y>
-    <width>135</width>
-    <height>150</height>
+    <x>15</x>
+    <y>245</y>
+    <width>125</width>
+    <height>80</height>
     <style>3</style>
     <transparent>true</transparent>
-    <widget type="group" version="3.0.0">
-      <name>Group</name>
-      <y>90</y>
-      <width>135</width>
-      <height>60</height>
-      <style>3</style>
-      <transparent>true</transparent>
-      <widget type="label" version="2.0.0">
-        <name>Label_87</name>
-        <text> RF Permit</text>
-        <x>20</x>
-        <y>40</y>
-        <width>115</width>
-        <font>
-          <font family="Liberation Sans" style="BOLD" size="12.0">
-          </font>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_23</name>
+      <pv_name>$(llrfo)$(cav)0:FWD:PWRMEAN</pv_name>
+      <x>60</x>
+      <width>65</width>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="12.0">
         </font>
-        <vertical_alignment>1</vertical_alignment>
-      </widget>
-      <widget type="label" version="2.0.0">
-        <name>Label_88</name>
-        <text> SSA Ready</text>
-        <x>20</x>
-        <width>115</width>
-        <font>
-          <font family="Liberation Sans" style="BOLD" size="12.0">
-          </font>
-        </font>
-        <vertical_alignment>1</vertical_alignment>
-      </widget>
-      <widget type="label" version="2.0.0">
-        <name>Label_90</name>
-        <text> DC Permit</text>
-        <x>20</x>
-        <y>20</y>
-        <width>115</width>
-        <font>
-          <font family="Liberation Sans" style="BOLD" size="12.0">
-          </font>
-        </font>
-        <vertical_alignment>1</vertical_alignment>
-      </widget>
-      <widget type="byte_monitor" version="2.0.0">
-        <name>Byte Monitor_20</name>
-        <pv_name>$(P)HPRF_SSA$(cav):Permits</pv_name>
-        <width>20</width>
-        <height>60</height>
-        <numBits>3</numBits>
-        <bitReverse>true</bitReverse>
-        <horizontal>false</horizontal>
-        <square>true</square>
-        <on_color>
-          <color name="OK" red="0" green="255" blue="0">
-          </color>
-        </on_color>
-        <off_label>0</off_label>
-        <on_label>1</on_label>
-        <border_alarm_sensitive>false</border_alarm_sensitive>
-      </widget>
+      </font>
+      <background_color>
+        <color red="255" green="255" blue="0">
+        </color>
+      </background_color>
+      <format>2</format>
+      <precision>2</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <border_width>1</border_width>
     </widget>
-    <widget type="group" version="3.0.0">
-      <name>Group</name>
-      <width>135</width>
-      <height>80</height>
-      <style>3</style>
-      <transparent>true</transparent>
-      <widget type="byte_monitor" version="2.0.0">
-        <name>Byte Monitor_19</name>
-        <pv_name>$(P)HPRF_SSA$(ssa):Status</pv_name>
-        <width>20</width>
-        <height>60</height>
-        <numBits>3</numBits>
-        <bitReverse>true</bitReverse>
-        <horizontal>false</horizontal>
-        <square>true</square>
-        <off_color>
-          <color name="OK" red="0" green="255" blue="0">
-          </color>
-        </off_color>
-        <on_color>
-          <color name="MAJOR" red="255" green="0" blue="0">
-          </color>
-        </on_color>
-        <off_label>1</off_label>
-        <on_label>0</on_label>
-        <border_alarm_sensitive>false</border_alarm_sensitive>
-      </widget>
-      <widget type="label" version="2.0.0">
-        <name>Label_94</name>
-        <text> Water Flow</text>
-        <x>20</x>
-        <width>115</width>
-        <font>
-          <font family="Liberation Sans" style="BOLD" size="12.0">
-          </font>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_25</name>
+      <pv_name>$(llrfo)$(cav)0:REV:PWRMEAN</pv_name>
+      <x>60</x>
+      <y>20</y>
+      <width>65</width>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="12.0">
         </font>
-        <vertical_alignment>1</vertical_alignment>
-      </widget>
-      <widget type="label" version="2.0.0">
-        <name>Label_95</name>
-        <text> Water Temperature</text>
-        <x>20</x>
-        <y>20</y>
-        <width>115</width>
-        <font>
-          <font family="Liberation Sans" style="BOLD" size="12.0">
-          </font>
+      </font>
+      <background_color>
+        <color red="255" green="255" blue="0">
+        </color>
+      </background_color>
+      <format>2</format>
+      <precision>2</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_91</name>
+      <text>FwdPwr</text>
+      <width>55</width>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="11.0">
         </font>
-        <vertical_alignment>1</vertical_alignment>
-      </widget>
-      <widget type="label" version="2.0.0">
-        <name>Label_96</name>
-        <text> Circulator/Load Flow</text>
-        <x>20</x>
-        <y>40</y>
-        <width>115</width>
-        <font>
-          <font family="Liberation Sans" style="BOLD" size="12.0">
-          </font>
+      </font>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_92</name>
+      <text>RefPwr</text>
+      <y>20</y>
+      <width>55</width>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="11.0">
         </font>
-        <vertical_alignment>1</vertical_alignment>
-      </widget>
-      <widget type="label" version="2.0.0">
-        <name>Label_97</name>
-        <text> Window Air Flow</text>
-        <x>20</x>
-        <y>60</y>
-        <width>115</width>
-        <font>
-          <font family="Liberation Sans" style="BOLD" size="12.0">
-          </font>
+      </font>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_24</name>
+      <pv_name>$(llrfo)$(cav)0:FWD:PWRMEAN</pv_name>
+      <x>60</x>
+      <y>40</y>
+      <width>65</width>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="12.0">
         </font>
-        <vertical_alignment>1</vertical_alignment>
-      </widget>
-      <widget type="led" version="2.0.0">
-        <name>LED</name>
-        <pv_name>$(P)HPRF_CPLR$(cav)AF:Permit</pv_name>
-        <y>60</y>
-        <off_label>0</off_label>
-        <off_color>
-          <color name="MAJOR" red="255" green="0" blue="0">
-          </color>
-        </off_color>
-        <on_label>1</on_label>
-        <square>true</square>
-      </widget>
+      </font>
+      <background_color>
+        <color red="255" green="255" blue="0">
+        </color>
+      </background_color>
+      <format>2</format>
+      <precision>2</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_26</name>
+      <pv_name>$(llrfo)$(cav)0:REV:PWRMEAN</pv_name>
+      <x>60</x>
+      <y>60</y>
+      <width>65</width>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="12.0">
+        </font>
+      </font>
+      <background_color>
+        <color red="255" green="255" blue="0">
+        </color>
+      </background_color>
+      <format>2</format>
+      <precision>2</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_98</name>
+      <text>Gradient</text>
+      <y>40</y>
+      <width>55</width>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="11.0">
+        </font>
+      </font>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_99</name>
+      <text>Phase</text>
+      <y>60</y>
+      <width>55</width>
+      <font>
+        <font family="Liberation Sans" style="BOLD" size="11.0">
+        </font>
+      </font>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
     </widget>
   </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>Text Update_24</name>
-    <pv_name>$(llrfo)$(cav)0:FWD:PWRMEAN</pv_name>
-    <x>75</x>
-    <y>260</y>
-    <width>65</width>
+  <widget type="label" version="2.0.0">
+    <name>Label_87</name>
+    <text> RF Permit</text>
+    <x>25</x>
+    <y>210</y>
+    <width>115</width>
     <font>
       <font family="Liberation Sans" style="BOLD" size="12.0">
       </font>
     </font>
-    <background_color>
-      <color red="255" green="255" blue="0">
-      </color>
-    </background_color>
-    <format>2</format>
-    <precision>2</precision>
-    <horizontal_alignment>1</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
-    <border_width>1</border_width>
   </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>Text Update_26</name>
-    <pv_name>$(llrfo)$(cav)0:REV:PWRMEAN</pv_name>
-    <x>75</x>
-    <y>280</y>
-    <width>65</width>
+  <widget type="label" version="2.0.0">
+    <name>Label_88</name>
+    <text> SSA Ready</text>
+    <x>25</x>
+    <y>170</y>
+    <width>115</width>
     <font>
       <font family="Liberation Sans" style="BOLD" size="12.0">
       </font>
     </font>
-    <background_color>
-      <color red="255" green="255" blue="0">
-      </color>
-    </background_color>
-    <format>2</format>
-    <precision>2</precision>
-    <horizontal_alignment>1</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
-    <border_width>1</border_width>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label_98</name>
-    <text>Gradient</text>
-    <x>15</x>
-    <y>260</y>
-    <width>55</width>
+    <name>Label_90</name>
+    <text> DC Permit</text>
+    <x>25</x>
+    <y>190</y>
+    <width>115</width>
     <font>
-      <font family="Liberation Sans" style="BOLD" size="11.0">
+      <font family="Liberation Sans" style="BOLD" size="12.0">
       </font>
     </font>
-    <horizontal_alignment>2</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label_99</name>
-    <text>Phase</text>
-    <x>15</x>
-    <y>280</y>
-    <width>55</width>
+    <name>Label_89</name>
+    <text> Local/Remote</text>
+    <x>25</x>
+    <y>150</y>
+    <width>115</width>
     <font>
-      <font family="Liberation Sans" style="BOLD" size="11.0">
+      <font family="Liberation Sans" style="BOLD" size="12.0">
       </font>
     </font>
-    <horizontal_alignment>2</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
   </widget>
 </display>
